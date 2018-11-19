@@ -60,4 +60,8 @@ public class Coordinador {
     public String actualizarAlumno(VO.AlumnoVO alumnoVO,String id) {
         return getAlumnoDAO().actualizarAlumno(alumnoVO, id);
     }
+
+    public boolean validacionCorreo(String entrada) {
+        return getLogica().validacionCorreo(entrada);
+    }
 }

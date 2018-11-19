@@ -19,4 +19,7 @@ public class Logica {
         this.coordinador = coordinador;
     }
     
+    public boolean validacionCorreo(String entrada){
+        return entrada.matches("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+    }
 }
