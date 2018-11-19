@@ -12,7 +12,10 @@ import java.util.Date;
  * @author acjj
  */
 public class EmpleadoVO {
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono, correo;
+    private int edad;
+    private Date fechaNacimiento;
+    private char sexo;
 
     public String getPrimer_nombre() {
         return primer_nombre;
@@ -85,22 +88,32 @@ public class EmpleadoVO {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    private int edad;
-    private Date fechaNacimiento;
-    private char sexo;
 
+    
     public EmpleadoVO() {
     }
 
-    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono, int edad, char sexo) {
+    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono, String correo, int edad, Date fechaNacimiento, char sexo) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
         this.segundo_apellido = segundo_apellido;
         this.cedula = cedula;
         this.telefono = telefono;
+        this.correo = correo;
         this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
     }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    
 
 }

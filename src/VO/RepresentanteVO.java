@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class RepresentanteVO {
     private String  primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefonoPersonal, telefonoCasa, telefonotrabajo,
-            direccionHogar, direccionTrabajo, cedula, parentesco;
+            direccionHogar, direccionTrabajo, cedula, parentesco, correo;
     private Date fechaNacimiento;
     private int edad;
     private char sexo;
@@ -21,7 +21,7 @@ public class RepresentanteVO {
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonoCasa, String telefonotrabajo, String direccionHogar, String direccionTrabajo, String cedula, String parentesco, Date fechaNacimiento, int edad, char sexo) {
+    public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonoCasa, String telefonotrabajo, String direccionHogar, String direccionTrabajo, String cedula, String parentesco, String correo, Date fechaNacimiento, int edad, char sexo) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
@@ -33,10 +33,21 @@ public class RepresentanteVO {
         this.direccionTrabajo = direccionTrabajo;
         this.cedula = cedula;
         this.parentesco = parentesco;
+        this.correo = correo;
         this.fechaNacimiento = fechaNacimiento;
         this.edad = edad;
         this.sexo = sexo;
     }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+   
 
     public String getPrimer_nombre() {
         return primer_nombre;
