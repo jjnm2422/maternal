@@ -118,7 +118,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        
+     JOptionPane.showMessageDialog(this, actualizar("a+"));
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -169,6 +169,7 @@ public class Login extends javax.swing.JFrame {
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
         alumnoVO.setNombre1(txtUsuario.getText());
         alumnoVO.setApellido1(txtClave.getText());
+        alumnoVO.setTipoSangre("a+");
         return coordinador.registrarAlumno(alumnoVO);
     }
     
@@ -180,6 +181,12 @@ public class Login extends javax.swing.JFrame {
             txtUsuario.setText(alumnoDAO.getNombre1());
             txtClave.setText(alumnoDAO.getApellido1());
         }
+    }
+    
+    private String actualizar(String id) {
+        VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
+        alumnoVO.setNombre1(txtUsuario.getText());
+        return coordinador.actualizarAlumno(alumnoVO, id);
     }
     
     public String eliminar(String id){
@@ -195,4 +202,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    
 }

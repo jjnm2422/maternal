@@ -46,15 +46,18 @@ public class Coordinador {
     }
 
     public String registrarAlumno(AlumnoVO alumnoVO) {
-        return getAlumnoDAO().registrarAlumno();
+        return getAlumnoDAO().registrarAlumno(alumnoVO);
     }
 
-    public VO.AlumnoVO consultarAlumno(String consulta) {
-        return getAlumnoDAO().consultarAlumno(consulta);
+    public VO.AlumnoVO consultarAlumno(String parametro) {
+        return getAlumnoDAO().consultarAlumno(parametro);
     }
 
     public String eliminarAlumno(String id) {
         return getAlumnoDAO().eliminarAlumno(id);
     }
     
+    public String actualizarAlumno(VO.AlumnoVO alumnoVO,String id) {
+        return getAlumnoDAO().actualizarAlumno(alumnoVO, id);
+    }
 }
