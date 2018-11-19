@@ -18,16 +18,16 @@ import java.util.logging.Logger;
  *
  * @author acjj
  */
-public class AlumnoDAO {
+public class RepresentanteDAO {
 
     private Coordinador coordinador;
-    private final String tabla = "alumno";
+    private final String tabla = "representante";
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
     }
 
-    public String registrarAlumno(VO.AlumnoVO alumnoVO) {
+    public String registrarRepresentante(VO.RepresentanteVO representanteVO) {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -38,15 +38,14 @@ public class AlumnoDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setString(1, alumnoVO.getNombre1());
-            ps.setString(2, alumnoVO.getApellido1());
-            ps.setString(3, alumnoVO.getTipoSangre());
+            ps.setString(1, representanteVO.getNombre1());
+            ps.setString(2, representanteVO.getApellido1());
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";
             }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
             } 
         } else {
@@ -55,12 +54,12 @@ public class AlumnoDAO {
         return respuesta;
     }
 
-    public VO.AlumnoVO consultarAlumno(String parametro) {
+    public VO.RepresentanteVO consultarRepresentante(String parametro) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
         ResultSet result = null;
-        VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
+        VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
@@ -72,25 +71,25 @@ public class AlumnoDAO {
                 result = ps.executeQuery();
                 if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    alumnoVO.setNombre1(result.getString("nombre1"));
-                    alumnoVO.setApellido1(result.getString("apellido1"));
+                    representanteVO.setNombre1(result.getString("nombre1"));
+                    representanteVO.setApellido1(result.getString("apellido1"));
                     }
                 } else {
                     conexiondb.desconexion();
                     return null;
                 } 
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
             conexiondb.desconexion();
-            return alumnoVO;
+            return representanteVO;
         } else {
             conexiondb.desconexion();
             return null;
         }
     }
     
-    public String eliminarAlumno(String id){
+    public String eliminarRepresentante(String id){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -105,7 +104,7 @@ public class AlumnoDAO {
                 return "NO ELIMINADO";
             }   
         } catch (SQLException ex) {
-            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
             return "NO ELIMINADO";
         }  
         } else {
@@ -114,7 +113,7 @@ public class AlumnoDAO {
         
     }
     
-    public String actualizarAlumno(VO.AlumnoVO alumnoVO, String id){
+    public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id){
         Statement st = null;
         String respuesta = "";
         Connection conexion= null;
@@ -125,13 +124,13 @@ public class AlumnoDAO {
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
-                ps.setString(1, alumnoVO.getNombre1());
+                ps.setString(1, representanteVO.getNombre1());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
                 respuesta = ex.getMessage();
             }
             return respuesta;

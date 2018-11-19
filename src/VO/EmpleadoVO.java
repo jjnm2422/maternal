@@ -11,16 +11,16 @@ import java.util.Date;
  *
  * @author acjj
  */
-public class ProfesorVO {
+public class EmpleadoVO {
     private String nombre1, nombre2, apellido1, apellido2, cedula, telefono;
     private int edad;
     private Date fechaNacimiento;
     private char sexo;
 
-    public ProfesorVO() {
+    public EmpleadoVO() {
     }
 
-    public ProfesorVO(String nombre1, String nombre2, String apellido1, String apellido2, String cedula, String telefono, int edad, char sexo) {
+    public EmpleadoVO(String nombre1, String nombre2, String apellido1, String apellido2, String cedula, String telefono, int edad, char sexo) {
         this.nombre1 = nombre1;
         this.nombre2 = nombre2;
         this.apellido1 = apellido1;

@@ -11,17 +11,17 @@ import java.util.Date;
  *
  * @author acjj
  */
-public class PadresVO {
+public class RepresentanteVO {
     private String  nombre1, nombre2, apellido1, apellido2, telefonoPersonal, telefonoCasa, telefonotrabajo,
             direccionHogar, direccionTrabajo, cedula, parentesco;
     private Date fechaNacimiento;
     private int edad;
     private char sexo;
 
-    public PadresVO() {
+    public RepresentanteVO() {
     }
 
-    public PadresVO(String nombre1, String nombre2, String apellido1, String apellido2, String telefonoPersonal, String telefonoCasa, String telefonotrabajo, String direccionHogar, String direccionTrabajo, String cedula, String parentesco, Date fechaNacimiento, int edad, char sexo) {
+    public RepresentanteVO(String nombre1, String nombre2, String apellido1, String apellido2, String telefonoPersonal, String telefonoCasa, String telefonotrabajo, String direccionHogar, String direccionTrabajo, String cedula, String parentesco, Date fechaNacimiento, int edad, char sexo) {
         this.nombre1 = nombre1;
         this.nombre2 = nombre2;
         this.apellido1 = apellido1;
