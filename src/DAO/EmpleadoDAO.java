@@ -38,8 +38,8 @@ public class EmpleadoDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setString(1, empleadoVO.getNombre1());
-            ps.setString(2, empleadoVO.getApellido1());
+            ps.setString(1, empleadoVO.getPrimer_nombre());
+            ps.setString(2, empleadoVO.getPrimer_apellido());
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";
@@ -71,8 +71,8 @@ public class EmpleadoDAO {
                 result = ps.executeQuery();
                 if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    empleadoVO.setNombre1(result.getString("nombre1"));
-                    empleadoVO.setApellido1(result.getString("apellido1"));
+                    empleadoVO.setPrimer_nombre(result.getString("nombre1"));
+                    empleadoVO.setPrimer_apellido(result.getString("apellido1"));
                     }
                 } else {
                     conexiondb.desconexion();
@@ -124,7 +124,7 @@ public class EmpleadoDAO {
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
-                ps.setString(1, empleadoVO.getNombre1());
+                ps.setString(1, empleadoVO.getPrimer_nombre());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

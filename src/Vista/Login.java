@@ -167,8 +167,8 @@ public class Login extends javax.swing.JFrame {
     
     public String registrar(){
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
-        alumnoVO.setNombre1(txtUsuario.getText());
-        alumnoVO.setApellido1(txtClave.getText());
+        alumnoVO.setPrimer_nombre(txtUsuario.getText());
+        alumnoVO.setPrimer_apellido(txtClave.getText());
         alumnoVO.setTipoSangre("a+");
         return coordinador.registrarAlumno(alumnoVO);
     }
@@ -178,14 +178,14 @@ public class Login extends javax.swing.JFrame {
         if (alumnoDAO==null) {
             JOptionPane.showMessageDialog(this, "USUARIO NO EXISTE");
         } else {
-            txtUsuario.setText(alumnoDAO.getNombre1());
-            txtClave.setText(alumnoDAO.getApellido1());
+            txtUsuario.setText(alumnoDAO.getPrimer_nombre());
+            txtClave.setText(alumnoDAO.getPrimer_apellido());
         }
     }
     
     private String actualizar(String id) {
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
-        alumnoVO.setNombre1(txtUsuario.getText());
+        alumnoVO.setPrimer_nombre(txtUsuario.getText());
         return coordinador.actualizarAlumno(alumnoVO, id);
     }
     

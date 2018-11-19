@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class AlumnoVO {
     
-    private String nombre1, nombre2, apellido1, apellido2, tipoSangre;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre;
     private int edad;
     private Date fechaNacimiento;
     private char sexo;
@@ -29,47 +29,47 @@ public class AlumnoVO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public AlumnoVO(Date fechaNacimiento, String nombre1, String nombre2, String apellido1, String apellido2, String tipoSangre, int edad, char sexo) {
-        this.nombre1 = nombre1;
-        this.nombre2 = nombre2;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
+    public AlumnoVO(Date fechaNacimiento, String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipoSangre, int edad, char sexo) {
+        this.primer_nombre = primer_nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.primer_apellido = primer_apellido;
+        this.segundo_apellido = segundo_apellido;
         this.tipoSangre = tipoSangre;
         this.edad = edad;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getNombre1() {
-        return nombre1;
+    public String getPrimer_nombre() {
+        return primer_nombre;
     }
 
-    public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
+    public void setPrimer_nombre(String primer_nombre) {
+        this.primer_nombre = primer_nombre;
     }
 
-    public String getNombre2() {
-        return nombre2;
+    public String getSegundo_nombre() {
+        return segundo_nombre;
     }
 
-    public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
+    public void setSegundo_nombre(String segundo_nombre) {
+        this.segundo_nombre = segundo_nombre;
     }
 
-    public String getApellido1() {
-        return apellido1;
+    public String getPrimer_apellido() {
+        return primer_apellido;
     }
 
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
+    public void setPrimer_apellido(String primer_apellido) {
+        this.primer_apellido = primer_apellido;
     }
 
-    public String getApellido2() {
-        return apellido2;
+    public String getSegundo_apellido() {
+        return segundo_apellido;
     }
 
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
+    public void setSegundo_apellido(String segundo_apellido) {
+        this.segundo_apellido = segundo_apellido;
     }
 
     public String getTipoSangre() {
@@ -95,7 +95,6 @@ public class AlumnoVO {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    
-    
   
+    
 }

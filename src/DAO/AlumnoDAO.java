@@ -38,8 +38,8 @@ public class AlumnoDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setString(1, alumnoVO.getNombre1());
-            ps.setString(2, alumnoVO.getApellido1());
+            ps.setString(1, alumnoVO.getPrimer_nombre());
+            ps.setString(2, alumnoVO.getPrimer_apellido());
             ps.setString(3, alumnoVO.getTipoSangre());
             int n = ps.executeUpdate();
             if (n > 0) {
@@ -72,8 +72,8 @@ public class AlumnoDAO {
                 result = ps.executeQuery();
                 if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    alumnoVO.setNombre1(result.getString("nombre1"));
-                    alumnoVO.setApellido1(result.getString("apellido1"));
+                    alumnoVO.setPrimer_nombre(result.getString("nombre1"));
+                    alumnoVO.setPrimer_apellido(result.getString("apellido1"));
                     }
                 } else {
                     conexiondb.desconexion();
@@ -125,7 +125,7 @@ public class AlumnoDAO {
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
-                ps.setString(1, alumnoVO.getNombre1());
+                ps.setString(1, alumnoVO.getPrimer_nombre());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
