@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -33,7 +35,7 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(nombre1, apellido1, cedula)"
+        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, id_alumno)"
                     + "values(?,?,?)";
         if (conexion!=null) {
             try {
@@ -64,7 +66,7 @@ public class AlumnoDAO {
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE cedula = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
@@ -72,8 +74,8 @@ public class AlumnoDAO {
                 result = ps.executeQuery();
                 if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    alumnoVO.setPrimer_nombre(result.getString("nombre1"));
-                    alumnoVO.setPrimer_apellido(result.getString("apellido1"));
+                    alumnoVO.setPrimer_nombre(result.getString("primer_nombre"));
+                    alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     }
                 } else {
                     conexiondb.desconexion();
@@ -95,7 +97,7 @@ public class AlumnoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE cedula='"+id+"'";
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_alumno='"+id+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
@@ -120,7 +122,7 @@ public class AlumnoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET nombre1=? where cedula= '"+id+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=? where id_alumno= '"+id+"'";
 
         if (conexion!=null) {
             try {
@@ -139,4 +141,49 @@ public class AlumnoDAO {
             return "ERROR AL CONECTAR CON BD";
         }
     }
+    
+    private void LlenarCodigo(){
+ /*     try {
+            String sql = "select last_value+1 as valor from public.pedidos_codped_seq";
+            //ResultSet rs = acciones.Consultar(sql);
+            while (rs.next()) {
+              //  lblCodigo.setText(String.valueOf(rs.getInt("valor")));
+            }
+            //acciones.conn.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }  */
+    }
+    
+    public DefaultTableModel consultarAlumnosTabla(String parametro){
+    boolean encontrado=false;
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"Primer Nombre","Primer Apellido"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM usuarios WHERE nombre1 = '"+parametro+"'";
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("nombre1");
+        fila[1]=rs.getString("apellido1");
+        model.addRow(fila);
+        encontrado = true;
+    }
+    if (encontrado==false){
+        JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
+        return model = null;
+    }
+         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+            return model = null;
+         }
+    return model;
+}
 }

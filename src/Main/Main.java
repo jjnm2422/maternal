@@ -14,14 +14,24 @@ public class Main {
         
         Controlador.Coordinador coordinador = new Controlador.Coordinador();
         DAO.AlumnoDAO alumnoDAO = new DAO.AlumnoDAO();
+        DAO.UsuarioDAO usuarioDAO = new DAO.UsuarioDAO();
+        DAO.EmpleadoDAO empleadoDAO = new DAO.EmpleadoDAO();
+        DAO.RepresentanteDAO representanteDAO = new DAO.RepresentanteDAO();
         Modelo.Logica logica = new Modelo.Logica();
         Vista.Login login = new Vista.Login();
         
+        
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setEmpleadoDAO(empleadoDAO);
+        coordinador.setRepresentanteDAO(representanteDAO);
+        coordinador.setUsuarioDAO(usuarioDAO);
         coordinador.setLogica(logica);
         coordinador.setLogin(login);
         
         alumnoDAO.setCoordinador(coordinador);
+        representanteDAO.setCoordinador(coordinador);
+        empleadoDAO.setCoordinador(coordinador);
+        usuarioDAO.setCoordinador(coordinador);
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
