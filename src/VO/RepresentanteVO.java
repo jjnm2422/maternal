@@ -5,49 +5,28 @@
  */
 package VO;
 
-import java.util.Date;
-
 /**
  *
  * @author acjj
  */
 public class RepresentanteVO {
-    private String  primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefonoPersonal, telefonoCasa, telefonotrabajo,
-            direccionHogar, direccionTrabajo, cedula, parentesco, correo;
-    private Date fechaNacimiento;
-    private int edad;
-    private char sexo;
+    private String  primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefonoPersonal, telefonotrabajo, direccionTrabajo, cedula, parentesco, empresa;
 
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonoCasa, String telefonotrabajo, String direccionHogar, String direccionTrabajo, String cedula, String parentesco, String correo, Date fechaNacimiento, int edad, char sexo) {
+    public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonotrabajo, String direccionTrabajo, String cedula, String parentesco, String empresa) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
         this.segundo_apellido = segundo_apellido;
         this.telefonoPersonal = telefonoPersonal;
-        this.telefonoCasa = telefonoCasa;
         this.telefonotrabajo = telefonotrabajo;
-        this.direccionHogar = direccionHogar;
         this.direccionTrabajo = direccionTrabajo;
         this.cedula = cedula;
         this.parentesco = parentesco;
-        this.correo = correo;
-        this.fechaNacimiento = fechaNacimiento;
-        this.edad = edad;
-        this.sexo = sexo;
+        this.empresa = empresa;
     }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-   
 
     public String getPrimer_nombre() {
         return primer_nombre;
@@ -89,28 +68,12 @@ public class RepresentanteVO {
         this.telefonoPersonal = telefonoPersonal;
     }
 
-    public String getTelefonoCasa() {
-        return telefonoCasa;
-    }
-
-    public void setTelefonoCasa(String telefonoCasa) {
-        this.telefonoCasa = telefonoCasa;
-    }
-
     public String getTelefonotrabajo() {
         return telefonotrabajo;
     }
 
     public void setTelefonotrabajo(String telefonotrabajo) {
         this.telefonotrabajo = telefonotrabajo;
-    }
-
-    public String getDireccionHogar() {
-        return direccionHogar;
-    }
-
-    public void setDireccionHogar(String direccionHogar) {
-        this.direccionHogar = direccionHogar;
     }
 
     public String getDireccionTrabajo() {
@@ -137,28 +100,13 @@ public class RepresentanteVO {
         this.parentesco = parentesco;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
  
 }

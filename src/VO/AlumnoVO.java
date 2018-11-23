@@ -13,10 +13,32 @@ import java.util.Date;
  */
 public class AlumnoVO {
     
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre;
-    private int edad;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre, enfermedades, direccion;
+    private int edad, id_alumno;
     private Date fechaNacimiento;
-    private char sexo;
+
+    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipoSangre, String enfermedades, String direccion, int edad, int id_alumno, Date fechaNacimiento, String sexo) {
+        this.primer_nombre = primer_nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.primer_apellido = primer_apellido;
+        this.segundo_apellido = segundo_apellido;
+        this.tipoSangre = tipoSangre;
+        this.enfermedades = enfermedades;
+        this.direccion = direccion;
+        this.edad = edad;
+        this.id_alumno = id_alumno;
+        this.fechaNacimiento = fechaNacimiento;
+        this.sexo = sexo;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    private String sexo;
 
     public AlumnoVO() {
     }
@@ -29,15 +51,20 @@ public class AlumnoVO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public AlumnoVO(Date fechaNacimiento, String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipoSangre, int edad, char sexo) {
-        this.primer_nombre = primer_nombre;
-        this.segundo_nombre = segundo_nombre;
-        this.primer_apellido = primer_apellido;
-        this.segundo_apellido = segundo_apellido;
-        this.tipoSangre = tipoSangre;
-        this.edad = edad;
-        this.sexo = sexo;
-        this.fechaNacimiento = fechaNacimiento;
+    public String getEnfermedades() {
+        return enfermedades;
+    }
+
+    public void setEnfermedades(String enfermedades) {
+        this.enfermedades = enfermedades;
+    }
+
+    public int getId_alumno() {
+        return id_alumno;
+    }
+
+    public void setId_alumno(int id_alumno) {
+        this.id_alumno = id_alumno;
     }
 
     public String getPrimer_nombre() {
@@ -88,11 +115,11 @@ public class AlumnoVO {
         this.edad = edad;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
   

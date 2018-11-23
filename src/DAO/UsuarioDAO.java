@@ -33,7 +33,7 @@ public class UsuarioDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(nombre1, apellido1, cedula)"
+        String sql = "insert into "+this.tabla+"(nombre, apellido, nombre_usuario)"
                     + "values(?,?,?)";
         if (conexion!=null) {
             try {
@@ -108,7 +108,11 @@ public class UsuarioDAO {
                     isVacia = true;
                 //String nombre =result.getString("nombre_usuario");
                     if( clave.equals(result.getString("clave"))){
-                        resultado = "ACCESO";
+                        if (result.getBoolean("admin")) {
+                            resultado = "ACCESO_ADMIN";
+                        } else {
+                            resultado = "ACCESO_NORMAL";
+                        }
                     }else{
                         resultado = "NO_CLAVE";
                     }

@@ -7,6 +7,7 @@ package DAO;
 
 import Controlador.Coordinador;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,17 +36,22 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, id_alumno)"
+        String sql = "insert into "+this.tabla+"(fechaNacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre, edad, sexo)"
                     + "values(?,?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setString(1, alumnoVO.getPrimer_nombre());
-            ps.setString(2, alumnoVO.getPrimer_apellido());
-            ps.setString(3, alumnoVO.getTipoSangre());
+            ps.setDate(1, (Date) alumnoVO.getFechaNacimiento());
+            ps.setString(2, alumnoVO.getPrimer_nombre());
+            ps.setString(3, alumnoVO.getSegundo_nombre());
+            ps.setString(4, alumnoVO.getPrimer_apellido());
+            ps.setString(5, alumnoVO.getSegundo_apellido());
+            ps.setString(6, alumnoVO.getTipoSangre());
+            ps.setInt(7, alumnoVO.getEdad());
+            ps.setString(8, alumnoVO.getSexo());
             int n = ps.executeUpdate();
             if (n > 0) {
-                 respuesta = "INGRESADO CON EXITO";
+                respuesta = "INGRESADO CON EXITO";
             }
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,7 +81,13 @@ public class AlumnoDAO {
                 if (result.getRow()!=0) {
                     while (result.next()==true) {
                     alumnoVO.setPrimer_nombre(result.getString("primer_nombre"));
+                    alumnoVO.setSegundo_nombre(result.getString("segundo_nombre"));
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
+                    alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
+                    alumnoVO.setFechaNacimiento(result.getDate("fechaNacimiento"));
+                    alumnoVO.setTipoSangre(result.getString("tipoSangre"));
+                    alumnoVO.setSexo(result.getString("sexo"));
+                    alumnoVO.setId_alumno(result.getInt("id_alumno"));
                     }
                 } else {
                     conexiondb.desconexion();
@@ -143,16 +155,21 @@ public class AlumnoDAO {
     }
     
     private void LlenarCodigo(){
- /*     try {
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    PreparedStatement ps = null;
+    ResultSet result = null;
+    conexion = conexiondb.getConnection();
+      try {
             String sql = "select last_value+1 as valor from public.pedidos_codped_seq";
             //ResultSet rs = acciones.Consultar(sql);
-            while (rs.next()) {
-              //  lblCodigo.setText(String.valueOf(rs.getInt("valor")));
+            while (result.next()) {
+                //lblCodigo.setText(String.valueOf(rs.getInt("valor")));
             }
-            //acciones.conn.close();
+            conexion.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }  */
+        } 
     }
     
     public DefaultTableModel consultarAlumnosTabla(String parametro){

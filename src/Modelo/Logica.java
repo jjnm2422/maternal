@@ -8,7 +8,9 @@ package Modelo;
 import Controlador.Coordinador;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.UIManager;
+import javax.swing.ImageIcon;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,6 +22,22 @@ public class Logica {
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
+    }
+
+    public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
+        /*inicio verifcacion de la cantidad*/
+        String cantidad = "";
+        boolean entrada = true;
+        //obtengo el modelo de la tabla 1 para escribir sobre el
+        DefaultTableModel model = (DefaultTableModel) tabla2.getModel();
+
+        String[] vector = new String[2];
+        
+        vector[0] = tabla.getValueAt(fila, 0).toString();
+        vector[1] = tabla.getValueAt(fila, 1).toString();
+        model.addRow(vector);
+
+        return model;
     }
     
     public String getClave(char[] campoClave){

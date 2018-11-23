@@ -16,12 +16,14 @@ public class Main {
         DAO.AlumnoDAO alumnoDAO = new DAO.AlumnoDAO();
         DAO.UsuarioDAO usuarioDAO = new DAO.UsuarioDAO();
         DAO.EmpleadoDAO empleadoDAO = new DAO.EmpleadoDAO();
+        Vista.NewJFrame newJFrame = new Vista.NewJFrame();
         DAO.RepresentanteDAO representanteDAO = new DAO.RepresentanteDAO();
         Modelo.Logica logica = new Modelo.Logica();
         Vista.Login login = new Vista.Login();
         
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setNewFrame(newJFrame);
         coordinador.setEmpleadoDAO(empleadoDAO);
         coordinador.setRepresentanteDAO(representanteDAO);
         coordinador.setUsuarioDAO(usuarioDAO);
@@ -29,13 +31,14 @@ public class Main {
         coordinador.setLogin(login);
         
         alumnoDAO.setCoordinador(coordinador);
+        newJFrame.setCoordinador(coordinador);
         representanteDAO.setCoordinador(coordinador);
         empleadoDAO.setCoordinador(coordinador);
         usuarioDAO.setCoordinador(coordinador);
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        login.setVisible(true);
-        login.setLocationRelativeTo(null);
+        newJFrame.setVisible(true);
+        newJFrame.setLocationRelativeTo(null);
     }
 }

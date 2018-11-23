@@ -10,18 +10,21 @@ package VO;
  * @author acjj
  */
 public class UsuarioVO {
-    private String nombre, apellido, usuario, clave, pregunta_secreta, respuesta_secreta;
+    private String nombre, apellido, nombre_usuario, clave, pregunta_secreta, respuesta_secreta;
+    int id_usuario, id_empleado;
 
     public UsuarioVO() {
     }
 
-    public UsuarioVO(String nombre, String apellido, String usuario, String clave, String pregunta_secreta, String respuesta_secreta) {
+    public UsuarioVO(String nombre, String apellido, String nombre_usuario, String clave, String pregunta_secreta, String respuesta_secreta, int id_usuario, int id_empleado) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.usuario = usuario;
+        this.nombre_usuario = nombre_usuario;
         this.clave = clave;
         this.pregunta_secreta = pregunta_secreta;
         this.respuesta_secreta = respuesta_secreta;
+        this.id_usuario = id_usuario;
+        this.id_empleado = id_empleado;
     }
 
     public String getNombre() {
@@ -40,12 +43,12 @@ public class UsuarioVO {
         this.apellido = apellido;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
     public String getClave() {
@@ -72,4 +75,19 @@ public class UsuarioVO {
         this.respuesta_secreta = respuesta_secreta;
     }
 
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public int getId_empleado() {
+        return id_empleado;
+    }
+
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
+    }  
 }

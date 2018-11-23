@@ -12,9 +12,10 @@ import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
 import Vista.Login;
-import com.sun.javafx.geom.transform.BaseTransform;
+import Vista.NewJFrame;
 import java.util.Date;
-import javax.swing.UIManager;
+import javax.swing.ImageIcon;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,6 +31,7 @@ public class Coordinador {
     private UsuarioDAO usuarioDAO;
     private EmpleadoDAO empleadoDAO;
     private RepresentanteDAO representanteDAO;
+    private NewJFrame newJFrame;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -134,6 +136,18 @@ public class Coordinador {
 
     public RepresentanteDAO getRepresentanteDAO() {
         return representanteDAO;
+    }
+
+    public void setNewFrame(NewJFrame newJFrame) {
+        this.newJFrame = newJFrame;
+    }
+
+    public NewJFrame getNewJFrame() {
+        return newJFrame;
+    }
+    
+    public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
+        return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
     }
     
 }
