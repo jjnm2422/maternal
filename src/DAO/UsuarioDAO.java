@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
 
     private Coordinador coordinador;
-    private final String tabla = "usuario";
+    private final String tabla = "usuarios";
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -33,7 +33,7 @@ public class UsuarioDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(nombre1, apellido1, cedula)"
+        String sql = "insert into "+this.tabla+"(nombre, apellido, nombre_usuario)"
                     + "values(?,?,?)";
         if (conexion!=null) {
             try {
@@ -88,6 +88,47 @@ public class UsuarioDAO {
             conexiondb.desconexion();
             return null;
         }
+    }
+    
+    public String consultarUsuarioLogin(String usuario, String clave){
+        Connection conexion= null;
+        String resultado = "";
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        conexion = conexiondb.getConnection();
+        
+        if (conexion!=null) {
+            String sql = "SELECT * FROM "+this.tabla+" WHERE nombre_usuario = '"+usuario+"'";
+            try {
+                ps = conexion.prepareStatement(sql);
+                boolean isVacia = false;
+                result = ps.executeQuery();
+                while (result.next()==true) {
+                    isVacia = true;
+                //String nombre =result.getString("nombre_usuario");
+                    if( clave.equals(result.getString("clave"))){
+                        if (result.getBoolean("admin")) {
+                            resultado = "ACCESO_ADMIN";
+                        } else {
+                            resultado = "ACCESO_NORMAL";
+                        }
+                    }else{
+                        resultado = "NO_CLAVE";
+                    }
+                }
+            if(isVacia==false){
+                resultado = "NO_USUARIO";
+            }
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex); 
+                resultado = "ERROR_SQL";
+            }
+        } else {
+            resultado = "SIN_CONEXION";
+        }
+        conexiondb.desconexion();
+        return resultado;
     }
     
     public String eliminarUsuario(String id){
