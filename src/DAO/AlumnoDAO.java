@@ -33,14 +33,14 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(nombre1, apellido1, cedula)"
-                    + "values(?,?,?)";
+        String sql = "insert into "+this.tabla+"(primer_nombre,  primer_apellido)"
+                    + "values(?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
             ps.setString(1, alumnoVO.getPrimer_nombre());
             ps.setString(2, alumnoVO.getPrimer_apellido());
-            ps.setString(3, alumnoVO.getTipoSangre());
+            //ps.setString(3, alumnoVO.getTipoSangre());
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";
@@ -120,7 +120,7 @@ public class AlumnoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET nombre1=? where cedula= '"+id+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=? where id_alumno= '"+id+"'";
 
         if (conexion!=null) {
             try {

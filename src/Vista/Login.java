@@ -118,12 +118,8 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        if (coordinador.validacionCorreo(txtUsuario.getText().trim())) {
-            System.out.println("correo valido");
-        }else{
-            System.out.println("correo invalido");
-        }
-        
+        String respuesta = actualizar("2");
+        System.out.println(respuesta);
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -190,6 +186,7 @@ public class Login extends javax.swing.JFrame {
     
     private String actualizar(String id) {
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
+        
         alumnoVO.setPrimer_nombre(txtUsuario.getText());
         return coordinador.actualizarAlumno(alumnoVO, id);
     }
