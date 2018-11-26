@@ -64,21 +64,17 @@ public class UsuarioDAO {
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE cedula = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE nombre_usuario = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
                 ps.setString(1, parametro);
                 result = ps.executeQuery();
-                if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    /*usuarioVO.setNombre1(result.getString("nombre1"));
-                    usuarioVO.setApellido1(result.getString("apellido1"));*/
+                    usuarioVO.setNombre_usuario(result.getString("nombre_usuario"));
+                    usuarioVO.setPregunta_secreta(result.getString("pregunta_secreta"));
+                    usuarioVO.setRespuesta_secreta(result.getString("respuesta_secreta"));
                     }
-                } else {
-                    conexiondb.desconexion();
-                    return null;
-                } 
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -179,5 +175,9 @@ public class UsuarioDAO {
         } else {
             return "ERROR AL CONECTAR CON BD";
         }
+    }
+
+    public String getPreguntaSecreta(String usuario) {
+        return "";
     }
 }

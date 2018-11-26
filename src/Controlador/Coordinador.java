@@ -11,6 +11,7 @@ import DAO.RepresentanteDAO;
 import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
+import Vista.FrmLoginRecuperacion;
 import Vista.Login;
 import Vista.NewJFrame;
 import java.util.Date;
@@ -32,6 +33,7 @@ public class Coordinador {
     private EmpleadoDAO empleadoDAO;
     private RepresentanteDAO representanteDAO;
     private NewJFrame newJFrame;
+    private FrmLoginRecuperacion frmLoginRecuperacion;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -149,5 +151,20 @@ public class Coordinador {
     public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
         return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
     }
+
+    public void setFrmLoginRecuperacion(FrmLoginRecuperacion frmLoginRecuperacion) {
+       this.frmLoginRecuperacion = frmLoginRecuperacion;
+    }
+
+    public FrmLoginRecuperacion getFrmLoginRecuperacion() {
+        return frmLoginRecuperacion;
+    }
+
+    public String getPreguntaSecreta(String usuario) {
+        return getUsuarioDAO().getPreguntaSecreta(usuario);
+    }
     
+    public VO.UsuarioVO consultarUsuario(String parametro) {
+        return getUsuarioDAO().consultarUsuario(parametro);
+    }
 }

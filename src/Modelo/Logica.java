@@ -8,7 +8,6 @@ package Modelo;
 import Controlador.Coordinador;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,10 +30,11 @@ public class Logica {
         //obtengo el modelo de la tabla 1 para escribir sobre el
         DefaultTableModel model = (DefaultTableModel) tabla2.getModel();
 
-        String[] vector = new String[2];
+        String[] vector = new String[3];
         
         vector[0] = tabla.getValueAt(fila, 0).toString();
         vector[1] = tabla.getValueAt(fila, 1).toString();
+        vector[2] = tabla.getValueAt(fila, 2).toString();
         model.addRow(vector);
 
         return model;

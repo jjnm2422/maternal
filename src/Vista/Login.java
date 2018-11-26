@@ -7,15 +7,10 @@ package Vista;
 
 import Controlador.Coordinador;
 import java.awt.Image;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import javax.swing.DropMode;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.TransferHandler;
 import javax.swing.UIManager;
 
 /**
@@ -74,7 +69,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnOlvidoClave = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -159,14 +154,19 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(129, 212, 250));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Olvide mi Clave");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        btnOlvidoClave.setBackground(new java.awt.Color(129, 212, 250));
+        btnOlvidoClave.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnOlvidoClave.setForeground(new java.awt.Color(255, 255, 255));
+        btnOlvidoClave.setText("Olvide mi Clave");
+        btnOlvidoClave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOlvidoClave.setBorderPainted(false);
+        btnOlvidoClave.setContentAreaFilled(false);
+        btnOlvidoClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOlvidoClaveActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnOlvidoClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 200, -1));
 
@@ -237,6 +237,11 @@ public class Login extends javax.swing.JFrame {
      System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnOlvidoClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOlvidoClaveActionPerformed
+    coordinador.getFrmLoginRecuperacion().setVisible(true);
+    coordinador.getFrmLoginRecuperacion().setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnOlvidoClaveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -306,8 +311,8 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicio;
+    private javax.swing.JButton btnOlvidoClave;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

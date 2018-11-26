@@ -20,7 +20,7 @@ public class Main {
         DAO.RepresentanteDAO representanteDAO = new DAO.RepresentanteDAO();
         Modelo.Logica logica = new Modelo.Logica();
         Vista.Login login = new Vista.Login();
-        
+        Vista.FrmLoginRecuperacion frmLoginRecuperacion = new Vista.FrmLoginRecuperacion();
         
         coordinador.setAlumnoDAO(alumnoDAO);
         coordinador.setNewFrame(newJFrame);
@@ -29,8 +29,10 @@ public class Main {
         coordinador.setUsuarioDAO(usuarioDAO);
         coordinador.setLogica(logica);
         coordinador.setLogin(login);
+        coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmLoginRecuperacion.setCoordinador(coordinador);
         newJFrame.setCoordinador(coordinador);
         representanteDAO.setCoordinador(coordinador);
         empleadoDAO.setCoordinador(coordinador);
@@ -38,7 +40,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        newJFrame.setVisible(true);
-        newJFrame.setLocationRelativeTo(null);
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
 }
