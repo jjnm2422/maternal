@@ -11,9 +11,8 @@ import DAO.RepresentanteDAO;
 import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
-import Vista.FrmLoginRecuperacion;
+import Vista.frmLoginRecuperacion;
 import Vista.Login;
-import Vista.NewJFrame;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
@@ -32,8 +31,7 @@ public class Coordinador {
     private UsuarioDAO usuarioDAO;
     private EmpleadoDAO empleadoDAO;
     private RepresentanteDAO representanteDAO;
-    private NewJFrame newJFrame;
-    private FrmLoginRecuperacion frmLoginRecuperacion;
+    private frmLoginRecuperacion frmLoginRecuperacion;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -139,24 +137,16 @@ public class Coordinador {
     public RepresentanteDAO getRepresentanteDAO() {
         return representanteDAO;
     }
-
-    public void setNewFrame(NewJFrame newJFrame) {
-        this.newJFrame = newJFrame;
-    }
-
-    public NewJFrame getNewJFrame() {
-        return newJFrame;
-    }
     
     public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
         return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
     }
 
-    public void setFrmLoginRecuperacion(FrmLoginRecuperacion frmLoginRecuperacion) {
+    public void setFrmLoginRecuperacion(frmLoginRecuperacion frmLoginRecuperacion) {
        this.frmLoginRecuperacion = frmLoginRecuperacion;
     }
 
-    public FrmLoginRecuperacion getFrmLoginRecuperacion() {
+    public frmLoginRecuperacion getFrmLoginRecuperacion() {
         return frmLoginRecuperacion;
     }
 
