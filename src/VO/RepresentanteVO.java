@@ -17,9 +17,7 @@ public class RepresentanteVO {
 
     public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonotrabajo, String direccionTrabajo, String cedula, String parentesco, String empresa) {
         this.primer_nombre = primer_nombre;
-        this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
-        this.segundo_apellido = segundo_apellido;
         this.telefonoPersonal = telefonoPersonal;
         this.telefonotrabajo = telefonotrabajo;
         this.direccionTrabajo = direccionTrabajo;
@@ -36,28 +34,12 @@ public class RepresentanteVO {
         this.primer_nombre = primer_nombre;
     }
 
-    public String getSegundo_nombre() {
-        return segundo_nombre;
-    }
-
-    public void setSegundo_nombre(String segundo_nombre) {
-        this.segundo_nombre = segundo_nombre;
-    }
-
     public String getPrimer_apellido() {
         return primer_apellido;
     }
 
     public void setPrimer_apellido(String primer_apellido) {
         this.primer_apellido = primer_apellido;
-    }
-
-    public String getSegundo_apellido() {
-        return segundo_apellido;
-    }
-
-    public void setSegundo_apellido(String segundo_apellido) {
-        this.segundo_apellido = segundo_apellido;
     }
 
     public String getTelefonoPersonal() {
