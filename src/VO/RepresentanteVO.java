@@ -10,20 +10,28 @@ package VO;
  * @author acjj
  */
 public class RepresentanteVO {
-    private String  primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, telefonoPersonal, telefonotrabajo, direccionTrabajo, cedula, parentesco, empresa;
-
+    private String  primer_nombre, primer_apellido, telefono1, telefono2, direccion, correo, ocupacion, sexo, fecha_nacimiento, cedula, parentesco, empresa;
+    private int id_representante, edad, id_alumno;
+    
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String telefonoPersonal, String telefonotrabajo, String direccionTrabajo, String cedula, String parentesco, String empresa) {
+    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, int id_alumno) {
         this.primer_nombre = primer_nombre;
         this.primer_apellido = primer_apellido;
-        this.telefonoPersonal = telefonoPersonal;
-        this.telefonotrabajo = telefonotrabajo;
-        this.direccionTrabajo = direccionTrabajo;
+        this.telefono1 = telefono1;
+        this.telefono2 = telefono2;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.ocupacion = ocupacion;
+        this.sexo = sexo;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.cedula = cedula;
         this.parentesco = parentesco;
         this.empresa = empresa;
+        this.id_representante = id_representante;
+        this.edad = edad;
+        this.id_alumno = id_alumno;
     }
 
     public String getPrimer_nombre() {
@@ -42,28 +50,60 @@ public class RepresentanteVO {
         this.primer_apellido = primer_apellido;
     }
 
-    public String getTelefonoPersonal() {
-        return telefonoPersonal;
+    public String getTelefono1() {
+        return telefono1;
     }
 
-    public void setTelefonoPersonal(String telefonoPersonal) {
-        this.telefonoPersonal = telefonoPersonal;
+    public void setTelefono1(String telefono1) {
+        this.telefono1 = telefono1;
     }
 
-    public String getTelefonotrabajo() {
-        return telefonotrabajo;
+    public String getTelefono2() {
+        return telefono2;
     }
 
-    public void setTelefonotrabajo(String telefonotrabajo) {
-        this.telefonotrabajo = telefonotrabajo;
+    public void setTelefono2(String telefono2) {
+        this.telefono2 = telefono2;
     }
 
-    public String getDireccionTrabajo() {
-        return direccionTrabajo;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccionTrabajo(String direccionTrabajo) {
-        this.direccionTrabajo = direccionTrabajo;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getOcupacion() {
+        return ocupacion;
+    }
+
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public String getCedula() {
@@ -90,5 +130,29 @@ public class RepresentanteVO {
         this.empresa = empresa;
     }
 
- 
+    public int getId_representante() {
+        return id_representante;
+    }
+
+    public void setId_representante(int id_representante) {
+        this.id_representante = id_representante;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getId_alumno() {
+        return id_alumno;
+    }
+
+    public void setId_alumno(int id_alumno) {
+        this.id_alumno = id_alumno;
+    }
+
+    
 }

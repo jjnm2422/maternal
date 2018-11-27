@@ -13,58 +13,26 @@ import java.util.Date;
  */
 public class AlumnoVO {
     
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre, enfermedades, direccion;
-    private int edad, id_alumno;
-    private Date fechaNacimiento;
-
-    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipoSangre, String enfermedades, String direccion, int edad, int id_alumno, Date fechaNacimiento, String sexo) {
-        this.primer_nombre = primer_nombre;
-        this.segundo_nombre = segundo_nombre;
-        this.primer_apellido = primer_apellido;
-        this.segundo_apellido = segundo_apellido;
-        this.tipoSangre = tipoSangre;
-        this.enfermedades = enfermedades;
-        this.direccion = direccion;
-        this.edad = edad;
-        this.id_alumno = id_alumno;
-        this.fechaNacimiento = fechaNacimiento;
-        this.sexo = sexo;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-    private String sexo;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias, direccion, sexo, fechaNacimiento;
+    private int edad, id_alumno, id_nota, id_pago;
 
     public AlumnoVO() {
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String alergias, String direccion, String sexo, String fechaNacimiento, int edad, int id_alumno, int id_nota, int id_pago) {
+        this.primer_nombre = primer_nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.primer_apellido = primer_apellido;
+        this.segundo_apellido = segundo_apellido;
+        this.tipo_sangre = tipo_sangre;
+        this.alergias = alergias;
+        this.direccion = direccion;
+        this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getEnfermedades() {
-        return enfermedades;
-    }
-
-    public void setEnfermedades(String enfermedades) {
-        this.enfermedades = enfermedades;
-    }
-
-    public int getId_alumno() {
-        return id_alumno;
-    }
-
-    public void setId_alumno(int id_alumno) {
+        this.edad = edad;
         this.id_alumno = id_alumno;
+        this.id_nota = id_nota;
+        this.id_pago = id_pago;
     }
 
     public String getPrimer_nombre() {
@@ -99,12 +67,44 @@ public class AlumnoVO {
         this.segundo_apellido = segundo_apellido;
     }
 
-    public String getTipoSangre() {
-        return tipoSangre;
+    public String getTipo_sangre() {
+        return tipo_sangre;
     }
 
-    public void setTipoSangre(String tipoSangre) {
-        this.tipoSangre = tipoSangre;
+    public void setTipo_sangre(String tipo_sangre) {
+        this.tipo_sangre = tipo_sangre;
+    }
+
+    public String getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public int getEdad() {
@@ -115,13 +115,30 @@ public class AlumnoVO {
         this.edad = edad;
     }
 
-    public String getSexo() {
-        return sexo;
+    public int getId_alumno() {
+        return id_alumno;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setId_alumno(int id_alumno) {
+        this.id_alumno = id_alumno;
     }
-  
+
+    public int getId_nota() {
+        return id_nota;
+    }
+
+    public void setId_nota(int id_nota) {
+        this.id_nota = id_nota;
+    }
+
+    public int getId_pago() {
+        return id_pago;
+    }
+
+    public void setId_pago(int id_pago) {
+        this.id_pago = id_pago;
+    }
+
     
+   
 }

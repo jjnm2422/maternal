@@ -41,12 +41,12 @@ public class AlumnoDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setDate(1, (Date) alumnoVO.getFechaNacimiento());
+            ps.setString(1, alumnoVO.getFechaNacimiento());
             ps.setString(2, alumnoVO.getPrimer_nombre());
             ps.setString(3, alumnoVO.getSegundo_nombre());
             ps.setString(4, alumnoVO.getPrimer_apellido());
             ps.setString(5, alumnoVO.getSegundo_apellido());
-            ps.setString(6, alumnoVO.getTipoSangre());
+            ps.setString(6, alumnoVO.getTipo_sangre());
             ps.setInt(7, alumnoVO.getEdad());
             ps.setString(8, alumnoVO.getSexo());
             int n = ps.executeUpdate();
@@ -84,8 +84,8 @@ public class AlumnoDAO {
                     alumnoVO.setSegundo_nombre(result.getString("segundo_nombre"));
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
-                    alumnoVO.setFechaNacimiento(result.getDate("fechaNacimiento"));
-                    alumnoVO.setTipoSangre(result.getString("tipoSangre"));
+                    alumnoVO.setFechaNacimiento(result.getString("fechaNacimiento"));
+                    alumnoVO.setTipo_sangre(result.getString("tipoSangre"));
                     alumnoVO.setSexo(result.getString("sexo"));
                     alumnoVO.setId_alumno(result.getInt("id_alumno"));
                     }

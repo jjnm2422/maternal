@@ -12,10 +12,27 @@ import java.util.Date;
  * @author acjj
  */
 public class EmpleadoVO {
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono, correo;
-    private int edad;
-    private Date fechaNacimiento;
-    private char sexo;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion, sexo, fechaNacimiento;
+    private int edad, id_empleado;
+
+    public EmpleadoVO() {
+    }
+
+    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono1, String telefono2, String correo, String direccion, String sexo, String fechaNacimiento, int edad, int id_empleado) {
+        this.primer_nombre = primer_nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.primer_apellido = primer_apellido;
+        this.segundo_apellido = segundo_apellido;
+        this.cedula = cedula;
+        this.telefono1 = telefono1;
+        this.telefono2 = telefono2;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.sexo = sexo;
+        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
+        this.id_empleado = id_empleado;
+    }
 
     public String getPrimer_nombre() {
         return primer_nombre;
@@ -57,53 +74,20 @@ public class EmpleadoVO {
         this.cedula = cedula;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getTelefono1() {
+        return telefono1;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setTelefono1(String telefono1) {
+        this.telefono1 = telefono1;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getTelefono2() {
+        return telefono2;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    
-    public EmpleadoVO() {
-    }
-
-    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono, String correo, int edad, Date fechaNacimiento, char sexo) {
-        this.primer_nombre = primer_nombre;
-        this.segundo_nombre = segundo_nombre;
-        this.primer_apellido = primer_apellido;
-        this.segundo_apellido = segundo_apellido;
-        this.cedula = cedula;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.edad = edad;
-        this.fechaNacimiento = fechaNacimiento;
-        this.sexo = sexo;
+    public void setTelefono2(String telefono2) {
+        this.telefono2 = telefono2;
     }
 
     public String getCorreo() {
@@ -114,6 +98,45 @@ public class EmpleadoVO {
         this.correo = correo;
     }
 
-    
+    public String getDireccion() {
+        return direccion;
+    }
 
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getId_empleado() {
+        return id_empleado;
+    }
+
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
+    }
+
+    
 }

@@ -281,14 +281,6 @@ public class Login extends javax.swing.JFrame {
         this.coordinador = coordinador;
     }
     
-    public String registrar(){
-        VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
-        //alumnoVO.setPrimer_nombre(txtUsuario.getText());
-        //alumnoVO.setPrimer_apellido(txtClave.getText());
-        alumnoVO.setTipoSangre("a+");
-        return coordinador.registrarAlumno(alumnoVO);
-    }
-    
     public void consultar(String consulta){
        VO.AlumnoVO alumnoDAO = coordinador.consultarAlumno(consulta);
         if (alumnoDAO==null) {

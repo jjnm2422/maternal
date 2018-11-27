@@ -5,42 +5,40 @@
  */
 package VO;
 
-import java.util.Date;
-
 /**
  *
  * @author acjj
  */
-public class AsistenciaVO {
-   private int id_asistencia, id_alumno, id_usuario;
+public class AsistenciaDocenteVO {
+    private int id_asistenciaD, id_empleado, id_usuario;
     private String fecha;
     private boolean asistencia;
 
-    public AsistenciaVO(int id_asistencia, int id_alumno, int id_usuario, String fecha, boolean asistencia) {
-        this.id_asistencia = id_asistencia;
-        this.id_alumno = id_alumno;
+    public AsistenciaDocenteVO(int id_asistenciaD, int id_empleado, int id_usuario, String fecha, boolean asistencia) {
+        this.id_asistenciaD = id_asistenciaD;
+        this.id_empleado = id_empleado;
         this.id_usuario = id_usuario;
         this.fecha = fecha;
         this.asistencia = asistencia;
     }
 
-    public AsistenciaVO() {
+    public AsistenciaDocenteVO() {
     }
 
-    public int getId_asistencia() {
-        return id_asistencia;
+    public int getId_asistenciaD() {
+        return id_asistenciaD;
     }
 
-    public void setId_asistencia(int id_asistencia) {
-        this.id_asistencia = id_asistencia;
+    public void setId_asistenciaD(int id_asistenciaD) {
+        this.id_asistenciaD = id_asistenciaD;
     }
 
-    public int getId_alumno() {
-        return id_alumno;
+    public int getId_empleado() {
+        return id_empleado;
     }
 
-    public void setId_alumno(int id_usuario) {
-        this.id_alumno = id_usuario;
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
     }
 
     public int getId_usuario() {
