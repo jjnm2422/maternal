@@ -5,14 +5,20 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Lenovo
  */
 public class frmAsistencia extends javax.swing.JFrame {
 
+    private Coordinador coordinador;
+
     /**
-     * Creates new form frmAsistencia
+     * Creates new form frmAsistencia1
      */
     public frmAsistencia() {
         initComponents();
@@ -28,114 +34,204 @@ public class frmAsistencia extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         btnConsultar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxGrupo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblMatricula = new javax.swing.JTable();
-        btnAtras = new javax.swing.JButton();
+        tblMatricula = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
-        lblLogo = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblAlumnoI = new javax.swing.JTable();
+        tblAlumnosI = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblAlumnoA = new javax.swing.JTable();
+        tblAlumnosA = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         btnConsultar.setText("consultar");
         btnConsultar.setName("btnConsultar"); // NOI18N
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+        cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        jPanel1.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 80, 80, -1));
 
         jScrollPane1.setName("tblSeccion"); // NOI18N
 
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        tblMatricula.setName("tblSeccion"); // NOI18N
+        tblMatricula.setName(""); // NOI18N
+        tblMatricula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMatriculaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblMatricula);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 240, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 250, 300));
 
-        btnAtras.setText("atras");
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
+        jButton2.setText("atras");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
 
         jLabel1.setText("grupo");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 50, 20));
 
-        btnGuardar.setText("guardar");
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
+        jButton3.setText("guardar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
-        lblLogo.setText("logo");
-        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+        jLabel2.setText("logo");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
 
-        jLabel3.setText("asistencia alumno");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        lblTitulo.setText("asistencia alumnos");
+        jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 14, 360, 20));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
 
         jLabel4.setText("responsable");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, 20));
 
-        tblAlumnoI.setModel(new javax.swing.table.DefaultTableModel(
+        tblAlumnosI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Primer Nombre", "Segundo Nombre"
             }
         ));
-        tblAlumnoI.setName("tblAlumnosI"); // NOI18N
-        jScrollPane2.setViewportView(tblAlumnoI);
+        tblAlumnosI.setName(""); // NOI18N
+        tblAlumnosI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAlumnosIMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblAlumnosI);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 310, 130));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 310, 130));
 
-        tblAlumnoA.setModel(new javax.swing.table.DefaultTableModel(
+        tblAlumnosA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Primer Nombre", "Segundo Nombre"
             }
         ));
-        tblAlumnoA.setName("tblAlumnoA"); // NOI18N
-        jScrollPane3.setViewportView(tblAlumnoA);
+        tblAlumnosA.setName(""); // NOI18N
+        tblAlumnosA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAlumnosAMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tblAlumnosA);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 310, 130));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 310, 130));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 500));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblMatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatriculaMouseClicked
+        if (evt.getClickCount() == 2) {
+            Object opciones[] = {"Asistente", "Inasistente"};
+            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,opciones, "Asistente");
+            if (respuesta==0) {
+                int fila = this.tblMatricula.getSelectedRow();
+                tblAlumnosA.setModel(coordinador.añadirListaAsistentes(tblMatricula, tblAlumnosA, fila));
+                DefaultTableModel model = (DefaultTableModel) tblMatricula.getModel();
+                model.removeRow(fila);
+                tblMatricula.setModel(model);
+            } else {
+                int fila = this.tblMatricula.getSelectedRow();
+                tblAlumnosI.setModel(coordinador.añadirListaAsistentes(tblMatricula, tblAlumnosI, fila));
+                DefaultTableModel model = (DefaultTableModel) tblMatricula.getModel();
+                model.removeRow(fila);
+                tblMatricula.setModel(model);
+            }
+        }
+    }//GEN-LAST:event_tblMatriculaMouseClicked
+
+    private void tblAlumnosAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlumnosAMouseClicked
+    if (evt.getClickCount() == 2) {
+        int fila = this.tblAlumnosA.getSelectedRow();
+        tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosA, tblMatricula, fila));
+        DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
+        model.removeRow(fila);
+        tblAlumnosA.setModel(model);
+    }
+    }//GEN-LAST:event_tblAlumnosAMouseClicked
+
+    private void tblAlumnosIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlumnosIMouseClicked
+    if (evt.getClickCount() == 2) {
+        int fila = this.tblAlumnosI.getSelectedRow();
+        tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosI, tblMatricula, fila));
+        DefaultTableModel model = (DefaultTableModel) tblAlumnosI.getModel();
+        model.removeRow(fila);
+        tblAlumnosI.setModel(model);
+    }
+    }//GEN-LAST:event_tblAlumnosIMouseClicked
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        if (tblAlumnosA.getRowCount() > 0 || tblAlumnosI.getRowCount() > 0) {
+            Object opciones[] = {"Seguir", "Descartar"};
+            int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,opciones, "Seguir");
+            if (respuesta==1) {
+                String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+                DefaultTableModel model = new DefaultTableModel(null,titulos);
+                tblAlumnosA.setModel(model);
+                tblAlumnosI.setModel(model);
+                this.llenarTabla(cbxGrupo.getSelectedItem().toString());
+            }else{
+                
+            }
+        } else {
+            this.llenarTabla(cbxGrupo.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (tblMatricula.getRowCount()==0) {
+            coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true);
+            coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Alumno pendientes por pasar asistencia");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,6 +260,7 @@ public class frmAsistencia extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -173,22 +270,30 @@ public class frmAsistencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbxGrupo;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lblLogo;
-    private javax.swing.JTable tblAlumnoA;
-    private javax.swing.JTable tblAlumnoI;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTable tblAlumnosA;
+    private javax.swing.JTable tblAlumnosI;
     private javax.swing.JTable tblMatricula;
     // End of variables declaration//GEN-END:variables
+
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+        lblTitulo.setText("Asistencia de alumno fecha "+coordinador.getFechaFormateada());
+    }
+
+    private void llenarTabla(String seccion) {
+        tblMatricula.setModel(coordinador.consultarMatriculaPorSeccionTabla(seccion));
+    }
 }
