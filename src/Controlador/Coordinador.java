@@ -6,15 +6,17 @@
 package Controlador;
 
 import DAO.AlumnoDAO;
+import DAO.AsistenciaDAO;
 import DAO.EmpleadoDAO;
+import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
 import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
+import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
 import Vista.Login;
 import java.util.Date;
-import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,6 +34,9 @@ public class Coordinador {
     private EmpleadoDAO empleadoDAO;
     private RepresentanteDAO representanteDAO;
     private frmLoginRecuperacion frmLoginRecuperacion;
+    private frmAsistencia frmAsistencia;
+    private MatriculaDAO matriculaDAO;
+    private AsistenciaDAO asistenciaDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -156,5 +161,41 @@ public class Coordinador {
     
     public VO.UsuarioVO consultarUsuario(String parametro) {
         return getUsuarioDAO().consultarUsuario(parametro);
+    }
+    
+    public DefaultTableModel consultarAlumnosTodosTabla(){
+        return getAlumnoDAO().consultarAlumnosTodosTabla();
+    }
+
+    public void setFrmAsistencia(frmAsistencia frmAsistencia) {
+        this.frmAsistencia = frmAsistencia;
+    }
+
+    public frmAsistencia getFrmAsistencia() {
+        return frmAsistencia;
+    }
+    
+    public DefaultTableModel consultarMatriculaPorSeccionTabla(String seccion){
+        return matriculaDAO.consultarMatriculaPorSeccionTabla(seccion);
+    }
+
+    public void setMatriculaDAO(MatriculaDAO matriculaDAO) {
+        this.matriculaDAO = matriculaDAO;
+    }
+    
+    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia) {
+        return getAsistenciaDAO().registrarAsistenciaPorSeccion(model, seccion, asistencia);
+    }
+
+    public void setAsistenciaDAO(AsistenciaDAO asistenciaDAO) {
+        this.asistenciaDAO = asistenciaDAO;
+    }
+
+    public MatriculaDAO getMatriculaDAO() {
+        return matriculaDAO;
+    }
+
+    public AsistenciaDAO getAsistenciaDAO() {
+        return asistenciaDAO;
     }
 }

@@ -20,8 +20,14 @@ public class Main {
         Modelo.Logica logica = new Modelo.Logica();
         Vista.Login login = new Vista.Login();
         Vista.frmLoginRecuperacion frmLoginRecuperacion = new Vista.frmLoginRecuperacion();
+        Vista.frmAsistencia frmAsistencia = new Vista.frmAsistencia();
+        DAO.MatriculaDAO matriculaDAO = new DAO.MatriculaDAO();
+        DAO.AsistenciaDAO asistenciaDAO = new DAO.AsistenciaDAO();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setAsistenciaDAO(asistenciaDAO);
+        coordinador.setMatriculaDAO(matriculaDAO);
+        coordinador.setFrmAsistencia(frmAsistencia);
         coordinador.setEmpleadoDAO(empleadoDAO);
         coordinador.setRepresentanteDAO(representanteDAO);
         coordinador.setUsuarioDAO(usuarioDAO);
@@ -30,6 +36,9 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        asistenciaDAO.setCoordinador(coordinador);
+        matriculaDAO.setCoordinador(coordinador);
+        frmAsistencia.setCoordinador(coordinador);
         frmLoginRecuperacion.setCoordinador(coordinador);
         representanteDAO.setCoordinador(coordinador);
         empleadoDAO.setCoordinador(coordinador);
@@ -37,7 +46,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        login.setVisible(true);
-        login.setLocationRelativeTo(null);
+        frmAsistencia.setVisible(true);
+        frmAsistencia.setLocationRelativeTo(null);
     }
 }
