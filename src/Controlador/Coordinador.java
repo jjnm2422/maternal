@@ -6,7 +6,7 @@
 package Controlador;
 
 import DAO.AlumnoDAO;
-import DAO.AsistenciaDAO;
+import DAO.AsistenciaADAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
@@ -37,7 +37,7 @@ public class Coordinador {
     private frmLoginRecuperacion frmLoginRecuperacion;
     private frmAsistencia frmAsistencia;
     private MatriculaDAO matriculaDAO;
-    private AsistenciaDAO asistenciaDAO;
+    private AsistenciaADAO asistenciaDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -147,6 +147,10 @@ public class Coordinador {
     public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
         return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
     }
+    
+    public DefaultTableModel añadirListaInasistentes(JTable tabla, JTable tabla2, int fila) {
+        return getLogica().añadirListaInasistentes(tabla, tabla2, fila);
+    }
 
     public void setFrmLoginRecuperacion(frmLoginRecuperacion frmLoginRecuperacion) {
        this.frmLoginRecuperacion = frmLoginRecuperacion;
@@ -184,11 +188,11 @@ public class Coordinador {
         this.matriculaDAO = matriculaDAO;
     }
     
-    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia) {
-        return getAsistenciaDAO().registrarAsistenciaPorSeccion(model, seccion, asistencia);
+    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia, int id_usuario) {
+        return getAsistenciaDAO().registrarAsistenciaPorSeccion(model, seccion, asistencia, 1);
     }
 
-    public void setAsistenciaDAO(AsistenciaDAO asistenciaDAO) {
+    public void setAsistenciaDAO(AsistenciaADAO asistenciaDAO) {
         this.asistenciaDAO = asistenciaDAO;
     }
 
@@ -196,7 +200,7 @@ public class Coordinador {
         return matriculaDAO;
     }
 
-    public AsistenciaDAO getAsistenciaDAO() {
+    public AsistenciaADAO getAsistenciaDAO() {
         return asistenciaDAO;
     }
 }

@@ -22,7 +22,7 @@ public class Main {
         Vista.frmLoginRecuperacion frmLoginRecuperacion = new Vista.frmLoginRecuperacion();
         Vista.frmAsistencia frmAsistencia = new Vista.frmAsistencia();
         DAO.MatriculaDAO matriculaDAO = new DAO.MatriculaDAO();
-        DAO.AsistenciaDAO asistenciaDAO = new DAO.AsistenciaDAO();
+        DAO.AsistenciaADAO asistenciaDAO = new DAO.AsistenciaADAO();
         
         coordinador.setAlumnoDAO(alumnoDAO);
         coordinador.setAsistenciaDAO(asistenciaDAO);
