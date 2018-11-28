@@ -104,7 +104,7 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         lblTitulo21.setText("Usuario");
         jPanel1.add(lblTitulo21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 140, 30));
 
-        jLabel3.setText("icon");
+        jLabel3.setText("icono");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 40, 30));
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -136,7 +136,7 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         });
         jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 140, 30));
 
-        jLabel2.setText("icon");
+        jLabel2.setText("icono");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 40, 30));
 
         lblTitulo19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -159,7 +159,7 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         });
         jPanel1.add(txtClave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 140, 30));
 
-        jLabel4.setText("icon");
+        jLabel4.setText("icono");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 40, 30));
 
         btnIngresar.setText("Actualizar");
@@ -194,8 +194,7 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3MouseDragged
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-    VO.UsuarioVO datosUsuario; 
-        datosUsuario = coordinador.consultarUsuario(txtUsuario.getText());
+    VO.UsuarioVO datosUsuario = datosUsuario = coordinador.consultarUsuario(txtUsuario.getText());
         if (datosUsuario.getPregunta_secreta()!=null) {
             String pregunta = datosUsuario.getPregunta_secreta();
             String respuesta = datosUsuario.getRespuesta_secreta();
