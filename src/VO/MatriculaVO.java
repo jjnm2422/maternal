@@ -12,9 +12,9 @@ package VO;
 public class MatriculaVO {
     private int id_matricula, id_alumno, id_empleado;
     private String seccion;
-
+    
     public MatriculaVO() {
-    }
+}
 
     public MatriculaVO(int id_matricula, int id_alumno, int id_empleado, String seccion) {
         this.id_matricula = id_matricula;
