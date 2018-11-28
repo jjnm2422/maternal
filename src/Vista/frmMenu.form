@@ -101,7 +101,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="lblNota">
               <Properties>
                 <Property name="text" type="java.lang.String" value="notas"/>
                 <Property name="name" type="java.lang.String" value="lblNotas" noResource="true"/>
@@ -112,7 +112,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lblInscripcion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="inscripcion"/>
                 <Property name="name" type="java.lang.String" value="lblInscripcion" noResource="true"/>
@@ -123,7 +123,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="lblPago">
               <Properties>
                 <Property name="text" type="java.lang.String" value="pagos"/>
                 <Property name="name" type="java.lang.String" value="lblPagos" noResource="true"/>
@@ -134,7 +134,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="lblUsuario">
               <Properties>
                 <Property name="text" type="java.lang.String" value="usuario"/>
                 <Property name="name" type="java.lang.String" value="lblUsuario" noResource="true"/>
@@ -145,7 +145,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="lblAsistencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="asistencia"/>
                 <Property name="name" type="java.lang.String" value="lblAsistencia" noResource="true"/>
@@ -156,7 +156,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="lblReporte">
               <Properties>
                 <Property name="text" type="java.lang.String" value="reportes"/>
                 <Property name="name" type="java.lang.String" value="lblReportes" noResource="true"/>
@@ -167,7 +167,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="lblUsuarioActvo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="usuario activo"/>
                 <Property name="name" type="java.lang.String" value="lblUsuarioActivo" noResource="true"/>

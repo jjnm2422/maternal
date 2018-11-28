@@ -36,9 +36,9 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         tblDocenteI = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblDocenteA = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,9 +47,11 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("asistencia docente");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("Asistencia Docente");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 240, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setText("responsable");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 70, 20));
 
@@ -103,9 +105,6 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 320, 140));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
-
         btnAtras.setText("atras");
         btnAtras.setName("btnAtras"); // NOI18N
         jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
@@ -113,6 +112,9 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         btnGuardar.setText("guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, -1, -1));
+
+        jLabel3.setText("jLabel3");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 90, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
 
@@ -159,9 +161,9 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

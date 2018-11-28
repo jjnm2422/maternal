@@ -74,6 +74,8 @@ public class frmNotas extends javax.swing.JFrame {
         btnConsultar = new javax.swing.JButton();
         txtConsultar = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblPnombre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -351,14 +353,17 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 160, 320));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setText("Codigo alumno");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setText("Responsable");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
+        lblResponsable.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         lblResponsable.setText("jLabel4");
-        jPanel2.add(lblResponsable, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
+        jPanel2.add(lblResponsable, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 50, 20));
 
         btnAtras.setText("Atras");
         jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
@@ -372,12 +377,19 @@ public class frmNotas extends javax.swing.JFrame {
 
         btnConsultar.setText("consultar");
         jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
-
-        txtConsultar.setText("jTextField1");
         jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 120, -1));
 
-        jLabel3.setText("notas");
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setText("Notas");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setText("Nombre alumno");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+
+        lblPnombre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblPnombre.setText("jLabel5");
+        jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 50, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 560));
 
@@ -432,6 +444,7 @@ public class frmNotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -471,6 +484,7 @@ public class frmNotas extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblPnombre;
     private javax.swing.JLabel lblResponsable;
     private javax.swing.JTextField txtConsultar;
     // End of variables declaration//GEN-END:variables

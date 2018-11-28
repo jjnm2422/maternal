@@ -34,13 +34,13 @@ public class frmMenu extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         btnAjustes = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblNota = new javax.swing.JLabel();
+        lblInscripcion = new javax.swing.JLabel();
+        lblPago = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        lblAsistencia = new javax.swing.JLabel();
+        lblReporte = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,33 +68,33 @@ public class frmMenu extends javax.swing.JFrame {
         btnCerrarSesion.setName("btnCerrarSesion"); // NOI18N
         jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
-        jLabel4.setText("notas");
-        jLabel4.setName("lblNotas"); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        lblNota.setText("notas");
+        lblNota.setName("lblNotas"); // NOI18N
+        jPanel2.add(lblNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        jLabel5.setText("inscripcion");
-        jLabel5.setName("lblInscripcion"); // NOI18N
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
+        lblInscripcion.setText("inscripcion");
+        lblInscripcion.setName("lblInscripcion"); // NOI18N
+        jPanel2.add(lblInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
-        jLabel6.setText("pagos");
-        jLabel6.setName("lblPagos"); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        lblPago.setText("pagos");
+        lblPago.setName("lblPagos"); // NOI18N
+        jPanel2.add(lblPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
-        jLabel7.setText("usuario");
-        jLabel7.setName("lblUsuario"); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
+        lblUsuario.setText("usuario");
+        lblUsuario.setName("lblUsuario"); // NOI18N
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
 
-        jLabel8.setText("asistencia");
-        jLabel8.setName("lblAsistencia"); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+        lblAsistencia.setText("asistencia");
+        lblAsistencia.setName("lblAsistencia"); // NOI18N
+        jPanel2.add(lblAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
 
-        jLabel9.setText("reportes");
-        jLabel9.setName("lblReportes"); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, -1, -1));
+        lblReporte.setText("reportes");
+        lblReporte.setName("lblReportes"); // NOI18N
+        jPanel2.add(lblReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, -1, -1));
 
-        jLabel10.setText("usuario activo");
-        jLabel10.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 370));
 
@@ -141,17 +141,17 @@ public class frmMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAsistencia;
     private javax.swing.JLabel lblHora;
+    private javax.swing.JLabel lblInscripcion;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblNota;
+    private javax.swing.JLabel lblPago;
+    private javax.swing.JLabel lblReporte;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuarioActvo;
     // End of variables declaration//GEN-END:variables
 }

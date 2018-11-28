@@ -32,18 +32,17 @@ public class frmPago extends javax.swing.JFrame {
         txtConsulta = new javax.swing.JTextField();
         btnConsultar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatosAlumno = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblMeses = new javax.swing.JTable();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblCuota = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblMora = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -54,14 +53,12 @@ public class frmPago extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtConsulta.setText("jTextField1");
-        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 120, -1));
+        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
 
         btnConsultar.setText("consultar");
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -72,11 +69,11 @@ public class frmPago extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblDatosAlumno);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 100));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblMeses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -87,43 +84,42 @@ public class frmPago extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblMeses);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 600, 100));
 
         btnAtras.setText("atras");
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, -1, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
 
         btnGuardar.setText("guardar");
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
-        jButton4.setText("jButton4");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, -1));
-
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setText("cuota");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
-        jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        lblCuota.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblCuota.setText("jLabel2");
+        jPanel2.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setText("mora");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
-        jLabel4.setText("jLabel4");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
+        lblMora.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblMora.setText("jLabel4");
+        jPanel2.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setText("total a pagar");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
 
-        jLabel6.setText("jLabel6");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
+        lblTotal.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblTotal.setText("jLabel6");
+        jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
 
-        jLabel7.setText("codigo alumno");
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setText("Codigo Aumno");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel8.setText("Pagos");
@@ -138,10 +134,6 @@ public class frmPago extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,13 +174,9 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -196,8 +184,11 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lblCuota;
+    private javax.swing.JLabel lblMora;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JTable tblDatosAlumno;
+    private javax.swing.JTable tblMeses;
     private javax.swing.JTextField txtConsulta;
     // End of variables declaration//GEN-END:variables
 }
