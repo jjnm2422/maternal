@@ -82,286 +82,215 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(75, 156, 236));
+        jPanel2.setBackground(new java.awt.Color(1, 87, 155));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jRadioButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton1.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("jRadioButton1");
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 53, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton2.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("jRadioButton2");
+        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 79, -1, -1));
 
-        jRadioButton3.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton3.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("jRadioButton3");
+        jPanel3.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 105, -1, -1));
 
-        jRadioButton4.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton4.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton4.setText("jRadioButton4");
+        jPanel3.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 131, -1, -1));
 
-        jRadioButton5.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton5.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton5.setText("jRadioButton5");
+        jPanel3.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 157, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("jLabel6");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 13, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel6)))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(26, 26, 26)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 320));
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBackground(new java.awt.Color(2, 119, 189));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
         jPanel4.setForeground(new java.awt.Color(0, 0, 153));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("jLabel7");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 13, -1, -1));
 
-        jRadioButton6.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton6.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton6.setText("jRadioButton6");
+        jPanel4.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 53, -1, -1));
 
-        jRadioButton7.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton7.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton7.setText("jRadioButton7");
+        jPanel4.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 79, -1, -1));
 
-        jRadioButton8.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton8.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton8.setText("jRadioButton8");
+        jPanel4.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 105, -1, -1));
 
-        jRadioButton9.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton9.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton9.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton9.setText("jRadioButton9");
+        jPanel4.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 131, -1, -1));
 
-        jRadioButton10.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton10.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton10.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton10.setText("jRadioButton10");
+        jPanel4.add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 157, -1, -1));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton7)
-                            .addComponent(jRadioButton6)
-                            .addComponent(jRadioButton8)
-                            .addComponent(jRadioButton9)
-                            .addComponent(jRadioButton10))))
-                .addContainerGap(27, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(26, 26, 26)
-                .addComponent(jRadioButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 160, 320));
 
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBackground(new java.awt.Color(2, 119, 189));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("jLabel8");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 13, -1, -1));
 
-        jRadioButton11.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton11.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton11.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton11.setText("jRadioButton11");
+        jPanel5.add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 54, -1, -1));
 
-        jRadioButton12.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton12.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton12.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton12.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton12.setText("jRadioButton12");
+        jPanel5.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 77, -1, -1));
 
-        jRadioButton13.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton13.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton13.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton13.setText("jRadioButton13");
+        jPanel5.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 106, -1, -1));
 
-        jRadioButton14.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton14.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton14.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton14.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton14.setText("jRadioButton14");
         jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton14ActionPerformed(evt);
             }
         });
+        jPanel5.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 129, -1, -1));
 
-        jRadioButton15.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton15.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton15.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton15.setText("jRadioButton15");
+        jPanel5.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 155, -1, -1));
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(58, 58, 58))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton12)
-                    .addComponent(jRadioButton13)
-                    .addComponent(jRadioButton14)
-                    .addComponent(jRadioButton15))
-                .addGap(0, 33, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addGap(27, 27, 27)
-                .addComponent(jRadioButton11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton12)
-                .addGap(6, 6, 6)
-                .addComponent(jRadioButton13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton14)
-                .addGap(3, 3, 3)
-                .addComponent(jRadioButton15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 160, 320));
 
-        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel6.setBackground(new java.awt.Color(2, 119, 189));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("jLabel9");
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 13, -1, -1));
 
-        jRadioButton16.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton16.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton16.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton16.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton16.setText("jRadioButton16");
+        jPanel6.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 55, -1, -1));
 
-        jRadioButton17.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton17.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton17.setText("jRadioButton17");
+        jPanel6.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, -1, -1));
 
-        jRadioButton18.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton18.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton18.setText("jRadioButton18");
+        jPanel6.add(jRadioButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        jRadioButton19.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton19.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton19.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton19.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton19.setText("jRadioButton19");
+        jPanel6.add(jRadioButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 133, -1, -1));
 
-        jRadioButton20.setBackground(new java.awt.Color(153, 153, 153));
+        jRadioButton20.setBackground(new java.awt.Color(2, 119, 189));
+        jRadioButton20.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jRadioButton20.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton20.setText("jRadioButton20");
+        jPanel6.add(jRadioButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, -1, -1));
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(50, 50, 50))
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton20)
-                    .addComponent(jRadioButton19)
-                    .addComponent(jRadioButton18)
-                    .addComponent(jRadioButton17)
-                    .addComponent(jRadioButton16))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(28, 28, 28)
-                .addComponent(jRadioButton16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton17)
-                .addGap(6, 6, 6)
-                .addComponent(jRadioButton18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 160, 320));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Codigo alumno");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Responsable");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         lblResponsable.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblResponsable.setForeground(new java.awt.Color(255, 255, 255));
         lblResponsable.setText("jLabel4");
         jPanel2.add(lblResponsable, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 50, 20));
 
@@ -380,20 +309,23 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 120, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Notas");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre alumno");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         lblPnombre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblPnombre.setForeground(new java.awt.Color(255, 255, 255));
         lblPnombre.setText("jLabel5");
         jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 50, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 560));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 560));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

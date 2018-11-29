@@ -52,6 +52,7 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
 
@@ -95,42 +96,51 @@ public class frmPago extends javax.swing.JFrame {
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("cuota");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         lblCuota.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblCuota.setForeground(new java.awt.Color(255, 255, 255));
         lblCuota.setText("jLabel2");
         jPanel2.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("mora");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         lblMora.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblMora.setForeground(new java.awt.Color(255, 255, 255));
         lblMora.setText("jLabel4");
         jPanel2.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("total a pagar");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
 
         lblTotal.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblTotal.setText("jLabel6");
         jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Codigo Aumno");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Pagos");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 90, -1));
 
         jLabel9.setText("logo");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 440));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 520));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

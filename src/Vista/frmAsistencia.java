@@ -65,6 +65,7 @@ public class frmAsistencia extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(1, 87, 155));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnConsultar.setText("consultar");
@@ -81,6 +82,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jScrollPane1.setName("tblSeccion"); // NOI18N
 
+        tblMatricula.setBackground(new java.awt.Color(2, 119, 189));
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -102,6 +104,8 @@ public class frmAsistencia extends javax.swing.JFrame {
         jButton2.setText("atras");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("grupo");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 50, 20));
 
@@ -113,18 +117,25 @@ public class frmAsistencia extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("logo");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
 
+        lblTitulo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("asistencia alumnos");
         jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 14, 360, 20));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("responsable");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, 20));
 
+        tblAlumnosI.setBackground(new java.awt.Color(2, 119, 189));
         tblAlumnosI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -143,6 +154,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 310, 130));
 
+        tblAlumnosA.setBackground(new java.awt.Color(2, 119, 189));
         tblAlumnosA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -161,7 +173,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 310, 130));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 500));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

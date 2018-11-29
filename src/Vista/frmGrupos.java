@@ -45,12 +45,15 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(1, 87, 155));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Secciones");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 140, -1));
 
+        tblSeccion.setBackground(new java.awt.Color(69, 90, 100));
         tblSeccion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -67,6 +70,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 250, 320));
 
+        tblMatricula.setBackground(new java.awt.Color(69, 90, 100));
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -96,6 +100,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("grupo a cargar");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
 

@@ -45,18 +45,24 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(1, 87, 155));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Asistencia Docente");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 240, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("responsable");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 70, 20));
 
         jScrollPane1.setName("tblDocentes"); // NOI18N
 
+        tblDocente.setBackground(new java.awt.Color(69, 90, 100));
+        tblDocente.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        tblDocente.setForeground(new java.awt.Color(255, 255, 255));
         tblDocente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -73,6 +79,9 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 280, 300));
 
+        tblDocenteI.setBackground(new java.awt.Color(69, 90, 100));
+        tblDocenteI.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        tblDocenteI.setForeground(new java.awt.Color(255, 255, 255));
         tblDocenteI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -89,6 +98,9 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 320, 140));
 
+        tblDocenteA.setBackground(new java.awt.Color(69, 90, 100));
+        tblDocenteA.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        tblDocenteA.setForeground(new java.awt.Color(255, 255, 255));
         tblDocenteA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -113,6 +125,8 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         btnGuardar.setName("btnGuardar"); // NOI18N
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("jLabel3");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 90, -1));
 
