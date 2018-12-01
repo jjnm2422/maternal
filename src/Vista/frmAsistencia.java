@@ -202,9 +202,9 @@ public class frmAsistencia extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             DefaultTableModel model = null;
             Object opciones[] = {"Asistente", "Inasistente"};
-            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,opciones, "Asistente");
-            if (respuesta==0) {
-                int fila = this.tblMatricula.getSelectedRow();            
+            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Asistente");
+            if (respuesta == 0) {
+                int fila = this.tblMatricula.getSelectedRow();
                 model = (DefaultTableModel) tblMatricula.getModel();
                 tblAlumnosA.setModel(coordinador.añadirListaAsistentes(tblMatricula, tblAlumnosA, fila));
                 model.removeRow(fila);
@@ -220,60 +220,65 @@ public class frmAsistencia extends javax.swing.JFrame {
     }//GEN-LAST:event_tblMatriculaMouseClicked
 
     private void tblAlumnosAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlumnosAMouseClicked
-    if (evt.getClickCount() == 2) {
-        int fila = this.tblAlumnosA.getSelectedRow();
-        tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosA, tblMatricula, fila));
-        DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
-        model.removeRow(fila);
-        tblAlumnosA.setModel(model);
-    }
+        if (evt.getClickCount() == 2) {
+            int fila = this.tblAlumnosA.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosA, tblMatricula, fila));
+            DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
+            model.removeRow(fila);
+            tblAlumnosA.setModel(model);
+        }
     }//GEN-LAST:event_tblAlumnosAMouseClicked
 
     private void tblAlumnosIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlumnosIMouseClicked
-    if (evt.getClickCount() == 2) {
-        int fila = this.tblAlumnosI.getSelectedRow();
-        tblMatricula.setModel(coordinador.añadirListaInasistentes(tblAlumnosI, tblMatricula, fila));
-        DefaultTableModel model = (DefaultTableModel) tblAlumnosI.getModel();
-        model.removeRow(fila);
-        tblAlumnosI.setModel(model);
-    }
+        if (evt.getClickCount() == 2) {
+            int fila = this.tblAlumnosI.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaInasistentes(tblAlumnosI, tblMatricula, fila));
+            DefaultTableModel model = (DefaultTableModel) tblAlumnosI.getModel();
+            model.removeRow(fila);
+            tblAlumnosI.setModel(model);
+        }
     }//GEN-LAST:event_tblAlumnosIMouseClicked
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         if (tblAlumnosA.getRowCount() > 0 || tblAlumnosI.getRowCount() > 0) {
             Object opciones[] = {"Seguir", "Descartar"};
-            int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,opciones, "Seguir");
-            if (respuesta==1) {
-                String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+            int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Seguir");
+            if (respuesta == 1) {
+                String[] titulos = {"ID", "Primer Nombre", "Primer Apellido"};
                 borrarTablas();
                 this.llenarTabla(cbxGrupo.getSelectedItem().toString());
             }
         } else {
             if (coordinador.getAsistenciaDAO().consultarAsistenciaDelDia(coordinador.getFechaFormateada(), cbxGrupo.getSelectedItem().toString())) {
                 JOptionPane.showMessageDialog(this, "Asistencia lista para esta seccion");
-            }else{
-               this.llenarTabla(cbxGrupo.getSelectedItem().toString()); 
-            } 
+            } else {
+                this.llenarTabla(cbxGrupo.getSelectedItem().toString());
+            }
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if (tblMatricula.getRowCount()==0) {
-                String respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, 1);
+        if (tblMatricula.getRowCount() == 0) {
+            String respuesta = "";
+            if (tblAlumnosA.getModel().getRowCount()>0) {
+                respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, 1);
+            }
+            if (tblAlumnosI.getRowCount()>0) {
                 respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, 1);
-                JOptionPane.showMessageDialog(this, respuesta);
-                borrarTablas();
-        }else{
+            }
+            JOptionPane.showMessageDialog(this, respuesta);
+            borrarTablas();
+        } else {
             JOptionPane.showMessageDialog(this, "Alumno pendientes por pasar asistencia");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void tblMatriculaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblMatriculaKeyPressed
-        if (evt.getExtendedKeyCode()==KeyEvent.VK_ENTER) {
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
             System.out.println("tecla pulsada");
             Object opciones[] = {"Asistente", "Inasistente"};
-            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,opciones, "Asistente");
-            if (respuesta==0) {
+            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Asistente");
+            if (respuesta == 0) {
                 int fila = this.tblMatricula.getSelectedRow();
                 tblAlumnosA.setModel(coordinador.añadirListaAsistentes(tblMatricula, tblAlumnosA, fila));
                 DefaultTableModel model = (DefaultTableModel) tblMatricula.getModel();
@@ -286,31 +291,31 @@ public class frmAsistencia extends javax.swing.JFrame {
                 model.removeRow(fila);
                 tblMatricula.setModel(model);
             }
-        } 
+        }
     }//GEN-LAST:event_tblMatriculaKeyPressed
 
     private void tblAlumnosAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblAlumnosAKeyPressed
-    if (evt.getExtendedKeyCode()==KeyEvent.VK_ENTER) {
-        int fila = this.tblAlumnosA.getSelectedRow();
-        tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosA, tblMatricula, fila));
-        DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
-        model.removeRow(fila);
-        tblAlumnosA.setModel(model);
-    }
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
+            int fila = this.tblAlumnosA.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosA, tblMatricula, fila));
+            DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
+            model.removeRow(fila);
+            tblAlumnosA.setModel(model);
+        }
     }//GEN-LAST:event_tblAlumnosAKeyPressed
 
     private void tblAlumnosIKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblAlumnosIKeyPressed
-    if (evt.getExtendedKeyCode()==KeyEvent.VK_ENTER) {
-        int fila = this.tblAlumnosI.getSelectedRow();
-        tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosI, tblMatricula, fila));
-        DefaultTableModel model = (DefaultTableModel) tblAlumnosI.getModel();
-        model.removeRow(fila);
-        tblAlumnosI.setModel(model);
-    }
+        if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
+            int fila = this.tblAlumnosI.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblAlumnosI, tblMatricula, fila));
+            DefaultTableModel model = (DefaultTableModel) tblAlumnosI.getModel();
+            model.removeRow(fila);
+            tblAlumnosI.setModel(model);
+        }
     }//GEN-LAST:event_tblAlumnosIKeyPressed
 
     private void cbxGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGrupoActionPerformed
-    
+
     }//GEN-LAST:event_cbxGrupoActionPerformed
 
     /**
@@ -370,7 +375,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
-        lblTitulo.setText("Asistencia de alumno fecha "+coordinador.getFechaFormateada());
+        lblTitulo.setText("Asistencia de alumno fecha " + coordinador.getFechaFormateada());
     }
 
     private void llenarTabla(String seccion) {
@@ -379,12 +384,19 @@ public class frmAsistencia extends javax.swing.JFrame {
 
     private void borrarTablas() {
         DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
-        for (int i = 0; i <= tblAlumnosA.getModel().getRowCount(); i++) {
-            model.removeRow(0);
+        if (model.getRowCount() > 0) {
+            int filas = tblAlumnosA.getModel().getRowCount();
+            for (int i = 0; i <=filas; i++) {
+                model.removeRow(0);
+            }
         }
+
         DefaultTableModel model2 = (DefaultTableModel) tblAlumnosI.getModel();
-        for (int i = 0; i <= tblAlumnosI.getModel().getRowCount(); i++) {
-            model2.removeRow(0);
+        if (model2.getRowCount() > 0) {
+             int filas = tblAlumnosI.getModel().getRowCount();
+            for (int i = 0; i <=filas; i++) {
+                model2.removeRow(0);
+            }
         }
     }
 }

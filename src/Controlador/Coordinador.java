@@ -7,6 +7,7 @@ package Controlador;
 
 import DAO.AlumnoDAO;
 import DAO.AsistenciaADAO;
+import DAO.Asistencia_dDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
@@ -16,10 +17,12 @@ import VO.AlumnoVO;
 import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
 import Vista.Login;
+import Vista.frmDocenteAsistencia;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -38,6 +41,8 @@ public class Coordinador {
     private frmAsistencia frmAsistencia;
     private MatriculaDAO matriculaDAO;
     private AsistenciaADAO asistenciaDAO;
+    private frmDocenteAsistencia frmDocenteAsistencia;
+    private Asistencia_dDAO asistencia_dDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -148,6 +153,10 @@ public class Coordinador {
         return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
     }
     
+    public DefaultTableModel añadirListaDocentesAsistentes(JTable tabla, JTable tabla2, int fila) {
+        return getLogica().añadirListaDocentesAsistentes(tabla, tabla2, fila);
+    }
+    
     public DefaultTableModel añadirListaInasistentes(JTable tabla, JTable tabla2, int fila) {
         return getLogica().añadirListaInasistentes(tabla, tabla2, fila);
     }
@@ -167,11 +176,7 @@ public class Coordinador {
     public VO.UsuarioVO consultarUsuario(String parametro) {
         return getUsuarioDAO().consultarUsuario(parametro);
     }
-    
-    public DefaultTableModel consultarAlumnosTodosTabla(){
-        return getAlumnoDAO().consultarAlumnosTodosTabla();
-    }
-
+   
     public void setFrmAsistencia(frmAsistencia frmAsistencia) {
         this.frmAsistencia = frmAsistencia;
     }
@@ -202,5 +207,29 @@ public class Coordinador {
 
     public AsistenciaADAO getAsistenciaDAO() {
         return asistenciaDAO;
+    }
+    
+    public DefaultTableModel consultarEmpleadosTodosTabla(){
+        return getEmpleadoDAO().consultarEmpleadosTodosTabla();
+    }
+
+    public void setFrmDocenteAsistencia(frmDocenteAsistencia frmDocenteAsistencia) {
+        this.frmDocenteAsistencia = frmDocenteAsistencia;
+    }
+
+    public frmDocenteAsistencia getFrmDocenteAsistencia() {
+        return frmDocenteAsistencia;
+    }
+
+    public String registrarAsistenciaEmpleado(DefaultTableModel model, boolean asistencia, int usuario) {
+        return getAsistencia_dDAO().registrarAsistenciaEmpleado(model, asistencia, usuario);
+    }
+
+    public void setAsistencia_dDAO(Asistencia_dDAO asistencia_dDAO) {
+           this.asistencia_dDAO = asistencia_dDAO;
+    }
+
+    public Asistencia_dDAO getAsistencia_dDAO() {
+        return asistencia_dDAO;
     }
 }

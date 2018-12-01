@@ -6,11 +6,18 @@
 
 package Vista;
 
+import Controlador.Coordinador;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Lenovo
  */
 public class frmDocenteAsistencia extends javax.swing.JFrame {
+
+    private Coordinador coordinador;
 
     /** Creates new form frmDocenteAsistencia */
     public frmDocenteAsistencia() {
@@ -26,24 +33,33 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDocente = new javax.swing.JTable();
+        tblDocente = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblDocenteI = new javax.swing.JTable();
+        tblDocenteI = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         jScrollPane3 = new javax.swing.JScrollPane();
-        tblDocenteA = new javax.swing.JTable();
+        tblDocenteA = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(1, 87, 155));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,35 +81,40 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         tblDocente.setForeground(new java.awt.Color(255, 255, 255));
         tblDocente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        tblDocente.setName("tblDocente"); // NOI18N
+        tblDocente.setName(""); // NOI18N
+        tblDocente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDocenteMouseClicked(evt);
+            }
+        });
+        tblDocente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblDocenteKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDocente);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 280, 300));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, 290));
 
         tblDocenteI.setBackground(new java.awt.Color(69, 90, 100));
         tblDocenteI.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         tblDocenteI.setForeground(new java.awt.Color(255, 255, 255));
         tblDocenteI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Primer Nombre", "Primer Apellido"
             }
         ));
-        tblDocenteI.setName("tblDocentesI"); // NOI18N
+        tblDocenteI.setName(""); // NOI18N
         jScrollPane2.setViewportView(tblDocenteI);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 320, 140));
@@ -103,39 +124,96 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         tblDocenteA.setForeground(new java.awt.Color(255, 255, 255));
         tblDocenteA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Primer Nombre", "Primer Apellido"
             }
         ));
-        tblDocenteA.setName("tblDocenteA"); // NOI18N
+        tblDocenteA.setName(""); // NOI18N
         jScrollPane3.setViewportView(tblDocenteA);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 320, 140));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 320, 140));
 
         btnAtras.setText("atras");
         btnAtras.setName("btnAtras"); // NOI18N
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, -1, -1));
 
         btnGuardar.setText("guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, -1, -1));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("jLabel3");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 90, -1));
+        lblUsuario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("jjnm");
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 90, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 470));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblDocenteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblDocenteKeyPressed
+         if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
+            System.out.println("tecla pulsada");
+            Object opciones[] = {"Asistente", "Inasistente"};
+            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Asistente");
+            if (respuesta == 0) {
+                int fila = this.tblDocente.getSelectedRow();
+                tblDocenteA.setModel(coordinador.añadirListaDocentesAsistentes(tblDocente, tblDocenteA, fila));
+                DefaultTableModel model = (DefaultTableModel) tblDocente.getModel();
+                model.removeRow(fila);
+                tblDocente.setModel(model);
+            } else {
+                int fila = this.tblDocente.getSelectedRow();
+                tblDocenteI.setModel(coordinador.añadirListaDocentesAsistentes(tblDocente, tblDocenteI, fila));
+                DefaultTableModel model = (DefaultTableModel) tblDocente.getModel();
+                model.removeRow(fila);
+                tblDocente.setModel(model);
+            }
+        }
+    }//GEN-LAST:event_tblDocenteKeyPressed
+
+    private void tblDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDocenteMouseClicked
+if (evt.getClickCount() == 2) {
+            Object opciones[] = {"Asistente", "Inasistente"};
+            int respuesta = JOptionPane.showOptionDialog(this, "Lista Asistente o inasistente", "Mover a:", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Asistente");
+            if (respuesta == 0) {
+                int fila = this.tblDocente.getSelectedRow();
+                tblDocenteA.setModel(coordinador.añadirListaDocentesAsistentes(tblDocente, tblDocenteA, fila));
+                DefaultTableModel model = (DefaultTableModel) tblDocente.getModel();
+                model.removeRow(fila);
+                tblDocente.setModel(model);
+            } else {
+                int fila = this.tblDocente.getSelectedRow();
+                tblDocenteI.setModel(coordinador.añadirListaDocentesAsistentes(tblDocente, tblDocenteI, fila));
+                DefaultTableModel model = (DefaultTableModel) tblDocente.getModel();
+                model.removeRow(fila);
+                tblDocente.setModel(model);
+            }
+        }
+    }//GEN-LAST:event_tblDocenteMouseClicked
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+       // if (tblDocente.getRowCount() == 0) {
+            String respuesta = "";
+            if (tblDocenteA.getModel().getRowCount()>0) {
+                respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteA.getModel(), true, 1);
+            }
+            if (tblDocenteI.getRowCount()>0) {
+                respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteI.getModel(), false, 1);
+            }
+            JOptionPane.showMessageDialog(this, respuesta);
+            borrarTablas();
+       // } else {
+         //   JOptionPane.showMessageDialog(this, "Docentes  pendientes por pasar asistencia");
+        //}
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,15 +255,41 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JTable tblDocente;
     private javax.swing.JTable tblDocenteA;
     private javax.swing.JTable tblDocenteI;
     // End of variables declaration//GEN-END:variables
+
+    private void llenarTabla() {
+        tblDocente.setModel(coordinador.consultarEmpleadosTodosTabla());
+    }
+
+    public void setCoordinador(Coordinador coordinador) {
+       this.coordinador = coordinador;
+       llenarTabla();
+    }
+
+    private void borrarTablas() {
+        DefaultTableModel model = (DefaultTableModel) tblDocenteA.getModel();
+        if (model.getRowCount() > 0) {
+            int filas = tblDocenteA.getModel().getRowCount();
+            for (int i = 0; i <filas; i++) {
+                model.removeRow(0);
+            }
+        }
+
+        DefaultTableModel model2 = (DefaultTableModel) tblDocenteI.getModel();
+        if (model2.getRowCount() > 0) {
+             int filas = tblDocenteI.getModel().getRowCount();
+            for (int i = 0; i <filas; i++) {
+                model2.removeRow(0);
+            }
+        }
+    }
 
 }

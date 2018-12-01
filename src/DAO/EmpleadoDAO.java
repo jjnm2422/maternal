@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -137,5 +139,63 @@ public class EmpleadoDAO {
         } else {
             return "ERROR AL CONECTAR CON BD";
         }
+    }
+    
+    public DefaultTableModel consultarEmpleadosTodosTabla(){
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM "+this.tabla;
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("id_empleado");
+        fila[1]=rs.getString("primer_nombre");
+        fila[2]=rs.getString("primer_apellido");
+        model.addRow(fila);
+    }
+         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+            return model = null;
+         }
+    return model;
+}
+    public String registrarAsistenciaEmpleados(DefaultTableModel model, boolean asistencia,  int usuario) {
+        String respuesta = "";
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        PreparedStatement ps = null;
+        
+        for (int i = 0; i < model.getRowCount(); i++) {
+            String sql = "insert into "+this.tabla+" (id_alumno, fecha, asistencia, id_usuario) values(?,?,?,?)";
+        if (conexion!=null) {
+            try {
+            ps = conexion.prepareCall(sql);
+            ps.setInt(1, Integer.parseInt(model.getValueAt(i, 0).toString()));
+            ps.setString(2, coordinador.getFechaFormateada());
+            ps.setBoolean(3,  asistencia);
+            ps.setInt(4,  usuario);
+            int n = ps.executeUpdate();
+            if (n > 0 && i==model.getRowCount()-1) {
+                respuesta = "Asistencia guardada con exito";
+            }
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = ex.getMessage();
+                break;
+            } 
+        } else {
+            respuesta = "ERROR al conectarse con BD";
+        }
+        }
+        return respuesta;
     }
 }
