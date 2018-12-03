@@ -16,8 +16,10 @@ import Modelo.Logica;
 import VO.AlumnoVO;
 import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
-import Vista.Login;
+import Vista.frmLogin;
 import Vista.frmDocenteAsistencia;
+import Vista.frmGrupos;
+import Vista.frmMenu;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
@@ -33,7 +35,7 @@ public class Coordinador {
 
     private AlumnoDAO alumnoDAO;
     private Logica logica;
-    private Login login;
+    private frmLogin login;
     private UsuarioDAO usuarioDAO;
     private EmpleadoDAO empleadoDAO;
     private RepresentanteDAO representanteDAO;
@@ -43,6 +45,8 @@ public class Coordinador {
     private AsistenciaADAO asistenciaDAO;
     private frmDocenteAsistencia frmDocenteAsistencia;
     private Asistencia_dDAO asistencia_dDAO;
+    private frmMenu frmMenu;
+    private frmGrupos frmGrupos;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -52,7 +56,7 @@ public class Coordinador {
         this.logica = logica;
     }
 
-    public void setLogin(Login login) {
+    public void setLogin(frmLogin login) {
         this.login = login;
     }
 
@@ -68,7 +72,7 @@ public class Coordinador {
         return logica;
     }
 
-    public Login getLogin() {
+    public frmLogin getLogin() {
         return login;
     }
 
@@ -232,4 +236,36 @@ public class Coordinador {
     public Asistencia_dDAO getAsistencia_dDAO() {
         return asistencia_dDAO;
     }
+    
+    public  void borrarTablas(JTable tbl1,  JTable tbl2) {
+        getLogica().borrarTablas(tbl1, tbl2);
+    }
+
+    public void setFrmMenu(frmMenu frmMenu) {
+        this.frmMenu = frmMenu;
+    }
+
+    public frmMenu getFrmMenu() {
+        return frmMenu;
+    }
+    
+      public boolean consultarAsistenciaDelDia(String fecha) {
+          return getAsistencia_dDAO().consultarAsistenciaDelDia(fecha);
+      }
+      public String actualizarClaveUsuario(String clave, String id){
+          return  getUsuarioDAO().actualizarClaveUsuario(clave, id);
+      }
+
+    public void setFrmGrupos(frmGrupos frmGrupos) {
+        this.frmGrupos = frmGrupos;
+    }
+
+    public frmGrupos getFrmGrupos() {
+        return frmGrupos;
+    }
+    
+    public DefaultTableModel consultarMatriculaSinSeccion(){
+        return getMatriculaDAO().consultarMatriculaSinSeccion();
+    }
+   
 }

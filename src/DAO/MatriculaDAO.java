@@ -7,9 +7,12 @@ package DAO;
 
 import Controlador.Coordinador;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -53,4 +56,61 @@ public class MatriculaDAO {
     }
     return model;
 }
+    
+    public DefaultTableModel consultarMatriculaSinSeccion(){
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM "+this.tabla+" INNER JOIN alumno ON matricula.id_alumno = alumno.id_alumno where matricula.seccion is null";
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("id_alumno");
+        fila[1]=rs.getString("primer_nombre");
+        fila[2]=rs.getString("primer_apellido");
+        model.addRow(fila);
+    }
+    conexion.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+        return model = null;
+    }
+    return model;
+}
+    
+      public String registrarPrueba() {
+        String respuesta = "";
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado) VALUES (?, ?)" ;
+        if (conexion!=null) {
+            for (int i = 1; i  <= 100; i++) {
+           try {
+            ps = conexion.prepareCall(sql);
+            ps.setInt(1, i);
+            ps.setInt(2, 1);
+            int n = ps.executeUpdate();
+            if (n > 0) {
+                respuesta = "INGRESADO CON EXITO";
+            }
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                 respuesta = ex.getMessage();
+            }
+            } 
+        } else {
+            respuesta = "ERROR AL CONECTAR CON BD";
+        }
+        return respuesta;
+    }
+    
 }

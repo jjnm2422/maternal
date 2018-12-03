@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
 
     private Coordinador coordinador;
-    private final String tabla = "usuarios";
+    private final String tabla = "usuario";
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -74,6 +74,7 @@ public class UsuarioDAO {
                     usuarioVO.setNombre_usuario(result.getString("nombre_usuario"));
                     usuarioVO.setPregunta_secreta(result.getString("pregunta_secreta"));
                     usuarioVO.setRespuesta_secreta(result.getString("respuesta_secreta"));
+                    usuarioVO.setId_usuario(result.getInt("id_usuario"));
                     }
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -163,6 +164,32 @@ public class UsuarioDAO {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 //ps.setString(1, usuarioVO.getNombre1());
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
+    
+        public String actualizarClaveUsuario(String clave, String id){
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE "+this.tabla+" SET clave=? where id_usuario= '"+id+"'";
+
+        if (conexion!=null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setString(1,clave);
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

@@ -18,15 +18,19 @@ public class Main {
         DAO.EmpleadoDAO empleadoDAO = new DAO.EmpleadoDAO();
         DAO.RepresentanteDAO representanteDAO = new DAO.RepresentanteDAO();
         Modelo.Logica logica = new Modelo.Logica();
-        Vista.Login login = new Vista.Login();
+        Vista.frmLogin login = new Vista.frmLogin();
         Vista.frmLoginRecuperacion frmLoginRecuperacion = new Vista.frmLoginRecuperacion();
         Vista.frmDocenteAsistencia frmDocenteAsistencia = new Vista.frmDocenteAsistencia();
         Vista.frmAsistencia frmAsistencia = new Vista.frmAsistencia();
         DAO.MatriculaDAO matriculaDAO = new DAO.MatriculaDAO();
         DAO.AsistenciaADAO asistenciaDAO = new DAO.AsistenciaADAO();
         DAO.Asistencia_dDAO asistencia_dDAO = new DAO.Asistencia_dDAO();
+        Vista.frmMenu frmMenu = new Vista.frmMenu();
+        Vista.frmGrupos frmGrupos = new Vista.frmGrupos();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setFrmGrupos(frmGrupos);
+        coordinador.setFrmMenu(frmMenu);
         coordinador.setAsistencia_dDAO(asistencia_dDAO);
         coordinador.setFrmDocenteAsistencia(frmDocenteAsistencia);
         coordinador.setAsistenciaDAO(asistenciaDAO);
@@ -40,6 +44,8 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmGrupos.setCoordinador(coordinador);
+        frmMenu.setCoordinador(coordinador);
         asistencia_dDAO.setCoordinador(coordinador);
         frmDocenteAsistencia.setCoordinador(coordinador);
         asistenciaDAO.setCoordinador(coordinador);
@@ -52,7 +58,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        frmDocenteAsistencia.setVisible(true);
-        frmDocenteAsistencia.setLocationRelativeTo(null);
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
 }

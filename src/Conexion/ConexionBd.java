@@ -20,7 +20,7 @@ public class ConexionBd {
     private String usuario = "postgres";
     private String pass = "e8ngmm48";
     private String puerto = "2422";
-    private String url = "jdbc:postgresql://localhost:"+puerto+"/"+nombreDB;
+    private String url = "jdbc:postgresql://192.168.0.103:"+puerto+"/"+nombreDB;
     
     Connection conn = null;
     

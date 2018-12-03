@@ -194,8 +194,12 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3MouseDragged
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-    VO.UsuarioVO datosUsuario = datosUsuario = coordinador.consultarUsuario(txtUsuario.getText());
+        VO.UsuarioVO datosUsuario = datosUsuario = coordinador.consultarUsuario(txtUsuario.getText());
+           String clave1 = coordinador.getClave(txtClave.getPassword());
+           String clave2 = coordinador.getClave(txtClave2.getPassword());
         if (datosUsuario.getPregunta_secreta()!=null) {
+        if (!clave1.isEmpty() || !clave2.isEmpty()) {
+            if (clave1.equals(clave2)) {
             String pregunta = datosUsuario.getPregunta_secreta();
             String respuesta = datosUsuario.getRespuesta_secreta();
             String res ="";
@@ -203,16 +207,23 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
             do {
                 entrada = true;
                 if (entrada) {
-                    res = JOptionPane.showInputDialog(null, pregunta, "", JOptionPane.QUESTION_MESSAGE);
+                    res = JOptionPane.showInputDialog(null, pregunta, "Pregunta de seguridad", JOptionPane.QUESTION_MESSAGE);
                     if (res.equals(respuesta)) {
                         entrada = true;
                         //actualizo la clave
-                       System.out.println("Correcto");
+                      JOptionPane.showMessageDialog(null,  coordinador.actualizarClaveUsuario(clave1, String.valueOf(datosUsuario.getId_usuario())) , "Informacion", JOptionPane.PLAIN_MESSAGE); 
+                      borrarCampos();
                     }else{
                         entrada = false;
                     }
                 }
             } while (!entrada);
+            } else {
+                JOptionPane.showMessageDialog(null, "Claves no Coinciden", "Informacion", JOptionPane.PLAIN_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Campos Vacios", "Informacion", JOptionPane.PLAIN_MESSAGE);
+        }
         }else{
             JOptionPane.showMessageDialog(null, "Usuario no existe", "Informacion", JOptionPane.PLAIN_MESSAGE);
         }
@@ -303,5 +314,11 @@ char c = evt.getKeyChar();
 
     public void setCoordinador(Coordinador coordinador) {
        this.coordinador = coordinador;
+    }
+
+    private void borrarCampos() {
+        txtUsuario.setText("");
+        txtClave2.setText("");
+        txtClave.setText("");
     }
 }

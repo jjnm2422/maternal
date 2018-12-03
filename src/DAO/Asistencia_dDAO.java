@@ -9,6 +9,7 @@ package DAO;
 import Controlador.Coordinador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,6 +57,36 @@ public class Asistencia_dDAO {
             respuesta = "ERROR al conectarse con BD";
         }
         }
+        return respuesta;
+    }
+    
+        public boolean consultarAsistenciaDelDia(String fecha) {
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        VO.AsistenciaVO asistenciaVO = new VO.AsistenciaVO();
+        conexion = conexiondb.getConnection();
+        boolean respuesta;
+        
+        if (conexion!=null) {
+        String sql = "select * from asistencia_d inner join empleado on asistencia_d.id_empleado = empleado.id_empleado where asistencia_d.fecha ='"+fecha+"' ";
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                if (result.next()) {
+                    respuesta = true;
+                } else {
+                    respuesta = false;
+                } 
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = false;
+            }
+        } else {
+            respuesta = false;
+        }
+        conexiondb.desconexion();
         return respuesta;
     }
         

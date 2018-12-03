@@ -61,7 +61,25 @@ public class Logica {
         char[] arrayC1 = campoClave; 
         String c1 = new String(arrayC1);
         return c1;
-    }  
+    } 
+    
+ public  void borrarTablas(JTable tbl1,  JTable tbl2) {
+        DefaultTableModel model = (DefaultTableModel) tbl1.getModel();
+        if (model.getRowCount() > 0) {
+            int filas = tbl1.getModel().getRowCount();
+            for (int i = 0; i <filas; i++) {
+                model.removeRow(0);
+            }
+        }
+
+        DefaultTableModel model2 = (DefaultTableModel) tbl2.getModel();
+        if (model2.getRowCount() > 0) {
+             int filas = tbl2.getModel().getRowCount();
+            for (int i = 0; i <filas; i++) {
+                model2.removeRow(0);
+            }
+        }
+    }
  
     public boolean validacionCorreo(String entrada){
         //formato de correo abd@123.com

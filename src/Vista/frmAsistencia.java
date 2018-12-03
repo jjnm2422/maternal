@@ -24,6 +24,9 @@ public class frmAsistencia extends javax.swing.JFrame {
      */
     public frmAsistencia() {
         initComponents();
+        if (coordinador!=null) {
+            lblTitulo.setText("Asistencia de alumno fecha " + coordinador.getFechaFormateada());
+        }
     }
 
     /**
@@ -64,7 +67,7 @@ public class frmAsistencia extends javax.swing.JFrame {
         };
         lblUsuario = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(1, 87, 155));
@@ -95,7 +98,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
             },
             new String [] {
-
+                "ID", "Primer Nombre", "Primer Apellido"
             }
         ));
         tblMatricula.setName(""); // NOI18N
@@ -114,6 +117,11 @@ public class frmAsistencia extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 250, 300));
 
         jButton2.setText("atras");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -139,6 +147,8 @@ public class frmAsistencia extends javax.swing.JFrame {
         lblTitulo.setText("asistencia alumnos");
         jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 14, 360, 20));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("responsable");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, 20));
 
@@ -148,7 +158,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Primer Nombre", "Segundo Nombre"
+                "ID", "Primer Nombre", "Primer Apellido"
             }
         ));
         tblAlumnosI.setName(""); // NOI18N
@@ -172,7 +182,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Primer Nombre", "Segundo Nombre"
+                "ID", "Primer Nombre", "Primer Apellido"
             }
         ));
         tblAlumnosA.setName(""); // NOI18N
@@ -245,7 +255,7 @@ public class frmAsistencia extends javax.swing.JFrame {
             int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Seguir");
             if (respuesta == 1) {
                 String[] titulos = {"ID", "Primer Nombre", "Primer Apellido"};
-                borrarTablas();
+                coordinador.borrarTablas(tblAlumnosA, tblAlumnosI);
                 this.llenarTabla(cbxGrupo.getSelectedItem().toString());
             }
         } else {
@@ -259,15 +269,19 @@ public class frmAsistencia extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if (tblMatricula.getRowCount() == 0) {
-            String respuesta = "";
-            if (tblAlumnosA.getModel().getRowCount()>0) {
-                respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, 1);
+            if (tblAlumnosA.getRowCount() > 0 || tblAlumnosI.getRowCount() > 0) {
+                String respuesta = "";
+                if (tblAlumnosA.getModel().getRowCount() > 0) {
+                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, 1);
+                }
+                if (tblAlumnosI.getRowCount() > 0) {
+                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, 1);
+                }
+                JOptionPane.showMessageDialog(this, respuesta);
+                coordinador.borrarTablas(tblAlumnosA, tblAlumnosI);
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione una seccion");
             }
-            if (tblAlumnosI.getRowCount()>0) {
-                respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, 1);
-            }
-            JOptionPane.showMessageDialog(this, respuesta);
-            borrarTablas();
         } else {
             JOptionPane.showMessageDialog(this, "Alumno pendientes por pasar asistencia");
         }
@@ -317,6 +331,11 @@ public class frmAsistencia extends javax.swing.JFrame {
     private void cbxGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGrupoActionPerformed
 
     }//GEN-LAST:event_cbxGrupoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     coordinador.getFrmMenu().setVisible(true);
+     this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,28 +394,10 @@ public class frmAsistencia extends javax.swing.JFrame {
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
-        lblTitulo.setText("Asistencia de alumno fecha " + coordinador.getFechaFormateada());
     }
 
     private void llenarTabla(String seccion) {
         tblMatricula.setModel(coordinador.consultarMatriculaPorSeccionTabla(seccion));
     }
 
-    private void borrarTablas() {
-        DefaultTableModel model = (DefaultTableModel) tblAlumnosA.getModel();
-        if (model.getRowCount() > 0) {
-            int filas = tblAlumnosA.getModel().getRowCount();
-            for (int i = 0; i <=filas; i++) {
-                model.removeRow(0);
-            }
-        }
-
-        DefaultTableModel model2 = (DefaultTableModel) tblAlumnosI.getModel();
-        if (model2.getRowCount() > 0) {
-             int filas = tblAlumnosI.getModel().getRowCount();
-            for (int i = 0; i <=filas; i++) {
-                model2.removeRow(0);
-            }
-        }
-    }
 }

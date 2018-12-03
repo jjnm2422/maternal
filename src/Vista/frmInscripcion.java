@@ -9,12 +9,12 @@ package sub_menus;
  *
  * @author rosicesar
  */
-public class Inscripcion extends javax.swing.JFrame {
+public class frmInscripcion extends javax.swing.JFrame {
 
     /**
      * Creates new form Inscripcion
      */
-    public Inscripcion() {
+    public frmInscripcion() {
         initComponents();
     }
 
@@ -117,12 +117,12 @@ public class Inscripcion extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel2.setBackground(new java.awt.Color(2, 119, 189));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel7.setBackground(new java.awt.Color(69, 90, 100));
         jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -156,9 +156,9 @@ public class Inscripcion extends javax.swing.JFrame {
         jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
         jPanel7.add(txtSapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 100, -1));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 430, 140));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 430, 140));
 
-        jPanel8.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel8.setBackground(new java.awt.Color(69, 90, 100));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -167,7 +167,7 @@ public class Inscripcion extends javax.swing.JFrame {
         jLabel4.setText("Sexo");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        rbnFemenino.setBackground(new java.awt.Color(2, 119, 189));
+        rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
         rbnFemenino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnFemenino.setForeground(new java.awt.Color(255, 255, 255));
         rbnFemenino.setText("Femenino");
@@ -178,7 +178,7 @@ public class Inscripcion extends javax.swing.JFrame {
         });
         jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
-        rbnMasculino.setBackground(new java.awt.Color(2, 119, 189));
+        rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
         rbnMasculino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
@@ -192,9 +192,9 @@ public class Inscripcion extends javax.swing.JFrame {
         jLabel3.setText("Fecha de Nacimiento");
         jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 300, 120));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 300, 120));
 
-        jPanel9.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel9.setBackground(new java.awt.Color(69, 90, 100));
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -203,13 +203,13 @@ public class Inscripcion extends javax.swing.JFrame {
         jLabel7.setText("Padece de enfermedades");
         jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        rbnSi.setBackground(new java.awt.Color(2, 119, 189));
+        rbnSi.setBackground(new java.awt.Color(69, 90, 100));
         rbnSi.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnSi.setForeground(new java.awt.Color(255, 255, 255));
         rbnSi.setText("Si");
         jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        rbnNo.setBackground(new java.awt.Color(2, 119, 189));
+        rbnNo.setBackground(new java.awt.Color(69, 90, 100));
         rbnNo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnNo.setForeground(new java.awt.Color(255, 255, 255));
         rbnNo.setText("No");
@@ -229,9 +229,9 @@ public class Inscripcion extends javax.swing.JFrame {
         cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
         jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 310, 120));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 310, 120));
 
-        jPanel10.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel10.setBackground(new java.awt.Color(69, 90, 100));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -256,7 +256,7 @@ public class Inscripcion extends javax.swing.JFrame {
         lblCodigo.setText("jLabel30");
         jPanel10.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 60, -1));
 
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 430, 170));
+        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 430, 170));
 
         btnGuardar.setText("Guardar");
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
@@ -496,20 +496,21 @@ public class Inscripcion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inscripcion().setVisible(true);
+                new frmInscripcion().setVisible(true);
             }
         });
     }

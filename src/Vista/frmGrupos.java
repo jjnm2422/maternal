@@ -5,11 +5,15 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+
 /**
  *
  * @author Lenovo
  */
 public class frmGrupos extends javax.swing.JFrame {
+
+    private Coordinador coordinador;
 
     /**
      * Creates new form frmGrupos
@@ -39,8 +43,10 @@ public class frmGrupos extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cbxSeccion = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        btnLlenar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,46 +60,32 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 140, -1));
 
         tblSeccion.setBackground(new java.awt.Color(69, 90, 100));
-        tblSeccion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         tblSeccion.setName("tblSeccion"); // NOI18N
         jScrollPane1.setViewportView(tblSeccion);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 250, 320));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 250, 320));
 
         tblMatricula.setBackground(new java.awt.Color(69, 90, 100));
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         tblMatricula.setName("tblMatricula"); // NOI18N
         jScrollPane2.setViewportView(tblMatricula);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 250, 320));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 250, 320));
 
         btnAtras.setText("atras");
         btnAtras.setName("btnAtras"); // NOI18N
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, -1, -1));
 
         btnGuardar.setText("guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, -1, -1));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
 
         lblLogo.setText("logo");
         lblLogo.setName("lblLogo"); // NOI18N
@@ -101,11 +93,24 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("grupo a cargar");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jLabel3.setText("Matricula");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
 
         cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
-        jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 60, -1));
+        jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 60, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("grupo a cargar");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, -1));
+
+        btnLlenar.setText("Llenar tabla");
+        btnLlenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLlenarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnLlenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 250, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 500));
 
@@ -113,6 +118,10 @@ public class frmGrupos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLlenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLlenarActionPerformed
+       tblMatricula.setModel(coordinador.consultarMatriculaSinSeccion()); 
+    }//GEN-LAST:event_btnLlenarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,9 +161,11 @@ public class frmGrupos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLlenar;
     private javax.swing.JComboBox<String> cbxSeccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -163,4 +174,8 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JTable tblMatricula;
     private javax.swing.JTable tblSeccion;
     // End of variables declaration//GEN-END:variables
+
+    public void setCoordinador(Coordinador coordinador) {
+       this.coordinador = coordinador;
+    }
 }
