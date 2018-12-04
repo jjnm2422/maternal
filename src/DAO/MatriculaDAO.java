@@ -84,14 +84,14 @@ public class MatriculaDAO {
     }
     return model;
 }
-    
-      public String registrarPrueba() {
+       
+public String registrarMatricula() {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado) VALUES (?, ?)" ;
+        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion) VALUES (?, ?, ?)" ;
         if (conexion!=null) {
             for (int i = 1; i  <= 100; i++) {
            try {
@@ -112,5 +112,31 @@ public class MatriculaDAO {
         }
         return respuesta;
     }
-    
+
+   public String actualizarMatricula(VO.MatriculaVO matriculaVO, String id_alumno){
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE "+this.tabla+" SET seccion=? where id_alumno= '"+id_alumno+"'";
+
+        if (conexion!=null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setString(1, matriculaVO.getSeccion());
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                    conexion.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
 }

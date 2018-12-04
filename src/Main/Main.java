@@ -27,8 +27,10 @@ public class Main {
         DAO.Asistencia_dDAO asistencia_dDAO = new DAO.Asistencia_dDAO();
         Vista.frmMenu frmMenu = new Vista.frmMenu();
         Vista.frmGrupos frmGrupos = new Vista.frmGrupos();
+        Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setFrmInscripcion(frmInscripcion);
         coordinador.setFrmGrupos(frmGrupos);
         coordinador.setFrmMenu(frmMenu);
         coordinador.setAsistencia_dDAO(asistencia_dDAO);
@@ -44,6 +46,7 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmInscripcion.setCoordinador(coordinador);
         frmGrupos.setCoordinador(coordinador);
         frmMenu.setCoordinador(coordinador);
         asistencia_dDAO.setCoordinador(coordinador);
@@ -58,7 +61,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        login.setVisible(true);
-        login.setLocationRelativeTo(null);
+        frmInscripcion.setVisible(true);
+        frmInscripcion.setLocationRelativeTo(null);
     }
 }

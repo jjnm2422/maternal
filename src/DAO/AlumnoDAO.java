@@ -36,8 +36,8 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(fechaNacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipoSangre, edad, sexo)"
-                    + "values(?,?,?)";
+        String sql = "insert into "+this.tabla+"(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, direccion, alergias)"
+                    + "values(?,?,?,?,?,?,?,?,?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -49,6 +49,8 @@ public class AlumnoDAO {
             ps.setString(6, alumnoVO.getTipo_sangre());
             ps.setInt(7, alumnoVO.getEdad());
             ps.setString(8, alumnoVO.getSexo());
+            ps.setString(9, alumnoVO.getDireccion());
+            ps.setString(10, alumnoVO.getAlergias());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INGRESADO CON EXITO";
@@ -154,22 +156,25 @@ public class AlumnoDAO {
         }
     }
     
-    private void LlenarCodigo(){
+    public  int  llenarCodigoAlumno(){
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-    PreparedStatement ps = null;
+    Statement st = null;
     ResultSet result = null;
+    int valor = -1;
     conexion = conexiondb.getConnection();
       try {
-            String sql = "select last_value+1 as valor from public.pedidos_codped_seq";
-            //ResultSet rs = acciones.Consultar(sql);
+            String sql = "select last_value+1 as valor from public.alumnos_id_alumnos_seq";
+            st=conexion.createStatement();
+            result=st.executeQuery(sql);
             while (result.next()) {
-                //lblCodigo.setText(String.valueOf(rs.getInt("valor")));
+                 valor = result.getInt("valor");
             }
-            conexion.close();
+             conexion.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         } 
+      return valor;
     }
     
     public DefaultTableModel consultarAlumnosTabla(String parametro){

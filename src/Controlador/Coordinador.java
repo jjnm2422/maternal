@@ -19,6 +19,7 @@ import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
 import Vista.frmDocenteAsistencia;
 import Vista.frmGrupos;
+import Vista.frmInscripcion;
 import Vista.frmMenu;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -47,6 +48,7 @@ public class Coordinador {
     private Asistencia_dDAO asistencia_dDAO;
     private frmMenu frmMenu;
     private frmGrupos frmGrupos;
+    private frmInscripcion frmInscripcion;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -155,6 +157,10 @@ public class Coordinador {
     
     public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
         return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
+    }
+    
+    public DefaultTableModel añadirListaGrupos(JTable tabla, JTable tabla2, int fila) {
+          return getLogica().añadirListaGrupos(tabla, tabla2, fila);
     }
     
     public DefaultTableModel añadirListaDocentesAsistentes(JTable tabla, JTable tabla2, int fila) {
@@ -267,5 +273,16 @@ public class Coordinador {
     public DefaultTableModel consultarMatriculaSinSeccion(){
         return getMatriculaDAO().consultarMatriculaSinSeccion();
     }
+
+    public void setFrmInscripcion(frmInscripcion frmInscripcion) {
+        this.frmInscripcion = frmInscripcion;
+    }
+
+    public frmInscripcion getFrmInscripcion() {
+        return frmInscripcion;
+    }
    
+    public  int  llenarCodigoAlumno(){
+        return getAlumnoDAO().llenarCodigoAlumno();
+    }
 }
