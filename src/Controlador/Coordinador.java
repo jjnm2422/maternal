@@ -82,6 +82,10 @@ public class Coordinador {
         return getAlumnoDAO().registrarAlumno(alumnoVO);
     }
     
+    public String registrarRepresentante(VO.RepresentanteVO representanteVO) {
+        return getRepresentanteDAO().registrarRepresentante(representanteVO) ;
+    }
+    
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }

@@ -33,13 +33,21 @@ public class RepresentanteDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(nombre1, apellido1, cedula)"
-                    + "values(?,?,?)";
+        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, telefono1, telefono2, direccion, parentesco, ocupacion, cedula, empresa, id_alumno)"
+                    + "values(?,?,?,?,?,?,?,?,?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
             ps.setString(1, representanteVO.getPrimer_nombre());
-            ps.setString(2, representanteVO.getPrimer_apellido());
+            ps.setString(2, representanteVO.getPrimer_nombre());
+            ps.setString(3, representanteVO.getTelefono1());
+            ps.setString(4, representanteVO.getTelefono2());
+            ps.setString(5, representanteVO.getDireccion());
+            ps.setString(6, representanteVO.getParentesco());
+            ps.setString(7, representanteVO.getOcupacion());
+            ps.setString(8, representanteVO.getCedula());
+            ps.setString(9, representanteVO.getEmpresa());
+            ps.setInt(10, representanteVO.getId_alumno());
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";

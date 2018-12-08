@@ -93,7 +93,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtDireccionR1 = new javax.swing.JTextArea();
         txtTelefonoR1 = new javax.swing.JTextField();
-        rxtApellidoR1 = new javax.swing.JTextField();
+        txtApellidoR1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -446,7 +446,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 190, 80));
     jPanel1.add(txtTelefonoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 80, -1));
-    jPanel1.add(rxtApellidoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 80, -1));
+    jPanel1.add(txtApellidoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 80, -1));
 
     jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
     jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -580,10 +580,40 @@ public class frmInscripcion extends javax.swing.JFrame {
         int añoNacimiento= Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual= Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));   
         alumnoVO.setEdad(añoActual-añoNacimiento);
-       coordinador.registrarAlumno(alumnoVO);
+        coordinador.registrarAlumno(alumnoVO);
        
        //inicio de datos del represetante
-
+       
+       VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
+       VO.RepresentanteVO representanteVO2 = new VO.RepresentanteVO();
+       
+       representanteVO.setPrimer_nombre(txtNombreR1.getText());
+       representanteVO.setPrimer_apellido(txtApellidoR1.getText());
+       representanteVO.setOcupacion(txtOcupacionR1.getText());
+       representanteVO.setEmpresa(txtEmpresaR1.getText());
+       representanteVO.setDireccion(txtDireccionR1.getText());
+       representanteVO.setTelefono1(txtTelefonoR1.getText());
+       representanteVO.setTelefono2(txtTelefonoR12.getText());
+       representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString().toLowerCase());
+       representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+       
+        String registrarRepresentante = coordinador.registrarRepresentante(representanteVO);
+        System.out.println(registrarRepresentante);
+        
+        //representante 2
+        
+       representanteVO.setPrimer_nombre(txtNombreR2.getText());
+       representanteVO.setPrimer_apellido(txtApellidoR2.getText());
+       representanteVO.setOcupacion(txtOcupacionR2.getText());
+       representanteVO.setEmpresa(txtEmpresaR2.getText());
+       representanteVO.setDireccion(txtDireccionR2.getText());
+       representanteVO.setTelefono1(txtTelefonoR2.getText());
+       representanteVO.setTelefono2(txtTelefonoR22.getText());
+       representanteVO.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
+       representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+       
+        registrarRepresentante = coordinador.registrarRepresentante(representanteVO);
+        System.out.println(registrarRepresentante);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void rbnSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnSiActionPerformed
@@ -699,7 +729,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbnMasculino;
     private javax.swing.JRadioButton rbnNo;
     private javax.swing.JRadioButton rbnSi;
-    private javax.swing.JTextField rxtApellidoR1;
+    private javax.swing.JTextField txtApellidoR1;
     private javax.swing.JTextField txtApellidoR2;
     private javax.swing.JTextField txtCedulaR1;
     private javax.swing.JTextField txtCedulaR2;
