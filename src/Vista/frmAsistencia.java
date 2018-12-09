@@ -142,10 +142,10 @@ public class frmAsistencia extends javax.swing.JFrame {
         jLabel2.setText("logo");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
 
-        lblTitulo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("asistencia alumnos");
-        jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 14, 360, 20));
+        lblTitulo.setText("Asistencia alumnos");
+        jPanel1.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 230, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));

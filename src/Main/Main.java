@@ -61,7 +61,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        frmInscripcion.setVisible(true);
-        frmInscripcion.setLocationRelativeTo(null);
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
 }

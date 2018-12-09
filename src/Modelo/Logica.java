@@ -108,6 +108,11 @@ public class Logica {
         return entrada.matches("[\\d]*");
     }
     
+    public boolean validacionLimiteSoloNumerosYGuion(String entrada){
+        //solo permito - _ . y letras y numeros
+        return entrada.matches("[\\d-]*");
+    }
+    
     public boolean validacionLimiteSoloLetras(String entrada){
         //solo permito - _ . y letras y numeros
         return entrada.matches("[qwertyuiopasdfghjklñzxcvbnm]*");

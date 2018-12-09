@@ -154,7 +154,8 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeccionActionPerformed
 
     private void btnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionActionPerformed
-
+        coordinador.getFrmInscripcion().setVisible(true);
+        coordinador.getFrmInscripcion().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnInscripcionActionPerformed
 
     /**
