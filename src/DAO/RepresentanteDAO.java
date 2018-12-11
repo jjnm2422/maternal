@@ -97,6 +97,44 @@ public class RepresentanteDAO {
         }
     }
     
+      public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
+        conexion = conexiondb.getConnection();
+        
+        if (conexion!=null) {
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
+        
+            try {
+                ps = conexion.prepareStatement(sql);
+                ps.setInt(1, id_alumno);
+                result = ps.executeQuery();
+                    while (result.next()==true) {
+                    representanteVO.setPrimer_nombre(result.getString("primer_nombre"));
+                    representanteVO.setPrimer_apellido(result.getString("primer_apellido"));
+                    representanteVO.setTelefono1(result.getString("telefono1"));
+                    representanteVO.setTelefono2(result.getString("telefono2"));
+                    representanteVO.setDireccion(result.getString("direccion"));
+                    representanteVO.setParentesco(result.getString("parentesco"));
+                    representanteVO.setOcupacion(result.getString("ocupacion"));
+                    representanteVO.setCedula(result.getString("cedula"));
+                    representanteVO.setEmpresa(result.getString("empresa"));
+                    representanteVO.setId_alumno(result.getInt("id_alumno"));
+                    }
+            } catch (SQLException ex) {
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return representanteVO;
+        } else {
+            conexiondb.desconexion();
+            return null;
+        }
+    }
+    
     public String eliminarRepresentante(String id){
         Statement st = null;
         Connection conexion= null;

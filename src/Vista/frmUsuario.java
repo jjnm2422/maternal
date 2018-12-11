@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Coordinador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,10 +55,13 @@ public class frmUsuario extends javax.swing.JFrame {
             }
         };
         btnInicio1 = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnSalir1 = new javax.swing.JButton();
         txtPregunta = new javax.swing.JTextField();
         txtRespuesta = new javax.swing.JTextField();
+        btnActualizar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        chkActivo = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,8 +108,8 @@ public class frmUsuario extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Administrador");
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 180, 30));
+        jLabel8.setText("Activo");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 60, 30));
 
         txtContraseña2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtContraseña2.setToolTipText("");
@@ -124,10 +128,9 @@ public class frmUsuario extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Empleado");
+        jLabel9.setText("Usuario");
         jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 80, 30));
 
-        txtNombre.setEditable(false);
         txtNombre.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtNombre.setEnabled(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -162,39 +165,59 @@ public class frmUsuario extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblUsuarioMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblUsuarioMouseEntered(evt);
+            }
         });
         jScrollPane1.setViewportView(tblUsuario);
 
-        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, 150));
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, 150));
 
-        btnInicio1.setText("Actualizar");
+        btnInicio1.setText("Llenar");
         btnInicio1.setPreferredSize(new java.awt.Dimension(60, 23));
         btnInicio1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicio1ActionPerformed(evt);
             }
         });
-        jPanel5.add(btnInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 90, -1));
+        jPanel5.add(btnInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, -1));
 
-        btnSalir.setText("Borrar");
+        btnBorrar.setText("Borrar");
+        btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 90, -1));
+
+        btnSalir.setText("Salir");
         btnSalir.setPreferredSize(new java.awt.Dimension(60, 23));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 90, -1));
-
-        btnSalir1.setText("Salir");
-        btnSalir1.setPreferredSize(new java.awt.Dimension(60, 23));
-        btnSalir1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalir1ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 100, -1));
+        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 100, -1));
         jPanel5.add(txtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 150, 30));
         jPanel5.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 150, 30));
+
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 90, -1));
+
+        jLabel11.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Administrador");
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 180, 30));
+
+        chkActivo.setEnabled(false);
+        jPanel5.add(chkActivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, 30));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 560, 280));
 
@@ -205,9 +228,10 @@ public class frmUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+    desactivarCampos();
+    borrarCampos();
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void txtContraseña2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseña2ActionPerformed
         // TODO add your handling code here:
@@ -225,19 +249,46 @@ public class frmUsuario extends javax.swing.JFrame {
     tblUsuario.setModel(coordinador.getUsuarioDAO().consultarUsuarioTabla());
     }//GEN-LAST:event_btnInicio1ActionPerformed
 
-    private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
-    this.dispose();
-    }//GEN-LAST:event_btnSalir1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        borrarCampos();
+        desactivarCampos();
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void tblUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarioMouseClicked
     usuarioVO = coordinador.getUsuarioDAO().consultarUsuario(tblUsuario.getValueAt(tblUsuario.getSelectedRow(), 1).toString());
+    activarCampos();
+    borrarCampos();
     txtNombre.setText(usuarioVO.getNombre_usuario());
     txtPregunta.setText(usuarioVO.getPregunta_secreta());
     txtRespuesta.setText(usuarioVO.getRespuesta_secreta());
     chkAdmin.setSelected(usuarioVO.isAdmin());
+    chkActivo.setSelected(usuarioVO.isActivo());
     txtContraseña.setText(usuarioVO.getClave());
     txtContraseña2.setText(usuarioVO.getClave());
     }//GEN-LAST:event_tblUsuarioMouseClicked
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        if (verificarCampos()) {
+            if (coordinador.getClave(txtContraseña.getPassword()).equals(coordinador.getClave(txtContraseña2.getPassword()))) {
+                if ( actualizarUsuario()) {
+                    JOptionPane.showMessageDialog(this, "Actualizado con exito");
+                    borrarCampos();
+                    tblUsuario.setModel(coordinador.getUsuarioDAO().consultarUsuarioTabla());
+                } else {
+                    JOptionPane.showMessageDialog(this, "Problemas al Actualizar");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "los campos de contraseña debe ser iguales");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Campos Vacios");
+        }
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void tblUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarioMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblUsuarioMouseEntered
 
     /**
      * @param args the command line arguments
@@ -275,12 +326,15 @@ public class frmUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnInicio1;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSalir1;
+    private javax.swing.JCheckBox chkActivo;
     private javax.swing.JCheckBox chkAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -301,6 +355,55 @@ public class frmUsuario extends javax.swing.JFrame {
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
+    }
+
+    private void activarCampos() {
+    txtNombre.setEnabled(true);
+    txtPregunta.setEnabled(true);
+    txtRespuesta.setEnabled(true);
+    chkAdmin.setEnabled(true);
+    chkActivo.setEnabled(true);
+    txtContraseña.setEnabled(true);
+    txtContraseña2.setEnabled(true);
+    }
+    
+    private void desactivarCampos() {
+    txtNombre.setEnabled(false);
+    txtPregunta.setEnabled(false);
+    txtRespuesta.setEnabled(false);
+    chkAdmin.setEnabled(false);
+    chkActivo.setEnabled(false);
+    txtContraseña.setEnabled(false);
+    txtContraseña2.setEnabled(false);
+    borrarCampos();
+    }
+
+    private void borrarCampos() {
+    txtNombre.setText("");
+    txtPregunta.setText("");
+    txtRespuesta.setText("");
+    chkAdmin.setSelected(false);
+    txtContraseña.setText("");
+    txtContraseña2.setText("");
+    }
+
+    private boolean actualizarUsuario() {
+        usuarioVO.setNombre_usuario(txtNombre.getText());
+        usuarioVO.setClave(coordinador.getClave(txtContraseña.getPassword()));
+        usuarioVO.setPregunta_secreta(txtPregunta.getText());
+        usuarioVO.setRespuesta_secreta(txtRespuesta.getText());
+        usuarioVO.setAdmin(chkAdmin.isSelected());
+        usuarioVO.setActivo(chkActivo.isSelected());
+        if (coordinador.actualizarUsuario(usuarioVO, tblUsuario.getValueAt(tblUsuario.getSelectedRow(), 0).toString()).equals("INGRESADO CON EXITO")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean verificarCampos() {
+       return !txtNombre.getText().isEmpty() && !txtContraseña.getText().isEmpty() && !txtContraseña2.getText().isEmpty()
+               && !txtPregunta.getText().isEmpty() && !txtRespuesta.getText().isEmpty();
     }
 
 }

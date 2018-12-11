@@ -221,6 +221,9 @@ public class frmLogin extends javax.swing.JFrame {
             case "SIN_CONEXION":
                 JOptionPane.showMessageDialog(null, "Problemas conexion con BD", "Informacion", JOptionPane.PLAIN_MESSAGE);
                 break;
+            case "NO_ACTIVO":
+                JOptionPane.showMessageDialog(null, "Usuario desactivado consulte con el administrador", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                break;
             default:
                 throw new AssertionError();
         }

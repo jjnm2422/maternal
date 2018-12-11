@@ -74,27 +74,25 @@ public class AlumnoDAO {
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
-        
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = '"+parametro+"'";
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, parametro);
                 result = ps.executeQuery();
-                if (result.getRow()!=0) {
                     while (result.next()==true) {
                     alumnoVO.setPrimer_nombre(result.getString("primer_nombre"));
                     alumnoVO.setSegundo_nombre(result.getString("segundo_nombre"));
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
-                    alumnoVO.setFechaNacimiento(result.getString("fechaNacimiento"));
-                    alumnoVO.setTipo_sangre(result.getString("tipoSangre"));
+                    alumnoVO.setDireccion(result.getString("direccion"));
+                    alumnoVO.setAlergias(result.getString("alergias"));
+                    alumnoVO.setEdad(result.getInt("edad"));
+                    alumnoVO.setId_nota(result.getInt("id_nota"));
+                    alumnoVO.setId_pago(result.getInt("id_pago"));
+                    alumnoVO.setFechaNacimiento(result.getString("fecha_nacimiento"));
+                    alumnoVO.setTipo_sangre(result.getString("tipo_sangre"));
                     alumnoVO.setSexo(result.getString("sexo"));
                     alumnoVO.setId_alumno(result.getInt("id_alumno"));
                     }
-                } else {
-                    conexiondb.desconexion();
-                    return null;
-                } 
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
             }

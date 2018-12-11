@@ -12,12 +12,12 @@ package VO;
 public class UsuarioVO {
     private String nombre_usuario, clave, pregunta_secreta, respuesta_secreta;
     private int id_usuario, id_empleado;
-    private boolean admin;
+    private boolean admin, activo;
 
     public UsuarioVO() {
     }
 
-    public UsuarioVO(String nombre_usuario, String clave, String pregunta_secreta, String respuesta_secreta, int id_usuario, int id_empleado, boolean admin) {
+    public UsuarioVO(String nombre_usuario, String clave, String pregunta_secreta, String respuesta_secreta, int id_usuario, int id_empleado, boolean admin, boolean activo) {
         this.nombre_usuario = nombre_usuario;
         this.clave = clave;
         this.pregunta_secreta = pregunta_secreta;
@@ -25,6 +25,7 @@ public class UsuarioVO {
         this.id_usuario = id_usuario;
         this.id_empleado = id_empleado;
         this.admin = admin;
+        this.activo = activo;
     }
 
     public String getNombre_usuario() {
@@ -83,5 +84,11 @@ public class UsuarioVO {
         this.admin = admin;
     }
 
-      
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }    
 }

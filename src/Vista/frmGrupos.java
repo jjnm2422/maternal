@@ -205,18 +205,19 @@ public class frmGrupos extends javax.swing.JFrame {
 
            if (tblSeccion.getRowCount() >0) {
             DefaultTableModel model = (DefaultTableModel) tblSeccion.getModel();
+            String respuesta= "";
             int id_alumno = 0;
             for (int i = 0; i < tblSeccion.getRowCount(); i++) {
                 VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
                 matriculaVO.setId_alumno(Integer.parseInt(model.getValueAt(i, 0).toString()));
                 matriculaVO.setSeccion(cbxSeccion.getSelectedItem().toString());
-                String respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
-                System.out.println(respuesta);
+                respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
             }
+            JOptionPane.showMessageDialog(this, respuesta);
             coordinador.borrarTablas(tblSeccion, tblMatricula);
             tblMatricula.setModel(coordinador.consultarMatriculaSinSeccion()); 
         } else {
-            System.out.println("consulte un seccion");
+            JOptionPane.showMessageDialog(this, "consulte un seccion");
         }  
 
         

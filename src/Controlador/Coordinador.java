@@ -104,6 +104,10 @@ public class Coordinador {
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }
+    
+     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
+         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno);
+     }
 
     public VO.AlumnoVO consultarAlumno(String parametro) {
         return getAlumnoDAO().consultarAlumno(parametro);
@@ -278,12 +282,17 @@ public class Coordinador {
         return frmMenu;
     }
     
-      public boolean consultarAsistenciaDelDia(String fecha) {
-          return getAsistencia_dDAO().consultarAsistenciaDelDia(fecha);
-      }
-      public String actualizarClaveUsuario(String clave, String id){
-          return  getUsuarioDAO().actualizarClaveUsuario(clave, id);
-      }
+    public boolean consultarAsistenciaDelDia(String fecha) {
+        return getAsistencia_dDAO().consultarAsistenciaDelDia(fecha);
+    }
+    
+    public String actualizarClaveUsuario(String clave, String id){
+        return  getUsuarioDAO().actualizarClaveUsuario(clave, id);
+    }
+    
+    public String actualizarUsuario(VO.UsuarioVO usuarioVO, String id_usuario) {
+      return getUsuarioDAO().actualizarUsuario(usuarioVO, id_usuario);
+    }
 
     public void setFrmGrupos(frmGrupos frmGrupos) {
         this.frmGrupos = frmGrupos;

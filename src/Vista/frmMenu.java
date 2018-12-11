@@ -6,7 +6,16 @@
 package Vista;
 
 import Controlador.Coordinador;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -182,7 +191,19 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInscripcionActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
-        // TODO add your handling code here:
+    try {
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+            String dir = "G:\\report2.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            JOptionPane.showMessageDialog(null, "OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex, "ERROR", JOptionPane.ERROR_MESSAGE);
+}
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
