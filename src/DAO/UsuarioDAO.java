@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -75,6 +77,8 @@ public class UsuarioDAO {
                     usuarioVO.setPregunta_secreta(result.getString("pregunta_secreta"));
                     usuarioVO.setRespuesta_secreta(result.getString("respuesta_secreta"));
                     usuarioVO.setId_usuario(result.getInt("id_usuario"));
+                    usuarioVO.setAdmin(result.getBoolean("admin"));
+                    usuarioVO.setClave(result.getString("clave"));
                     }
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -158,8 +162,7 @@ public class UsuarioDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET nombre1=? where cedula= '"+id+"'";
-
+        String sql = "UPDATE "+this.tabla+" SET nombre_usuario = ?, clave = ?, admin = ?, pregunta_secreta = ?, respuesta_secreta = ? where id_usuario= '"+id+"'";
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
@@ -207,4 +210,30 @@ public class UsuarioDAO {
     public String getPreguntaSecreta(String usuario) {
         return "";
     }
+    
+    public DefaultTableModel consultarUsuarioTabla(){
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"id","Usuario"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM "+this.tabla;
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("id_usuario");
+        fila[1]=rs.getString("nombre_usuario");
+        model.addRow(fila);
+    }
+         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+            return model = null;
+         }
+    return model;
+}
 }

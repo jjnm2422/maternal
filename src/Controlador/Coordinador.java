@@ -11,9 +11,12 @@ import DAO.Asistencia_dDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
+import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
+import VO.RequisitosVO;
+import VO.UsuarioVO;
 import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
@@ -21,6 +24,7 @@ import Vista.frmDocenteAsistencia;
 import Vista.frmGrupos;
 import Vista.frmInscripcion;
 import Vista.frmMenu;
+import Vista.frmUsuario;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
@@ -49,6 +53,9 @@ public class Coordinador {
     private frmMenu frmMenu;
     private frmGrupos frmGrupos;
     private frmInscripcion frmInscripcion;
+    private RequisitosVO requisitosVO;
+    private RequisitosDAO requisitosDAO;
+    private frmUsuario frmUsuario;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -88,6 +95,10 @@ public class Coordinador {
     
     public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         return getMatriculaDAO().registrarMatricula(matriculaVO);
+    }
+    
+    public String registrarRequisitos(VO.RequisitosVO requisitosVO) {
+        return  getRequisitosDAO().registrarRequisitos(requisitosVO);
     }
     
     public String consultarUsuarioLogin(String usuario, String clave){
@@ -297,4 +308,30 @@ public class Coordinador {
     public  int  llenarCodigoAlumno(){
         return getAlumnoDAO().llenarCodigoAlumno();
     }
+
+    public void setRequisitosVO(RequisitosVO requisitosVO) {
+        this.requisitosVO = requisitosVO;
+    }
+
+    public void setRequisitosDAO(RequisitosDAO requisitosDAO) {
+       this.requisitosDAO = requisitosDAO;
+    }
+
+    public RequisitosVO getRequisitosVO() {
+        return requisitosVO;
+    }
+
+    public RequisitosDAO getRequisitosDAO() {
+        return requisitosDAO;
+    }
+
+    public void setFrmUsuario(frmUsuario frmUsuario) {
+        this.frmUsuario = frmUsuario;
+         }
+
+    public frmUsuario getFrmUsuario() {
+        return frmUsuario;
+    }
+    
+    
 }

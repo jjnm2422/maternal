@@ -68,7 +68,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         lblCodigo = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
-        btnAtras = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        lblUsuarioActvo = new javax.swing.JLabel();
+        btnSiguiente = new javax.swing.JButton();
+        btnBorrarA = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         chkPartidaNacimiento = new javax.swing.JCheckBox();
@@ -120,6 +123,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         cbxParentescoR2 = new javax.swing.JComboBox<>();
         chkRepresentante = new javax.swing.JCheckBox();
+        btnAtras = new javax.swing.JButton();
+        btnBorrarR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(1, 87, 155));
@@ -371,7 +376,7 @@ public class frmInscripcion extends javax.swing.JFrame {
             btnGuardarActionPerformed(evt);
         }
     });
-    jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
+    jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
 
     btnNuevo.setText("Nuevo");
     btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -379,15 +384,35 @@ public class frmInscripcion extends javax.swing.JFrame {
             btnNuevoActionPerformed(evt);
         }
     });
-    jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, -1, -1));
+    jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 70, -1));
 
-    btnAtras.setText("Atras");
-    btnAtras.addActionListener(new java.awt.event.ActionListener() {
+    btnSalir.setText("Salir");
+    btnSalir.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btnAtrasActionPerformed(evt);
+            btnSalirActionPerformed(evt);
         }
     });
-    jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 70, -1));
+    jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 70, -1));
+
+    lblUsuarioActvo.setText("usuario activo");
+    lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+    jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 120, -1));
+
+    btnSiguiente.setText("Siguiente");
+    btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnSiguienteActionPerformed(evt);
+        }
+    });
+    jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 110, -1));
+
+    btnBorrarA.setText("Borrar");
+    btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBorrarAActionPerformed(evt);
+        }
+    });
+    jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 70, -1));
 
     jTabbedPane1.addTab("tab1", jPanel2);
 
@@ -402,14 +427,17 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     chkPartidaNacimiento.setForeground(new java.awt.Color(0, 0, 153));
     chkPartidaNacimiento.setText("Partida de Nacimiento");
+    chkPartidaNacimiento.setOpaque(false);
     jPanel4.add(chkPartidaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
     chkFotoCarnet.setForeground(new java.awt.Color(0, 0, 153));
     chkFotoCarnet.setText("4 Fotos Tipo Carnet ");
+    chkFotoCarnet.setOpaque(false);
     jPanel4.add(chkFotoCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
     chkFotoPostal.setForeground(new java.awt.Color(0, 0, 153));
     chkFotoPostal.setText("1 Foto Tipo Postal");
+    chkFotoPostal.setOpaque(false);
     chkFotoPostal.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             chkFotoPostalActionPerformed(evt);
@@ -419,6 +447,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     chkFotoFamiliar.setForeground(new java.awt.Color(0, 0, 153));
     chkFotoFamiliar.setText("Foto Familiar");
+    chkFotoFamiliar.setOpaque(false);
     chkFotoFamiliar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             chkFotoFamiliarActionPerformed(evt);
@@ -428,7 +457,8 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     chkCopiaCedula.setForeground(new java.awt.Color(0, 0, 153));
     chkCopiaCedula.setText("Copia de Cedula de los Padres");
-    jPanel4.add(chkCopiaCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, -1));
+    chkCopiaCedula.setOpaque(false);
+    jPanel4.add(chkCopiaCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
 
     jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 330, 200));
 
@@ -695,6 +725,22 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 480, 230));
 
+    btnAtras.setText("Atras");
+    btnAtras.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAtrasActionPerformed(evt);
+        }
+    });
+    jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 180, -1));
+
+    btnBorrarR.setText("Borrar");
+    btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBorrarRActionPerformed(evt);
+        }
+    });
+    jPanel3.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 120, 20));
+
     jTabbedPane1.addTab("tab2", jPanel3);
 
     getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 530));
@@ -703,7 +749,12 @@ public class frmInscripcion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
+    Object opciones[] = {"Continuar", "Descartar"};
+    int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Continuar");
+    if (respuesta == 1) {
+        borrarCampos();
+        txtPnombre.setFocusable(true);
+    }    
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void rbnFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnFemeninoActionPerformed
@@ -733,7 +784,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                         if (chkRepresentante.isSelected()) {
                             if (registrarRepresentante2()) {
                                 if (registrarMatricula()) {
-                                    JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                    if (registrarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                    }
                                 } else {
                                     JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
                                 }
@@ -743,8 +798,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                             }
                         } else {
                             if (registrarMatricula()) {
-                                JOptionPane.showMessageDialog(this, "Inscripcion completada");
-
+                                if (registrarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                    }
                             } else {
                                 JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
                             }
@@ -882,11 +940,27 @@ public class frmInscripcion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_chkRepresentanteActionPerformed
 
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         coordinador.getFrmMenu().setVisible(true);
         coordinador.getFrmMenu().setLocationRelativeTo(null);
         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+    jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+     jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnBorrarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarAActionPerformed
+    borrarAlumno();
+    }//GEN-LAST:event_btnBorrarAActionPerformed
+
+    private void btnBorrarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarRActionPerformed
+    borrarRepresentante();
+    }//GEN-LAST:event_btnBorrarRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -926,8 +1000,12 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnBorrarA;
+    private javax.swing.JButton btnBorrarR;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbxParentescoR1;
@@ -984,6 +1062,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblCodigo;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JRadioButton rbnFemenino;
     private javax.swing.JRadioButton rbnMasculino;
     private javax.swing.JRadioButton rbnNo;
@@ -1167,34 +1246,9 @@ public class frmInscripcion extends javax.swing.JFrame {
     }
 
     private void borrarCampos() {
-        txtPnombre.setText("");
-        txtSnombre.setText("");
-        txtPapellido.setText("");
-        txtSapellido.setText("");
-        txtDireccion.setText("");
-        cbxTipoSangre.setSelectedIndex(0);
-        rbnSi.setSelected(false);
-        rbnNo.setSelected(true);
-        txtEnfermedad.setText("");
-        txtEnfermedad.setEnabled(false);
+        borrarAlumno();
         lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
-
-        cbxParentescoR1.setSelectedIndex(0);
-        txtNombreR1.setText("");
-        txtApellidoR1.setText("");
-        txtOcupacionR1.setText("");
-        txtTelefonoR1.setText("");
-        txtTelefonoR12.setText("");
-        txtDireccionR1.setText("");
-        txtEmpresaR1.setText("");
-        txtCedulaR1.setText("");
-        txtObservacion.setText("");
-        desactivarRepresentante();
-        chkCopiaCedula.setEnabled(false);
-        chkFotoCarnet.setEnabled(false);
-        chkFotoFamiliar.setEnabled(false);
-        chkFotoPostal.setEnabled(false);
-        chkPartidaNacimiento.setEnabled(false);
+        borrarRepresentante();
     }
 
     private void desactivarRepresentante() {
@@ -1235,11 +1289,59 @@ public class frmInscripcion extends javax.swing.JFrame {
     private boolean registrarMatricula() {
         VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
         matriculaVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
-        matriculaVO.setId_empleado(1);
+        matriculaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
         if (coordinador.registrarMatricula(matriculaVO).equals("INGRESADO CON EXITO")) {
             return true;
         } else {
             return false;
         }
+    }
+
+    private boolean registrarRequisitos() {
+        VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
+        requisitosVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        requisitosVO.setFoto_carnet(chkFotoCarnet.isSelected());
+        requisitosVO.setFoto_familiar(chkFotoFamiliar.isSelected());
+        requisitosVO.setFoto_postal(chkFotoPostal.isSelected());
+        requisitosVO.setPartida(chkPartidaNacimiento.isSelected());
+        requisitosVO.setCedula_padres(chkCopiaCedula.isSelected());
+        requisitosVO.setObservaciones(txtObservacion.getText());
+        if (coordinador.registrarRequisitos(requisitosVO).equals("INGRESADO CON EXITO")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void borrarAlumno() {
+        txtPnombre.setText("");
+        txtSnombre.setText("");
+        txtPapellido.setText("");
+        txtSapellido.setText("");
+        txtDireccion.setText("");
+        cbxTipoSangre.setSelectedIndex(0);
+        rbnSi.setSelected(false);
+        rbnNo.setSelected(true);
+        txtEnfermedad.setText("");
+        txtEnfermedad.setEnabled(false);
+    }
+
+    private void borrarRepresentante() {
+        cbxParentescoR1.setSelectedIndex(0);
+        txtNombreR1.setText("");
+        txtApellidoR1.setText("");
+        txtOcupacionR1.setText("");
+        txtTelefonoR1.setText("");
+        txtTelefonoR12.setText("");
+        txtDireccionR1.setText("");
+        txtEmpresaR1.setText("");
+        txtCedulaR1.setText("");
+        txtObservacion.setText("");
+        desactivarRepresentante();
+        chkCopiaCedula.setEnabled(false);
+        chkFotoCarnet.setEnabled(false);
+        chkFotoFamiliar.setEnabled(false);
+        chkFotoPostal.setEnabled(false);
+        chkPartidaNacimiento.setEnabled(false);
     }
 }

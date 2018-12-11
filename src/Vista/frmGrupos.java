@@ -56,6 +56,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnLlenar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -158,6 +159,10 @@ public class frmGrupos extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 310, -1));
+
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 474, 120, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 500));
 
@@ -273,6 +278,7 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblLogo;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblMatricula;
     private javax.swing.JTable tblSeccion;
     // End of variables declaration//GEN-END:variables

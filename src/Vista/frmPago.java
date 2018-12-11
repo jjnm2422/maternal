@@ -46,6 +46,7 @@ public class frmPago extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,6 +139,10 @@ public class frmPago extends javax.swing.JFrame {
         jLabel9.setText("logo");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
 
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 394, 120, 20));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
@@ -197,6 +202,7 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JLabel lblCuota;
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblTotal;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblDatosAlumno;
     private javax.swing.JTable tblMeses;
     private javax.swing.JTextField txtConsulta;
