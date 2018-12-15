@@ -91,6 +91,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnMasculino = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         txtFecha = new datechooser.beans.DateChooserCombo();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDireccion = new javax.swing.JTextArea();
+        jLabel28 = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         rbnSi = new javax.swing.JRadioButton();
@@ -99,12 +105,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtEnfermedad = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         cbxTipoSangre = new javax.swing.JComboBox<>();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtDireccion = new javax.swing.JTextArea();
-        jLabel28 = new javax.swing.JLabel();
-        lblCodigo = new javax.swing.JLabel();
         btnNuevo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
@@ -113,7 +113,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        jLabel30 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         chkPartidaNacimiento = new javax.swing.JCheckBox();
@@ -203,12 +202,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel7.setBackground(new java.awt.Color(24, 119, 189));
         jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -290,16 +289,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel7.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 20));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 380, 170));
-
-        jPanel8.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel8.setBackground(new java.awt.Color(24, 119, 189));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Sexo");
-        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnFemenino);
@@ -307,91 +304,36 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnFemenino.setForeground(new java.awt.Color(255, 255, 255));
         rbnFemenino.setSelected(true);
         rbnFemenino.setText("Femenino");
+        rbnFemenino.setOpaque(false);
         rbnFemenino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbnFemeninoActionPerformed(evt);
             }
         });
-        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnMasculino);
         rbnMasculino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
-        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
+        rbnMasculino.setOpaque(false);
+        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha de Nacimiento");
-        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 120, -1));
+        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
 
         txtFecha.setFormat(2);
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 300, 120));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 310, 140));
 
-        jPanel9.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Padece de enfermedades");
-        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        rbnSi.setBackground(new java.awt.Color(69, 90, 100));
-        buttonGroup2.add(rbnSi);
-        rbnSi.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        rbnSi.setForeground(new java.awt.Color(255, 255, 255));
-        rbnSi.setText("Si");
-        rbnSi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbnSiActionPerformed(evt);
-            }
-        });
-        jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
-
-        rbnNo.setBackground(new java.awt.Color(69, 90, 100));
-        buttonGroup2.add(rbnNo);
-        rbnNo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        rbnNo.setForeground(new java.awt.Color(255, 255, 255));
-        rbnNo.setSelected(true);
-        rbnNo.setText("No");
-        rbnNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbnNoActionPerformed(evt);
-            }
-        });
-        jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
-
-        txtEnfermedad.setColumns(20);
-        txtEnfermedad.setLineWrap(true);
-        txtEnfermedad.setRows(5);
-        txtEnfermedad.setEnabled(false);
-        txtEnfermedad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtEnfermedadKeyTyped(evt);
-            }
-        });
-        jScrollPane2.setViewportView(txtEnfermedad);
-
-        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 288, 50));
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Tipo de Sangre");
-        jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
-        jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
-
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, 310, 130));
-
-        jPanel10.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel10.setBackground(new java.awt.Color(24, 119, 189));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -411,7 +353,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtDireccion);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, 80));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, 100));
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,7 +365,68 @@ public class frmInscripcion extends javax.swing.JFrame {
         lblCodigo.setText("jLabel30");
         jPanel10.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 60, -1));
 
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 420, 170));
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 380, 170));
+
+        jPanel9.setBackground(new java.awt.Color(24, 119, 189));
+        jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Padece de enfermedades");
+        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+
+        rbnSi.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup2.add(rbnSi);
+        rbnSi.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnSi.setForeground(new java.awt.Color(255, 255, 255));
+        rbnSi.setText("Si");
+        rbnSi.setOpaque(false);
+        rbnSi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnSiActionPerformed(evt);
+            }
+        });
+        jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        rbnNo.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup2.add(rbnNo);
+        rbnNo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnNo.setForeground(new java.awt.Color(255, 255, 255));
+        rbnNo.setSelected(true);
+        rbnNo.setText("No");
+        rbnNo.setOpaque(false);
+        rbnNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnNoActionPerformed(evt);
+            }
+        });
+        jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+
+        txtEnfermedad.setColumns(20);
+        txtEnfermedad.setLineWrap(true);
+        txtEnfermedad.setRows(5);
+        txtEnfermedad.setEnabled(false);
+        txtEnfermedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEnfermedadKeyTyped(evt);
+            }
+        });
+        jScrollPane2.setViewportView(txtEnfermedad);
+
+        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 288, 80));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Tipo de Sangre");
+        jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
+
+        cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
+        jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 310, 170));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 730, 340));
 
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -431,7 +434,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 70, -1));
+        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 70, -1));
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -439,11 +442,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 70, -1));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, 70, -1));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 120, -1));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 120, -1));
 
         btnSiguiente.setText("Siguiente");
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -451,7 +454,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 80, -1));
+        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 80, -1));
 
         btnBorrarA.setText("Borrar");
         btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
@@ -459,13 +462,13 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBorrarAActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 70, -1));
+        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 500, 70, -1));
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("codigo alumno");
         jLabel18.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 20));
 
         txtCodigo.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -473,7 +476,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtCodigoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 80, 20));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 80, 20));
 
         btnBuscar.setText("buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
@@ -482,12 +485,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
-
-        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Foto");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 160, 20));
+        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
 
         jTabbedPane1.addTab("tab1", jPanel2);
 
@@ -1576,7 +1574,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
