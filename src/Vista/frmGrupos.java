@@ -133,7 +133,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Matricula");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
 
         cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 60, -1));
