@@ -33,8 +33,8 @@ public class RepresentanteDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, telefono1, telefono2, direccion, parentesco, ocupacion, cedula, empresa, id_alumno)"
-                    + "values(?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, telefono1, telefono2, direccion, parentesco, ocupacion, cedula, empresa, id_alumno, foto)"
+                    + "values(?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -48,6 +48,11 @@ public class RepresentanteDAO {
             ps.setString(8, representanteVO.getCedula());
             ps.setString(9, representanteVO.getEmpresa());
             ps.setInt(10, representanteVO.getId_alumno());
+            if (representanteVO.getFis() != null) {
+                    ps.setBinaryStream(11, representanteVO.getFis(), representanteVO.getBinarioFoto());
+                } else {
+                    ps.setBinaryStream(11, null, 0);
+                }
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";
@@ -55,6 +60,7 @@ public class RepresentanteDAO {
             } catch (SQLException ex) {
                 Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
+                 System.out.println(ex.getMessage());
             } 
         } else {
             respuesta = "ERROR AL CONECTAR CON BD";

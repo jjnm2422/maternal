@@ -5,7 +5,8 @@
  */
 package VO;
 
-import java.util.Date;
+import java.io.FileInputStream;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,12 +15,14 @@ import java.util.Date;
 public class AlumnoVO {
     
     private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias, direccion, sexo, fechaNacimiento;
-    private int edad, id_alumno, id_nota, id_pago;
+    private int edad, id_alumno, id_nota, id_pago, binarioFoto;
+    private FileInputStream fis;
+    private ImageIcon foto; 
 
     public AlumnoVO() {
     }
 
-    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String alergias, String direccion, String sexo, String fechaNacimiento, int edad, int id_alumno, int id_nota, int id_pago) {
+    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String alergias, String direccion, String sexo, String fechaNacimiento, int edad, int id_alumno, int id_nota, int id_pago, int binarioFoto, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
@@ -33,6 +36,33 @@ public class AlumnoVO {
         this.id_alumno = id_alumno;
         this.id_nota = id_nota;
         this.id_pago = id_pago;
+        this.binarioFoto = binarioFoto;
+        this.fis = fis;
+        this.foto = foto;
+    }
+
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }    
+
+    public FileInputStream getFis() {
+        return fis;
+    }
+
+    public void setFis(FileInputStream fis) {
+        this.fis = fis;
+    }
+
+    public int getBinarioFoto() {
+        return binarioFoto;
+    }
+
+    public void setBinarioFoto(int binarioFoto) {
+        this.binarioFoto = binarioFoto;
     }
 
     public String getPrimer_nombre() {
