@@ -65,7 +65,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
-        lblUsuario = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,8 +200,9 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 310, 130));
 
-        lblUsuario.setText("jjnm2422");
-        jPanel1.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 130, 20));
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 130, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 500));
 
@@ -272,10 +273,10 @@ public class frmAsistencia extends javax.swing.JFrame {
             if (tblAlumnosA.getRowCount() > 0 || tblAlumnosI.getRowCount() > 0) {
                 String respuesta = "";
                 if (tblAlumnosA.getModel().getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, 1);
+                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
                 if (tblAlumnosI.getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, 1);
+                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
                 JOptionPane.showMessageDialog(this, respuesta);
                 coordinador.borrarTablas(tblAlumnosA, tblAlumnosI);
@@ -386,7 +387,7 @@ public class frmAsistencia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblUsuario;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblAlumnosA;
     private javax.swing.JTable tblAlumnosI;
     private javax.swing.JTable tblMatricula;

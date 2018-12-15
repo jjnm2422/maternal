@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Coordinador;
+import VO.UsuarioVO;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -57,8 +58,8 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         };
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        lblUsuario = new javax.swing.JLabel();
         btnLlenarLista = new javax.swing.JButton();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -174,11 +175,6 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         });
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
-        lblUsuario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuario.setText("jjnm");
-        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 90, 20));
-
         btnLlenarLista.setText("LLenar Lista");
         btnLlenarLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +182,10 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnLlenarLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, -1));
+
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 394, 120, 20));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
 
@@ -238,11 +238,12 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
             if (tblDocenteA.getRowCount() > 0 ||  tblDocenteI.getRowCount() > 0) {
                 String respuesta = "";
+                
                 if (tblDocenteA.getModel().getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteA.getModel(), true, 1);
+                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteA.getModel(), true, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
                 if (tblDocenteI.getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteI.getModel(), false, 1);
+                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteI.getModel(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
                 JOptionPane.showMessageDialog(this, respuesta);
                 coordinador.borrarTablas(tblDocenteA, tblDocenteI);
@@ -352,7 +353,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lblUsuario;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblDocente;
     private javax.swing.JTable tblDocenteA;
     private javax.swing.JTable tblDocenteI;

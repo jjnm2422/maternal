@@ -72,7 +72,6 @@ public class frmNotas extends javax.swing.JFrame {
         jTextArea4 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblResponsable = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         lblLogo = new javax.swing.JLabel();
@@ -81,6 +80,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblPnombre = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -304,11 +304,6 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel2.setText("Responsable");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
-        lblResponsable.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lblResponsable.setForeground(new java.awt.Color(255, 255, 255));
-        lblResponsable.setText("jLabel4");
-        jPanel2.add(lblResponsable, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 50, 20));
-
         btnAtras.setText("Atras");
         jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
 
@@ -337,6 +332,10 @@ public class frmNotas extends javax.swing.JFrame {
         lblPnombre.setForeground(new java.awt.Color(255, 255, 255));
         lblPnombre.setText("jLabel5");
         jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 50, -1));
+
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 130, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 560));
 
@@ -437,7 +436,7 @@ public class frmNotas extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblPnombre;
-    private javax.swing.JLabel lblResponsable;
+    public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTextField txtConsultar;
     // End of variables declaration//GEN-END:variables
 }

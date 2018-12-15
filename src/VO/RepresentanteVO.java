@@ -5,18 +5,23 @@
  */
 package VO;
 
+import java.io.FileInputStream;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author acjj
  */
 public class RepresentanteVO {
     private String  primer_nombre, primer_apellido, telefono1, telefono2, direccion, correo, ocupacion, sexo, fecha_nacimiento, cedula, parentesco, empresa;
-    private int id_representante, edad, id_alumno;
+    private int id_representante, edad, id_alumno, binarioFoto;
+    private FileInputStream fis;
+    private ImageIcon foto; 
     
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, int id_alumno) {
+    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, int id_alumno, int binarioFoto, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.primer_apellido = primer_apellido;
         this.telefono1 = telefono1;
@@ -32,7 +37,36 @@ public class RepresentanteVO {
         this.id_representante = id_representante;
         this.edad = edad;
         this.id_alumno = id_alumno;
+        this.binarioFoto = binarioFoto;
+        this.fis = fis;
+        this.foto = foto;
     }
+
+    public int getBinarioFoto() {
+        return binarioFoto;
+    }
+
+    public void setBinarioFoto(int binarioFoto) {
+        this.binarioFoto = binarioFoto;
+    }
+
+    public FileInputStream getFis() {
+        return fis;
+    }
+
+    public void setFis(FileInputStream fis) {
+        this.fis = fis;
+    }
+
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
+
+
 
     public String getPrimer_nombre() {
         return primer_nombre;

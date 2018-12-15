@@ -200,10 +200,14 @@ public class frmLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Acceso Concedido admin", "Informacion", JOptionPane.PLAIN_MESSAGE);
                 coordinador.getFrmMenu().setVisible(true);
                 coordinador.getFrmMenu().setLocationRelativeTo(null);
+                coordinador.getFrmMenu().lblUsuarioActvo.setText(txtUsuario.getText());
                 coordinador.getLogin().dispose();
+                borrarCampos();
                 break;
             case "ACCESO_NORMAL":
                 JOptionPane.showMessageDialog(null, "Acceso Concedido usuario comun", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getFrmMenu().lblUsuarioActvo.setText(txtUsuario.getText());
+                borrarCampos();
                 break;
             case "NO_USUARIO":
                 JOptionPane.showMessageDialog(null, "Usuario no existe", "Informacion", JOptionPane.PLAIN_MESSAGE);
@@ -216,6 +220,9 @@ public class frmLogin extends javax.swing.JFrame {
                 break;
             case "SIN_CONEXION":
                 JOptionPane.showMessageDialog(null, "Problemas conexion con BD", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case "NO_ACTIVO":
+                JOptionPane.showMessageDialog(null, "Usuario desactivado consulte con el administrador", "Informacion", JOptionPane.PLAIN_MESSAGE);
                 break;
             default:
                 throw new AssertionError();
@@ -342,5 +349,10 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private void borrarCampos() {
+        txtUsuario.setText("");
+        txtClave.setText("");
+    }
  
 }

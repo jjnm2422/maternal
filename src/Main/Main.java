@@ -25,11 +25,17 @@ public class Main {
         DAO.MatriculaDAO matriculaDAO = new DAO.MatriculaDAO();
         DAO.AsistenciaADAO asistenciaDAO = new DAO.AsistenciaADAO();
         DAO.Asistencia_dDAO asistencia_dDAO = new DAO.Asistencia_dDAO();
+        VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
+        DAO.RequisitosDAO requisitosDAO = new DAO.RequisitosDAO();
         Vista.frmMenu frmMenu = new Vista.frmMenu();
         Vista.frmGrupos frmGrupos = new Vista.frmGrupos();
         Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
+        Vista.frmUsuario frmUsuario = new Vista.frmUsuario();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setFrmUsuario(frmUsuario);
+        coordinador.setRequisitosVO(requisitosVO);
+        coordinador.setRequisitosDAO(requisitosDAO);
         coordinador.setFrmInscripcion(frmInscripcion);
         coordinador.setFrmGrupos(frmGrupos);
         coordinador.setFrmMenu(frmMenu);
@@ -46,6 +52,9 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmUsuario.setCoordinador(coordinador);
+        requisitosVO.setCoordinador(coordinador);
+        requisitosDAO.setCoordinador(coordinador);
         frmInscripcion.setCoordinador(coordinador);
         frmGrupos.setCoordinador(coordinador);
         frmMenu.setCoordinador(coordinador);
@@ -61,7 +70,7 @@ public class Main {
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
         
-        frmInscripcion.setVisible(true);
-        frmInscripcion.setLocationRelativeTo(null);
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
     }
 }

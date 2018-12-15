@@ -52,9 +52,6 @@ public class frmdocente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -68,6 +65,10 @@ public class frmdocente extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -157,20 +158,6 @@ public class frmdocente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(69, 90, 100));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("codigo alumno");
-        jLabel18.setName("lbl"); // NOI18N
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
-
-        jTextField4.setText("jTextField1");
-        jTextField4.setName("txtCodigoAlumno"); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 80, -1));
-
-        jButton4.setText("buscar");
-        jButton4.setName("btnBuscar"); // NOI18N
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
-
         jLabel19.setText("inscripcion alumnos regulares");
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, 20));
 
@@ -179,11 +166,11 @@ public class frmdocente extends javax.swing.JFrame {
 
         jButton5.setText("atras");
         jButton5.setName("btnAtras"); // NOI18N
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 80, -1));
 
         jButton6.setText("guardar");
         jButton6.setName("btnGuardar"); // NOI18N
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(2, 119, 189));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos alumno"));
@@ -233,7 +220,25 @@ public class frmdocente extends javax.swing.JFrame {
         jLabel17.setName("lblAñoIngreso"); // NOI18N
         jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 500, 160));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 570, 200));
+
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 120, 20));
+
+        jButton4.setText("buscar");
+        jButton4.setName("btnBuscar"); // NOI18N
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+
+        jTextField4.setText("jTextField1");
+        jTextField4.setName("txtCodigoAlumno"); // NOI18N
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 80, 20));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("codigo alumno");
+        jLabel18.setName("lbl"); // NOI18N
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 370));
 
@@ -321,5 +326,6 @@ public class frmdocente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    public javax.swing.JLabel lblUsuarioActvo;
     // End of variables declaration//GEN-END:variables
 }

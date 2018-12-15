@@ -11,9 +11,12 @@ import DAO.Asistencia_dDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
+import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
+import VO.RequisitosVO;
+import VO.UsuarioVO;
 import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
@@ -21,6 +24,7 @@ import Vista.frmDocenteAsistencia;
 import Vista.frmGrupos;
 import Vista.frmInscripcion;
 import Vista.frmMenu;
+import Vista.frmUsuario;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
@@ -49,6 +53,9 @@ public class Coordinador {
     private frmMenu frmMenu;
     private frmGrupos frmGrupos;
     private frmInscripcion frmInscripcion;
+    private RequisitosVO requisitosVO;
+    private RequisitosDAO requisitosDAO;
+    private frmUsuario frmUsuario;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -86,9 +93,21 @@ public class Coordinador {
         return getRepresentanteDAO().registrarRepresentante(representanteVO) ;
     }
     
+    public String registrarMatricula(VO.MatriculaVO matriculaVO) {
+        return getMatriculaDAO().registrarMatricula(matriculaVO);
+    }
+    
+    public String registrarRequisitos(VO.RequisitosVO requisitosVO) {
+        return  getRequisitosDAO().registrarRequisitos(requisitosVO);
+    }
+    
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }
+    
+     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
+         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno);
+     }
 
     public VO.AlumnoVO consultarAlumno(String parametro) {
         return getAlumnoDAO().consultarAlumno(parametro);
@@ -121,6 +140,10 @@ public class Coordinador {
     public boolean validacionNumeroTelefonico(String entrada){
         //telefono 0286-1234567
          return getLogica().validacionNumeroTelefonico(entrada);
+    }
+    
+    public boolean validacionLimiteSoloNumerosYGuion(String entrada){
+        return getLogica().validacionLimiteSoloNumerosYGuion(entrada);
     }
     
     public DefaultTableModel consultarAlumnosTabla(String parametro){
@@ -259,12 +282,17 @@ public class Coordinador {
         return frmMenu;
     }
     
-      public boolean consultarAsistenciaDelDia(String fecha) {
-          return getAsistencia_dDAO().consultarAsistenciaDelDia(fecha);
-      }
-      public String actualizarClaveUsuario(String clave, String id){
-          return  getUsuarioDAO().actualizarClaveUsuario(clave, id);
-      }
+    public boolean consultarAsistenciaDelDia(String fecha) {
+        return getAsistencia_dDAO().consultarAsistenciaDelDia(fecha);
+    }
+    
+    public String actualizarClaveUsuario(String clave, String id){
+        return  getUsuarioDAO().actualizarClaveUsuario(clave, id);
+    }
+    
+    public String actualizarUsuario(VO.UsuarioVO usuarioVO, String id_usuario) {
+      return getUsuarioDAO().actualizarUsuario(usuarioVO, id_usuario);
+    }
 
     public void setFrmGrupos(frmGrupos frmGrupos) {
         this.frmGrupos = frmGrupos;
@@ -289,4 +317,30 @@ public class Coordinador {
     public  int  llenarCodigoAlumno(){
         return getAlumnoDAO().llenarCodigoAlumno();
     }
+
+    public void setRequisitosVO(RequisitosVO requisitosVO) {
+        this.requisitosVO = requisitosVO;
+    }
+
+    public void setRequisitosDAO(RequisitosDAO requisitosDAO) {
+       this.requisitosDAO = requisitosDAO;
+    }
+
+    public RequisitosVO getRequisitosVO() {
+        return requisitosVO;
+    }
+
+    public RequisitosDAO getRequisitosDAO() {
+        return requisitosDAO;
+    }
+
+    public void setFrmUsuario(frmUsuario frmUsuario) {
+        this.frmUsuario = frmUsuario;
+         }
+
+    public frmUsuario getFrmUsuario() {
+        return frmUsuario;
+    }
+    
+    
 }

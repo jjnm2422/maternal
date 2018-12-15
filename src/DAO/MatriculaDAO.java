@@ -85,7 +85,7 @@ public class MatriculaDAO {
     return model;
 }
        
-public String registrarMatricula() {
+public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -93,11 +93,11 @@ public String registrarMatricula() {
         PreparedStatement ps = null;
         String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion) VALUES (?, ?, ?)" ;
         if (conexion!=null) {
-            for (int i = 1; i  <= 100; i++) {
            try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, i);
-            ps.setInt(2, 1);
+            ps.setInt(1, matriculaVO.getId_alumno());
+            ps.setInt(2, matriculaVO.getId_empleado());
+            ps.setString(3, matriculaVO.getSeccion());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INGRESADO CON EXITO";
@@ -106,7 +106,6 @@ public String registrarMatricula() {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
             }
-            } 
         } else {
             respuesta = "ERROR AL CONECTAR CON BD";
         }
