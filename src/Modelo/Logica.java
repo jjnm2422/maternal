@@ -113,9 +113,18 @@ public class Logica {
         return entrada.matches("[\\d-]*");
     }
     
-    public boolean validacionLimiteSoloLetras(String entrada){
+    public boolean validacionSoloNumerosYPunto(String entrada){
+        //solo permito - _ . y letras y numeros
+        return entrada.matches("[0123456789.]");
+    }
+    
+    public boolean validacionSoloLetras(String entrada){
         //solo permito - _ . y letras y numeros
         return entrada.matches("[qwertyuiopasdfghjklñzxcvbnm]*");
+    }
+    public boolean validacionSoloLetrasEspacio(String entrada){
+        //solo permito - _ . y letras y numeros
+        return entrada.matches("[qwertyuiopasdfghjklñzxcvbnm ]*");
     }
     
     public boolean validacionNumeroTelefonico(String entrada){

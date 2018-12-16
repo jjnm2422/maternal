@@ -10,6 +10,7 @@ package Main;
  * @author acjj
  */
 public class Main {
+    
     public static void main(String[] args) {
         
         Controlador.Coordinador coordinador = new Controlador.Coordinador();
@@ -25,14 +26,18 @@ public class Main {
         DAO.MatriculaDAO matriculaDAO = new DAO.MatriculaDAO();
         DAO.AsistenciaADAO asistenciaDAO = new DAO.AsistenciaADAO();
         DAO.Asistencia_dDAO asistencia_dDAO = new DAO.Asistencia_dDAO();
+        DAO.VariablesDAO variablesDAO = new DAO.VariablesDAO();
         VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
         DAO.RequisitosDAO requisitosDAO = new DAO.RequisitosDAO();
         Vista.frmMenu frmMenu = new Vista.frmMenu();
         Vista.frmGrupos frmGrupos = new Vista.frmGrupos();
         Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
         Vista.frmUsuario frmUsuario = new Vista.frmUsuario();
+        Vista.frmAjustes frmAjustes = new Vista.frmAjustes();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setVariablesDAO(variablesDAO);
+        coordinador.setFrmAjustes(frmAjustes);
         coordinador.setFrmUsuario(frmUsuario);
         coordinador.setRequisitosVO(requisitosVO);
         coordinador.setRequisitosDAO(requisitosDAO);
@@ -52,6 +57,8 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        variablesDAO.setCoordinador(coordinador);
+        frmAjustes.setCoordinador(coordinador);
         frmUsuario.setCoordinador(coordinador);
         requisitosVO.setCoordinador(coordinador);
         requisitosDAO.setCoordinador(coordinador);
@@ -69,6 +76,12 @@ public class Main {
         usuarioDAO.setCoordinador(coordinador);
         login.setCoordinador(coordinador);
         logica.setCoordinador(coordinador);
+        
+        //incializacion de datos en formularios
+        frmAjustes.llenarCampos();
+        variablesDAO.llenarPeriodos(frmAjustes.cbxPeriodo);
+        frmGrupos.tblSeccion.setModel(coordinador.consultarMatriculaPorSeccionTabla("A"));
+        
         
         login.setVisible(true);
         login.setLocationRelativeTo(null);

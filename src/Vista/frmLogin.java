@@ -21,6 +21,8 @@ public class frmLogin extends javax.swing.JFrame {
 
     private Coordinador coordinador;
     private final ImageIcon iconLogo = new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"));
+    private final ImageIcon iconusuario = new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_user.png"));
+    private final ImageIcon iconclave = new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_clave.png"));
 
     /**
      * Creates new form Login
@@ -29,6 +31,8 @@ public class frmLogin extends javax.swing.JFrame {
         this.setlook();
         initComponents();
         ajustar(lblLogo, iconLogo);
+        ajustar(lblUsuario, iconusuario);
+        ajustar(lblClave, iconclave);
     }
     
     public void setlook() {
@@ -65,7 +69,9 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtClave = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblClave = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -121,7 +127,7 @@ public class frmLogin extends javax.swing.JFrame {
                 txtUsuarioKeyTyped(evt);
             }
         });
-        jPanel3.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 180, -1));
+        jPanel3.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, -1));
 
         txtClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtClave.setText("1234");
@@ -135,13 +141,23 @@ public class frmLogin extends javax.swing.JFrame {
                 txtClaveKeyTyped(evt);
             }
         });
-        jPanel3.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, -1));
+        jPanel3.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Clave");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 180, 23));
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 20, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Clave");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 180, 23));
+
+        lblClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClave.setForeground(new java.awt.Color(255, 255, 255));
+        lblClave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(lblClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 20, 20));
 
         jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 200, 130));
 
@@ -338,14 +354,16 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblClave;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

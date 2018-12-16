@@ -6,10 +6,15 @@
 package Vista;
 
 import Controlador.Coordinador;
+import java.awt.Image;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -24,12 +29,30 @@ import net.sf.jasperreports.view.JasperViewer;
 public class frmMenu extends javax.swing.JFrame {
 
     private Coordinador coordinador;
+    private final ImageIcon iconLogo = new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"));
 
     /**
      * Creates new form frmMenu
      */
     public frmMenu() {
+        this.setlook();
         initComponents();
+        ajustar(lblLogo, iconLogo);
+    }
+    
+    public void setlook() {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void ajustar(JLabel label, ImageIcon icon) {
+        //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
+        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
     }
 
     /**
@@ -72,9 +95,8 @@ public class frmMenu extends javax.swing.JFrame {
         jLabel2.setText("hombol maternal");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
 
-        lblLogo.setText("logo ");
         lblLogo.setName("lblLogo"); // NOI18N
-        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, -1, -1));
+        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 90, 100));
 
         btnAjustes.setText("ajustes");
         btnAjustes.setName("btnAjustes"); // NOI18N
@@ -207,7 +229,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
-        // TODO add your handling code here:
+    coordinador.getFrmAjustes().setVisible(true);
+    coordinador.getFrmAjustes().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+    coordinador.getFrmAjustes().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnAjustesActionPerformed
 
     private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed

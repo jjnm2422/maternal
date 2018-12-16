@@ -88,7 +88,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblSeccion);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 310, 320));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 310, 310));
 
         tblMatricula.setBackground(new java.awt.Color(69, 90, 100));
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,7 +107,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblMatricula);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 310, 320));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 310, 310));
 
         btnAtras.setText("atras");
         btnAtras.setName("btnAtras"); // NOI18N
@@ -182,12 +182,16 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private void tblMatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatriculaMouseClicked
         if (evt.getClickCount() == 2) {
+            if (coordinador.consultarCantidadDeAlumnoSeccion(cbxSeccion.getSelectedItem().toString())<coordinador.getVariablesDAO().consultarVariables().getLimite_alumno()) {
                 DefaultTableModel model = null;
                 int fila = this.tblMatricula.getSelectedRow();
                 model = (DefaultTableModel) tblMatricula.getModel();
                 tblSeccion.setModel(coordinador.añadirListaGrupos(tblMatricula, tblSeccion, fila));
                 model.removeRow(fila);
                 tblMatricula.setModel(model);
+            } else {
+                JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+            }
         }
     }//GEN-LAST:event_tblMatriculaMouseClicked
 
@@ -281,7 +285,7 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JLabel lblLogo;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblMatricula;
-    private javax.swing.JTable tblSeccion;
+    public javax.swing.JTable tblSeccion;
     // End of variables declaration//GEN-END:variables
 
     public void setCoordinador(Coordinador coordinador) {
