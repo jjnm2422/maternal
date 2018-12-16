@@ -84,6 +84,27 @@ public class MatriculaDAO {
     }
     return model;
 }
+    
+    public int consultarCantidadDeAlumnoSeccion(String seccion){
+    Statement st = null;
+    int valor = 0;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection(); 
+    String sql="SELECT count(*) as cantidad FROM public.matricula where seccion = '"+seccion+"'";
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+    while(rs.next()){
+        valor = rs.getInt("cantidad");
+    }
+    conexion.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+        return -1;
+    }
+    return valor;
+}
        
 public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         String respuesta = "";

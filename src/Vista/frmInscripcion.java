@@ -95,8 +95,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDireccion = new javax.swing.JTextArea();
-        jLabel28 = new javax.swing.JLabel();
-        lblCodigo = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         rbnSi = new javax.swing.JRadioButton();
@@ -105,6 +103,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtEnfermedad = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         cbxTipoSangre = new javax.swing.JComboBox<>();
+        jLabel28 = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JTextField();
         btnNuevo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
@@ -113,6 +113,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         chkPartidaNacimiento = new javax.swing.JCheckBox();
@@ -197,10 +198,13 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnR2 = new javax.swing.JRadioButton();
         btnGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(1, 87, 155));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.setToolTipText("");
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -209,14 +213,16 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(24, 119, 189));
         jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Primer nombre");
-        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        txtPnombre.setText("jj");
+        txtPnombre.setToolTipText("");
+        txtPnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtPnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtPnombreKeyPressed(evt);
@@ -225,27 +231,29 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtPnombreKeyTyped(evt);
             }
         });
-        jPanel7.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 100, -1));
+        jPanel7.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 100, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Segundo nombre");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 20));
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
-        txtSnombre.setText("jj");
+        txtSnombre.setToolTipText("");
+        txtSnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtSnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSnombreKeyTyped(evt);
             }
         });
-        jPanel7.add(txtSnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 100, -1));
+        jPanel7.add(txtSnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Primer apellido");
-        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
-        txtPapellido.setText("jj");
+        txtPapellido.setToolTipText("");
+        txtPapellido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtPapellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPapellidoActionPerformed(evt);
@@ -256,14 +264,15 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtPapellidoKeyTyped(evt);
             }
         });
-        jPanel7.add(txtPapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, -1));
+        jPanel7.add(txtPapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 100, -1));
 
         jLabel29.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Segundo apellido");
-        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        txtSapellido.setText("jj");
+        txtSapellido.setToolTipText("");
+        txtSapellido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtSapellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSapellidoActionPerformed(evt);
@@ -274,7 +283,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtSapellidoKeyTyped(evt);
             }
         });
-        jPanel7.add(txtSapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 100, -1));
+        jPanel7.add(txtSapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 100, -1));
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -345,7 +354,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtDireccion.setColumns(20);
         txtDireccion.setLineWrap(true);
         txtDireccion.setRows(5);
-        txtDireccion.setText("jj");
+        txtDireccion.setToolTipText("");
+        txtDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDireccionKeyTyped(evt);
@@ -354,16 +364,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtDireccion);
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, 100));
-
-        jLabel28.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("Codigo");
-        jPanel10.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
-
-        lblCodigo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigo.setText("jLabel30");
-        jPanel10.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 60, -1));
 
         jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 380, 170));
 
@@ -426,7 +426,16 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 310, 170));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 730, 340));
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Codigo");
+        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, 70, -1));
+
+        lblCodigo.setEditable(false);
+        lblCodigo.setToolTipText("");
+        jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 100, -1));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -434,7 +443,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnNuevoActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 70, -1));
+        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 90, 30));
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -442,7 +451,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, 70, -1));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 90, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
@@ -454,7 +463,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, 80, -1));
+        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 100, 30));
 
         btnBorrarA.setText("Borrar");
         btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
@@ -462,13 +471,14 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBorrarAActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 500, 70, -1));
+        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 90, 30));
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("codigo alumno");
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("INSCRIPCION DE ALUMNOS PERIODO:");
         jLabel18.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, 20));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 1000, 30));
 
         txtCodigo.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -476,7 +486,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtCodigoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 80, 20));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 20));
 
         btnBuscar.setText("buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
@@ -485,7 +495,13 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
+        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("codigo alumno");
+        jLabel30.setName("lbl"); // NOI18N
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, 20));
 
         jTabbedPane1.addTab("tab1", jPanel2);
 
@@ -498,17 +514,17 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Requisitos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        chkPartidaNacimiento.setForeground(new java.awt.Color(0, 0, 153));
+        chkPartidaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
         chkPartidaNacimiento.setText("Partida de Nacimiento");
         chkPartidaNacimiento.setOpaque(false);
         jPanel4.add(chkPartidaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        chkFotoCarnet.setForeground(new java.awt.Color(0, 0, 153));
+        chkFotoCarnet.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoCarnet.setText("4 Fotos Tipo Carnet ");
         chkFotoCarnet.setOpaque(false);
         jPanel4.add(chkFotoCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
-        chkFotoPostal.setForeground(new java.awt.Color(0, 0, 153));
+        chkFotoPostal.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoPostal.setText("1 Foto Tipo Postal");
         chkFotoPostal.setOpaque(false);
         chkFotoPostal.addActionListener(new java.awt.event.ActionListener() {
@@ -518,7 +534,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel4.add(chkFotoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, -1));
 
-        chkFotoFamiliar.setForeground(new java.awt.Color(0, 0, 153));
+        chkFotoFamiliar.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoFamiliar.setText("Foto Familiar");
         chkFotoFamiliar.setOpaque(false);
         chkFotoFamiliar.addActionListener(new java.awt.event.ActionListener() {
@@ -528,7 +544,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel4.add(chkFotoFamiliar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 120, -1));
 
-        chkCopiaCedula.setForeground(new java.awt.Color(0, 0, 153));
+        chkCopiaCedula.setForeground(new java.awt.Color(255, 255, 255));
         chkCopiaCedula.setText("Copia de Cedula de los Padres");
         chkCopiaCedula.setOpaque(false);
         jPanel4.add(chkCopiaCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
@@ -575,7 +591,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel11.setText("Nombre");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        txtNombreR1.setText("jj");
         txtNombreR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreR1KeyTyped(evt);
@@ -588,7 +603,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel12.setText("Ocupacion");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 60, -1));
 
-        txtOcupacionR1.setText("jj");
         txtOcupacionR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtOcupacionR1KeyTyped(evt);
@@ -611,7 +625,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel26.setText("cedula");
         jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, -1));
 
-        txtCedulaR1.setText("1");
         txtCedulaR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCedulaR1KeyTyped(evt);
@@ -619,7 +632,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel1.add(txtCedulaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 100, -1));
 
-        txtTelefonoR12.setText("12");
         txtTelefonoR12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoR12ActionPerformed(evt);
@@ -632,7 +644,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel1.add(txtTelefonoR12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 100, -1));
 
-        txtEmpresaR1.setText("jj");
         txtEmpresaR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmpresaR1KeyTyped(evt);
@@ -651,7 +662,6 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, 60));
 
-        txtTelefonoR1.setText("12");
         txtTelefonoR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR1KeyTyped(evt);
@@ -659,7 +669,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel1.add(txtTelefonoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 100, -1));
 
-        txtApellidoR1.setText("jj");
         txtApellidoR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoR1ActionPerformed(evt);
@@ -708,7 +717,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, 100, 30));
+        jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
 
         btnBorrarR.setText("Borrar");
         btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
@@ -716,7 +725,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBorrarRActionPerformed(evt);
             }
         });
-        jPanel3.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 410, 100, 30));
+        jPanel3.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 100, 30));
 
         jPanel6.setBackground(new java.awt.Color(24, 119, 189));
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -1024,11 +1033,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 100, 30));
+        jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 100, 30));
 
         jTabbedPane1.addTab("tab2", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 580));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1166,7 +1175,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoR1KeyTyped
 
     private void txtOcupacionR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR1KeyTyped
-        validacionSoloLetras(evt, 30, txtOcupacionR1.getText().length());
+        validacionSoloLetrasEspacio(evt, 30, txtOcupacionR1.getText().length());
     }//GEN-LAST:event_txtOcupacionR1KeyTyped
 
     private void txtTelefonoR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR1KeyTyped
@@ -1174,7 +1183,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoR1KeyTyped
 
     private void txtEmpresaR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR1KeyTyped
-        validacionSoloLetras(evt, 30, txtEmpresaR1.getText().length());
+        validacionSoloLetrasEspacio(evt, 30, txtEmpresaR1.getText().length());
     }//GEN-LAST:event_txtEmpresaR1KeyTyped
 
     private void txtTelefonoR12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR12KeyTyped
@@ -1198,7 +1207,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoR2KeyTyped
 
     private void txtOcupacionR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR2KeyTyped
-        validacionSoloLetras(evt, 30, txtOcupacionR2.getText().length());
+        validacionSoloLetrasEspacio(evt, 30, txtOcupacionR2.getText().length());
     }//GEN-LAST:event_txtOcupacionR2KeyTyped
 
     private void txtTelefonoR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR2KeyTyped
@@ -1206,7 +1215,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoR2KeyTyped
 
     private void txtEmpresaR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR2KeyTyped
-        validacionSoloLetras(evt, 30, txtEmpresaR2.getText().length());
+        validacionSoloLetrasEspacio(evt, 30, txtEmpresaR2.getText().length());
     }//GEN-LAST:event_txtEmpresaR2KeyTyped
 
     private void txtDireccionR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionR2KeyTyped
@@ -1402,35 +1411,35 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarImagen2ActionPerformed
 
     private void txtDireccionR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionR3KeyTyped
-        // TODO add your handling code here:
+    validacionLimite(evt, 300, txtDireccionR3.getText().length());
     }//GEN-LAST:event_txtDireccionR3KeyTyped
 
     private void txtTelefonoR32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR32KeyTyped
-        // TODO add your handling code here:
+    validacionTelefono(evt, 12, txtTelefonoR32.getText().length());
     }//GEN-LAST:event_txtTelefonoR32KeyTyped
 
     private void txtEmpresaR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR3KeyTyped
-        // TODO add your handling code here:
+    validacionSoloLetrasEspacio(evt, 30, txtEmpresaR3.getText().length());
     }//GEN-LAST:event_txtEmpresaR3KeyTyped
 
     private void txtCedulaR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR3KeyTyped
-        // TODO add your handling code here:
+    validacionSoloNumeros(evt, 8, txtCedulaR3.getText().length());
     }//GEN-LAST:event_txtCedulaR3KeyTyped
 
     private void txtTelefonoR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR3KeyTyped
-        // TODO add your handling code here:
+    validacionTelefono(evt, 12, txtTelefonoR3.getText().length());
     }//GEN-LAST:event_txtTelefonoR3KeyTyped
 
     private void txtApellidoR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoR3KeyTyped
-        // TODO add your handling code here:
+    validacionSoloLetras(evt, 15, txtApellidoR1.getText().length());
     }//GEN-LAST:event_txtApellidoR3KeyTyped
 
     private void txtOcupacionR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR3KeyTyped
-        // TODO add your handling code here:
+    validacionSoloLetrasEspacio(evt, 30, txtOcupacionR3.getText().length());
     }//GEN-LAST:event_txtOcupacionR3KeyTyped
 
     private void txtNombreR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreR3KeyTyped
-        // TODO add your handling code here:
+    validacionSoloLetras(evt, 15, txtNombreR3.getText().length());
     }//GEN-LAST:event_txtNombreR3KeyTyped
 
     private void btnAgregarImagen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagen3ActionPerformed
@@ -1574,6 +1583,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1607,7 +1617,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JTextField lblCodigo;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JLabel lblfoto;
     private javax.swing.JLabel lblfoto1;
@@ -1812,7 +1822,19 @@ public class frmInscripcion extends javax.swing.JFrame {
     }
 
     private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
-        if (coordinador.validacionLimiteSoloLetras(evt.getKeyChar() + "")) {
+        if (coordinador.validacionSoloLetras(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+    
+    private void validacionSoloLetrasEspacio(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionSoloLetrasEspacio(evt.getKeyChar() + "")) {
             if (lim >= maximo) {
                 evt.consume();
                 getToolkit().beep();

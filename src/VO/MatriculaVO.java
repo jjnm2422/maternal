@@ -11,17 +11,28 @@ package VO;
  */
 public class MatriculaVO {
     private int id_matricula, id_alumno, id_empleado;
-    private String seccion;
+    private String seccion, periodo;
     
     public MatriculaVO() {
 }
 
-    public MatriculaVO(int id_matricula, int id_alumno, int id_empleado, String seccion) {
+    public MatriculaVO(int id_matricula, int id_alumno, int id_empleado, String seccion, String periodo) {
         this.id_matricula = id_matricula;
         this.id_alumno = id_alumno;
         this.id_empleado = id_empleado;
         this.seccion = seccion;
+        this.periodo = periodo;
     }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    
 
     public int getId_matricula() {
         return id_matricula;

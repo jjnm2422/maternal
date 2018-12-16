@@ -13,10 +13,12 @@ import DAO.MatriculaDAO;
 import DAO.RepresentanteDAO;
 import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
+import DAO.VariablesDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
 import VO.RequisitosVO;
 import VO.UsuarioVO;
+import Vista.frmAjustes;
 import Vista.frmAsistencia;
 import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
@@ -56,6 +58,8 @@ public class Coordinador {
     private RequisitosVO requisitosVO;
     private RequisitosDAO requisitosDAO;
     private frmUsuario frmUsuario;
+    private frmAjustes frmAjustes;
+    private VariablesDAO variablesDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -84,6 +88,10 @@ public class Coordinador {
     public frmLogin getLogin() {
         return login;
     }
+    
+    public int consultarCantidadDeAlumnoSeccion(String seccion){
+        return getMatriculaDAO().consultarCantidadDeAlumnoSeccion(seccion);
+    }
 
     public String registrarAlumno(AlumnoVO alumnoVO) {
         return getAlumnoDAO().registrarAlumno(alumnoVO);
@@ -91,6 +99,14 @@ public class Coordinador {
     
     public String registrarRepresentante(VO.RepresentanteVO representanteVO) {
         return getRepresentanteDAO().registrarRepresentante(representanteVO) ;
+    }
+    
+    public boolean validacionSoloNumerosYPunto(String entrada){
+        return getLogica().validacionSoloNumerosYPunto(entrada);
+    }
+    
+    public boolean validacionSoloLetrasEspacio(String entrada){
+        return getLogica().validacionSoloLetrasEspacio(entrada);
     }
     
     public String registrarMatricula(VO.MatriculaVO matriculaVO) {
@@ -129,8 +145,8 @@ public class Coordinador {
         return getLogica().validacionLimiteSoloNumeros(entrada);
     }
     
-    public boolean validacionLimiteSoloLetras(String entrada){
-        return getLogica().validacionLimiteSoloLetras(entrada);
+    public boolean validacionSoloLetras(String entrada){
+        return getLogica().validacionSoloLetras(entrada);
     }
     
     public String getClave(char[] campoClave){
@@ -341,6 +357,27 @@ public class Coordinador {
     public frmUsuario getFrmUsuario() {
         return frmUsuario;
     }
-    
-    
+
+    public void setFrmAjustes(frmAjustes frmAjustes) {
+        this.frmAjustes = frmAjustes;
+    }
+
+    public frmAjustes getFrmAjustes() {
+        return frmAjustes;
+    }
+
+    public void setVariablesDAO(VariablesDAO variablesDAO) {
+        this.variablesDAO = variablesDAO;
+    }
+
+    public VariablesDAO getVariablesDAO() {
+        return variablesDAO;
+    }
+     public String actualizarVariables(VO.VariablesVO variablesVO) {
+         return getVariablesDAO().actualizarVariables(variablesVO);
+     }
+     
+     public VO.VariablesVO consultarVariables() {
+         return getVariablesDAO().consultarVariables();
+     }
 }

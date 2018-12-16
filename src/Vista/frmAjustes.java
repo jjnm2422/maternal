@@ -5,11 +5,17 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+import VO.VariablesVO;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +28,7 @@ public class frmAjustes extends javax.swing.JFrame {
 
     DefaultTableModel model;
     private String hora;
+    private Coordinador coordinador;
 
     public frmAjustes() {
         this.setlook();
@@ -87,27 +94,26 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo2 = new javax.swing.JLabel();
         lblTitulo3 = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
-        txtUsuario = new javax.swing.JTextField();
+        txtLimite = new javax.swing.JTextField();
         btnSalir2 = new javax.swing.JButton();
         txtIva = new javax.swing.JTextField();
-        txtHora = new javax.swing.JTextField();
+        txtDiasmora = new javax.swing.JTextField();
         lblTitulo4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        btnBuscar1 = new javax.swing.JButton();
-        btnBuscar2 = new javax.swing.JButton();
+        btnRuta = new javax.swing.JButton();
         lblTitulo16 = new javax.swing.JLabel();
         lblTitulo17 = new javax.swing.JLabel();
         lblTitulo18 = new javax.swing.JLabel();
-        btnBuscar4 = new javax.swing.JButton();
-        txtHora1 = new javax.swing.JTextField();
-        txtHora2 = new javax.swing.JTextField();
-        btnBuscar5 = new javax.swing.JButton();
-        btnBuscar6 = new javax.swing.JButton();
-        btnBuscar7 = new javax.swing.JButton();
-        btnBuscar8 = new javax.swing.JButton();
+        txtCuota = new javax.swing.JTextField();
+        txtMora = new javax.swing.JTextField();
+        btnActualizar = new javax.swing.JButton();
+        lblTitulo19 = new javax.swing.JLabel();
+        cbxPeriodo = new javax.swing.JComboBox<>();
+        btnEditar = new javax.swing.JButton();
+        lblUsuarioActvo = new javax.swing.JLabel();
+        btnRestaurar = new javax.swing.JButton();
         lblTitulo15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Variables del Sistema");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -136,7 +142,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo2.setText("%");
-        jPanel1.add(lblTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 20, 20));
+        jPanel1.add(lblTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 20, 20));
 
         lblTitulo3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo3.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,11 +153,15 @@ public class frmAjustes extends javax.swing.JFrame {
         txtRuta.setEnabled(false);
         jPanel1.add(txtRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 350, -1));
 
-        txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtUsuario.setEnabled(false);
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 110, -1));
+        txtLimite.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtLimite.setEnabled(false);
+        txtLimite.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLimiteKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtLimite, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 110, -1));
 
-        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PImagenes/agt_action_fail.png"))); // NOI18N
         btnSalir2.setText("Salir");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +169,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 100, 30));
+        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 100, 30));
 
         txtIva.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtIva.setEnabled(false);
@@ -168,11 +178,16 @@ public class frmAjustes extends javax.swing.JFrame {
                 txtIvaKeyTyped(evt);
             }
         });
-        jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 80, -1));
+        jPanel1.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 60, -1));
 
-        txtHora.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtHora.setEnabled(false);
-        jPanel1.add(txtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 100, -1));
+        txtDiasmora.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtDiasmora.setEnabled(false);
+        txtDiasmora.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiasmoraKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtDiasmora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 60, -1));
 
         lblTitulo4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo4.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,40 +195,21 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo4.setText("Valor Actual Iva");
         jPanel1.add(lblTitulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
 
-        jButton2.setText("...");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRuta.setText("...");
+        btnRuta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRuta.setEnabled(false);
+        btnRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRutaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 30, -1));
-
-        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PImagenes/1497913416_gtk-refresh.png"))); // NOI18N
-        btnBuscar1.setContentAreaFilled(false);
-        btnBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 30, 20));
-
-        btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PImagenes/agt_family.png"))); // NOI18N
-        btnBuscar2.setContentAreaFilled(false);
-        btnBuscar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 30, 20));
+        jPanel1.add(btnRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 30, -1));
 
         lblTitulo16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo16.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTitulo16.setText("Dias para mora");
-        jPanel1.add(lblTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 130, 20));
+        lblTitulo16.setText("Periodo Actual");
+        jPanel1.add(lblTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
 
         lblTitulo17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo17.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,68 +223,78 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo18.setText("Precio de Mora");
         jPanel1.add(lblTitulo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 130, 20));
 
-        btnBuscar4.setText("Actualizar");
-        btnBuscar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar4ActionPerformed(evt);
+        txtCuota.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtCuota.setEnabled(false);
+        txtCuota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCuotaKeyTyped(evt);
             }
         });
-        jPanel1.add(btnBuscar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 90, 20));
+        jPanel1.add(txtCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 100, -1));
 
-        txtHora1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtHora1.setEnabled(false);
-        jPanel1.add(txtHora1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 100, -1));
-
-        txtHora2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtHora2.setEnabled(false);
-        jPanel1.add(txtHora2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
-
-        btnBuscar5.setText("Actualizar");
-        btnBuscar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar5ActionPerformed(evt);
+        txtMora.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtMora.setEnabled(false);
+        txtMora.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMoraKeyTyped(evt);
             }
         });
-        jPanel1.add(btnBuscar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 20));
+        jPanel1.add(txtMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
 
-        btnBuscar6.setText("Actualizar");
-        btnBuscar6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar6.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar6ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 90, 20));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 90, 30));
 
-        btnBuscar7.setText("Actualizar");
-        btnBuscar7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar7.addActionListener(new java.awt.event.ActionListener() {
+        lblTitulo19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitulo19.setText("Dias para mora");
+        jPanel1.add(lblTitulo19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 130, 20));
+
+        cbxPeriodo.setEnabled(false);
+        cbxPeriodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar7ActionPerformed(evt);
+                cbxPeriodoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 90, 20));
+        jPanel1.add(cbxPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, -1));
 
-        btnBuscar8.setText("Actualizar");
-        btnBuscar8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscar8.addActionListener(new java.awt.event.ActionListener() {
+        btnEditar.setText("Editar");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar8ActionPerformed(evt);
+                btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 90, 20));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 90, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 565, 250));
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
+
+        btnRestaurar.setText("Restaurar");
+        btnRestaurar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRestaurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestaurarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 90, 30));
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 565, 290));
 
         lblTitulo15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo15.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitulo15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo15.setText("Ajustes");
-        jPanel3.add(lblTitulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 280, 20));
+        jPanel3.add(lblTitulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 560, 30));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 320));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -305,8 +311,8 @@ public class frmAjustes extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnSalir2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-/*   JFileChooser explorador = new JFileChooser("\\home\\");
+    private void btnRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutaActionPerformed
+    JFileChooser explorador = new JFileChooser("\\home\\");
     explorador.setDialogTitle("Abrir ubicacion de los reportes...");
     explorador.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
     int seleccion = explorador.showDialog(null, "Abrir!");
@@ -318,21 +324,7 @@ public class frmAjustes extends javax.swing.JFrame {
     //analizamos la respuesta
     switch(seleccion) {
     case JFileChooser.APPROVE_OPTION:
-        try {
-                String sql = "update variables set ruta=?";
-                PreparedStatement ps = acciones.Actualizar(sql);
-                ps.setString(1, ruta);    
-                int n = ps.executeUpdate();
-                if (n > 0) {
-                    txtRuta.setText(ruta);
-                    JOptionPane.showMessageDialog(null, "Ruta Actualizada con exito",
-                            "Informacion", JOptionPane.PLAIN_MESSAGE, iconCorrecto);
-                    acciones.conn.close();
-                }
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "Error al Actualizar Ruta\ncodigo error:" + e.getMessage(),
-                        "Error", JOptionPane.PLAIN_MESSAGE, iconError);
-                }
+        txtRuta.setText(ruta);
      break;
 
     case JFileChooser.CANCEL_OPTION:
@@ -342,40 +334,59 @@ public class frmAjustes extends javax.swing.JFrame {
     case JFileChooser.ERROR_OPTION:
      //llega aqui si sucede un error
      break;
-    }*/
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }
+    }//GEN-LAST:event_btnRutaActionPerformed
 
     private void txtIvaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIvaKeyTyped
-
+    validacionSoloNumeros(evt, 3, txtIva.getText().length());
     }//GEN-LAST:event_txtIvaKeyTyped
 
-    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+    if (verificacionCampos()) {
+        VO.VariablesVO variablesVO = new VO.VariablesVO();
+        variablesVO.setIva(Double.parseDouble(txtIva.getText().trim()));
+        variablesVO.setPrecio_cuota(Double.parseDouble(txtCuota.getText().trim()));
+        variablesVO.setPrecio_mora(Double.parseDouble(txtMora.getText().trim()));
+        variablesVO.setDias_mora(Integer.parseInt(txtDiasmora.getText().trim()));
+        variablesVO.setLimite_alumno(Integer.parseInt(txtLimite.getText().trim()));
+        variablesVO.setUbicacion_reporte(txtRuta.getText());
+        variablesVO.setPeriodo_actual(cbxPeriodo.getSelectedItem().toString());
+        String respuesta = coordinador.actualizarVariables(variablesVO);
+        System.out.println(respuesta);
+        desactivarCampos();
+        llenarCampos();            
+    } else {
+        JOptionPane.showMessageDialog(this, "Faltan Campos por llenar");
+    }
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
-    }//GEN-LAST:event_btnBuscar1ActionPerformed
+    private void cbxPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPeriodoActionPerformed
+    
+    }//GEN-LAST:event_cbxPeriodoActionPerformed
 
-    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+    activarCampos();
+    }//GEN-LAST:event_btnEditarActionPerformed
 
-    }//GEN-LAST:event_btnBuscar2ActionPerformed
+    private void txtCuotaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCuotaKeyTyped
+    validacionSoloNumerosYPunto(evt, 10, txtCuota.getText().length());
+    }//GEN-LAST:event_txtCuotaKeyTyped
 
-    private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscar4ActionPerformed
+    private void txtMoraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMoraKeyTyped
+    validacionSoloNumerosYPunto(evt, 10, txtMora.getText().length());
+    }//GEN-LAST:event_txtMoraKeyTyped
 
-    private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscar5ActionPerformed
+    private void txtLimiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLimiteKeyTyped
+    validacionSoloNumeros(evt, 3, txtLimite.getText().length());
+    }//GEN-LAST:event_txtLimiteKeyTyped
 
-    private void btnBuscar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscar6ActionPerformed
+    private void txtDiasmoraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiasmoraKeyTyped
+    validacionSoloNumeros(evt, 3, txtDiasmora.getText().length());
+    }//GEN-LAST:event_txtDiasmoraKeyTyped
 
-    private void btnBuscar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscar7ActionPerformed
-
-    private void btnBuscar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscar8ActionPerformed
+    private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaurarActionPerformed
+    llenarCampos(); 
+    }//GEN-LAST:event_btnRestaurarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -392,15 +403,12 @@ public class frmAjustes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar1;
-    private javax.swing.JButton btnBuscar2;
-    private javax.swing.JButton btnBuscar4;
-    private javax.swing.JButton btnBuscar5;
-    private javax.swing.JButton btnBuscar6;
-    private javax.swing.JButton btnBuscar7;
-    private javax.swing.JButton btnBuscar8;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnRestaurar;
+    private javax.swing.JButton btnRuta;
     private javax.swing.JButton btnSalir2;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JComboBox<String> cbxPeriodo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblTitulo1;
@@ -408,59 +416,80 @@ public class frmAjustes extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo16;
     private javax.swing.JLabel lblTitulo17;
     private javax.swing.JLabel lblTitulo18;
+    private javax.swing.JLabel lblTitulo19;
     private javax.swing.JLabel lblTitulo2;
     private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTitulo4;
-    private javax.swing.JTextField txtHora;
-    private javax.swing.JTextField txtHora1;
-    private javax.swing.JTextField txtHora2;
+    public javax.swing.JLabel lblUsuarioActvo;
+    private javax.swing.JTextField txtCuota;
+    private javax.swing.JTextField txtDiasmora;
     private javax.swing.JTextField txtIva;
+    public javax.swing.JTextField txtLimite;
+    private javax.swing.JTextField txtMora;
     private javax.swing.JTextField txtRuta;
-    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
-   /* private void LlenarTabla() {
-        try {
-            String[] titulos = {"Codigo", "Categoria"};
-            String sql = "select * from tipoproducto";
-            model = new DefaultTableModel(null, titulos);
-            ResultSet rs = acciones.Consultar(sql);
-            String[] fila = new String[8];
-            while (rs.next()) {
-                fila[0] = rs.getString("codtip");
-                fila[1] = rs.getString("tipprod");
-                model.addRow(fila);
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+    }
+    
+    public void llenarCampos(){
+        VariablesVO variablesVO = coordinador.consultarVariables();
+        txtCuota.setText(String.valueOf(variablesVO.getPrecio_cuota()));
+        txtIva.setText(String.valueOf(variablesVO.getIva()));
+        txtRuta.setText(String.valueOf(variablesVO.getUbicacion_reporte()));
+        txtLimite.setText(String.valueOf(variablesVO.getLimite_alumno()));
+        txtMora.setText(String.valueOf(variablesVO.getPrecio_mora()));
+        txtDiasmora.setText(String.valueOf(variablesVO.getDias_mora()));
+        cbxPeriodo.setSelectedItem(variablesVO.getPeriodo_actual());
+    }
+
+    private void activarCampos() {
+       txtCuota.setEnabled(true);
+       txtIva.setEnabled(true);
+       btnRuta.setEnabled(true);
+       txtLimite.setEnabled(true);
+       txtMora.setEnabled(true);
+       txtDiasmora.setEnabled(true);
+       cbxPeriodo.setEnabled(true);
+    }
+    
+       private void validacionSoloNumerosYPunto(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionSoloNumerosYPunto(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
             }
-            tbl.setModel(model);
-            acciones.conn.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+       
+    private void validacionSoloNumeros(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionLimiteSoloNumeros(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
         }
     }
     
-    private boolean EventoKeyType(int valor, int limitacion){
-            //pido el valor del text y pido el valor limitante
-            if (valor >= limitacion) {
-                return true;
-            }else{
-                return false;
-            }
+    private void desactivarCampos() {
+       txtCuota.setEnabled(false);
+       txtIva.setEnabled(false);
+       btnRuta.setEnabled(false);
+       txtLimite.setEnabled(false);
+       txtMora.setEnabled(false);
+       txtDiasmora.setEnabled(false);
+       cbxPeriodo.setEnabled(false);
     }
 
-    private boolean Verificacion(String cadena) {
-        boolean tipo = true;
-        try {
-            String sql = "select * from tipoproducto where tipprod = '"+cadena+"'";
-            ResultSet rs = acciones.Consultar(sql);
-            while (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Categoria ya Existe",
-                        "Advertencia", JOptionPane.PLAIN_MESSAGE, iconAd);
-                tipo = false;
-            }
-            acciones.conn.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        return tipo;
-    }*/
+    private boolean verificacionCampos() {
+        return !txtCuota.getText().isEmpty() && !txtIva.getText().isEmpty() && !txtLimite.getText().isEmpty()
+                && !txtMora.getText().isEmpty() && !txtDiasmora.getText().isEmpty();
+    }
 }

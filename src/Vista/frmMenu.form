@@ -75,12 +75,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLogo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="logo "/>
                 <Property name="name" type="java.lang.String" value="lblLogo" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="600" y="40" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="540" y="10" width="90" height="100"/>
                 </Constraint>
               </Constraints>
             </Component>
