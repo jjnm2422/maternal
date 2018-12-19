@@ -62,7 +62,7 @@ public class RequisitosDAO {
         return respuesta;
     }
 
-    public VO.RequisitosVO consultarRequisitos(String id_alumno) {
+    public VO.RequisitosVO consultarRequisitos(int id_alumno) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -75,9 +75,8 @@ public class RequisitosDAO {
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, id_alumno);
+                ps.setInt(1, id_alumno);
                 result = ps.executeQuery();
-                if (result.getRow()!=0) {
                     while (result.next()==true) {
                     requisitosVO.setId_alumno(result.getInt("id_alumno"));
                     requisitosVO.setCedula_padres(result.getBoolean("cedula_padres"));
@@ -87,10 +86,6 @@ public class RequisitosDAO {
                     requisitosVO.setPartida(result.getBoolean("partida"));
                     requisitosVO.setObservaciones(result.getString("observaciones"));
                     }
-                } else {
-                    conexiondb.desconexion();
-                    return null;
-                } 
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
             }

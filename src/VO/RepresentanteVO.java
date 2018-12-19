@@ -14,14 +14,14 @@ import javax.swing.ImageIcon;
  */
 public class RepresentanteVO {
     private String  primer_nombre, primer_apellido, telefono1, telefono2, direccion, correo, ocupacion, sexo, fecha_nacimiento, cedula, parentesco, empresa;
-    private int id_representante, edad, id_alumno, binarioFoto;
+    private int id_representante, edad, id_alumno, binarioFoto, tipo;
     private FileInputStream fis;
     private ImageIcon foto; 
     
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, int id_alumno, int binarioFoto, FileInputStream fis, ImageIcon foto) {
+    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, int id_alumno, int binarioFoto, int tipo, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.primer_apellido = primer_apellido;
         this.telefono1 = telefono1;
@@ -38,9 +38,21 @@ public class RepresentanteVO {
         this.edad = edad;
         this.id_alumno = id_alumno;
         this.binarioFoto = binarioFoto;
+        this.tipo = tipo;
         this.fis = fis;
         this.foto = foto;
     }
+
+    
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+
 
     public int getBinarioFoto() {
         return binarioFoto;

@@ -147,7 +147,7 @@ public class frmMenu extends javax.swing.JFrame {
         });
         jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 100, 70));
 
-        btnSeccion.setText("Secciones");
+        btnSeccion.setText("Matricula");
         btnSeccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeccionActionPerformed(evt);
@@ -201,12 +201,13 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAsistenciaActionPerformed
 
     private void btnSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccionActionPerformed
-                coordinador.getFrmGrupos().setVisible(true);
-                coordinador.getFrmGrupos().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
-                coordinador.getFrmGrupos().setLocationRelativeTo(this);
+        coordinador.getFrmGrupos().setVisible(true);
+        coordinador.getFrmGrupos().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+        coordinador.getFrmGrupos().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnSeccionActionPerformed
 
     private void btnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionActionPerformed
+        coordinador.getFrmInscripcion().lblTitulo.setText("INSCRIPCION DE ALUMNOS PERIODO: "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual());
         coordinador.getFrmInscripcion().setVisible(true);
         coordinador.getFrmInscripcion().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
         coordinador.getFrmInscripcion().setLocationRelativeTo(this);

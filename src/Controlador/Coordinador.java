@@ -117,12 +117,16 @@ public class Coordinador {
         return  getRequisitosDAO().registrarRequisitos(requisitosVO);
     }
     
+    public VO.RequisitosVO consultarRequisitos(int id_alumno) {
+        return getRequisitosDAO().consultarRequisitos(id_alumno);
+    }
+    
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }
     
-     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
-         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno);
+     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno, int tipo) {
+         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno, tipo);
      }
 
     public VO.AlumnoVO consultarAlumno(String parametro) {

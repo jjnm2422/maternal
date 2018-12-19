@@ -105,12 +105,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         cbxTipoSangre = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JTextField();
-        btnNuevo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
         btnBorrarA = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
@@ -437,21 +436,13 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
-        btnNuevo.setText("Nuevo");
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 90, 30));
-
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 90, 30));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 90, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
@@ -463,7 +454,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 100, 30));
+        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 100, 30));
 
         btnBorrarA.setText("Borrar");
         btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
@@ -471,19 +462,24 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBorrarAActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 90, 30));
+        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 90, 30));
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("INSCRIPCION DE ALUMNOS PERIODO:");
-        jLabel18.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 1000, 30));
+        lblTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("INSCRIPCION DE ALUMNOS PERIODO:");
+        lblTitulo.setName("lbl"); // NOI18N
+        jPanel2.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 1000, 30));
 
         txtCodigo.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
+            }
+        });
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
             }
         });
         jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 20));
@@ -1042,15 +1038,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        Object opciones[] = {"Continuar", "Descartar"};
-        int respuesta = JOptionPane.showOptionDialog(this, "Deseea usted descartar los cambios realizados", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "Continuar");
-        if (respuesta == 1) {
-            borrarCampos();
-            txtPnombre.setFocusable(true);
-        }
-    }//GEN-LAST:event_btnNuevoActionPerformed
-
     private void rbnFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnFemeninoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbnFemeninoActionPerformed
@@ -1179,7 +1166,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtOcupacionR1KeyTyped
 
     private void txtTelefonoR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR1KeyTyped
-        validacionTelefono(evt, 12, txtTelefonoR1.getText().length());
+        validacionTelefono(evt, 11, txtTelefonoR1.getText().length());
     }//GEN-LAST:event_txtTelefonoR1KeyTyped
 
     private void txtEmpresaR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR1KeyTyped
@@ -1187,7 +1174,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmpresaR1KeyTyped
 
     private void txtTelefonoR12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR12KeyTyped
-        validacionTelefono(evt, 12, txtTelefonoR12.getText().length());
+        validacionTelefono(evt, 11, txtTelefonoR12.getText().length());
     }//GEN-LAST:event_txtTelefonoR12KeyTyped
 
     private void txtCedulaR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR1KeyTyped
@@ -1211,7 +1198,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtOcupacionR2KeyTyped
 
     private void txtTelefonoR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR2KeyTyped
-        validacionTelefono(evt, 12, txtTelefonoR2.getText().length());
+        validacionTelefono(evt, 11, txtTelefonoR2.getText().length());
     }//GEN-LAST:event_txtTelefonoR2KeyTyped
 
     private void txtEmpresaR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR2KeyTyped
@@ -1223,7 +1210,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionR2KeyTyped
 
     private void txtTelefonoR22KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR22KeyTyped
-        validacionTelefono(evt, 12, txtTelefonoR22.getText().length());
+        validacionTelefono(evt, 11, txtTelefonoR22.getText().length());
     }//GEN-LAST:event_txtTelefonoR22KeyTyped
 
     private void txtCedulaR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR2KeyTyped
@@ -1257,8 +1244,18 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnBorrarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarAActionPerformed
-        borrarAlumno();
-        lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
+        Object opciones[] = {"Si", "No"};
+        int respuesta = JOptionPane.showOptionDialog(this, "¿Deseea usted borrar los cambios realizados en alumno?", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "No");
+        if (respuesta == 0) {
+            Object opciones2[] = {"Si", "No"};
+            int respuesta2 = JOptionPane.showOptionDialog(this, "¿Desea usted tambien borrar datos del representante?", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones2, "Si");
+            if (respuesta2 == 0) {
+                borrarCampos();
+            } 
+            borrarAlumno();
+            lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
+            txtPnombre.setFocusable(true);
+        }  
     }//GEN-LAST:event_btnBorrarAActionPerformed
 
     private void btnBorrarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarRActionPerformed
@@ -1271,6 +1268,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         if (!txtCodigo.getText().isEmpty()) {
+            String codigo = txtCodigo.getText().trim();
+            borrarCampos();
+            txtCodigo.setText(codigo);
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
@@ -1302,11 +1302,76 @@ public class frmInscripcion extends javax.swing.JFrame {
                 } else {
                     ajustar(lblfoto, alumnoVO.getFoto());
                 }
-                //datos del representante
-                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()));
-                txtNombreR1.setText(representanteVO.getPrimer_nombre());
+                //datos del representante 1
+                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 1);
+                if(representanteVO.getCedula()!=null){
+                    txtCedulaR1.setText(representanteVO.getCedula());
+                    txtNombreR1.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR1.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR1.setText(representanteVO.getOcupacion());
+                    txtTelefonoR1.setText(representanteVO.getTelefono1());
+                    txtTelefonoR12.setText(representanteVO.getTelefono2());
+                    txtEmpresaR1.setText(representanteVO.getEmpresa());
+                    txtDireccionR1.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto1, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto1, representanteVO.getFoto());
+                    }
+                }
+                //datos del representante 2
+                representanteVO = null;
+                representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 2);
+                if(representanteVO.getCedula()!=null){
+                    activarRepresentante();
+                    chkRepresentante.setSelected(true);
+                    txtCedulaR2.setText(representanteVO.getCedula());
+                    txtNombreR2.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR2.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR2.setText(representanteVO.getOcupacion());
+                    txtTelefonoR2.setText(representanteVO.getTelefono1());
+                    txtTelefonoR22.setText(representanteVO.getTelefono2());
+                    txtEmpresaR2.setText(representanteVO.getEmpresa());
+                    txtDireccionR2.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto2, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto2, representanteVO.getFoto());
+                    }
+                }
+                
+                //datos del representante 3
+                representanteVO = null;
+                representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 3);
+                if(representanteVO.getCedula()!=null){
+                    txtCedulaR3.setText(representanteVO.getCedula());
+                    txtNombreR3.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR3.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR3.setText(representanteVO.getOcupacion());
+                    txtTelefonoR3.setText(representanteVO.getTelefono1());
+                    txtTelefonoR32.setText(representanteVO.getTelefono2());
+                    txtEmpresaR3.setText(representanteVO.getEmpresa());
+                    txtDireccionR3.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto3, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto3, representanteVO.getFoto());
+                    }
+                }
+                
+                //datos de requisitos
+                VO.RequisitosVO requisitosVO = coordinador.consultarRequisitos(Integer.parseInt(txtCodigo.getText().trim()));
+                chkCopiaCedula.setSelected(requisitosVO.isCedula_padres());
+                chkFotoCarnet.setSelected(requisitosVO.isFoto_carnet());
+                chkFotoFamiliar.setSelected(requisitosVO.isFoto_familiar());
+                chkFotoPostal.setSelected(requisitosVO.isFoto_postal());
+                chkPartidaNacimiento.setSelected(requisitosVO.isPartida());
+                
+                //datos de observacion
+                txtObservacion.setText(requisitosVO.getObservaciones());
             } else {
-                JOptionPane.showMessageDialog(this, "Codigo no existe en la Base de Datos");
+                JOptionPane.showMessageDialog(this, "Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
+                borrarCampos();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Ingrese un codigo");
@@ -1415,7 +1480,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionR3KeyTyped
 
     private void txtTelefonoR32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR32KeyTyped
-    validacionTelefono(evt, 12, txtTelefonoR32.getText().length());
+    validacionTelefono(evt, 11, txtTelefonoR32.getText().length());
     }//GEN-LAST:event_txtTelefonoR32KeyTyped
 
     private void txtEmpresaR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR3KeyTyped
@@ -1427,7 +1492,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaR3KeyTyped
 
     private void txtTelefonoR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR3KeyTyped
-    validacionTelefono(evt, 12, txtTelefonoR3.getText().length());
+    validacionTelefono(evt, 11, txtTelefonoR3.getText().length());
     }//GEN-LAST:event_txtTelefonoR3KeyTyped
 
     private void txtApellidoR3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoR3KeyTyped
@@ -1498,6 +1563,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSapellidoActionPerformed
 
+    private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
+        validacionSoloNumeros(evt, 4, txtCodigo.getText().length());
+    }//GEN-LAST:event_txtCodigoKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -1544,7 +1613,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JButton btnBorrarR;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1569,7 +1637,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1618,6 +1685,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField lblCodigo;
+    public javax.swing.JLabel lblTitulo;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JLabel lblfoto;
     private javax.swing.JLabel lblfoto1;
@@ -1950,6 +2018,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }
 
     private void borrarAlumno() {
+        txtCodigo.setText("");
         txtPnombre.setText("");
         txtSnombre.setText("");
         txtPapellido.setText("");
