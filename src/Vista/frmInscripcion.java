@@ -286,7 +286,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel7.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 110, 120));
+        jPanel7.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 110, 120));
 
         btnAgregarImagen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAgregarImagen.setText("Cargar");
@@ -295,7 +295,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnAgregarImagenActionPerformed(evt);
             }
         });
-        jPanel7.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 20));
+        jPanel7.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 110, 20));
 
         jPanel8.setBackground(new java.awt.Color(24, 119, 189));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));

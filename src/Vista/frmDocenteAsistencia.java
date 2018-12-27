@@ -164,7 +164,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, -1, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, -1, -1));
 
         btnGuardar.setText("guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N

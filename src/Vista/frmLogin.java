@@ -171,7 +171,7 @@ public class frmLogin extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         btnSalir.setText("Salir");
         btnSalir.setPreferredSize(new java.awt.Dimension(60, 23));

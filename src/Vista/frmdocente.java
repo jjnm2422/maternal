@@ -166,7 +166,7 @@ public class frmdocente extends javax.swing.JFrame {
 
         jButton5.setText("atras");
         jButton5.setName("btnAtras"); // NOI18N
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 80, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 80, -1));
 
         jButton6.setText("guardar");
         jButton6.setName("btnGuardar"); // NOI18N

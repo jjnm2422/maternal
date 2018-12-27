@@ -93,7 +93,7 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel2.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, -1, -1));
 
         jLabel2.setText("hombol maternal");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 450, 50));
 
         lblLogo.setName("lblLogo"); // NOI18N
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 90, 100));

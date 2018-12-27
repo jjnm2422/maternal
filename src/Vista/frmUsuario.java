@@ -89,7 +89,7 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Usuario");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 30));
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 160, 30));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

@@ -479,7 +479,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 90, 30));
+        jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 90, 30));
 
         lblUsuarioActvo1.setText("usuario activo");
         lblUsuarioActvo1.setName("lblUsuarioActivo"); // NOI18N
@@ -492,7 +492,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 100, 30));
+        jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 100, 30));
 
         lblTitulo1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));

@@ -169,7 +169,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 100, 30));
+        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 100, 30));
 
         txtIva.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtIva.setEnabled(false);
@@ -248,7 +248,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 90, 30));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 90, 30));
 
         lblTitulo19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,7 +271,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 90, 30));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 90, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
@@ -284,7 +284,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnRestaurarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 90, 30));
+        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, 30));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 565, 290));
 

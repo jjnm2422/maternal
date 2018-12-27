@@ -73,7 +73,7 @@ public class frmPago extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblDatosAlumno);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 100));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 100));
 
         tblMeses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
