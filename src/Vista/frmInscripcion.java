@@ -1818,6 +1818,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString().toLowerCase());
         representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO.setCedula(txtCedulaR1.getText());
+        representanteVO.setTipo(1);
         if (!lblfoto1.getIcon().equals(ICON_NO_PHOTO)) {
             representanteVO.setBinarioFoto(longitudBytes1);
             representanteVO.setFis(fis1);
@@ -1843,6 +1844,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
         representanteVO2.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO2.setCedula(txtCedulaR2.getText());
+        representanteVO2.setTipo(2);
         if (!lblfoto2.getIcon().equals(ICON_NO_PHOTO)) {
             representanteVO2.setBinarioFoto(longitudBytes2);
             representanteVO2.setFis(fis2);
@@ -1867,6 +1869,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
         representanteVO3.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO3.setCedula(txtCedulaR3.getText());
+        representanteVO3.setTipo(3);
         if(rbnR1.isSelected()){
             representanteVO3.setBinarioFoto(longitudBytecopia1);
             representanteVO3.setFis(fisCopia1);

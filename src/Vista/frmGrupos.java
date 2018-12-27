@@ -10,6 +10,7 @@ import VO.AlumnoVO;
 import VO.RepresentanteVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -70,6 +71,9 @@ public class frmGrupos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -107,7 +111,6 @@ public class frmGrupos extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo1 = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
-        btnBorrarA = new javax.swing.JButton();
         lblTitulo1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -145,7 +148,6 @@ public class frmGrupos extends javax.swing.JFrame {
         btnAgregarImagen2 = new javax.swing.JButton();
         lblfoto1 = new javax.swing.JLabel();
         btnAtras1 = new javax.swing.JButton();
-        btnBorrarR = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         txtDireccionR2 = new javax.swing.JTextArea();
@@ -336,6 +338,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel12.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup2.add(rbnFemenino);
         rbnFemenino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnFemenino.setForeground(new java.awt.Color(255, 255, 255));
         rbnFemenino.setSelected(true);
@@ -350,6 +353,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel12.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup2.add(rbnMasculino);
         rbnMasculino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
@@ -406,6 +410,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel14.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
 
         rbnSi.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup1.add(rbnSi);
         rbnSi.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnSi.setForeground(new java.awt.Color(255, 255, 255));
         rbnSi.setText("Si");
@@ -419,6 +424,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel14.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
         rbnNo.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup1.add(rbnNo);
         rbnNo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         rbnNo.setForeground(new java.awt.Color(255, 255, 255));
         rbnNo.setSelected(true);
@@ -468,7 +474,6 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
         btnSalir.setText("Salir");
-        btnSalir.setEnabled(false);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -488,15 +493,6 @@ public class frmGrupos extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 100, 30));
-
-        btnBorrarA.setText("Borrar");
-        btnBorrarA.setEnabled(false);
-        btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarAActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 90, 30));
 
         lblTitulo1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -765,16 +761,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
-
-        btnBorrarR.setText("Borrar");
-        btnBorrarR.setEnabled(false);
-        btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarRActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 100, 30));
+        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 460, 100, 30));
 
         jPanel15.setBackground(new java.awt.Color(24, 119, 189));
         jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -1057,6 +1044,7 @@ public class frmGrupos extends javax.swing.JFrame {
         lblfoto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel16.add(lblfoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, 120));
 
+        buttonGroup3.add(rbnOtro);
         rbnOtro.setSelected(true);
         rbnOtro.setText("Otro");
         rbnOtro.setEnabled(false);
@@ -1067,6 +1055,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel16.add(rbnOtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
+        buttonGroup3.add(rbnR1);
         rbnR1.setText("R1");
         rbnR1.setEnabled(false);
         rbnR1.addActionListener(new java.awt.event.ActionListener() {
@@ -1076,6 +1065,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel16.add(rbnR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
+        buttonGroup3.add(rbnR2);
         rbnR2.setText("R2");
         rbnR2.setEnabled(false);
         rbnR2.addActionListener(new java.awt.event.ActionListener() {
@@ -1087,14 +1077,14 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 340, 320));
 
-        btnGuardar1.setText("Guardar");
+        btnGuardar1.setText("Actualizar");
         btnGuardar1.setEnabled(false);
         btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 100, 30));
+        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 100, 30));
 
         jTabbedPane2.addTab("DATOS DE REPRESENTANTE", jPanel4);
 
@@ -1326,7 +1316,7 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoR1KeyTyped
 
     private void btnAgregarImagen2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagen2ActionPerformed
-        lblfoto.setIcon(null);
+        lblfoto1.setIcon(null);
         JFileChooser j = new JFileChooser();
         FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG & PNG", "jpg", "png");
         j.setFileFilter(filtroImagen);
@@ -1341,9 +1331,9 @@ public class frmGrupos extends javax.swing.JFrame {
                 this.longitudBytes1 = (int) j.getSelectedFile().length();
                 this.longitudBytecopia1 = (int) j.getSelectedFile().length();
                 try {
-                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto.getWidth(), lblfoto.getHeight(), Image.SCALE_DEFAULT);
-                    lblfoto.setIcon(new ImageIcon(icono));
-                    lblfoto.updateUI();
+                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto1.getWidth(), lblfoto1.getHeight(), Image.SCALE_DEFAULT);
+                    lblfoto1.setIcon(new ImageIcon(icono));
+                    lblfoto1.updateUI();
 
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
@@ -1357,12 +1347,8 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarImagen2ActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+        jTabbedPane2.setSelectedIndex(0);
     }//GEN-LAST:event_btnAtras1ActionPerformed
-
-    private void btnBorrarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarRActionPerformed
-        borrarRepresentante();
-    }//GEN-LAST:event_btnBorrarRActionPerformed
 
     private void txtDireccionR2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionR2KeyTyped
         validacionLimite(evt, 300, txtDireccionR2.getText().length());
@@ -1405,7 +1391,7 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_chkRepresentanteActionPerformed
 
     private void btnAgregarImagen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagen3ActionPerformed
-        lblfoto1.setIcon(null);
+        lblfoto2.setIcon(null);
         JFileChooser j = new JFileChooser();
         FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG & PNG", "jpg", "png");
         j.setFileFilter(filtroImagen);
@@ -1420,9 +1406,9 @@ public class frmGrupos extends javax.swing.JFrame {
                 this.longitudBytes2 = (int) j.getSelectedFile().length();
                 this.longitudBytecopia2 = (int) j.getSelectedFile().length();
                 try {
-                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto1.getWidth(), lblfoto1.getHeight(), Image.SCALE_DEFAULT);
-                    lblfoto1.setIcon(new ImageIcon(icono));
-                    lblfoto1.updateUI();
+                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto2.getWidth(), lblfoto2.getHeight(), Image.SCALE_DEFAULT);
+                    lblfoto2.setIcon(new ImageIcon(icono));
+                    lblfoto2.updateUI();
 
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
@@ -1468,7 +1454,7 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreR3KeyTyped
 
     private void btnAgregarImagen4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagen4ActionPerformed
-        lblfoto2.setIcon(null);
+        lblfoto3.setIcon(null);
         JFileChooser j = new JFileChooser();
         FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG & PNG", "jpg", "png");
         j.setFileFilter(filtroImagen);
@@ -1481,9 +1467,9 @@ public class frmGrupos extends javax.swing.JFrame {
 
                 this.longitudBytes3 = (int) j.getSelectedFile().length();
                 try {
-                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto2.getWidth(), lblfoto2.getHeight(), Image.SCALE_DEFAULT);
-                    lblfoto2.setIcon(new ImageIcon(icono));
-                    lblfoto2.updateUI();
+                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto3.getWidth(), lblfoto3.getHeight(), Image.SCALE_DEFAULT);
+                    lblfoto3.setIcon(new ImageIcon(icono));
+                    lblfoto3.updateUI();
 
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
@@ -1519,21 +1505,20 @@ public class frmGrupos extends javax.swing.JFrame {
             //verifico campos representates
             if (validacionCampoRepresentante()) {
                 //registro los alumnos
-                if (registrarAlumno(fecha)) {
+                if (actualizaAlumno(fecha)) {
                     //registro al primer representante
-                    if (registrarRepresentante()) {
+                    if (actualizarRepresentante(1)) {
                         //combruebo check para revisar si registro al otro representante o no
                         if (chkRepresentante.isSelected()) {
-                            if (registrarRepresentante2()) {
-                                if (registrarRepresentante3()) {
-                                    if (registrarMatricula()) {
-                                        if (registrarRequisitos()) {
-                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
-                                        } else {
-                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
-                                        }
+                            if (actualizarRepresentante2(2)) {
+                                if (actualizarRepresentante3(3)) {
+                                    if (actualizarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Actualizacion completada");
+                                        borrarCampos();
+                                        lblCodigo.setText("");
+                                        campoPordefecto();
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
                                     }
                                     borrarCampos();
                                 } else {
@@ -1543,16 +1528,15 @@ public class frmGrupos extends javax.swing.JFrame {
                                 JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
                             }
                         } else {
-                            if (registrarRepresentante3()) {
-                                if (registrarMatricula()) {
-                                    if (registrarRequisitos()) {
-                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                            if (actualizarRepresentante3(3)) {
+                                    if (actualizarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Actualizacion completada");
+                                        borrarCampos();
+                                        lblCodigo.setText("");
+                                        campoPordefecto();
                                     } else {
                                         JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
                                     }
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
-                                }
                                 borrarCampos();
                             } else {
                                 JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
@@ -1658,23 +1642,8 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane2.setSelectedIndex(1);
     }//GEN-LAST:event_btnSiguienteActionPerformed
-
-    private void btnBorrarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarAActionPerformed
-        Object opciones[] = {"Si", "No"};
-        int respuesta = JOptionPane.showOptionDialog(this, "¿Deseea usted borrar los cambios realizados en alumno?", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "No");
-        if (respuesta == 0) {
-            Object opciones2[] = {"Si", "No"};
-            int respuesta2 = JOptionPane.showOptionDialog(this, "¿Desea usted tambien borrar datos del representante?", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones2, "Si");
-            if (respuesta2 == 0) {
-                borrarCampos();
-            }
-            borrarAlumno();
-            lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
-            txtPnombre.setFocusable(true);
-        }
-    }//GEN-LAST:event_btnBorrarAActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
@@ -1686,11 +1655,12 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         if (!txtCodigo.getText().isEmpty()) {
-            String codigo = txtCodigo.getText().trim();
-            borrarCampos();
-            txtCodigo.setText(codigo);
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
+                String codigo = txtCodigo.getText().trim();
+                borrarCampos();
+                txtCodigo.setText(codigo);
+                habilitarCambios(true);
                 //datos del alumno
                 txtPnombre.setText(alumnoVO.getPrimer_nombre());
                 txtSnombre.setText(alumnoVO.getSegundo_nombre());
@@ -1757,7 +1727,7 @@ public class frmGrupos extends javax.swing.JFrame {
                         ajustar(lblfoto2, representanteVO.getFoto());
                     }
                 }
-
+                
                 //datos del representante 3
                 representanteVO = null;
                 representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 3);
@@ -1790,6 +1760,8 @@ public class frmGrupos extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
                 borrarCampos();
+                lblCodigo.setText("");
+                campoPordefecto();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Ingrese un codigo");
@@ -1848,14 +1820,15 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarImagen4;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnAtras1;
-    private javax.swing.JButton btnBorrarA;
-    private javax.swing.JButton btnBorrarR;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnLlenar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSiguiente;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JComboBox<String> cbxParentescoR1;
     private javax.swing.JComboBox<String> cbxParentescoR2;
     private javax.swing.JComboBox<String> cbxParentescoR3;
@@ -1987,7 +1960,7 @@ public class frmGrupos extends javax.swing.JFrame {
        this.coordinador = coordinador;
     }
     
-        private boolean registrarAlumno(String fecha) {
+        private boolean actualizaAlumno(String fecha) {
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
         alumnoVO.setPrimer_nombre(txtPnombre.getText());
         alumnoVO.setSegundo_nombre(txtSnombre.getText());
@@ -2013,9 +1986,10 @@ public class frmGrupos extends javax.swing.JFrame {
         if (!lblfoto.getIcon().equals(ICON_NO_PHOTO)) {
             alumnoVO.setBinarioFoto(longitudBytes);
             alumnoVO.setFis(fis);
+            Icon icon = lblfoto.getIcon();
         }
-        String res = coordinador.registrarAlumno(alumnoVO);
-        if (res.equals("INGRESADO CON EXITO")) {
+        String res = coordinador.actualizarAlumno(alumnoVO, lblCodigo.getText().trim());
+        if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
             return false;
@@ -2054,7 +2028,7 @@ public class frmGrupos extends javax.swing.JFrame {
         }
     }
 
-    private boolean registrarRepresentante() {
+    private boolean actualizarRepresentante(int tipo) {
         VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
 
         representanteVO.setPrimer_nombre(txtNombreR1.getText());
@@ -2072,15 +2046,15 @@ public class frmGrupos extends javax.swing.JFrame {
             representanteVO.setFis(fis1);
         }
 
-        String res = coordinador.registrarRepresentante(representanteVO);
-        if (res.equals("INGRESADO CON EXITO")) {
+        String res = coordinador.actualizarRepresentante(representanteVO, txtCodigo.getText(), tipo);
+        if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
             return false;
         }
     }
 
-    private boolean registrarRepresentante2() {
+    private boolean actualizarRepresentante2(int tipo) {
         VO.RepresentanteVO representanteVO2 = new VO.RepresentanteVO();
         representanteVO2.setPrimer_nombre(txtNombreR2.getText());
         representanteVO2.setPrimer_apellido(txtApellidoR2.getText());
@@ -2096,15 +2070,15 @@ public class frmGrupos extends javax.swing.JFrame {
             representanteVO2.setBinarioFoto(longitudBytes2);
             representanteVO2.setFis(fis2);
         }
-        String res = coordinador.registrarRepresentante(representanteVO2);
-        if (res.equals("INGRESADO CON EXITO")) {
+        String res = coordinador.actualizarRepresentante(representanteVO2, txtCodigo.getText(), tipo);
+        if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
             return false;
         }
     }
     
-    private boolean registrarRepresentante3() {
+    private boolean actualizarRepresentante3(int tipo) {
         VO.RepresentanteVO representanteVO3 = new VO.RepresentanteVO();
         representanteVO3.setPrimer_nombre(txtNombreR3.getText());
         representanteVO3.setPrimer_apellido(txtApellidoR3.getText());
@@ -2130,8 +2104,8 @@ public class frmGrupos extends javax.swing.JFrame {
                 representanteVO3.setFis(fis3);
             }
         }
-        String res = coordinador.registrarRepresentante(representanteVO3);
-        if (res.equals("INGRESADO CON EXITO")) {
+        String res = coordinador.actualizarRepresentante(representanteVO3, txtCodigo.getText(), tipo);
+        if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
             return false;
@@ -2195,7 +2169,6 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private void borrarCampos() {
         borrarAlumno();
-        lblCodigo.setText(String.valueOf(coordinador.llenarCodigoAlumno()));
         borrarRepresentante();
         borrarRepresentante3();
         activarRepresentante3();
@@ -2212,7 +2185,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtEmpresaR2.setText("");
         txtDireccionR2.setText("");
         txtCedulaR2.setText("");
-        ajustar(lblfoto1, ICON_NO_PHOTO);
+        ajustar(lblfoto2, ICON_NO_PHOTO);
 
         cbxParentescoR2.setEnabled(false);
         txtNombreR2.setEnabled(false);
@@ -2223,7 +2196,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtEmpresaR2.setEnabled(false);
         txtDireccionR2.setEnabled(false);
         txtCedulaR2.setEnabled(false);
-        btnAgregarImagen2.setEnabled(false);
+        btnAgregarImagen3.setEnabled(false);
     }
 
     private void activarRepresentante() {
@@ -2236,7 +2209,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtEmpresaR2.setEnabled(true);
         txtDireccionR2.setEnabled(true);
         txtCedulaR2.setEnabled(true);
-        btnAgregarImagen2.setEnabled(true);
+        btnAgregarImagen3.setEnabled(true);
     }
 
     private boolean registrarMatricula() {
@@ -2250,7 +2223,7 @@ public class frmGrupos extends javax.swing.JFrame {
         }
     }
 
-    private boolean registrarRequisitos() {
+    private boolean actualizarRequisitos() {
         VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
         requisitosVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         requisitosVO.setFoto_carnet(chkFotoCarnet.isSelected());
@@ -2259,7 +2232,7 @@ public class frmGrupos extends javax.swing.JFrame {
         requisitosVO.setPartida(chkPartidaNacimiento.isSelected());
         requisitosVO.setCedula_padres(chkCopiaCedula.isSelected());
         requisitosVO.setObservaciones(txtObservacion.getText());
-        if (coordinador.registrarRequisitos(requisitosVO).equals("INGRESADO CON EXITO")) {
+        if (coordinador.actualizarRequisitos(requisitosVO).equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
             return false;
@@ -2292,7 +2265,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtEmpresaR1.setText("");
         txtCedulaR1.setText("");
         txtObservacion.setText("");
-        ajustar(lblfoto, ICON_NO_PHOTO);
+        ajustar(lblfoto1, ICON_NO_PHOTO);
         desactivarRepresentante();
         desactivarRepresentante3();
         borrarRepresentante3();
@@ -2315,7 +2288,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtTelefonoR32.setText(txtTelefonoR12.getText());
         txtEmpresaR3.setText(txtEmpresaR1.getText());
         txtDireccionR3.setText(txtDireccionR1.getText());
-        ajustar(lblfoto2, (ImageIcon) lblfoto.getIcon());
+        ajustar(lblfoto3, (ImageIcon) lblfoto1.getIcon());
         cbxParentescoR3.setSelectedItem(cbxParentescoR1.getSelectedItem());
     }
 
@@ -2331,7 +2304,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtTelefonoR32.setText(txtTelefonoR22.getText());
         txtEmpresaR3.setText(txtEmpresaR2.getText());
         txtDireccionR3.setText(txtDireccionR2.getText());
-        ajustar(lblfoto2, (ImageIcon) lblfoto1.getIcon());
+        ajustar(lblfoto3, (ImageIcon) lblfoto2.getIcon());
         cbxParentescoR3.setSelectedItem(cbxParentescoR2.getSelectedItem());
     }
 
@@ -2345,7 +2318,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtTelefonoR32.setText("");
         txtEmpresaR3.setText("");
         txtDireccionR3.setText("");
-        ajustar(lblfoto2, ICON_NO_PHOTO);
+        ajustar(lblfoto3, ICON_NO_PHOTO);
         cbxParentescoR3.setSelectedItem(0);
     }
 
@@ -2374,7 +2347,7 @@ public class frmGrupos extends javax.swing.JFrame {
         txtEmpresaR3.setEnabled(true);
         txtDireccionR3.setEnabled(true);
         txtCedulaR3.setEnabled(true);
-        btnAgregarImagen3.setEnabled(true);
+        btnAgregarImagen4.setEnabled(true);
         } else {
         cbxParentescoR3.setEnabled(false);
         txtNombreR3.setEnabled(false);
@@ -2388,5 +2361,135 @@ public class frmGrupos extends javax.swing.JFrame {
         btnAgregarImagen3.setEnabled(false);
         }
         
+    }
+
+    private void habilitarCambios(boolean valor) {
+        //alumno
+        txtPnombre.setEnabled(valor);
+        txtSnombre.setEnabled(valor);
+        txtPapellido.setEnabled(valor);
+        txtSapellido.setEnabled(valor);
+        txtDireccion.setEnabled(valor);
+        btnAgregarImagen.setEnabled(valor);
+        rbnFemenino.setEnabled(valor);
+        rbnMasculino.setEnabled(valor);
+        txtFecha.setEnabled(valor);
+        cbxTipoSangre.setEnabled(valor);
+        rbnSi.setEnabled(valor);
+        rbnNo.setEnabled(valor);
+        
+        //representante 1
+        cbxParentescoR1.setEnabled(valor);
+        txtCedulaR1.setEnabled(valor);
+        txtNombreR1.setEnabled(valor);
+        txtApellidoR1.setEnabled(valor);
+        txtOcupacionR1.setEnabled(valor);
+        txtTelefonoR1.setEnabled(valor);
+        txtEmpresaR1.setEnabled(valor);
+        txtTelefonoR12.setEnabled(valor);
+        txtDireccionR1.setEnabled(valor);
+        btnAgregarImagen2.setEnabled(valor);
+        
+        //representante 3
+        cbxParentescoR3.setEnabled(valor);
+        txtCedulaR3.setEnabled(valor);
+        txtNombreR3.setEnabled(valor);
+        txtApellidoR3.setEnabled(valor);
+        txtOcupacionR3.setEnabled(valor);
+        txtTelefonoR3.setEnabled(valor);
+        txtEmpresaR3.setEnabled(valor);
+        txtTelefonoR32.setEnabled(valor);
+        txtDireccionR3.setEnabled(valor);
+        btnAgregarImagen3.setEnabled(valor);
+        rbnR1.setEnabled(valor);
+        rbnR2.setEnabled(valor);
+        rbnOtro.setEnabled(valor);
+        
+        chkCopiaCedula.setEnabled(valor);
+        chkFotoCarnet.setEnabled(valor);
+        chkFotoFamiliar.setEnabled(valor);
+        chkFotoPostal.setEnabled(valor);
+        chkPartidaNacimiento.setEnabled(valor);
+        chkRepresentante.setEnabled(valor);
+        txtObservacion.setEnabled(valor);
+        
+        //botones
+        btnAtras1.setEnabled(valor);
+        btnGuardar1.setEnabled(valor);
+        btnSalir.setEnabled(valor);
+        btnSiguiente.setEnabled(valor);
+    }
+    
+     private void campoPordefecto() {
+        //alumno
+        txtPnombre.setEnabled(false);
+        txtSnombre.setEnabled(false);
+        txtPapellido.setEnabled(false);
+        txtSapellido.setEnabled(false);
+        txtDireccion.setEnabled(false);
+        btnAgregarImagen.setEnabled(false);
+        rbnFemenino.setEnabled(false);
+        rbnMasculino.setEnabled(false);
+        txtFecha.setEnabled(false);
+        cbxTipoSangre.setEnabled(false);
+        rbnSi.setEnabled(false);
+        rbnNo.setEnabled(false);
+        txtEnfermedad.setEnabled(false);
+        
+        //representante 1
+        cbxParentescoR1.setEnabled(false);
+        txtCedulaR1.setEnabled(false);
+        txtNombreR1.setEnabled(false);
+        txtApellidoR1.setEnabled(false);
+        txtOcupacionR1.setEnabled(false);
+        txtTelefonoR1.setEnabled(false);
+        txtEmpresaR1.setEnabled(false);
+        txtTelefonoR12.setEnabled(false);
+        txtDireccionR1.setEnabled(false);
+        btnAgregarImagen2.setEnabled(false);
+        ajustar(lblfoto1, ICON_NO_PHOTO);
+        
+        //representante 2
+        cbxParentescoR2.setEnabled(false);
+        txtCedulaR2.setEnabled(false);
+        txtNombreR2.setEnabled(false);
+        txtApellidoR2.setEnabled(false);
+        txtOcupacionR2.setEnabled(false);
+        txtTelefonoR2.setEnabled(false);
+        txtEmpresaR2.setEnabled(false);
+        txtTelefonoR22.setEnabled(false);
+        txtDireccionR2.setEnabled(false);
+        btnAgregarImagen3.setEnabled(false);
+        ajustar(lblfoto2, ICON_NO_PHOTO);
+        
+         //representante 3
+        cbxParentescoR3.setEnabled(false);
+        txtCedulaR3.setEnabled(false);
+        txtNombreR3.setEnabled(false);
+        txtApellidoR3.setEnabled(false);
+        txtOcupacionR3.setEnabled(false);
+        txtTelefonoR3.setEnabled(false);
+        txtEmpresaR3.setEnabled(false);
+        txtTelefonoR32.setEnabled(false);
+        txtDireccionR3.setEnabled(false);
+        btnAgregarImagen4.setEnabled(false);
+        ajustar(lblfoto3, ICON_NO_PHOTO);
+        rbnR1.setEnabled(false);
+        rbnR2.setEnabled(false);
+        rbnOtro.setEnabled(false);
+        
+        chkCopiaCedula.setEnabled(false);
+        chkFotoCarnet.setEnabled(false);
+        chkFotoFamiliar.setEnabled(false);
+        chkFotoPostal.setEnabled(false);
+        chkPartidaNacimiento.setEnabled(false);
+        chkRepresentante.setEnabled(false);
+        txtObservacion.setEnabled(false);
+        
+        //botones
+        btnAtras1.setEnabled(false);
+        btnGuardar1.setEnabled(false);
+        btnSalir.setEnabled(false);
+        btnSiguiente.setEnabled(false);
     }
 }
