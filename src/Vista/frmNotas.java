@@ -27,7 +27,7 @@ public class frmNotas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -45,308 +45,1004 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jRadioButton16 = new javax.swing.JRadioButton();
-        jRadioButton17 = new javax.swing.JRadioButton();
-        jRadioButton18 = new javax.swing.JRadioButton();
-        jRadioButton19 = new javax.swing.JRadioButton();
-        jRadioButton20 = new javax.swing.JRadioButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnAtras = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
-        lblLogo = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
         txtConsultar = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblPnombre = new javax.swing.JLabel();
         lblUsuarioActvo = new javax.swing.JLabel();
+        btnSiguiente1 = new javax.swing.JButton();
+        lblfoto = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jComboBox13 = new javax.swing.JComboBox<>();
+        jComboBox14 = new javax.swing.JComboBox<>();
+        jComboBox15 = new javax.swing.JComboBox<>();
+        jComboBox16 = new javax.swing.JComboBox<>();
+        jComboBox17 = new javax.swing.JComboBox<>();
+        jComboBox18 = new javax.swing.JComboBox<>();
+        jComboBox19 = new javax.swing.JComboBox<>();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        btnSiguiente = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        btnSiguiente2 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jComboBox20 = new javax.swing.JComboBox<>();
+        jComboBox21 = new javax.swing.JComboBox<>();
+        jComboBox22 = new javax.swing.JComboBox<>();
+        jComboBox23 = new javax.swing.JComboBox<>();
+        jComboBox24 = new javax.swing.JComboBox<>();
+        jComboBox25 = new javax.swing.JComboBox<>();
+        jComboBox26 = new javax.swing.JComboBox<>();
+        jComboBox27 = new javax.swing.JComboBox<>();
+        jComboBox28 = new javax.swing.JComboBox<>();
+        jComboBox29 = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jComboBox30 = new javax.swing.JComboBox<>();
+        jComboBox31 = new javax.swing.JComboBox<>();
+        jComboBox32 = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jComboBox33 = new javax.swing.JComboBox<>();
+        btnGuardar4 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        cbxLapso = new javax.swing.JComboBox<>();
+        btnSiguiente3 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jComboBox35 = new javax.swing.JComboBox<>();
+        jComboBox36 = new javax.swing.JComboBox<>();
+        jComboBox37 = new javax.swing.JComboBox<>();
+        jComboBox38 = new javax.swing.JComboBox<>();
+        jComboBox39 = new javax.swing.JComboBox<>();
+        jComboBox40 = new javax.swing.JComboBox<>();
+        jComboBox41 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jComboBox42 = new javax.swing.JComboBox<>();
+        jComboBox43 = new javax.swing.JComboBox<>();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jComboBox53 = new javax.swing.JComboBox<>();
+        jLabel58 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnSiguiente4 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jComboBox44 = new javax.swing.JComboBox<>();
+        jComboBox45 = new javax.swing.JComboBox<>();
+        jComboBox46 = new javax.swing.JComboBox<>();
+        jComboBox47 = new javax.swing.JComboBox<>();
+        jComboBox48 = new javax.swing.JComboBox<>();
+        jComboBox49 = new javax.swing.JComboBox<>();
+        jComboBox50 = new javax.swing.JComboBox<>();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jComboBox51 = new javax.swing.JComboBox<>();
+        jComboBox52 = new javax.swing.JComboBox<>();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jComboBox54 = new javax.swing.JComboBox<>();
+        jComboBox55 = new javax.swing.JComboBox<>();
+        jComboBox56 = new javax.swing.JComboBox<>();
+        jComboBox57 = new javax.swing.JComboBox<>();
+        jComboBox58 = new javax.swing.JComboBox<>();
+        jComboBox59 = new javax.swing.JComboBox<>();
+        jComboBox60 = new javax.swing.JComboBox<>();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jComboBox61 = new javax.swing.JComboBox<>();
+        jComboBox62 = new javax.swing.JComboBox<>();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jComboBox63 = new javax.swing.JComboBox<>();
+        jLabel68 = new javax.swing.JLabel();
+        btnGuardar5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.setName(""); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(1, 87, 155));
+        jPanel2.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INDICADORES ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "Formacion personal y social", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "FORMACION PERSONAL Y SOCIAL", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        jComboBox1.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, -1, -1));
+        jComboBox2.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, -1));
+        jComboBox3.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, -1, -1));
+        jComboBox4.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, -1, -1));
+        jComboBox5.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+        jComboBox6.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel3.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+        jComboBox7.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel3.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Hace preguntas sobre situciones de su interes.");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Mantiene interaccion fluida, constante y variada con adultos.");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Colabora en el mantenimiento del orden y limpieza del salon");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Utiliza espontaneamente las normas de alimentos y cortesia");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Sabe evitar peligros comunes");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Colabora en juegos colectivos");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 480, 320));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 610, 390));
 
         jPanel4.setBackground(new java.awt.Color(2, 119, 189));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
         jPanel4.setForeground(new java.awt.Color(0, 0, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel7");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 13, -1, -1));
+        jLabel7.setText("Pide permiso para usar algo");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
-        jRadioButton6.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton6.setText("jRadioButton6");
-        jPanel4.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 53, -1, -1));
+        jComboBox8.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel4.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, 30));
 
-        jRadioButton7.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton7.setText("jRadioButton7");
-        jPanel4.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 79, -1, -1));
+        jComboBox9.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel4.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, 30));
 
-        jRadioButton8.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton8.setText("jRadioButton8");
-        jPanel4.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 105, -1, -1));
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Juega y comparte en grupo");
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jRadioButton9.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton9.setText("jRadioButton9");
-        jPanel4.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 131, -1, -1));
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Es capaz de auto controlarse cuando se molesta");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
-        jRadioButton10.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton10.setText("jRadioButton10");
-        jPanel4.add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 157, -1, -1));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 160, 320));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
-
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 160, 320));
-
-        jPanel5.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("jLabel8");
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 13, -1, -1));
-
-        jRadioButton11.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton11.setText("jRadioButton11");
-        jPanel5.add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 54, -1, -1));
-
-        jRadioButton12.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton12.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton12.setText("jRadioButton12");
-        jPanel5.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 77, -1, -1));
-
-        jRadioButton13.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton13.setText("jRadioButton13");
-        jPanel5.add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 106, -1, -1));
-
-        jRadioButton14.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton14.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton14.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton14.setText("jRadioButton14");
-        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton14ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 129, -1, -1));
-
-        jRadioButton15.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton15.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton15.setText("jRadioButton15");
-        jPanel5.add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 155, -1, -1));
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
-
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
-
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 160, 320));
-
-        jPanel6.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 153))); // NOI18N
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("jLabel9");
-        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 13, -1, -1));
-
-        jRadioButton16.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton16.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton16.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton16.setText("jRadioButton16");
-        jPanel6.add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 55, -1, -1));
-
-        jRadioButton17.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton17.setText("jRadioButton17");
-        jPanel6.add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, -1, -1));
-
-        jRadioButton18.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton18.setText("jRadioButton18");
-        jPanel6.add(jRadioButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-
-        jRadioButton19.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton19.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton19.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton19.setText("jRadioButton19");
-        jPanel6.add(jRadioButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 133, -1, -1));
-
-        jRadioButton20.setBackground(new java.awt.Color(2, 119, 189));
-        jRadioButton20.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jRadioButton20.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton20.setText("jRadioButton20");
-        jPanel6.add(jRadioButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 156, -1, -1));
-
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
-
-        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 210, 156, -1));
-
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 160, 320));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Codigo alumno");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 90, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 120, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Responsable");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
-        btnAtras.setText("Atras");
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
+        btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 30));
 
-        btnGuardar.setText("Guardar");
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, -1, -1));
-
-        lblLogo.setText("logo");
-        lblLogo.setName("lblLogo"); // NOI18N
-        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, -1, -1));
-
+        btnConsultar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnConsultar.setText("consultar");
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
-        jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 120, -1));
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 100, 30));
+        jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 120, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Notas");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre alumno");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, -1));
 
-        lblPnombre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblPnombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblPnombre.setForeground(new java.awt.Color(255, 255, 255));
         lblPnombre.setText("jLabel5");
-        jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 50, -1));
+        jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 220, -1));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 130, 20));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 110, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 560));
+        btnSiguiente1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente1.setText("Siguiente");
+        btnSiguiente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 100, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 560));
+        lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 110, 120));
+
+        jTabbedPane1.addTab("tab1", jPanel2);
+
+        jPanel11.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "Relacion con el ambiente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel11.setForeground(new java.awt.Color(0, 0, 153));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox10.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, -1, -1));
+
+        jComboBox11.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, -1));
+
+        jComboBox12.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
+
+        jComboBox13.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox13ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jComboBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, -1));
+
+        jComboBox14.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox14ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, -1));
+
+        jComboBox15.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, -1));
+
+        jComboBox16.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
+
+        jComboBox17.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, -1));
+
+        jComboBox18.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox18, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
+
+        jComboBox19.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel11.add(jComboBox19, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, -1, -1));
+
+        jLabel69.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("Reconoce los simbolos patrios:bandera, escudo, himno nacional");
+        jPanel11.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Reconoce e identifica las partes de la planta: hojas, tallo, raiz");
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("observa objetos teniendo en cuenta: medida(largo, corto) tamaño(grande, pequeño)");
+        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Identifica y diferencia: forma, color");
+        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Reconoce la figura geometrica: rombo");
+        jPanel11.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("Conoce las nociones especiales: cerca-lejos, alto-bajo");
+        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Discrimina posiciones: horizontal, vertical, inclinada");
+        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Reconoce objetos y distingue sus propiedades");
+        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Logra hacer la correspondiente cantidad-numero del 1 al 15");
+        jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("identifica las normas de salud e higiene de nuesro cuerpo");
+        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
+
+        btnSiguiente.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguienteActionPerformed(evt);
+            }
+        });
+        jPanel11.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+
+        jTabbedPane1.addTab("tab2", jPanel11);
+
+        jPanel5.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(0, 0, 153)), "Comunicacion y representacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSiguiente2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente2.setText("Siguiente");
+        btnSiguiente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente2ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 100, 30));
+
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("Reconoce canciones");
+        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Discrimina, dice el nombe y la funcion de vaios objetos");
+        jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Ejecuta ordenes en 3 pasos: realiza ordenes orales, encargos, mandatos");
+        jPanel5.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+
+        jLabel29.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Comprende experiencias sencillas ");
+        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Identifica letras del alfabeto y vocales");
+        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("Abrocha, desabrocha, abotona y desabotona");
+        jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        jLabel32.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Sube y baja cierres");
+        jPanel5.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Hace plegado de figuras sencillas");
+        jPanel5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Distingue derecha e izquierda en si mismo");
+        jPanel5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Escribe palabras simples");
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jComboBox20.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox20ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jComboBox20, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
+
+        jComboBox21.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox21, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
+
+        jComboBox22.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox22, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
+
+        jComboBox23.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox23ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jComboBox23, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, -1));
+
+        jComboBox24.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox24ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jComboBox24, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, -1, -1));
+
+        jComboBox25.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox25.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox25ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jComboBox25, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, -1, -1));
+
+        jComboBox26.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox26.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox26, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
+
+        jComboBox27.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox27.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox27ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jComboBox27, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
+
+        jComboBox28.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox28, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+
+        jComboBox29.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("Reconoce que las palabras se leen de izquierda a derecha");
+        jPanel5.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, 30));
+
+        jComboBox30.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox30.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, -1, -1));
+
+        jComboBox31.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox31.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox31, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
+
+        jComboBox32.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox32.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("Lectura silabica");
+        jPanel5.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+
+        jLabel39.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("Dice palabras que empiezan pr determinados sonidos");
+        jPanel5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("Comprende la diferencia entre un numero y una letra");
+        jPanel5.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
+
+        jComboBox33.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox33.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jPanel5.add(jComboBox33, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
+
+        btnGuardar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar4.setText("Guardar");
+        jPanel5.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 100, 30));
+
+        jTabbedPane1.addTab("tab3", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Lapso");
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, -1));
+
+        cbxLapso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
+        jPanel6.add(cbxLapso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        btnSiguiente3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente3.setText("Siguiente");
+        btnSiguiente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente3ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnSiguiente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+
+        jPanel8.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox35.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox35.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox35, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
+
+        jComboBox36.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox36.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox36, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
+
+        jComboBox37.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox37.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox37, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
+
+        jComboBox38.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox38.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox38, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
+
+        jComboBox39.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox39.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox39, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
+
+        jComboBox40.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox40.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox40, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
+
+        jComboBox41.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox41.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox41, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Asiste bien presentado");
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Cumple con el horario de entrada( 7:30 a.m)");
+        jPanel8.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel42.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("Cumple con el horario de salida( 11:30 a.m)");
+        jPanel8.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setText("Cumple con el uniforme diario");
+        jPanel8.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel44.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("Sigue instrucciones");
+        jPanel8.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel45.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setText("Escucha con atencion a la maestra");
+        jPanel8.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        jLabel46.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Cuida sus utiles escolares");
+        jPanel8.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jComboBox42.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox42.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox42, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 30));
+
+        jComboBox43.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox43.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox43ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jComboBox43, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, 30));
+
+        jLabel47.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Entrega con responsabilidad las tareas los dias asignados");
+        jPanel8.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+
+        jLabel48.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Muestra buen comportamiento, respeta y acata normas");
+        jPanel8.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+
+        jComboBox53.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox53.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel8.add(jComboBox53, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
+
+        jLabel58.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel58.setText("Cuida su presentacion personal");
+        jPanel8.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
+
+        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 680, 450));
+
+        jTabbedPane1.addTab("tab4", jPanel6);
+
+        jPanel1.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSiguiente4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente4.setText("Siguiente");
+        btnSiguiente4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSiguiente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+
+        jPanel9.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox44.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox44.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox44, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
+
+        jComboBox45.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox45.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox45, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
+
+        jComboBox46.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox46.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox46, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
+
+        jComboBox47.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox47.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox47, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
+
+        jComboBox48.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox48.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox48, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
+
+        jComboBox49.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox49.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox49, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
+
+        jComboBox50.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox50.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox50, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
+
+        jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setText("Demuestra respeto por las actividades de los otros niños");
+        jPanel9.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jLabel50.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Cuida el ambiente escolar");
+        jPanel9.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Posee habitos de higiene");
+        jPanel9.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Se relaciona educadamente con sus compañeros");
+        jPanel9.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Posee habitos alimenticios");
+        jPanel9.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Respeta las pertenencias ajenas");
+        jPanel9.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        jLabel55.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Muestra respeto y es colaborador con sus maestras");
+        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jComboBox51.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox51.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox51, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, 30));
+
+        jComboBox52.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox52.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel9.add(jComboBox52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, 30));
+
+        jLabel56.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setText("Es constante con las actividades que realice");
+        jPanel9.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+
+        jLabel57.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel57.setText("Cumple con las observaciones hechas por la maestra");
+        jPanel9.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 690, 400));
+
+        jTabbedPane1.addTab("tab5", jPanel1);
+
+        jPanel7.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "HABITOS DE TRABAJO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox54.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox54.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox54, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
+
+        jComboBox55.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox55.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
+
+        jComboBox56.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox56.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox56, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
+
+        jComboBox57.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox57.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox57, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
+
+        jComboBox58.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox58.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox58, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
+
+        jComboBox59.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox59.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox59, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
+
+        jComboBox60.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox60.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox60, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
+
+        jLabel59.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("Termina sus actividades en el tiempo establecido");
+        jPanel10.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jLabel60.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setText("Participa e investiga para desarrollar sus proyecto");
+        jPanel10.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel61.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setText("Realiza las tareas con orden y pulcritud");
+        jPanel10.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setText("Mantiene sus cuadernos de tareas limpios y ordenados");
+        jPanel10.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel63.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setText("Se mantiene en su sitio de trabajo al realizar las actividades");
+        jPanel10.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel64.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setText("Posee habitos de estudio");
+        jPanel10.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        jLabel65.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setText("Mantiene la posture corecta al realizar sus trabajos");
+        jPanel10.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jComboBox61.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox61.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox61, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 30));
+
+        jComboBox62.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox62.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox62ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jComboBox62, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, 30));
+
+        jLabel66.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel66.setText("Acepta sugerencias de la maestra  durante las actividades");
+        jPanel10.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+
+        jLabel67.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setText("DIAS LABORADOS");
+        jLabel67.setToolTipText("INASISTENCIAS");
+        jPanel10.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+
+        jComboBox63.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox63.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jPanel10.add(jComboBox63, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
+
+        jLabel68.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel68.setText("INASISTENCIAS");
+        jPanel10.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
+
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 450));
+
+        btnGuardar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar5.setText("Guardar");
+        jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+
+        jTabbedPane1.addTab("tab6", jPanel7);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton14ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox14ActionPerformed
+
+    private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox13ActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnSiguiente1ActionPerformed
+
+    private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente2ActionPerformed
+
+    private void jComboBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox24ActionPerformed
+
+    private void jComboBox25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox25ActionPerformed
+
+    private void jComboBox23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox23ActionPerformed
+
+    private void jComboBox20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox20ActionPerformed
+
+    private void jComboBox27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox27ActionPerformed
+
+    private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente3ActionPerformed
+
+    private void btnSiguiente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente4ActionPerformed
+
+    private void jComboBox43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox43ActionPerformed
+
+    private void jComboBox62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox62ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox62ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,59 +1080,160 @@ public class frmNotas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar4;
+    private javax.swing.JButton btnGuardar5;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton btnSiguiente1;
+    private javax.swing.JButton btnSiguiente2;
+    private javax.swing.JButton btnSiguiente3;
+    private javax.swing.JButton btnSiguiente4;
+    private javax.swing.JComboBox<String> cbxLapso;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
+    private javax.swing.JComboBox<String> jComboBox13;
+    private javax.swing.JComboBox<String> jComboBox14;
+    private javax.swing.JComboBox<String> jComboBox15;
+    private javax.swing.JComboBox<String> jComboBox16;
+    private javax.swing.JComboBox<String> jComboBox17;
+    private javax.swing.JComboBox<String> jComboBox18;
+    private javax.swing.JComboBox<String> jComboBox19;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox20;
+    private javax.swing.JComboBox<String> jComboBox21;
+    private javax.swing.JComboBox<String> jComboBox22;
+    private javax.swing.JComboBox<String> jComboBox23;
+    private javax.swing.JComboBox<String> jComboBox24;
+    private javax.swing.JComboBox<String> jComboBox25;
+    private javax.swing.JComboBox<String> jComboBox26;
+    private javax.swing.JComboBox<String> jComboBox27;
+    private javax.swing.JComboBox<String> jComboBox28;
+    private javax.swing.JComboBox<String> jComboBox29;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox30;
+    private javax.swing.JComboBox<String> jComboBox31;
+    private javax.swing.JComboBox<String> jComboBox32;
+    private javax.swing.JComboBox<String> jComboBox33;
+    private javax.swing.JComboBox<String> jComboBox35;
+    private javax.swing.JComboBox<String> jComboBox36;
+    private javax.swing.JComboBox<String> jComboBox37;
+    private javax.swing.JComboBox<String> jComboBox38;
+    private javax.swing.JComboBox<String> jComboBox39;
     private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox40;
+    private javax.swing.JComboBox<String> jComboBox41;
+    private javax.swing.JComboBox<String> jComboBox42;
+    private javax.swing.JComboBox<String> jComboBox43;
+    private javax.swing.JComboBox<String> jComboBox44;
+    private javax.swing.JComboBox<String> jComboBox45;
+    private javax.swing.JComboBox<String> jComboBox46;
+    private javax.swing.JComboBox<String> jComboBox47;
+    private javax.swing.JComboBox<String> jComboBox48;
+    private javax.swing.JComboBox<String> jComboBox49;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox50;
+    private javax.swing.JComboBox<String> jComboBox51;
+    private javax.swing.JComboBox<String> jComboBox52;
+    private javax.swing.JComboBox<String> jComboBox53;
+    private javax.swing.JComboBox<String> jComboBox54;
+    private javax.swing.JComboBox<String> jComboBox55;
+    private javax.swing.JComboBox<String> jComboBox56;
+    private javax.swing.JComboBox<String> jComboBox57;
+    private javax.swing.JComboBox<String> jComboBox58;
+    private javax.swing.JComboBox<String> jComboBox59;
     private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox60;
+    private javax.swing.JComboBox<String> jComboBox61;
+    private javax.swing.JComboBox<String> jComboBox62;
+    private javax.swing.JComboBox<String> jComboBox63;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton14;
-    private javax.swing.JRadioButton jRadioButton15;
-    private javax.swing.JRadioButton jRadioButton16;
-    private javax.swing.JRadioButton jRadioButton17;
-    private javax.swing.JRadioButton jRadioButton18;
-    private javax.swing.JRadioButton jRadioButton19;
-    private javax.swing.JRadioButton jRadioButton20;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JLabel lblLogo;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblPnombre;
     public javax.swing.JLabel lblUsuarioActvo;
+    private javax.swing.JLabel lblfoto;
     private javax.swing.JTextField txtConsultar;
     // End of variables declaration//GEN-END:variables
 }

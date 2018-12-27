@@ -96,7 +96,7 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(2, 119, 189));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Control de Acceso");
@@ -106,7 +106,7 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Usuario");
@@ -148,7 +148,7 @@ public class frmLogin extends javax.swing.JFrame {
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel3.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 20, 20));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Clave");
@@ -183,7 +183,7 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         btnOlvidoClave.setBackground(new java.awt.Color(129, 212, 250));
-        btnOlvidoClave.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        btnOlvidoClave.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnOlvidoClave.setForeground(new java.awt.Color(255, 255, 255));
         btnOlvidoClave.setText("Olvide mi Clave");
         btnOlvidoClave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

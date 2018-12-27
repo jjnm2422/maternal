@@ -115,6 +115,7 @@ public class frmAjustes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Variables del Sistema");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(1, 87, 155));
@@ -133,18 +134,19 @@ public class frmAjustes extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(69, 90, 100));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitulo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTitulo1.setText("Limite de Alumos por seccion");
-        jPanel1.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 20));
+        jPanel1.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
 
         lblTitulo2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo2.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo2.setText("%");
         jPanel1.add(lblTitulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 20, 20));
 
-        lblTitulo3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo3.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo3.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo3.setText("Ubicacion de Reportes ");
         jPanel1.add(lblTitulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, 20));
@@ -160,8 +162,9 @@ public class frmAjustes extends javax.swing.JFrame {
                 txtLimiteKeyTyped(evt);
             }
         });
-        jPanel1.add(txtLimite, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 110, -1));
+        jPanel1.add(txtLimite, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 110, -1));
 
+        btnSalir2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSalir2.setText("Salir");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.addActionListener(new java.awt.event.ActionListener() {
@@ -189,12 +192,13 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(txtDiasmora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 60, -1));
 
-        lblTitulo4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo4.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo4.setText("Valor Actual Iva");
         jPanel1.add(lblTitulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
 
+        btnRuta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRuta.setText("...");
         btnRuta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRuta.setEnabled(false);
@@ -205,19 +209,19 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(btnRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 30, -1));
 
-        lblTitulo16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo16.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo16.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo16.setText("Periodo Actual");
         jPanel1.add(lblTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
 
-        lblTitulo17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo17.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo17.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo17.setText("Precio Cuota Mensual");
         jPanel1.add(lblTitulo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, 20));
 
-        lblTitulo18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo18.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo18.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo18.setText("Precio de Mora");
@@ -241,6 +245,7 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(txtMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
 
+        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +255,7 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 90, 30));
 
-        lblTitulo19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo19.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitulo19.setText("Dias para mora");
@@ -264,6 +269,7 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(cbxPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, -1));
 
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -277,6 +283,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
 
+        btnRestaurar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnRestaurar.setText("Restaurar");
         btnRestaurar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRestaurar.addActionListener(new java.awt.event.ActionListener() {
@@ -286,9 +293,9 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 565, 290));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 565, 290));
 
-        lblTitulo15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTitulo15.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo15.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo15.setText("Ajustes");
