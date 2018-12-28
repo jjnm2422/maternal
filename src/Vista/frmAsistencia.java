@@ -195,7 +195,7 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         btnGuardar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar4.setText("Guardar");
-        jPanel1.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 100, 30));
+        jPanel1.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 100, 30));
 
         btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras1.setText("Atras");
@@ -204,7 +204,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 100, 30));
+        jPanel1.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 100, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 500));
 
@@ -316,7 +316,7 @@ public class frmAsistencia extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxGrupoActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     /**

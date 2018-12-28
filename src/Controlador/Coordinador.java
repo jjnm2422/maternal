@@ -89,12 +89,24 @@ public class Coordinador {
         return login;
     }
     
+    public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id_alumno, int tipo){
+        return getRepresentanteDAO().actualizarRepresentante(representanteVO, id_alumno, tipo);
+    }
+    
+     public String actualizarRequisitos(VO.RequisitosVO requisitosVO){
+         return getRequisitosDAO().actualizarRequisitos(requisitosVO);
+     }
+    
     public int consultarCantidadDeAlumnoSeccion(String seccion){
         return getMatriculaDAO().consultarCantidadDeAlumnoSeccion(seccion);
     }
 
     public String registrarAlumno(AlumnoVO alumnoVO) {
         return getAlumnoDAO().registrarAlumno(alumnoVO);
+    }
+    
+    public String actualizarAlumno(AlumnoVO alumnoVO, String id) {
+        return getAlumnoDAO().actualizarAlumno(alumnoVO, id);
     }
     
     public String registrarRepresentante(VO.RepresentanteVO representanteVO) {
@@ -117,12 +129,16 @@ public class Coordinador {
         return  getRequisitosDAO().registrarRequisitos(requisitosVO);
     }
     
+    public VO.RequisitosVO consultarRequisitos(int id_alumno) {
+        return getRequisitosDAO().consultarRequisitos(id_alumno);
+    }
+    
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }
     
-     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
-         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno);
+     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno, int tipo) {
+         return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno, tipo);
      }
 
     public VO.AlumnoVO consultarAlumno(String parametro) {
@@ -133,10 +149,6 @@ public class Coordinador {
         return getAlumnoDAO().eliminarAlumno(id);
     }
     
-    public String actualizarAlumno(VO.AlumnoVO alumnoVO,String id) {
-        return getAlumnoDAO().actualizarAlumno(alumnoVO, id);
-    }
-
     public boolean validacionCorreo(String entrada) {
         return getLogica().validacionCorreo(entrada);
     }

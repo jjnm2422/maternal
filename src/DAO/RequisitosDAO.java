@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  * 
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * 
  */
 public class RequisitosDAO {
     
@@ -53,7 +53,7 @@ public class RequisitosDAO {
                 respuesta = "INGRESADO CON EXITO";
             }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
             } 
         } else {
@@ -62,7 +62,7 @@ public class RequisitosDAO {
         return respuesta;
     }
 
-    public VO.RequisitosVO consultarRequisitos(String id_alumno) {
+    public VO.RequisitosVO consultarRequisitos(int id_requisitos) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -71,15 +71,14 @@ public class RequisitosDAO {
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_requisito = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, id_alumno);
+                ps.setInt(1, id_requisitos);
                 result = ps.executeQuery();
-                if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    requisitosVO.setId_alumno(result.getInt("id_alumno"));
+                    requisitosVO.setId_requisito(result.getInt("id_requisito"));
                     requisitosVO.setCedula_padres(result.getBoolean("cedula_padres"));
                     requisitosVO.setFoto_carnet(result.getBoolean("foto_carnet"));
                     requisitosVO.setFoto_familiar(result.getBoolean("foto_familiar"));
@@ -87,12 +86,8 @@ public class RequisitosDAO {
                     requisitosVO.setPartida(result.getBoolean("partida"));
                     requisitosVO.setObservaciones(result.getString("observaciones"));
                     }
-                } else {
-                    conexiondb.desconexion();
-                    return null;
-                } 
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
             conexiondb.desconexion();
             return requisitosVO;
@@ -102,12 +97,12 @@ public class RequisitosDAO {
         }
     }
     
-    public String eliminarAlumno(String id){
+    public String eliminarRequisitos(String id){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE id_alumno='"+id+"'";
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_requisito='"+id+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
@@ -117,7 +112,7 @@ public class RequisitosDAO {
                 return "NO ELIMINADO";
             }   
         } catch (SQLException ex) {
-            Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
             return "NO ELIMINADO";
         }  
         } else {
@@ -126,24 +121,29 @@ public class RequisitosDAO {
         
     }
     
-    public String actualizarAlumno(VO.AlumnoVO alumnoVO, String id){
+    public String actualizarRequisitos(VO.RequisitosVO requisitosVO){
         Statement st = null;
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=? where id_alumno= '"+id+"'";
+        String sql = "UPDATE "+this.tabla+" SET partida=?, foto_postal=?, foto_carnet=?, foto_familiar=?, cedula_padres=?, observaciones=? where id_alumno= '"+requisitosVO.getId_alumno()+"'";
 
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
-                ps.setString(1, alumnoVO.getPrimer_nombre());
+                ps.setBoolean(1, requisitosVO.isPartida());
+                ps.setBoolean(2, requisitosVO.isFoto_postal());
+                ps.setBoolean(3, requisitosVO.isFoto_carnet());
+                ps.setBoolean(4, requisitosVO.isFoto_familiar());
+                ps.setBoolean(5, requisitosVO.isCedula_padres());
+                ps.setString(6, requisitosVO.getObservaciones());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
                 respuesta = ex.getMessage();
             }
             return respuesta;
@@ -152,7 +152,7 @@ public class RequisitosDAO {
         }
     }
     
-    public  int  llenarCodigoAlumno(){
+    public  int  llenarCodigoRequisitos(){
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
     Statement st = null;
@@ -160,7 +160,7 @@ public class RequisitosDAO {
     int valor = -1;
     conexion = conexiondb.getConnection();
       try {
-            String sql = "select last_value+1 as valor from public.alumnos_id_alumnos_seq";
+            String sql = "select last_value+1 as valor from public.requisitoss_id_requisitoss_seq";
             st=conexion.createStatement();
             result=st.executeQuery(sql);
             while (result.next()) {
@@ -173,7 +173,7 @@ public class RequisitosDAO {
       return valor;
     }
     
-    public DefaultTableModel consultarAlumnosTabla(String parametro){
+    public DefaultTableModel consultarRequisitossTabla(String parametro){
     boolean encontrado=false;
     Statement st = null;
     Connection conexion= null;

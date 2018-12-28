@@ -278,7 +278,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLlenarListaActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     /**

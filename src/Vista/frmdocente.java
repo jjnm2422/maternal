@@ -302,99 +302,15 @@ public class frmdocente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        String fecha = txtFecha.getText();
-        fecha = fecha.replace('/', '-');
-        //verifico campos alumnos
-        if (validacionCampoAlumno()) {
-            //verifico campos representates
-            if (validacionCampoRepresentante()) {
-                //registro los alumnos
-                if (registrarAlumno(fecha)) {
-                    //registro al primer representante
-                    if (registrarRepresentante()) {
-                        //combruebo check para revisar si registro al otro representante o no
-                        if (chkRepresentante.isSelected()) {
-                            if (registrarRepresentante2()) {
-                                if (registrarRepresentante3()) {
-                                    if (registrarMatricula()) {
-                                        if (registrarRequisitos()) {
-                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
-                                        } else {
-                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
-                                        }
-                                    } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
-                                    }
-                                    borrarCampos();
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
-                                }
-                            } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
-                            }
-                        } else {
-                            if (registrarRepresentante3()) {
-                                if (registrarMatricula()) {
-                                    if (registrarRequisitos()) {
-                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
-                                    } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
-                                    }
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
-                                }
-                                borrarCampos();
-                            } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
-                            }
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "campos representante vacio.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
-        }
+
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnAgregarImagen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarImagen1ActionPerformed
-        lblfoto1.setIcon(null);
-        JFileChooser j = new JFileChooser();
-        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG & PNG", "jpg", "png");
-        j.setFileFilter(filtroImagen);
-        j.setFileSelectionMode(JFileChooser.FILES_ONLY);//solo archivos y no carpetas
-        int estado = j.showOpenDialog(null);
-        if (estado == JFileChooser.APPROVE_OPTION) {
-            try {
-                fis1 = new FileInputStream(j.getSelectedFile());
-                fisCopia1 = new FileInputStream(j.getSelectedFile());
-                //necesitamos saber la cantidad de bytes
-
-                this.longitudBytes1 = (int) j.getSelectedFile().length();
-                this.longitudBytecopia1 = (int) j.getSelectedFile().length();
-                try {
-                    Image icono = ImageIO.read(j.getSelectedFile()).getScaledInstance(lblfoto1.getWidth(), lblfoto1.getHeight(), Image.SCALE_DEFAULT);
-                    lblfoto1.setIcon(new ImageIcon(icono));
-                    lblfoto1.updateUI();
-
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
-                }
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            }
-        } else {
-            ajustar(lblfoto1, ICON_NO_PHOTO);
-        }
+  
     }//GEN-LAST:event_btnAgregarImagen1ActionPerformed
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed

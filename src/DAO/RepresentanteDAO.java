@@ -6,6 +6,9 @@
 package DAO;
 
 import Controlador.Coordinador;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 /**
  *
  * @author acjj
@@ -33,8 +37,8 @@ public class RepresentanteDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, telefono1, telefono2, direccion, parentesco, ocupacion, cedula, empresa, id_alumno, foto)"
-                    + "values(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into "+this.tabla+"(primer_nombre, primer_apellido, telefono1, telefono2, direccion, parentesco, ocupacion, cedula, empresa, id_alumno, foto, tipo)"
+                    + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -53,6 +57,7 @@ public class RepresentanteDAO {
                 } else {
                     ps.setBinaryStream(11, null, 0);
                 }
+            ps.setInt(12, representanteVO.getTipo());
             int n = ps.executeUpdate();
             if (n > 0) {
                  respuesta = "INGRESADO CON EXITO";
@@ -103,20 +108,23 @@ public class RepresentanteDAO {
         }
     }
     
-      public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno) {
+      public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno, int tipo) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
         ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
         VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ? and tipo = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
                 ps.setInt(1, id_alumno);
+                ps.setInt(2, tipo);
                 result = ps.executeQuery();
                     while (result.next()==true) {
                     representanteVO.setPrimer_nombre(result.getString("primer_nombre"));
@@ -129,8 +137,18 @@ public class RepresentanteDAO {
                     representanteVO.setCedula(result.getString("cedula"));
                     representanteVO.setEmpresa(result.getString("empresa"));
                     representanteVO.setId_alumno(result.getInt("id_alumno"));
+                    representanteVO.setTipo(result.getInt("tipo"));
+                    //codigo para extraer imagen
+                    if (result.getBinaryStream("foto") != null) {
+                        is = result.getBinaryStream("foto");
+                        BufferedImage bi = ImageIO.read(is);
+                        foto = new ImageIcon(bi);
+                        representanteVO.setFoto(foto);
+                    }
                     }
             } catch (SQLException ex) {
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
             conexiondb.desconexion();
@@ -165,18 +183,31 @@ public class RepresentanteDAO {
         
     }
     
-    public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id){
+    public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id_alumno, int tipo){
         Statement st = null;
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET nombre1=? where cedula= '"+id+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, telefono1=?, telefono2=?, direccion=?, parentesco=?, ocupacion=?, cedula=?, empresa=?, foto=? where id_alumno= '"+id_alumno+"' and tipo= '"+tipo+"'";
 
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, representanteVO.getPrimer_nombre());
+                ps.setString(2, representanteVO.getPrimer_apellido());
+                ps.setString(3, representanteVO.getTelefono1());
+                ps.setString(4, representanteVO.getTelefono2());
+                ps.setString(5, representanteVO.getDireccion());
+                ps.setString(6, representanteVO.getParentesco());
+                ps.setString(7, representanteVO.getOcupacion());
+                ps.setString(8, representanteVO.getCedula());
+                ps.setString(9, representanteVO.getEmpresa());
+                if (representanteVO.getFis() != null) {
+                    ps.setBinaryStream(10, representanteVO.getFis(), representanteVO.getBinarioFoto());
+                } else {
+                    ps.setBinaryStream(10, null, 0);
+                }
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

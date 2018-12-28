@@ -80,9 +80,6 @@ public class Main {
         //incializacion de datos en formularios
         frmAjustes.llenarCampos();
         variablesDAO.llenarPeriodos(frmAjustes.cbxPeriodo);
-        frmGrupos.tblSeccion.setModel(coordinador.consultarMatriculaPorSeccionTabla("A"));
-        
-        
         login.setVisible(true);
         login.setLocationRelativeTo(null);
     }

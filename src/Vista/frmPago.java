@@ -206,68 +206,11 @@ public class frmPago extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        String fecha = txtFecha.getText();
-        fecha = fecha.replace('/', '-');
-        //verifico campos alumnos
-        if (validacionCampoAlumno()) {
-            //verifico campos representates
-            if (validacionCampoRepresentante()) {
-                //registro los alumnos
-                if (registrarAlumno(fecha)) {
-                    //registro al primer representante
-                    if (registrarRepresentante()) {
-                        //combruebo check para revisar si registro al otro representante o no
-                        if (chkRepresentante.isSelected()) {
-                            if (registrarRepresentante2()) {
-                                if (registrarRepresentante3()) {
-                                    if (registrarMatricula()) {
-                                        if (registrarRequisitos()) {
-                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
-                                        } else {
-                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
-                                        }
-                                    } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
-                                    }
-                                    borrarCampos();
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
-                                }
-                            } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
-                            }
-                        } else {
-                            if (registrarRepresentante3()) {
-                                if (registrarMatricula()) {
-                                    if (registrarRequisitos()) {
-                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
-                                    } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
-                                    }
-                                } else {
-                                    JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
-                                }
-                                borrarCampos();
-                            } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
-                            }
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "campos representante vacio.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
-        }
+      
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
+
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
