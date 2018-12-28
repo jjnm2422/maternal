@@ -30,36 +30,100 @@ public class frmPago extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         txtConsulta = new javax.swing.JTextField();
-        btnConsultar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatosAlumno = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMeses = new javax.swing.JTable();
-        btnAtras = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lblUsuarioActvo = new javax.swing.JLabel();
+        btnConsultar = new javax.swing.JButton();
+        btnAtras1 = new javax.swing.JButton();
+        btnGuardar1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDatosAlumno = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblDatosRepresentante = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblCuota = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblMora = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        lblUsuarioActvo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, -1));
+        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 120, -1));
 
+        tblMeses.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblMeses.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            }
+        ));
+        jScrollPane2.setViewportView(tblMeses);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 760, 130));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Codigo Aumno");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Pagos");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 90, -1));
+
+        lblUsuarioActvo.setText("usuario activo");
+        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 120, 20));
+
+        btnConsultar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnConsultar.setText("consultar");
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 100, 30));
 
+        btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras1.setText("Atras");
+        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtras1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 100, 30));
+
+        btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar1.setText("Guardar");
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 100, 30));
+
+        jPanel3.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblDatosAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -68,87 +132,147 @@ public class frmPago extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Apellido", "Seccion"
             }
         ));
         jScrollPane1.setViewportView(tblDatosAlumno);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 100));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 100));
 
-        tblMeses.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 470, 130));
+
+        jPanel4.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Representante", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblDatosRepresentante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Apellido", "Parentesco"
             }
         ));
-        jScrollPane2.setViewportView(tblMeses);
+        jScrollPane3.setViewportView(tblDatosRepresentante);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 600, 100));
+        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 430, 100));
 
-        btnAtras.setText("atras");
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, -1));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 450, 130));
 
-        btnGuardar.setText("guardar");
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
+        jPanel5.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("cuota");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        jLabel1.setText("Cuota");
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        lblCuota.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblCuota.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCuota.setForeground(new java.awt.Color(255, 255, 255));
         lblCuota.setText("jLabel2");
-        jPanel2.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        jPanel5.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("mora");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        jLabel3.setText("Mora");
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        lblMora.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblMora.setForeground(new java.awt.Color(255, 255, 255));
         lblMora.setText("jLabel4");
-        jPanel2.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
+        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("total a pagar");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
+        jLabel5.setText("Total a pagar");
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
-        lblTotal.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        lblTotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblTotal.setText("jLabel6");
-        jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
+        jPanel5.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Codigo Aumno");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 190, 130));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Pagos");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 90, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 460));
 
-        jLabel9.setText("logo");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
-
-        lblUsuarioActvo.setText("usuario activo");
-        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 394, 120, 20));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 430));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        String fecha = txtFecha.getText();
+        fecha = fecha.replace('/', '-');
+        //verifico campos alumnos
+        if (validacionCampoAlumno()) {
+            //verifico campos representates
+            if (validacionCampoRepresentante()) {
+                //registro los alumnos
+                if (registrarAlumno(fecha)) {
+                    //registro al primer representante
+                    if (registrarRepresentante()) {
+                        //combruebo check para revisar si registro al otro representante o no
+                        if (chkRepresentante.isSelected()) {
+                            if (registrarRepresentante2()) {
+                                if (registrarRepresentante3()) {
+                                    if (registrarMatricula()) {
+                                        if (registrarRequisitos()) {
+                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                        } else {
+                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                        }
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
+                            }
+                        } else {
+                            if (registrarRepresentante3()) {
+                                if (registrarMatricula()) {
+                                    if (registrarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                }
+                                borrarCampos();
+                            } else {
+                                JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "campos representante vacio.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
+        }
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtras1ActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,24 +310,28 @@ public class frmPago extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblCuota;
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblDatosAlumno;
+    private javax.swing.JTable tblDatosRepresentante;
     private javax.swing.JTable tblMeses;
     private javax.swing.JTextField txtConsulta;
     // End of variables declaration//GEN-END:variables

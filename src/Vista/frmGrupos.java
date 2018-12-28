@@ -48,8 +48,6 @@ public class frmGrupos extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
-        btnAtras = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
         lblLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cbxSeccion = new javax.swing.JComboBox<>();
@@ -57,8 +55,11 @@ public class frmGrupos extends javax.swing.JFrame {
         btnLlenar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
+        btnGuardar1 = new javax.swing.JButton();
+        btnAtras1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,29 +110,11 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 310, 310));
 
-        btnAtras.setText("atras");
-        btnAtras.setName("btnAtras"); // NOI18N
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, -1, -1));
-
-        btnGuardar.setText("guardar");
-        btnGuardar.setName("btnGuardar"); // NOI18N
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, -1, -1));
-
         lblLogo.setText("logo");
         lblLogo.setName("lblLogo"); // NOI18N
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Matricula");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
@@ -139,11 +122,12 @@ public class frmGrupos extends javax.swing.JFrame {
         cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 60, -1));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("grupo a cargar");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
 
+        btnLlenar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnLlenar.setText("Actualizar Tabla");
         btnLlenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +136,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel2.add(btnLlenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 310, -1));
 
+        btnConsultar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +149,25 @@ public class frmGrupos extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 474, 120, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 500));
+        btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar1.setText("Guardar");
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 100, 30));
+
+        btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras1.setText("Atras");
+        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtras1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 100, 30));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 520));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 510));
 
@@ -205,34 +208,70 @@ public class frmGrupos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblSeccionMouseClicked
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
-           if (tblSeccion.getRowCount() >0) {
-            DefaultTableModel model = (DefaultTableModel) tblSeccion.getModel();
-            String respuesta= "";
-            int id_alumno = 0;
-            for (int i = 0; i < tblSeccion.getRowCount(); i++) {
-                VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
-                matriculaVO.setId_alumno(Integer.parseInt(model.getValueAt(i, 0).toString()));
-                matriculaVO.setSeccion(cbxSeccion.getSelectedItem().toString());
-                respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        String fecha = txtFecha.getText();
+        fecha = fecha.replace('/', '-');
+        //verifico campos alumnos
+        if (validacionCampoAlumno()) {
+            //verifico campos representates
+            if (validacionCampoRepresentante()) {
+                //registro los alumnos
+                if (registrarAlumno(fecha)) {
+                    //registro al primer representante
+                    if (registrarRepresentante()) {
+                        //combruebo check para revisar si registro al otro representante o no
+                        if (chkRepresentante.isSelected()) {
+                            if (registrarRepresentante2()) {
+                                if (registrarRepresentante3()) {
+                                    if (registrarMatricula()) {
+                                        if (registrarRequisitos()) {
+                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                        } else {
+                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                        }
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
+                            }
+                        } else {
+                            if (registrarRepresentante3()) {
+                                if (registrarMatricula()) {
+                                    if (registrarRequisitos()) {
+                                        JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                }
+                                borrarCampos();
+                            } else {
+                                JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "campos representante vacio.");
             }
-            JOptionPane.showMessageDialog(this, respuesta);
-            coordinador.borrarTablas(tblSeccion, tblMatricula);
-            tblMatricula.setModel(coordinador.consultarMatriculaSinSeccion()); 
         } else {
-            JOptionPane.showMessageDialog(this, "consulte un seccion");
-        }  
+            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
+        }
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
 
-        
-       
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-      coordinador.getFrmMenu().setVisible(true);
-      coordinador.getFrmMenu().setLocationRelativeTo(null);
-      this.dispose();
-    }//GEN-LAST:event_btnAtrasActionPerformed
+    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtras1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,9 +309,9 @@ public class frmGrupos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnLlenar;
     private javax.swing.JComboBox<String> cbxSeccion;
     private javax.swing.JLabel jLabel1;

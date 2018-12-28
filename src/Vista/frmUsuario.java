@@ -64,6 +64,7 @@ public class frmUsuario extends javax.swing.JFrame {
         chkActivo = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(1, 87, 155));
@@ -74,7 +75,7 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(2, 119, 189));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Gestion de usuarios");
@@ -87,31 +88,36 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Usuario");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Contraseña");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 80, 30));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Repita Contraseña");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 130, 30));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Pregunta de Seguridad");
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 160, 30));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Activo");
         jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 60, 30));
 
-        txtContraseña2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtContraseña2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtContraseña2.setToolTipText("");
         txtContraseña2.setEnabled(false);
         txtContraseña2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,17 +127,18 @@ public class frmUsuario extends javax.swing.JFrame {
         });
         jPanel5.add(txtContraseña2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 150, 30));
 
-        txtContraseña.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtContraseña.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtContraseña.setToolTipText("");
         txtContraseña.setEnabled(false);
         jPanel5.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 150, 30));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Usuario");
         jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 80, 30));
 
-        txtNombre.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNombre.setEnabled(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,10 +156,13 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel5.add(chkAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Respuesta de Seguridad");
         jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 170, 30));
 
+        tblUsuario.setBackground(new java.awt.Color(153, 204, 255));
+        tblUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -182,6 +192,7 @@ public class frmUsuario extends javax.swing.JFrame {
         });
         jPanel5.add(btnInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, -1));
 
+        btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBorrar.setText("Borrar");
         btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -189,8 +200,9 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 90, -1));
+        jPanel5.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 243, 90, 30));
 
+        btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setPreferredSize(new java.awt.Dimension(60, 23));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -198,10 +210,15 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 100, -1));
+        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 243, 100, 30));
+
+        txtPregunta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel5.add(txtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 150, 30));
+
+        txtRespuesta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel5.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 150, 30));
 
+        btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setPreferredSize(new java.awt.Dimension(60, 23));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -209,9 +226,10 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 90, -1));
+        jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 243, 90, 30));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Administrador");
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 180, 30));

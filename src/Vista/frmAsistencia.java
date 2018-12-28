@@ -47,9 +47,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -66,13 +64,17 @@ public class frmAsistencia extends javax.swing.JFrame {
             }
         };
         lblUsuarioActvo = new javax.swing.JLabel();
+        btnGuardar4 = new javax.swing.JButton();
+        btnAtras1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(1, 87, 155));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnConsultar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnConsultar.setText("consultar");
         btnConsultar.setName("btnConsultar"); // NOI18N
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +82,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 100, 30));
 
         cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         cbxGrupo.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +90,12 @@ public class frmAsistencia extends javax.swing.JFrame {
                 cbxGrupoActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 80, 80, -1));
+        jPanel1.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 80, -1));
 
         jScrollPane1.setName("tblSeccion"); // NOI18N
 
-        tblMatricula.setBackground(new java.awt.Color(2, 119, 189));
+        tblMatricula.setBackground(new java.awt.Color(153, 204, 255));
+        tblMatricula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -116,26 +119,10 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 250, 300));
 
-        jButton2.setText("atras");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("grupo");
+        jLabel1.setText("Grupo");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 50, 20));
-
-        btnGuardar.setText("guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,7 +139,8 @@ public class frmAsistencia extends javax.swing.JFrame {
         jLabel4.setText("responsable");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, 20));
 
-        tblAlumnosI.setBackground(new java.awt.Color(2, 119, 189));
+        tblAlumnosI.setBackground(new java.awt.Color(153, 204, 255));
+        tblAlumnosI.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblAlumnosI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -176,7 +164,8 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 310, 130));
 
-        tblAlumnosA.setBackground(new java.awt.Color(2, 119, 189));
+        tblAlumnosA.setBackground(new java.awt.Color(153, 204, 255));
+        tblAlumnosA.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblAlumnosA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -204,7 +193,20 @@ public class frmAsistencia extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 130, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 500));
+        btnGuardar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar4.setText("Guardar");
+        jPanel1.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 100, 30));
+
+        btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras1.setText("Atras");
+        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtras1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 100, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -268,26 +270,6 @@ public class frmAsistencia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if (tblMatricula.getRowCount() == 0) {
-            if (tblAlumnosA.getRowCount() > 0 || tblAlumnosI.getRowCount() > 0) {
-                String respuesta = "";
-                if (tblAlumnosA.getModel().getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosA.getModel(), cbxGrupo.getSelectedItem().toString(), true, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
-                }
-                if (tblAlumnosI.getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
-                }
-                JOptionPane.showMessageDialog(this, respuesta);
-                coordinador.borrarTablas(tblAlumnosA, tblAlumnosI);
-            } else {
-                JOptionPane.showMessageDialog(this, "Seleccione una seccion");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Alumno pendientes por pasar asistencia");
-        }
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
     private void tblMatriculaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblMatriculaKeyPressed
         if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
             System.out.println("tecla pulsada");
@@ -333,10 +315,9 @@ public class frmAsistencia extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cbxGrupoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     coordinador.getFrmMenu().setVisible(true);
-     this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtras1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,10 +356,10 @@ public class frmAsistencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar4;
     private javax.swing.JComboBox<String> cbxGrupo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

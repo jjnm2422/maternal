@@ -56,12 +56,13 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
-        btnAtras = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
         btnLlenarLista = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
+        btnGuardar4 = new javax.swing.JButton();
+        btnAtras1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(1, 87, 155));
@@ -157,24 +158,6 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 320, 130));
 
-        btnAtras.setText("atras");
-        btnAtras.setName("btnAtras"); // NOI18N
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, -1, -1));
-
-        btnGuardar.setText("guardar");
-        btnGuardar.setName("btnGuardar"); // NOI18N
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
-
         btnLlenarLista.setText("LLenar Lista");
         btnLlenarLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +169,19 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 394, 120, 20));
+
+        btnGuardar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar4.setText("Guardar");
+        jPanel2.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 100, 30));
+
+        btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras1.setText("Atras");
+        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtras1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 100, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
 
@@ -232,33 +228,6 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_tblDocenteMouseClicked
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if (tblDocente.getRowCount() == 0) {
-
-            if (tblDocenteA.getRowCount() > 0 ||  tblDocenteI.getRowCount() > 0) {
-                String respuesta = "";
-                
-                if (tblDocenteA.getModel().getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteA.getModel(), true, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
-                }
-                if (tblDocenteI.getRowCount() > 0) {
-                    respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteI.getModel(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
-                }
-                JOptionPane.showMessageDialog(this, respuesta);
-                coordinador.borrarTablas(tblDocenteA, tblDocenteI);
-            } else {
-                JOptionPane.showMessageDialog(this, "Lista de docente vacia, pulse el boton llenar lista");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Docentes  pendientes por pasar asistencia");
-        }
-    }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-     coordinador.getFrmMenu().setVisible(true);
-     this.dispose();
-    }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void tblDocenteAKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblDocenteAKeyPressed
  if (evt.getExtendedKeyCode() == KeyEvent.VK_ENTER) {
@@ -308,6 +277,10 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLlenarListaActionPerformed
 
+    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAtras1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -345,7 +318,8 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnAtras1;
+    private javax.swing.JButton btnGuardar4;
     private javax.swing.JButton btnLlenarLista;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
