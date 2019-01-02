@@ -34,8 +34,10 @@ public class Main {
         Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
         Vista.frmUsuario frmUsuario = new Vista.frmUsuario();
         Vista.frmAjustes frmAjustes = new Vista.frmAjustes();
+        Vista.frmDocente frmDocente = new Vista.frmDocente();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setfrmDocente(frmDocente);
         coordinador.setVariablesDAO(variablesDAO);
         coordinador.setFrmAjustes(frmAjustes);
         coordinador.setFrmUsuario(frmUsuario);
@@ -57,6 +59,7 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmDocente.setCoordinador(coordinador);
         variablesDAO.setCoordinador(coordinador);
         frmAjustes.setCoordinador(coordinador);
         frmUsuario.setCoordinador(coordinador);

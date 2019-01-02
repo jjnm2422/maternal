@@ -196,6 +196,7 @@ public class frmGrupos extends javax.swing.JFrame {
         rbnR2 = new javax.swing.JRadioButton();
         btnGuardar1 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -218,6 +219,28 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnLlenar = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblSeccion1 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnAtras2 = new javax.swing.JButton();
+        btnGuardar2 = new javax.swing.JButton();
+        lblLogo1 = new javax.swing.JLabel();
+        cbxSeccion1 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        lblUsuarioActvo2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        cbxSeccion2 = new javax.swing.JComboBox<>();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tblSeccion2 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1108,8 +1131,8 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Secciones");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 730, -1));
+        jLabel1.setText("Grupos");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 730, -1));
 
         tblSeccion.setBackground(new java.awt.Color(69, 90, 100));
         tblSeccion.setModel(new javax.swing.table.DefaultTableModel(
@@ -1157,7 +1180,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 100, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 100, -1));
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar.setText("guardar");
@@ -1167,7 +1190,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, -1, -1));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, -1, -1));
 
         lblLogo.setText("logo");
         lblLogo.setName("lblLogo"); // NOI18N
@@ -1203,7 +1226,115 @@ public class frmGrupos extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 120, 20));
 
-        jTabbedPane1.addTab("ASIGNACION DE GRUPOS", jPanel2);
+        jTabbedPane3.addTab("AGREGAR ALUMNO", jPanel2);
+
+        jPanel7.setBackground(new java.awt.Color(1, 87, 155));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Cambiar alumno de grupo");
+        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 730, 40));
+
+        tblSeccion1.setBackground(new java.awt.Color(69, 90, 100));
+        tblSeccion1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Primer Nombre", "Primer Apellido"
+            }
+        ));
+        tblSeccion1.setEnabled(false);
+        tblSeccion1.setName("tblSeccion"); // NOI18N
+        tblSeccion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblSeccion1MouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tblSeccion1);
+
+        jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 310, 310));
+
+        btnAtras2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnAtras2.setText("Salir");
+        btnAtras2.setName("btnAtras"); // NOI18N
+        btnAtras2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtras2ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(btnAtras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 100, -1));
+
+        btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
+        btnGuardar2.setText("guardar");
+        btnGuardar2.setName("btnGuardar"); // NOI18N
+        btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar2ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(btnGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, -1, -1));
+
+        lblLogo1.setText("logo");
+        lblLogo1.setName("lblLogo"); // NOI18N
+        jPanel7.add(lblLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 110, 120));
+
+        cbxSeccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        cbxSeccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxSeccion1ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(cbxSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 110, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("grupo a cambiar");
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 110, -1));
+
+        lblUsuarioActvo2.setText("usuario activo");
+        lblUsuarioActvo2.setName("lblUsuarioActivo"); // NOI18N
+        jPanel7.add(lblUsuarioActvo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 120, 20));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("grupo Actual");
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 110, -1));
+
+        cbxSeccion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        cbxSeccion2.setSelectedIndex(1);
+        cbxSeccion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxSeccion2ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(cbxSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 110, -1));
+
+        tblSeccion2.setBackground(new java.awt.Color(69, 90, 100));
+        tblSeccion2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Primer Nombre", "Primer Apellido"
+            }
+        ));
+        tblSeccion2.setEnabled(false);
+        tblSeccion2.setName("tblSeccion"); // NOI18N
+        tblSeccion2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblSeccion2MouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(tblSeccion2);
+
+        jPanel7.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 310, 310));
+
+        jTabbedPane3.addTab("CAMBIAR ALUMNO", jPanel7);
+
+        jTabbedPane1.addTab("GRUPOS", jTabbedPane3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 570));
 
@@ -1216,13 +1347,20 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private void tblMatriculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatriculaMouseClicked
         if (evt.getClickCount() == 2) {
-            if (coordinador.consultarCantidadDeAlumnoSeccion(cbxSeccion.getSelectedItem().toString())<coordinador.getVariablesDAO().consultarVariables().getLimite_alumno()) {
-                DefaultTableModel model = null;
-                int fila = this.tblMatricula.getSelectedRow();
-                model = (DefaultTableModel) tblMatricula.getModel();
-                tblSeccion.setModel(coordinador.añadirListaGrupos(tblMatricula, tblSeccion, fila));
-                model.removeRow(fila);
-                tblMatricula.setModel(model);
+            int cantidadenBD = coordinador.consultarCantidadDeAlumnoSeccion(cbxSeccion.getSelectedItem().toString());
+            int limite = coordinador.getVariablesDAO().consultarVariables().getLimite_alumno();
+            int cantidadTabla = tblSeccion.getRowCount();
+            if (cantidadenBD < limite) {
+                if (cantidadTabla < limite) {
+                    DefaultTableModel model = null;
+                    int fila = this.tblMatricula.getSelectedRow();
+                    model = (DefaultTableModel) tblMatricula.getModel();
+                    tblSeccion.setModel(coordinador.añadirListaGrupos(tblMatricula, tblSeccion, fila));
+                    model.removeRow(fila);
+                    tblMatricula.setModel(model);
+                } else {
+                    JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                } 
             } else {
                 JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
             }
@@ -1230,17 +1368,10 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_tblMatriculaMouseClicked
 
     private void tblSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSeccionMouseClicked
-        if (evt.getClickCount() == 2) {
-            int fila = this.tblSeccion.getSelectedRow();
-            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblSeccion, tblMatricula, fila));
-            DefaultTableModel model = (DefaultTableModel) tblSeccion.getModel();
-            model.removeRow(fila);
-            tblSeccion.setModel(model);
-        }
+
     }//GEN-LAST:event_tblSeccionMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
            if (tblSeccion.getRowCount() >0) {
             DefaultTableModel model = (DefaultTableModel) tblSeccion.getModel();
             String respuesta= "";
@@ -1256,10 +1387,7 @@ public class frmGrupos extends javax.swing.JFrame {
             tblMatricula.setModel(coordinador.consultarMatriculaSinSeccion()); 
         } else {
             JOptionPane.showMessageDialog(this, "consulte un seccion");
-        }  
-
-        
-       
+        }    
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -1269,7 +1397,6 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void cbxSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSeccionActionPerformed
-        //lleno la seccion
         tblSeccion.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion.getSelectedItem().toString()));
     }//GEN-LAST:event_cbxSeccionActionPerformed
 
@@ -1823,6 +1950,70 @@ public class frmGrupos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void tblSeccion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSeccion1MouseClicked
+    if (evt.getClickCount() == 2 && tblSeccion2.isEnabled()) {
+            int fila = this.tblSeccion1.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblSeccion1, tblSeccion2, fila));
+            DefaultTableModel model = (DefaultTableModel) tblSeccion1.getModel();
+            model.removeRow(fila);
+            tblSeccion1.setModel(model);
+        }
+    }//GEN-LAST:event_tblSeccion1MouseClicked
+
+    private void btnAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras2ActionPerformed
+    this.dispose();
+    }//GEN-LAST:event_btnAtras2ActionPerformed
+
+    private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
+        if (tblSeccion2.getRowCount() >0) {
+            DefaultTableModel model = (DefaultTableModel) tblSeccion2.getModel();
+            String respuesta= "";
+            int id_alumno = 0;
+            for (int i = 0; i < tblSeccion2.getRowCount(); i++) {
+                VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
+                matriculaVO.setId_alumno(Integer.parseInt(model.getValueAt(i, 0).toString()));
+                matriculaVO.setSeccion(cbxSeccion2.getSelectedItem().toString());
+                respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
+            }
+            JOptionPane.showMessageDialog(this, respuesta);
+            coordinador.borrarTablas(tblSeccion2, tblSeccion1);
+            tblSeccion1.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion1.getSelectedItem().toString()));
+            tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));
+        } else {
+            JOptionPane.showMessageDialog(this, "consulte un seccion");
+        }  
+    }//GEN-LAST:event_btnGuardar2ActionPerformed
+
+    private void cbxSeccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSeccion1ActionPerformed
+        if (cbxSeccion1.getSelectedIndex()==cbxSeccion2.getSelectedIndex()) {
+            JOptionPane.showMessageDialog(this, "No puede seleccionar la misma seccion");
+            tblSeccion1.setEnabled(false);
+        }else{
+             tblSeccion1.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion1.getSelectedItem().toString()));
+             tblSeccion1.setEnabled(true);
+        }
+    }//GEN-LAST:event_cbxSeccion1ActionPerformed
+
+    private void cbxSeccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSeccion2ActionPerformed
+        if (cbxSeccion2.getSelectedIndex()==cbxSeccion1.getSelectedIndex()) {
+            JOptionPane.showMessageDialog(this, "No puede seleccionar la misma seccion");
+            tblSeccion2.setEnabled(false);
+        }else{
+        tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));
+        tblSeccion2.setEnabled(true);
+            }
+    }//GEN-LAST:event_cbxSeccion2ActionPerformed
+
+    private void tblSeccion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSeccion2MouseClicked
+    if (evt.getClickCount() == 2 && tblSeccion1.isEnabled()) {
+            int fila = this.tblSeccion2.getSelectedRow();
+            tblMatricula.setModel(coordinador.añadirListaAsistentes(tblSeccion2, tblSeccion1, fila));
+            DefaultTableModel model = (DefaultTableModel) tblSeccion2.getModel();
+            model.removeRow(fila);
+            tblSeccion2.setModel(model);
+        }
+    }//GEN-LAST:event_tblSeccion2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1865,10 +2056,12 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarImagen4;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnAtras1;
+    private javax.swing.JButton btnAtras2;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnLlenar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSiguiente;
@@ -1879,6 +2072,8 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxParentescoR2;
     private javax.swing.JComboBox<String> cbxParentescoR3;
     private javax.swing.JComboBox<String> cbxSeccion;
+    private javax.swing.JComboBox<String> cbxSeccion1;
+    private javax.swing.JComboBox<String> cbxSeccion2;
     private javax.swing.JComboBox<String> cbxTipoSangre;
     private javax.swing.JCheckBox chkCopiaCedula;
     private javax.swing.JCheckBox chkFotoCarnet;
@@ -1895,6 +2090,7 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1927,6 +2123,8 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -1939,9 +2137,12 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -1949,10 +2150,13 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField lblCodigo;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblLogo1;
     public javax.swing.JLabel lblUsuarioActvo;
     public javax.swing.JLabel lblUsuarioActvo1;
+    public javax.swing.JLabel lblUsuarioActvo2;
     private javax.swing.JLabel lblfoto;
     private javax.swing.JLabel lblfoto1;
     private javax.swing.JLabel lblfoto2;
@@ -1966,6 +2170,8 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbnSi;
     private javax.swing.JTable tblMatricula;
     public javax.swing.JTable tblSeccion;
+    public javax.swing.JTable tblSeccion1;
+    public javax.swing.JTable tblSeccion2;
     private javax.swing.JTextField txtApellidoR1;
     private javax.swing.JTextField txtApellidoR2;
     private javax.swing.JTextField txtApellidoR3;
@@ -2479,7 +2685,6 @@ public class frmGrupos extends javax.swing.JFrame {
         btnAtras1.setEnabled(valor);
         btnGuardar1.setEnabled(valor);
         btnEliminar.setEnabled(valor);
-        btnSalir.setEnabled(valor);
         btnSiguiente.setEnabled(valor);
     }
     
@@ -2553,7 +2758,6 @@ public class frmGrupos extends javax.swing.JFrame {
         btnAtras1.setEnabled(false);
         btnGuardar1.setEnabled(false);
         btnEliminar.setEnabled(false);
-        btnSalir.setEnabled(false);
         btnSiguiente.setEnabled(false);
     }
 }

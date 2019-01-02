@@ -79,6 +79,7 @@ public class frmMenu extends javax.swing.JFrame {
         btnSeccion = new javax.swing.JButton();
         btnInscripcion = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
+        btnDocentes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,7 +91,7 @@ public class frmMenu extends javax.swing.JFrame {
 
         lblHora.setText("hora fecha");
         lblHora.setName("lblHora"); // NOI18N
-        jPanel2.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, -1, -1));
+        jPanel2.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
         jLabel2.setText("hombol maternal");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 450, 50));
@@ -105,7 +106,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnAjustesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 100, 70));
+        jPanel2.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 100, 70));
 
         btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -116,14 +117,14 @@ public class frmMenu extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, 30));
+        jPanel2.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 150, -1));
 
         btnNotas.setText("Notas");
-        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 100, 70));
+        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 100, 70));
 
         btnPagos.setText("Pagos");
         btnPagos.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +132,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnPagosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 100, 70));
+        jPanel2.add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 100, 70));
 
         btnUsuario.setText("Usuario");
         btnUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +140,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 100, 70));
+        jPanel2.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 100, 70));
 
         btnAsistencia.setText("Asistencia");
         btnAsistencia.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +148,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnAsistenciaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 100, 70));
+        jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 100, 70));
 
         btnSeccion.setText("Matricula");
         btnSeccion.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +156,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnSeccionActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 100, 70));
+        jPanel2.add(btnSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 100, 70));
 
         btnInscripcion.setText("Inscripcion");
         btnInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +164,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnInscripcionActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 100, 70));
+        jPanel2.add(btnInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 100, 70));
 
         btnReportes.setText("Reportes");
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +172,15 @@ public class frmMenu extends javax.swing.JFrame {
                 btnReportesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 100, 70));
+        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 100, 70));
+
+        btnDocentes.setText("Docentes");
+        btnDocentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDocentesActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 100, 70));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 650, 370));
 
@@ -251,6 +260,12 @@ public class frmMenu extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
+    private void btnDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocentesActionPerformed
+    coordinador.getFrmDocente().setVisible(true);
+    coordinador.getFrmDocente().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+    coordinador.getFrmDocente().setLocationRelativeTo(this);
+    }//GEN-LAST:event_btnDocentesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,6 +305,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnAsistencia;
     private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton btnDocentes;
     private javax.swing.JButton btnInscripcion;
     private javax.swing.JButton btnNotas;
     private javax.swing.JButton btnPagos;

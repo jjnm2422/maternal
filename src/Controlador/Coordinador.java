@@ -21,6 +21,7 @@ import VO.RequisitosVO;
 import VO.UsuarioVO;
 import Vista.frmAjustes;
 import Vista.frmAsistencia;
+import Vista.frmDocente;
 import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
 import Vista.frmDocenteAsistencia;
@@ -61,6 +62,7 @@ public class Coordinador {
     private frmUsuario frmUsuario;
     private frmAjustes frmAjustes;
     private VariablesDAO variablesDAO;
+    private frmDocente frmDocente;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -417,5 +419,15 @@ public class Coordinador {
     public String actualizarRepresentanteSinFoto(RepresentanteVO representanteVO, String text, int tipo) {
         return getRepresentanteDAO().actualizarRepresentanteSinFoto(representanteVO, text, tipo);
     }
+
+    public void setfrmDocente(frmDocente frmDocente) {
+        this.frmDocente = frmDocente;
+    }
+
+    public frmDocente getFrmDocente() {
+        return frmDocente;
+    }
+    
+    
     
 }

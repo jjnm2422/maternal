@@ -113,7 +113,7 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, -1));
 
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtUsuario.setText("jjnm2422");
+        txtUsuario.setText("admin");
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
@@ -130,7 +130,7 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel3.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, -1));
 
         txtClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtClave.setText("1234");
+        txtClave.setText("admin1212");
         txtClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtClaveActionPerformed(evt);
