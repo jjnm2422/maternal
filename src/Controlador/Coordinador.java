@@ -16,6 +16,7 @@ import DAO.UsuarioDAO;
 import DAO.VariablesDAO;
 import Modelo.Logica;
 import VO.AlumnoVO;
+import VO.RepresentanteVO;
 import VO.RequisitosVO;
 import VO.UsuarioVO;
 import Vista.frmAjustes;
@@ -148,6 +149,22 @@ public class Coordinador {
     public String eliminarAlumno(String id) {
         return getAlumnoDAO().eliminarAlumno(id);
     }
+    
+     public String eliminarRequisitos(String id_alumno){
+         return getRequisitosDAO().eliminarRequisitos(id_alumno);
+     }
+     
+      public String eliminarAsistencia(String id_alumno){
+          return getAsistenciaDAO().eliminarAsistencia(id_alumno);
+      }
+    
+     public String eliminarMatricula(String id) {
+         return getMatriculaDAO().eliminarMatricula(id);
+     }
+     
+      public String eliminarRepresentante(String id_alumno){
+          return getRepresentanteDAO().eliminarRepresentante(id_alumno);
+      }
     
     public boolean validacionCorreo(String entrada) {
         return getLogica().validacionCorreo(entrada);
@@ -392,4 +409,13 @@ public class Coordinador {
      public VO.VariablesVO consultarVariables() {
          return getVariablesDAO().consultarVariables();
      }
+
+    public String actualizarAlumnoSinFoto(AlumnoVO alumnoVO, String id) {
+        return getAlumnoDAO().actualizarAlumnoSinFoto(alumnoVO, id);
+    }
+
+    public String actualizarRepresentanteSinFoto(RepresentanteVO representanteVO, String text, int tipo) {
+        return getRepresentanteDAO().actualizarRepresentanteSinFoto(representanteVO, text, tipo);
+    }
+    
 }

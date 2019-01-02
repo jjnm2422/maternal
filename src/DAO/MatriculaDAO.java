@@ -159,4 +159,28 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
             return "ERROR AL CONECTAR CON BD";
         }
     }
+   
+    public String eliminarMatricula(String id) {
+        Statement st = null;
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "DELETE FROM " + this.tabla + " WHERE id_alumno='" + id + "'";
+        if (conexion != null) {
+            try {
+                st = conexion.createStatement();
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                return "NO ELIMINADO \n"+ex.getMessage();
+            }
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
 }

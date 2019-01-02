@@ -10,7 +10,6 @@ import VO.AlumnoVO;
 import VO.RepresentanteVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -111,7 +110,6 @@ public class frmGrupos extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo1 = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
-        lblTitulo1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
@@ -197,6 +195,7 @@ public class frmGrupos extends javax.swing.JFrame {
         rbnR1 = new javax.swing.JRadioButton();
         rbnR2 = new javax.swing.JRadioButton();
         btnGuardar1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -316,9 +315,10 @@ public class frmGrupos extends javax.swing.JFrame {
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel11.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 110, 120));
+        jPanel11.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 110, 110));
 
         btnAgregarImagen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen.setText("Cargar");
         btnAgregarImagen.setEnabled(false);
         btnAgregarImagen.addActionListener(new java.awt.event.ActionListener() {
@@ -326,7 +326,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAgregarImagenActionPerformed(evt);
             }
         });
-        jPanel11.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 110, 20));
+        jPanel11.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 110, 30));
 
         jPanel12.setBackground(new java.awt.Color(24, 119, 189));
         jPanel12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -366,6 +366,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel16.setText("Fecha de Nacimiento");
         jPanel12.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
 
+        txtFecha.setFormat(2);
         txtFecha.setEnabled(false);
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
@@ -473,6 +474,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -485,6 +487,7 @@ public class frmGrupos extends javax.swing.JFrame {
         lblUsuarioActvo1.setName("lblUsuarioActivo"); // NOI18N
         jPanel3.add(lblUsuarioActvo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 120, -1));
 
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente.setText("Siguiente");
         btnSiguiente.setEnabled(false);
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -493,13 +496,6 @@ public class frmGrupos extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 100, 30));
-
-        lblTitulo1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo1.setText("INSCRIPCION DE ALUMNOS PERIODO:");
-        lblTitulo1.setName("lbl"); // NOI18N
-        jPanel3.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 1000, 30));
 
         txtCodigo.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -512,8 +508,9 @@ public class frmGrupos extends javax.swing.JFrame {
                 txtCodigoKeyTyped(evt);
             }
         });
-        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 20));
+        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 30));
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
         btnBuscar.setText("buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -739,7 +736,8 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         btnAgregarImagen2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen2.setText("Cargar Foto");
+        btnAgregarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen2.setText("Cargar");
         btnAgregarImagen2.setEnabled(false);
         btnAgregarImagen2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -754,6 +752,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 340, 320));
 
+        btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
         btnAtras1.setText("Atras");
         btnAtras1.setEnabled(false);
         btnAtras1.addActionListener(new java.awt.event.ActionListener() {
@@ -761,7 +760,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 460, 100, 30));
+        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 100, 30));
 
         jPanel15.setBackground(new java.awt.Color(24, 119, 189));
         jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -894,7 +893,8 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel15.add(chkRepresentante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
         btnAgregarImagen3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen3.setText("Cargar Foto");
+        btnAgregarImagen3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen3.setText("Cargar");
         btnAgregarImagen3.setEnabled(false);
         btnAgregarImagen3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1031,7 +1031,8 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel16.add(cbxParentescoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
         btnAgregarImagen4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen4.setText("Cargar Foto");
+        btnAgregarImagen4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen4.setText("Cargar");
         btnAgregarImagen4.setEnabled(false);
         btnAgregarImagen4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1077,6 +1078,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 340, 320));
 
+        btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
         btnGuardar1.setText("Actualizar");
         btnGuardar1.setEnabled(false);
         btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
@@ -1084,7 +1086,17 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 100, 30));
+        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_deleteuser24.png"))); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setEnabled(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 100, 30));
 
         jTabbedPane2.addTab("DATOS DE REPRESENTANTE", jPanel4);
 
@@ -1137,15 +1149,17 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 310, 310));
 
-        btnAtras.setText("atras");
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnAtras.setText("Salir");
         btnAtras.setName("btnAtras"); // NOI18N
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 70, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 100, -1));
 
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar.setText("guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -1514,13 +1528,12 @@ public class frmGrupos extends javax.swing.JFrame {
                                 if (actualizarRepresentante3(3)) {
                                     if (actualizarRequisitos()) {
                                         JOptionPane.showMessageDialog(this, "Actualizacion completada");
-                                        borrarCampos();
-                                        lblCodigo.setText("");
-                                        campoPordefecto();
                                     } else {
                                         JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
                                     }
-                                    borrarCampos();
+                                     borrarCampos();
+                                        lblCodigo.setText("");
+                                        campoPordefecto();
                                 } else {
                                     JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
                                 }
@@ -1531,13 +1544,13 @@ public class frmGrupos extends javax.swing.JFrame {
                             if (actualizarRepresentante3(3)) {
                                     if (actualizarRequisitos()) {
                                         JOptionPane.showMessageDialog(this, "Actualizacion completada");
-                                        borrarCampos();
-                                        lblCodigo.setText("");
-                                        campoPordefecto();
+                                       
                                     } else {
                                         JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
                                     }
                                 borrarCampos();
+                                lblCodigo.setText("");
+                                campoPordefecto();
                             } else {
                                 JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
                             }
@@ -1778,6 +1791,38 @@ public class frmGrupos extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+            Object opciones[] = {"Si", "No"};
+        int respuesta = JOptionPane.showOptionDialog(this, "¿Desea usted eliminar completamente los datos relacionados a este alumno? \n Tenga en cuenta que esto no puede revertirse, se elimanaran tambien datos de pagos y representantes asociados al alumno.", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "No");
+        if (respuesta == 0) {
+            //elimino alumno requisitos
+            if (coordinador.eliminarRequisitos(lblCodigo.getText().trim()).equals("ELIMINADO")) {
+                if (coordinador.eliminarAsistencia(lblCodigo.getText().trim()).equals("ELIMINADO")) {
+                    if (coordinador.eliminarMatricula(lblCodigo.getText().trim()).equals("ELIMINADO")) {
+                        if (coordinador.eliminarRepresentante(lblCodigo.getText().trim()).equals("ELIMINADO")) {
+                            if (coordinador.eliminarAlumno(lblCodigo.getText().trim()).equals("ELIMINADO")) {
+                                JOptionPane.showMessageDialog(this, "Eliminado con Exito");
+                                borrarCampos();
+                                lblCodigo.setText("");
+                                campoPordefecto();
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Problemas al eliminar Alumno");
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Problemas al eliminar representante");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Problemas al eliminar matricula");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Problemas al eliminar asistencia");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Problemas al eliminar requisitos");
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1821,6 +1866,7 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnLlenar;
@@ -1905,7 +1951,6 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField lblCodigo;
     private javax.swing.JLabel lblLogo;
-    public javax.swing.JLabel lblTitulo1;
     public javax.swing.JLabel lblUsuarioActvo;
     public javax.swing.JLabel lblUsuarioActvo1;
     private javax.swing.JLabel lblfoto;
@@ -1962,6 +2007,7 @@ public class frmGrupos extends javax.swing.JFrame {
     
         private boolean actualizaAlumno(String fecha) {
         VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
+        String res = "";
         alumnoVO.setPrimer_nombre(txtPnombre.getText());
         alumnoVO.setSegundo_nombre(txtSnombre.getText());
         alumnoVO.setPrimer_apellido(txtPapellido.getText());
@@ -1983,12 +2029,14 @@ public class frmGrupos extends javax.swing.JFrame {
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         alumnoVO.setEdad(añoActual - añoNacimiento);
-        if (!lblfoto.getIcon().equals(ICON_NO_PHOTO)) {
+        if (fis!=null) {
             alumnoVO.setBinarioFoto(longitudBytes);
             alumnoVO.setFis(fis);
             Icon icon = lblfoto.getIcon();
+            res = coordinador.actualizarAlumno(alumnoVO, lblCodigo.getText().trim());
+        }else{
+            res = coordinador.actualizarAlumnoSinFoto(alumnoVO, lblCodigo.getText().trim());
         }
-        String res = coordinador.actualizarAlumno(alumnoVO, lblCodigo.getText().trim());
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
@@ -2030,7 +2078,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private boolean actualizarRepresentante(int tipo) {
         VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
-
+        String res = "";   
         representanteVO.setPrimer_nombre(txtNombreR1.getText());
         representanteVO.setPrimer_apellido(txtApellidoR1.getText());
         representanteVO.setOcupacion(txtOcupacionR1.getText());
@@ -2041,12 +2089,14 @@ public class frmGrupos extends javax.swing.JFrame {
         representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString().toLowerCase());
         representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO.setCedula(txtCedulaR1.getText());
-        if (!lblfoto.getIcon().equals(ICON_NO_PHOTO)) {
+        if (fis1!=null) {
             representanteVO.setBinarioFoto(longitudBytes1);
             representanteVO.setFis(fis1);
+            res = coordinador.actualizarRepresentante(representanteVO, lblCodigo.getText(), tipo);
+        }else{
+            res = coordinador.actualizarRepresentanteSinFoto(representanteVO, lblCodigo.getText(), tipo);
         }
 
-        String res = coordinador.actualizarRepresentante(representanteVO, txtCodigo.getText(), tipo);
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
@@ -2056,6 +2106,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private boolean actualizarRepresentante2(int tipo) {
         VO.RepresentanteVO representanteVO2 = new VO.RepresentanteVO();
+        String res = "";
         representanteVO2.setPrimer_nombre(txtNombreR2.getText());
         representanteVO2.setPrimer_apellido(txtApellidoR2.getText());
         representanteVO2.setOcupacion(txtOcupacionR2.getText());
@@ -2066,11 +2117,13 @@ public class frmGrupos extends javax.swing.JFrame {
         representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
         representanteVO2.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO2.setCedula(txtCedulaR2.getText());
-        if (!lblfoto1.getIcon().equals(ICON_NO_PHOTO)) {
+        if (fis2!=null) {
             representanteVO2.setBinarioFoto(longitudBytes2);
             representanteVO2.setFis(fis2);
+            res = coordinador.actualizarRepresentante(representanteVO2, lblCodigo.getText(), tipo);
+        }else{
+            res = coordinador.actualizarRepresentanteSinFoto(representanteVO2, lblCodigo.getText(), tipo);
         }
-        String res = coordinador.actualizarRepresentante(representanteVO2, txtCodigo.getText(), tipo);
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
@@ -2080,6 +2133,7 @@ public class frmGrupos extends javax.swing.JFrame {
     
     private boolean actualizarRepresentante3(int tipo) {
         VO.RepresentanteVO representanteVO3 = new VO.RepresentanteVO();
+        String res = "";
         representanteVO3.setPrimer_nombre(txtNombreR3.getText());
         representanteVO3.setPrimer_apellido(txtApellidoR3.getText());
         representanteVO3.setOcupacion(txtOcupacionR3.getText());
@@ -2104,7 +2158,11 @@ public class frmGrupos extends javax.swing.JFrame {
                 representanteVO3.setFis(fis3);
             }
         }
-        String res = coordinador.actualizarRepresentante(representanteVO3, txtCodigo.getText(), tipo);
+        if (representanteVO3.getFis()!=null) {
+            res = coordinador.actualizarRepresentante(representanteVO3, lblCodigo.getText(), tipo);
+        }else{
+            res = coordinador.actualizarRepresentanteSinFoto(representanteVO3, lblCodigo.getText(), tipo);
+        }   
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
@@ -2168,6 +2226,10 @@ public class frmGrupos extends javax.swing.JFrame {
     }
 
     private void borrarCampos() {
+        fis = null;
+        fis1 = null;
+        fis2 = null;
+        fis3 = null;
         borrarAlumno();
         borrarRepresentante();
         borrarRepresentante3();
@@ -2416,6 +2478,7 @@ public class frmGrupos extends javax.swing.JFrame {
         //botones
         btnAtras1.setEnabled(valor);
         btnGuardar1.setEnabled(valor);
+        btnEliminar.setEnabled(valor);
         btnSalir.setEnabled(valor);
         btnSiguiente.setEnabled(valor);
     }
@@ -2489,6 +2552,7 @@ public class frmGrupos extends javax.swing.JFrame {
         //botones
         btnAtras1.setEnabled(false);
         btnGuardar1.setEnabled(false);
+        btnEliminar.setEnabled(false);
         btnSalir.setEnabled(false);
         btnSiguiente.setEnabled(false);
     }

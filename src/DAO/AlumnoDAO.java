@@ -134,14 +134,15 @@ public class AlumnoDAO {
         if (conexion != null) {
             try {
                 st = conexion.createStatement();
-                if (st.execute(sql)) {
+                int n= st.executeUpdate(sql);
+                if (n>0) {
                     return "ELIMINADO";
-                } else {
+                }else{
                     return "NO ELIMINADO";
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
-                return "NO ELIMINADO";
+                return "NO ELIMINADO \n"+ex.getMessage();
             }
         } else {
             return "ERROR AL CONECTAR CON BD";
@@ -175,6 +176,41 @@ public class AlumnoDAO {
                 } else {
                     ps.setBinaryStream(11, null, 0);
                 }
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
+    
+    public String actualizarAlumnoSinFoto(VO.AlumnoVO alumnoVO, String id) {
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=? where id_alumno= '" + id + "'";
+
+        if (conexion != null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setString(1, alumnoVO.getFechaNacimiento());
+                ps.setString(2, alumnoVO.getPrimer_nombre());
+                ps.setString(3, alumnoVO.getSegundo_nombre());
+                ps.setString(4, alumnoVO.getPrimer_apellido());
+                ps.setString(5, alumnoVO.getSegundo_apellido());
+                ps.setString(6, alumnoVO.getTipo_sangre());
+                ps.setInt(7, alumnoVO.getEdad());
+                ps.setString(8, alumnoVO.getSexo());
+                ps.setString(9, alumnoVO.getDireccion());
+                ps.setString(10, alumnoVO.getAlergias());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

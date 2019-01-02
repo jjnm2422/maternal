@@ -108,6 +108,7 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel2.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 100, 70));
 
         btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnCerrarSesion.setText("cerrar sesion");
         btnCerrarSesion.setName("btnCerrarSesion"); // NOI18N
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {

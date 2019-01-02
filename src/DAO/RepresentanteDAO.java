@@ -159,28 +159,28 @@ public class RepresentanteDAO {
         }
     }
     
-    public String eliminarRepresentante(String id){
+    public String eliminarRepresentante(String id_alumno){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE cedula='"+id+"'";
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_alumno='"+id_alumno+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
-            if (st.execute(sql)) {
-                return "ELIMINADO";
-            } else {
-                return "NO ELIMINADO";
-            }   
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }   
         } catch (SQLException ex) {
             Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return "NO ELIMINADO";
+            return "NO ELIMINADO \n"+ex.getMessage();
         }  
         } else {
             return "ERROR AL CONECTAR CON BD";
-        }
-        
+        }  
     }
     
     public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id_alumno, int tipo){
@@ -208,6 +208,40 @@ public class RepresentanteDAO {
                 } else {
                     ps.setBinaryStream(10, null, 0);
                 }
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
+    
+        public String actualizarRepresentanteSinFoto(VO.RepresentanteVO representanteVO, String id_alumno, int tipo){
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, telefono1=?, telefono2=?, direccion=?, parentesco=?, ocupacion=?, cedula=?, empresa=? where id_alumno= '"+id_alumno+"' and tipo= '"+tipo+"'";
+
+        if (conexion!=null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setString(1, representanteVO.getPrimer_nombre());
+                ps.setString(2, representanteVO.getPrimer_apellido());
+                ps.setString(3, representanteVO.getTelefono1());
+                ps.setString(4, representanteVO.getTelefono2());
+                ps.setString(5, representanteVO.getDireccion());
+                ps.setString(6, representanteVO.getParentesco());
+                ps.setString(7, representanteVO.getOcupacion());
+                ps.setString(8, representanteVO.getCedula());
+                ps.setString(9, representanteVO.getEmpresa());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

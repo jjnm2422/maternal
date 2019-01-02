@@ -97,20 +97,21 @@ public class RequisitosDAO {
         }
     }
     
-    public String eliminarRequisitos(String id){
+    public String eliminarRequisitos(String id_alumno){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE id_requisito='"+id+"'";
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_alumno='"+id_alumno+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
-            if (st.execute(sql)) {
-                return "ELIMINADO";
-            } else {
-                return "NO ELIMINADO";
-            }   
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }  
         } catch (SQLException ex) {
             Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
             return "NO ELIMINADO";

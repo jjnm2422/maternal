@@ -89,4 +89,29 @@ public class AsistenciaADAO {
         conexiondb.desconexion();
         return respuesta;
     }
+    
+        public String eliminarAsistencia(String id_alumno){
+        Statement st = null;
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_alumno='"+id_alumno+"'";
+        if (conexion!=null) {
+             try {
+            st = conexion.createStatement();
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }  
+        } catch (SQLException ex) {
+            Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return "NO ELIMINADO";
+        }  
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+        
+    }
 }

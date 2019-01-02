@@ -286,16 +286,17 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel7.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 110, 120));
+        jPanel7.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 110, 110));
 
         btnAgregarImagen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen.setText("Cargar");
         btnAgregarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarImagenActionPerformed(evt);
             }
         });
-        jPanel7.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 110, 20));
+        jPanel7.add(btnAgregarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 110, 30));
 
         jPanel8.setBackground(new java.awt.Color(24, 119, 189));
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -333,7 +334,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel3.setText("Fecha de Nacimiento");
         jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
 
-        txtFecha.setFormat(2);
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
@@ -436,33 +436,36 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 90, 30));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 120, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 120, -1));
 
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente.setText("Siguiente");
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 100, 30));
+        jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 30));
 
+        btnBorrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
         btnBorrarA.setText("Borrar");
         btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarAActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 90, 30));
+        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 120, 30));
 
         lblTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -482,8 +485,9 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtCodigoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 20));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 80, 30));
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
         btnBuscar.setText("buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -497,12 +501,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("codigo alumno");
         jLabel30.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, 20));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 120, 30));
 
-        jTabbedPane1.addTab("tab1", jPanel2);
+        jTabbedPane1.addTab("Datos Alumno", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_graduado.png")), jPanel2); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion de Representantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion de Representantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -693,7 +697,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         btnAgregarImagen1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen1.setText("Cargar Foto");
+        btnAgregarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen1.setText("Cargar");
+        btnAgregarImagen1.setToolTipText("");
         btnAgregarImagen1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarImagen1ActionPerformed(evt);
@@ -707,6 +713,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 340, 320));
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -715,6 +722,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
 
+        btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
         btnBorrarR.setText("Borrar");
         btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -853,7 +861,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel6.add(chkRepresentante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
         btnAgregarImagen2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen2.setText("Cargar Foto");
+        btnAgregarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen2.setText("Cargar");
         btnAgregarImagen2.setEnabled(false);
         btnAgregarImagen2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -981,7 +990,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(cbxParentescoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
         btnAgregarImagen3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarImagen3.setText("Cargar Foto");
+        btnAgregarImagen3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+        btnAgregarImagen3.setText("Cargar");
         btnAgregarImagen3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarImagen3ActionPerformed(evt);
@@ -1023,6 +1033,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 340, 320));
 
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1031,9 +1042,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 100, 30));
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jTabbedPane1.addTab("Datos Representante", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_familia.png")), jPanel3); // NOI18N
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 540));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
