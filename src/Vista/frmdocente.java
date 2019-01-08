@@ -5,16 +5,20 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+
 /**
  *
  * @author Lenovo
  */
-public class frmdocente extends javax.swing.JFrame {
+public class frmDocente extends javax.swing.JFrame {
+
+    private Coordinador coordinador;
 
     /**
      * Creates new form frmdocente
      */
-    public frmdocente() {
+    public frmDocente() {
         initComponents();
     }
 
@@ -160,7 +164,7 @@ public class frmdocente extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 350));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(69, 90, 100));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,8 +174,9 @@ public class frmdocente extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Registro de docente");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, -1));
 
         jPanel5.setBackground(new java.awt.Color(2, 119, 189));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos docente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -181,51 +186,51 @@ public class frmdocente extends javax.swing.JFrame {
         lblNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre");
-        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
 
         lblDireccion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
         lblDireccion.setText("Direccion");
         lblDireccion.setName("lblPrimerNombre"); // NOI18N
-        jPanel5.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPanel5.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         lblApellido.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido");
-        jPanel5.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
+        jPanel5.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
         lblFechaNacimiento.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
         lblFechaNacimiento.setText("Fecha de nacimiento");
-        jPanel5.add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, -1));
+        jPanel5.add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
 
         lblCedula.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCedula.setForeground(new java.awt.Color(255, 255, 255));
         lblCedula.setText("Cedula");
-        jPanel5.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
+        jPanel5.add(lblCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
 
         lblTelefono.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblTelefono.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefono.setText("Telefono");
         lblTelefono.setName("lblGrupo"); // NOI18N
-        jPanel5.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
+        jPanel5.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
 
         lblAñoIngreso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblAñoIngreso.setForeground(new java.awt.Color(255, 255, 255));
         lblAñoIngreso.setText("Año de  ingreso");
-        jPanel5.add(lblAñoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel5.add(lblAñoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         txtDireccion.setColumns(20);
         txtDireccion.setRows(5);
         jScrollPane2.setViewportView(txtDireccion);
 
-        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 180, 80));
+        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 310, 80));
 
         txtNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel5.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, -1));
 
         txtAñoIngreso.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel5.add(txtAñoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 70, -1));
+        jPanel5.add(txtAñoIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 70, -1));
 
         txtApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
@@ -233,10 +238,10 @@ public class frmdocente extends javax.swing.JFrame {
                 txtApellidoActionPerformed(evt);
             }
         });
-        jPanel5.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 110, -1));
+        jPanel5.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
 
         txtCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel5.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 90, -1));
+        jPanel5.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 100, -1));
 
         txtTelefono.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -244,12 +249,12 @@ public class frmdocente extends javax.swing.JFrame {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        jPanel5.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 110, -1));
+        jPanel5.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
 
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel5.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
+        jPanel5.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
 
         btnAgregarImagen1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAgregarImagen1.setText("Cargar Foto");
@@ -258,13 +263,13 @@ public class frmdocente extends javax.swing.JFrame {
                 btnAgregarImagen1ActionPerformed(evt);
             }
         });
-        jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 110, 30));
+        jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 110, 30));
 
         lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel5.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 110, 120));
+        jPanel5.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 650, 270));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
@@ -288,7 +293,7 @@ public class frmdocente extends javax.swing.JFrame {
         });
         jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 100, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 400));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -334,20 +339,21 @@ public class frmdocente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmdocente().setVisible(true);
+                new frmDocente().setVisible(true);
             }
         });
     }
@@ -402,4 +408,8 @@ public class frmdocente extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+    }
 }
