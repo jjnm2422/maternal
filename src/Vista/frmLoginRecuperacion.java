@@ -104,8 +104,8 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         lblTitulo21.setText("Usuario");
         jPanel1.add(lblTitulo21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 140, 30));
 
-        jLabel3.setText("icono");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 40, 30));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/user24.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 30, 30));
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -136,7 +136,7 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         });
         jPanel1.add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 140, 30));
 
-        jLabel2.setText("icono");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_clave.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 40, 30));
 
         lblTitulo19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -159,17 +159,21 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
         });
         jPanel1.add(txtClave2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 140, 30));
 
-        jLabel4.setText("icono");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_clave.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 40, 30));
 
+        btnIngresar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update16.png"))); // NOI18N
         btnIngresar.setText("Actualizar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 90, -1));
+        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 110, -1));
 
+        btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit16.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

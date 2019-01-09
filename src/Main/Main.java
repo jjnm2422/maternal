@@ -34,7 +34,7 @@ public class Main {
         Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
         Vista.frmUsuario frmUsuario = new Vista.frmUsuario();
         Vista.frmAjustes frmAjustes = new Vista.frmAjustes();
-        Vista.frmDocente frmDocente = new Vista.frmDocente();
+        Vista.frmdocente frmDocente = new Vista.frmdocente();
         
         coordinador.setAlumnoDAO(alumnoDAO);
         coordinador.setfrmDocente(frmDocente);

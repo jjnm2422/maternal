@@ -183,6 +183,7 @@ public class frmUsuario extends javax.swing.JFrame {
 
         jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, 150));
 
+        btnInicio1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnInicio1.setText("Llenar");
         btnInicio1.setPreferredSize(new java.awt.Dimension(60, 23));
         btnInicio1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +194,7 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel5.add(btnInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, -1));
 
         btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
         btnBorrar.setText("Borrar");
         btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -200,9 +202,10 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 243, 90, 30));
+        jPanel5.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 243, 100, 30));
 
         btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setPreferredSize(new java.awt.Dimension(60, 23));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +222,7 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel5.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 150, 30));
 
         btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setPreferredSize(new java.awt.Dimension(60, 23));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +230,7 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 243, 90, 30));
+        jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 243, 120, 30));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));

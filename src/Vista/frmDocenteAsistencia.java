@@ -157,23 +157,27 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 320, 130));
 
-        btnAtras.setText("atras");
+        btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
+        btnAtras.setText("Atras");
         btnAtras.setName("btnAtras"); // NOI18N
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, -1, -1));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 100, 30));
 
-        btnGuardar.setText("guardar");
+        btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
+        btnGuardar.setText("Guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 110, 30));
 
         btnLlenarLista.setText("LLenar Lista");
         btnLlenarLista.addActionListener(new java.awt.event.ActionListener() {

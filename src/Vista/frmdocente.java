@@ -11,14 +11,14 @@ import Controlador.Coordinador;
  *
  * @author Lenovo
  */
-public class frmDocente extends javax.swing.JFrame {
+public class frmdocente extends javax.swing.JFrame {
 
     private Coordinador coordinador;
 
     /**
      * Creates new form frmdocente
      */
-    public frmDocente() {
+    public frmdocente() {
         initComponents();
     }
 
@@ -257,13 +257,14 @@ public class frmDocente extends javax.swing.JFrame {
         jPanel5.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
 
         btnAgregarImagen1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAgregarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen1.setText("Cargar Foto");
         btnAgregarImagen1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarImagen1ActionPerformed(evt);
             }
         });
-        jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 110, 30));
+        jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 30));
 
         lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -276,6 +277,7 @@ public class frmDocente extends javax.swing.JFrame {
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 120, 20));
 
         btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,13 +287,14 @@ public class frmDocente extends javax.swing.JFrame {
         jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 100, 30));
 
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 100, 30));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 400));
 
@@ -339,21 +342,23 @@ public class frmDocente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmdocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmDocente().setVisible(true);
+                new frmdocente().setVisible(true);
             }
         });
     }
