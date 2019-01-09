@@ -164,6 +164,8 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(2, 119, 189));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnInicio.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/interfaz-de-hogar.png"))); // NOI18N
         btnInicio.setText("Inicio");
         btnInicio.setPreferredSize(new java.awt.Dimension(60, 23));
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -171,8 +173,10 @@ public class frmLogin extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel2.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
 
+        btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit16.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setPreferredSize(new java.awt.Dimension(60, 23));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +184,7 @@ public class frmLogin extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, -1));
 
         btnOlvidoClave.setBackground(new java.awt.Color(129, 212, 250));
         btnOlvidoClave.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

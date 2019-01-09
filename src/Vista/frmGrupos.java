@@ -31,6 +31,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private Coordinador coordinador;
         private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
+         private final ImageIcon iconLogo = new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"));
     FileInputStream fis, fis1, fis2, fis3, fisCopia1, fisCopia2;
     int longitudBytes, longitudBytes1,longitudBytes2,longitudBytes3, longitudBytecopia1, longitudBytecopia2;
 
@@ -42,8 +43,8 @@ public class frmGrupos extends javax.swing.JFrame {
         initComponents();
         ajustar(lblfoto, ICON_NO_PHOTO);
         ajustar(lblfoto1, ICON_NO_PHOTO);
-        ajustar(lblfoto1, ICON_NO_PHOTO);
         ajustar(lblfoto2, ICON_NO_PHOTO);
+        ajustar(lblLogo, iconLogo);
     }
     
      public void setlook() {
@@ -213,7 +214,6 @@ public class frmGrupos extends javax.swing.JFrame {
         };
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        lblLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cbxSeccion = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
@@ -229,7 +229,6 @@ public class frmGrupos extends javax.swing.JFrame {
         };
         btnAtras2 = new javax.swing.JButton();
         btnGuardar2 = new javax.swing.JButton();
-        lblLogo1 = new javax.swing.JLabel();
         cbxSeccion1 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         lblUsuarioActvo2 = new javax.swing.JLabel();
@@ -241,12 +240,16 @@ public class frmGrupos extends javax.swing.JFrame {
                 return false; //Disallow the editing of any cell
             }
         };
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+
         jTabbedPane2.setToolTipText("");
         jTabbedPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane2StateChanged(evt);
@@ -254,7 +257,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
 
         jPanel3.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -340,7 +343,7 @@ public class frmGrupos extends javax.swing.JFrame {
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel11.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 110, 110));
 
-        btnAgregarImagen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAgregarImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen.setText("Cargar");
         btnAgregarImagen.setEnabled(false);
@@ -497,6 +500,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
 
+        btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -510,6 +514,7 @@ public class frmGrupos extends javax.swing.JFrame {
         lblUsuarioActvo1.setName("lblUsuarioActivo"); // NOI18N
         jPanel3.add(lblUsuarioActvo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 120, -1));
 
+        btnSiguiente.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente.setText("Siguiente");
         btnSiguiente.setEnabled(false);
@@ -518,7 +523,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 100, 30));
+        jPanel3.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 120, 30));
 
         txtCodigo.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -533,8 +538,9 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 80, 30));
 
+        btnBuscar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
-        btnBuscar.setText("buscar");
+        btnBuscar.setText("Buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -543,16 +549,16 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel3.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
-        jLabel33.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel33.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("codigo alumno");
         jLabel33.setName("lbl"); // NOI18N
-        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, 20));
+        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, 20));
 
-        jTabbedPane2.addTab("DATOS DEL ALUMNO", jPanel3);
+        jTabbedPane2.addTab("DATOS DEL ALUMNO", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_graduado.png")), jPanel3); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion de Representantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion de Representantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -758,7 +764,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel34.setText("Direccion");
         jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
-        btnAgregarImagen2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAgregarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen2.setText("Cargar");
         btnAgregarImagen2.setEnabled(false);
@@ -775,6 +781,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 340, 320));
 
+        btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
         btnAtras1.setText("Atras");
         btnAtras1.setEnabled(false);
@@ -783,7 +790,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 100, 30));
+        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, 100, 30));
 
         jPanel15.setBackground(new java.awt.Color(24, 119, 189));
         jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -915,7 +922,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel15.add(chkRepresentante, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
-        btnAgregarImagen3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAgregarImagen3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen3.setText("Cargar");
         btnAgregarImagen3.setEnabled(false);
@@ -1053,7 +1060,7 @@ public class frmGrupos extends javax.swing.JFrame {
         cbxParentescoR3.setEnabled(false);
         jPanel16.add(cbxParentescoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
-        btnAgregarImagen4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAgregarImagen4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAgregarImagen4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
         btnAgregarImagen4.setText("Cargar");
         btnAgregarImagen4.setEnabled(false);
@@ -1101,6 +1108,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 340, 320));
 
+        btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
         btnGuardar1.setText("Actualizar");
         btnGuardar1.setEnabled(false);
@@ -1109,8 +1117,9 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
+        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 120, 30));
 
+        btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_deleteuser24.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setEnabled(false);
@@ -1119,11 +1128,13 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 100, 30));
+        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 110, 30));
 
-        jTabbedPane2.addTab("DATOS DE REPRESENTANTE", jPanel4);
+        jTabbedPane2.addTab("DATOS DE REPRESENTANTE", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_familia.png")), jPanel4); // NOI18N
 
         jTabbedPane1.addTab("ACTUALIZACION DE DATOS", jTabbedPane2);
+
+        jTabbedPane3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(1, 87, 155));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1172,6 +1183,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 310, 310));
 
+        btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnAtras.setText("Salir");
         btnAtras.setName("btnAtras"); // NOI18N
@@ -1182,8 +1194,9 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 100, -1));
 
+        btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
-        btnGuardar.setText("guardar");
+        btnGuardar.setText("Guardar");
         btnGuardar.setName("btnGuardar"); // NOI18N
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1192,14 +1205,10 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, -1, -1));
 
-        lblLogo.setText("logo");
-        lblLogo.setName("lblLogo"); // NOI18N
-        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 110, 120));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Matricula");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         cbxSeccion.addActionListener(new java.awt.event.ActionListener() {
@@ -1209,10 +1218,10 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 110, -1));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("grupo a cargar");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 110, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 140, -1));
 
         btnLlenar.setText("Actualizar Tabla");
         btnLlenar.addActionListener(new java.awt.event.ActionListener() {
@@ -1226,7 +1235,7 @@ public class frmGrupos extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 120, 20));
 
-        jTabbedPane3.addTab("AGREGAR ALUMNO", jPanel2);
+        jTabbedPane3.addTab("AGREGAR ALUMNO", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_graduado.png")), jPanel2); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(1, 87, 155));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1257,6 +1266,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 310, 310));
 
+        btnAtras2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnAtras2.setText("Salir");
         btnAtras2.setName("btnAtras"); // NOI18N
@@ -1267,8 +1277,9 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel7.add(btnAtras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 100, -1));
 
+        btnGuardar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
-        btnGuardar2.setText("guardar");
+        btnGuardar2.setText("Guardar");
         btnGuardar2.setName("btnGuardar"); // NOI18N
         btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1277,10 +1288,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel7.add(btnGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, -1, -1));
 
-        lblLogo1.setText("logo");
-        lblLogo1.setName("lblLogo"); // NOI18N
-        jPanel7.add(lblLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 110, 120));
-
+        cbxSeccion1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         cbxSeccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         cbxSeccion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1289,20 +1297,21 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jPanel7.add(cbxSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 110, -1));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("grupo a cambiar");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 110, -1));
+        jLabel6.setText("Grupo a cambiar");
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 160, -1));
 
         lblUsuarioActvo2.setText("usuario activo");
         lblUsuarioActvo2.setName("lblUsuarioActivo"); // NOI18N
         jPanel7.add(lblUsuarioActvo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 120, 20));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("grupo Actual");
-        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 110, -1));
+        jLabel7.setText("Grupo Actual");
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 140, -1));
 
+        cbxSeccion2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         cbxSeccion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         cbxSeccion2.setSelectedIndex(1);
         cbxSeccion2.addActionListener(new java.awt.event.ActionListener() {
@@ -1332,7 +1341,10 @@ public class frmGrupos extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 310, 310));
 
-        jTabbedPane3.addTab("CAMBIAR ALUMNO", jPanel7);
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"))); // NOI18N
+        jPanel7.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 120, 120));
+
+        jTabbedPane3.addTab("CAMBIAR ALUMNO", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_user.png")), jPanel7); // NOI18N
 
         jTabbedPane1.addTab("GRUPOS", jTabbedPane3);
 
@@ -2153,7 +2165,6 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField lblCodigo;
     private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblLogo1;
     public javax.swing.JLabel lblUsuarioActvo;
     public javax.swing.JLabel lblUsuarioActvo1;
     public javax.swing.JLabel lblUsuarioActvo2;

@@ -35,12 +35,12 @@ public class frmPago extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblUsuarioActvo = new javax.swing.JLabel();
-        btnConsultar = new javax.swing.JButton();
+        btnConsultar1 = new javax.swing.JButton();
         btnAtras1 = new javax.swing.JButton();
         btnGuardar1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatosAlumno = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblDatosAlumno1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblDatosRepresentante = new javax.swing.JTable();
@@ -92,16 +92,18 @@ public class frmPago extends javax.swing.JFrame {
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 120, 20));
 
-        btnConsultar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnConsultar.setText("consultar");
-        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnConsultar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnConsultar1.setText("consultar");
+        btnConsultar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 100, 30));
+        jPanel2.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 120, 30));
 
         btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
         btnAtras1.setText("Atras");
         btnAtras1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,20 +113,21 @@ public class frmPago extends javax.swing.JFrame {
         jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 100, 30));
 
         btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar1.setText("Guardar");
         btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 100, 30));
+        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 110, 30));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDatosAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        tblDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosAlumno1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblDatosAlumno1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -135,9 +138,9 @@ public class frmPago extends javax.swing.JFrame {
                 "ID", "Nombre", "Apellido", "Seccion"
             }
         ));
-        jScrollPane1.setViewportView(tblDatosAlumno);
+        jScrollPane4.setViewportView(tblDatosAlumno1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 100));
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 100));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 470, 130));
 
@@ -198,7 +201,7 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 190, 130));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 460));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 460));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
 
@@ -254,7 +257,7 @@ public class frmPago extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras1;
-    private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -266,14 +269,14 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lblCuota;
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JLabel lblUsuarioActvo;
-    private javax.swing.JTable tblDatosAlumno;
+    private javax.swing.JTable tblDatosAlumno1;
     private javax.swing.JTable tblDatosRepresentante;
     private javax.swing.JTable tblMeses;
     private javax.swing.JTextField txtConsulta;

@@ -165,6 +165,7 @@ public class frmAjustes extends javax.swing.JFrame {
         jPanel1.add(txtLimite, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 110, -1));
 
         btnSalir2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir2.setText("Salir");
         btnSalir2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir2.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +173,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 100, 30));
+        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 100, 30));
 
         txtIva.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtIva.setEnabled(false);
@@ -198,7 +199,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo4.setText("Valor Actual Iva");
         jPanel1.add(lblTitulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
 
-        btnRuta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRuta.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnRuta.setText("...");
         btnRuta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRuta.setEnabled(false);
@@ -245,7 +246,8 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(txtMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, -1));
 
-        btnActualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +255,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 90, 30));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 120, 30));
 
         lblTitulo19.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
@@ -269,7 +271,8 @@ public class frmAjustes extends javax.swing.JFrame {
         });
         jPanel1.add(cbxPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, -1));
 
-        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnEditar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/instrumentos(1).png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -277,13 +280,14 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 90, 30));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 100, 30));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
 
-        btnRestaurar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRestaurar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnRestaurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N
         btnRestaurar.setText("Restaurar");
         btnRestaurar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRestaurar.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +295,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnRestaurarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, 30));
+        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 120, 30));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 565, 290));
 
