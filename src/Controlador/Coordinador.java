@@ -10,6 +10,7 @@ import DAO.AsistenciaADAO;
 import DAO.Asistencia_dDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
+import DAO.NotaDAO;
 import DAO.RepresentanteDAO;
 import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
@@ -21,13 +22,14 @@ import VO.RequisitosVO;
 import VO.UsuarioVO;
 import Vista.frmAjustes;
 import Vista.frmAsistencia;
-import Vista.frmDocente;
+import Vista.frmdocente;
 import Vista.frmLoginRecuperacion;
 import Vista.frmLogin;
 import Vista.frmDocenteAsistencia;
 import Vista.frmGrupos;
 import Vista.frmInscripcion;
 import Vista.frmMenu;
+import Vista.frmNotas;
 import Vista.frmUsuario;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -62,7 +64,9 @@ public class Coordinador {
     private frmUsuario frmUsuario;
     private frmAjustes frmAjustes;
     private VariablesDAO variablesDAO;
-    private frmDocente frmDocente;
+    private frmdocente frmDocente;
+    private NotaDAO notaDAO;
+    private frmNotas frmNotas;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -420,14 +424,33 @@ public class Coordinador {
         return getRepresentanteDAO().actualizarRepresentanteSinFoto(representanteVO, text, tipo);
     }
 
-    public void setfrmDocente(frmDocente frmDocente) {
+    public void setfrmDocente(frmdocente frmDocente) {
         this.frmDocente = frmDocente;
     }
+    
+    public VO.EmpleadoVO consultarEmpleado(String parametro) {
+        return getEmpleadoDAO().consultarEmpleado(parametro);
+    }
 
-    public frmDocente getFrmDocente() {
+    public frmdocente getFrmDocente() {
         return frmDocente;
     }
-    
+
+    public void setNotaDAO(NotaDAO notaDAO) {
+        this.notaDAO = notaDAO;
+    }
+
+    public NotaDAO getNotaDAO() {
+        return notaDAO;
+    }  
+
+    public void setFrmNotas(frmNotas frmNotas) {
+       this.frmNotas = frmNotas;
+    }
+
+    public frmNotas getFrmNotas() {
+        return frmNotas;
+    }
     
     
 }

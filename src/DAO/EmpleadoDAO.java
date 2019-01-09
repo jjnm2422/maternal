@@ -56,7 +56,7 @@ public class EmpleadoDAO {
         return respuesta;
     }
 
-    public VO.EmpleadoVO consultarEmpleado(String parametro) {
+    public VO.EmpleadoVO consultarEmpleado(String usuario) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -69,7 +69,7 @@ public class EmpleadoDAO {
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, parametro);
+                ps.setString(1, usuario);
                 result = ps.executeQuery();
                 if (result.getRow()!=0) {
                     while (result.next()==true) {

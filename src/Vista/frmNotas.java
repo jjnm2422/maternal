@@ -5,17 +5,36 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+import VO.AlumnoVO;
+import VO.RepresentanteVO;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lenovo
  */
 public class frmNotas extends javax.swing.JFrame {
 
+    private Coordinador coordinador;
+    private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
+
     /**
      * Creates new form frmNotas
      */
     public frmNotas() {
         initComponents();
+    }
+    
+   public void ajustar(JLabel label, ImageIcon icon) {
+        //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
+        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
     }
 
     /**
@@ -58,6 +77,8 @@ public class frmNotas extends javax.swing.JFrame {
         lblUsuarioActvo = new javax.swing.JLabel();
         btnSiguiente1 = new javax.swing.JButton();
         lblfoto = new javax.swing.JLabel();
+        cbxLapso = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jComboBox10 = new javax.swing.JComboBox<>();
         jComboBox11 = new javax.swing.JComboBox<>();
@@ -111,10 +132,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jComboBox33 = new javax.swing.JComboBox<>();
-        btnGuardar4 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        cbxLapso = new javax.swing.JComboBox<>();
         btnSiguiente3 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jComboBox35 = new javax.swing.JComboBox<>();
@@ -198,30 +216,37 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox1.setEnabled(false);
         jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
 
         jComboBox2.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox2.setEnabled(false);
         jPanel3.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
 
         jComboBox3.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox3.setEnabled(false);
         jPanel3.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
 
         jComboBox4.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox4.setEnabled(false);
         jPanel3.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
         jComboBox5.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox5.setEnabled(false);
         jPanel3.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
 
         jComboBox6.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox6.setEnabled(false);
         jPanel3.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
 
         jComboBox7.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox7.setEnabled(false);
         jPanel3.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -271,13 +296,15 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox8.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox8.setEnabled(false);
         jPanel3.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, 30));
 
         jComboBox9.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox9.setEnabled(false);
         jPanel3.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 610, 390));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 610, 390));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -315,8 +342,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         lblPnombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblPnombre.setForeground(new java.awt.Color(255, 255, 255));
-        lblPnombre.setText("jLabel5");
-        jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 220, -1));
+        jPanel2.add(lblPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 220, 20));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
@@ -337,6 +363,14 @@ public class frmNotas extends javax.swing.JFrame {
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 110, 120));
 
+        cbxLapso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
+        jPanel2.add(cbxLapso, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 80, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Lapso");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 70, -1));
+
         jTabbedPane1.addTab("tab1", jPanel2);
 
         jPanel11.setBackground(new java.awt.Color(69, 90, 100));
@@ -346,52 +380,62 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox10.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, -1, -1));
+        jComboBox10.setEnabled(false);
+        jPanel11.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, -1));
 
         jComboBox11.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, -1));
+        jComboBox11.setEnabled(false);
+        jPanel11.add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, -1, -1));
 
         jComboBox12.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
+        jComboBox12.setEnabled(false);
+        jPanel11.add(jComboBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, -1, -1));
 
         jComboBox13.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox13.setEnabled(false);
         jComboBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox13ActionPerformed(evt);
             }
         });
-        jPanel11.add(jComboBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, -1));
+        jPanel11.add(jComboBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
 
         jComboBox14.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox14.setEnabled(false);
         jComboBox14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox14ActionPerformed(evt);
             }
         });
-        jPanel11.add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, -1));
+        jPanel11.add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, -1, -1));
 
         jComboBox15.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, -1));
+        jComboBox15.setEnabled(false);
+        jPanel11.add(jComboBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, -1, -1));
 
         jComboBox16.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
+        jComboBox16.setEnabled(false);
+        jPanel11.add(jComboBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
 
         jComboBox17.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel11.add(jComboBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, -1));
+        jComboBox17.setEnabled(false);
+        jPanel11.add(jComboBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
 
         jComboBox18.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox18.setEnabled(false);
         jPanel11.add(jComboBox18, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
 
         jComboBox19.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox19.setEnabled(false);
         jPanel11.add(jComboBox19, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, -1, -1));
 
         jLabel69.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -466,7 +510,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnSiguiente2ActionPerformed(evt);
             }
         });
-        jPanel5.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 100, 30));
+        jPanel5.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 100, 30));
 
         jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -520,6 +564,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox20.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox20.setEnabled(false);
         jComboBox20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox20ActionPerformed(evt);
@@ -529,14 +574,17 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox21.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox21.setEnabled(false);
         jPanel5.add(jComboBox21, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
 
         jComboBox22.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox22.setEnabled(false);
         jPanel5.add(jComboBox22, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
 
         jComboBox23.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox23.setEnabled(false);
         jComboBox23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox23ActionPerformed(evt);
@@ -546,6 +594,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox24.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox24.setEnabled(false);
         jComboBox24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox24ActionPerformed(evt);
@@ -555,6 +604,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox25.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox25.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox25.setEnabled(false);
         jComboBox25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox25ActionPerformed(evt);
@@ -564,10 +614,12 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox26.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox26.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox26.setEnabled(false);
         jPanel5.add(jComboBox26, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
 
         jComboBox27.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox27.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox27.setEnabled(false);
         jComboBox27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox27ActionPerformed(evt);
@@ -577,11 +629,13 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox28.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel5.add(jComboBox28, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+        jComboBox28.setEnabled(false);
+        jPanel5.add(jComboBox28, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, -1));
 
         jComboBox29.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel5.add(jComboBox29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
+        jComboBox29.setEnabled(false);
+        jPanel5.add(jComboBox29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
 
         jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
@@ -594,15 +648,18 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox30.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox30.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox30.setEnabled(false);
         jPanel5.add(jComboBox30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, -1, -1));
 
         jComboBox31.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox31.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox31.setEnabled(false);
         jPanel5.add(jComboBox31, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
 
         jComboBox32.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox32.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel5.add(jComboBox32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, -1));
+        jComboBox32.setEnabled(false);
+        jPanel5.add(jComboBox32, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
@@ -621,25 +678,14 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox33.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox33.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jPanel5.add(jComboBox33, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 470, -1, -1));
-
-        btnGuardar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnGuardar4.setText("Guardar");
-        jPanel5.add(btnGuardar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 100, 30));
+        jComboBox33.setEnabled(false);
+        jPanel5.add(jComboBox33, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, 20));
 
         jTabbedPane1.addTab("tab3", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(69, 90, 100));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Lapso");
-        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, -1));
-
-        cbxLapso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
-        jPanel6.add(cbxLapso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         btnSiguiente3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSiguiente3.setText("Siguiente");
@@ -656,30 +702,37 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox35.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox35.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox35.setEnabled(false);
         jPanel8.add(jComboBox35, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
 
         jComboBox36.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox36.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox36.setEnabled(false);
         jPanel8.add(jComboBox36, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
 
         jComboBox37.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox37.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox37.setEnabled(false);
         jPanel8.add(jComboBox37, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
 
         jComboBox38.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox38.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox38.setEnabled(false);
         jPanel8.add(jComboBox38, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
         jComboBox39.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox39.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox39.setEnabled(false);
         jPanel8.add(jComboBox39, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
 
         jComboBox40.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox40.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox40.setEnabled(false);
         jPanel8.add(jComboBox40, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
 
         jComboBox41.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox41.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox41.setEnabled(false);
         jPanel8.add(jComboBox41, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -719,10 +772,12 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox42.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox42.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox42.setEnabled(false);
         jPanel8.add(jComboBox42, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 30));
 
         jComboBox43.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox43.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox43.setEnabled(false);
         jComboBox43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox43ActionPerformed(evt);
@@ -742,6 +797,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox53.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox53.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox53.setEnabled(false);
         jPanel8.add(jComboBox53, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
 
         jLabel58.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -772,30 +828,37 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox44.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox44.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox44.setEnabled(false);
         jPanel9.add(jComboBox44, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
 
         jComboBox45.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox45.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox45.setEnabled(false);
         jPanel9.add(jComboBox45, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
 
         jComboBox46.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox46.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox46.setEnabled(false);
         jPanel9.add(jComboBox46, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
 
         jComboBox47.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox47.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox47.setEnabled(false);
         jPanel9.add(jComboBox47, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
         jComboBox48.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox48.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox48.setEnabled(false);
         jPanel9.add(jComboBox48, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
 
         jComboBox49.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox49.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox49.setEnabled(false);
         jPanel9.add(jComboBox49, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
 
         jComboBox50.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox50.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox50.setEnabled(false);
         jPanel9.add(jComboBox50, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
 
         jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -835,10 +898,12 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox51.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox51.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox51.setEnabled(false);
         jPanel9.add(jComboBox51, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, 30));
 
         jComboBox52.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox52.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox52.setEnabled(false);
         jPanel9.add(jComboBox52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, 30));
 
         jLabel56.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -865,30 +930,37 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox54.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox54.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox54.setEnabled(false);
         jPanel10.add(jComboBox54, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
 
         jComboBox55.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox55.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox55.setEnabled(false);
         jPanel10.add(jComboBox55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
 
         jComboBox56.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox56.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox56.setEnabled(false);
         jPanel10.add(jComboBox56, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
 
         jComboBox57.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox57.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox57.setEnabled(false);
         jPanel10.add(jComboBox57, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
 
         jComboBox58.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox58.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox58.setEnabled(false);
         jPanel10.add(jComboBox58, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
 
         jComboBox59.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox59.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox59.setEnabled(false);
         jPanel10.add(jComboBox59, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
 
         jComboBox60.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox60.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox60.setEnabled(false);
         jPanel10.add(jComboBox60, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
 
         jLabel59.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -928,10 +1000,12 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox61.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox61.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox61.setEnabled(false);
         jPanel10.add(jComboBox61, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 30));
 
         jComboBox62.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox62.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox62.setEnabled(false);
         jComboBox62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox62ActionPerformed(evt);
@@ -952,6 +1026,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jComboBox63.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox63.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox63.setEnabled(false);
         jPanel10.add(jComboBox63, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
 
         jLabel68.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -963,6 +1038,11 @@ public class frmNotas extends javax.swing.JFrame {
 
         btnGuardar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar5.setText("Guardar");
+        btnGuardar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar5ActionPerformed(evt);
+            }
+        });
         jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
 
         jTabbedPane1.addTab("tab6", jPanel7);
@@ -973,7 +1053,7 @@ public class frmNotas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+    dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
@@ -985,11 +1065,31 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox13ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+        if (!txtConsultar.getText().isEmpty()) {
+            String codigo = txtConsultar.getText().trim();
+            //borrarCampos();
+            txtConsultar.setText(codigo);
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(txtConsultar.getText().trim());
+            if (alumnoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                lblPnombre.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido());
+                if (alumnoVO.getFoto() == null) {
+                    ajustar(lblfoto, ICON_NO_PHOTO);
+                } else {
+                    ajustar(lblfoto, alumnoVO.getFoto());
+                }
+                habilitarBotones(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                //borrarCampos();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+        }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
@@ -997,7 +1097,7 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSiguiente1ActionPerformed
 
     private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
-        // TODO add your handling code here:
+    jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnSiguiente2ActionPerformed
 
     private void jComboBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox24ActionPerformed
@@ -1021,11 +1121,11 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox27ActionPerformed
 
     private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
-        // TODO add your handling code here:
+    jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_btnSiguiente3ActionPerformed
 
     private void btnSiguiente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente4ActionPerformed
-        // TODO add your handling code here:
+    jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_btnSiguiente4ActionPerformed
 
     private void jComboBox43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox43ActionPerformed
@@ -1035,6 +1135,18 @@ public class frmNotas extends javax.swing.JFrame {
     private void jComboBox62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox62ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox62ActionPerformed
+
+    private void btnGuardar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar5ActionPerformed
+        if (!txtConsultar.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, coordinador.getNotaDAO().registrarNota(obtenerDatos()));
+            habilitarBotones(false);
+            inicializarBotones();
+            txtConsultar.setText("");
+            jTabbedPane1.setSelectedIndex(0);
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+        }
+    }//GEN-LAST:event_btnGuardar5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1073,7 +1185,6 @@ public class frmNotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
-    private javax.swing.JButton btnGuardar4;
     private javax.swing.JButton btnGuardar5;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSiguiente;
@@ -1227,4 +1338,234 @@ public class frmNotas extends javax.swing.JFrame {
     private javax.swing.JLabel lblfoto;
     private javax.swing.JTextField txtConsultar;
     // End of variables declaration//GEN-END:variables
+
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+    }
+
+    private VO.NotaVO obtenerDatos() {
+                VO.NotaVO notaVO = new VO.NotaVO();
+        String formacion_personal_social[] = new String[9];
+        String relacion_ambiente[] = new String[10];
+        String comunicacion_presentacion[] = new String[14];
+        String indicadores_evaluados[] = new String[19];
+        String habitos_trabajo[] = new String[10];
+        
+        formacion_personal_social[0] = "1-"+jComboBox1.getSelectedItem().toString();
+        formacion_personal_social[1] = "2-"+jComboBox2.getSelectedItem().toString();
+        formacion_personal_social[2] = "3-"+jComboBox3.getSelectedItem().toString();
+        formacion_personal_social[3] = "4-"+jComboBox4.getSelectedItem().toString();
+        formacion_personal_social[4] = "5-"+jComboBox5.getSelectedItem().toString();
+        formacion_personal_social[5] = "6-"+jComboBox6.getSelectedItem().toString();
+        formacion_personal_social[6] = "7-"+jComboBox7.getSelectedItem().toString();
+        formacion_personal_social[7] = "8-"+jComboBox8.getSelectedItem().toString();
+        formacion_personal_social[8] = "9-"+jComboBox9.getSelectedItem().toString();
+        
+        relacion_ambiente[0] = "1-"+jComboBox10.getSelectedItem().toString();
+        relacion_ambiente[1] = "2-"+jComboBox11.getSelectedItem().toString();
+        relacion_ambiente[2] = "3-"+jComboBox12.getSelectedItem().toString();
+        relacion_ambiente[3] = "4-"+jComboBox13.getSelectedItem().toString();
+        relacion_ambiente[4] = "5-"+jComboBox14.getSelectedItem().toString();
+        relacion_ambiente[5] = "6-"+jComboBox15.getSelectedItem().toString();
+        relacion_ambiente[6] = "7-"+jComboBox16.getSelectedItem().toString();
+        relacion_ambiente[7] = "8-"+jComboBox17.getSelectedItem().toString();
+        relacion_ambiente[8] = "9-"+jComboBox18.getSelectedItem().toString();
+        relacion_ambiente[9] = "10-"+jComboBox19.getSelectedItem().toString();
+        
+        comunicacion_presentacion[0] = "1-"+jComboBox29.getSelectedItem().toString();
+        comunicacion_presentacion[1] = "2-"+jComboBox28.getSelectedItem().toString();
+        comunicacion_presentacion[2] = "3-"+jComboBox27.getSelectedItem().toString();
+        comunicacion_presentacion[3] = "4-"+jComboBox26.getSelectedItem().toString();
+        comunicacion_presentacion[4] = "5-"+jComboBox25.getSelectedItem().toString();
+        comunicacion_presentacion[5] = "6-"+jComboBox24.getSelectedItem().toString();
+        comunicacion_presentacion[6] = "7-"+jComboBox23.getSelectedItem().toString();
+        comunicacion_presentacion[7] = "8-"+jComboBox22.getSelectedItem().toString();
+        comunicacion_presentacion[8] = "9-"+jComboBox21.getSelectedItem().toString();
+        comunicacion_presentacion[9] = "10-"+jComboBox20.getSelectedItem().toString();
+        comunicacion_presentacion[10] = "11-"+jComboBox30.getSelectedItem().toString();
+        comunicacion_presentacion[11] = "12-"+jComboBox31.getSelectedItem().toString();
+        comunicacion_presentacion[12] = "13-"+jComboBox32.getSelectedItem().toString();
+        comunicacion_presentacion[13] = "14-"+jComboBox33.getSelectedItem().toString();
+        
+        indicadores_evaluados[0] = "1-"+jComboBox35.getSelectedItem().toString();
+        indicadores_evaluados[1] = "2-"+jComboBox36.getSelectedItem().toString();
+        indicadores_evaluados[2] = "3-"+jComboBox37.getSelectedItem().toString();
+        indicadores_evaluados[3] = "4-"+jComboBox38.getSelectedItem().toString();
+        indicadores_evaluados[4] = "5-"+jComboBox39.getSelectedItem().toString();
+        indicadores_evaluados[5] = "6-"+jComboBox40.getSelectedItem().toString();
+        indicadores_evaluados[6] = "7-"+jComboBox41.getSelectedItem().toString();
+        indicadores_evaluados[7] = "8-"+jComboBox42.getSelectedItem().toString();
+        indicadores_evaluados[8] = "9-"+jComboBox43.getSelectedItem().toString();
+        indicadores_evaluados[9] = "10-"+jComboBox53.getSelectedItem().toString();
+        indicadores_evaluados[10] = "11-"+jComboBox44.getSelectedItem().toString();
+        indicadores_evaluados[11] = "12-"+jComboBox45.getSelectedItem().toString();
+        indicadores_evaluados[12] = "13-"+jComboBox46.getSelectedItem().toString();
+        indicadores_evaluados[13] = "14-"+jComboBox47.getSelectedItem().toString();
+        indicadores_evaluados[14] = "15-"+jComboBox48.getSelectedItem().toString();
+        indicadores_evaluados[15] = "16-"+jComboBox49.getSelectedItem().toString();
+        indicadores_evaluados[16] = "17-"+jComboBox50.getSelectedItem().toString();
+        indicadores_evaluados[17] = "18-"+jComboBox51.getSelectedItem().toString();
+        indicadores_evaluados[18] = "19-"+jComboBox52.getSelectedItem().toString();
+        
+        habitos_trabajo[0] = "1-"+jComboBox54.getSelectedItem().toString();
+        habitos_trabajo[1] = "2-"+jComboBox55.getSelectedItem().toString();
+        habitos_trabajo[2] = "3-"+jComboBox56.getSelectedItem().toString();
+        habitos_trabajo[3] = "4-"+jComboBox57.getSelectedItem().toString();
+        habitos_trabajo[4] = "5-"+jComboBox58.getSelectedItem().toString();
+        habitos_trabajo[5] = "6-"+jComboBox59.getSelectedItem().toString();
+        habitos_trabajo[6] = "7-"+jComboBox60.getSelectedItem().toString();
+        habitos_trabajo[7] = "8-"+jComboBox61.getSelectedItem().toString();
+        habitos_trabajo[8] = "9-"+jComboBox62.getSelectedItem().toString();
+        habitos_trabajo[9] = "10-"+jComboBox63.getSelectedItem().toString();
+        
+        
+        notaVO.setLapso(cbxLapso.getSelectedIndex()+1);
+        notaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
+        notaVO.setId_alumno(coordinador.consultarAlumno(txtConsultar.getText()).getId_alumno());
+        notaVO.setFecha(coordinador.getFechaFormateada());
+        notaVO.setFormacion_personal_social(formacion_personal_social);
+        notaVO.setRelacion_ambiente(relacion_ambiente);
+        notaVO.setComunicacion_presentacion(comunicacion_presentacion);
+        notaVO.setIndicadores_evaluados(indicadores_evaluados);
+        notaVO.setHabitos_trabajo(habitos_trabajo);
+        return notaVO;
+    }
+
+    private void habilitarBotones(boolean valor) {
+        jComboBox1.setEnabled(valor);
+        jComboBox2.setEnabled(valor);
+        jComboBox3.setEnabled(valor);
+        jComboBox4.setEnabled(valor);
+        jComboBox5.setEnabled(valor);
+        jComboBox6.setEnabled(valor);
+        jComboBox7.setEnabled(valor);
+        jComboBox8.setEnabled(valor);
+        jComboBox9.setEnabled(valor);
+        
+        jComboBox10.setEnabled(valor);
+        jComboBox11.setEnabled(valor);
+        jComboBox12.setEnabled(valor);
+        jComboBox13.setEnabled(valor);
+        jComboBox14.setEnabled(valor);
+        jComboBox15.setEnabled(valor);
+        jComboBox16.setEnabled(valor);
+        jComboBox17.setEnabled(valor);
+        jComboBox18.setEnabled(valor);
+        jComboBox19.setEnabled(valor);
+        
+        jComboBox29.setEnabled(valor);
+        jComboBox28.setEnabled(valor);
+        jComboBox27.setEnabled(valor);
+        jComboBox26.setEnabled(valor);
+        jComboBox25.setEnabled(valor);
+        jComboBox24.setEnabled(valor);
+        jComboBox23.setEnabled(valor);
+        jComboBox22.setEnabled(valor);
+        jComboBox21.setEnabled(valor);
+        jComboBox20.setEnabled(valor);
+        jComboBox30.setEnabled(valor);
+        jComboBox31.setEnabled(valor);
+        jComboBox32.setEnabled(valor);
+        jComboBox33.setEnabled(valor);
+        
+        jComboBox35.setEnabled(valor);
+        jComboBox36.setEnabled(valor);
+        jComboBox37.setEnabled(valor);
+        jComboBox38.setEnabled(valor);
+        jComboBox39.setEnabled(valor);
+        jComboBox40.setEnabled(valor);
+        jComboBox41.setEnabled(valor);
+        jComboBox42.setEnabled(valor);
+        jComboBox43.setEnabled(valor);
+        jComboBox53.setEnabled(valor);
+        jComboBox44.setEnabled(valor);
+        jComboBox45.setEnabled(valor);
+        jComboBox46.setEnabled(valor);
+        jComboBox47.setEnabled(valor);
+        jComboBox48.setEnabled(valor);
+        jComboBox49.setEnabled(valor);
+        jComboBox50.setEnabled(valor);
+        jComboBox51.setEnabled(valor);
+        jComboBox52.setEnabled(valor);
+        
+        jComboBox54.setEnabled(valor);
+        jComboBox55.setEnabled(valor);
+        jComboBox56.setEnabled(valor);
+        jComboBox57.setEnabled(valor);
+        jComboBox58.setEnabled(valor);
+        jComboBox59.setEnabled(valor);
+        jComboBox60.setEnabled(valor);
+        jComboBox61.setEnabled(valor);
+        jComboBox62.setEnabled(valor);
+        jComboBox63.setEnabled(valor);
+    }
+
+    private void inicializarBotones() {
+        jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);
+        jComboBox3.setSelectedIndex(0);
+        jComboBox4.setSelectedIndex(0);
+        jComboBox5.setSelectedIndex(0);
+        jComboBox6.setSelectedIndex(0);
+        jComboBox7.setSelectedIndex(0);
+        jComboBox8.setSelectedIndex(0);
+        jComboBox9.setSelectedIndex(0);
+        
+        jComboBox10.setSelectedIndex(0);
+        jComboBox11.setSelectedIndex(0);
+        jComboBox12.setSelectedIndex(0);
+        jComboBox13.setSelectedIndex(0);
+        jComboBox14.setSelectedIndex(0);
+        jComboBox15.setSelectedIndex(0);
+        jComboBox16.setSelectedIndex(0);
+        jComboBox17.setSelectedIndex(0);
+        jComboBox18.setSelectedIndex(0);
+        jComboBox19.setSelectedIndex(0);
+        
+        jComboBox29.setSelectedIndex(0);
+        jComboBox28.setSelectedIndex(0);
+        jComboBox27.setSelectedIndex(0);
+        jComboBox26.setSelectedIndex(0);
+        jComboBox25.setSelectedIndex(0);
+        jComboBox24.setSelectedIndex(0);
+        jComboBox23.setSelectedIndex(0);
+        jComboBox22.setSelectedIndex(0);
+        jComboBox21.setSelectedIndex(0);
+        jComboBox20.setSelectedIndex(0);
+        jComboBox30.setSelectedIndex(0);
+        jComboBox31.setSelectedIndex(0);
+        jComboBox32.setSelectedIndex(0);
+        jComboBox33.setSelectedIndex(0);
+        
+        jComboBox35.setSelectedIndex(0);
+        jComboBox36.setSelectedIndex(0);
+        jComboBox37.setSelectedIndex(0);
+        jComboBox38.setSelectedIndex(0);
+        jComboBox39.setSelectedIndex(0);
+        jComboBox40.setSelectedIndex(0);
+        jComboBox41.setSelectedIndex(0);
+        jComboBox42.setSelectedIndex(0);
+        jComboBox43.setSelectedIndex(0);
+        jComboBox53.setSelectedIndex(0);
+        jComboBox44.setSelectedIndex(0);
+        jComboBox45.setSelectedIndex(0);
+        jComboBox46.setSelectedIndex(0);
+        jComboBox47.setSelectedIndex(0);
+        jComboBox48.setSelectedIndex(0);
+        jComboBox49.setSelectedIndex(0);
+        jComboBox50.setSelectedIndex(0);
+        jComboBox51.setSelectedIndex(0);
+        jComboBox52.setSelectedIndex(0);
+        
+        jComboBox54.setSelectedIndex(0);
+        jComboBox55.setSelectedIndex(0);
+        jComboBox56.setSelectedIndex(0);
+        jComboBox57.setSelectedIndex(0);
+        jComboBox58.setSelectedIndex(0);
+        jComboBox59.setSelectedIndex(0);
+        jComboBox60.setSelectedIndex(0);
+        jComboBox61.setSelectedIndex(0);
+        jComboBox62.setSelectedIndex(0);
+        jComboBox63.setSelectedIndex(0);
+    }
 }

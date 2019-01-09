@@ -124,6 +124,11 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 150, -1));
 
         btnNotas.setText("Notas");
+        btnNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNotasActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 100, 70));
 
         btnPagos.setText("Pagos");
@@ -265,6 +270,12 @@ public class frmMenu extends javax.swing.JFrame {
     coordinador.getFrmDocente().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
     coordinador.getFrmDocente().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnDocentesActionPerformed
+
+    private void btnNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotasActionPerformed
+    coordinador.getFrmNotas().setVisible(true);
+    coordinador.getFrmNotas().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+    coordinador.getFrmNotas().setLocationRelativeTo(this);
+    }//GEN-LAST:event_btnNotasActionPerformed
 
     /**
      * @param args the command line arguments

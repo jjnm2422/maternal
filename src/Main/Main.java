@@ -17,6 +17,7 @@ public class Main {
         DAO.AlumnoDAO alumnoDAO = new DAO.AlumnoDAO();
         DAO.UsuarioDAO usuarioDAO = new DAO.UsuarioDAO();
         DAO.EmpleadoDAO empleadoDAO = new DAO.EmpleadoDAO();
+        DAO.NotaDAO notaDAO = new DAO.NotaDAO();
         DAO.RepresentanteDAO representanteDAO = new DAO.RepresentanteDAO();
         Modelo.Logica logica = new Modelo.Logica();
         Vista.frmLogin login = new Vista.frmLogin();
@@ -34,9 +35,12 @@ public class Main {
         Vista.frmInscripcion frmInscripcion = new Vista.frmInscripcion();
         Vista.frmUsuario frmUsuario = new Vista.frmUsuario();
         Vista.frmAjustes frmAjustes = new Vista.frmAjustes();
-        Vista.frmDocente frmDocente = new Vista.frmDocente();
+        Vista.frmdocente frmDocente = new Vista.frmdocente();
+        Vista.frmNotas frmNotas = new Vista.frmNotas();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setFrmNotas(frmNotas);
+        coordinador.setNotaDAO(notaDAO);
         coordinador.setfrmDocente(frmDocente);
         coordinador.setVariablesDAO(variablesDAO);
         coordinador.setFrmAjustes(frmAjustes);
@@ -59,6 +63,8 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmNotas.setCoordinador(coordinador);
+        notaDAO.setCoordinador(coordinador);
         frmDocente.setCoordinador(coordinador);
         variablesDAO.setCoordinador(coordinador);
         frmAjustes.setCoordinador(coordinador);
