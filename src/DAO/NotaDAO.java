@@ -39,7 +39,7 @@ public class NotaDAO {
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
 
-        String sql = "INSERT INTO "+this.tabla+"(id_empleado, id_alumno, fecha, formacion_personal_social, relacion_ambiente, comunicacion_presentacion, indicadores_evaluados, habitos_trabajo, lapso) VALUES (?,?,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO "+this.tabla+"(id_empleado, id_alumno, fecha, formacion_personal_social, relacion_ambiente, comunicacion_presentacion, indicadores_evaluados, habitos_trabajo, lapso, periodo) VALUES (?,?,?,?,?,?,?,?,?,?);";
         if (conexion != null) {
             try {
                 Array notaArray = conexion.createArrayOf("text", notaVO.getFormacion_personal_social());
@@ -57,6 +57,7 @@ public class NotaDAO {
                 ps.setArray(7, notaArray4);
                 ps.setArray(8, notaArray5);
                 ps.setInt(9, notaVO.getLapso());
+                ps.setString(10, notaVO.getPeriodo());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
@@ -71,8 +72,8 @@ public class NotaDAO {
         }
         return respuesta;
     }
-
-    public VO.NotaVO consultarNota(String parametro) {
+    
+        public VO.NotaVO consultarNota(String id_alumno) {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -83,12 +84,86 @@ public class NotaDAO {
         conexion = conexiondb.getConnection();
 
         if (conexion != null) {
-            String sql = "SELECT * FROM " + this.tabla + " WHERE id_nota = '" + parametro + "'";
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"'";
             try {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();
                 while (result.next() == true) {
-                   
+                    notaVO.setId_alumno(result.getInt("id_alumno"));
+                    notaVO.setId_empleado(result.getInt("id_empleado")); 
+                    notaVO.setId_nota(result.getInt("id_nota")); 
+                    notaVO.setPeriodo(result.getString("periodo"));
+                    notaVO.setFecha(result.getString("fecha"));
+                    notaVO.setLapso(result.getInt("lapso"));
+                    //conversion de arrays
+                    Array notaArray =  result.getArray("formacion_personal_social");
+                    Array notaArray2 =  result.getArray("relacion_ambiente");
+                    Array notaArray3 =  result.getArray("comunicacion_presentacion");
+                    Array notaArray4 =  result.getArray("indicadores_evaluados");
+                    Array notaArray5 =  result.getArray("habitos_trabajo");
+                    String[] notaArrayS = (String[]) notaArray.getArray();
+                    String[] notaArray2S = (String[]) notaArray2.getArray();
+                    String[] notaArray3S = (String[]) notaArray3.getArray();
+                    String[] notaArray4S = (String[]) notaArray4.getArray();
+                    String[] notaArray5S = (String[]) notaArray5.getArray();
+                    
+                    notaVO.setFormacion_personal_social(notaArrayS);
+                    notaVO.setRelacion_ambiente(notaArray2S);
+                    notaVO.setComunicacion_presentacion(notaArray3S);
+                    notaVO.setIndicadores_evaluados(notaArray4S);
+                    notaVO.setHabitos_trabajo(notaArray5S);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return notaVO;
+        } else {
+            conexiondb.desconexion();
+            return null;
+        }
+    }
+        
+        public VO.NotaVO consultarNotaPorLapso(String id_alumno, int lapso ) {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
+        VO.NotaVO notaVO = new VO.NotaVO();
+        conexion = conexiondb.getConnection();
+
+        if (conexion != null) {
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"' "
+                    + " and lapso= "+lapso;
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                while (result.next() == true) {
+                    notaVO.setId_alumno(result.getInt("id_alumno"));
+                    notaVO.setId_empleado(result.getInt("id_empleado")); 
+                    notaVO.setId_nota(result.getInt("id_nota")); 
+                    notaVO.setPeriodo(result.getString("periodo"));
+                    notaVO.setFecha(result.getString("fecha"));
+                    notaVO.setLapso(result.getInt("lapso"));
+                    //conversion de arrays
+                    Array notaArray =  result.getArray("formacion_personal_social");
+                    Array notaArray2 =  result.getArray("relacion_ambiente");
+                    Array notaArray3 =  result.getArray("comunicacion_presentacion");
+                    Array notaArray4 =  result.getArray("indicadores_evaluados");
+                    Array notaArray5 =  result.getArray("habitos_trabajo");
+                    String[] notaArrayS = (String[]) notaArray.getArray();
+                    String[] notaArray2S = (String[]) notaArray2.getArray();
+                    String[] notaArray3S = (String[]) notaArray3.getArray();
+                    String[] notaArray4S = (String[]) notaArray4.getArray();
+                    String[] notaArray5S = (String[]) notaArray5.getArray();
+                    
+                    notaVO.setFormacion_personal_social(notaArrayS);
+                    notaVO.setRelacion_ambiente(notaArray2S);
+                    notaVO.setComunicacion_presentacion(notaArray3S);
+                    notaVO.setIndicadores_evaluados(notaArray4S);
+                    notaVO.setHabitos_trabajo(notaArray5S);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -126,18 +201,29 @@ public class NotaDAO {
 
     }
 
-    public String actualizarNota(VO.NotaVO notaVO, String id) {
+    public String actualizarNota(VO.NotaVO notaVO, int id) {
         Statement st = null;
         String respuesta = "";
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, foto=? where id_nota= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET id_empleado=? , fecha=? , formacion_personal_social=?,  relacion_ambiente=? , comunicacion_presentacion=? , indicadores_evaluados=? , habitos_trabajo=? where id_nota= " + id  ;
 
-        if (conexion != null) {
             try {
-                PreparedStatement ps = conexion.prepareStatement(sql);
-                int n = ps.executeUpdate();
+                 PreparedStatement ps = conexion.prepareStatement(sql);
+                Array notaArray = conexion.createArrayOf("text", notaVO.getFormacion_personal_social());
+                Array notaArray2 = conexion.createArrayOf("text", notaVO.getRelacion_ambiente());
+                Array notaArray3 = conexion.createArrayOf("text", notaVO.getComunicacion_presentacion());
+                Array notaArray4 = conexion.createArrayOf("text", notaVO.getIndicadores_evaluados());
+                Array notaArray5 = conexion.createArrayOf("text", notaVO.getHabitos_trabajo());
+                   ps.setInt(1, notaVO.getId_empleado());
+                   ps.setString(2, notaVO.getFecha());
+                   ps.setArray(3, notaArray);
+                   ps.setArray(4, notaArray2);
+                   ps.setArray(5, notaArray3);
+                   ps.setArray(6, notaArray4);
+                   ps.setArray(7, notaArray5);
+                     int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
                 }
@@ -146,9 +232,6 @@ public class NotaDAO {
                 respuesta = ex.getMessage();
             }
             return respuesta;
-        } else {
-            return "ERROR AL CONECTAR CON BD";
-        }
     }
     
     public String actualizarNotaSinFoto(VO.NotaVO notaVO, String id) {

@@ -11,7 +11,7 @@ package VO;
  */
 public class NotaVO {
     private int id_nota, id_empleado, id_alumno, lapso;
-    private String fecha;
+    private String fecha, periodo;
     private String formacion_personal_social[], relacion_ambiente[], comunicacion_presentacion[], indicadores_evaluados[], habitos_trabajo[];
 
     public int getId_nota() {
@@ -21,17 +21,26 @@ public class NotaVO {
     public NotaVO() {
     }
 
-    public NotaVO(int id_nota, int id_empleado, int id_alumno, int lapso, String fecha, String[] formacion_personal_social, String[] relacion_ambiente, String[] comunicacion_presentacion, String[] indicadores_evaluados, String[] habitos_trabajo) {
+    public NotaVO(int id_nota, int id_empleado, int id_alumno, int lapso, String fecha, String periodo, String[] formacion_personal_social, String[] relacion_ambiente, String[] comunicacion_presentacion, String[] indicadores_evaluados, String[] habitos_trabajo) {
         this.id_nota = id_nota;
         this.id_empleado = id_empleado;
         this.id_alumno = id_alumno;
         this.lapso = lapso;
         this.fecha = fecha;
+        this.periodo = periodo;
         this.formacion_personal_social = formacion_personal_social;
         this.relacion_ambiente = relacion_ambiente;
         this.comunicacion_presentacion = comunicacion_presentacion;
         this.indicadores_evaluados = indicadores_evaluados;
         this.habitos_trabajo = habitos_trabajo;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
     }
 
     public String[] getRelacion_ambiente() {
@@ -107,5 +116,10 @@ public class NotaVO {
         this.formacion_personal_social = formacion_personal_social;
     }
 
+    public void setId_nota(int id_nota) {
+        this.id_nota = id_nota;
+    }
+
+    
   
 }

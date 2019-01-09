@@ -102,7 +102,7 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 320, 50));
 
         lblLogo.setName("lblLogo"); // NOI18N
-        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 90, 100));
+        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 70, 60));
 
         btnAjustes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/apoyo-tecnico.png"))); // NOI18N
@@ -140,7 +140,7 @@ public class frmMenu extends javax.swing.JFrame {
                 btnNotasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 100, 70));
+        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 150, 70));
 
         btnPagos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tarjeta-de-debito(3).png"))); // NOI18N
