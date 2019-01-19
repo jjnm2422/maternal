@@ -790,7 +790,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, 100, 30));
+        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 450, 120, 30));
 
         jPanel15.setBackground(new java.awt.Color(24, 119, 189));
         jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -1117,7 +1117,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 120, 30));
+        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 120, 30));
 
         btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_deleteuser24.png"))); // NOI18N
@@ -1128,7 +1128,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 110, 30));
+        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 400, 120, 30));
 
         jTabbedPane2.addTab("DATOS DE REPRESENTANTE", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_familia.png")), jPanel4); // NOI18N
 
@@ -1143,7 +1143,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Grupos");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 730, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 1020, -1));
 
         tblSeccion.setBackground(new java.awt.Color(69, 90, 100));
         tblSeccion.setModel(new javax.swing.table.DefaultTableModel(
@@ -1162,7 +1162,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblSeccion);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 310, 310));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 410, 310));
 
         tblMatricula.setBackground(new java.awt.Color(69, 90, 100));
         tblMatricula.setModel(new javax.swing.table.DefaultTableModel(
@@ -1181,7 +1181,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblMatricula);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 310, 310));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 410, 310));
 
         btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -1208,7 +1208,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Matricula");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
 
         cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
         cbxSeccion.addActionListener(new java.awt.event.ActionListener() {
@@ -1216,12 +1216,12 @@ public class frmGrupos extends javax.swing.JFrame {
                 cbxSeccionActionPerformed(evt);
             }
         });
-        jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 110, -1));
+        jPanel2.add(cbxSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("grupo a cargar");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 140, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, 140, -1));
 
         btnLlenar.setText("Actualizar Tabla");
         btnLlenar.addActionListener(new java.awt.event.ActionListener() {
@@ -1229,7 +1229,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnLlenarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLlenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 310, -1));
+        jPanel2.add(btnLlenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 310, -1));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
