@@ -155,7 +155,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblDocenteA);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 320, 130));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 320, 150));
 
         btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
@@ -166,7 +166,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 100, 30));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 100, 30));
 
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -177,7 +177,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 110, 30));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 110, 30));
 
         btnLlenarLista.setText("LLenar Lista");
         btnLlenarLista.addActionListener(new java.awt.event.ActionListener() {

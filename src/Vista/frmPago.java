@@ -60,9 +60,17 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 120, -1));
 
+        txtConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConsultaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 120, -1));
+
+        tblMeses.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         tblMeses.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblMeses.setForeground(new java.awt.Color(0, 0, 204));
         tblMeses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null},
@@ -78,15 +86,15 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 760, 130));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Codigo Aumno");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Pagos");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 90, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 80, -1));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
@@ -100,7 +108,7 @@ public class frmPago extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 120, 30));
+        jPanel2.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 120, 30));
 
         btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
@@ -201,7 +209,7 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 190, 130));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 460));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
 
@@ -219,6 +227,10 @@ public class frmPago extends javax.swing.JFrame {
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void txtConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConsultaActionPerformed
 
     /**
      * @param args the command line arguments

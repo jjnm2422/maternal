@@ -363,6 +363,9 @@ public class frmNotas extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTabbedPane2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jTabbedPane1.setName(""); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
@@ -476,6 +479,7 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
         btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -485,13 +489,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 30));
 
         btnConsultar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnConsultar.setText("consultar");
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 100, 30));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 130, 30));
 
         txtConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -516,13 +521,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 110, 20));
 
         btnSiguiente1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente1.setText("Siguiente");
         btnSiguiente1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 100, 30));
+        jPanel2.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 120, 30));
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -658,13 +664,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         btnSiguiente.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente.setText("Siguiente");
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguienteActionPerformed(evt);
             }
         });
-        jPanel11.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+        jPanel11.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 540, 130, 30));
 
         jTabbedPane1.addTab("tab2", jPanel11);
 
@@ -673,13 +680,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente2.setText("Siguiente");
         btnSiguiente2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente2ActionPerformed(evt);
             }
         });
-        jPanel5.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 100, 30));
+        jPanel5.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 540, -1, 30));
 
         jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
@@ -857,13 +865,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente3.setText("Siguiente");
         btnSiguiente3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente3ActionPerformed(evt);
             }
         });
-        jPanel6.add(btnSiguiente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+        jPanel6.add(btnSiguiente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 120, 30));
 
         jPanel8.setBackground(new java.awt.Color(2, 119, 189));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -983,13 +992,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente4.setText("Siguiente");
         btnSiguiente4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente4ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSiguiente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+        jPanel1.add(btnSiguiente4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
 
         jPanel9.setBackground(new java.awt.Color(2, 119, 189));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1206,6 +1216,7 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 450));
 
         btnGuardar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
         btnGuardar5.setText("Guardar");
         btnGuardar5.setEnabled(false);
         btnGuardar5.addActionListener(new java.awt.event.ActionListener() {
@@ -1213,11 +1224,12 @@ public class frmNotas extends javax.swing.JFrame {
                 btnGuardar5ActionPerformed(evt);
             }
         });
-        jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+        jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 110, 30));
 
         jTabbedPane1.addTab("tab6", jPanel7);
 
         jTabbedPane2.addTab("Añadir Notas", jTabbedPane1);
+        jTabbedPane1.getAccessibleContext().setAccessibleName("");
 
         jTabbedPane3.setName(""); // NOI18N
 
@@ -1332,6 +1344,7 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel4.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
         btnSalir1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir1.setText("Salir");
         btnSalir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1341,13 +1354,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel4.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 30));
 
         btnConsultar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnConsultar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
         btnConsultar1.setText("consultar");
         btnConsultar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 100, 20));
+        jPanel4.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 120, 30));
 
         txtConsultar1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -1372,13 +1386,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel4.add(lblUsuarioActvo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 110, 20));
 
         btnSiguiente5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente5.setText("Siguiente");
         btnSiguiente5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente5ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSiguiente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 100, 30));
+        jPanel4.add(btnSiguiente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 120, 30));
 
         lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1510,13 +1525,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel13.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         btnSiguiente6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente6.setText("Siguiente");
         btnSiguiente6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente6ActionPerformed(evt);
             }
         });
-        jPanel13.add(btnSiguiente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+        jPanel13.add(btnSiguiente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 120, 30));
 
         jTabbedPane3.addTab("tab2", jPanel13);
 
@@ -1525,13 +1541,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente7.setText("Siguiente");
         btnSiguiente7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente7ActionPerformed(evt);
             }
         });
-        jPanel14.add(btnSiguiente7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 100, 30));
+        jPanel14.add(btnSiguiente7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 120, 30));
 
         jLabel93.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel93.setForeground(new java.awt.Color(255, 255, 255));
@@ -1709,13 +1726,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente8.setText("Siguiente");
         btnSiguiente8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente8ActionPerformed(evt);
             }
         });
-        jPanel15.add(btnSiguiente8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 100, 30));
+        jPanel15.add(btnSiguiente8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 540, 120, 30));
 
         jPanel16.setBackground(new java.awt.Color(2, 119, 189));
         jPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1835,13 +1853,14 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSiguiente9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSiguiente9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
         btnSiguiente9.setText("Siguiente");
         btnSiguiente9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSiguiente9ActionPerformed(evt);
             }
         });
-        jPanel17.add(btnSiguiente9, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+        jPanel17.add(btnSiguiente9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
 
         jPanel18.setBackground(new java.awt.Color(2, 119, 189));
         jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "INDICADORES EVALUADOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -2063,6 +2082,7 @@ public class frmNotas extends javax.swing.JFrame {
         jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 450));
 
         btnGuardar6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnGuardar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N
         btnGuardar6.setText("Actualizar");
         btnGuardar6.setEnabled(false);
         btnGuardar6.addActionListener(new java.awt.event.ActionListener() {
@@ -2070,13 +2090,15 @@ public class frmNotas extends javax.swing.JFrame {
                 btnGuardar6ActionPerformed(evt);
             }
         });
-        jPanel19.add(btnGuardar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 100, 30));
+        jPanel19.add(btnGuardar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
 
         jTabbedPane3.addTab("tab6", jPanel19);
 
         jTabbedPane2.addTab("Editar Notas", jTabbedPane3);
 
         getContentPane().add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 640));
+
+        getAccessibleContext().setAccessibleName("indicadores");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

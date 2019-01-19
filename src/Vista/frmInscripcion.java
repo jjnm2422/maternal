@@ -91,10 +91,13 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnMasculino = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         txtFecha = new datechooser.beans.DateChooserCombo();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDireccion = new javax.swing.JTextArea();
+        jLabel43 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         rbnSi = new javax.swing.JRadioButton();
@@ -103,6 +106,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtEnfermedad = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         cbxTipoSangre = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
@@ -216,7 +221,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Primer nombre");
         jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
@@ -231,9 +236,9 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtPnombreKeyTyped(evt);
             }
         });
-        jPanel7.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 100, -1));
+        jPanel7.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 100, -1));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Segundo nombre");
         jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
@@ -245,9 +250,9 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtSnombreKeyTyped(evt);
             }
         });
-        jPanel7.add(txtSnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 100, -1));
+        jPanel7.add(txtSnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 100, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Primer apellido");
         jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
@@ -264,9 +269,9 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtPapellidoKeyTyped(evt);
             }
         });
-        jPanel7.add(txtPapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 100, -1));
+        jPanel7.add(txtPapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 100, -1));
 
-        jLabel29.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Segundo apellido");
         jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
@@ -283,7 +288,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtSapellidoKeyTyped(evt);
             }
         });
-        jPanel7.add(txtSapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 100, -1));
+        jPanel7.add(txtSapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, -1));
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -303,14 +308,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Sexo");
         jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnFemenino);
-        rbnFemenino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnFemenino.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rbnFemenino.setForeground(new java.awt.Color(255, 255, 255));
         rbnFemenino.setSelected(true);
         rbnFemenino.setText("Femenino");
@@ -320,36 +325,42 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnFemeninoActionPerformed(evt);
             }
         });
-        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnMasculino);
-        rbnMasculino.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnMasculino.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
         rbnMasculino.setOpaque(false);
-        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Fecha de Nacimiento");
-        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
+        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 170, -1));
 
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
+        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 310, 140));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chica(1).png"))); // NOI18N
+        jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chico(1).png"))); // NOI18N
+        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 370, 140));
 
         jPanel10.setBackground(new java.awt.Color(24, 119, 189));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Direccion");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 30));
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 70, 30));
 
         txtDireccion.setColumns(20);
         txtDireccion.setLineWrap(true);
@@ -363,7 +374,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtDireccion);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 270, 100));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, 100));
+
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/firmar.png"))); // NOI18N
+        jPanel10.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 380, 170));
 
@@ -371,14 +385,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Padece de enfermedades");
-        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 20));
 
         rbnSi.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup2.add(rbnSi);
-        rbnSi.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnSi.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rbnSi.setForeground(new java.awt.Color(255, 255, 255));
         rbnSi.setText("Si");
         rbnSi.setOpaque(false);
@@ -387,11 +401,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnSiActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
         rbnNo.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup2.add(rbnNo);
-        rbnNo.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnNo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rbnNo.setForeground(new java.awt.Color(255, 255, 255));
         rbnNo.setSelected(true);
         rbnNo.setText("No");
@@ -401,7 +415,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnNoActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+        jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
         txtEnfermedad.setColumns(20);
         txtEnfermedad.setLineWrap(true);
@@ -414,29 +428,35 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(txtEnfermedad);
 
-        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 288, 80));
+        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 340, 80));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tipo de Sangre");
-        jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
+        jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 20));
 
         cbxTipoSangre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
-        jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 10, 70, -1));
 
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 310, 170));
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tipo-de-sangre.png"))); // NOI18N
+        jPanel9.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jLabel28.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/drogas.png"))); // NOI18N
+        jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 370, 170));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Codigo");
         jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, 70, -1));
 
         lblCodigo.setEditable(false);
         lblCodigo.setToolTipText("");
-        jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 100, -1));
+        jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, -1));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 730, 340));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 830, 340));
 
         btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -503,11 +523,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
 
-        jLabel30.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("codigo alumno");
+        jLabel30.setText("Codigo alumno");
         jLabel30.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 120, 30));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 150, 30));
 
         jTabbedPane1.addTab("Datos Alumno", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_graduado.png")), jPanel2); // NOI18N
 
@@ -558,7 +578,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 340, 150));
 
         jPanel5.setBackground(new java.awt.Color(24, 119, 189));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Requisitos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtObservacion.setColumns(20);
@@ -1659,6 +1679,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1683,6 +1704,10 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

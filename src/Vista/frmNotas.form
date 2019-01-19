@@ -5,6 +5,9 @@
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
+  <AccessibilityProperties>
+    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="indicadores"/>
+  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -27,6 +30,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="11" style="1"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="780" height="640"/>
@@ -37,8 +45,14 @@
       <SubComponents>
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="11" style="1"/>
+            </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="A&#xf1;adir Notas">
@@ -497,6 +511,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_exit24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Salir"/>
                   </Properties>
                   <Events>
@@ -513,14 +530,17 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="consultar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_buscar24.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Consultar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultarActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="300" y="50" width="100" height="30"/>
+                      <AbsoluteConstraints x="280" y="50" width="130" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -590,6 +610,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -597,7 +620,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="640" y="530" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1099,6 +1122,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -1106,7 +1132,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="630" y="540" width="130" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1149,6 +1175,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -1156,7 +1185,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="629" y="540" width="-1" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1774,6 +1803,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -1781,7 +1813,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="640" y="540" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -2242,6 +2274,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -2249,7 +2284,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="620" y="530" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -3093,6 +3128,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_guardar24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Guardar"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -3101,7 +3139,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="630" y="530" width="110" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -3571,6 +3609,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_exit24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Salir"/>
                   </Properties>
                   <Events>
@@ -3587,6 +3628,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_buscar24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="consultar"/>
                   </Properties>
                   <Events>
@@ -3594,7 +3638,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="430" y="50" width="100" height="20"/>
+                      <AbsoluteConstraints x="430" y="50" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -3664,6 +3708,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -3671,7 +3718,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="640" y="530" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -4163,6 +4210,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -4170,7 +4220,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="620" y="540" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -4213,6 +4263,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -4220,7 +4273,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="620" y="540" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -4838,6 +4891,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -4845,7 +4901,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="660" y="540" width="100" height="30"/>
+                      <AbsoluteConstraints x="640" y="540" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -5306,6 +5362,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/icon_next24.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Siguiente"/>
                   </Properties>
                   <Events>
@@ -5313,7 +5372,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="620" y="530" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -6160,6 +6219,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="11" style="1"/>
                     </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Recursos/archivo(1).png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Actualizar"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -6168,7 +6230,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="640" y="530" width="100" height="30"/>
+                      <AbsoluteConstraints x="620" y="530" width="120" height="30"/>
                     </Constraint>
                   </Constraints>
                 </Component>
