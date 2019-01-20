@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -88,6 +89,31 @@ public class Asistencia_dDAO {
         }
         conexiondb.desconexion();
         return respuesta;
+    }
+        
+    public String eliminarAsistenciaDocente(int id_empleado){
+        Statement st = null;
+        Connection conexion= null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_empleado= "+id_empleado;
+        if (conexion!=null) {
+             try {
+            st = conexion.createStatement();
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }  
+        } catch (SQLException ex) {
+            Logger.getLogger(RequisitosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return "NO ELIMINADO";
+        }  
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+        
     }
         
 }

@@ -5,7 +5,9 @@
  */
 package VO;
 
+import java.io.FileInputStream;
 import java.util.Date;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -13,12 +15,14 @@ import java.util.Date;
  */
 public class EmpleadoVO {
     private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion, sexo, fechaNacimiento;
-    private int edad, id_empleado;
+    private int edad, id_empleado, binarioFoto;
+    private FileInputStream fis;
+    private ImageIcon foto; 
 
     public EmpleadoVO() {
     }
 
-    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono1, String telefono2, String correo, String direccion, String sexo, String fechaNacimiento, int edad, int id_empleado) {
+    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono1, String telefono2, String correo, String direccion, String sexo, String fechaNacimiento, int edad, int id_empleado, int binarioFoto, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
@@ -32,7 +36,35 @@ public class EmpleadoVO {
         this.fechaNacimiento = fechaNacimiento;
         this.edad = edad;
         this.id_empleado = id_empleado;
+        this.binarioFoto = binarioFoto;
+        this.fis = fis;
+        this.foto = foto;
     }
+
+    public int getBinarioFoto() {
+        return binarioFoto;
+    }
+
+    public void setBinarioFoto(int binarioFoto) {
+        this.binarioFoto = binarioFoto;
+    }
+
+    public FileInputStream getFis() {
+        return fis;
+    }
+
+    public void setFis(FileInputStream fis) {
+        this.fis = fis;
+    }
+
+    public ImageIcon getFoto() {
+        return foto;
+    }
+
+    public void setFoto(ImageIcon foto) {
+        this.foto = foto;
+    }
+    
 
     public String getPrimer_nombre() {
         return primer_nombre;
