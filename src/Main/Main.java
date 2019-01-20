@@ -37,8 +37,10 @@ public class Main {
         Vista.frmAjustes frmAjustes = new Vista.frmAjustes();
         Vista.frmdocente frmDocente = new Vista.frmdocente();
         Vista.frmNotas frmNotas = new Vista.frmNotas();
+        Vista.frmPago frmPago = new Vista.frmPago();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setFrmPago(frmPago);
         coordinador.setFrmNotas(frmNotas);
         coordinador.setNotaDAO(notaDAO);
         coordinador.setfrmDocente(frmDocente);
@@ -63,6 +65,7 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        frmPago.setCoordinador(coordinador);
         frmNotas.setCoordinador(coordinador);
         notaDAO.setCoordinador(coordinador);
         frmDocente.setCoordinador(coordinador);

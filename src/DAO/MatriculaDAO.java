@@ -6,6 +6,9 @@
 package DAO;
 
 import Controlador.Coordinador;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -85,7 +90,40 @@ public class MatriculaDAO {
     return model;
 }
     
-    public int consultarCantidadDeAlumnoSeccion(String seccion){
+   public VO.MatriculaVO consultarMatriculaPorAlumno(String id_alumno) {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
+        VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
+        conexion = conexiondb.getConnection();
+
+        if (conexion != null) {
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "'";
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                while (result.next() == true) {
+                    matriculaVO.setId_alumno(result.getInt("id_alumno"));
+                    matriculaVO.setId_empleado(result.getInt("id_empleado"));
+                    matriculaVO.setSeccion(result.getString("seccion"));
+                    matriculaVO.setPeriodo(result.getString("periodo"));
+                    matriculaVO.setId_matricula(result.getInt("id_matricula"));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(MatriculaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return matriculaVO;
+        } else {
+            conexiondb.desconexion();
+            return null;
+        }
+    } 
+    
+    public int consultarCantidadDeMatriculaSeccion(String seccion){
     Statement st = null;
     int valor = 0;
     Connection conexion= null;
@@ -124,7 +162,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
                 respuesta = "INGRESADO CON EXITO";
             }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MatriculaDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
             }
         } else {
@@ -176,7 +214,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
                     return "NO ELIMINADO";
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MatriculaDAO.class.getName()).log(Level.SEVERE, null, ex);
                 return "NO ELIMINADO \n"+ex.getMessage();
             }
         } else {

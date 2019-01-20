@@ -5,17 +5,37 @@
  */
 package Vista;
 
+import Controlador.Coordinador;
+import VO.AlumnoVO;
+import VO.RepresentanteVO;
+import java.awt.Image;
+import java.awt.event.KeyEvent;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lenovo
  */
 public class frmPago extends javax.swing.JFrame {
 
+    private Coordinador coordinador;
+     private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
+
     /**
      * Creates new form frmPago
      */
     public frmPago() {
         initComponents();
+    }
+    
+     public void ajustar(JLabel label, ImageIcon icon) {
+        //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
+        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
     }
 
     /**
@@ -29,9 +49,7 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtConsulta = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblMeses = new javax.swing.JTable();
+        txtConsultar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblUsuarioActvo = new javax.swing.JLabel();
@@ -39,20 +57,50 @@ public class frmPago extends javax.swing.JFrame {
         btnAtras1 = new javax.swing.JButton();
         btnGuardar1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tblDatosAlumno1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        txtPnombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtGrupo = new javax.swing.JTextField();
+        lblfoto = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblDatosRepresentante = new javax.swing.JTable();
+        lblfoto1 = new javax.swing.JLabel();
+        txtNombreR1 = new javax.swing.JTextField();
+        txtTelefonoR1 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtCedulaR1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblCuota = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblMora = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        lblCuotasConMora = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        lblCuotasAPagar = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jPanel7 = new javax.swing.JPanel();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jPanel8 = new javax.swing.JPanel();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jPanel9 = new javax.swing.JPanel();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -61,44 +109,27 @@ public class frmPago extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtConsulta.addActionListener(new java.awt.event.ActionListener() {
+        txtConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConsultaActionPerformed(evt);
+                txtConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(txtConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 120, -1));
-
-        tblMeses.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
-        tblMeses.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        tblMeses.setForeground(new java.awt.Color(0, 0, 204));
-        tblMeses.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-            }
-        ));
-        jScrollPane2.setViewportView(tblMeses);
-
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 760, 130));
+        jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Codigo Aumno");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
+        jLabel7.setText("Codigo Cedula");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Pagos");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 80, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 790, -1));
 
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 120, 20));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 120, 20));
 
         btnConsultar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnConsultar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
@@ -108,7 +139,7 @@ public class frmPago extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 120, 30));
+        jPanel2.add(btnConsultar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 120, 30));
 
         btnAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_back24.png"))); // NOI18N
@@ -118,7 +149,7 @@ public class frmPago extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 100, 30));
+        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 100, 30));
 
         btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -128,50 +159,118 @@ public class frmPago extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 110, 30));
+        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 110, 30));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDatosAlumno1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        tblDatosAlumno1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "Nombre", "Apellido", "Seccion"
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nombre y Apellido");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 20));
+
+        txtPnombre.setEditable(false);
+        txtPnombre.setToolTipText("");
+        txtPnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtPnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPnombreKeyPressed(evt);
             }
-        ));
-        jScrollPane4.setViewportView(tblDatosAlumno1);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPnombreKeyTyped(evt);
+            }
+        });
+        jPanel3.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 100, -1));
 
-        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 100));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Grupo");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 60, 20));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 470, 130));
+        txtGrupo.setEditable(false);
+        txtGrupo.setToolTipText("");
+        txtGrupo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGrupoActionPerformed(evt);
+            }
+        });
+        txtGrupo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtGrupoKeyTyped(evt);
+            }
+        });
+        jPanel3.add(txtGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 100, -1));
+
+        lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel3.add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 110, 110));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Codigo");
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 70, -1));
+
+        txtCodigo.setEditable(false);
+        txtCodigo.setToolTipText("");
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 100, -1));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 400, 140));
 
         jPanel4.setBackground(new java.awt.Color(2, 119, 189));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Representante", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDatosRepresentante.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Nombre", "Apellido", "Parentesco"
+        lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel4.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 110, 110));
+
+        txtNombreR1.setEditable(false);
+        txtNombreR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreR1KeyTyped(evt);
             }
-        ));
-        jScrollPane3.setViewportView(tblDatosRepresentante);
+        });
+        jPanel4.add(txtNombreR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 100, -1));
 
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 430, 100));
+        txtTelefonoR1.setEditable(false);
+        txtTelefonoR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoR1KeyTyped(evt);
+            }
+        });
+        jPanel4.add(txtTelefonoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 100, -1));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 450, 130));
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("cedula");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, -1));
+
+        txtCedulaR1.setEditable(false);
+        txtCedulaR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaR1KeyTyped(evt);
+            }
+        });
+        jPanel4.add(txtCedulaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 100, -1));
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Telefono");
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 60, -1));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Nombre");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 390, 140));
 
         jPanel5.setBackground(new java.awt.Color(2, 119, 189));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -179,39 +278,136 @@ public class frmPago extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cuota");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        jLabel1.setText("Precio Cuota");
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
 
         lblCuota.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCuota.setForeground(new java.awt.Color(255, 255, 255));
-        lblCuota.setText("jLabel2");
-        jPanel5.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+        lblCuota.setText("0");
+        lblCuota.setToolTipText("");
+        lblCuota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 60, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Mora");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jLabel3.setText("% de Mora");
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, -1));
 
         lblMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblMora.setForeground(new java.awt.Color(255, 255, 255));
-        lblMora.setText("jLabel4");
-        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, -1, -1));
+        lblMora.setText("0");
+        lblMora.setToolTipText("");
+        lblMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 60, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Total a pagar");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jLabel5.setText("Cuotas a Pagar");
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        lblCuotasConMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCuotasConMora.setForeground(new java.awt.Color(255, 255, 255));
+        lblCuotasConMora.setText("0");
+        lblCuotasConMora.setToolTipText("");
+        lblCuotasConMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblCuotasConMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 60, 20));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cuotas con mora");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 120, -1));
 
         lblTotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblTotal.setForeground(new java.awt.Color(255, 255, 255));
-        lblTotal.setText("jLabel6");
-        jPanel5.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        lblTotal.setText("0");
+        lblTotal.setToolTipText("");
+        lblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 60, 20));
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 190, 130));
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Total pagado");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 120, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
+        lblCuotasAPagar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCuotasAPagar.setForeground(new java.awt.Color(255, 255, 255));
+        lblCuotasAPagar.setText("0");
+        lblCuotasAPagar.setToolTipText("");
+        lblCuotasAPagar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.add(lblCuotasAPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 60, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 210, 160));
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCheckBox1.setText("Enero");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
+
+        jCheckBox2.setText("Febrero");
+        jPanel6.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
+
+        jCheckBox3.setText("Marzo");
+        jPanel6.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
+
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 100));
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCheckBox4.setText("Abril");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jCheckBox5.setText("Mayo");
+        jPanel7.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jCheckBox6.setText("Junio");
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 100, 100));
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCheckBox7.setText("Julio");
+        jPanel8.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jCheckBox8.setText("Agosto");
+        jPanel8.add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jCheckBox9.setText("Septiembre");
+        jPanel8.add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 100, 100));
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCheckBox10.setText("Octubre");
+        jPanel9.add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jCheckBox11.setText("Noviembre");
+        jPanel9.add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jCheckBox12.setText("Diciembre");
+        jPanel9.add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 100, 100));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,13 +421,99 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+       if (!txtConsultar.getText().isEmpty()) {
+            String codigo = txtConsultar.getText().trim();
+            //borrarCampos();
+            txtConsultar.setText(codigo);
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(txtConsultar.getText().trim());
+            RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(codigo), 1);
+            if (alumnoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                txtPnombre.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido());
+                txtCodigo.setText(String.valueOf(alumnoVO.getId_alumno()));
+                txtGrupo.setText(coordinador.consultarMatriculaPorAlumno(codigo).getSeccion());
+                
+                txtCedulaR1.setText(representanteVO.getCedula());
+                txtNombreR1.setText(representanteVO.getPrimer_nombre()+" "+representanteVO.getPrimer_apellido());
+                txtTelefonoR1.setText(representanteVO.getTelefono1());
+                if (alumnoVO.getFoto() == null) {
+                    ajustar(lblfoto, ICON_NO_PHOTO);
+                } else {
+                    ajustar(lblfoto, alumnoVO.getFoto());
+                }
+                if (representanteVO.getFoto() == null) {
+                    ajustar(lblfoto, ICON_NO_PHOTO);
+                } else {
+                    ajustar(lblfoto1, representanteVO.getFoto());
+                }
+                //habilitarBotones(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                //borrarCampos();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+        }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void txtConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultaActionPerformed
+    private void txtConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsultarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConsultaActionPerformed
+    }//GEN-LAST:event_txtConsultarActionPerformed
 
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        int cantidad = Integer.parseInt(lblCuotasAPagar.getText().trim());
+        if (jCheckBox1.isSelected()) {
+         cantidad++;
+        lblCuotasAPagar.setText(""+cantidad);
+        } else {
+         cantidad--;
+        lblCuotasAPagar.setText(""+cantidad);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void txtPnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPnombreKeyPressed
+
+    }//GEN-LAST:event_txtPnombreKeyPressed
+
+    private void txtPnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPnombreKeyTyped
+        validacionSoloLetras(evt, 15, txtPnombre.getText().length());
+    }//GEN-LAST:event_txtPnombreKeyTyped
+
+    private void txtGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGrupoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGrupoActionPerformed
+
+    private void txtGrupoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGrupoKeyTyped
+        validacionSoloLetras(evt, 15, txtGrupo.getText().length());
+    }//GEN-LAST:event_txtGrupoKeyTyped
+
+    private void txtCedulaR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR1KeyTyped
+        validacionSoloNumeros(evt, 8, txtCedulaR1.getText().length());
+    }//GEN-LAST:event_txtCedulaR1KeyTyped
+
+    private void txtNombreR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreR1KeyTyped
+        validacionSoloLetras(evt, 15, txtNombreR1.getText().length());
+    }//GEN-LAST:event_txtNombreR1KeyTyped
+
+    private void txtTelefonoR1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR1KeyTyped
+        validacionTelefono(evt, 11, txtTelefonoR1.getText().length());
+    }//GEN-LAST:event_txtTelefonoR1KeyTyped
+
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoActionPerformed
+
+     public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+    }
     /**
      * @param args the command line arguments
      */
@@ -271,26 +553,109 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnGuardar1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lblCuota;
+    private javax.swing.JLabel lblCuotasAPagar;
+    private javax.swing.JLabel lblCuotasConMora;
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JLabel lblUsuarioActvo;
-    private javax.swing.JTable tblDatosAlumno1;
-    private javax.swing.JTable tblDatosRepresentante;
-    private javax.swing.JTable tblMeses;
-    private javax.swing.JTextField txtConsulta;
+    private javax.swing.JLabel lblfoto;
+    private javax.swing.JLabel lblfoto1;
+    private javax.swing.JTextField txtCedulaR1;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtConsultar;
+    private javax.swing.JTextField txtGrupo;
+    private javax.swing.JTextField txtNombreR1;
+    private javax.swing.JTextField txtPnombre;
+    private javax.swing.JTextField txtTelefonoR1;
     // End of variables declaration//GEN-END:variables
+
+private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionSoloLetras(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+    
+    private void validacionSoloLetrasEspacio(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionSoloLetrasEspacio(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+
+    private void validacionLimite(KeyEvent evt, int maximo, int lim) {
+        if (lim >= maximo) {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+
+    private void validacionTelefono(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionLimiteSoloNumerosYGuion(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
+
+    private void validacionSoloNumeros(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionLimiteSoloNumeros(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
+    }
 }

@@ -282,7 +282,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUsuarioActionPerformed
 
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
-        // TODO add your handling code here:
+         coordinador.getFrmPago().setVisible(true);
+        coordinador.getFrmPago().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+        coordinador.getFrmPago().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnPagosActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed

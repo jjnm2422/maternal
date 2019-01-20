@@ -30,6 +30,7 @@ import Vista.frmGrupos;
 import Vista.frmInscripcion;
 import Vista.frmMenu;
 import Vista.frmNotas;
+import Vista.frmPago;
 import Vista.frmUsuario;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -67,6 +68,7 @@ public class Coordinador {
     private frmdocente frmDocente;
     private NotaDAO notaDAO;
     private frmNotas frmNotas;
+    private frmPago frmPago;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -87,6 +89,10 @@ public class Coordinador {
     public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
         this.usuarioDAO = usuarioDAO;
     }
+    
+       public VO.MatriculaVO consultarMatriculaPorAlumno(String parametro) {
+          return  getMatriculaDAO().consultarMatriculaPorAlumno(parametro);
+       }
 
     public Logica getLogica() {
         return logica;
@@ -105,7 +111,7 @@ public class Coordinador {
      }
     
     public int consultarCantidadDeAlumnoSeccion(String seccion){
-        return getMatriculaDAO().consultarCantidadDeAlumnoSeccion(seccion);
+        return getMatriculaDAO().consultarCantidadDeMatriculaSeccion(seccion);
     }
 
     public String registrarAlumno(AlumnoVO alumnoVO) {
@@ -451,6 +457,16 @@ public class Coordinador {
     public frmNotas getFrmNotas() {
         return frmNotas;
     }
+
+    public void setFrmPago(frmPago frmPago) {
+        this.frmPago = frmPago;
+    }
+
+    public frmPago getFrmPago() {
+        return frmPago;
+    }
+    
+    
     
     
 }
