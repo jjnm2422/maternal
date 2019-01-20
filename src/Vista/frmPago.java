@@ -6,10 +6,17 @@
 package Vista;
 
 import Controlador.Coordinador;
+import DAO.VariablesDAO;
 import VO.AlumnoVO;
 import VO.RepresentanteVO;
+import VO.VariablesVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -349,9 +356,19 @@ public class frmPago extends javax.swing.JFrame {
         jPanel6.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
 
         jCheckBox2.setText("Febrero");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
 
         jCheckBox3.setText("Marzo");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
         jPanel6.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 100));
@@ -367,6 +384,11 @@ public class frmPago extends javax.swing.JFrame {
         jPanel7.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jCheckBox5.setText("Mayo");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
         jPanel7.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jCheckBox6.setText("Junio");
@@ -422,6 +444,7 @@ public class frmPago extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
        if (!txtConsultar.getText().isEmpty()) {
+           consultarPrecios();
             String codigo = txtConsultar.getText().trim();
             //borrarCampos();
             txtConsultar.setText(codigo);
@@ -465,18 +488,19 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        int cantidad = Integer.parseInt(lblCuotasAPagar.getText().trim());
         if (jCheckBox1.isSelected()) {
-         cantidad++;
-        lblCuotasAPagar.setText(""+cantidad);
+        calculoCuotas(true);
         } else {
-         cantidad--;
-        lblCuotasAPagar.setText(""+cantidad);
+        calculoCuotas(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
+                if (jCheckBox4.isSelected()) {
+        calculoCuotas(true);
+        } else {
+calculoCuotas(false);
+        }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void txtPnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPnombreKeyPressed
@@ -510,6 +534,30 @@ public class frmPago extends javax.swing.JFrame {
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+              if (jCheckBox2.isSelected()) {
+        calculoCuotas(true);
+        } else {
+    calculoCuotas(false);
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+            if (jCheckBox3.isSelected()) {
+        calculoCuotas(true);
+        } else {
+        calculoCuotas(false);
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+               if (jCheckBox5.isSelected()) {
+        calculoCuotas(true);
+        } else {
+    calculoCuotas(false);
+        }
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
 
      public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -658,4 +706,39 @@ private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
             getToolkit().beep();
         }
     }
+
+    private void consultarPrecios() {
+        VariablesVO variablesVO = coordinador.getVariablesDAO().consultarVariables();
+        lblCuota.setText(""+variablesVO.getPrecio_cuota());
+        lblMora.setText(""+variablesVO.getPrecio_mora());
+    }
+
+    private void calculoCuotas(boolean valor) {
+        double cantidad = Double.parseDouble(lblCuotasAPagar.getText().trim());
+        double precioCuota = Double.parseDouble(lblCuota.getText().trim());
+        if (valor) {
+            cantidad++;
+            lblCuotasAPagar.setText(""+cantidad);
+            lblTotal.setText(""+(cantidad*precioCuota));
+        } else {
+            cantidad--;
+            lblCuotasAPagar.setText(""+cantidad);
+            lblTotal.setText(""+(cantidad*precioCuota));
+        }
+    }
+    
+    private void CuotasConMora(String mes){
+            SimpleDateFormat ft = new SimpleDateFormat ("dd-MM-yyyy");
+            try {
+            Date fecha =ft.parse(mes);
+            Date fecha2 = ft.parse(coordinador.getFechaFormateada());
+                if (fecha2.compareTo(fecha)>0) {
+                    lblCuotasConMora.setText(""+(Integer.parseInt(lblCuotasConMora.getText().trim())+1));
+                } else {
+                      lblCuotasConMora.setText(""+(Integer.parseInt(lblCuotasConMora.getText().trim())-1));
+                }
+        } catch (ParseException ex) {
+            Logger.getLogger(frmPago.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}
 }
