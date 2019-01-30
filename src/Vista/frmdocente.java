@@ -557,7 +557,7 @@ public class frmdocente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-
+this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -656,7 +656,7 @@ public class frmdocente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarImagen2ActionPerformed
 
     private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
-        // TODO add your handling code here:
+this.dispose();
     }//GEN-LAST:event_btnSalir2ActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -972,6 +972,8 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     }
     
     private void borrarDatos() {
+       fis=null;
+       longitudBytes=0;
         txtNombre2.setText("");
         txtApellido2.setText("");
         txtCedula3.setText("");
@@ -983,6 +985,8 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     }
 
     private void borrarDatos1() {
+       fis=null;
+       longitudBytes=0;
         txtNombre.setText("");
         txtApellido.setText("");
         txtCedula.setText("");

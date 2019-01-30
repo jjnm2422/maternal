@@ -79,17 +79,6 @@ public class frmPago extends javax.swing.JFrame {
         txtCedulaR1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lblCuota = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        lblMora = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        lblCuotasConMora = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        lblTotal = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        lblCuotasAPagar = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -106,6 +95,24 @@ public class frmPago extends javax.swing.JFrame {
         jCheckBox10 = new javax.swing.JCheckBox();
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
+        jPanel10 = new javax.swing.JPanel();
+        lblIva = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        lblSubtotal = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblCuotasAPagar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblCuota = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblMora = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblCuotasConMora = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -156,7 +163,7 @@ public class frmPago extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 100, 30));
+        jPanel2.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 100, 30));
 
         btnGuardar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -166,7 +173,7 @@ public class frmPago extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 110, 30));
+        jPanel2.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 110, 30));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -279,72 +286,6 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 390, 140));
 
-        jPanel5.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Precio Cuota");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
-
-        lblCuota.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCuota.setForeground(new java.awt.Color(255, 255, 255));
-        lblCuota.setText("0");
-        lblCuota.setToolTipText("");
-        lblCuota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 60, 20));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("% de Mora");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, -1));
-
-        lblMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblMora.setForeground(new java.awt.Color(255, 255, 255));
-        lblMora.setText("0");
-        lblMora.setToolTipText("");
-        lblMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 60, 20));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Cuotas a Pagar");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        lblCuotasConMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCuotasConMora.setForeground(new java.awt.Color(255, 255, 255));
-        lblCuotasConMora.setText("0");
-        lblCuotasConMora.setToolTipText("");
-        lblCuotasConMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(lblCuotasConMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 60, 20));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cuotas con mora");
-        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 120, -1));
-
-        lblTotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
-        lblTotal.setText("0");
-        lblTotal.setToolTipText("");
-        lblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 60, 20));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Total pagado");
-        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 120, -1));
-
-        lblCuotasAPagar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCuotasAPagar.setForeground(new java.awt.Color(255, 255, 255));
-        lblCuotasAPagar.setText("0");
-        lblCuotasAPagar.setToolTipText("");
-        lblCuotasAPagar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(lblCuotasAPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 60, 20));
-
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 210, 160));
-
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBox1.setText("Enero");
@@ -371,7 +312,7 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel6.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 100));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 100));
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -399,7 +340,7 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel7.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 100, 100));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 90, 100));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -412,7 +353,7 @@ public class frmPago extends javax.swing.JFrame {
         jCheckBox9.setText("Septiembre");
         jPanel8.add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 100, 100));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 90, 100));
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -425,11 +366,117 @@ public class frmPago extends javax.swing.JFrame {
         jCheckBox12.setText("Diciembre");
         jPanel9.add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 100, 100));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 90, 100));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
+        jPanel10.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)), "Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
+        lblIva.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblIva.setForeground(new java.awt.Color(255, 255, 255));
+        lblIva.setText("0");
+        lblIva.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 110, 30));
+
+        jLabel12.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Bsf");
+        jPanel10.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 40, 30));
+
+        jLabel20.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel20.setText("IVA");
+        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 70, 30));
+
+        jLabel27.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel27.setText("Total");
+        jPanel10.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 60, 30));
+
+        jLabel29.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Bsf");
+        jPanel10.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 30, 30));
+
+        jLabel30.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel30.setText("Subtotal");
+        jPanel10.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 60, 30));
+
+        lblSubtotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblSubtotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblSubtotal.setText("0");
+        lblSubtotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 110, 30));
+
+        jLabel32.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("Bsf");
+        jPanel10.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 30, 30));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Cuotas a Pagar");
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 110, 20));
+
+        lblCuotasAPagar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCuotasAPagar.setForeground(new java.awt.Color(255, 255, 255));
+        lblCuotasAPagar.setText("0");
+        lblCuotasAPagar.setToolTipText("");
+        lblCuotasAPagar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblCuotasAPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 60, 20));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Precio Cuota");
+        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, -1));
+
+        lblCuota.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCuota.setForeground(new java.awt.Color(255, 255, 255));
+        lblCuota.setText("0");
+        lblCuota.setToolTipText("");
+        lblCuota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblCuota, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 60, 20));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("% de Mora");
+        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 90, 20));
+
+        lblMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblMora.setForeground(new java.awt.Color(255, 255, 255));
+        lblMora.setText("0");
+        lblMora.setToolTipText("");
+        lblMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 60, 20));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cuotas con mora");
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 120, -1));
+
+        lblCuotasConMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCuotasConMora.setForeground(new java.awt.Color(255, 255, 255));
+        lblCuotasConMora.setText("0");
+        lblCuotasConMora.setToolTipText("");
+        lblCuotasConMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblCuotasConMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 60, 20));
+
+        lblTotal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotal.setText("0");
+        lblTotal.setToolTipText("");
+        lblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 110, 30));
+
+        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 460, 160));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -492,6 +539,7 @@ public class frmPago extends javax.swing.JFrame {
         calculoCuotas(true);
         } else {
         calculoCuotas(false);
+        CuotasConMora("05-01-2019");
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
@@ -615,22 +663,27 @@ calculoCuotas(false);
     private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -638,7 +691,9 @@ calculoCuotas(false);
     private javax.swing.JLabel lblCuota;
     private javax.swing.JLabel lblCuotasAPagar;
     private javax.swing.JLabel lblCuotasConMora;
+    private javax.swing.JLabel lblIva;
     private javax.swing.JLabel lblMora;
+    private javax.swing.JLabel lblSubtotal;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JLabel lblfoto;
@@ -711,6 +766,7 @@ private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
         VariablesVO variablesVO = coordinador.getVariablesDAO().consultarVariables();
         lblCuota.setText(""+variablesVO.getPrecio_cuota());
         lblMora.setText(""+variablesVO.getPrecio_mora());
+        lblIva.setText(""+variablesVO.getIva());
     }
 
     private void calculoCuotas(boolean valor) {
@@ -718,12 +774,19 @@ private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
         double precioCuota = Double.parseDouble(lblCuota.getText().trim());
         if (valor) {
             cantidad++;
+            double subtotal = cantidad*precioCuota;
+            double iva = Double.parseDouble(lblIva.getText());
             lblCuotasAPagar.setText(""+cantidad);
-            lblTotal.setText(""+(cantidad*precioCuota));
+            lblSubtotal.setText(""+subtotal);
+            lblTotal.setText(""+(subtotal + (subtotal*(iva / 100))));
         } else {
             cantidad--;
+            double subtotal = cantidad*precioCuota;
+            double iva = Double.parseDouble(lblIva.getText());
             lblCuotasAPagar.setText(""+cantidad);
-            lblTotal.setText(""+(cantidad*precioCuota));
+            lblSubtotal.setText(""+subtotal);
+            lblTotal.setText(""+(subtotal + (subtotal*(iva / 100))));
+             lblCuotasConMora.setText(""+(Integer.parseInt(lblCuotasConMora.getText().trim())-1));
         }
     }
     
@@ -732,10 +795,9 @@ private void validacionSoloLetras(KeyEvent evt, int maximo, int lim) {
             try {
             Date fecha =ft.parse(mes);
             Date fecha2 = ft.parse(coordinador.getFechaFormateada());
+            int cuotasmora= Integer.parseInt(lblCuotasConMora.getText().trim());
                 if (fecha2.compareTo(fecha)>0) {
-                    lblCuotasConMora.setText(""+(Integer.parseInt(lblCuotasConMora.getText().trim())+1));
-                } else {
-                      lblCuotasConMora.setText(""+(Integer.parseInt(lblCuotasConMora.getText().trim())-1));
+                    lblCuotasConMora.setText(""+cuotasmora+1);
                 }
         } catch (ParseException ex) {
             Logger.getLogger(frmPago.class.getName()).log(Level.SEVERE, null, ex);

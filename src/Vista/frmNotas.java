@@ -32,6 +32,7 @@ public class frmNotas extends javax.swing.JFrame {
     public frmNotas() {
         initComponents();
         ajustar(lblfoto, ICON_NO_PHOTO);
+        ajustar(lblfoto1, ICON_NO_PHOTO);
     }
     
    public void ajustar(JLabel label, ImageIcon icon) {
@@ -2926,7 +2927,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
      private void inicializarBotones2() {
         txtConsultar.setText("");
         lblPnombre.setText("");
-        ajustar(lblfoto, ICON_NO_PHOTO);
+        ajustar(lblfoto1, ICON_NO_PHOTO);
          jComboBox34.setSelectedIndex(0);
         jComboBox64.setSelectedIndex(0);
         jComboBox65.setSelectedIndex(0);

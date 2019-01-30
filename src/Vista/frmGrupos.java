@@ -1960,11 +1960,6 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
-        if (jTabbedPane2.getSelectedIndex()==0) {
-             System.out.println("cambio estado 0");
-        } else {
-            System.out.println("cambio estado 1");
-        }
        
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
