@@ -187,6 +187,8 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
         });
         jPanel2.add(btnLlenarLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, -1));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 394, 120, 20));

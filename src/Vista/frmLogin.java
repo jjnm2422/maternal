@@ -112,6 +112,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel2.setText("Usuario");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, -1));
 
+        txtUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsuario.setText("admin");
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +130,7 @@ public class frmLogin extends javax.swing.JFrame {
         });
         jPanel3.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, -1));
 
+        txtClave.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtClave.setText("admin1212");
         txtClave.addActionListener(new java.awt.event.ActionListener() {

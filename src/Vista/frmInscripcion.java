@@ -340,6 +340,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel3.setText("Fecha de Nacimiento");
         jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 170, -1));
 
+        txtFecha.setFieldFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 11));
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
@@ -363,6 +364,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 70, 30));
 
         txtDireccion.setColumns(20);
+        txtDireccion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtDireccion.setLineWrap(true);
         txtDireccion.setRows(5);
         txtDireccion.setToolTipText("");
@@ -418,6 +420,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
         txtEnfermedad.setColumns(20);
+        txtEnfermedad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtEnfermedad.setLineWrap(true);
         txtEnfermedad.setRows(5);
         txtEnfermedad.setEnabled(false);
@@ -540,16 +543,19 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Requisitos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        chkPartidaNacimiento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         chkPartidaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
         chkPartidaNacimiento.setText("Partida de Nacimiento");
         chkPartidaNacimiento.setOpaque(false);
         jPanel4.add(chkPartidaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
+        chkFotoCarnet.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         chkFotoCarnet.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoCarnet.setText("4 Fotos Tipo Carnet ");
         chkFotoCarnet.setOpaque(false);
-        jPanel4.add(chkFotoCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        jPanel4.add(chkFotoCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
 
+        chkFotoPostal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         chkFotoPostal.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoPostal.setText("1 Foto Tipo Postal");
         chkFotoPostal.setOpaque(false);
@@ -560,6 +566,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel4.add(chkFotoPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, -1));
 
+        chkFotoFamiliar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         chkFotoFamiliar.setForeground(new java.awt.Color(255, 255, 255));
         chkFotoFamiliar.setText("Foto Familiar");
         chkFotoFamiliar.setOpaque(false);
@@ -568,12 +575,13 @@ public class frmInscripcion extends javax.swing.JFrame {
                 chkFotoFamiliarActionPerformed(evt);
             }
         });
-        jPanel4.add(chkFotoFamiliar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 120, -1));
+        jPanel4.add(chkFotoFamiliar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 120, -1));
 
+        chkCopiaCedula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         chkCopiaCedula.setForeground(new java.awt.Color(255, 255, 255));
         chkCopiaCedula.setText("Copia de Cedula de los Padres");
         chkCopiaCedula.setOpaque(false);
-        jPanel4.add(chkCopiaCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 180, -1));
+        jPanel4.add(chkCopiaCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 210, -1));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 340, 150));
 
@@ -582,6 +590,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtObservacion.setColumns(20);
+        txtObservacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtObservacion.setLineWrap(true);
         txtObservacion.setRows(5);
         txtObservacion.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -679,6 +688,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel1.add(txtEmpresaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 100, -1));
 
         txtDireccionR1.setColumns(20);
+        txtDireccionR1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtDireccionR1.setRows(5);
         txtDireccionR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -765,6 +775,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtDireccionR2.setColumns(20);
+        txtDireccionR2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtDireccionR2.setRows(5);
         txtDireccionR2.setEnabled(false);
         txtDireccionR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -784,15 +795,15 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel6.add(txtTelefonoR22, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 90, -1));
 
-        jLabel24.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Telefono empresa");
         jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 120, -1));
 
-        jLabel22.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Empresa");
-        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 190, 60, -1));
 
         txtEmpresaR2.setEnabled(false);
         txtEmpresaR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -802,15 +813,15 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel6.add(txtEmpresaR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 90, -1));
 
-        jLabel23.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Direccion");
-        jPanel6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
+        jPanel6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 250, 60, -1));
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("cedula");
-        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 40, 50, -1));
 
         txtCedulaR2.setEnabled(false);
         txtCedulaR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -828,15 +839,15 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel6.add(txtTelefonoR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 90, -1));
 
-        jLabel20.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Telefono");
-        jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
+        jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 80, -1));
 
-        jLabel19.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Apellido");
-        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, -1));
 
         txtApellidoR2.setEnabled(false);
         txtApellidoR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -862,25 +873,28 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel6.add(txtNombreR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, -1));
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nombre");
-        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 50, -1));
+        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, -1));
 
-        jLabel21.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Ocupacion");
-        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 60, -1));
+        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 70, -1));
 
-        jLabel25.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Parentesco");
-        jPanel6.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel6.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, 70, -1));
 
         cbxParentescoR2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana", "Otro" }));
         cbxParentescoR2.setEnabled(false);
         jPanel6.add(cbxParentescoR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
+        chkRepresentante.setBackground(new java.awt.Color(2, 119, 189));
+        chkRepresentante.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        chkRepresentante.setForeground(new java.awt.Color(255, 255, 255));
         chkRepresentante.setText("Habilitar Representante");
         chkRepresentante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -911,6 +925,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtDireccionR3.setColumns(20);
+        txtDireccionR3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtDireccionR3.setRows(5);
         txtDireccionR3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -928,12 +943,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(txtTelefonoR32, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 90, -1));
 
-        jLabel31.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Telefono empresa");
         jPanel11.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 120, -1));
 
-        jLabel32.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Empresa");
         jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
@@ -945,12 +960,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(txtEmpresaR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 90, -1));
 
-        jLabel33.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel33.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Direccion");
         jPanel11.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
-        jLabel34.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel34.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("cedula");
         jPanel11.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
@@ -969,12 +984,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(txtTelefonoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 90, -1));
 
-        jLabel35.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("Telefono");
         jPanel11.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
 
-        jLabel36.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel36.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Apellido");
         jPanel11.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
@@ -1000,17 +1015,17 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(txtNombreR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 90, -1));
 
-        jLabel37.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel37.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Nombre");
         jPanel11.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 50, -1));
 
-        jLabel38.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Ocupacion");
-        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 60, -1));
+        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 70, -1));
 
-        jLabel39.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Parentesco");
         jPanel11.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
@@ -1033,7 +1048,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         lblfoto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel11.add(lblfoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, 120));
 
+        rbnOtro.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnOtro);
+        rbnOtro.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnOtro.setForeground(new java.awt.Color(255, 255, 255));
         rbnOtro.setSelected(true);
         rbnOtro.setText("Otro");
         rbnOtro.addActionListener(new java.awt.event.ActionListener() {
@@ -1043,7 +1061,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(rbnOtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
+        rbnR1.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnR1);
+        rbnR1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnR1.setForeground(new java.awt.Color(255, 255, 255));
         rbnR1.setText("R1");
         rbnR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1052,7 +1073,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel11.add(rbnR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
+        rbnR2.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnR2);
+        rbnR2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        rbnR2.setForeground(new java.awt.Color(255, 255, 255));
         rbnR2.setText("R2");
         rbnR2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

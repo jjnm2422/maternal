@@ -81,7 +81,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 30));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, 30));
 
         cbxGrupo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
@@ -90,7 +90,7 @@ public class frmAsistencia extends javax.swing.JFrame {
                 cbxGrupoActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 80, 80, -1));
+        jPanel1.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 80, -1));
 
         jScrollPane1.setName("tblSeccion"); // NOI18N
 
@@ -131,7 +131,7 @@ public class frmAsistencia extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Grupo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 50, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 50, 20));
 
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -201,6 +201,8 @@ public class frmAsistencia extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 310, 130));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 130, 20));

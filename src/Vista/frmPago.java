@@ -134,6 +134,8 @@ public class frmPago extends javax.swing.JFrame {
         jLabel8.setText("Pagos");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 790, -1));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 120, 20));
@@ -254,10 +256,10 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel4.add(txtTelefonoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 100, -1));
 
-        jLabel26.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("cedula");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, -1));
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 60, -1));
 
         txtCedulaR1.setEditable(false);
         txtCedulaR1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -267,15 +269,15 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel4.add(txtCedulaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 100, -1));
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Telefono");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 60, -1));
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 70, -1));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Nombre");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 60, -1));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 390, 140));
 
@@ -345,8 +347,12 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 210, 160));
 
+        jPanel6.setBackground(new java.awt.Color(2, 119, 189));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jCheckBox1.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Enero");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -355,14 +361,20 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel6.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
 
+        jCheckBox2.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox2.setText("Febrero");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        jPanel6.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
+        jPanel6.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, 20));
 
+        jCheckBox3.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setText("Marzo");
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -371,10 +383,14 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel6.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, 100));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 110, 100));
 
+        jPanel7.setBackground(new java.awt.Color(2, 119, 189));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jCheckBox4.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox4.setText("Abril");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,6 +399,9 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel7.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        jCheckBox5.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox5.setText("Mayo");
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -391,6 +410,9 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel7.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
+        jCheckBox6.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox6.setText("Junio");
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -401,31 +423,51 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 100, 100));
 
+        jPanel8.setBackground(new java.awt.Color(2, 119, 189));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jCheckBox7.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox7.setText("Julio");
         jPanel8.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jCheckBox8.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox8.setText("Agosto");
         jPanel8.add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
+        jCheckBox9.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox9.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox9.setText("Septiembre");
         jPanel8.add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 100, 100));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 120, 100));
 
+        jPanel9.setBackground(new java.awt.Color(2, 119, 189));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jCheckBox10.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox10.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox10.setText("Octubre");
         jPanel9.add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jCheckBox11.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox11.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox11.setText("Noviembre");
         jPanel9.add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
+        jCheckBox12.setBackground(new java.awt.Color(2, 119, 189));
+        jCheckBox12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jCheckBox12.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox12.setText("Diciembre");
         jPanel9.add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 100, 100));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 110, 100));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
 

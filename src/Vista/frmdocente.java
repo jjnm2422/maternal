@@ -251,6 +251,7 @@ public class frmdocente extends javax.swing.JFrame {
         });
         jPanel5.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
 
+        txtFecha.setFieldFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 12));
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
@@ -272,6 +273,8 @@ public class frmdocente extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
         jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 120, 20));

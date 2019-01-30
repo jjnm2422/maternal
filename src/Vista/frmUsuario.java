@@ -93,25 +93,25 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel4.setText("Usuario");
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 160, 30));
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Contraseña");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 80, 30));
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Repita Contraseña");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 130, 30));
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Pregunta de Seguridad");
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 160, 30));
 
-        jLabel8.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Activo");
@@ -132,7 +132,7 @@ public class frmUsuario extends javax.swing.JFrame {
         txtContraseña.setEnabled(false);
         jPanel5.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 150, 30));
 
-        jLabel9.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Usuario");
@@ -155,7 +155,7 @@ public class frmUsuario extends javax.swing.JFrame {
         chkAdmin.setEnabled(false);
         jPanel5.add(chkAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, 30));
 
-        jLabel10.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Respuesta de Seguridad");
@@ -232,7 +232,7 @@ public class frmUsuario extends javax.swing.JFrame {
         });
         jPanel5.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 243, 120, 30));
 
-        jLabel11.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Administrador");

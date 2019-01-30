@@ -107,6 +107,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         btnSiguiente2 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
@@ -127,8 +128,6 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox25 = new javax.swing.JComboBox<>();
         jComboBox26 = new javax.swing.JComboBox<>();
         jComboBox27 = new javax.swing.JComboBox<>();
-        jComboBox28 = new javax.swing.JComboBox<>();
-        jComboBox29 = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jComboBox30 = new javax.swing.JComboBox<>();
@@ -138,6 +137,9 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jComboBox33 = new javax.swing.JComboBox<>();
+        jPanel24 = new javax.swing.JPanel();
+        jComboBox28 = new javax.swing.JComboBox<>();
+        jComboBox29 = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         btnSiguiente3 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -260,6 +262,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
         btnSiguiente6 = new javax.swing.JButton();
+        jPanel21 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         btnSiguiente7 = new javax.swing.JButton();
         jLabel93 = new javax.swing.JLabel();
@@ -280,8 +283,6 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox87 = new javax.swing.JComboBox<>();
         jComboBox88 = new javax.swing.JComboBox<>();
         jComboBox89 = new javax.swing.JComboBox<>();
-        jComboBox90 = new javax.swing.JComboBox<>();
-        jComboBox91 = new javax.swing.JComboBox<>();
         jLabel103 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
         jComboBox92 = new javax.swing.JComboBox<>();
@@ -291,6 +292,9 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel106 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
         jComboBox95 = new javax.swing.JComboBox<>();
+        jPanel22 = new javax.swing.JPanel();
+        jComboBox91 = new javax.swing.JComboBox<>();
+        jComboBox90 = new javax.swing.JComboBox<>();
         jPanel15 = new javax.swing.JPanel();
         btnSiguiente8 = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
@@ -546,7 +550,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 100, 20));
 
-        jTabbedPane1.addTab("tab1", jPanel2);
+        jTabbedPane1.addTab("Indicadores", jPanel2);
 
         jPanel11.setBackground(new java.awt.Color(69, 90, 100));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "Relacion con el ambiente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -673,7 +677,12 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel11.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 540, 130, 30));
 
-        jTabbedPane1.addTab("tab2", jPanel11);
+        jPanel23.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel23.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel11.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 740, 490));
+
+        jTabbedPane1.addTab("Indicadores", jPanel11);
 
         jPanel5.setBackground(new java.awt.Color(69, 90, 100));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(0, 0, 153)), "Comunicacion y representacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -804,16 +813,6 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel5.add(jComboBox27, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
 
-        jComboBox28.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jComboBox28.setEnabled(false);
-        jPanel5.add(jComboBox28, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, -1));
-
-        jComboBox29.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jComboBox29.setEnabled(false);
-        jPanel5.add(jComboBox29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
-
         jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jPanel5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
@@ -858,7 +857,23 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox33.setEnabled(false);
         jPanel5.add(jComboBox33, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, 20));
 
-        jTabbedPane1.addTab("tab3", jPanel5);
+        jPanel24.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel24.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox28.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox28.setEnabled(false);
+        jPanel24.add(jComboBox28, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+
+        jComboBox29.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox29.setEnabled(false);
+        jPanel24.add(jComboBox29, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+
+        jPanel5.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 720, 500));
+
+        jTabbedPane1.addTab("Indicadores", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(69, 90, 100));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -985,7 +1000,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 680, 450));
 
-        jTabbedPane1.addTab("tab4", jPanel6);
+        jTabbedPane1.addTab("Cuadro de valores", jPanel6);
 
         jPanel1.setBackground(new java.awt.Color(69, 90, 100));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1097,7 +1112,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 690, 400));
 
-        jTabbedPane1.addTab("tab5", jPanel1);
+        jTabbedPane1.addTab("Cuadro de valores", jPanel1);
 
         jPanel7.setBackground(new java.awt.Color(69, 90, 100));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1226,7 +1241,7 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 110, 30));
 
-        jTabbedPane1.addTab("tab6", jPanel7);
+        jTabbedPane1.addTab("Cuadro de valores", jPanel7);
 
         jTabbedPane2.addTab("Añadir Notas", jTabbedPane1);
         jTabbedPane1.getAccessibleContext().setAccessibleName("");
@@ -1407,7 +1422,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel81.setText("Lapso");
         jPanel4.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 60, 20));
 
-        jTabbedPane3.addTab("tab1", jPanel4);
+        jTabbedPane3.addTab("Indicadores", jPanel4);
 
         jPanel13.setBackground(new java.awt.Color(69, 90, 100));
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "Relacion con el ambiente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1534,7 +1549,12 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel13.add(btnSiguiente6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 120, 30));
 
-        jTabbedPane3.addTab("tab2", jPanel13);
+        jPanel21.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel13.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 740, 480));
+
+        jTabbedPane3.addTab("Indicadores", jPanel13);
 
         jPanel14.setBackground(new java.awt.Color(69, 90, 100));
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(0, 0, 153)), "Comunicacion y representacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1665,16 +1685,6 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel14.add(jComboBox89, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, -1, -1));
 
-        jComboBox90.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox90.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jComboBox90.setEnabled(false);
-        jPanel14.add(jComboBox90, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, -1));
-
-        jComboBox91.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox91.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
-        jComboBox91.setEnabled(false);
-        jPanel14.add(jComboBox91, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
-
         jLabel103.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel103.setForeground(new java.awt.Color(255, 255, 255));
         jPanel14.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, -1, -1));
@@ -1719,7 +1729,28 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox95.setEnabled(false);
         jPanel14.add(jComboBox95, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, -1, 20));
 
-        jTabbedPane3.addTab("tab3", jPanel14);
+        jPanel22.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox91.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox91.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox91.setEnabled(false);
+        jPanel22.add(jComboBox91, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+
+        jComboBox90.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox90.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INICIADO", "PROCESO", "CONSOLIDADO" }));
+        jComboBox90.setEnabled(false);
+        jComboBox90.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox90ActionPerformed(evt);
+            }
+        });
+        jPanel22.add(jComboBox90, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+
+        jPanel14.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 720, 500));
+
+        jTabbedPane3.addTab("Indicadores", jPanel14);
 
         jPanel15.setBackground(new java.awt.Color(69, 90, 100));
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 153)), "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1846,7 +1877,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 680, 450));
 
-        jTabbedPane3.addTab("tab4", jPanel15);
+        jTabbedPane3.addTab("Cuadro de valores", jPanel15);
 
         jPanel17.setBackground(new java.awt.Color(69, 90, 100));
         jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -1963,7 +1994,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 690, 400));
 
-        jTabbedPane3.addTab("tab5", jPanel17);
+        jTabbedPane3.addTab("Cuadro de valores", jPanel17);
 
         jPanel19.setBackground(new java.awt.Color(69, 90, 100));
         jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUADRO DE VALORES Y OTROS RASGOS DE LA PERSONALIDAD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 23), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -2092,7 +2123,7 @@ public class frmNotas extends javax.swing.JFrame {
         });
         jPanel19.add(btnGuardar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
 
-        jTabbedPane3.addTab("tab6", jPanel19);
+        jTabbedPane3.addTab("Cuadro de valores", jPanel19);
 
         jTabbedPane2.addTab("Editar Notas", jTabbedPane3);
 
@@ -2329,6 +2360,10 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private void jComboBox107ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox107ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox107ActionPerformed
+
+    private void jComboBox90ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox90ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox90ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2656,6 +2691,10 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
