@@ -1980,16 +1980,11 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
-        if (jTabbedPane2.getSelectedIndex()==0) {
-             System.out.println("cambio estado 0");
-        } else {
-            System.out.println("cambio estado 1");
-        }
        
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-            Object opciones[] = {"Si", "No"};
+        Object opciones[] = {"Si", "No"};
         int respuesta = JOptionPane.showOptionDialog(this, "¿Desea usted eliminar completamente los datos relacionados a este alumno? \n Tenga en cuenta que esto no puede revertirse, se elimanaran tambien datos de pagos y representantes asociados al alumno.", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "No");
         if (respuesta == 0) {
             //elimino alumno requisitos

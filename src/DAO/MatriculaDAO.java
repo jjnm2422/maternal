@@ -157,6 +157,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
             ps.setInt(1, matriculaVO.getId_alumno());
             ps.setInt(2, matriculaVO.getId_empleado());
             ps.setString(3, matriculaVO.getSeccion());
+            ps.setString(4, matriculaVO.getPeriodo());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INGRESADO CON EXITO";

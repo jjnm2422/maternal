@@ -102,8 +102,32 @@ public class Coordinador {
         return login;
     }
     
+    public String registrarEmpleado(VO.EmpleadoVO empleadoVO) {
+        return getEmpleadoDAO().registrarEmpleado(empleadoVO);
+    }
+    
+     public VO.EmpleadoVO consultarEmpleado(String usuario) {
+         return getEmpleadoDAO().consultarEmpleado(usuario);
+     }
+    
     public String actualizarRepresentante(VO.RepresentanteVO representanteVO, String id_alumno, int tipo){
         return getRepresentanteDAO().actualizarRepresentante(representanteVO, id_alumno, tipo);
+    }
+    
+    public String actualizarEmpleadoSinFoto(VO.EmpleadoVO empleadoVO, int id){
+        return getEmpleadoDAO().actualizarEmpleadoSinFoto(empleadoVO, id);
+    }
+    
+    public String actualizarEmpleadoConFoto(VO.EmpleadoVO empleadoVO, int id){
+        return getEmpleadoDAO().actualizarEmpleadoConFoto(empleadoVO, id);
+    }
+    
+    public String eliminarEmpleado(int id){
+        return getEmpleadoDAO().eliminarEmpleado(id);
+    }
+    
+    public String eliminarAsistenciaDocente(int id_empleado){
+        return getAsistencia_dDAO().eliminarAsistenciaDocente(id_empleado);
     }
     
      public String actualizarRequisitos(VO.RequisitosVO requisitosVO){
@@ -432,10 +456,6 @@ public class Coordinador {
 
     public void setfrmDocente(frmdocente frmDocente) {
         this.frmDocente = frmDocente;
-    }
-    
-    public VO.EmpleadoVO consultarEmpleado(String parametro) {
-        return getEmpleadoDAO().consultarEmpleado(parametro);
     }
 
     public frmdocente getFrmDocente() {

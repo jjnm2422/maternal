@@ -2068,6 +2068,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
         matriculaVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         matriculaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
+        matriculaVO.setPeriodo(coordinador.consultarVariables().getPeriodo_actual());
         if (coordinador.registrarMatricula(matriculaVO).equals("INGRESADO CON EXITO")) {
             return true;
         } else {
