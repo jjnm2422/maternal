@@ -535,7 +535,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 90, 30));
+        jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 120, 30));
 
         lblUsuarioActvo1.setText("usuario activo");
         lblUsuarioActvo1.setName("lblUsuarioActivo"); // NOI18N
@@ -655,9 +655,9 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(txtObservacion);
 
-        jPanel6.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 320, 120));
+        jPanel6.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 290, 120));
 
-        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 340, 150));
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 310, 150));
 
         jPanel1.setBackground(new java.awt.Color(24, 119, 189));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -822,7 +822,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 420, 100, 30));
+        jPanel4.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 110, 30));
 
         jPanel15.setBackground(new java.awt.Color(24, 119, 189));
         jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -856,7 +856,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Empresa");
-        jPanel15.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel15.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         txtEmpresaR2.setEnabled(false);
         txtEmpresaR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -874,7 +874,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("cedula");
-        jPanel15.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel15.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         txtCedulaR2.setEnabled(false);
         txtCedulaR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -895,12 +895,12 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel39.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Telefono");
-        jPanel15.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
+        jPanel15.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, -1));
 
         jLabel40.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Apellido");
-        jPanel15.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
+        jPanel15.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 60, -1));
 
         txtApellidoR2.setEnabled(false);
         txtApellidoR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -929,7 +929,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
         jLabel41.setText("Nombre");
-        jPanel15.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 50, -1));
+        jPanel15.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 50, -1));
 
         jLabel42.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
@@ -1006,7 +1006,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
         jLabel45.setText("Empresa");
-        jPanel16.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel16.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         txtEmpresaR3.setEnabled(false);
         txtEmpresaR3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1024,7 +1024,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("cedula");
-        jPanel16.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel16.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         txtCedulaR3.setEnabled(false);
         txtCedulaR3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1045,12 +1045,12 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel48.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 255, 255));
         jLabel48.setText("Telefono");
-        jPanel16.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 70, -1));
+        jPanel16.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, -1));
 
         jLabel49.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(255, 255, 255));
         jLabel49.setText("Apellido");
-        jPanel16.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
+        jPanel16.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 60, -1));
 
         txtApellidoR3.setEnabled(false);
         txtApellidoR3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1079,7 +1079,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(255, 255, 255));
         jLabel50.setText("Nombre");
-        jPanel16.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 50, -1));
+        jPanel16.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 50, -1));
 
         jLabel51.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(255, 255, 255));
@@ -1161,7 +1161,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnGuardar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 120, 30));
+        jPanel4.add(btnGuardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 120, 30));
 
         btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_deleteuser24.png"))); // NOI18N
@@ -1172,7 +1172,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 110, 30));
+        jPanel4.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 30));
 
         jTabbedPane2.addTab("DATOS DE REPRESENTANTE", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_familia.png")), jPanel4); // NOI18N
 
@@ -2016,12 +2016,23 @@ public class frmGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void tblSeccion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSeccion1MouseClicked
-    if (evt.getClickCount() == 2 && tblSeccion2.isEnabled()) {
+        if (evt.getClickCount() == 2 && tblSeccion2.isEnabled()) {
+            int cantidadenBD = coordinador.consultarCantidadDeAlumnoSeccion(cbxSeccion2.getSelectedItem().toString());
+            int limite = coordinador.getVariablesDAO().consultarVariables().getLimite_alumno();
+            int cantidadTabla = tblSeccion2.getRowCount();
+           if (cantidadenBD < limite) {
+                if (cantidadTabla < limite) {
             int fila = this.tblSeccion1.getSelectedRow();
             tblMatricula.setModel(coordinador.añadirListaAsistentes(tblSeccion1, tblSeccion2, fila));
             DefaultTableModel model = (DefaultTableModel) tblSeccion1.getModel();
             model.removeRow(fila);
             tblSeccion1.setModel(model);
+                                } else {
+                    JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                } 
+            } else {
+                JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+            }
         }
     }//GEN-LAST:event_tblSeccion1MouseClicked
 
@@ -2064,9 +2075,9 @@ public class frmGrupos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No puede seleccionar la misma seccion");
             tblSeccion2.setEnabled(false);
         }else{
-        tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));
-        tblSeccion2.setEnabled(true);
-            }
+            tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));
+            tblSeccion2.setEnabled(true);
+        }
     }//GEN-LAST:event_cbxSeccion2ActionPerformed
 
     private void tblSeccion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSeccion2MouseClicked

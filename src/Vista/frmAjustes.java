@@ -285,9 +285,10 @@ public class frmAjustes extends javax.swing.JFrame {
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuarioActvo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 120, 30));
 
         btnRestaurar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnRestaurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N

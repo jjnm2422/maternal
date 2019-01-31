@@ -93,6 +93,10 @@ public class Coordinador {
        public VO.MatriculaVO consultarMatriculaPorAlumno(String parametro) {
           return  getMatriculaDAO().consultarMatriculaPorAlumno(parametro);
        }
+       
+       public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
+           return getEmpleadoDAO().consultarEmpleadosCedulaTabla(cedula);
+       }
 
     public Logica getLogica() {
         return logica;
@@ -105,6 +109,10 @@ public class Coordinador {
     public String registrarEmpleado(VO.EmpleadoVO empleadoVO) {
         return getEmpleadoDAO().registrarEmpleado(empleadoVO);
     }
+    
+     public String registrarUsuario(VO.UsuarioVO usuarioVO) {
+         return getUsuarioDAO().registrarUsuario(usuarioVO);
+     }
     
      public VO.EmpleadoVO consultarEmpleado(String usuario) {
          return getEmpleadoDAO().consultarEmpleado(usuario);

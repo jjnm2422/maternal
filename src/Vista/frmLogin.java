@@ -219,15 +219,35 @@ public class frmLogin extends javax.swing.JFrame {
     }else{
         switch (coordinador.consultarUsuarioLogin(txtUsuario.getText(), clave)) {
             case "ACCESO_ADMIN":
-                JOptionPane.showMessageDialog(null, "Acceso Concedido admin", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                //JOptionPane.showMessageDialog(null, "Acceso Concedido admin", "Informacion", JOptionPane.PLAIN_MESSAGE);
                 coordinador.getFrmMenu().setVisible(true);
+                coordinador.getFrmMenu().btnInscripcion.setEnabled(true);
+                coordinador.getFrmMenu().btnUsuario.setEnabled(true);
+                coordinador.getFrmMenu().btnNotas.setEnabled(true);
+                coordinador.getFrmMenu().btnSeccion.setEnabled(true);
+                coordinador.getFrmMenu().btnAsistencia.setEnabled(true);
+                coordinador.getFrmMenu().btnDocentes.setEnabled(true);
+                coordinador.getFrmMenu().btnReportes.setEnabled(true);
+                coordinador.getFrmMenu().btnPagos.setEnabled(true);
+                coordinador.getFrmMenu().btnAjustes.setEnabled(true);
                 coordinador.getFrmMenu().setLocationRelativeTo(null);
                 coordinador.getFrmMenu().lblUsuarioActvo.setText(txtUsuario.getText());
                 coordinador.getLogin().dispose();
                 borrarCampos();
                 break;
             case "ACCESO_NORMAL":
-                JOptionPane.showMessageDialog(null, "Acceso Concedido usuario comun", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                //JOptionPane.showMessageDialog(null, "Acceso Concedido usuario comun", "Informacion", JOptionPane.PLAIN_MESSAGE);.
+                 coordinador.getFrmMenu().setVisible(true);
+                 coordinador.getFrmMenu().btnInscripcion.setEnabled(false);
+                coordinador.getFrmMenu().btnUsuario.setEnabled(false);
+                coordinador.getFrmMenu().btnNotas.setEnabled(false);
+                coordinador.getFrmMenu().btnSeccion.setEnabled(false);
+                coordinador.getFrmMenu().btnDocentes.setEnabled(false);
+                coordinador.getFrmMenu().btnReportes.setEnabled(false);
+                coordinador.getFrmMenu().btnPagos.setEnabled(false);
+                coordinador.getFrmMenu().btnAjustes.setEnabled(false);
+                 coordinador.getFrmMenu().btnAsistencia.setEnabled(true);
+                coordinador.getFrmMenu().setLocationRelativeTo(null);
                 coordinador.getFrmMenu().lblUsuarioActvo.setText(txtUsuario.getText());
                 borrarCampos();
                 break;

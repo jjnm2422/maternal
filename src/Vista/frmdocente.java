@@ -20,6 +20,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -115,13 +116,21 @@ public class frmdocente extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtDireccion2 = new javax.swing.JTextArea();
         txtFecha1 = new datechooser.beans.DateChooserCombo();
-        lblUsuarioActvo1 = new javax.swing.JLabel();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblCedula2 = new javax.swing.JLabel();
         txtCedula2 = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnSalir3 = new javax.swing.JButton();
+        lblCedula4 = new javax.swing.JLabel();
+        txtCedula5 = new javax.swing.JTextField();
+        btnBuscar1 = new javax.swing.JButton();
+        btnBuscar2 = new javax.swing.JButton();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -211,6 +220,12 @@ public class frmdocente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(69, 90, 100));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(69, 90, 100));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -332,9 +347,11 @@ public class frmdocente extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
+        lblUsuarioActvo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 120, 20));
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 120, 20));
 
         btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -479,10 +496,6 @@ public class frmdocente extends javax.swing.JFrame {
 
         jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
-        lblUsuarioActvo1.setText("usuario activo");
-        lblUsuarioActvo1.setName("lblUsuarioActivo"); // NOI18N
-        jPanel6.add(lblUsuarioActvo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 110, 20));
-
         btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
         btnSalir2.setText("Salir");
@@ -543,6 +556,79 @@ public class frmdocente extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificacion", null, jPanel6, "");
 
+        jPanel8.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel9.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel9.setForeground(new java.awt.Color(0, 0, 102));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        jPanel9.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 570, 250));
+
+        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 590, 270));
+
+        btnSalir3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir3.setText("Salir");
+        btnSalir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir3ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnSalir3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 30));
+
+        lblCedula4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblCedula4.setForeground(new java.awt.Color(255, 255, 255));
+        lblCedula4.setText("Cedula");
+        jPanel8.add(lblCedula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 30));
+
+        txtCedula5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCedula5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedula5KeyTyped(evt);
+            }
+        });
+        jPanel8.add(txtCedula5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 100, 30));
+
+        btnBuscar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnBuscar1.setText("Buscar");
+        btnBuscar1.setName("btnBuscar"); // NOI18N
+        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 100, 30));
+
+        btnBuscar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
+        btnBuscar2.setText("Restaurar");
+        btnBuscar2.setToolTipText("");
+        btnBuscar2.setName("btnBuscar"); // NOI18N
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar2ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 130, 30));
+
+        jTabbedPane1.addTab("Listado", null, jPanel8, "");
+
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 420));
 
         pack();
@@ -581,9 +667,12 @@ this.dispose();
         if (res.equals("INGRESADO CON EXITO")) {
             System.out.println("true");
             borrarDatos1();
+            jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             //return true;
-        } else {
-            System.out.println("false");
+        } else if (res.equals("ERROR_COD")) {
+              JOptionPane.showMessageDialog(this, "Cedula ingresada ya existe en la base de Datos");
+        }else{
+          System.out.println("false");
             //return false;
         }
         } else {
@@ -669,6 +758,7 @@ Object opciones[] = {"Si", "No"};
                 JOptionPane.showMessageDialog(this, "Eliminado con Exito");
                 borrarDatos();
                 habilitarDatos(false);
+                 jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             } else {
                 JOptionPane.showMessageDialog(this, "Problemas al eliminar docente");
             }
@@ -696,12 +786,12 @@ Object opciones[] = {"Si", "No"};
         } 
         id_empleado = empleadoVO.getId_empleado();
         } else {
-            JOptionPane.showMessageDialog(this, "Codigo: "+txtCedula2.getText()+" no existe en la Base de Datos");
+            JOptionPane.showMessageDialog(this, "Cedula: "+txtCedula2.getText()+" no existe en la Base de Datos");
             borrarDatos();
             habilitarDatos(false);
         }
     } else {
-        JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+        JOptionPane.showMessageDialog(this, "Ingrese un numero de cedula");
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -730,6 +820,7 @@ Object opciones[] = {"Si", "No"};
         if (res.equals("DATOS ACTUALIZADOS")) {
             System.out.println("true");
             borrarDatos();
+             jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             //return true;
         } else {
             System.out.println("false");
@@ -793,6 +884,38 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     validacionSoloNumeros(evt, 8, txtCedula2.getText().length());
     }//GEN-LAST:event_txtCedula2KeyTyped
 
+    private void btnSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir3ActionPerformed
+        dispose(); 
+    }//GEN-LAST:event_btnSalir3ActionPerformed
+
+    private void txtCedula5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedula5KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedula5KeyTyped
+
+    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
+   if (!txtCedula5.getText().isEmpty()) {
+       DefaultTableModel consultarEmpleadosCedulaTabla = coordinador.consultarEmpleadosCedulaTabla(txtCedula5.getText().trim());
+        if (consultarEmpleadosCedulaTabla.getRowCount()!= 0) {
+            jTable1.setModel(consultarEmpleadosCedulaTabla);
+        } else {
+            JOptionPane.showMessageDialog(this, "Cedula: "+txtCedula5.getText()+" no existe en la Base de Datos");
+            borrarDatos();
+            habilitarDatos(false);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Ingrese un numero de cedula");
+    }     
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+             jTable1.setModel(coordinador.consultarEmpleadosTodosTabla()); 
+             txtCedula5.setText("");
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -837,9 +960,12 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JButton btnAgregarImagen2;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscar1;
+    private javax.swing.JButton btnBuscar2;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir2;
+    private javax.swing.JButton btnSalir3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -860,12 +986,16 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -878,6 +1008,7 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCedula1;
     private javax.swing.JLabel lblCedula2;
+    private javax.swing.JLabel lblCedula4;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblDireccion1;
     private javax.swing.JLabel lblFechaNacimiento;
@@ -887,7 +1018,6 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTelefono1;
     public javax.swing.JLabel lblUsuarioActvo;
-    public javax.swing.JLabel lblUsuarioActvo1;
     private javax.swing.JLabel lblfoto1;
     private javax.swing.JLabel lblfoto2;
     private javax.swing.JTextField txtApellido;
@@ -895,6 +1025,7 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCedula2;
     private javax.swing.JTextField txtCedula3;
+    private javax.swing.JTextField txtCedula5;
     private javax.swing.JTextArea txtDireccion;
     private javax.swing.JTextArea txtDireccion2;
     private datechooser.beans.DateChooserCombo txtFecha;
@@ -962,7 +1093,7 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private void habilitarDatos(boolean b) {
         txtNombre2.setEnabled(b);
         txtApellido2.setEnabled(b);
-        txtCedula3.setEnabled(b);
+        //txtCedula3.setEnabled(b);
         txtFecha1.setEnabled(b);
         txtDireccion2.setEnabled(b);
         txtTelefono2.setEnabled(b);

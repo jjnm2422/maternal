@@ -150,7 +150,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion) VALUES (?, ?, ?)" ;
+        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion, periodo) VALUES (?, ?, ?,?)" ;
         if (conexion!=null) {
            try {
             ps = conexion.prepareCall(sql);

@@ -413,6 +413,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="usuario activo"/>
                 <Property name="name" type="java.lang.String" value="lblUsuarioActivo" noResource="true"/>
               </Properties>
@@ -421,7 +422,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="270" width="120" height="20"/>
+                  <AbsoluteConstraints x="440" y="260" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>

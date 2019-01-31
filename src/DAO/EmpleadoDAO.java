@@ -62,8 +62,12 @@ public class EmpleadoDAO {
                 respuesta = "INGRESADO CON EXITO";
             }
             } catch (SQLException ex) {
+                 if (ex.getSQLState().equals("23505")) {
+                    respuesta =  "ERROR_COD";
+                }else{
                 Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
                  respuesta = ex.getMessage();
+                }
             } 
         } else {
             respuesta = "ERROR AL CONECTAR CON BD";
@@ -217,7 +221,7 @@ public class EmpleadoDAO {
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
     conexion = conexiondb.getConnection();
-    String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+    String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
     String[]fila=new String[titulos.length];
     String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> 1";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
@@ -228,8 +232,9 @@ public class EmpleadoDAO {
    
     while(rs.next()){
         fila[0]=rs.getString("id_empleado");
-        fila[1]=rs.getString("primer_nombre");
-        fila[2]=rs.getString("primer_apellido");
+        fila[1]=rs.getString("cedula");
+        fila[2]=rs.getString("primer_nombre");
+        fila[3]=rs.getString("primer_apellido");
         model.addRow(fila);
     }
         } catch (SQLException e) {
@@ -238,6 +243,35 @@ public class EmpleadoDAO {
         }
     return model;
 }
+    
+public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> 1 and cedula = '"+cedula+"'";
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("id_empleado");
+        fila[1]=rs.getString("cedula");
+        fila[2]=rs.getString("primer_nombre");
+        fila[3]=rs.getString("primer_apellido");
+        model.addRow(fila);
+    }
+        } catch (SQLException e) {
+           JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar "+e.getMessage(), null, JOptionPane.ERROR_MESSAGE);
+           return model = null;
+        }
+    return model;
+}
+    
     public String registrarAsistenciaEmpleados(DefaultTableModel model, boolean asistencia,  int usuario) {
         String respuesta = "";
         Connection conexion= null;

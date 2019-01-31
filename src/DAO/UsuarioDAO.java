@@ -35,14 +35,18 @@ public class UsuarioDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into " + this.tabla + "(nombre, apellido, nombre_usuario)"
-                + "values(?,?,?)";
+        String sql = "insert into " + this.tabla + "(id_empleado, nombre_usuario, clave, pregunta_secreta, respuesta_secreta, admin, activo)"
+                + "values(?,?,?,?,?,?,?)";
         if (conexion != null) {
             try {
                 ps = conexion.prepareCall(sql);
-                /*ps.setString(1, usuarioVO..getNombre1());
-            ps.setString(2, usuarioVO.getApellido1());
-            ps.setString(3, usuarioVO.getTipoSangre());*/
+                ps.setInt(1, usuarioVO.getId_empleado());
+                ps.setString(2, usuarioVO.getNombre_usuario());
+                ps.setString(3, usuarioVO.getClave());
+                ps.setString(4, usuarioVO.getPregunta_secreta());
+                ps.setString(5, usuarioVO.getRespuesta_secreta());
+                ps.setBoolean(6, usuarioVO.isAdmin());
+                ps.setBoolean(7, usuarioVO.isActivo());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
