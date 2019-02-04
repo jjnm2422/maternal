@@ -261,7 +261,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo19.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTitulo19.setText("Dias para mora");
+        lblTitulo19.setText("Dia de Cobro");
         jPanel1.add(lblTitulo19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 130, 20));
 
         cbxPeriodo.setEnabled(false);
@@ -396,7 +396,7 @@ public class frmAjustes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLimiteKeyTyped
 
     private void txtDiasmoraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiasmoraKeyTyped
-    validacionSoloNumeros(evt, 3, txtDiasmora.getText().length());
+    validacionSoloNumeros(evt, 2, txtDiasmora.getText().length());
     }//GEN-LAST:event_txtDiasmoraKeyTyped
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaurarActionPerformed

@@ -15,6 +15,7 @@ public class Main {
         
         Controlador.Coordinador coordinador = new Controlador.Coordinador();
         DAO.AlumnoDAO alumnoDAO = new DAO.AlumnoDAO();
+        DAO.PagoDAO pagoDAO = new DAO.PagoDAO();
         DAO.UsuarioDAO usuarioDAO = new DAO.UsuarioDAO();
         DAO.EmpleadoDAO empleadoDAO = new DAO.EmpleadoDAO();
         DAO.NotaDAO notaDAO = new DAO.NotaDAO();
@@ -40,6 +41,7 @@ public class Main {
         Vista.frmPago frmPago = new Vista.frmPago();
         
         coordinador.setAlumnoDAO(alumnoDAO);
+        coordinador.setPagoDAO(pagoDAO);
         coordinador.setFrmPago(frmPago);
         coordinador.setFrmNotas(frmNotas);
         coordinador.setNotaDAO(notaDAO);
@@ -65,6 +67,7 @@ public class Main {
         coordinador.setFrmLoginRecuperacion(frmLoginRecuperacion);
         
         alumnoDAO.setCoordinador(coordinador);
+        pagoDAO.setCoordinador(coordinador);
         frmPago.setCoordinador(coordinador);
         frmNotas.setCoordinador(coordinador);
         notaDAO.setCoordinador(coordinador);

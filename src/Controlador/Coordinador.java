@@ -11,6 +11,7 @@ import DAO.Asistencia_dDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.NotaDAO;
+import DAO.PagoDAO;
 import DAO.RepresentanteDAO;
 import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
@@ -69,6 +70,7 @@ public class Coordinador {
     private NotaDAO notaDAO;
     private frmNotas frmNotas;
     private frmPago frmPago;
+    private PagoDAO pagoDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -93,6 +95,10 @@ public class Coordinador {
        public VO.MatriculaVO consultarMatriculaPorAlumno(String parametro) {
           return  getMatriculaDAO().consultarMatriculaPorAlumno(parametro);
        }
+       
+          public String actualizarPago(VO.PagoVO pagoVO, int id) {
+              return getPagoDAO().actualizarPago(pagoVO, id);
+          }
        
        public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
            return getEmpleadoDAO().consultarEmpleadosCedulaTabla(cedula);
@@ -493,8 +499,18 @@ public class Coordinador {
     public frmPago getFrmPago() {
         return frmPago;
     }
+
+    public void setPagoDAO(PagoDAO pagoDAO) {
+        this.pagoDAO = pagoDAO;
+    }
     
-    
+     public VO.PagoVO consultarPago(String id_alumno) {
+         return getPagoDAO().consultarPago(id_alumno);
+     }
+
+    public PagoDAO getPagoDAO() {
+        return pagoDAO;
+    }
     
     
 }
