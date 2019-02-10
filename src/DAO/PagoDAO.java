@@ -86,6 +86,7 @@ public class PagoDAO {
                    String[] pagoArrayS = (String[]) pagoArray.getArray();
                     
                     pagoVO.setId_alumno(result.getInt("id_alumno"));
+                    pagoVO.setId_pago(result.getInt("id_pago"));
                     pagoVO.setSaldo_favor(result.getDouble("saldo_favor"));
                     pagoVO.setSaldo_pendiente(result.getDouble("saldo_pendiente"));
                     pagoVO.setTotal_pagado(result.getDouble("total_pagado"));

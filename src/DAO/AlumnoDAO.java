@@ -29,6 +29,7 @@ public class AlumnoDAO {
 
     private Coordinador coordinador;
     private final String tabla = "alumno";
+    private RegistroPagoDAO registroPagoDAO;
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -276,6 +277,10 @@ public class AlumnoDAO {
             return model = null;
         }
         return model;
+    }
+
+    public void setCoordinador(RegistroPagoDAO registroPagoDAO) {
+        this.registroPagoDAO = registroPagoDAO;
     }
 
 }

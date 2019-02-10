@@ -46,6 +46,8 @@ public class frmPago extends javax.swing.JFrame {
     private double saldo_favorBD;
     private double saldo_pendienteBD;
     private double total_pagadoBD;
+    private double saldo_favor;
+    private double saldo_pendiente;
 
     /**
      * Creates new form frmPago
@@ -70,6 +72,7 @@ public class frmPago extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         txtConsultar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -93,6 +96,8 @@ public class frmPago extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblDiaCobro = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        lblMatricula = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -106,7 +111,6 @@ public class frmPago extends javax.swing.JFrame {
         jCheckBox10 = new javax.swing.JCheckBox();
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
         lblCuotasAPagar = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lblCuotasConMora = new javax.swing.JLabel();
@@ -134,6 +138,9 @@ public class frmPago extends javax.swing.JFrame {
         txtFechaEjecucion = new datechooser.beans.DateChooserCombo();
         jLabel22 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel27 = new javax.swing.JLabel();
         lblUsuarioActvo1 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -146,6 +153,7 @@ public class frmPago extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         lblTotalPagado = new javax.swing.JLabel();
         btnBorrar = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -213,7 +221,7 @@ public class frmPago extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPnombre.setEditable(false);
-        txtPnombre.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        txtPnombre.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         txtPnombre.setForeground(new java.awt.Color(255, 255, 255));
         txtPnombre.setToolTipText("");
         txtPnombre.setBorder(null);
@@ -234,10 +242,10 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel3.add(txtPnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 250, 40));
 
-        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Codigo");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 17, 60, 30));
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 17, 80, 30));
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -251,7 +259,7 @@ public class frmPago extends javax.swing.JFrame {
                 txtCodigoActionPerformed(evt);
             }
         });
-        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 26, 100, 20));
+        jPanel3.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 90, 30));
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -279,7 +287,7 @@ public class frmPago extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Mora ( % )");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 80, 20));
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 60, 20));
 
         lblMora.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblMora.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,12 +295,12 @@ public class frmPago extends javax.swing.JFrame {
         lblMora.setText("0");
         lblMora.setToolTipText("");
         lblMora.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 60, 20));
+        jPanel5.add(lblMora, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 60, 20));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Iva ( % )");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 90, 20));
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 50, 20));
 
         lblIva.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblIva.setForeground(new java.awt.Color(255, 255, 255));
@@ -300,12 +308,12 @@ public class frmPago extends javax.swing.JFrame {
         lblIva.setText("0");
         lblIva.setToolTipText("");
         lblIva.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel5.add(lblIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 60, 20));
+        jPanel5.add(lblIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 50, 20));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cada mes");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, 20));
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, 20));
 
         lblDiaCobro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblDiaCobro.setForeground(new java.awt.Color(255, 255, 255));
@@ -313,14 +321,27 @@ public class frmPago extends javax.swing.JFrame {
         lblDiaCobro.setText("0");
         lblDiaCobro.setToolTipText("");
         lblDiaCobro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel5.add(lblDiaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 40, 20));
+        jPanel5.add(lblDiaCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 40, 20));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Dia de Cobro");
-        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 100, 20));
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 80, 20));
 
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 420, 90));
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("Precio Matricula");
+        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 100, 20));
+
+        lblMatricula.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblMatricula.setForeground(new java.awt.Color(255, 255, 255));
+        lblMatricula.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMatricula.setText("0");
+        lblMatricula.setToolTipText("");
+        lblMatricula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanel5.add(lblMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 100, 20));
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 420, 80));
 
         jPanel6.setBackground(new java.awt.Color(2, 119, 189));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cuotas Canceladas / Pendientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -472,11 +493,6 @@ public class frmPago extends javax.swing.JFrame {
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 390, 120));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Pagado hasta Ahora");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, 140, 20));
-
         lblCuotasAPagar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCuotasAPagar.setForeground(new java.awt.Color(255, 255, 255));
         lblCuotasAPagar.setText("0");
@@ -515,32 +531,32 @@ public class frmPago extends javax.swing.JFrame {
         txtFechaComprobante.setNothingAllowed(false);
         txtFechaComprobante.setEnabled(false);
         txtFechaComprobante.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel4.add(txtFechaComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 240, -1));
+        jPanel4.add(txtFechaComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 240, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Registro Nº:");
+        jLabel10.setText("Tipo de Pago:");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 20));
 
         lblFecha.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(255, 255, 255));
         lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel4.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 90, 20));
+        jPanel4.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 90, 20));
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nombre y Apellido: ");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 140, 20));
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Modo de Pago:");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 110, 20));
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, 20));
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Numero de Referencia:");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 170, 20));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 170, 20));
 
         cbxPago.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         cbxPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Debito", "Credito", "Transferencia", "Deposito" }));
@@ -550,18 +566,18 @@ public class frmPago extends javax.swing.JFrame {
                 cbxPagoActionPerformed(evt);
             }
         });
-        jPanel4.add(cbxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 130, 20));
+        jPanel4.add(cbxPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 130, 20));
 
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtNombre.setEnabled(false);
-        jPanel4.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 280, -1));
+        jPanel4.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 280, -1));
 
         lblRegistro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblRegistro.setForeground(new java.awt.Color(255, 255, 255));
         lblRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRegistro.setToolTipText("");
         lblRegistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel4.add(lblRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 120, 20));
+        jPanel4.add(lblRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, 20));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -570,12 +586,12 @@ public class frmPago extends javax.swing.JFrame {
 
         txtReferencia.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtReferencia.setEnabled(false);
-        jPanel4.add(txtReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 240, -1));
+        jPanel4.add(txtReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, -1));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Fecha:");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 50, 20));
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 50, 20));
 
         txtMonto.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtMonto.setText("0");
@@ -597,17 +613,17 @@ public class frmPago extends javax.swing.JFrame {
                 txtMontoKeyTyped(evt);
             }
         });
-        jPanel4.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 110, -1));
+        jPanel4.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 110, -1));
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Fecha del Comprobante:");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 180, 20));
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 180, 20));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Banco Emisor:");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 110, 20));
+        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 110, 20));
 
         cbxBanco.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         cbxBanco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banco de Venezuela S.A.C.A. Banco Universal", "Venezolano de Crédito, S.A. Banco Universal", "Banco Mercantil, C.A S.A.C.A. Banco Universal", "Banco Provincial, S.A. Banco Universal", "Bancaribe C.A. Banco Universal", "Banco Exterior C.A. Banco Universal", "Banco Occidental de Descuento, Banco Universal C.A.", "Banco Caroní C.A. Banco Universal", "Banesco Banco Universal S.A.C.A.", "Banco Sofitasa Banco Universal", "Banco Plaza Banco Universal", "Banco de la Gente Emprendedora C.A.", "Banco del Pueblo Soberano, C.A. Banco de Desarrollo", "BFC Banco Fondo Común C.A Banco Universal", "100% Banco, Banco Universal C.A.", "DelSur Banco Universal, C.A.", "Banco del Tesoro, C.A. Banco Universal", "Banco Agrícola de Venezuela, C.A. Banco Universal", "Bancrecer, S.A. Banco Microfinanciero", "Mi Banco Banco Microfinanciero C.A.", "Banco Activo, C.A. Banco Universal", "Bancamiga Banco Microfinanciero C.A.", "Banco Internacional de Desarrollo, C.A. Banco Universal", "Banplus Banco Universal, C.A.", "Banco Bicentenario Banco Universal C.A.", "Banco Espirito Santo, S.A. Sucursal Venezuela B.U.", "Banco de la Fuerza Armada Nacional Bolivariana, B.U.", "Banco Nacional de Crédito, C.A. Banco Universal", "Instituto Municipal de Crédito Popular" }));
@@ -617,33 +633,65 @@ public class frmPago extends javax.swing.JFrame {
                 cbxBancoActionPerformed(evt);
             }
         });
-        jPanel4.add(cbxBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 310, -1));
+        jPanel4.add(cbxBanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 310, -1));
 
         jLabel20.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Numero de Transaccion:");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 180, 20));
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 180, 20));
 
         txtTransaccion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtTransaccion.setEnabled(false);
-        jPanel4.add(txtTransaccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 240, -1));
+        jPanel4.add(txtTransaccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 240, -1));
 
         txtFechaEjecucion.setNothingAllowed(false);
         txtFechaEjecucion.setEnabled(false);
         txtFechaEjecucion.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel4.add(txtFechaEjecucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, -1));
+        jPanel4.add(txtFechaEjecucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 240, -1));
 
         jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Fecha de Ejecucion:");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 150, 20));
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 20));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Monto:");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 50, 20));
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 40, 20));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 420, 270));
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("Nuevo Registro");
+        jRadioButton1.setEnabled(false);
+        jRadioButton1.setOpaque(false);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setText("Saldo Pendiente");
+        jRadioButton2.setEnabled(false);
+        jRadioButton2.setOpaque(false);
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Registro Nº:");
+        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 90, 20));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 420, 290));
 
         lblUsuarioActvo1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblUsuarioActvo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -721,37 +769,36 @@ public class frmPago extends javax.swing.JFrame {
         });
         jPanel2.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 110, 30));
 
+        jLabel29.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Pagado:");
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 50, 20));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        if (Double.parseDouble(txtMonto.getText()) > 0) {
-            if (Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
-                pagar(obtenerDatos());
-            } else {
-                JOptionPane.showMessageDialog(this, "Seleccion al menos una cuota a pagar");
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un Monto");
+        if (validaciones()) {
+            pagar(obtenerDatos());
         }
-
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-
+this.dispose();
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         if (!txtConsultar.getText().isEmpty()) {
-            consultarPrecios();
             codigo = txtConsultar.getText().trim();
-            //borrarCampos();
+            borrarCampos();
+             consultarPrecios();
             consultarDatosAlumnos(codigo);
         } else {
             JOptionPane.showMessageDialog(this, "Ingrese un codigo");
             habilitarBotones(false);
+            borrarCampos();
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
@@ -760,15 +807,18 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtConsultarActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        calculosCheck(jCheckBox6, "06");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox6, "06-"+año);
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        calculosCheck(jCheckBox1, "01");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox1, "01-"+año);
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        calculosCheck(jCheckBox4, "04");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox4, "04-"+año);
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void txtPnombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPnombreKeyPressed
@@ -784,15 +834,18 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        calculosCheck(jCheckBox2, "02");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox2, "02-"+año);
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        calculosCheck(jCheckBox3, "03");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox3, "03-"+año);
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        calculosCheck(jCheckBox5, "05");
+String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox5, "05-"+año);
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void txtPnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPnombreActionPerformed
@@ -805,9 +858,11 @@ public class frmPago extends javax.swing.JFrame {
             txtFechaComprobante.setEnabled(true);
             txtFechaEjecucion.setEnabled(false);
             txtReferencia.setEnabled(false);
+            txtReferencia.setText("");
             cbxBanco.setEnabled(false);
         } else if (cbxPago.getSelectedIndex() == 3 || cbxPago.getSelectedIndex() == 4) {
             txtTransaccion.setEnabled(false);
+            txtTransaccion.setText("");
             txtFechaComprobante.setEnabled(false);
             txtFechaEjecucion.setEnabled(true);
             txtReferencia.setEnabled(true);
@@ -828,8 +883,9 @@ public class frmPago extends javax.swing.JFrame {
 
     private void txtMontoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoKeyReleased
         if (!"".equals(txtMonto.getText())) {
-            lblTotalPagado.setText("" + (Double.parseDouble(txtMonto.getText()) - saldo_pendienteBD));
+            lblTotalPagado.setText(""+Double.parseDouble( txtMonto.getText( ) ) );
             calculoCuotas("0");
+
         } else {
             lblTotalPagado.setText("0");
             calculoCuotas("0");
@@ -841,27 +897,33 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMontoKeyTyped
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
-        calculosCheck(jCheckBox12, "12");
+        String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(0, 4);
+        calculosCheck(jCheckBox12, "12-"+año);
     }//GEN-LAST:event_jCheckBox12ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        calculosCheck(jCheckBox7, "07");
+    String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox7, "07-"+año);
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
-        calculosCheck(jCheckBox8, "08");
+    String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        calculosCheck(jCheckBox8, "08-"+año);
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
     private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
-        calculosCheck(jCheckBox9, "09");
+        String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(0, 4);
+        calculosCheck(jCheckBox9, "09-"+año);
     }//GEN-LAST:event_jCheckBox9ActionPerformed
 
     private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
-        calculosCheck(jCheckBox10, "10");
+        String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(0, 4);
+        calculosCheck(jCheckBox10, "10-"+año);
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
     private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
-        calculosCheck(jCheckBox11, "11");
+        String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(0, 4);
+        calculosCheck(jCheckBox11, "11-"+año);
     }//GEN-LAST:event_jCheckBox11ActionPerformed
 
     private void txtMontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoKeyPressed
@@ -875,6 +937,48 @@ public class frmPago extends javax.swing.JFrame {
     private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMontoActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        if (saldo_favorBD>total_a_pagar) {
+           lblRegistro.setText("");
+           lblFecha.setText("");
+           txtNombre.setText("");
+           txtNombre.setEnabled(false);
+           txtMonto.setEnabled(false);
+           txtMonto.setText("0");
+           cbxPago.setSelectedIndex(0);
+           cbxPago.setEnabled(false);
+           txtTransaccion.setEnabled(false);
+           txtTransaccion.setText("");
+           txtFechaComprobante.setEnabled(false);
+           cbxBanco.setSelectedIndex(0);
+           cbxBanco.setEnabled(false);
+           txtReferencia.setEnabled(false);
+           txtReferencia.setText("");
+           txtFechaEjecucion.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "El saldo a favor  no cubre el total a pagar.");
+        }
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+          lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
+           lblFecha.setText(coordinador.getFechaFormateada());
+           txtNombre.setText("");
+           txtNombre.setEnabled(true);
+           txtMonto.setEnabled(true);
+           txtMonto.setText("0");
+           cbxPago.setSelectedIndex(0);
+           cbxPago.setEnabled(true);
+           txtTransaccion.setEnabled(true);
+           txtTransaccion.setText("");
+           txtFechaComprobante.setEnabled(true);
+           cbxBanco.setSelectedIndex(0);
+           cbxBanco.setEnabled(true);
+           txtReferencia.setEnabled(true);
+           txtReferencia.setText("");
+           txtFechaEjecucion.setEnabled(true);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -920,6 +1024,7 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnGuardar1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbxBanco;
     private javax.swing.JComboBox<String> cbxPago;
     private javax.swing.JCheckBox jCheckBox1;
@@ -953,10 +1058,12 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -966,6 +1073,8 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JLabel lblCuota;
     private javax.swing.JLabel lblCuotasAPagar;
     private javax.swing.JLabel lblCuotasAPendientes;
@@ -973,6 +1082,7 @@ public class frmPago extends javax.swing.JFrame {
     private javax.swing.JLabel lblDiaCobro;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblIva;
+    private javax.swing.JLabel lblMatricula;
     private javax.swing.JLabel lblMora;
     private javax.swing.JLabel lblRegistro;
     private javax.swing.JLabel lblSaldoFavor;
@@ -1057,6 +1167,9 @@ public class frmPago extends javax.swing.JFrame {
         lblMora.setText("" + variablesVO.getPrecio_mora());
         lblDiaCobro.setText("" + variablesVO.getDias_mora());
         lblIva.setText("" + variablesVO.getIva());
+        double valorMatricula = 0 ;
+        valorMatricula = (Double.parseDouble( lblCuota.getText() ) + ( Double.parseDouble ( lblCuota.getText() ) * Double.parseDouble( lblIva.getText() ) / 100) )* 12 ;
+        lblMatricula.setText(valorMatricula+"");
     }
 
     private void calculoCuotas(String valor) {
@@ -1066,11 +1179,11 @@ public class frmPago extends javax.swing.JFrame {
         iva = Double.parseDouble(lblIva.getText());
         totalPagado = Double.parseDouble(lblTotalPagado.getText());
         cuotasMora = Double.parseDouble(lblCuotasConMora.getText().trim());
+        saldo_favor = Double.parseDouble(lblSaldoFavor.getText().trim());
+        saldo_pendiente = Double.parseDouble(lblSaldoPendiente.getText().trim());
         if ("1".equals(valor)) {
-            cuotas_a_pagar++;
             logicaPago();
         } else if ("-1".equals(valor)) {
-            cuotas_a_pagar--;
             logicaPago();
 
         } else if ("0".equals(valor)) {
@@ -1080,38 +1193,62 @@ public class frmPago extends javax.swing.JFrame {
 
     private void logicaPago() {
         double total_con_descuento = 0;
+        
+        //calculo a pagar con cuotas
         total_a_pagar = cuotas_a_pagar * precioCuota + (cuotasMora * precioCuota * (mora / 100));
         total_a_pagar = total_a_pagar + (total_a_pagar * (iva / 100));
         
-        //compruebo si el saldo a favor es mayor que el monto a pagar para no reflejar valores negativos
-        if (saldo_favorBD > total_a_pagar) {
-            total_con_descuento = saldo_favorBD - total_a_pagar ;
-        } else {
-            total_con_descuento =  total_a_pagar - saldo_favorBD ;
+        //compruebo saldo de bd y lo resto al total a pagar
+        if (saldo_favorBD>0 && total_a_pagar > 0) {
+            total_a_pagar = total_a_pagar - saldo_favorBD;
         }
-
-        if (total_con_descuento > total_a_pagar) {
-            total_a_pagar = 0;
-            lblSaldoFavor.setText(""+total_con_descuento);
-        } else {
-            total_a_pagar = total_a_pagar-total_con_descuento;
+          //compruebo saldo pendiente de bd y lo sumo al total a pagar
+        if (saldo_pendienteBD>0 && total_a_pagar > 0) {
+            total_a_pagar = total_a_pagar + saldo_pendienteBD;
+        }
+        if (total_a_pagar>=0) {
+             lblTotal.setText("" + total_a_pagar);
+        }else{
+             lblTotal.setText("0");
+        }
+      
+       //asigno total pagado
+       lblTotalCancelado.setText(String.valueOf(totalPagado+total_pagadoBD));
+        
+       //asigno saldo a favor o pendiente
+        if (totalPagado < total_a_pagar) {
+            lblSaldoPendiente.setText(String.valueOf(total_a_pagar-totalPagado));
             lblSaldoFavor.setText("0");
-            lblTotal.setText("" + (total_a_pagar));
+        }else{
+            lblSaldoFavor.setText(String.valueOf(totalPagado-total_a_pagar));
+            lblSaldoPendiente.setText("0");
         }
         
-        lblCuotasAPagar.setText("" + cuotas_a_pagar);
-//        if (totalPagado - total_a_pagar - saldo_pendienteBD > 0) {
-//            lblSaldoFavor.setText("" + (totalPagado - total_a_pagar - saldo_pendienteBD));
-//        } else {
-//            lblSaldoFavor.setText("0");
-//        }
-//
-//        if (total_a_pagar - totalPagado - saldo_pendienteBD > 0) {
-//            lblSaldoPendiente.setText("" + (total_a_pagar - totalPagado - saldo_pendienteBD));
-//        } else {
-//            lblSaldoPendiente.setText("" + (totalPagado - saldo_pendienteBD));
-//        }
-
+        //muestro saldos
+        if (total_a_pagar==0 && cuotas_a_pagar==0) {
+            lblSaldoFavor.setText(""+saldo_favorBD);
+            lblSaldoPendiente.setText(""+saldo_pendienteBD);
+        }
+       
+        //proceso para saldo pendiente con todas cuotas pagas
+        if (Double.parseDouble(lblCuotasAPendientes.getText()) ==0 && saldo_pendiente > 0) {
+            if (saldo_pendienteBD > 0 && total_a_pagar == 0) {
+                total_a_pagar = total_a_pagar + saldo_pendienteBD;
+            }
+            lblTotal.setText("" + total_a_pagar);
+            
+                   //asigno saldo a favor o pendiente
+        if (totalPagado < total_a_pagar) {
+            lblSaldoPendiente.setText(String.valueOf(total_a_pagar-totalPagado));
+            lblSaldoFavor.setText("0");
+        }else{
+            lblSaldoFavor.setText(String.valueOf(totalPagado-total_a_pagar));
+            lblSaldoPendiente.setText("0");
+        }
+//                if (totalPagado==0) {
+//                lblSaldoPendiente.setText(""+saldo_pendienteBD);
+//            }
+         }
     }
 
     private void habilitarBotones(boolean b) {
@@ -1130,6 +1267,8 @@ public class frmPago extends javax.swing.JFrame {
         jCheckBox10.setEnabled(b);
         jCheckBox11.setEnabled(b);
         jCheckBox12.setEnabled(b);
+        jRadioButton1.setEnabled(b);
+        jRadioButton2.setEnabled(b);
     }
 
     private void validacionSoloNumerosYPunto(KeyEvent evt, int maximo, int lim) {
@@ -1142,16 +1281,6 @@ public class frmPago extends javax.swing.JFrame {
             evt.consume();
             getToolkit().beep();
         }
-    }
-
-    private void calculo() {
-        lblTotal.setText(txtMonto.getText());
-        float monto = Float.valueOf(txtMonto.getText());
-        double precio_cuota = coordinador.getVariablesDAO().consultarVariables().getPrecio_cuota();
-        int cuotaspagadas = (int) (monto / precio_cuota);
-        double montoabono = monto % precio_cuota;
-        System.out.println(montoabono);
-        System.out.println(cuotaspagadas);
     }
 
     private boolean isCuotaMora(String fechas) {
@@ -1170,19 +1299,21 @@ public class frmPago extends javax.swing.JFrame {
         }
     }
 
-    private void calculosCheck(JCheckBox jCheckBox, String mes) {
+    private void calculosCheck(JCheckBox jCheckBox, String mesyaño) {
         if (jCheckBox.isSelected()) {
-            String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
-            if (isCuotaMora(lblDiaCobro.getText() + "-" + mes + "-" + año)) {
+            if (isCuotaMora(lblDiaCobro.getText() + "-" + mesyaño)) {
                 lblCuotasConMora.setText("" + (Integer.parseInt(lblCuotasConMora.getText()) + 1));
             }
+             lblCuotasAPagar.setText("" + (Integer.parseInt(lblCuotasAPagar.getText()) + 1));
+             lblCuotasAPendientes.setText("" + (Integer.parseInt(lblCuotasAPendientes.getText()) - 1));
             calculoCuotas("1");
         } else {
-            String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
-            if (isCuotaMora(lblDiaCobro.getText() + "-" + mes + "-" + año)) {
+            if (isCuotaMora(lblDiaCobro.getText() + "-" + mesyaño)) {
                 lblCuotasConMora.setText("" + (Integer.parseInt(lblCuotasConMora.getText()) - 1));
             }
-            calculoCuotas("-1");
+           lblCuotasAPagar.setText("" + (Integer.parseInt(lblCuotasAPagar.getText()) - 1));
+           lblCuotasAPendientes.setText("" + (Integer.parseInt(lblCuotasAPendientes.getText()) +1));
+           calculoCuotas("-1");
         }
     }
 
@@ -1309,6 +1440,7 @@ public class frmPago extends javax.swing.JFrame {
         lblDiaCobro.setText("0");
         lblDiaCobro.setText("0");
         txtCodigo.setText("");
+         lblMatricula.setText("");
         txtPnombre.setText("");
         ajustar(lblfoto, ICON_NO_PHOTO);
         ajustar(lblfoto, ICON_NO_PHOTO);
@@ -1346,6 +1478,10 @@ public class frmPago extends javax.swing.JFrame {
         lblSaldoPendiente.setText("0");
         lblTotalCancelado.setText("0");
 
+        jRadioButton1.setSelected(true);
+        jRadioButton2.setSelected(false);
+        jRadioButton1.setEnabled(false);
+        jRadioButton2.setEnabled(false);
         lblRegistro.setText("");
         lblFecha.setText("");
         txtNombre.setText("");
@@ -1362,6 +1498,16 @@ public class frmPago extends javax.swing.JFrame {
         txtReferencia.setEnabled(false);
         txtReferencia.setText("");
         txtFechaEjecucion.setEnabled(false);
+        
+        totalPagado=0;
+        total_a_pagar=0;
+        total_pagadoBD=0;
+         cuotas_a_pagar = 0;
+        precioCuota = 0;
+        mora = 0;
+        iva = 0;
+        totalPagado = 0;
+        cuotasMora = 0;
     }
 
     private void cuotasRestantes(PagoVO consultarPago) {
@@ -1380,13 +1526,13 @@ public class frmPago extends javax.swing.JFrame {
         /**
          * pagos consulta
          */
-
         PagoVO consultarPago = coordinador.getPagoDAO().consultarPago(codigo);
         if (consultarPago.getCuotas() != null) {
             habilitarBotones(true);
             id_pago = consultarPago.getId_pago();
             lblSaldoFavor.setText("" + consultarPago.getSaldo_favor());
             lblSaldoPendiente.setText("" + consultarPago.getSaldo_pendiente());
+            lblTotalCancelado.setText("" + consultarPago.getTotal_pagado());
 
             //asigno valores desde la bd a datos locales para hacer calculos
             saldo_favorBD = consultarPago.getSaldo_favor();
@@ -1451,11 +1597,102 @@ public class frmPago extends javax.swing.JFrame {
 
             //consulto pago si existe
             coonsultarPago();
+            
+            //si no hay cuotas pendientes verifico si hay saldo pendiente
+            verificarSolvencia();
         } else {
             JOptionPane.showMessageDialog(this, "Codigo: " + txtConsultar.getText() + " no existe en la Base de Datos");
             borrarCampos();
             habilitarBotones(false);
         }
+    }
+
+    private void verificarSolvencia() {
+           if (jCheckBox1.isSelected() && jCheckBox2.isSelected() && jCheckBox3.isSelected() && jCheckBox4.isSelected() &&
+                   jCheckBox5.isSelected() && jCheckBox6.isSelected() && jCheckBox7.isSelected() && jCheckBox8.isSelected() &&
+                   jCheckBox9.isSelected() && jCheckBox10.isSelected() && jCheckBox11.isSelected() && jCheckBox12.isSelected() && Double.parseDouble(lblSaldoPendiente.getText()) == 0) {
+               verificarAjuste();
+//                JOptionPane.showMessageDialog(this, "El Alumno: "+txtPnombre.getText()+" se encuentra solvente en el periodo "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual()+" \nCon Saldo a Favor de: "+saldo_favorBD);
+//                borrarCampos();                       
+           }
+    }
+
+    private boolean validaciones() {
+        if (jRadioButton2.isSelected()) {
+            if (Double.parseDouble(lblSaldoPendiente.getText())<=0) {
+                System.out.println("pago efectivo");
+                return  true;
+            } else {
+                JOptionPane.showMessageDialog(this, "No puede quedar saldo pendiente");
+                return false;
+            }
+        } else {
+            if (Double.parseDouble(txtMonto.getText()) > 0) {
+                if (!txtNombre.getText().isEmpty()) {
+                    if (cbxPago.getSelectedIndex() == 1 || cbxPago.getSelectedIndex() == 2) {
+                        if (!txtTransaccion.getText().isEmpty()) {
+                            if (Double.parseDouble(lblCuotasAPendientes.getText()) >= 0 && Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
+                                return true;
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                return false;
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Numero de transaccion no puede estar en blanco");
+                            return false;
+                        }
+                    } else if (cbxPago.getSelectedIndex() == 3 || cbxPago.getSelectedIndex() == 4) {
+                        if (!txtReferencia.getText().isEmpty()) {
+                            if (Double.parseDouble(lblCuotasAPendientes.getText()) >= 0 && Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
+                                return true;
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                return false;
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Numero de Referencia no puede estar en blanco");
+                            return false;
+                        }
+                    } else {
+                        if (Double.parseDouble(lblCuotasAPendientes.getText()) >= 0 && Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
+                            return true;
+                        } else {
+                              if (Double.parseDouble(lblCuotasAPendientes.getText()) == 0 && Double.parseDouble(lblCuotasAPagar.getText()) == 0) {
+                            return true;
+                        }else{
+                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                return false;
+                            }
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "El nombre no puede estar vacio");
+                    return false;
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Ingrese un Monto");
+                return false;
+            }
+        }
+    }
+
+    private void verificarAjuste() {
+            double ajuste = Double.parseDouble(lblMatricula.getText()) - Double.parseDouble(lblTotalCancelado.getText());
+            saldo_pendienteBD = ajuste;
+           if (ajuste > 0) {
+               if (Double.parseDouble(lblSaldoPendiente.getText()) == 0 ) {
+                   lblSaldoPendiente.setText(ajuste+"");
+                   lblTotal.setText(ajuste+"");
+               }else{
+                    lblSaldoPendiente.setText(""+(ajuste+Double.parseDouble(lblSaldoPendiente.getText())));
+                    lblTotal.setText(""+(ajuste+Double.parseDouble(lblSaldoPendiente.getText())));
+               }
+           }else{
+                if (Double.parseDouble(lblSaldoPendiente.getText()) <= 0 ) {
+                 JOptionPane.showMessageDialog(this, "El Alumno: "+txtPnombre.getText()+" se encuentra solvente en el periodo "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual()+" \nCon Saldo a Favor de: "+saldo_favorBD);
+                borrarCampos();
+                 }
+           }
     }
 
 }

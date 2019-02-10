@@ -12,6 +12,7 @@ import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.NotaDAO;
 import DAO.PagoDAO;
+import DAO.RegistroPagoDAO;
 import DAO.RepresentanteDAO;
 import DAO.RequisitosDAO;
 import DAO.UsuarioDAO;
@@ -71,6 +72,7 @@ public class Coordinador {
     private frmNotas frmNotas;
     private frmPago frmPago;
     private PagoDAO pagoDAO;
+    private RegistroPagoDAO registroPagoDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -511,6 +513,20 @@ public class Coordinador {
     public PagoDAO getPagoDAO() {
         return pagoDAO;
     }
+
+    public void setRegistroPagoDAO(RegistroPagoDAO registroPagoDAO) {
+       this.registroPagoDAO = registroPagoDAO;
+    }
+
+    public RegistroPagoDAO getRegistroPagoDAO() {
+        return registroPagoDAO;
+    }
     
+    public String registrarRegistroPago(VO.RegistroPagoVO registroPagoVO) {
+        return getRegistroPagoDAO().registrarRegistroPago(registroPagoVO);
+    }
     
+     public int llenarCodigoRegistroPago() {
+         return getRegistroPagoDAO().llenarCodigoRegistroPago();
+     }
 }
