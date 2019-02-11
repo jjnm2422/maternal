@@ -272,13 +272,17 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
                 if (tblDocenteI.getRowCount() > 0) {
                     respuesta = coordinador.registrarAsistenciaEmpleado((DefaultTableModel) tblDocenteI.getModel(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
-                JOptionPane.showMessageDialog(this, respuesta);
+                if (respuesta.equals("INSERT")) {
+                    coordinador.getLogica().mensajeCorrecto("Asistencia guardada con exito");
+                }else{
+                     coordinador.getLogica().mensajeError("Error al guardar Asistencia");
+                }
                 coordinador.borrarTablas(tblDocenteA, tblDocenteI);
             } else {
-                JOptionPane.showMessageDialog(this, "Lista de docente vacia, pulse el boton llenar lista");
+                coordinador.getLogica().mensajeError("Lista de docente vacia, pulse el boton llenar lista");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Docentes  pendientes por pasar asistencia");
+             coordinador.getLogica().mensajeError("Docentes  pendientes por pasar asistencia");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -329,7 +333,7 @@ public class frmDocenteAsistencia extends javax.swing.JFrame {
 
     private void btnLlenarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLlenarListaActionPerformed
         if (coordinador.consultarAsistenciaDelDia(coordinador.getFechaFormateada())) {
-            JOptionPane.showMessageDialog(this, "Asistencia lista el dia de hoy");
+             coordinador.getLogica().mensajeError("Asistencia lista el dia de hoy");
         } else {
             llenarTabla();
         }

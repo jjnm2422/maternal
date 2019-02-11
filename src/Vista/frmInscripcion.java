@@ -1133,47 +1133,48 @@ public class frmInscripcion extends javax.swing.JFrame {
                                 if (registrarRepresentante3()) {
                                     if (registrarMatricula()) {
                                         if (registrarRequisitos()) {
-                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
                                         } else {
-                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
+                                            
                                         }
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
                                     }
                                     borrarCampos();
                                 } else {
-                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
                                 }                               
                             } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
+                                coordinador.getLogica().mensajeError("problemas al registar representante 2");
                             }
                         } else {
                                 if (registrarRepresentante3()) {
                                     if (registrarMatricula()) {
                                         if (registrarRequisitos()) {
-                                            JOptionPane.showMessageDialog(this, "Inscripcion completada");
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
                                         } else {
-                                            JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
                                         }
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al incluir en matricula");
+                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
                                     }
                                     borrarCampos();
                                 } else {
-                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
                                 } 
                         }
                     } else {
-                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
+                        coordinador.getLogica().mensajeError("problemas al registar representante 1");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
+                    coordinador.getLogica().mensajeError("problemas al registar alumno");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "campos representante vacio.");
+                coordinador.getLogica().mensajeAdvertencia("campos representante vacio.");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
+           coordinador.getLogica().mensajeAdvertencia("faltan campos en alumnos");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -1436,11 +1437,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                 //datos de observacion
                 txtObservacion.setText(requisitosVO.getObservaciones());
             } else {
-                JOptionPane.showMessageDialog(this, "Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
+                coordinador.getLogica().mensajeError("Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
                 borrarCampos();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
         }
 
 
@@ -1465,7 +1466,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     lblfoto.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                   coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1496,7 +1497,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     lblfoto1.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1531,7 +1532,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     lblfoto2.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1592,7 +1593,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     lblfoto3.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();

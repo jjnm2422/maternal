@@ -167,6 +167,11 @@ public class frmPago extends javax.swing.JFrame {
                 txtConsultarActionPerformed(evt);
             }
         });
+        txtConsultar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtConsultarKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -570,6 +575,11 @@ public class frmPago extends javax.swing.JFrame {
 
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtNombre.setEnabled(false);
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 280, -1));
 
         lblRegistro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -586,6 +596,11 @@ public class frmPago extends javax.swing.JFrame {
 
         txtReferencia.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtReferencia.setEnabled(false);
+        txtReferencia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtReferenciaKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 240, -1));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -642,6 +657,11 @@ public class frmPago extends javax.swing.JFrame {
 
         txtTransaccion.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtTransaccion.setEnabled(false);
+        txtTransaccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTransaccionKeyTyped(evt);
+            }
+        });
         jPanel4.add(txtTransaccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 240, -1));
 
         txtFechaEjecucion.setNothingAllowed(false);
@@ -796,7 +816,7 @@ this.dispose();
              consultarPrecios();
             consultarDatosAlumnos(codigo);
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+             coordinador.getLogica().mensajeError("Ingrese un codigo");
             habilitarBotones(false);
             borrarCampos();
         }
@@ -893,7 +913,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
     }//GEN-LAST:event_txtMontoKeyReleased
 
     private void txtMontoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoKeyTyped
-        validacionSoloNumerosYPunto(evt, 10, txtMonto.getText().length());
+        validacionSoloNumerosYPunto(evt, 15, txtMonto.getText().length());
     }//GEN-LAST:event_txtMontoKeyTyped
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
@@ -957,7 +977,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
            txtReferencia.setText("");
            txtFechaEjecucion.setEnabled(false);
         } else {
-            JOptionPane.showMessageDialog(this, "El saldo a favor  no cubre el total a pagar.");
+             coordinador.getLogica().mensajeError("El saldo a favor  no cubre el total a pagar.");
         }
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
@@ -979,6 +999,22 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
            txtReferencia.setText("");
            txtFechaEjecucion.setEnabled(true);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+validacionSoloLetras(evt, 15, txtPnombre.getText().length());
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtTransaccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTransaccionKeyTyped
+        validacionSoloNumeros(evt, 15, txtMonto.getText().length());
+    }//GEN-LAST:event_txtTransaccionKeyTyped
+
+    private void txtReferenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReferenciaKeyTyped
+        validacionSoloNumeros(evt, 15, txtMonto.getText().length());
+    }//GEN-LAST:event_txtReferenciaKeyTyped
+
+    private void txtConsultarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConsultarKeyTyped
+        validacionSoloNumeros(evt, 10, txtMonto.getText().length());
+    }//GEN-LAST:event_txtConsultarKeyTyped
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -1348,7 +1384,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
             if (actualizarPago.equals("DATOS ACTUALIZADOS")) {
                 registrarComprobante(registroPagoVO);
             } else {
-                JOptionPane.showMessageDialog(this, "Problemas al Actualizar pago");
+                 coordinador.getLogica().mensajeError("Problemas al Actualizar pago");
             }
         } else {
             //no hubo resultado ingreso un nuevo registro para el alumno
@@ -1377,7 +1413,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
             if (registrarPago.equals("INGRESADO CON EXITO")) {
                 registrarComprobante(registroPagoVO);
             } else {
-                JOptionPane.showMessageDialog(this, "Problemas al registrar pago 1");
+                coordinador.getLogica().mensajeAdvertencia("Problemas al registrar pago 1");
             }
         }
         /**
@@ -1388,10 +1424,10 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
     private void registrarComprobante(RegistroPagoVO registroPagoVO) {
         String registrarRegistroPago = coordinador.registrarRegistroPago(registroPagoVO);
         if (registrarRegistroPago.equals("INGRESADO CON EXITO")) {
-            JOptionPane.showMessageDialog(this, "Pago registrado con exito");
+             coordinador.getLogica().mensajeCorrecto("Pago registrado con exito");
             borrarCampos();
         } else {
-            JOptionPane.showMessageDialog(this, "Problemas al registrar pago 2");
+             coordinador.getLogica().mensajeError("Problemas al registrar pago 2");
         }
     }
 
@@ -1601,7 +1637,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
             //si no hay cuotas pendientes verifico si hay saldo pendiente
             verificarSolvencia();
         } else {
-            JOptionPane.showMessageDialog(this, "Codigo: " + txtConsultar.getText() + " no existe en la Base de Datos");
+            coordinador.getLogica().mensajeError("Codigo: " + txtConsultar.getText() + " no existe en la Base de Datos");
             borrarCampos();
             habilitarBotones(false);
         }
@@ -1623,7 +1659,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
                 System.out.println("pago efectivo");
                 return  true;
             } else {
-                JOptionPane.showMessageDialog(this, "No puede quedar saldo pendiente");
+                coordinador.getLogica().mensajeError("No puede quedar saldo pendiente");
                 return false;
             }
         } else {
@@ -1634,11 +1670,11 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
                             if (Double.parseDouble(lblCuotasAPendientes.getText()) >= 0 && Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
                                 return true;
                             } else {
-                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                coordinador.getLogica().mensajeAdvertencia("Por Favor seleccione las cuotas a cancelar");
                                 return false;
                             }
                         } else {
-                            JOptionPane.showMessageDialog(this, "Numero de transaccion no puede estar en blanco");
+                             coordinador.getLogica().mensajeAdvertencia("Numero de transaccion no puede estar en blanco");
                             return false;
                         }
                     } else if (cbxPago.getSelectedIndex() == 3 || cbxPago.getSelectedIndex() == 4) {
@@ -1646,11 +1682,11 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
                             if (Double.parseDouble(lblCuotasAPendientes.getText()) >= 0 && Double.parseDouble(lblCuotasAPagar.getText()) > 0) {
                                 return true;
                             } else {
-                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                coordinador.getLogica().mensajeAdvertencia("Por Favor seleccione las cuotas a cancelar");
                                 return false;
                             }
                         } else {
-                            JOptionPane.showMessageDialog(this, "Numero de Referencia no puede estar en blanco");
+                            coordinador.getLogica().mensajeAdvertencia("Numero de Referencia no puede estar en blanco");
                             return false;
                         }
                     } else {
@@ -1660,17 +1696,17 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
                               if (Double.parseDouble(lblCuotasAPendientes.getText()) == 0 && Double.parseDouble(lblCuotasAPagar.getText()) == 0) {
                             return true;
                         }else{
-                                JOptionPane.showMessageDialog(this, "Por Favor seleccione las cuotas a cancelar");
+                                coordinador.getLogica().mensajeAdvertencia("Por Favor seleccione las cuotas a cancelar");
                                 return false;
                             }
                         }
                     }
                 } else {
-                    JOptionPane.showMessageDialog(this, "El nombre no puede estar vacio");
+                    coordinador.getLogica().mensajeAdvertencia("El nombre no puede estar vacio");
                     return false;
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Ingrese un Monto");
+                coordinador.getLogica().mensajeAdvertencia("Ingrese un Monto");
                 return false;
             }
         }
@@ -1689,7 +1725,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
                }
            }else{
                 if (Double.parseDouble(lblSaldoPendiente.getText()) <= 0 ) {
-                 JOptionPane.showMessageDialog(this, "El Alumno: "+txtPnombre.getText()+" se encuentra solvente en el periodo "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual()+" \nCon Saldo a Favor de: "+saldo_favorBD);
+                 coordinador.getLogica().mensajeCorrecto("El Alumno: "+txtPnombre.getText()+" se encuentra solvente en el periodo "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual()+" \nCon Saldo a Favor de: "+saldo_favorBD);
                 borrarCampos();
                  }
            }

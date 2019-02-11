@@ -293,8 +293,8 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
             JasperViewer visor = new JasperViewer(mostrarReporte, false);
             visor.setVisible(true);
         } catch (JRException ex) {
-            JOptionPane.showMessageDialog(null, "OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex, "ERROR", JOptionPane.ERROR_MESSAGE);
-}
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+    }
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed

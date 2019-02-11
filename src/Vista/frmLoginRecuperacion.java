@@ -223,13 +223,13 @@ public class frmLoginRecuperacion extends javax.swing.JFrame {
                 }
             } while (!entrada);
             } else {
-                JOptionPane.showMessageDialog(null, "Claves no Coinciden", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Claves no Coinciden");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Campos Vacios", "Informacion", JOptionPane.PLAIN_MESSAGE);
+          coordinador.getLogica().mensajeError("Campos Vacios");
         }
         }else{
-            JOptionPane.showMessageDialog(null, "Usuario no existe", "Informacion", JOptionPane.PLAIN_MESSAGE);
+            coordinador.getLogica().mensajeError("Usuario no existe");
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 

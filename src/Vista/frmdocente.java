@@ -664,19 +664,18 @@ this.dispose();
             empleadoVO.setFis(fis);
         }
         String res = coordinador.registrarEmpleado(empleadoVO);
-        if (res.equals("INGRESADO CON EXITO")) {
-            System.out.println("true");
+        if (res.equals("INSERT")) {
+           coordinador.getLogica().mensajeCorrecto("Datos del docente guardados con exito");
             borrarDatos1();
             jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             //return true;
         } else if (res.equals("ERROR_COD")) {
-              JOptionPane.showMessageDialog(this, "Cedula ingresada ya existe en la base de Datos");
+                         coordinador.getLogica().mensajeError("Cedula ingresada ya existe en la base de Datos");
         }else{
-          System.out.println("false");
-            //return false;
+          coordinador.getLogica().mensajeError("Error al registrar datos del docente");
         }
         } else {
-            JOptionPane.showMessageDialog(this, "faltan campos por llenar");
+            coordinador.getLogica().mensajeAdvertencia("faltan campos por llenar");
         }
         
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -700,7 +699,7 @@ this.dispose();
                     lblfoto1.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -734,7 +733,7 @@ this.dispose();
                     lblfoto2.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                     coordinador.getLogica().mensajeError("imagen: " + ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -755,15 +754,15 @@ Object opciones[] = {"Si", "No"};
             //elimino alumno requisitos
         if (coordinador.eliminarAsistenciaDocente(id_empleado).equals("ELIMINADO")) {
             if (coordinador.eliminarEmpleado(id_empleado).equals("ELIMINADO")) {
-                JOptionPane.showMessageDialog(this, "Eliminado con Exito");
+                 coordinador.getLogica().mensajeError("Eliminado con Exito");
                 borrarDatos();
                 habilitarDatos(false);
                  jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             } else {
-                JOptionPane.showMessageDialog(this, "Problemas al eliminar docente");
+                 coordinador.getLogica().mensajeError("Problemas al eliminar docente");
             }
         } else {
-        JOptionPane.showMessageDialog(this, "Problemas al eliminar asistencia");
+         coordinador.getLogica().mensajeError("Problemas al eliminar asistencia");
         }
         }    
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -786,12 +785,12 @@ Object opciones[] = {"Si", "No"};
         } 
         id_empleado = empleadoVO.getId_empleado();
         } else {
-            JOptionPane.showMessageDialog(this, "Cedula: "+txtCedula2.getText()+" no existe en la Base de Datos");
+             coordinador.getLogica().mensajeError("Cedula: "+txtCedula2.getText()+" no existe en la Base de Datos");
             borrarDatos();
             habilitarDatos(false);
         }
     } else {
-        JOptionPane.showMessageDialog(this, "Ingrese un numero de cedula");
+        coordinador.getLogica().mensajeError("Ingrese un numero de cedula");
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -828,7 +827,7 @@ Object opciones[] = {"Si", "No"};
         }        
         habilitarDatos(false);
     } else {
-        JOptionPane.showMessageDialog(this, "faltan campos por llenar");
+         coordinador.getLogica().mensajeError("faltan campos por llenar");
     }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -898,12 +897,12 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
         if (consultarEmpleadosCedulaTabla.getRowCount()!= 0) {
             jTable1.setModel(consultarEmpleadosCedulaTabla);
         } else {
-            JOptionPane.showMessageDialog(this, "Cedula: "+txtCedula5.getText()+" no existe en la Base de Datos");
+             coordinador.getLogica().mensajeError("Cedula: "+txtCedula5.getText()+" no existe en la Base de Datos");
             borrarDatos();
             habilitarDatos(false);
         }
     } else {
-        JOptionPane.showMessageDialog(this, "Ingrese un numero de cedula");
+         coordinador.getLogica().mensajeAdvertencia("Ingrese un numero de cedula");
     }     
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 

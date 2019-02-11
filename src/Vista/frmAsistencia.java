@@ -278,7 +278,7 @@ public class frmAsistencia extends javax.swing.JFrame {
             }
         } else {
             if (coordinador.getAsistenciaDAO().consultarAsistenciaDelDia(coordinador.getFechaFormateada(), cbxGrupo.getSelectedItem().toString())) {
-                JOptionPane.showMessageDialog(this, "Asistencia lista para esta seccion");
+                coordinador.getLogica().mensajeAdvertencia("Asistencia lista para esta seccion");
             } else {
                 this.llenarTabla(cbxGrupo.getSelectedItem().toString());
             }
@@ -295,13 +295,17 @@ public class frmAsistencia extends javax.swing.JFrame {
                 if (tblAlumnosI.getRowCount() > 0) {
                     respuesta = coordinador.registrarAsistenciaPorSeccion((DefaultTableModel) tblAlumnosI.getModel(), cbxGrupo.getSelectedItem().toString(), false, coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
                 }
-                JOptionPane.showMessageDialog(this, respuesta);
+                if (respuesta.equals("INSERT")) {
+                    coordinador.getLogica().mensajeCorrecto("Asistencia guardada con exito");
+                }else{
+                     coordinador.getLogica().mensajeError("Error al guardar Asistencia");
+                }
                 coordinador.borrarTablas(tblAlumnosA, tblAlumnosI);
             } else {
-                JOptionPane.showMessageDialog(this, "Seleccione una seccion");
+                coordinador.getLogica().mensajeAdvertencia("Seleccione una seccion");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Alumno pendientes por pasar asistencia");
+            coordinador.getLogica().mensajeError("Alumno pendientes por pasar asistencia");
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 

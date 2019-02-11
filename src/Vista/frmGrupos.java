@@ -1429,10 +1429,10 @@ public class frmGrupos extends javax.swing.JFrame {
                     model.removeRow(fila);
                     tblMatricula.setModel(model);
                 } else {
-                    JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                    coordinador.getLogica().mensajeError("La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
                 } 
             } else {
-                JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                coordinador.getLogica().mensajeError("La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
             }
         }
     }//GEN-LAST:event_tblMatriculaMouseClicked
@@ -1452,11 +1452,15 @@ public class frmGrupos extends javax.swing.JFrame {
                 matriculaVO.setSeccion(cbxSeccion.getSelectedItem().toString());
                 respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
             }
-            JOptionPane.showMessageDialog(this, respuesta);
+           if (respuesta.equals("UPDATE")) {
+                    coordinador.getLogica().mensajeCorrecto("Datos Actualizados con exito");
+                }else{
+                     coordinador.getLogica().mensajeError("Error al guardar datos");
+                }
             coordinador.borrarTablas(tblSeccion, tblMatricula);
             tblMatricula.setModel(coordinador.consultarMatriculaSinSeccion()); 
         } else {
-            JOptionPane.showMessageDialog(this, "consulte un seccion");
+            coordinador.getLogica().mensajeAdvertencia("Consulte un seccion");
         }    
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -1547,7 +1551,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     lblfoto1.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                   coordinador.getLogica().mensajeError(""+ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1622,7 +1626,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     lblfoto2.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError(""+ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1683,7 +1687,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     lblfoto3.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError(""+ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1724,45 +1728,44 @@ public class frmGrupos extends javax.swing.JFrame {
                             if (actualizarRepresentante2(2)) {
                                 if (actualizarRepresentante3(3)) {
                                     if (actualizarRequisitos()) {
-                                        JOptionPane.showMessageDialog(this, "Actualizacion completada");
+                                        coordinador.getLogica().mensajeCorrecto("Actualizacion completada");
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                        coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
                                     }
                                      borrarCampos();
                                         lblCodigo.setText("");
                                         campoPordefecto();
                                 } else {
-                                    JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                            coordinador.getLogica().mensajeError("Problemas al registrar representantes 3");
                                 }
                             } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 2");
+                                          coordinador.getLogica().mensajeError("Problemas al registrar representantes 2");
                             }
                         } else {
                             if (actualizarRepresentante3(3)) {
                                     if (actualizarRequisitos()) {
-                                        JOptionPane.showMessageDialog(this, "Actualizacion completada");
-                                       
+                                        coordinador.getLogica().mensajeCorrecto("Actualizacion completada");
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "Problemas al registrar requisitos");
+                                        coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
                                     }
                                 borrarCampos();
                                 lblCodigo.setText("");
                                 campoPordefecto();
                             } else {
-                                JOptionPane.showMessageDialog(this, "problemas al registar representante 3");
+                                coordinador.getLogica().mensajeError("Problemas al registrar representantes 3");
                             }
                         }
                     } else {
-                        JOptionPane.showMessageDialog(this, "problemas al registar representante 1");
+                        coordinador.getLogica().mensajeError("Problemas al registrar representantes 1");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(this, "problemas al registar alumno");
+                    coordinador.getLogica().mensajeError("Problemas al registrar alumno");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "campos representante vacio.");
+                coordinador.getLogica().mensajeAdvertencia("campos representante vacio");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "faltan campos en alumnos");
+             coordinador.getLogica().mensajeAdvertencia("faltan campos en alumnos");
         }
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
@@ -1813,7 +1816,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     lblfoto.updateUI();
 
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(rootPane, "imagen: " + ex);
+                    coordinador.getLogica().mensajeError(""+ex);
                 }
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
@@ -1968,13 +1971,13 @@ public class frmGrupos extends javax.swing.JFrame {
                 //datos de observacion
                 txtObservacion.setText(requisitosVO.getObservaciones());
             } else {
-                JOptionPane.showMessageDialog(this, "Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
+                coordinador.getLogica().mensajeError("Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
                 borrarCampos();
                 lblCodigo.setText("");
                 campoPordefecto();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
         }
 
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -1993,24 +1996,24 @@ public class frmGrupos extends javax.swing.JFrame {
                     if (coordinador.eliminarMatricula(lblCodigo.getText().trim()).equals("ELIMINADO")) {
                         if (coordinador.eliminarRepresentante(lblCodigo.getText().trim()).equals("ELIMINADO")) {
                             if (coordinador.eliminarAlumno(lblCodigo.getText().trim()).equals("ELIMINADO")) {
-                                JOptionPane.showMessageDialog(this, "Eliminado con Exito");
+                               coordinador.getLogica().mensajeCorrecto("Eliminado con Exito");
                                 borrarCampos();
                                 lblCodigo.setText("");
                                 campoPordefecto();
                             } else {
-                                JOptionPane.showMessageDialog(this, "Problemas al eliminar Alumno");
+                                coordinador.getLogica().mensajeError("Problemas al eliminar alumno");
                             }
                         } else {
-                            JOptionPane.showMessageDialog(this, "Problemas al eliminar representante");
+                                coordinador.getLogica().mensajeError("Problemas al eliminar representante");
                         }
                     } else {
-                        JOptionPane.showMessageDialog(this, "Problemas al eliminar matricula");
+                                coordinador.getLogica().mensajeError("Problemas al eliminar matricula");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(this, "Problemas al eliminar asistencia");
+                                coordinador.getLogica().mensajeError("Problemas al eliminar asistencia");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Problemas al eliminar requisitos");
+                                coordinador.getLogica().mensajeError("Problemas al eliminar requisitos");
             }
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -2028,10 +2031,11 @@ public class frmGrupos extends javax.swing.JFrame {
             model.removeRow(fila);
             tblSeccion1.setModel(model);
                                 } else {
-                    JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                                coordinador.getLogica().mensajeError("La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
                 } 
             } else {
-                JOptionPane.showMessageDialog(this, "La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                 coordinador.getLogica().mensajeError("La seccion ha llegado al limite de alumnos por favor seleccione otra seccion");
+                
             }
         }
     }//GEN-LAST:event_tblSeccion1MouseClicked
@@ -2051,18 +2055,22 @@ public class frmGrupos extends javax.swing.JFrame {
                 matriculaVO.setSeccion(cbxSeccion2.getSelectedItem().toString());
                 respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
             }
-            JOptionPane.showMessageDialog(this, respuesta);
+           if (respuesta.equals("UPDATE")) {
+                    coordinador.getLogica().mensajeCorrecto("Datos Actualizados con exito");
+                }else{
+                     coordinador.getLogica().mensajeError("Error al guardar datos");
+                }
             coordinador.borrarTablas(tblSeccion2, tblSeccion1);
             tblSeccion1.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion1.getSelectedItem().toString()));
             tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));
         } else {
-            JOptionPane.showMessageDialog(this, "consulte un seccion");
+           coordinador.getLogica().mensajeError("Consulte una seccion");
         }  
     }//GEN-LAST:event_btnGuardar2ActionPerformed
 
     private void cbxSeccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSeccion1ActionPerformed
         if (cbxSeccion1.getSelectedIndex()==cbxSeccion2.getSelectedIndex()) {
-            JOptionPane.showMessageDialog(this, "No puede seleccionar la misma seccion");
+            coordinador.getLogica().mensajeError("No se Puede seleccionar la misma seccion");
             tblSeccion1.setEnabled(false);
         }else{
              tblSeccion1.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion1.getSelectedItem().toString()));
@@ -2072,7 +2080,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private void cbxSeccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSeccion2ActionPerformed
         if (cbxSeccion2.getSelectedIndex()==cbxSeccion1.getSelectedIndex()) {
-            JOptionPane.showMessageDialog(this, "No puede seleccionar la misma seccion");
+            coordinador.getLogica().mensajeError("No se Puede seleccionar la misma seccion");
             tblSeccion2.setEnabled(false);
         }else{
             tblSeccion2.setModel(coordinador.consultarMatriculaPorSeccionTabla(cbxSeccion2.getSelectedItem().toString()));

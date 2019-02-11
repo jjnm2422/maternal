@@ -371,7 +371,7 @@ public class frmAjustes extends javax.swing.JFrame {
         desactivarCampos();
         llenarCampos();            
     } else {
-        JOptionPane.showMessageDialog(this, "Faltan Campos por llenar");
+        coordinador.getLogica().mensajeAdvertencia("Faltan Campos por llenar");
     }
     }//GEN-LAST:event_btnActualizarActionPerformed
 

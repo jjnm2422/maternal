@@ -461,17 +461,17 @@ public class frmUsuario extends javax.swing.JFrame {
         if (verificarCampos()) {
             if (coordinador.getClave(txtContraseña.getPassword()).equals(coordinador.getClave(txtContraseña2.getPassword()))) {
                 if ( actualizarUsuario()) {
-                    JOptionPane.showMessageDialog(this, "Actualizado con exito");
+                    coordinador.getLogica().mensajeCorrecto("Actualizado con exito");
                     borrarCampos();
                     tblUsuario.setModel(coordinador.getUsuarioDAO().consultarUsuarioTabla());
                 } else {
-                    JOptionPane.showMessageDialog(this, "Problemas al Actualizar");
+                    coordinador.getLogica().mensajeError("Problemas al Actualizar");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "los campos de contraseña debe ser iguales");
+                coordinador.getLogica().mensajeError("los campos de contraseña debe ser iguales");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Campos Vacios");
+            coordinador.getLogica().mensajeError("Campos Vacios");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -504,17 +504,17 @@ public class frmUsuario extends javax.swing.JFrame {
         if (verificarCampos2()) {
             if (coordinador.getClave(txtContraseña3.getPassword()).equals(coordinador.getClave(txtContraseña4.getPassword()))) {
                 if ( registrarUsuario()) {
-                    JOptionPane.showMessageDialog(this, "INGRESADO CON EXITO");
+                   coordinador.getLogica().mensajeCorrecto("INGRESADO CON EXITO");
                     borrarCampos2();
                     tblUsuario.setModel(coordinador.getUsuarioDAO().consultarUsuarioTabla());
                 } else {
-                    JOptionPane.showMessageDialog(this, "Problemas al Registrar");
+                    coordinador.getLogica().mensajeError("Problemas al Registrar");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "los campos de contraseña debe ser iguales");
+                coordinador.getLogica().mensajeError("los campos de contraseña debe ser iguales");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Campos Vacios");
+            coordinador.getLogica().mensajeError("Campos Vacios");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

@@ -2176,18 +2176,18 @@ public class frmNotas extends javax.swing.JFrame {
                     break;
                     case 3:
                           habilitarBotones(false);
-                          JOptionPane.showMessageDialog(this, "Las notas del alumno:"+ alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido()+"\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
+                          coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:"+ alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido()+"\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
                           inicializarBotones();
                     break;
                     default:
                         throw new AssertionError();
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
                 //borrarCampos();
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
@@ -2241,13 +2241,18 @@ public class frmNotas extends javax.swing.JFrame {
 
     private void btnGuardar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar5ActionPerformed
         if (!txtConsultar.getText().isEmpty() ) {
-            JOptionPane.showMessageDialog(this, coordinador.getNotaDAO().registrarNota(obtenerDatos()));
+           String respuesta = coordinador.getNotaDAO().registrarNota(obtenerDatos());
+            if (respuesta.equals("INSERT")) {
+                coordinador.getLogica().mensajeCorrecto("Notas guardada con exito");
+            } else {
+                coordinador.getLogica().mensajeError("Error al guardar Notas");
+            }
             habilitarBotones(false);
             inicializarBotones();
             txtConsultar.setText("");
             jTabbedPane1.setSelectedIndex(0);
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+           coordinador.getLogica().mensajeError("Ingrese un codigo");
         }
     }//GEN-LAST:event_btnGuardar5ActionPerformed
 
@@ -2281,17 +2286,17 @@ validacionSoloNumeros(evt, 8, txtConsultar.getText().length());
                 if (obtenerDatos2(codigo)) {
                       habilitarBotones1(true);
                 } else {
-                    JOptionPane.showMessageDialog(this, "No existen notas registradas para el alumno: "+lblPnombre1.getText()+ " para el lapso seleccionado");
+                    coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: "+lblPnombre1.getText()+ " para el lapso seleccionado");
                     habilitarBotones1(false);
                     inicializarBotones2();
                 } 
             } else {
-                JOptionPane.showMessageDialog(this, "Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
                 habilitarBotones1(false);
                 inicializarBotones2();
             }
         } else {
-             JOptionPane.showMessageDialog(this, "Ingrese un codigo y seleccione un lapso a consultar");
+             coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo y seleccione un lapso a consultar");
         }
     }//GEN-LAST:event_btnConsultar1ActionPerformed
 
@@ -2357,13 +2362,18 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
 
     private void btnGuardar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar6ActionPerformed
            if (!txtConsultar1.getText().isEmpty() ) {
-            JOptionPane.showMessageDialog(this, coordinador.getNotaDAO().actualizarNota(obtenerDatos2(),this.id));
+            String respuesta = coordinador.getNotaDAO().actualizarNota(obtenerDatos2(),this.id);
+               if (respuesta.equals("UPDATE")) {
+                   coordinador.getLogica().mensajeCorrecto("Nota  Actualizada con exito");
+               } else {
+                   coordinador.getLogica().mensajeError("Error al guardar Nota");
+               }
             habilitarBotones1(false);
             inicializarBotones2();
             txtConsultar1.setText("");
             jTabbedPane3.setSelectedIndex(0);
         } else {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo");
+            coordinador.getLogica().mensajeError("Ingrese un codigo");
         }
     }//GEN-LAST:event_btnGuardar6ActionPerformed
 

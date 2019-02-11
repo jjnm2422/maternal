@@ -215,7 +215,7 @@ public class frmLogin extends javax.swing.JFrame {
         //obtengo clave
         String clave = coordinador.getClave(txtClave.getPassword());
     if (txtUsuario.getText().isEmpty() || clave.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Campos Vacios ","Error", JOptionPane.ERROR_MESSAGE);
+        coordinador.getLogica().mensajeError("Campos Vacios");
     }else{
         switch (coordinador.consultarUsuarioLogin(txtUsuario.getText(), clave)) {
             case "ACCESO_ADMIN":
@@ -252,19 +252,19 @@ public class frmLogin extends javax.swing.JFrame {
                 borrarCampos();
                 break;
             case "NO_USUARIO":
-                JOptionPane.showMessageDialog(null, "Usuario no existe", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Usuario no existe");
                 break;
             case "NO_CLAVE":
-                JOptionPane.showMessageDialog(null, "Clave incorrecta", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Clave incorrecta");
                 break;
             case "ERROR_SQL":
-                JOptionPane.showMessageDialog(null, "Error al ejecutar consulta", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Error al ejecutar consulta");
                 break;
             case "SIN_CONEXION":
-                JOptionPane.showMessageDialog(null, "Problemas conexion con BD", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Problemas conexion con BD");
                 break;
             case "NO_ACTIVO":
-                JOptionPane.showMessageDialog(null, "Usuario desactivado consulte con el administrador", "Informacion", JOptionPane.PLAIN_MESSAGE);
+                coordinador.getLogica().mensajeError("Usuario desactivado consulte con el administrador");
                 break;
             default:
                 throw new AssertionError();
@@ -357,7 +357,7 @@ public class frmLogin extends javax.swing.JFrame {
     public void consultar(String consulta){
        VO.AlumnoVO alumnoDAO = coordinador.consultarAlumno(consulta);
         if (alumnoDAO==null) {
-            JOptionPane.showMessageDialog(this, "USUARIO NO EXISTE");
+            coordinador.getLogica().mensajeError("USUARIO NO EXISTE");
         } else {
             //txtUsuario.setText(alumnoDAO.getPrimer_nombre());
             //txtClave.setText(alumnoDAO.getPrimer_apellido());
