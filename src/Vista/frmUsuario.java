@@ -236,12 +236,14 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 243, 100, 30));
+        jPanel5.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 100, 30));
 
         txtPregunta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtPregunta.setEnabled(false);
         jPanel5.add(txtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 150, 30));
 
         txtRespuesta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtRespuesta.setEnabled(false);
         jPanel5.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 150, 30));
 
         btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N

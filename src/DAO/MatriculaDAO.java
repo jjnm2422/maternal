@@ -186,7 +186,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
                 ps.setString(1, matriculaVO.getSeccion());
                 int n = ps.executeUpdate();
                 if (n > 0) {
-                    respuesta = "DATOS ACTUALIZADOS";
+                    respuesta = "UPDATE";
                     conexion.close();
                 }
             } catch (SQLException ex) {

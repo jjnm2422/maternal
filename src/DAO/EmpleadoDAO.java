@@ -59,7 +59,7 @@ public class EmpleadoDAO {
             }
             int n = ps.executeUpdate();
             if (n > 0) {
-                respuesta = "INGRESADO CON EXITO";
+                respuesta = "INSERT";
             }
             } catch (SQLException ex) {
                  if (ex.getSQLState().equals("23505")) {

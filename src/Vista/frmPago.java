@@ -1001,19 +1001,19 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-validacionSoloLetras(evt, 15, txtPnombre.getText().length());
+validacionSoloLetrasEspacio(evt, 15, txtNombre.getText().length());
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtTransaccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTransaccionKeyTyped
-        validacionSoloNumeros(evt, 15, txtMonto.getText().length());
+        validacionSoloNumeros(evt, 15, txtTransaccion.getText().length());
     }//GEN-LAST:event_txtTransaccionKeyTyped
 
     private void txtReferenciaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReferenciaKeyTyped
-        validacionSoloNumeros(evt, 15, txtMonto.getText().length());
+        validacionSoloNumeros(evt, 15, txtReferencia.getText().length());
     }//GEN-LAST:event_txtReferenciaKeyTyped
 
     private void txtConsultarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConsultarKeyTyped
-        validacionSoloNumeros(evt, 10, txtMonto.getText().length());
+        validacionSoloNumeros(evt, 10, txtConsultar.getText().length());
     }//GEN-LAST:event_txtConsultarKeyTyped
 
     public void setCoordinador(Coordinador coordinador) {

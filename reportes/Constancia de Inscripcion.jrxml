@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Constancia de Inscripcion" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13ef8dce-4312-4161-9f77-dd417a733d9d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="matricula" class="java.lang.Double"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="anio_anterior" class="java.lang.String"/>
+	<parameter name="anio_siguiente" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ruta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     variables."iva" AS variables_iva,
+     variables."precio_mora" AS variables_precio_mora,
+     variables."precio_cuota" AS variables_precio_cuota,
+     variables."periodo_actual" AS variables_periodo_actual,
+     variables."seguro" AS variables_seguro,
+     alumno."primer_nombre" AS alumno_primer_nombre,
+     alumno."segundo_nombre" AS alumno_segundo_nombre,
+     alumno."primer_apellido" AS alumno_primer_apellido,
+     alumno."segundo_apellido" AS alumno_segundo_apellido,
+     matricula."id_alumno" AS matricula_id_alumno,
+     matricula."seccion" AS matricula_seccion
+FROM
+     "variables" variables,
+     "alumno" alumno,
+     "matricula" matricula
+WHERE
+matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
+	</queryString>
+	<field name="variables_iva" class="java.lang.Double"/>
+	<field name="variables_precio_mora" class="java.lang.Double"/>
+	<field name="variables_precio_cuota" class="java.lang.Double"/>
+	<field name="variables_periodo_actual" class="java.lang.String"/>
+	<field name="variables_seguro" class="java.lang.Double"/>
+	<field name="alumno_primer_nombre" class="java.lang.String"/>
+	<field name="alumno_segundo_nombre" class="java.lang.String"/>
+	<field name="alumno_primer_apellido" class="java.lang.String"/>
+	<field name="alumno_segundo_apellido" class="java.lang.String"/>
+	<field name="matricula_id_alumno" class="java.lang.Integer"/>
+	<field name="matricula_seccion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="24" y="0" width="75" height="81" uuid="0016a321-56b8-4e5c-a69c-4a703dfe47f6"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="128" y="15" width="403" height="54" uuid="9e105a97-fc95-4f87-b90e-cb1575f220dc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL "HUMBOLDT"]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<line>
+				<reportElement x="30" y="40" width="491" height="1" uuid="2504a851-b54d-4b4f-97c4-796c521bb908"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="30" y="11" width="491" height="20" uuid="fa5f0705-dcbc-4357-83b0-173b4ba372ba"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE INSCRIPCIÓN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="6" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="405" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="130" width="248" height="15" uuid="67fa7efe-454a-4add-beb2-087fc548e69b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[DESGLOZADA DE LA SIGUIENTE MANERA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="152" width="356" height="20" uuid="77c687c4-cbb2-42ae-90bf-9fec91e59209"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[MATRICULA DE INSCRIPCIÓN............................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="302" width="491" height="73" uuid="5c0c3169-52fc-47bb-b2de-28eb5778dfff"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[El monto de la mensualidad para el Nuevo Año Escolar se mantendra vigente, salvo decisiones del Ejecutivo Nacional, en materia salarial, Contrataciones Colectivas, Índices Inflacionarios o por cualquier otra naturaleza, compulsiva o no, que nos obliguen a hacer ajustes. En este caso el Representante cancelerá la incidencia que ello causare en la Mensualidad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="191" width="356" height="20" uuid="ecdc3b4d-988c-463d-b3ec-86d6dcbc4f9e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[CUOTA DE ESCOLARIDAD MES........................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="171" width="356" height="20" uuid="2c8f7488-56f1-488d-80f1-cf6576bae20b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[SEGURO ESCOLAR............................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="211" width="356" height="20" uuid="a08d3308-785c-43bc-b8bb-f621e181a571"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE INSCRIPCIÓN....................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="2" width="491" height="15" uuid="240884a5-681b-4194-9664-dade7b3a169e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[QUIEN SUSCRIBE, MARYMEL ESPINOZA SALOM, DIRECTORA DEL CENTRO DE EDUCACÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="17" width="491" height="14" uuid="c322f5a1-bc77-4d2f-90e4-932051898b2f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[INICIAL "HUMBOLDT", CERTIFICA POR MEDIO DE LA PRESENTA QUE EL (LA) ALUMNO(A):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="242" width="491" height="46" uuid="ce19fc30-94c2-44c3-a503-47b1a3397fe1"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL REPRESENTANTE DEBERÁ  CANCELAR UN TOTAL DE 12 (DOCE) MENSUALIDADES "+
+"EN EL AÑO, A PARTIR DE MES DE SEPTIEMBRE DEL "+$P{anio_anterior}+" HASTA EL MES DE AGOSTO DEL "+$P{anio_siguiente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="191" width="135" height="20" uuid="3b63454a-d5a4-4191-86b7-3d6298df1782"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{variables_precio_cuota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="172" width="135" height="20" uuid="0b2955ef-2ecb-47e7-ba2d-9d99d180024d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{variables_seguro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="56" width="491" height="54" uuid="f758cd0a-1a61-4b24-b47f-b39669f591c2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FUE INSCRITO(A) EN ESTE PLANTEL PARA CURSAR EL :"+$F{matricula_seccion}+
+" GRUPO DE  EDUCACIÓN INICIAL , AÑO ESCOLAR "+$F{variables_periodo_actual}+
+" CANCELANDO A ESTA INSTITUCIÓN LA CANTIDAD DE:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="31" width="491" height="20" uuid="9b3d5447-7c7b-4f95-a828-8baf4575c6c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alumno_primer_nombre}+" "+$F{alumno_segundo_nombre}+" "+$F{alumno_primer_apellido}+" "+$F{alumno_segundo_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="211" width="135" height="20" uuid="aafc32ed-b549-4f4b-8565-d32c80b1178f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="152" width="135" height="20" uuid="182608df-4b9a-45bb-8f19-e7971561982e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{matricula}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="35" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="1fcca9ab-726b-4ed4-90d8-ab6723fa31b6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="54d9a7e0-3288-4514-a068-0897233ace77"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="100" y="14" width="103" height="22" uuid="f9bfd707-b9df-4615-a695-bd8fca1b9f14"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="24" y="0" width="497" height="42" uuid="afb77c34-5c95-445f-bed0-0521f85dca0c"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA QUE SE EXPIDE A SOLICITUD DE PARTE INTERESADA EN PUERTO ORDAZ, EN LA FECHA DE]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

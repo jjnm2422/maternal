@@ -111,6 +111,8 @@ public class frmAjustes extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnRestaurar = new javax.swing.JButton();
+        lblTitulo20 = new javax.swing.JLabel();
+        txtSeguro = new javax.swing.JTextField();
         lblTitulo15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -174,7 +176,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 100, 30));
+        jPanel1.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 100, 30));
 
         txtIva.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtIva.setEnabled(false);
@@ -197,7 +199,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo4.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTitulo4.setText("Valor Actual Iva");
+        lblTitulo4.setText("Precio Actual Iva");
         jPanel1.add(lblTitulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
 
         btnRuta.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -214,8 +216,8 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo16.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo16.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTitulo16.setText("Periodo Actual");
-        jPanel1.add(lblTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
+        lblTitulo16.setText("Precio Seguro Escolar");
+        jPanel1.add(lblTitulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 150, 20));
 
         lblTitulo17.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo17.setForeground(new java.awt.Color(255, 255, 255));
@@ -256,7 +258,7 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 120, 30));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 120, 30));
 
         lblTitulo19.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo19.setForeground(new java.awt.Color(255, 255, 255));
@@ -281,14 +283,14 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 100, 30));
+        jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 100, 30));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 120, 30));
+        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 120, 30));
 
         btnRestaurar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnRestaurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N
@@ -299,9 +301,24 @@ public class frmAjustes extends javax.swing.JFrame {
                 btnRestaurarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 120, 30));
+        jPanel1.add(btnRestaurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 120, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 565, 290));
+        lblTitulo20.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblTitulo20.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitulo20.setText("Periodo Actual");
+        jPanel1.add(lblTitulo20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
+
+        txtSeguro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtSeguro.setEnabled(false);
+        txtSeguro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSeguroKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtSeguro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 100, 20));
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 565, 340));
 
         lblTitulo15.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblTitulo15.setForeground(new java.awt.Color(255, 255, 255));
@@ -309,7 +326,7 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo15.setText("Ajustes");
         jPanel3.add(lblTitulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 560, 30));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 360));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -353,7 +370,7 @@ public class frmAjustes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRutaActionPerformed
 
     private void txtIvaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIvaKeyTyped
-    validacionSoloNumeros(evt, 3, txtIva.getText().length());
+    validacionSoloNumeros(evt, 8, txtIva.getText().length());
     }//GEN-LAST:event_txtIvaKeyTyped
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
@@ -364,10 +381,15 @@ public class frmAjustes extends javax.swing.JFrame {
         variablesVO.setPrecio_mora(Double.parseDouble(txtMora.getText().trim()));
         variablesVO.setDias_mora(Integer.parseInt(txtDiasmora.getText().trim()));
         variablesVO.setLimite_alumno(Integer.parseInt(txtLimite.getText().trim()));
+        variablesVO.setSeguro(Double.parseDouble(txtSeguro.getText().trim()));
         variablesVO.setUbicacion_reporte(txtRuta.getText());
         variablesVO.setPeriodo_actual(cbxPeriodo.getSelectedItem().toString());
         String respuesta = coordinador.actualizarVariables(variablesVO);
-        System.out.println(respuesta);
+        if (respuesta.equals("UPDATE")) {
+            coordinador.getLogica().mensajeCorrecto("Datos guardados con exito");
+        } else {
+            coordinador.getLogica().mensajeError("Error al guardar datos");
+        }
         desactivarCampos();
         llenarCampos();            
     } else {
@@ -403,6 +425,10 @@ public class frmAjustes extends javax.swing.JFrame {
     llenarCampos(); 
     }//GEN-LAST:event_btnRestaurarActionPerformed
 
+    private void txtSeguroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroKeyTyped
+validacionSoloNumeros(evt, 15, txtIva.getText().length());
+    }//GEN-LAST:event_txtSeguroKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -433,6 +459,7 @@ public class frmAjustes extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo18;
     private javax.swing.JLabel lblTitulo19;
     private javax.swing.JLabel lblTitulo2;
+    private javax.swing.JLabel lblTitulo20;
     private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTitulo4;
     public javax.swing.JLabel lblUsuarioActvo;
@@ -442,6 +469,7 @@ public class frmAjustes extends javax.swing.JFrame {
     public javax.swing.JTextField txtLimite;
     private javax.swing.JTextField txtMora;
     private javax.swing.JTextField txtRuta;
+    private javax.swing.JTextField txtSeguro;
     // End of variables declaration//GEN-END:variables
 
     public void setCoordinador(Coordinador coordinador) {
@@ -454,6 +482,7 @@ public class frmAjustes extends javax.swing.JFrame {
         txtIva.setText(String.valueOf(variablesVO.getIva()));
         txtRuta.setText(String.valueOf(variablesVO.getUbicacion_reporte()));
         txtLimite.setText(String.valueOf(variablesVO.getLimite_alumno()));
+        txtSeguro.setText(String.valueOf(variablesVO.getSeguro()));
         txtMora.setText(String.valueOf(variablesVO.getPrecio_mora()));
         txtDiasmora.setText(String.valueOf(variablesVO.getDias_mora()));
         cbxPeriodo.setSelectedItem(variablesVO.getPeriodo_actual());
@@ -465,6 +494,7 @@ public class frmAjustes extends javax.swing.JFrame {
        btnRuta.setEnabled(true);
        txtLimite.setEnabled(true);
        txtMora.setEnabled(true);
+       txtSeguro.setEnabled(true);
        txtDiasmora.setEnabled(true);
        cbxPeriodo.setEnabled(true);
     }
@@ -499,6 +529,7 @@ public class frmAjustes extends javax.swing.JFrame {
        btnRuta.setEnabled(false);
        txtLimite.setEnabled(false);
        txtMora.setEnabled(false);
+       txtSeguro.setEnabled(false);
        txtDiasmora.setEnabled(false);
        cbxPeriodo.setEnabled(false);
     }

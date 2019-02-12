@@ -57,6 +57,7 @@ public class VariablesDAO {
                     variablesVO.setIva(result.getDouble("iva"));
                     variablesVO.setDias_mora(result.getInt("dias_mora"));
                     variablesVO.setLimite_alumno(result.getInt("limite_alumno"));
+                    variablesVO.setSeguro(result.getDouble("seguro"));
                     variablesVO.setUbicacion_reporte(result.getString("ubicacion_reporte"));
                     variablesVO.setPeriodo_actual(result.getString("periodo_actual"));
                     variablesVO.setPrecio_cuota(result.getDouble("precio_cuota"));
@@ -106,7 +107,7 @@ public class VariablesDAO {
                 ps.setString(8, variablesVO.getPeriodo_actual());
                 int n = ps.executeUpdate();
                 if (n > 0) {
-                    respuesta = "DATOS ACTUALIZADOS";
+                    respuesta = "UPDATE";
                 }else{
                      respuesta = "NO ACTUALIZO";
                 }

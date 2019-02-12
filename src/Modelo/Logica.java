@@ -8,6 +8,9 @@ package Modelo;
 import Controlador.Coordinador;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,9 +18,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author acjj
  */
-public class Logica {
+public class Logica{
 
     private Coordinador coordinador;
+    private final ImageIcon ICON_ADVERTENCIA = new javax.swing.ImageIcon(getClass().getResource("/Recursos/iconw64.png"));
+    private final ImageIcon ICON_ERROR = new javax.swing.ImageIcon(getClass().getResource("/Recursos/icone64.png"));
+    private final ImageIcon ICON_CORRECTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/icong64.png"));
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
@@ -38,6 +44,18 @@ public class Logica {
         model.addRow(vector);
 
         return model;
+    }
+    
+    public int mensajeAdvertencia(String mensaje){
+        return JOptionPane.showConfirmDialog(null, mensaje, "Advertencia", JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, ICON_ADVERTENCIA);
+    }
+    
+    public int mensajeError(String mensaje){
+        return JOptionPane.showConfirmDialog(null, mensaje, "Error", JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, ICON_ERROR);
+    }
+    
+    public int mensajeCorrecto(String mensaje){
+        return JOptionPane.showConfirmDialog(null, mensaje, "Correcto", JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, ICON_CORRECTO);
     }
     
         public DefaultTableModel añadirListaGrupos(JTable tabla, JTable tabla2, int fila) {

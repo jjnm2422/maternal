@@ -31,6 +31,7 @@ import Vista.frmDocenteAsistencia;
 import Vista.frmGrupos;
 import Vista.frmInscripcion;
 import Vista.frmMenu;
+import Vista.frmMenuReportes;
 import Vista.frmNotas;
 import Vista.frmPago;
 import Vista.frmUsuario;
@@ -73,6 +74,7 @@ public class Coordinador {
     private frmPago frmPago;
     private PagoDAO pagoDAO;
     private RegistroPagoDAO registroPagoDAO;
+    private frmMenuReportes frmMenuReportes;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -529,4 +531,13 @@ public class Coordinador {
      public int llenarCodigoRegistroPago() {
          return getRegistroPagoDAO().llenarCodigoRegistroPago();
      }
+
+    public void setFrmMenuReportes(frmMenuReportes frmMenuReportes) {
+        this.frmMenuReportes = frmMenuReportes;
+    }
+
+    public frmMenuReportes getFrmMenuReportes() {
+        return frmMenuReportes;
+    }
+    
 }

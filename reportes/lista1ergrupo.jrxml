@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista de utiles Maternal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b9a265a5-21e1-4ec1-81c8-be087ea8b914">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ruta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     alumno."id_alumno" AS alumno_id_alumno
+FROM
+     "alumno" alumno]]>
+	</queryString>
+	<field name="alumno_id_alumno" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="59" y="0" width="73" height="79" uuid="968eb990-b51a-4a7b-b856-2f30ff393169"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="205" y="0" width="251" height="18" uuid="bf9a8cd9-2a82-4382-9f68-f15d64212981"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro de Educación Inicial "Humboldt"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="20" width="146" height="14" uuid="f2ed0792-1f06-4732-9b52-341bb1870893"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año Escolar 2018/2019]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="34" width="220" height="27" uuid="3ed38a71-9d15-40db-b80c-094d48911da4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE UTILES ESCOLARES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="59" width="100" height="20" uuid="55093337-add9-41f8-8e6c-e68924c540ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(I GRUPO)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="3" width="54" height="17" uuid="8f7eccc6-80c8-4260-b08e-d43d728941f6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEXTOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="21" width="117" height="14" uuid="dba687d7-0261-488e-a06f-e57aa0852a5b"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pasito a Pasito 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="37" width="117" height="15" uuid="498ff02f-e6bf-4598-8f09-2599c8f5905d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Rayitos I. Manantial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="55" width="164" height="13" uuid="21e6ebda-9e08-4b6f-b8c0-af007af0cbb7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Matemática FACIL I. Santillana]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="495" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="39" width="265" height="13" uuid="6985da0b-4c6e-4653-8d6d-2673d014f7ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[2 Libretas empastada de 1 línea (actividad y Diario)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="56" width="266" height="13" uuid="e1845a55-a96a-47d9-afdc-d5642289fd29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[1 Libreta empastada cuadriculada con márgenes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="72" width="204" height="16" uuid="d4679d93-7983-4360-8797-a556862bb36a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Cuento Ilustrado de acuerdo a su edad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="91" width="223" height="13" uuid="5310d0b5-0131-4fc2-90ef-93a951df1ddc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Block de dibujo con resorte (tamaño carta)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="107" width="238" height="15" uuid="3783af0a-0fef-41bb-aa46-9ac10b6a0cb9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Block de construcción y Block de papel lustrillo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="141" width="180" height="13" uuid="6ddcc61b-0065-4eed-9f90-9df3fa2b3da1"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Pliegos de papel Celofán]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="125" width="180" height="13" uuid="a2f366de-f354-4994-b8e0-3cf389123e80"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Pliegos de papel de Seda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="157" width="135" height="16" uuid="e1609432-03c7-4a60-b10f-9511eea09d00"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Pliegos de papel Crepe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="176" width="99" height="14" uuid="3631dd30-1f82-4487-a666-07fa9a594a70"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Carpeta con Liga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="192" width="250" height="13" uuid="21f0a0ee-e76e-4a83-835b-4846edb923bf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(4) Carpetas marrones con gancho (tamaño carta)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="208" width="99" height="14" uuid="55234348-0e80-4219-b7e0-e22c35dae426"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[PEGA DE BARRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="225" width="61" height="14" uuid="4a45b5c7-c118-4144-9c16-81d15c842808"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Borrador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="242" width="135" height="14" uuid="ac713e3e-eb9a-42be-a8df-d74ade07db1d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Sacapunta con depósito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="259" width="85" height="17" uuid="be0dd754-40c5-43af-be5f-2ec30e0b3084"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Pincel Grueso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="280" width="86" height="14" uuid="ef911a0b-47e0-4f1b-889a-25a633785546"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Pincel fino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="297" width="136" height="13" uuid="24cd6741-9c54-4497-b80c-fb0ff80ddc88"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Pega Blanca de 500 mg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="313" width="161" height="14" uuid="3ac29515-07b3-4845-ba39-5f29e97e7d01"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Caja de lápices de grafito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="331" width="223" height="14" uuid="666fe2c7-5674-4a1d-b441-32f85ff2b5fd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Caja de colores de madera de 24 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="348" width="180" height="17" uuid="bdf4cc42-8867-4747-b288-04f2a590e4ba"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Caja de creyones de cera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="368" width="115" height="15" uuid="db17786f-fa1b-4b13-a8e9-45a7839f5788"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Boligrado negro y azul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="385" width="238" height="17" uuid="01be8384-674d-46ad-bb7d-e9be3bf9476b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Marcador de pizarra y Marcador punta fina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="405" width="161" height="13" uuid="04fd8727-810c-4905-9636-125d35460d48"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Marcador grueso punta redonda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="39" width="100" height="13" uuid="4e2ea01e-5151-417e-8a55-719f575c5aac"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Pinta-dedos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="55" width="133" height="15" uuid="be246cee-2866-4839-9868-751aa50bc53c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Barras de silicón ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="73" width="100" height="16" uuid="144295f3-1e7d-4d57-8a6d-9453930e9f8d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Escarcha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="92" width="187" height="15" uuid="daaff0b4-2f4f-4f57-b505-2e23ad7f8795"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Franela vieja grande de papá y mamá]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="109" width="135" height="16" uuid="70e53a72-5bef-4f75-b876-741d27079cff"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[para usar de delantal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="129" width="211" height="13" uuid="83cd14a6-35f1-49aa-8a33-d0d76da541c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Caja plástica hermética para guardar Útiles]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="145" width="188" height="13" uuid="bd7974e5-783c-4763-9d4c-cc5d3daf9824"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Paquete de Toallas Húmedas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="161" width="210" height="13" uuid="d28ab4f8-783c-425c-8a74-be5e13ba578a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Gel Anti Bacterial y papel higiénico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="177" width="74" height="16" uuid="646a0b4f-d7b6-469f-9810-42ba1dc68671"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Silicón frio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="196" width="212" height="13" uuid="53267621-1870-4a9f-9212-5e7b4d04ca66"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Muda de ropa identificado en una bolsa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="213" width="41" height="14" uuid="8346477c-31f8-4c40-82f7-e0d6894abea1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Ziploc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="230" width="134" height="14" uuid="66d3395c-9b92-459d-9c2e-67a7cbb16b09"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Juego Didáctico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="247" width="101" height="13" uuid="7478a81b-9df1-4f28-9c8e-edffa5d859d1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Rollo de estambre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="263" width="100" height="13" uuid="20749ad0-47b5-453b-9600-fce4e2abe659"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[3 Papel bond]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="280" width="101" height="14" uuid="3c102414-8d43-488f-bebe-3b063f236f30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Tijera punta roma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="299" width="101" height="14" uuid="463afc13-9506-49bf-8830-4ade0e547e96"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Caja de temperas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="316" width="101" height="16" uuid="36b45336-19fe-4d79-9a26-b08d963c19cb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[2 Pliegos de foami]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="334" width="101" height="17" uuid="f485b421-fe76-490c-9c2e-4fb567cfa064"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[2 Foamis grandes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="354" width="212" height="13" uuid="85526c26-2f46-4d10-b2d0-2cdf6307aef4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Borrador y un sacapunta con depósito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="370" width="209" height="15" uuid="6fa2afe3-cd47-4ee3-965e-ba76f118b18c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 resma de papel bond, tamaño carta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="419" width="179" height="16" uuid="38ed2b13-474f-459b-840e-d3f79bc0a844"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Caja de plastilina de 12 colores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="438" width="100" height="13" uuid="630ad170-03c8-4a1d-8274-c190c46ab211"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[(2) Plastidedos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="454" width="146" height="14" uuid="d87c14cb-2ed1-4249-aa3f-a36f7aadf8a1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 ROLLO DE TOALLIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="470" width="204" height="15" uuid="6b8b99db-d8a8-48d3-a967-5d255ece43d7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[1 Paquete de vasos desechable #5]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

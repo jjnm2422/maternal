@@ -60,7 +60,7 @@ public class NotaDAO {
                 ps.setString(10, notaVO.getPeriodo());
                 int n = ps.executeUpdate();
                 if (n > 0) {
-                    respuesta = "INGRESADO CON EXITO";
+                    respuesta = "INSERT";
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -68,7 +68,7 @@ public class NotaDAO {
                 System.out.println(respuesta);
             }
         } else {
-            respuesta = "ERROR AL CONECTAR CON BD";
+            respuesta = "ERROR";
         }
         return respuesta;
     }
@@ -225,7 +225,7 @@ public class NotaDAO {
                    ps.setArray(7, notaArray5);
                      int n = ps.executeUpdate();
                 if (n > 0) {
-                    respuesta = "DATOS ACTUALIZADOS";
+                    respuesta = "UPDATE";
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);

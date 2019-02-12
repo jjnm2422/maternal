@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletin informativo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfb2390c-9c71-47dc-bec7-47522738f99f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="169" y="26" width="280" height="18" uuid="ef9d8ae4-7d92-4050-b879-1d009090493c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="114" splitType="Stretch">
+			<image>
+				<reportElement x="35" y="0" width="88" height="90" uuid="d7dcdc9d-1248-47a3-81a5-8ee72de60a5d"/>
+				<imageExpression><![CDATA["C:\\Users\\rosicesar\\Pictures\\logo_colegio.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="241" y="0" width="107" height="17" uuid="3fcf6c77-5aba-4d31-9106-81805098a510"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA["HUMBOLDT"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="19" width="253" height="12" uuid="1be55c81-4c49-4cdf-88b1-5ece099ec9cf"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscrito en el Ministerio del Poder Popular Para la Educación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="30" width="212" height="13" uuid="ae6bde4b-f379-402d-ada6-99acbd44d87b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bajo en Nro: PD.12000701 - RIF: J-30506388-5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="43" width="160" height="11" uuid="cfe9cb03-a00d-4495-a55f-5fc045daab0b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telef.: 0286-7191795 / 0414-8682748]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="90" width="215" height="24" uuid="9e9687c9-2203-44d1-b554-77691f39af90"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="15"/>
+				</textElement>
+				<text><![CDATA[BOLETÍN INFORMATIVO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="295" y="11" width="191" height="38" uuid="b447f947-1d7c-4431-8d82-f6fdc3ee034b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="301" y="15" width="81" height="14" uuid="8ac183fe-847c-4fb7-8a93-fb7c773146e1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[AÑO ESCOLAR: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="32" width="56" height="15" uuid="8c8fb9f0-12bd-40c4-bad0-7a2558f8fc77"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="5" width="61" height="15" uuid="9c74ef3a-e54a-4a2f-becf-42add24730d7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[ALUMNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="39" width="291" height="17" uuid="e848ca48-174b-4270-bf17-af8b44a94bcd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[FOMRACION PERSONAL SOCIAL Y COMUNICACION]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="22" y="57" width="485" height="20" uuid="f709f9b3-6876-48e4-b624-e32ab10b01b0"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

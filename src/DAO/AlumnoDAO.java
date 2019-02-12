@@ -6,6 +6,7 @@
 package DAO;
 
 import Controlador.Coordinador;
+import Vista.frmMenuReportes;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +31,7 @@ public class AlumnoDAO {
     private Coordinador coordinador;
     private final String tabla = "alumno";
     private RegistroPagoDAO registroPagoDAO;
+    private frmMenuReportes frmMenuReportes;
 
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;

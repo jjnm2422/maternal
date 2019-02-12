@@ -250,8 +250,10 @@ public class frmGrupos extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -1256,7 +1258,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel3.setText("Matricula");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
 
-        cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        cbxSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         cbxSeccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSeccionActionPerformed(evt);
@@ -1316,7 +1318,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblSeccion1);
 
-        jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 430, 310));
+        jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 370, 310));
 
         btnAtras2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnAtras2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -1341,7 +1343,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel7.add(btnGuardar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, -1, -1));
 
         cbxSeccion1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        cbxSeccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        cbxSeccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         cbxSeccion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSeccion1ActionPerformed(evt);
@@ -1352,7 +1354,7 @@ public class frmGrupos extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Grupo a cambiar");
-        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 160, -1));
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 160, -1));
 
         lblUsuarioActvo2.setText("usuario activo");
         lblUsuarioActvo2.setName("lblUsuarioActivo"); // NOI18N
@@ -1364,14 +1366,14 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 140, -1));
 
         cbxSeccion2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        cbxSeccion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E" }));
+        cbxSeccion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         cbxSeccion2.setSelectedIndex(1);
         cbxSeccion2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxSeccion2ActionPerformed(evt);
             }
         });
-        jPanel7.add(cbxSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 110, -1));
+        jPanel7.add(cbxSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, 110, -1));
 
         tblSeccion2.setBackground(new java.awt.Color(69, 90, 100));
         tblSeccion2.setModel(new javax.swing.table.DefaultTableModel(
@@ -1391,7 +1393,7 @@ public class frmGrupos extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(tblSeccion2);
 
-        jPanel7.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 420, 310));
+        jPanel7.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 370, 310));
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"))); // NOI18N
         jPanel7.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 120, 120));
@@ -1400,7 +1402,10 @@ public class frmGrupos extends javax.swing.JFrame {
         jPanel7.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
 
         jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/contratado(1).png"))); // NOI18N
-        jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, -1, -1));
+        jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, -1, -1));
+
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/exchange-arrows(2).png"))); // NOI18N
+        jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 130, 110));
 
         jTabbedPane3.addTab("CAMBIAR ALUMNO", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_user.png")), jPanel7); // NOI18N
 
@@ -2214,6 +2219,7 @@ public class frmGrupos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

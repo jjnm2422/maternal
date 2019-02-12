@@ -113,10 +113,11 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
         lblHora.setName("lblHora"); // NOI18N
         jPanel2.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 170, 40));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Humboldt Maternal");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 340, 110));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("CENTRO DE EDUCACIÓN INICIAL \"HUMBOLDT\"");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 110));
 
         lblLogo.setName("lblLogo"); // NOI18N
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 110, 110));
@@ -282,19 +283,9 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btnInscripcionActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
-    try {
-        Connection conexion= null;
-        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-        conexion = conexiondb.getConnection();
-            String dir = "G:\\report2.jrxml";
-            Map<String, Object> p2 = new HashMap<>();
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-            JasperViewer visor = new JasperViewer(mostrarReporte, false);
-            visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-    }
+    coordinador.getFrmMenuReportes().setVisible(true);
+    coordinador.getFrmMenuReportes().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
+    coordinador.getFrmMenuReportes().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed

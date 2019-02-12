@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BOLETIN INFROMATIVO2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="43fa6068-7348-4114-98df-dbdee7aeb545">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="107"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="24" width="530" height="20" uuid="8ef7264a-8b71-491a-b0d1-807d9b3526b8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="65" width="328" height="14" uuid="13022d5b-eb2d-4c10-89cd-db3d5b4e5d85"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[RELACION ENTRE LOS COMPONENTES DEL AMBIENTE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement x="138" y="40" width="294" height="16" uuid="a61142d9-eb06-45ec-a2ba-0caf2dced5c6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[XXIX FORJANDO EL INICIO DE UN GRAN FUTURO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="73" width="227" height="15" uuid="06d2517d-fac2-4d31-a119-f97846e60753"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[RECOMENDACIONES DEL DOCENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="150" width="263" height="15" uuid="fdee3f9b-c014-4190-a54b-0b5d6458fa5c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[APRECIACION DE LOS PADRES Y REPRESENTANTES]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

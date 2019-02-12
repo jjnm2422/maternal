@@ -47,7 +47,7 @@ public class Asistencia_dDAO {
             ps.setInt(4,  usuario);
             int n = ps.executeUpdate();
             if (n > 0 && i==model.getRowCount()-1) {
-                respuesta = "Asistencia guardada con exito";
+                respuesta = "INSERT";
             }
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,7 +55,7 @@ public class Asistencia_dDAO {
                 break;
             } 
         } else {
-            respuesta = "ERROR al conectarse con BD";
+            respuesta = "ERROR";
         }
         }
         return respuesta;
