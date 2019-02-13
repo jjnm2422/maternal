@@ -661,7 +661,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("identifica las normas de salud e higiene de nuesro cuerpo");
+        jLabel25.setText("identifica las normas de salud e higiene de nuestro cuerpo");
         jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         btnSiguiente.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
