@@ -356,12 +356,12 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel132 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
         jComboBox122 = new javax.swing.JComboBox<>();
-        jComboBox123 = new javax.swing.JComboBox<>();
         jLabel134 = new javax.swing.JLabel();
-        jLabel135 = new javax.swing.JLabel();
-        jComboBox124 = new javax.swing.JComboBox<>();
-        jLabel136 = new javax.swing.JLabel();
         btnGuardar6 = new javax.swing.JButton();
+        jLabel136 = new javax.swing.JLabel();
+        jLabel135 = new javax.swing.JLabel();
+        jComboBox123 = new javax.swing.JComboBox<>();
+        jComboBox124 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -841,7 +841,7 @@ public class frmNotas extends javax.swing.JFrame {
 
         jLabel39.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setText("Dice palabras que empiezan pr determinados sonidos");
+        jLabel39.setText("Dice palabras que empiezan por determinados sonidos");
         jPanel5.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
 
         jLabel40.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1984,12 +1984,12 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel125.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel125.setForeground(new java.awt.Color(255, 255, 255));
         jLabel125.setText("Es constante con las actividades que realice");
-        jPanel18.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        jPanel18.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, 30));
 
         jLabel126.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel126.setForeground(new java.awt.Color(255, 255, 255));
         jLabel126.setText("Cumple con las observaciones hechas por la maestra");
-        jPanel18.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        jPanel18.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 20));
 
         jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 690, 400));
 
@@ -2006,110 +2006,84 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox115.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox115.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox115.setEnabled(false);
-        jPanel20.add(jComboBox115, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, 30));
+        jPanel20.add(jComboBox115, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, 30));
 
         jComboBox116.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox116.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox116.setEnabled(false);
-        jPanel20.add(jComboBox116, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, 30));
+        jPanel20.add(jComboBox116, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, 30));
 
         jComboBox117.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox117.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox117.setEnabled(false);
-        jPanel20.add(jComboBox117, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, 30));
+        jPanel20.add(jComboBox117, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, -1, 30));
 
         jComboBox118.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox118.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox118.setEnabled(false);
-        jPanel20.add(jComboBox118, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 30));
+        jPanel20.add(jComboBox118, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, -1, 30));
 
         jComboBox119.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox119.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox119.setEnabled(false);
-        jPanel20.add(jComboBox119, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, 30));
+        jPanel20.add(jComboBox119, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, 30));
 
         jComboBox120.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox120.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox120.setEnabled(false);
-        jPanel20.add(jComboBox120, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, 30));
+        jPanel20.add(jComboBox120, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, 30));
 
         jComboBox121.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox121.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox121.setEnabled(false);
-        jPanel20.add(jComboBox121, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, -1, 30));
+        jPanel20.add(jComboBox121, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, 30));
 
         jLabel127.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel127.setForeground(new java.awt.Color(255, 255, 255));
         jLabel127.setText("Termina sus actividades en el tiempo establecido");
-        jPanel20.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel20.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel128.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel128.setForeground(new java.awt.Color(255, 255, 255));
         jLabel128.setText("Participa e investiga para desarrollar sus proyecto");
-        jPanel20.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel20.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel129.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel129.setForeground(new java.awt.Color(255, 255, 255));
         jLabel129.setText("Realiza las tareas con orden y pulcritud");
-        jPanel20.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel20.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel130.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel130.setForeground(new java.awt.Color(255, 255, 255));
         jLabel130.setText("Mantiene sus cuadernos de tareas limpios y ordenados");
-        jPanel20.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel20.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jLabel131.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel131.setForeground(new java.awt.Color(255, 255, 255));
         jLabel131.setText("Se mantiene en su sitio de trabajo al realizar las actividades");
-        jPanel20.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        jPanel20.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jLabel132.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel132.setForeground(new java.awt.Color(255, 255, 255));
         jLabel132.setText("Posee habitos de estudio");
-        jPanel20.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        jPanel20.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         jLabel133.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel133.setForeground(new java.awt.Color(255, 255, 255));
         jLabel133.setText("Mantiene la posture corecta al realizar sus trabajos");
-        jPanel20.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        jPanel20.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
         jComboBox122.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox122.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox122.setEnabled(false);
         jPanel20.add(jComboBox122, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, 30));
 
-        jComboBox123.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox123.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
-        jComboBox123.setEnabled(false);
-        jComboBox123.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox123ActionPerformed(evt);
-            }
-        });
-        jPanel20.add(jComboBox123, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, 30));
-
         jLabel134.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel134.setForeground(new java.awt.Color(255, 255, 255));
         jLabel134.setText("Acepta sugerencias de la maestra  durante las actividades");
         jPanel20.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jLabel135.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel135.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel135.setText("DIAS LABORADOS");
-        jLabel135.setToolTipText("INASISTENCIAS");
-        jPanel20.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
-
-        jComboBox124.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
-        jComboBox124.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
-        jComboBox124.setEnabled(false);
-        jPanel20.add(jComboBox124, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
-
-        jLabel136.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel136.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel136.setText("INASISTENCIAS");
-        jPanel20.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
-
-        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 450));
+        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 680, 380));
 
         btnGuardar6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N
@@ -2121,6 +2095,32 @@ public class frmNotas extends javax.swing.JFrame {
             }
         });
         jPanel19.add(btnGuardar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
+
+        jLabel136.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel136.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel136.setText("INASISTENCIAS");
+        jPanel19.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, 20));
+
+        jLabel135.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel135.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel135.setText("DIAS LABORADOS");
+        jLabel135.setToolTipText("INASISTENCIAS");
+        jPanel19.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
+
+        jComboBox123.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox123.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox123.setEnabled(false);
+        jComboBox123.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox123ActionPerformed(evt);
+            }
+        });
+        jPanel19.add(jComboBox123, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, 30));
+
+        jComboBox124.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jComboBox124.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
+        jComboBox124.setEnabled(false);
+        jPanel19.add(jComboBox124, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, 30));
 
         jTabbedPane3.addTab("Cuadro de valores", jPanel19);
 
