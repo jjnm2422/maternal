@@ -140,6 +140,18 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         cbxLapso = new javax.swing.JComboBox<>();
+        frmDatosBoletin2 = new javax.swing.JFrame();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        txtCodigo5 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        btnBuscar5 = new javax.swing.JButton();
+        lblNombres5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        cbxLapso1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -153,6 +165,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         btnInscripcion = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
         btnDocentes = new javax.swing.JButton();
+        btnReportes1 = new javax.swing.JButton();
 
         frmDatosConstanciaInscripcion.setMinimumSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaInscripcion.setResizable(false);
@@ -312,9 +325,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosConstanciaPago.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
 
-        frmDatosNumeroCedula.setMaximumSize(new java.awt.Dimension(290, 225));
         frmDatosNumeroCedula.setMinimumSize(new java.awt.Dimension(290, 225));
-        frmDatosNumeroCedula.setPreferredSize(new java.awt.Dimension(290, 225));
         frmDatosNumeroCedula.setResizable(false);
         frmDatosNumeroCedula.setSize(new java.awt.Dimension(290, 225));
         frmDatosNumeroCedula.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -406,9 +417,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosNumeroCedula.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
 
-        frmDatosConstanciaEstudio.setMaximumSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaEstudio.setMinimumSize(new java.awt.Dimension(290, 225));
-        frmDatosConstanciaEstudio.setPreferredSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaEstudio.setResizable(false);
         frmDatosConstanciaEstudio.setSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaEstudio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -562,9 +571,103 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jPanel11.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, 20));
 
         cbxLapso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
+        cbxLapso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxLapsoActionPerformed(evt);
+            }
+        });
         jPanel11.add(cbxLapso, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 70, -1));
 
         frmDatosBoletin.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 240));
+
+        frmDatosBoletin2.setMaximumSize(new java.awt.Dimension(290, 225));
+        frmDatosBoletin2.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosBoletin2.setPreferredSize(new java.awt.Dimension(290, 225));
+        frmDatosBoletin2.setResizable(false);
+        frmDatosBoletin2.setSize(new java.awt.Dimension(290, 225));
+        frmDatosBoletin2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel12.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel12.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel12.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel12.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Datos para Reporte:");
+        jPanel12.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        jButton22.setText("Aceptar");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 163, 80, 20));
+
+        jButton23.setText("Cancelar");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 163, 80, 20));
+
+        txtCodigo5.setName("txtCodigoAlumno"); // NOI18N
+        txtCodigo5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigo5ActionPerformed(evt);
+            }
+        });
+        txtCodigo5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigo5KeyTyped(evt);
+            }
+        });
+        jPanel12.add(txtCodigo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 20));
+
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Codigo alumno");
+        jLabel35.setName("lbl"); // NOI18N
+        jPanel12.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 20));
+
+        btnBuscar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnBuscar5.setName("btnBuscar"); // NOI18N
+        btnBuscar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar5ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(btnBuscar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, 20));
+
+        lblNombres5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombres5.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombres5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel12.add(lblNombres5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 270, 20));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Nombres y apellidos");
+        jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Lapso");
+        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, 20));
+
+        cbxLapso1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
+        cbxLapso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxLapso1ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(cbxLapso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 70, -1));
+
+        frmDatosBoletin2.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 240));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -661,7 +764,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnReportesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 160, 70));
+        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 160, 30));
 
         btnDocentes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDocentes.setText("Numero Cedula Escolar");
@@ -671,6 +774,15 @@ public class frmMenuReportes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, 70));
+
+        btnReportes1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnReportes1.setText("Boletin Informativo 2");
+        btnReportes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportes1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnReportes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 160, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
 
@@ -1016,7 +1128,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscar3ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        //llenar parametros a enviar
+                if (lblNombres4.getText().isEmpty()) {
+                    coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
+                }else{   
+//llenar parametros a enviar
         if (!obtenerDatos2(String.valueOf(id))) {
             coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres4.getText() + " para el lapso seleccionado");
         } else {
@@ -1029,6 +1144,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 NotaVO notaVO = obtenerDatos(String.valueOf(id));
                 Map<String, Object> p2 = new HashMap<>();
                 p2.put("id", id);
+                p2.put("lapso", cbxLapso.getSelectedItem().toString());
                 p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
                 p2.put("parameter1", notaVO.getFormacion_personal_social()[0].substring(2,  notaVO.getFormacion_personal_social()[0].length()));
                 p2.put("parameter2", notaVO.getFormacion_personal_social()[1].substring(2,  notaVO.getFormacion_personal_social()[1].length()));
@@ -1039,6 +1155,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 p2.put("parameter7", notaVO.getFormacion_personal_social()[6].substring(2,  notaVO.getFormacion_personal_social()[6].length()));
                 p2.put("parameter8", notaVO.getFormacion_personal_social()[7].substring(2,  notaVO.getFormacion_personal_social()[7].length()));
                 p2.put("parameter9", notaVO.getFormacion_personal_social()[8].substring(2,  notaVO.getFormacion_personal_social()[8].length()));
+                //
                 p2.put("parameter10", notaVO.getRelacion_ambiente()[0].substring(2,  notaVO.getRelacion_ambiente()[0].length()));
                 p2.put("parameter11", notaVO.getRelacion_ambiente()[1].substring(2,  notaVO.getRelacion_ambiente()[1].length()));
                 p2.put("parameter12", notaVO.getRelacion_ambiente()[2].substring(2,  notaVO.getRelacion_ambiente()[2].length()));
@@ -1049,6 +1166,22 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 p2.put("parameter17", notaVO.getRelacion_ambiente()[7].substring(2,  notaVO.getRelacion_ambiente()[7].length()));
                 p2.put("parameter18", notaVO.getRelacion_ambiente()[8].substring(2,  notaVO.getRelacion_ambiente()[8].length()));
                 p2.put("parameter19", notaVO.getRelacion_ambiente()[9].substring(3,  notaVO.getRelacion_ambiente()[9].length()));
+                //
+                p2.put("parameter20", notaVO.getComunicacion_presentacion()[0].substring(2,  notaVO.getComunicacion_presentacion()[0].length()));
+                p2.put("parameter21", notaVO.getComunicacion_presentacion()[1].substring(2,  notaVO.getComunicacion_presentacion()[1].length()));
+                p2.put("parameter22", notaVO.getComunicacion_presentacion()[2].substring(2,  notaVO.getComunicacion_presentacion()[2].length()));
+                p2.put("parameter23", notaVO.getComunicacion_presentacion()[3].substring(2,  notaVO.getComunicacion_presentacion()[3].length()));
+                p2.put("parameter24", notaVO.getComunicacion_presentacion()[4].substring(2,  notaVO.getComunicacion_presentacion()[4].length()));
+                p2.put("parameter25", notaVO.getComunicacion_presentacion()[5].substring(2,  notaVO.getComunicacion_presentacion()[5].length()));
+                p2.put("parameter26", notaVO.getComunicacion_presentacion()[6].substring(2,  notaVO.getComunicacion_presentacion()[6].length()));
+                p2.put("parameter27", notaVO.getComunicacion_presentacion()[7].substring(2,  notaVO.getComunicacion_presentacion()[7].length()));
+                p2.put("parameter28", notaVO.getComunicacion_presentacion()[8].substring(2,  notaVO.getComunicacion_presentacion()[8].length()));
+                p2.put("parameter29", notaVO.getComunicacion_presentacion()[9].substring(3,  notaVO.getComunicacion_presentacion()[9].length()));
+                p2.put("parameter30", notaVO.getComunicacion_presentacion()[10].substring(3, notaVO.getComunicacion_presentacion()[10].length()));
+                p2.put("parameter31", notaVO.getComunicacion_presentacion()[11].substring(3,  notaVO.getComunicacion_presentacion()[11].length()));
+                p2.put("parameter32", notaVO.getComunicacion_presentacion()[12].substring(3,  notaVO.getComunicacion_presentacion()[12].length()));
+                p2.put("parameter33", notaVO.getComunicacion_presentacion()[13].substring(3,  notaVO.getComunicacion_presentacion()[13].length()));
+                
                 JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
                 JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
                 JasperViewer visor = new JasperViewer(mostrarReporte, false);
@@ -1057,7 +1190,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
             }
         }
-
+ }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -1100,6 +1233,121 @@ public class frmMenuReportes extends javax.swing.JFrame {
             coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
         }
     }//GEN-LAST:event_btnBuscar4ActionPerformed
+
+    private void cbxLapsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLapsoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxLapsoActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+               if (lblNombres5.getText().isEmpty()) {
+                    coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
+                }else{   
+//llenar parametros a enviar
+        if (!obtenerDatos2(String.valueOf(id))) {
+            coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
+        } else {
+            try {
+                Connection conexion = null;
+                Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                conexion = conexiondb.getConnection();
+                String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin2.jrxml";
+                //obtengo valores a pasar
+                NotaVO notaVO = obtenerDatos(String.valueOf(id));
+                Map<String, Object> p2 = new HashMap<>();
+                p2.put("id", id);
+                p2.put("lapso", cbxLapso1.getSelectedItem().toString());
+                p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                p2.put("parameter1", notaVO.getIndicadores_evaluados()[0].substring(2,  notaVO.getIndicadores_evaluados()[0].length()));
+                p2.put("parameter2", notaVO.getIndicadores_evaluados()[1].substring(2,  notaVO.getIndicadores_evaluados()[1].length()));
+                p2.put("parameter3", notaVO.getIndicadores_evaluados()[2].substring(2,  notaVO.getIndicadores_evaluados()[2].length()));
+                p2.put("parameter4", notaVO.getIndicadores_evaluados()[3].substring(2,  notaVO.getIndicadores_evaluados()[3].length()));
+                p2.put("parameter5", notaVO.getIndicadores_evaluados()[4].substring(2,  notaVO.getIndicadores_evaluados()[4].length()));
+                p2.put("parameter6", notaVO.getIndicadores_evaluados()[5].substring(2,  notaVO.getIndicadores_evaluados()[5].length()));
+                p2.put("parameter7", notaVO.getIndicadores_evaluados()[6].substring(2,  notaVO.getIndicadores_evaluados()[6].length()));
+                p2.put("parameter8", notaVO.getIndicadores_evaluados()[7].substring(2,  notaVO.getIndicadores_evaluados()[7].length()));
+                p2.put("parameter9", notaVO.getIndicadores_evaluados()[8].substring(2,  notaVO.getIndicadores_evaluados()[8].length()));
+                p2.put("parameter10", notaVO.getIndicadores_evaluados()[9].substring(3,  notaVO.getIndicadores_evaluados()[9].length()));
+                //
+                p2.put("parameter11", notaVO.getIndicadores_evaluados()[10].substring(3,  notaVO.getIndicadores_evaluados()[10].length()));
+                p2.put("parameter12", notaVO.getIndicadores_evaluados()[11].substring(3,  notaVO.getIndicadores_evaluados()[11].length()));
+                p2.put("parameter13", notaVO.getIndicadores_evaluados()[12].substring(3,  notaVO.getIndicadores_evaluados()[12].length()));
+                p2.put("parameter14", notaVO.getIndicadores_evaluados()[13].substring(3,  notaVO.getIndicadores_evaluados()[13].length()));
+                p2.put("parameter15", notaVO.getIndicadores_evaluados()[14].substring(3,  notaVO.getIndicadores_evaluados()[14].length()));
+                p2.put("parameter16", notaVO.getIndicadores_evaluados()[15].substring(3,  notaVO.getIndicadores_evaluados()[15].length()));
+                p2.put("parameter17", notaVO.getIndicadores_evaluados()[16].substring(3,  notaVO.getIndicadores_evaluados()[16].length()));
+                p2.put("parameter18", notaVO.getIndicadores_evaluados()[17].substring(3,  notaVO.getIndicadores_evaluados()[17].length()));
+                p2.put("parameter19", notaVO.getIndicadores_evaluados()[18].substring(3,  notaVO.getIndicadores_evaluados()[18].length()));
+                //
+                p2.put("parameter20", notaVO.getHabitos_trabajo()[0].substring(2,  notaVO.getHabitos_trabajo()[0].length()));
+                p2.put("parameter21", notaVO.getHabitos_trabajo()[1].substring(2,  notaVO.getHabitos_trabajo()[1].length()));
+                p2.put("parameter22", notaVO.getHabitos_trabajo()[2].substring(2,  notaVO.getHabitos_trabajo()[2].length()));
+                p2.put("parameter23", notaVO.getHabitos_trabajo()[3].substring(2,  notaVO.getHabitos_trabajo()[3].length()));
+                p2.put("parameter24", notaVO.getHabitos_trabajo()[4].substring(2,  notaVO.getHabitos_trabajo()[4].length()));
+                p2.put("parameter25", notaVO.getHabitos_trabajo()[5].substring(2,  notaVO.getHabitos_trabajo()[5].length()));
+                p2.put("parameter26", notaVO.getHabitos_trabajo()[6].substring(2,  notaVO.getHabitos_trabajo()[6].length()));
+                p2.put("parameter27", notaVO.getHabitos_trabajo()[7].substring(2,  notaVO.getHabitos_trabajo()[7].length()));
+                
+                JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                visor.setVisible(true);
+            } catch (JRException ex) {
+                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+            }
+        }
+ }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+                        lblNombres5.setText("");
+                txtCodigo5.setText("");
+                cbxLapso1.setSelectedIndex(0);
+        this.frmDatosBoletin2.setVisible(false); 
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void txtCodigo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo5ActionPerformed
+
+    private void txtCodigo5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo5KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo5KeyTyped
+
+    private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
+        if (!txtCodigo5.getText().isEmpty()) {
+            id = Integer.parseInt(txtCodigo5.getText());
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo5.getText().trim());
+            if (alumnoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                lblNombres5.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+
+                //llenar parametros a enviar
+                if (!obtenerDatos2(String.valueOf(id))) {
+                    coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
+                    lblNombres5.setText("");
+                    txtCodigo5.setText("");
+                                    cbxLapso1.setSelectedIndex(0);
+                }
+            } else {
+                     coordinador.getLogica().mensajeError("Codigo no existe");
+                                         lblNombres5.setText("");
+                    txtCodigo5.setText("");
+                                    cbxLapso1.setSelectedIndex(0);
+            }
+        }else {
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        }
+    }//GEN-LAST:event_btnBuscar5ActionPerformed
+
+    private void cbxLapso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLapso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxLapso1ActionPerformed
+
+    private void btnReportes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportes1ActionPerformed
+     this.frmDatosBoletin2.setLocationRelativeTo(null);
+ this.frmDatosBoletin2.setSize(290, 200);
+ this.frmDatosBoletin2.setVisible(true); 
+    }//GEN-LAST:event_btnReportes1ActionPerformed
 
   /**
      * @param args the command line arguments
@@ -1145,15 +1393,19 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar2;
     private javax.swing.JButton btnBuscar3;
     private javax.swing.JButton btnBuscar4;
+    private javax.swing.JButton btnBuscar5;
     public javax.swing.JButton btnDocentes;
     public javax.swing.JButton btnInscripcion;
     public javax.swing.JButton btnNotas;
     public javax.swing.JButton btnPagos;
     public javax.swing.JButton btnReportes;
+    public javax.swing.JButton btnReportes1;
     public javax.swing.JButton btnSeccion;
     public javax.swing.JButton btnUsuario;
     private javax.swing.JComboBox<String> cbxLapso;
+    private javax.swing.JComboBox<String> cbxLapso1;
     private javax.swing.JFrame frmDatosBoletin;
+    private javax.swing.JFrame frmDatosBoletin2;
     private javax.swing.JFrame frmDatosConstanciaEstudio;
     private javax.swing.JFrame frmDatosConstanciaInscripcion;
     private javax.swing.JFrame frmDatosConstanciaPago;
@@ -1168,12 +1420,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1181,6 +1438,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1190,6 +1448,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -1200,12 +1459,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombres2;
     private javax.swing.JLabel lblNombres3;
     private javax.swing.JLabel lblNombres4;
+    private javax.swing.JLabel lblNombres5;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigo1;
     private javax.swing.JTextField txtCodigo2;
     private javax.swing.JTextField txtCodigo3;
     private javax.swing.JTextField txtCodigo4;
+    private javax.swing.JTextField txtCodigo5;
     private javax.swing.JTextField txtNacimiento;
     // End of variables declaration//GEN-END:variables
 
@@ -1307,7 +1568,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jComboBox94.setSelectedItem(notaVO.getComunicacion_presentacion()[12].substring(3));
                 jComboBox95.setSelectedItem(notaVO.getComunicacion_presentacion()[13].substring(3));
 
-                jComboBox96.setSelectedItem(notaVO.getIndicadores_evaluados()[0].substring(2));
+                jComboBox96.setSelectedItem(notaVO.getHabitos_trabajo()[0].substring(2));
                 jComboBox97.setSelectedItem(notaVO.getIndicadores_evaluados()[1].substring(2));
                 jComboBox98.setSelectedItem(notaVO.getIndicadores_evaluados()[2].substring(2));
                 jComboBox99.setSelectedItem(notaVO.getIndicadores_evaluados()[3].substring(2));
