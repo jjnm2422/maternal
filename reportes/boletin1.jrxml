@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boletin informativo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfb2390c-9c71-47dc-bec7-47522738f99f">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="481"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="ruta" class="java.lang.String"/>
 	<parameter name="id" class="java.lang.Integer"/>
 	<parameter name="parameter4" class="java.lang.String"/>
@@ -24,6 +24,21 @@
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
 	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="lapso" class="java.lang.String"/>
+	<parameter name="parameter20" class="java.lang.String"/>
+	<parameter name="parameter21" class="java.lang.String"/>
+	<parameter name="parameter22" class="java.lang.String"/>
+	<parameter name="parameter23" class="java.lang.String"/>
+	<parameter name="parameter24" class="java.lang.String"/>
+	<parameter name="parameter25" class="java.lang.String"/>
+	<parameter name="parameter26" class="java.lang.String"/>
+	<parameter name="parameter27" class="java.lang.String"/>
+	<parameter name="parameter28" class="java.lang.String"/>
+	<parameter name="parameter29" class="java.lang.String"/>
+	<parameter name="parameter30" class="java.lang.String"/>
+	<parameter name="parameter31" class="java.lang.String"/>
+	<parameter name="parameter32" class="java.lang.String"/>
+	<parameter name="parameter33" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
      variables."iva" AS variables_iva,
@@ -59,7 +74,7 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="102" splitType="Stretch">
+		<band height="89" splitType="Stretch">
 			<staticText>
 				<reportElement x="169" y="2" width="280" height="18" uuid="ef9d8ae4-7d92-4050-b879-1d009090493c"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
@@ -68,274 +83,611 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="237" y="35" width="107" height="17" uuid="3fcf6c77-5aba-4d31-9106-81805098a510"/>
+				<reportElement x="237" y="23" width="107" height="17" uuid="3fcf6c77-5aba-4d31-9106-81805098a510"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA["HUMBOLDT"]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="177" y="54" width="253" height="12" uuid="1be55c81-4c49-4cdf-88b1-5ece099ec9cf"/>
+				<reportElement x="170" y="45" width="253" height="12" uuid="1be55c81-4c49-4cdf-88b1-5ece099ec9cf"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Inscrito en el Ministerio del Poder Popular Para la Educación]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="208" y="65" width="212" height="13" uuid="ae6bde4b-f379-402d-ada6-99acbd44d87b"/>
+				<reportElement x="201" y="56" width="212" height="13" uuid="ae6bde4b-f379-402d-ada6-99acbd44d87b"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bajo en Nro: PD.12000701 - RIF: J-30506388-5]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="235" y="78" width="160" height="11" uuid="cfe9cb03-a00d-4495-a55f-5fc045daab0b"/>
+				<reportElement x="228" y="69" width="160" height="11" uuid="cfe9cb03-a00d-4495-a55f-5fc045daab0b"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Telef.: 0286-7191795 / 0414-8682748]]></text>
 			</staticText>
 			<image onErrorType="Blank">
-				<reportElement x="0" y="0" width="97" height="102" uuid="d7dcdc9d-1248-47a3-81a5-8ee72de60a5d"/>
+				<reportElement x="27" y="0" width="69" height="89" uuid="d7dcdc9d-1248-47a3-81a5-8ee72de60a5d"/>
 				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="24" splitType="Stretch">
+		<band height="18" splitType="Stretch">
 			<staticText>
-				<reportElement x="177" y="0" width="215" height="24" uuid="9e9687c9-2203-44d1-b554-77691f39af90"/>
-				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Arial Black" size="15"/>
+				<reportElement x="177" y="0" width="215" height="18" uuid="9e9687c9-2203-44d1-b554-77691f39af90"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial Black" size="12"/>
 				</textElement>
 				<text><![CDATA[BOLETÍN INFORMATIVO]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="43" splitType="Stretch">
+		<band height="36" splitType="Stretch">
 			<rectangle>
-				<reportElement x="362" y="5" width="191" height="38" uuid="b447f947-1d7c-4431-8d82-f6fdc3ee034b"/>
+				<reportElement x="16" y="1" width="517" height="32" uuid="b447f947-1d7c-4431-8d82-f6fdc3ee034b"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="369" y="9" width="81" height="14" uuid="8ac183fe-847c-4fb7-8a93-fb7c773146e1"/>
+				<reportElement x="24" y="2" width="81" height="14" uuid="8ac183fe-847c-4fb7-8a93-fb7c773146e1"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial"/>
+					<font fontName="Arial" size="10"/>
 				</textElement>
 				<text><![CDATA[AÑO ESCOLAR: ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="369" y="26" width="56" height="15" uuid="8c8fb9f0-12bd-40c4-bad0-7a2558f8fc77"/>
+				<reportElement x="359" y="2" width="56" height="15" uuid="8c8fb9f0-12bd-40c4-bad0-7a2558f8fc77"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Arial"/>
+					<font fontName="Arial" size="10"/>
 				</textElement>
 				<text><![CDATA[FECHA:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="455" y="9" width="87" height="14" uuid="9582b373-5a69-4470-ae1f-bf46da87a20e"/>
+				<reportElement x="110" y="2" width="87" height="14" uuid="9582b373-5a69-4470-ae1f-bf46da87a20e"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{variables_periodo_actual}]]></textFieldExpression>
 			</textField>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="430" y="26" width="112" height="15" uuid="261a5b8e-7c72-4e31-b73e-fbc47ad45fa1"/>
+				<reportElement x="420" y="2" width="112" height="15" uuid="261a5b8e-7c72-4e31-b73e-fbc47ad45fa1"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="572" splitType="Stretch">
-			<rectangle>
-				<reportElement x="23" y="286" width="517" height="286" uuid="0a3fdda8-be86-41c6-8946-8f8822fe7b33"/>
-			</rectangle>
 			<staticText>
-				<reportElement x="20" y="1" width="61" height="15" uuid="9c74ef3a-e54a-4a2f-becf-42add24730d7"/>
+				<reportElement x="24" y="16" width="61" height="15" uuid="9c74ef3a-e54a-4a2f-becf-42add24730d7"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="11"/>
+					<font fontName="Arial" size="10"/>
 				</textElement>
 				<text><![CDATA[ALUMNO:]]></text>
 			</staticText>
-			<rectangle>
-				<reportElement x="23" y="22" width="517" height="254" uuid="7251e4ac-9449-42c0-861a-66cea4e9d417"/>
-			</rectangle>
-			<staticText>
-				<reportElement x="32" y="27" width="495" height="17" uuid="e848ca48-174b-4270-bf17-af8b44a94bcd"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="11" isBold="true" isItalic="true"/>
-				</textElement>
-				<text><![CDATA[FOMRACION PERSONAL SOCIAL Y COMUNICACION]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="50" width="350" height="20" uuid="4e258d0c-8231-468b-830a-6b47d113dd0f"/>
-				<text><![CDATA[Hace preguntas sobre situciones de su interes.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="74" width="350" height="20" uuid="ad249757-2494-48e8-a2ff-cbb076ad2d3e"/>
-				<text><![CDATA[Mantiene interaccion fluida, constante y variada con adultos.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="124" width="350" height="20" uuid="8f5b1304-7951-4153-8808-e5fd652269bd"/>
-				<text><![CDATA[Utiliza espontaneamente las normas de alimentos y cortesia]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="99" width="350" height="20" uuid="d3449927-e5d1-429e-9810-ffb12b4b09e8"/>
-				<text><![CDATA[Colabora en el mantenimiento del orden y limpieza del salon]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="174" width="350" height="20" uuid="899aef79-d809-489e-9a1e-9478157308dd"/>
-				<text><![CDATA[Colabora en juegos colectivos]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="199" width="350" height="20" uuid="554f03bd-62ad-42af-8a1d-f278120464ba"/>
-				<text><![CDATA[Pide permiso para usar algo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="149" width="350" height="20" uuid="60a7fef6-45ae-4de6-b53a-1716e6e8df9d"/>
-				<text><![CDATA[Sabe evitar peligros comunes]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="224" width="350" height="20" uuid="efe49e4f-d40a-4d9e-9afb-615e7c64cd40"/>
-				<text><![CDATA[Juega y comparte en grupo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="32" y="249" width="350" height="20" uuid="c3ebb6ee-4f3d-462b-a714-4132626cbb5e"/>
-				<text><![CDATA[Es capaz de auto controlarse cuando se molesta]]></text>
-			</staticText>
 			<textField>
-				<reportElement x="392" y="50" width="135" height="20" uuid="4b46004e-fedb-43e1-bb46-a0db6ae7744d"/>
-				<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="74" width="135" height="20" uuid="3474b123-a070-4253-8005-34e7f3152ea5"/>
-				<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="99" width="135" height="20" uuid="0f42d784-cee7-4b79-b6db-6c018adf3689"/>
-				<textFieldExpression><![CDATA[$P{parameter3}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="124" width="135" height="20" uuid="a13ccc9a-fb1a-4dc7-9c5c-ce835eb02b3b"/>
-				<textFieldExpression><![CDATA[$P{parameter4}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="149" width="135" height="20" uuid="8aaa38a5-baf8-454a-92b9-e9c145394343"/>
-				<textFieldExpression><![CDATA[$P{parameter5}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="174" width="135" height="20" uuid="3c68dd93-d5ef-4a37-9f9f-18e57df5ce92"/>
-				<textFieldExpression><![CDATA[$P{parameter6}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="199" width="135" height="20" uuid="d5357038-0c76-4dff-b905-6b266e9e6868"/>
-				<textFieldExpression><![CDATA[$P{parameter7}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="224" width="135" height="20" uuid="b081604f-663c-4b60-82fc-571dc5624574"/>
-				<textFieldExpression><![CDATA[$P{parameter8}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="392" y="249" width="135" height="20" uuid="42779aa3-1442-4e80-9385-d7957973d024"/>
-				<textFieldExpression><![CDATA[$P{parameter9}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="81" y="1" width="288" height="15" uuid="5ec728c7-dc31-4faf-a3e6-f8d52a838f5f"/>
+				<reportElement x="85" y="16" width="288" height="15" uuid="5ec728c7-dc31-4faf-a3e6-f8d52a838f5f"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="10" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{alumno_primer_nombre}+" "+$F{alumno_segundo_nombre}+" "+$F{alumno_primer_apellido}+" "+$F{alumno_segundo_apellido}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="197" y="1" width="56" height="15" uuid="de1f3784-2126-4c25-9baf-ef81be272bd0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[LAPSO:]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="392" y="312" width="135" height="20" uuid="176e8579-30c8-493d-a0c8-120579c36357"/>
+				<reportElement x="253" y="2" width="100" height="14" uuid="e6893d2a-2940-4190-9a8e-ea7ac12cea22"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lapso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="599" splitType="Stretch">
+			<rectangle>
+				<reportElement x="16" y="355" width="517" height="243" uuid="b5d3b0fe-45c5-47db-8091-4901be728eec"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="16" y="170" width="517" height="179" uuid="0a3fdda8-be86-41c6-8946-8f8822fe7b33"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="16" y="1" width="517" height="164" uuid="7251e4ac-9449-42c0-861a-66cea4e9d417"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="2" width="495" height="18" uuid="e848ca48-174b-4270-bf17-af8b44a94bcd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[FOMRACION PERSONAL SOCIAL Y COMUNICACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="20" width="381" height="15" uuid="4e258d0c-8231-468b-830a-6b47d113dd0f"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Hace preguntas sobre situciones de su interes.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="36" width="381" height="15" uuid="ad249757-2494-48e8-a2ff-cbb076ad2d3e"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Mantiene interaccion fluida, constante y variada con adultos.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="70" width="381" height="15" uuid="8f5b1304-7951-4153-8808-e5fd652269bd"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Utiliza espontaneamente las normas de alimentos y cortesia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="53" width="381" height="15" uuid="d3449927-e5d1-429e-9810-ffb12b4b09e8"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Colabora en el mantenimiento del orden y limpieza del salon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="102" width="381" height="15" uuid="899aef79-d809-489e-9a1e-9478157308dd"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Colabora en juegos colectivos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="118" width="381" height="15" uuid="554f03bd-62ad-42af-8a1d-f278120464ba"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Pide permiso para usar algo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="86" width="381" height="15" uuid="60a7fef6-45ae-4de6-b53a-1716e6e8df9d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Sabe evitar peligros comunes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="134" width="381" height="15" uuid="efe49e4f-d40a-4d9e-9afb-615e7c64cd40"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Juega y comparte en grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="150" width="381" height="15" uuid="c3ebb6ee-4f3d-462b-a714-4132626cbb5e"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Es capaz de auto controlarse cuando se molesta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="20" width="112" height="15" uuid="4b46004e-fedb-43e1-bb46-a0db6ae7744d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="36" width="112" height="15" uuid="3474b123-a070-4253-8005-34e7f3152ea5"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="53" width="112" height="15" uuid="0f42d784-cee7-4b79-b6db-6c018adf3689"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="70" width="112" height="15" uuid="a13ccc9a-fb1a-4dc7-9c5c-ce835eb02b3b"/>
+				<textFieldExpression><![CDATA[$P{parameter4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="86" width="112" height="15" uuid="8aaa38a5-baf8-454a-92b9-e9c145394343"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="102" width="112" height="15" uuid="3c68dd93-d5ef-4a37-9f9f-18e57df5ce92"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="118" width="112" height="15" uuid="d5357038-0c76-4dff-b905-6b266e9e6868"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="134" width="112" height="15" uuid="b081604f-663c-4b60-82fc-571dc5624574"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter8}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="150" width="112" height="15" uuid="42779aa3-1442-4e80-9385-d7957973d024"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="189" width="107" height="15" uuid="176e8579-30c8-493d-a0c8-120579c36357"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter10}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="32" y="289" width="495" height="17" uuid="50c3989f-d301-487e-9cf1-465e87e3d084"/>
+				<reportElement x="27" y="173" width="495" height="15" uuid="50c3989f-d301-487e-9cf1-465e87e3d084"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="11" isBold="true" isItalic="true"/>
+					<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
 				</textElement>
 				<text><![CDATA[RELACION CON EL AMBIENTE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="312" width="350" height="20" uuid="5baa8265-2ba8-4e59-934c-dd3a4bf26e7c"/>
+				<reportElement x="27" y="189" width="388" height="15" uuid="5baa8265-2ba8-4e59-934c-dd3a4bf26e7c"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Reconoce los simbolos patrios:bandera, escudo, himno nacional]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="339" width="350" height="20" uuid="94750cc5-25be-4175-8275-1327bc917ae9"/>
+				<reportElement x="27" y="205" width="388" height="15" uuid="94750cc5-25be-4175-8275-1327bc917ae9"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Reconoce e identifica las partes de la planta: hojas, tallo, raiz]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="389" width="350" height="20" uuid="dd76adee-6d1e-4b50-9945-c932e9c26027"/>
+				<reportElement x="27" y="237" width="388" height="15" uuid="dd76adee-6d1e-4b50-9945-c932e9c26027"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Identifica y diferencia: forma, color]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="514" width="350" height="20" uuid="26a33068-27da-4c8a-adbb-f507a026beaa"/>
+				<reportElement x="27" y="317" width="388" height="15" uuid="26a33068-27da-4c8a-adbb-f507a026beaa"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Logra hacer la correspondiente cantidad-numero del 1 al 15]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="439" width="350" height="20" uuid="6374240e-b02b-404d-845f-7e890ec072ba"/>
+				<reportElement x="27" y="269" width="388" height="15" uuid="6374240e-b02b-404d-845f-7e890ec072ba"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Conoce las nociones especiales: cerca-lejos, alto-bajo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="464" width="350" height="20" uuid="48734f4e-5249-4a4a-8e4c-9de9fef42340"/>
+				<reportElement x="27" y="285" width="388" height="15" uuid="48734f4e-5249-4a4a-8e4c-9de9fef42340"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Discrimina posiciones: horizontal, vertical, inclinada]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="364" width="350" height="20" uuid="ea468b00-0f31-44ba-a486-e644b958d351"/>
+				<reportElement x="27" y="221" width="388" height="15" uuid="ea468b00-0f31-44ba-a486-e644b958d351"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[observa objetos teniendo en cuenta: medida(largo, corto) tamaño(grande, pequeño)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="489" width="350" height="20" uuid="de7a16cf-503f-4021-b94d-6d9155d33125"/>
+				<reportElement x="27" y="301" width="388" height="15" uuid="de7a16cf-503f-4021-b94d-6d9155d33125"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Reconoce objetos y distingue sus propiedades]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="414" width="350" height="20" uuid="fbab53bb-4be5-42c5-bdc4-f16a3403a9b8"/>
+				<reportElement x="27" y="253" width="388" height="15" uuid="fbab53bb-4be5-42c5-bdc4-f16a3403a9b8"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[Reconoce la figura geometrica: rombo]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="392" y="390" width="135" height="20" uuid="a90fd81d-bbc9-4cae-b1e5-87feed3154bb"/>
+				<reportElement x="415" y="237" width="107" height="15" uuid="a90fd81d-bbc9-4cae-b1e5-87feed3154bb"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter13}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="415" width="135" height="20" uuid="9990d3be-b579-4e36-8150-6b525eefc24e"/>
+				<reportElement x="415" y="253" width="107" height="15" uuid="9990d3be-b579-4e36-8150-6b525eefc24e"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter14}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="490" width="135" height="20" uuid="6278e60c-d86d-41d9-8092-cae194c9640b"/>
+				<reportElement x="415" y="301" width="107" height="15" uuid="6278e60c-d86d-41d9-8092-cae194c9640b"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter17}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="515" width="135" height="20" uuid="f574d64e-1ec4-4acc-918b-87cc64349a21"/>
+				<reportElement x="415" y="317" width="107" height="15" uuid="f574d64e-1ec4-4acc-918b-87cc64349a21"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter18}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="465" width="135" height="20" uuid="1c439d1a-72e9-42cc-8d91-f3abeaaee830"/>
+				<reportElement x="415" y="285" width="107" height="15" uuid="1c439d1a-72e9-42cc-8d91-f3abeaaee830"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter16}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="540" width="135" height="20" uuid="1121273f-dc86-4b79-8f8b-ddb063d06b54"/>
+				<reportElement x="415" y="333" width="107" height="15" uuid="1121273f-dc86-4b79-8f8b-ddb063d06b54"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter19}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="440" width="135" height="20" uuid="80e8d101-0c06-4b5b-9fcb-4c4c7cfb9ff4"/>
+				<reportElement x="415" y="269" width="107" height="15" uuid="80e8d101-0c06-4b5b-9fcb-4c4c7cfb9ff4"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter15}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="392" y="339" width="135" height="20" uuid="43454159-ab20-48fa-9388-62a93096e97d"/>
+				<reportElement x="415" y="205" width="107" height="15" uuid="43454159-ab20-48fa-9388-62a93096e97d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter11}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="32" y="540" width="350" height="20" uuid="dc8cd79a-5dce-458b-a0fa-698d194d8508"/>
+				<reportElement x="27" y="334" width="388" height="15" uuid="dc8cd79a-5dce-458b-a0fa-698d194d8508"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
 				<text><![CDATA[identifica las normas de salud e higiene de nuestro cuerpo]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="392" y="364" width="135" height="20" uuid="ab626de0-499f-4da0-bf65-5080042f15c6"/>
+				<reportElement x="415" y="221" width="107" height="15" uuid="ab626de0-499f-4da0-bf65-5080042f15c6"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{parameter12}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="27" y="502" width="388" height="15" uuid="83eb8d12-976d-48a7-8b46-54e1d1ddc661"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Distingue derecha e izquierda en si mismo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="502" width="107" height="15" uuid="f5b760d0-bbcc-4a79-ae7d-ef6d69d0290a"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter28}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="470" width="388" height="15" uuid="6bf7e5d2-64a2-47ee-9dd4-66c1b22c6612"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Sube y baja cierres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="406" width="388" height="15" uuid="936c25f5-1209-425d-b095-e45c79b17e0c"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Ejecuta ordenes en 3 pasos: realiza ordenes orales, encargos, mandatos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="438" width="107" height="15" uuid="e016bbd3-0943-4e47-a2f8-ab0ce941f9b7"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter24}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="406" width="107" height="15" uuid="ba58a8c0-9dac-4eb3-a266-908d520ee921"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter22}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="486" width="107" height="15" uuid="e16d0a58-c390-4672-a74e-9e8f8ce2cef4"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter27}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="454" width="388" height="15" uuid="d5f81743-a87f-44f1-b5c8-87455020d241"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Abrocha, desabrocha, abotona y desabotona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="486" width="388" height="15" uuid="cb911672-a7ac-4f80-a734-6d6b829e7d5c"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Hace plegado de figuras sencillas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="422" width="107" height="15" uuid="0d06520c-a651-4d7b-9dc9-e8b92eae3025"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter23}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="438" width="388" height="15" uuid="68c16c33-39b8-4c2d-90c0-3a784534cb38"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Identifica letras del alfabeto y vocales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="358" width="495" height="15" uuid="f16bc9c8-c25b-4cca-b609-455fc0c0ecd5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[COMUNICACION Y REPRESENTACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="390" width="388" height="15" uuid="661e78fe-99ca-4177-87ea-46c68b200698"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Discrimina, dice el nombe y la funcion de vaios objetos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="470" width="107" height="15" uuid="ed4f5433-d966-4bc1-b643-c6ea205cbb51"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter26}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="374" width="107" height="15" uuid="00de0d21-8830-46d3-8b44-684b4fd2d9a9"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter20}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="454" width="107" height="15" uuid="83414927-eda9-4857-bc6a-e93b6fe15155"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter25}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="518" width="107" height="16" uuid="876c0609-f216-4f17-bca2-4d13909f2625"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter29}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="519" width="388" height="15" uuid="68181408-d274-4406-8c3c-5325f4f5a43d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Escribe palabras simples]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="422" width="388" height="15" uuid="774917a0-b4ec-4734-8078-a3a9fc0affe2"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Comprende experiencias sencillas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="374" width="388" height="15" uuid="da7c817e-fa10-4ebe-a76f-548400bee3e3"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Reconoce canciones]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="390" width="107" height="15" uuid="4823fdae-e69c-4b37-813f-cea96accd359"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter21}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="534" width="107" height="16" uuid="2a107624-0c66-4c11-a167-89ef0830e187"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter30}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="535" width="388" height="15" uuid="24bb0308-7e8b-420f-a89b-d7f7ddd24dc5"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Lectura silabica]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="551" width="107" height="16" uuid="8977ad7d-f3c8-4fbd-9813-9aae00a33d1d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter31}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="551" width="388" height="15" uuid="7d3d8ef5-3969-4c65-9a4b-6b3d17541fa7"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Reconoce que las palabras se leen de izquierda a derecha]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="567" width="107" height="16" uuid="447845b3-c6e9-4b43-9da2-e9f075e40dcf"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter32}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="567" width="388" height="15" uuid="47d0e8fb-6f32-4094-bc06-8774009416df"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Dice palabras que empiezan por determinados sonidos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="415" y="583" width="107" height="16" uuid="2b66b5dc-9fce-475b-9091-3ee613cbb66d"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{parameter33}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="583" width="388" height="15" uuid="d6e70a1c-8e46-4fca-9f95-c9aed40c8c28"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[Comprende la diferencia entre un numero y una letra]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="11" splitType="Stretch"/>
+		<band height="3" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="14" splitType="Stretch"/>
+		<band height="7" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="28" splitType="Stretch"/>
