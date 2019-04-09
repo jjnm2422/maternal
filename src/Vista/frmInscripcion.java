@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -72,6 +73,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -89,10 +91,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         rbnFemenino = new javax.swing.JRadioButton();
         rbnMasculino = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
         txtFecha = new datechooser.beans.DateChooserCombo();
         jLabel18 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -108,8 +110,16 @@ public class frmInscripcion extends javax.swing.JFrame {
         cbxTipoSangre = new javax.swing.JComboBox<>();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
+        rbnASi = new javax.swing.JRadioButton();
+        rbnANo = new javax.swing.JRadioButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        listAlergias = new javax.swing.JList<>();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        cbxEstatus = new javax.swing.JComboBox<>();
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
@@ -211,6 +221,16 @@ public class frmInscripcion extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informacion del Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -311,8 +331,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Sexo");
-        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 300, -1));
 
         rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnFemenino);
@@ -326,7 +347,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnFemeninoActionPerformed(evt);
             }
         });
-        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
 
         rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnMasculino);
@@ -334,26 +355,26 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
         rbnMasculino.setOpaque(false);
-        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Fecha de Nacimiento");
-        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 170, -1));
+        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         txtFecha.setFieldFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 11));
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chica(1).png"))); // NOI18N
-        jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chico(1).png"))); // NOI18N
-        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 370, 140));
+        jLabel44.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("Fecha de Nacimiento");
+        jPanel8.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, -1));
+
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 370, 100));
 
         jPanel10.setBackground(new java.awt.Color(24, 119, 189));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -362,7 +383,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Direccion");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 70, 30));
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 70, 30));
 
         txtDireccion.setColumns(20);
         txtDireccion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
@@ -377,12 +398,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(txtDireccion);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 310, 100));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 220, 60));
 
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/firmar.png"))); // NOI18N
-        jPanel10.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel10.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 380, 170));
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 380, 150));
 
         jPanel9.setBackground(new java.awt.Color(24, 119, 189));
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -432,7 +453,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(txtEnfermedad);
 
-        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 340, 80));
+        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 40));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -449,7 +470,54 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/drogas.png"))); // NOI18N
         jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 370, 170));
+        rbnASi.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup4.add(rbnASi);
+        rbnASi.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnASi.setForeground(new java.awt.Color(255, 255, 255));
+        rbnASi.setText("Si");
+        rbnASi.setOpaque(false);
+        rbnASi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnASiActionPerformed(evt);
+            }
+        });
+        jPanel9.add(rbnASi, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, 20));
+
+        rbnANo.setBackground(new java.awt.Color(69, 90, 100));
+        buttonGroup4.add(rbnANo);
+        rbnANo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnANo.setForeground(new java.awt.Color(255, 255, 255));
+        rbnANo.setSelected(true);
+        rbnANo.setText("No");
+        rbnANo.setOpaque(false);
+        rbnANo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnANoActionPerformed(evt);
+            }
+        });
+        jPanel9.add(rbnANo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, 20));
+
+        listAlergias.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Anafilaxis", "Asma", "Dermatitis de Contacto", "Eczema (dermatitis atópica)", "Alergias alimentos", "Fiebre de heno", "Urticaria", "Alergias a medicamentos", "Penicilina", "Analgésicos", "Aspirina", "Ibuprofeno", "Naproxeno sódico", "Gluten" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listAlergias.setEnabled(false);
+        jScrollPane8.setViewportView(listAlergias);
+
+        jPanel9.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, 80));
+
+        jLabel47.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Pulse la tecla Ctrl para multiple seleccion");
+        jPanel9.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, 20));
+
+        jLabel48.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Alergias");
+        jPanel9.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 20));
+
+        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 370, 230));
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
@@ -460,7 +528,15 @@ public class frmInscripcion extends javax.swing.JFrame {
         lblCodigo.setToolTipText("");
         jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, -1));
 
-        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 830, 340));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Estatus del Alumno");
+        jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 170, 20));
+
+        cbxEstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DISPONIBLE", "NO DISPONIBLE" }));
+        jPanel7.add(cbxEstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 110, -1));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 810, 350));
 
         btnSalir.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -487,8 +563,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel2.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 120, 30));
 
         btnBorrarA.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnBorrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
-        btnBorrarA.setText("Borrar");
+        btnBorrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarA.setText("Limpiar");
         btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarAActionPerformed(evt);
@@ -514,7 +590,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtCodigoKeyTyped(evt);
             }
         });
-        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 80, 30));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 80, 30));
 
         btnBuscar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
@@ -525,13 +601,13 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, -1, -1));
+        jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Codigo alumno");
         jLabel30.setName("lbl"); // NOI18N
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 150, 30));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 150, 30));
 
         jTabbedPane1.addTab("Datos Alumno", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_graduado.png")), jPanel2); // NOI18N
 
@@ -759,17 +835,17 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 100, 30));
+        jPanel3.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 460, 100, 30));
 
         btnBorrarR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
-        btnBorrarR.setText("Borrar");
+        btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarR.setText("Limpiar");
         btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarRActionPerformed(evt);
             }
         });
-        jPanel3.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 100, 30));
+        jPanel3.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 110, 30));
 
         jPanel6.setBackground(new java.awt.Color(24, 119, 189));
         jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -1096,7 +1172,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, 110, 30));
+        jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, -1, 30));
 
         jTabbedPane1.addTab("Datos Representante", new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_familia.png")), jPanel3); // NOI18N
 
@@ -1304,7 +1380,11 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        jTabbedPane1.setSelectedIndex(1);
+        if (validacionCampoAlumno()) {
+            jTabbedPane1.setSelectedIndex(1);
+        }else{
+            System.out.println("Faltan campos");
+        }
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -1369,6 +1449,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                     ajustar(lblfoto, ICON_NO_PHOTO);
                 } else {
                     ajustar(lblfoto, alumnoVO.getFoto());
+                }
+                if (alumnoVO.isEstatus()) {
+                    cbxEstatus.setSelectedIndex(0);
+                } else {
+                    cbxEstatus.setSelectedIndex(1);
                 }
                 //datos del representante 1
                 RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 1);
@@ -1635,6 +1720,46 @@ public class frmInscripcion extends javax.swing.JFrame {
         validacionSoloNumeros(evt, 4, txtCodigo.getText().length());
     }//GEN-LAST:event_txtCodigoKeyTyped
 
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        if (jTabbedPane1.getSelectedIndex() == 1) {
+            if (validacionCampoAlumno()) {
+                jTabbedPane1.setSelectedIndex(1);
+            } else {
+                coordinador.getLogica().mensajeError("Complete los campos de alumno");
+                jTabbedPane1.setSelectedIndex(0);
+            }
+        } 
+//        if (jTabbedPane1.getSelectedIndex() == 0) {
+//            if (validacionCampoRepresentante()) {
+//                jTabbedPane1.setSelectedIndex(0);
+//            } else {
+//                coordinador.getLogica().mensajeError("Complete los campos de representantes");
+//                jTabbedPane1.setSelectedIndex(1);
+//            }
+//        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void rbnASiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnASiActionPerformed
+    listAlergias.setEnabled(true);
+    }//GEN-LAST:event_rbnASiActionPerformed
+
+    private void rbnANoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnANoActionPerformed
+     listAlergias.setEnabled(false);
+        List<String> listaAlergias = listAlergias.getSelectedValuesList();
+        if (listaAlergias.isEmpty()) {
+            System.out.println("sin eleccion");
+        }else{
+            for (String elementos: listaAlergias){
+                System.out.println(elementos);
+            }
+        }
+        listAlergias.clearSelection();
+    }//GEN-LAST:event_rbnANoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1686,6 +1811,8 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JComboBox<String> cbxEstatus;
     private javax.swing.JComboBox<String> cbxParentescoR1;
     private javax.swing.JComboBox<String> cbxParentescoR2;
     private javax.swing.JComboBox<String> cbxParentescoR3;
@@ -1734,6 +1861,9 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1756,6 +1886,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField lblCodigo;
     public javax.swing.JLabel lblTitulo;
@@ -1764,6 +1895,9 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel lblfoto1;
     private javax.swing.JLabel lblfoto2;
     private javax.swing.JLabel lblfoto3;
+    private javax.swing.JList<String> listAlergias;
+    private javax.swing.JRadioButton rbnANo;
+    private javax.swing.JRadioButton rbnASi;
     private javax.swing.JRadioButton rbnFemenino;
     private javax.swing.JRadioButton rbnMasculino;
     private javax.swing.JRadioButton rbnNo;
@@ -2096,6 +2230,10 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     private void borrarAlumno() {
         txtCodigo.setText("");
+        rbnASi.setSelected(false);
+        rbnANo.setSelected(true);
+        listAlergias.setEnabled(false);
+        listAlergias.clearSelection();
         txtPnombre.setText("");
         txtSnombre.setText("");
         txtPapellido.setText("");
@@ -2107,6 +2245,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtEnfermedad.setText("");
         ajustar(lblfoto, ICON_NO_PHOTO);
         txtEnfermedad.setEnabled(false);
+        cbxEstatus.setSelectedIndex(0);
     }
 
     private void borrarRepresentante() {

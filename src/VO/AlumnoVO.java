@@ -17,6 +17,7 @@ public class AlumnoVO {
     private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias, direccion, sexo, fechaNacimiento;
     private int edad, id_alumno, id_nota, id_pago, binarioFoto;
     private FileInputStream fis;
+    private boolean estatus;
     private ImageIcon foto; 
 
     public AlumnoVO() {
@@ -43,6 +44,14 @@ public class AlumnoVO {
 
     public ImageIcon getFoto() {
         return foto;
+    }
+
+    public boolean isEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(boolean estatus) {
+        this.estatus = estatus;
     }
 
     public void setFoto(ImageIcon foto) {

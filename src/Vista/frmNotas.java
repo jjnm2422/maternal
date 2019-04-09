@@ -51,6 +51,7 @@ public class frmNotas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -206,6 +207,9 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel67 = new javax.swing.JLabel();
         jComboBox63 = new javax.swing.JComboBox<>();
         jLabel68 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         btnGuardar5 = new javax.swing.JButton();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -1222,10 +1226,31 @@ public class frmNotas extends javax.swing.JFrame {
 
         jLabel68.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel68.setText("INASISTENCIAS");
-        jPanel10.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
+        jLabel68.setText("¿El alumno Aprobo el lapso academico?");
+        jPanel10.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, 20));
 
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 450));
+        jLabel82.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setText("INASISTENCIAS");
+        jPanel10.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
+
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("SI");
+        jRadioButton1.setEnabled(false);
+        jRadioButton1.setOpaque(false);
+        jPanel10.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 60, -1));
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setSelected(true);
+        jRadioButton2.setText("NO");
+        jRadioButton2.setEnabled(false);
+        jRadioButton2.setOpaque(false);
+        jPanel10.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 60, -1));
+
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 470));
 
         btnGuardar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -1236,7 +1261,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnGuardar5ActionPerformed(evt);
             }
         });
-        jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, 110, 30));
+        jPanel7.add(btnGuardar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 110, 30));
 
         jTabbedPane1.addTab("Cuadro de valores", jPanel7);
 
@@ -2437,6 +2462,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JButton btnSiguiente7;
     private javax.swing.JButton btnSiguiente8;
     private javax.swing.JButton btnSiguiente9;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbxLapso;
     private javax.swing.JComboBox<String> cbxLapso1;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -2679,6 +2705,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
@@ -2721,6 +2748,8 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
