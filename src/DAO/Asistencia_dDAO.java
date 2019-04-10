@@ -29,7 +29,7 @@ public class Asistencia_dDAO {
         this.coordinador = coordinador;
     }
 
-    public String registrarAsistenciaEmpleado(DefaultTableModel model, boolean asistencia, int usuario) {
+    public String registrarAsistenciaEmpleado(DefaultTableModel model, boolean asistencia, String id_usuario) {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -41,10 +41,10 @@ public class Asistencia_dDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, Integer.parseInt(model.getValueAt(i, 0).toString()));
+            ps.setString(1, model.getValueAt(i, 0).toString());
             ps.setString(2, coordinador.getFechaFormateada());
             ps.setBoolean(3,  asistencia);
-            ps.setInt(4,  usuario);
+            ps.setString(4,  id_usuario);
             int n = ps.executeUpdate();
             if (n > 0 && i==model.getRowCount()-1) {
                 respuesta = "INSERT";
@@ -91,7 +91,7 @@ public class Asistencia_dDAO {
         return respuesta;
     }
         
-    public String eliminarAsistenciaDocente(int id_empleado){
+    public String eliminarAsistenciaDocente(String id_empleado){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();

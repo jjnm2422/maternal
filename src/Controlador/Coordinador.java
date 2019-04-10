@@ -132,19 +132,19 @@ public class Coordinador {
         return getRepresentanteDAO().actualizarRepresentante(representanteVO, id_alumno, tipo);
     }
     
-    public String actualizarEmpleadoSinFoto(VO.EmpleadoVO empleadoVO, int id){
-        return getEmpleadoDAO().actualizarEmpleadoSinFoto(empleadoVO, id);
+    public String actualizarEmpleadoSinFoto(VO.EmpleadoVO empleadoVO, String id_empleado){
+        return getEmpleadoDAO().actualizarEmpleadoSinFoto(empleadoVO, id_empleado);
     }
     
-    public String actualizarEmpleadoConFoto(VO.EmpleadoVO empleadoVO, int id){
-        return getEmpleadoDAO().actualizarEmpleadoConFoto(empleadoVO, id);
+    public String actualizarEmpleadoConFoto(VO.EmpleadoVO empleadoVO, String id_empleado){
+        return getEmpleadoDAO().actualizarEmpleadoConFoto(empleadoVO, id_empleado);
     }
     
-    public String eliminarEmpleado(int id){
-        return getEmpleadoDAO().eliminarEmpleado(id);
+    public String eliminarEmpleado(String id_empleado){
+        return getEmpleadoDAO().eliminarEmpleado(id_empleado);
     }
     
-    public String eliminarAsistenciaDocente(int id_empleado){
+    public String eliminarAsistenciaDocente(String id_empleado){
         return getAsistencia_dDAO().eliminarAsistenciaDocente(id_empleado);
     }
     
@@ -184,7 +184,7 @@ public class Coordinador {
         return  getRequisitosDAO().registrarRequisitos(requisitosVO);
     }
     
-    public VO.RequisitosVO consultarRequisitos(int id_alumno) {
+    public VO.RequisitosVO consultarRequisitos(String id_alumno) {
         return getRequisitosDAO().consultarRequisitos(id_alumno);
     }
     
@@ -192,7 +192,7 @@ public class Coordinador {
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
     }
     
-     public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno, int tipo) {
+     public VO.RepresentanteVO consultarRepresentantePorAlumno(String id_alumno, int tipo) {
          return getRepresentanteDAO().consultarRepresentantePorAlumno(id_alumno, tipo);
      }
 
@@ -309,8 +309,8 @@ public class Coordinador {
         return getUsuarioDAO().getPreguntaSecreta(usuario);
     }
     
-    public VO.UsuarioVO consultarUsuario(String parametro) {
-        return getUsuarioDAO().consultarUsuario(parametro);
+    public VO.UsuarioVO consultarUsuario(String nombre_usuario) {
+        return getUsuarioDAO().consultarUsuario(nombre_usuario);
     }
    
     public void setFrmAsistencia(frmAsistencia frmAsistencia) {
@@ -329,8 +329,8 @@ public class Coordinador {
         this.matriculaDAO = matriculaDAO;
     }
     
-    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia, int id_usuario) {
-        return getAsistenciaDAO().registrarAsistenciaPorSeccion(model, seccion, asistencia, 1);
+    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia, String id_usuario) {
+        return getAsistenciaDAO().registrarAsistenciaPorSeccion(model, seccion, asistencia, id_usuario);
     }
 
     public void setAsistenciaDAO(AsistenciaADAO asistenciaDAO) {
@@ -357,8 +357,8 @@ public class Coordinador {
         return frmDocenteAsistencia;
     }
 
-    public String registrarAsistenciaEmpleado(DefaultTableModel model, boolean asistencia, int usuario) {
-        return getAsistencia_dDAO().registrarAsistenciaEmpleado(model, asistencia, usuario);
+    public String registrarAsistenciaEmpleado(DefaultTableModel model, boolean asistencia, String id_usuario) {
+        return getAsistencia_dDAO().registrarAsistenciaEmpleado(model, asistencia, id_usuario);
     }
 
     public void setAsistencia_dDAO(Asistencia_dDAO asistencia_dDAO) {
@@ -413,8 +413,8 @@ public class Coordinador {
         return frmInscripcion;
     }
    
-    public  int  llenarCodigoAlumno(){
-        return getAlumnoDAO().llenarCodigoAlumno();
+    public  String  llenarCodigoAlumno(String cedula_representante){
+        return getAlumnoDAO().llenarCodigoAlumno(cedula_representante);
     }
 
     public void setRequisitosVO(RequisitosVO requisitosVO) {

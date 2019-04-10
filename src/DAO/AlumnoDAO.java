@@ -44,11 +44,10 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, direccion, alergias, foto, estatus, enfermedades)"
+        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, alergias, foto, estatus, enfermedades, id_alumno)"
                 + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion != null) {
-            try {
-                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
+            try {             
                 ps = conexion.prepareCall(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -58,15 +57,20 @@ public class AlumnoDAO {
                 ps.setString(6, alumnoVO.getTipo_sangre());
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
-                ps.setString(9, alumnoVO.getDireccion());
-                ps.setArray(10, alergiasArray);
-                if (alumnoVO.getFis() != null) {
-                    ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
-                } else {
-                    ps.setBinaryStream(11, null, 0);
+                if (alumnoVO.getAlergias() != null) {
+                    Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
+                    ps.setArray(9, alergiasArray);
+                }else{
+                    ps.setArray(9, null);
                 }
-                ps.setBoolean(12, alumnoVO.isEstatus());
-                ps.setString(13, alumnoVO.getEnfermedades());
+                if (alumnoVO.getFis() != null) {
+                    ps.setBinaryStream(10, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
+                } else {
+                    ps.setBinaryStream(10, null, 0);
+                }
+                ps.setBoolean(11, alumnoVO.isEstatus());
+                ps.setString(12, alumnoVO.getEnfermedades());
+                ps.setString(13, alumnoVO.getId_alumno());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
@@ -102,19 +106,21 @@ public class AlumnoDAO {
                     alumnoVO.setSegundo_nombre(result.getString("segundo_nombre"));
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
-                    alumnoVO.setDireccion(result.getString("direccion"));
                     //conversion de arrays
+                    if (alumnoVO.getAlergias() != null) {
                     Array alergiasArray =  result.getArray("alergias");
                     String[] alergiaArrayS = (String[]) alergiasArray.getArray();
                     alumnoVO.setAlergias(alergiaArrayS);
-                    
+                    }else{
+                        alumnoVO.setAlergias(null);
+                    }
                     alumnoVO.setEdad(result.getInt("edad"));
                     alumnoVO.setId_nota(result.getInt("id_nota"));
                     alumnoVO.setId_pago(result.getInt("id_pago"));
                     alumnoVO.setFechaNacimiento(result.getString("fecha_nacimiento"));
                     alumnoVO.setTipo_sangre(result.getString("tipo_sangre"));
                     alumnoVO.setSexo(result.getString("sexo"));
-                    alumnoVO.setId_alumno(result.getInt("id_alumno"));
+                    alumnoVO.setId_alumno(result.getString("id_alumno"));
                     alumnoVO.setEnfermedades(result.getString("enfermedades"));
                     //codigo para extraer imagen
                     if (result.getBinaryStream("foto") != null) {
@@ -183,7 +189,6 @@ public class AlumnoDAO {
                 ps.setString(6, alumnoVO.getTipo_sangre());
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
-                ps.setString(9, alumnoVO.getDireccion());
                 ps.setArray(10, alergiasArray);
                 if (alumnoVO.getFis() != null) {
                     ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
@@ -227,7 +232,6 @@ public class AlumnoDAO {
                 ps.setString(6, alumnoVO.getTipo_sangre());
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
-                ps.setString(9, alumnoVO.getDireccion());
                 ps.setArray(10, alergiasArray);
                 ps.setBoolean(11, alumnoVO.isEstatus());
                 ps.setString(12, alumnoVO.getEnfermedades());
@@ -245,7 +249,7 @@ public class AlumnoDAO {
         }
     }
 
-    public int llenarCodigoAlumno() {
+    public String llenarCodigoAlumno(String cedula_representante) {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         Statement st = null;
@@ -253,17 +257,18 @@ public class AlumnoDAO {
         int valor = -1;
         conexion = conexiondb.getConnection();
         try {
-            String sql = "select last_value+1 as valor from public.alumnos_id_alumnos_seq";
+            String sql = "SELECT Count(*) as valor FROM public.alumno Where id_alumno like '"+cedula_representante+ "%'";
             st = conexion.createStatement();
             result = st.executeQuery(sql);
             while (result.next()) {
-                valor = result.getInt("valor");
+                valor = result.getInt("valor"); 
             }
+            valor+=1;
             conexion.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        return valor;
+        return cedula_representante + "-" +valor;
     }
 
     public DefaultTableModel consultarAlumnosTabla(String parametro) {

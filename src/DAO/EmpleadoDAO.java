@@ -40,8 +40,8 @@ public class EmpleadoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto, id_empleado) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -57,6 +57,7 @@ public class EmpleadoDAO {
             } else {
                 ps.setBinaryStream(8, null, 0);
             }
+            ps.setString(9, empleadoVO.getId_empleado());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INSERT";
@@ -99,7 +100,7 @@ public class EmpleadoDAO {
                 empleadoVO.setFechaNacimiento(result.getString("fecha_nacimiento"));
                 empleadoVO.setDireccion(result.getString("direccion"));
                 empleadoVO.setTelefono1(result.getString("telefono1"));
-                empleadoVO.setId_empleado(result.getInt("id_empleado"));
+                empleadoVO.setId_empleado(result.getString("id_empleado"));
                 //codigo para extraer imagen
                 if (result.getBinaryStream("foto") != null) {
                     is = result.getBinaryStream("foto");
@@ -121,12 +122,12 @@ public class EmpleadoDAO {
         }
     }
     
-    public String eliminarEmpleado(int id){
+    public String eliminarEmpleado(String id){
         Statement st = null;
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE id_empleado= "+id;
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_empleado= '"+id+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
@@ -145,13 +146,13 @@ public class EmpleadoDAO {
         
     }
     
-    public String actualizarEmpleadoConFoto(VO.EmpleadoVO empleadoVO, int id){
+    public String actualizarEmpleadoConFoto(VO.EmpleadoVO empleadoVO, String id_empleado){
         Statement st = null;
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=? where id_empleado= "+id;
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -183,13 +184,13 @@ public class EmpleadoDAO {
         }
     }
     
-        public String actualizarEmpleadoSinFoto(VO.EmpleadoVO empleadoVO, int id){
+        public String actualizarEmpleadoSinFoto(VO.EmpleadoVO empleadoVO, String id_empleado){
         Statement st = null;
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=? where id_empleado= "+id;
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -272,7 +273,7 @@ public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
     return model;
 }
     
-    public String registrarAsistenciaEmpleados(DefaultTableModel model, boolean asistencia,  int usuario) {
+    public String registrarAsistenciaEmpleados(DefaultTableModel model, boolean asistencia,  String id_usuario) {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -284,10 +285,10 @@ public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, Integer.parseInt(model.getValueAt(i, 0).toString()));
+            ps.setString(1, model.getValueAt(i, 0).toString());
             ps.setString(2, coordinador.getFechaFormateada());
             ps.setBoolean(3,  asistencia);
-            ps.setInt(4,  usuario);
+            ps.setString(4,  id_usuario);
             int n = ps.executeUpdate();
             if (n > 0 && i==model.getRowCount()-1) {
                 respuesta = "Asistencia guardada con exito";

@@ -35,12 +35,12 @@ public class UsuarioDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into " + this.tabla + "(id_empleado, nombre_usuario, clave, pregunta_secreta, respuesta_secreta, admin, activo)"
+        String sql = "insert into " + this.tabla + "(id_usuario, nombre_usuario, clave, pregunta_secreta, respuesta_secreta, admin, activo)"
                 + "values(?,?,?,?,?,?,?)";
         if (conexion != null) {
             try {
                 ps = conexion.prepareCall(sql);
-                ps.setInt(1, usuarioVO.getId_empleado());
+                ps.setString(1, usuarioVO.getId_usuario());
                 ps.setString(2, usuarioVO.getNombre_usuario());
                 ps.setString(3, usuarioVO.getClave());
                 ps.setString(4, usuarioVO.getPregunta_secreta());
@@ -61,7 +61,7 @@ public class UsuarioDAO {
         return respuesta;
     }
 
-    public VO.UsuarioVO consultarUsuario(String parametro) {
+    public VO.UsuarioVO consultarUsuario(String nombre_usuario) {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -74,13 +74,13 @@ public class UsuarioDAO {
 
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, parametro);
+                ps.setString(1, nombre_usuario);
                 result = ps.executeQuery();
                 while (result.next() == true) {
                     usuarioVO.setNombre_usuario(result.getString("nombre_usuario"));
                     usuarioVO.setPregunta_secreta(result.getString("pregunta_secreta"));
                     usuarioVO.setRespuesta_secreta(result.getString("respuesta_secreta"));
-                    usuarioVO.setId_usuario(result.getInt("id_usuario"));
+                    usuarioVO.setId_usuario(result.getString("id_usuario"));
                     usuarioVO.setAdmin(result.getBoolean("admin"));
                     usuarioVO.setActivo(result.getBoolean("activo"));
                     usuarioVO.setClave(result.getString("clave"));

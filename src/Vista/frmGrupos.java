@@ -1453,7 +1453,7 @@ public class frmGrupos extends javax.swing.JFrame {
             int id_alumno = 0;
             for (int i = 0; i < tblSeccion.getRowCount(); i++) {
                 VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
-                matriculaVO.setId_alumno(Integer.parseInt(model.getValueAt(i, 0).toString()));
+                matriculaVO.setId_alumno(model.getValueAt(i, 0).toString());
                 matriculaVO.setSeccion(cbxSeccion.getSelectedItem().toString());
                 respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
             }
@@ -1884,7 +1884,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 txtSnombre.setText(alumnoVO.getSegundo_nombre());
                 txtPapellido.setText(alumnoVO.getPrimer_apellido());
                 txtSapellido.setText(alumnoVO.getSegundo_apellido());
-                txtDireccion.setText(alumnoVO.getDireccion());
+                //txtDireccion.setText(alumnoVO.getDireccion());
                 lblCodigo.setText(alumnoVO.getId_alumno() + "");
                 if (alumnoVO.getSexo().equals("femenino")) {
                     rbnFemenino.setSelected(true);
@@ -1900,7 +1900,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     txtEnfermedad.setEnabled(false);
                 } else {
                     rbnSi.setSelected(true);
-                    txtEnfermedad.setText(alumnoVO.getAlergias());
+                    //txtEnfermedad.setText(alumnoVO.getAlergias());
                     txtEnfermedad.setEnabled(true);
                 }
                 if (alumnoVO.getFoto() == null) {
@@ -1909,7 +1909,7 @@ public class frmGrupos extends javax.swing.JFrame {
                     ajustar(lblfoto, alumnoVO.getFoto());
                 }
                 //datos del representante 1
-                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 1);
+                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 1);
                 if(representanteVO.getCedula()!=null){
                     txtCedulaR1.setText(representanteVO.getCedula());
                     txtNombreR1.setText(representanteVO.getPrimer_nombre());
@@ -1927,7 +1927,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 }
                 //datos del representante 2
                 representanteVO = null;
-                representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 2);
+                representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 2);
                 if(representanteVO.getCedula()!=null){
                     activarRepresentante();
                     chkRepresentante.setSelected(true);
@@ -1948,7 +1948,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 
                 //datos del representante 3
                 representanteVO = null;
-                representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 3);
+                representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 3);
                 if(representanteVO.getCedula()!=null){
                     txtCedulaR3.setText(representanteVO.getCedula());
                     txtNombreR3.setText(representanteVO.getPrimer_nombre());
@@ -1966,7 +1966,7 @@ public class frmGrupos extends javax.swing.JFrame {
                 }
 
                 //datos de requisitos
-                VO.RequisitosVO requisitosVO = coordinador.consultarRequisitos(Integer.parseInt(txtCodigo.getText().trim()));
+                VO.RequisitosVO requisitosVO = coordinador.consultarRequisitos(txtCodigo.getText());
                 chkCopiaCedula.setSelected(requisitosVO.isCedula_padres());
                 chkFotoCarnet.setSelected(requisitosVO.isFoto_carnet());
                 chkFotoFamiliar.setSelected(requisitosVO.isFoto_familiar());
@@ -2056,7 +2056,7 @@ public class frmGrupos extends javax.swing.JFrame {
             int id_alumno = 0;
             for (int i = 0; i < tblSeccion2.getRowCount(); i++) {
                 VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
-                matriculaVO.setId_alumno(Integer.parseInt(model.getValueAt(i, 0).toString()));
+                matriculaVO.setId_alumno(model.getValueAt(i, 0).toString());
                 matriculaVO.setSeccion(cbxSeccion2.getSelectedItem().toString());
                 respuesta = coordinador.getMatriculaDAO().actualizarMatricula(matriculaVO, String.valueOf(matriculaVO.getId_alumno()));
             }
@@ -2322,14 +2322,14 @@ public class frmGrupos extends javax.swing.JFrame {
             alumnoVO.setSexo("femenino");
         }
         alumnoVO.setFechaNacimiento(fecha);
-        alumnoVO.setDireccion(txtDireccion.getText());
+        //alumnoVO.setDireccion(txtDireccion.getText());
         alumnoVO.setTipo_sangre(cbxTipoSangre.getSelectedItem().toString());
         if (rbnSi.isSelected()) {
-            alumnoVO.setAlergias(txtEnfermedad.getText());
+            //alumnoVO.setAlergias(txtEnfermedad.getText());
         } else {
-            alumnoVO.setAlergias("NINGUNA");
+            //alumnoVO.setAlergias("NINGUNA");
         }
-        alumnoVO.setId_alumno(coordinador.llenarCodigoAlumno());
+        //alumnoVO.setId_alumno(coordinador.llenarCodigoAlumno());
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         alumnoVO.setEdad(añoActual - añoNacimiento);
@@ -2391,7 +2391,7 @@ public class frmGrupos extends javax.swing.JFrame {
         representanteVO.setTelefono1(txtTelefonoR1.getText());
         representanteVO.setTelefono2(txtTelefonoR12.getText());
         representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString().toLowerCase());
-        representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        //representanteVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO.setCedula(txtCedulaR1.getText());
         if (fis1!=null) {
             representanteVO.setBinarioFoto(longitudBytes1);
@@ -2419,7 +2419,7 @@ public class frmGrupos extends javax.swing.JFrame {
         representanteVO2.setTelefono1(txtTelefonoR2.getText());
         representanteVO2.setTelefono2(txtTelefonoR22.getText());
         representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
-        representanteVO2.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        //representanteVO2.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO2.setCedula(txtCedulaR2.getText());
         if (fis2!=null) {
             representanteVO2.setBinarioFoto(longitudBytes2);
@@ -2446,7 +2446,7 @@ public class frmGrupos extends javax.swing.JFrame {
         representanteVO3.setTelefono1(txtTelefonoR3.getText());
         representanteVO3.setTelefono2(txtTelefonoR32.getText());
         representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
-        representanteVO3.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        //representanteVO3.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         representanteVO3.setCedula(txtCedulaR3.getText());
         if(rbnR1.isSelected()){
             representanteVO3.setBinarioFoto(longitudBytecopia1);
@@ -2580,7 +2580,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private boolean registrarMatricula() {
         VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
-        matriculaVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        //matriculaVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         matriculaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
         if (coordinador.registrarMatricula(matriculaVO).equals("INGRESADO CON EXITO")) {
             return true;
@@ -2591,7 +2591,7 @@ public class frmGrupos extends javax.swing.JFrame {
 
     private boolean actualizarRequisitos() {
         VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
-        requisitosVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
+        //requisitosVO.setId_alumno(Integer.parseInt(lblCodigo.getText()));
         requisitosVO.setFoto_carnet(chkFotoCarnet.isSelected());
         requisitosVO.setFoto_familiar(chkFotoFamiliar.isSelected());
         requisitosVO.setFoto_postal(chkFotoPostal.isSelected());

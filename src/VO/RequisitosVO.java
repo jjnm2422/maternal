@@ -13,16 +13,31 @@ import Controlador.Coordinador;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class RequisitosVO {
-    private int id_alumno, id_requisito;
+    private int id_requisito;
     private boolean partida, foto_postal, foto_carnet, foto_familiar, cedula_padres;
-    private String observaciones;
+    private String observaciones, id_alumno;
     private Coordinador coordinador;
 
-    public int getId_alumno() {
+    public RequisitosVO(int id_requisito, boolean partida, boolean foto_postal, boolean foto_carnet, boolean foto_familiar, boolean cedula_padres, String observaciones, String id_alumno, Coordinador coordinador) {
+        this.id_requisito = id_requisito;
+        this.partida = partida;
+        this.foto_postal = foto_postal;
+        this.foto_carnet = foto_carnet;
+        this.foto_familiar = foto_familiar;
+        this.cedula_padres = cedula_padres;
+        this.observaciones = observaciones;
+        this.id_alumno = id_alumno;
+        this.coordinador = coordinador;
+    }
+
+    public RequisitosVO() {
+    }
+
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(int id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 

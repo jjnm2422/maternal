@@ -10,13 +10,13 @@ package VO;
  * @author acjj
  */
 public class MatriculaVO {
-    private int id_matricula, id_alumno, id_empleado;
-    private String seccion, periodo;
+    private int id_matricula;
+    private String seccion, periodo, id_alumno, id_empleado;
     
     public MatriculaVO() {
 }
 
-    public MatriculaVO(int id_matricula, int id_alumno, int id_empleado, String seccion, String periodo) {
+    public MatriculaVO(int id_matricula, String id_alumno, String id_empleado, String seccion, String periodo) {
         this.id_matricula = id_matricula;
         this.id_alumno = id_alumno;
         this.id_empleado = id_empleado;
@@ -42,19 +42,19 @@ public class MatriculaVO {
         this.id_matricula = id_matricula;
     }
 
-    public int getId_alumno() {
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(int id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 
-    public int getId_empleado() {
+    public String getId_empleado() {
         return id_empleado;
     }
 
-    public void setId_empleado(int id_empleado) {
+    public void setId_empleado(String id_empleado) {
         this.id_empleado = id_empleado;
     }
 

@@ -28,7 +28,7 @@ public class AsistenciaADAO {
         this.coordinador = coordinador;
     }
     
-    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia, int usuario) {
+    public String registrarAsistenciaPorSeccion(DefaultTableModel model, String seccion, boolean asistencia, String id_usuario) {
         String respuesta = "";
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -40,10 +40,10 @@ public class AsistenciaADAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, Integer.parseInt(model.getValueAt(i, 0).toString()));
+            ps.setString(1, model.getValueAt(i, 0).toString());
             ps.setString(2, coordinador.getFechaFormateada());
             ps.setBoolean(3,  asistencia);
-            ps.setInt(4,  usuario);
+            ps.setString(4,  id_usuario);
             int n = ps.executeUpdate();
             if (n > 0 && i==model.getRowCount()-1) {
                 respuesta = "INSERT";

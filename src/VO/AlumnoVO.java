@@ -14,8 +14,8 @@ import javax.swing.ImageIcon;
  */
 public class AlumnoVO {
     
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias[], direccion, sexo, fechaNacimiento, enfermedades;
-    private int edad, id_alumno, id_nota, id_pago, binarioFoto;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias[], sexo, fechaNacimiento, enfermedades, id_alumno;
+    private int edad, id_nota, id_pago, binarioFoto;
     private FileInputStream fis;
     private boolean estatus;
     private ImageIcon foto; 
@@ -23,14 +23,13 @@ public class AlumnoVO {
     public AlumnoVO() {
     }
 
-    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String[] alergias, String direccion, String sexo, String fechaNacimiento, String enfermedades, int edad, int id_alumno, int id_nota, int id_pago, int binarioFoto, FileInputStream fis, boolean estatus, ImageIcon foto) {
+    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String[] alergias, String sexo, String fechaNacimiento, String enfermedades, int edad, String id_alumno, int id_nota, int id_pago, int binarioFoto, FileInputStream fis, boolean estatus, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
         this.segundo_apellido = segundo_apellido;
         this.tipo_sangre = tipo_sangre;
         this.alergias = alergias;
-        this.direccion = direccion;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
         this.enfermedades = enfermedades;
@@ -42,10 +41,6 @@ public class AlumnoVO {
         this.fis = fis;
         this.estatus = estatus;
         this.foto = foto;
-    }
-
-    public String getDireccion() {
-        return direccion;
     }
 
     public String[] getAlergias() {
@@ -137,10 +132,6 @@ public class AlumnoVO {
         this.tipo_sangre = tipo_sangre;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
     public String getSexo() {
         return sexo;
     }
@@ -165,11 +156,11 @@ public class AlumnoVO {
         this.edad = edad;
     }
 
-    public int getId_alumno() {
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(int id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 

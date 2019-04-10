@@ -32,7 +32,7 @@ public class frmdocente extends javax.swing.JFrame {
     private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
     FileInputStream fis;
     int longitudBytes;
-    private int id_empleado;
+    private String id_empleado;
 
     /**
      * Creates new form frmdocente

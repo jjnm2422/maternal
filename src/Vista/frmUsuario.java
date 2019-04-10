@@ -670,7 +670,7 @@ public class frmUsuario extends javax.swing.JFrame {
         usuarioVO1.setClave(coordinador.getClave(txtContraseña3.getPassword()));
         usuarioVO1.setPregunta_secreta(txtPregunta1.getText());
         usuarioVO1.setRespuesta_secreta(txtRespuesta1.getText());
-        usuarioVO1.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
+        usuarioVO1.setId_usuario(coordinador.consultarUsuario(txtNombre.getText()).getId_usuario());
         usuarioVO1.setAdmin(chkAdmin1.isSelected());
         usuarioVO1.setActivo(chkActivo1.isSelected());
         if (coordinador.registrarUsuario(usuarioVO1).equals("INGRESADO CON EXITO")) {

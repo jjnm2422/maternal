@@ -44,7 +44,7 @@ public class PagoDAO {
             try {
                 Array cuotaArray = conexion.createArrayOf("text", pagoVO.getCuotas());
                 ps = conexion.prepareCall(sql);
-                ps.setInt(1, pagoVO.getId_alumno());
+                ps.setString(1, pagoVO.getId_alumno());
                 ps.setDouble(2, pagoVO.getSaldo_favor());
                 ps.setDouble(3, pagoVO.getSaldo_pendiente());
                 ps.setDouble(4, pagoVO.getTotal_pagado());
@@ -85,7 +85,7 @@ public class PagoDAO {
                     Array pagoArray =  result.getArray("cuotas");
                    String[] pagoArrayS = (String[]) pagoArray.getArray();
                     
-                    pagoVO.setId_alumno(result.getInt("id_alumno"));
+                    pagoVO.setId_alumno(result.getString("id_alumno"));
                     pagoVO.setId_pago(result.getInt("id_pago"));
                     pagoVO.setSaldo_favor(result.getDouble("saldo_favor"));
                     pagoVO.setSaldo_pendiente(result.getDouble("saldo_pendiente"));
@@ -121,7 +121,7 @@ public class PagoDAO {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();
                 while (result.next() == true) {
-                    pagoVO.setId_alumno(result.getInt("id_alumno"));
+                    pagoVO.setId_alumno(result.getString("id_alumno"));
                     pagoVO.setId_pago(result.getInt("id_pago")); 
                     pagoVO.setPeriodo(result.getString("periodo"));
                     //conversion de arrays
@@ -196,31 +196,6 @@ public class PagoDAO {
                 respuesta = ex.getMessage();
             }
             return respuesta;
-    }
-    
-    public String actualizarPagoSinFoto(VO.PagoVO pagoVO, String id) {
-        Statement st = null;
-        String respuesta = "";
-        Connection conexion = null;
-        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-        conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=? where id_pago= '" + id + "'";
-
-        if (conexion != null) {
-            try {
-                PreparedStatement ps = conexion.prepareStatement(sql);
-                int n = ps.executeUpdate();
-                if (n > 0) {
-                    respuesta = "DATOS ACTUALIZADOS";
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(PagoDAO.class.getName()).log(Level.SEVERE, null, ex);
-                respuesta = ex.getMessage();
-            }
-            return respuesta;
-        } else {
-            return "ERROR AL CONECTAR CON BD";
-        }
     }
 
     public int llenarCodigoPago() {

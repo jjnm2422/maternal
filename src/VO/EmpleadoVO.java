@@ -14,15 +14,15 @@ import javax.swing.ImageIcon;
  * @author acjj
  */
 public class EmpleadoVO {
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion, sexo, fechaNacimiento;
-    private int edad, id_empleado, binarioFoto;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion, sexo, fechaNacimiento, id_empleado;
+    private int edad, binarioFoto;
     private FileInputStream fis;
     private ImageIcon foto; 
 
     public EmpleadoVO() {
     }
 
-    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono1, String telefono2, String correo, String direccion, String sexo, String fechaNacimiento, int edad, int id_empleado, int binarioFoto, FileInputStream fis, ImageIcon foto) {
+    public EmpleadoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String cedula, String telefono1, String telefono2, String correo, String direccion, String sexo, String fechaNacimiento, int edad, String id_empleado, int binarioFoto, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
@@ -162,11 +162,11 @@ public class EmpleadoVO {
         this.edad = edad;
     }
 
-    public int getId_empleado() {
+    public String getId_empleado() {
         return id_empleado;
     }
 
-    public void setId_empleado(int id_empleado) {
+    public void setId_empleado(String id_empleado) {
         this.id_empleado = id_empleado;
     }
 

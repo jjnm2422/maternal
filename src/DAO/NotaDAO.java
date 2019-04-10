@@ -48,8 +48,8 @@ public class NotaDAO {
                 Array notaArray4 = conexion.createArrayOf("text", notaVO.getIndicadores_evaluados());
                 Array notaArray5 = conexion.createArrayOf("text", notaVO.getHabitos_trabajo());
                 ps = conexion.prepareCall(sql);
-                ps.setInt(1, notaVO.getId_empleado());
-                ps.setInt(2, notaVO.getId_alumno());
+                ps.setString(1, notaVO.getId_empleado());
+                ps.setString(2, notaVO.getId_alumno());
                 ps.setString(3, notaVO.getFecha());
                 ps.setArray(4, notaArray);
                 ps.setArray(5, notaArray2);
@@ -89,8 +89,8 @@ public class NotaDAO {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();
                 while (result.next() == true) {
-                    notaVO.setId_alumno(result.getInt("id_alumno"));
-                    notaVO.setId_empleado(result.getInt("id_empleado")); 
+                    notaVO.setId_alumno(result.getString("id_alumno"));
+                    notaVO.setId_empleado(result.getString("id_empleado")); 
                     notaVO.setId_nota(result.getInt("id_nota")); 
                     notaVO.setPeriodo(result.getString("periodo"));
                     notaVO.setFecha(result.getString("fecha"));
@@ -141,8 +141,8 @@ public class NotaDAO {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();
                 while (result.next() == true) {
-                    notaVO.setId_alumno(result.getInt("id_alumno"));
-                    notaVO.setId_empleado(result.getInt("id_empleado")); 
+                    notaVO.setId_alumno(result.getString("id_alumno"));
+                    notaVO.setId_empleado(result.getString("id_empleado")); 
                     notaVO.setId_nota(result.getInt("id_nota")); 
                     notaVO.setPeriodo(result.getString("periodo"));
                     notaVO.setFecha(result.getString("fecha"));
@@ -216,7 +216,7 @@ public class NotaDAO {
                 Array notaArray3 = conexion.createArrayOf("text", notaVO.getComunicacion_presentacion());
                 Array notaArray4 = conexion.createArrayOf("text", notaVO.getIndicadores_evaluados());
                 Array notaArray5 = conexion.createArrayOf("text", notaVO.getHabitos_trabajo());
-                   ps.setInt(1, notaVO.getId_empleado());
+                   ps.setString(1, notaVO.getId_empleado());
                    ps.setString(2, notaVO.getFecha());
                    ps.setArray(3, notaArray);
                    ps.setArray(4, notaArray2);

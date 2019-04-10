@@ -14,9 +14,9 @@ public class VariablesVO {
     
     private int id_variable, dias_mora, limite_alumno;
     private String ubicacion_reporte, periodo_actual;
-    private double iva, precio_cuota, precio_mora, seguro;
+    private double iva, precio_cuota, precio_mora, seguro, precio_inscripcion;
 
-    public VariablesVO(int id_variable, int dias_mora, int limite_alumno, String ubicacion_reporte, String periodo_actual, double iva, double precio_cuota, double precio_mora, double seguro) {
+    public VariablesVO(int id_variable, int dias_mora, int limite_alumno, String ubicacion_reporte, String periodo_actual, double iva, double precio_cuota, double precio_mora, double seguro, double precio_inscripcion) {
         this.id_variable = id_variable;
         this.dias_mora = dias_mora;
         this.limite_alumno = limite_alumno;
@@ -26,6 +26,15 @@ public class VariablesVO {
         this.precio_cuota = precio_cuota;
         this.precio_mora = precio_mora;
         this.seguro = seguro;
+        this.precio_inscripcion = precio_inscripcion;
+    }
+
+    public double getPrecio_inscripcion() {
+        return precio_inscripcion;
+    }
+
+    public void setPrecio_inscripcion(double precio_inscripcion) {
+        this.precio_inscripcion = precio_inscripcion;
     }
 
     public double getSeguro() {

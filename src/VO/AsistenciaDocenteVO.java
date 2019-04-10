@@ -10,11 +10,11 @@ package VO;
  * @author acjj
  */
 public class AsistenciaDocenteVO {
-    private int id_asistenciaD, id_empleado, id_usuario;
-    private String fecha;
+    private int id_asistenciaD;
+    private String fecha, id_empleado, id_usuario;
     private boolean asistencia;
 
-    public AsistenciaDocenteVO(int id_asistenciaD, int id_empleado, int id_usuario, String fecha, boolean asistencia) {
+    public AsistenciaDocenteVO(int id_asistenciaD, String id_empleado, String id_usuario, String fecha, boolean asistencia) {
         this.id_asistenciaD = id_asistenciaD;
         this.id_empleado = id_empleado;
         this.id_usuario = id_usuario;
@@ -33,19 +33,19 @@ public class AsistenciaDocenteVO {
         this.id_asistenciaD = id_asistenciaD;
     }
 
-    public int getId_empleado() {
+    public String getId_empleado() {
         return id_empleado;
     }
 
-    public void setId_empleado(int id_empleado) {
+    public void setId_empleado(String id_empleado) {
         this.id_empleado = id_empleado;
     }
 
-    public int getId_usuario() {
+    public String getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
+    public void setId_usuario(String id_usuario) {
         this.id_usuario = id_usuario;
     }
 

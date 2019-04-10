@@ -6,8 +6,6 @@
 package DAO;
 
 import Controlador.Coordinador;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,12 +14,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import javax.swing.event.ListDataListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -62,6 +57,7 @@ public class VariablesDAO {
                     variablesVO.setPeriodo_actual(result.getString("periodo_actual"));
                     variablesVO.setPrecio_cuota(result.getDouble("precio_cuota"));
                     variablesVO.setPrecio_mora(result.getDouble("precio_mora"));
+                    variablesVO.setPrecio_inscripcion(result.getDouble("precio_inscripcion"));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(VariablesDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,7 +88,7 @@ public class VariablesDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=? where id_variable= '0'";
+        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=?, precio_inscripcion=? where id_variable= '0'";
 
         if (conexion != null) {
             try {
@@ -105,6 +101,7 @@ public class VariablesDAO {
                 ps.setDouble(6, variablesVO.getPrecio_cuota());
                 ps.setDouble(7, variablesVO.getDias_mora());
                 ps.setString(8, variablesVO.getPeriodo_actual());
+                ps.setDouble(9, variablesVO.getPrecio_inscripcion());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "UPDATE";

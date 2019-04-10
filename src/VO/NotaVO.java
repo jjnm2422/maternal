@@ -10,8 +10,8 @@ package VO;
  * @author acjj
  */
 public class NotaVO {
-    private int id_nota, id_empleado, id_alumno, lapso;
-    private String fecha, periodo;
+    private int id_nota, lapso;
+    private String fecha, periodo, id_empleado, id_alumno;
     private String formacion_personal_social[], relacion_ambiente[], comunicacion_presentacion[], indicadores_evaluados[], habitos_trabajo[];
 
     public int getId_nota() {
@@ -21,7 +21,7 @@ public class NotaVO {
     public NotaVO() {
     }
 
-    public NotaVO(int id_nota, int id_empleado, int id_alumno, int lapso, String fecha, String periodo, String[] formacion_personal_social, String[] relacion_ambiente, String[] comunicacion_presentacion, String[] indicadores_evaluados, String[] habitos_trabajo) {
+    public NotaVO(int id_nota, String id_empleado, String id_alumno, int lapso, String fecha, String periodo, String[] formacion_personal_social, String[] relacion_ambiente, String[] comunicacion_presentacion, String[] indicadores_evaluados, String[] habitos_trabajo) {
         this.id_nota = id_nota;
         this.id_empleado = id_empleado;
         this.id_alumno = id_alumno;
@@ -84,19 +84,19 @@ public class NotaVO {
     }
 
 
-    public int getId_empleado() {
+    public String getId_empleado() {
         return id_empleado;
     }
 
-    public void setId_empleado(int id_empleado) {
+    public void setId_empleado(String id_empleado) {
         this.id_empleado = id_empleado;
     }
 
-    public int getId_alumno() {
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(int id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 

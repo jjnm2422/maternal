@@ -10,15 +10,15 @@ package VO;
  * @author acjj
  */
 public class PagoVO {
-    private int id_pago, id_alumno;
-    private double saldo_favor, saldo_pendiente, total_pagado ;
-    private String periodo, cuotas[];
+    private int id_pago;
+    private double saldo_favor, saldo_pendiente, total_pagado;
+    private String periodo, cuotas[], id_alumno;
     
 
     public PagoVO() {
     }
 
-    public PagoVO(int id_pago, int id_alumno, double saldo_favor, double saldo_pendiente, double total_pagado, String periodo, String[] cuotas) {
+    public PagoVO(int id_pago, String id_alumno, double saldo_favor, double saldo_pendiente, double total_pagado, String periodo, String[] cuotas) {
         this.id_pago = id_pago;
         this.id_alumno = id_alumno;
         this.saldo_favor = saldo_favor;
@@ -36,11 +36,11 @@ public class PagoVO {
         this.id_pago = id_pago;
     }
 
-    public int getId_alumno() {
+    public String getId_alumno() {
         return id_alumno;
     }
 
-    public void setId_alumno(int id_alumno) {
+    public void setId_alumno(String id_alumno) {
         this.id_alumno = id_alumno;
     }
 

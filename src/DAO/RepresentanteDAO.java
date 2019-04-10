@@ -51,7 +51,7 @@ public class RepresentanteDAO {
             ps.setString(7, representanteVO.getOcupacion());
             ps.setString(8, representanteVO.getCedula());
             ps.setString(9, representanteVO.getEmpresa());
-            ps.setInt(10, representanteVO.getId_alumno());
+            ps.setString(10, representanteVO.getId_alumno());
             if (representanteVO.getFis() != null) {
                     ps.setBinaryStream(11, representanteVO.getFis(), representanteVO.getBinarioFoto());
                 } else {
@@ -108,7 +108,7 @@ public class RepresentanteDAO {
         }
     }
     
-      public VO.RepresentanteVO consultarRepresentantePorAlumno(int id_alumno, int tipo) {
+      public VO.RepresentanteVO consultarRepresentantePorAlumno(String id_alumno, int tipo) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -123,7 +123,7 @@ public class RepresentanteDAO {
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setInt(1, id_alumno);
+                ps.setString(1, id_alumno);
                 ps.setInt(2, tipo);
                 result = ps.executeQuery();
                     while (result.next()==true) {
@@ -136,7 +136,7 @@ public class RepresentanteDAO {
                     representanteVO.setOcupacion(result.getString("ocupacion"));
                     representanteVO.setCedula(result.getString("cedula"));
                     representanteVO.setEmpresa(result.getString("empresa"));
-                    representanteVO.setId_alumno(result.getInt("id_alumno"));
+                    representanteVO.setId_alumno(result.getString("id_alumno"));
                     representanteVO.setTipo(result.getInt("tipo"));
                     //codigo para extraer imagen
                     if (result.getBinaryStream("foto") != null) {

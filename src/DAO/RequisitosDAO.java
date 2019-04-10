@@ -41,7 +41,7 @@ public class RequisitosDAO {
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, requisitosVO.getId_alumno());
+            ps.setString(1, requisitosVO.getId_alumno());
             ps.setBoolean(2, requisitosVO.isPartida());
             ps.setBoolean(3, requisitosVO.isFoto_postal());
             ps.setBoolean(4, requisitosVO.isFoto_carnet());
@@ -62,7 +62,7 @@ public class RequisitosDAO {
         return respuesta;
     }
 
-    public VO.RequisitosVO consultarRequisitos(int id_requisitos) {
+    public VO.RequisitosVO consultarRequisitos(String id_alumno) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -71,11 +71,11 @@ public class RequisitosDAO {
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE id_requisito = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE id_alumno = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setInt(1, id_requisitos);
+                ps.setString(1, id_alumno);
                 result = ps.executeQuery();
                     while (result.next()==true) {
                     requisitosVO.setId_requisito(result.getInt("id_requisito"));

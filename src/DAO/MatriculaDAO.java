@@ -106,8 +106,8 @@ public class MatriculaDAO {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();
                 while (result.next() == true) {
-                    matriculaVO.setId_alumno(result.getInt("id_alumno"));
-                    matriculaVO.setId_empleado(result.getInt("id_empleado"));
+                    matriculaVO.setId_alumno(result.getString("id_alumno"));
+                    matriculaVO.setId_empleado(result.getString("id_empleado"));
                     matriculaVO.setSeccion(result.getString("seccion"));
                     matriculaVO.setPeriodo(result.getString("periodo"));
                     matriculaVO.setId_matricula(result.getInt("id_matricula"));
@@ -154,8 +154,8 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         if (conexion!=null) {
            try {
             ps = conexion.prepareCall(sql);
-            ps.setInt(1, matriculaVO.getId_alumno());
-            ps.setInt(2, matriculaVO.getId_empleado());
+            ps.setString(1, matriculaVO.getId_alumno());
+            ps.setString(2, matriculaVO.getId_empleado());
             ps.setString(3, matriculaVO.getSeccion());
             ps.setString(4, matriculaVO.getPeriodo());
             int n = ps.executeUpdate();
