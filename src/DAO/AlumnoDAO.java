@@ -10,6 +10,7 @@ import Vista.frmMenuReportes;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -43,10 +44,11 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, direccion, alergias, foto, estatus)"
-                + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, direccion, alergias, foto, estatus, enfermedades)"
+                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion != null) {
             try {
+                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
                 ps = conexion.prepareCall(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -57,13 +59,14 @@ public class AlumnoDAO {
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
                 ps.setString(9, alumnoVO.getDireccion());
-                ps.setString(10, alumnoVO.getAlergias());
+                ps.setArray(10, alergiasArray);
                 if (alumnoVO.getFis() != null) {
                     ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
                 } else {
                     ps.setBinaryStream(11, null, 0);
                 }
                 ps.setBoolean(12, alumnoVO.isEstatus());
+                ps.setString(13, alumnoVO.getEnfermedades());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
@@ -100,7 +103,11 @@ public class AlumnoDAO {
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
                     alumnoVO.setDireccion(result.getString("direccion"));
-                    alumnoVO.setAlergias(result.getString("alergias"));
+                    //conversion de arrays
+                    Array alergiasArray =  result.getArray("alergias");
+                    String[] alergiaArrayS = (String[]) alergiasArray.getArray();
+                    alumnoVO.setAlergias(alergiaArrayS);
+                    
                     alumnoVO.setEdad(result.getInt("edad"));
                     alumnoVO.setId_nota(result.getInt("id_nota"));
                     alumnoVO.setId_pago(result.getInt("id_pago"));
@@ -108,6 +115,7 @@ public class AlumnoDAO {
                     alumnoVO.setTipo_sangre(result.getString("tipo_sangre"));
                     alumnoVO.setSexo(result.getString("sexo"));
                     alumnoVO.setId_alumno(result.getInt("id_alumno"));
+                    alumnoVO.setEnfermedades(result.getString("enfermedades"));
                     //codigo para extraer imagen
                     if (result.getBinaryStream("foto") != null) {
                         is = result.getBinaryStream("foto");
@@ -161,10 +169,11 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, foto=?, estatus=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, foto=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
+                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -175,13 +184,15 @@ public class AlumnoDAO {
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
                 ps.setString(9, alumnoVO.getDireccion());
-                ps.setString(10, alumnoVO.getAlergias());
+                ps.setArray(10, alergiasArray);
                 if (alumnoVO.getFis() != null) {
                     ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
                 } else {
                     ps.setBinaryStream(11, null, 0);
                 }
                 ps.setBoolean(12, alumnoVO.isEstatus());
+                ps.setString(13, alumnoVO.getEnfermedades());
+ 
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
@@ -202,10 +213,11 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, estatus=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
+                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -216,8 +228,9 @@ public class AlumnoDAO {
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
                 ps.setString(9, alumnoVO.getDireccion());
-                ps.setString(10, alumnoVO.getAlergias());
+                ps.setArray(10, alergiasArray);
                 ps.setBoolean(11, alumnoVO.isEstatus());
+                ps.setString(12, alumnoVO.getEnfermedades());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

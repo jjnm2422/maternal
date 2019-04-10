@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  */
 public class AlumnoVO {
     
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias, direccion, sexo, fechaNacimiento;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias[], direccion, sexo, fechaNacimiento, enfermedades;
     private int edad, id_alumno, id_nota, id_pago, binarioFoto;
     private FileInputStream fis;
     private boolean estatus;
@@ -23,7 +23,7 @@ public class AlumnoVO {
     public AlumnoVO() {
     }
 
-    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String alergias, String direccion, String sexo, String fechaNacimiento, int edad, int id_alumno, int id_nota, int id_pago, int binarioFoto, FileInputStream fis, ImageIcon foto) {
+    public AlumnoVO(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String tipo_sangre, String[] alergias, String direccion, String sexo, String fechaNacimiento, String enfermedades, int edad, int id_alumno, int id_nota, int id_pago, int binarioFoto, FileInputStream fis, boolean estatus, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
@@ -33,14 +33,37 @@ public class AlumnoVO {
         this.direccion = direccion;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
+        this.enfermedades = enfermedades;
         this.edad = edad;
         this.id_alumno = id_alumno;
         this.id_nota = id_nota;
         this.id_pago = id_pago;
         this.binarioFoto = binarioFoto;
         this.fis = fis;
+        this.estatus = estatus;
         this.foto = foto;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String[] getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(String[] alergias) {
+        this.alergias = alergias;
+    }
+
+    public String getEnfermedades() {
+        return enfermedades;
+    }
+
+    public void setEnfermedades(String enfermedades) {
+        this.enfermedades = enfermedades;
+    }
+
 
     public ImageIcon getFoto() {
         return foto;
@@ -112,18 +135,6 @@ public class AlumnoVO {
 
     public void setTipo_sangre(String tipo_sangre) {
         this.tipo_sangre = tipo_sangre;
-    }
-
-    public String getAlergias() {
-        return alergias;
-    }
-
-    public void setAlergias(String alergias) {
-        this.alergias = alergias;
-    }
-
-    public String getDireccion() {
-        return direccion;
     }
 
     public void setDireccion(String direccion) {

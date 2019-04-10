@@ -20,6 +20,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -116,10 +118,10 @@ public class frmInscripcion extends javax.swing.JFrame {
         listAlergias = new javax.swing.JList<>();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        lblCodigo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         cbxEstatus = new javax.swing.JComboBox<>();
+        lblCodigo = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnSiguiente = new javax.swing.JButton();
@@ -519,15 +521,6 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 370, 230));
 
-        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("Codigo");
-        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, 70, -1));
-
-        lblCodigo.setEditable(false);
-        lblCodigo.setToolTipText("");
-        jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, -1));
-
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Estatus del Alumno");
@@ -535,6 +528,15 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         cbxEstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DISPONIBLE", "NO DISPONIBLE" }));
         jPanel7.add(cbxEstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 110, -1));
+
+        lblCodigo.setEditable(false);
+        lblCodigo.setToolTipText("");
+        jPanel7.add(lblCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 100, -1));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("Codigo");
+        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, -1));
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 810, 350));
 
@@ -1383,7 +1385,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         if (validacionCampoAlumno()) {
             jTabbedPane1.setSelectedIndex(1);
         }else{
-            System.out.println("Faltan campos");
+            coordinador.getLogica().mensajeError("Complete los campos faltantes de alumno");
         }
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
@@ -1442,7 +1444,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     txtEnfermedad.setEnabled(false);
                 } else {
                     rbnSi.setSelected(true);
-                    txtEnfermedad.setText(alumnoVO.getAlergias());
+                    txtEnfermedad.setText(alumnoVO.getEnfermedades());
                     txtEnfermedad.setEnabled(true);
                 }
                 if (alumnoVO.getFoto() == null) {
@@ -1454,6 +1456,29 @@ public class frmInscripcion extends javax.swing.JFrame {
                     cbxEstatus.setSelectedIndex(0);
                 } else {
                     cbxEstatus.setSelectedIndex(1);
+                }
+                /**
+                 * lleno lista
+                 */
+                if (alumnoVO.getAlergias() == null) {
+                    rbnASi.setSelected(false);
+                    rbnANo.setSelected(true);
+                    listAlergias.clearSelection();
+                    listAlergias.setEnabled(false);
+                } else {
+                    listAlergias.setEnabled(true);
+                    rbnASi.setSelected(true);
+                    rbnANo.setSelected(false);
+                    ListModel<String> model = listAlergias.getModel();
+                    int indices[] = new int [alumnoVO.getAlergias().length];
+                    for (int i = 0; i < alumnoVO.getAlergias().length; i++) {
+                        for (int j = 0; j < model.getSize(); j++) {
+                            if (alumnoVO.getAlergias()[i].equals(model.getElementAt(j))) {
+                                indices[i] = j;
+                            } 
+                        }
+                    }
+                    listAlergias.setSelectedIndices(indices);
                 }
                 //datos del representante 1
                 RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(Integer.parseInt(txtCodigo.getText()), 1);
@@ -1729,7 +1754,7 @@ public class frmInscripcion extends javax.swing.JFrame {
             if (validacionCampoAlumno()) {
                 jTabbedPane1.setSelectedIndex(1);
             } else {
-                coordinador.getLogica().mensajeError("Complete los campos de alumno");
+                coordinador.getLogica().mensajeError("Complete los campos faltantes de alumno");
                 jTabbedPane1.setSelectedIndex(0);
             }
         } 
@@ -1750,13 +1775,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private void rbnANoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnANoActionPerformed
      listAlergias.setEnabled(false);
         List<String> listaAlergias = listAlergias.getSelectedValuesList();
-        if (listaAlergias.isEmpty()) {
-            System.out.println("sin eleccion");
-        }else{
-            for (String elementos: listaAlergias){
-                System.out.println(elementos);
-            }
-        }
         listAlergias.clearSelection();
     }//GEN-LAST:event_rbnANoActionPerformed
 
@@ -1960,9 +1978,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         alumnoVO.setDireccion(txtDireccion.getText());
         alumnoVO.setTipo_sangre(cbxTipoSangre.getSelectedItem().toString());
         if (rbnSi.isSelected()) {
-            alumnoVO.setAlergias(txtEnfermedad.getText());
+            alumnoVO.setEnfermedades(txtEnfermedad.getText());
         } else {
-            alumnoVO.setAlergias("NINGUNA");
+            alumnoVO.setEnfermedades("NINGUNA");
         }
         alumnoVO.setId_alumno(coordinador.llenarCodigoAlumno());
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
@@ -1972,16 +1990,50 @@ public class frmInscripcion extends javax.swing.JFrame {
             alumnoVO.setBinarioFoto(longitudBytes);
             alumnoVO.setFis(fis);
         }
-        String res = coordinador.registrarAlumno(alumnoVO);
-        if (res.equals("INGRESADO CON EXITO")) {
-            return true;
+        /**
+         * Ingreso estatus
+         */
+        if (cbxEstatus.getSelectedIndex() == 0) {
+            alumnoVO.setEstatus(true);
         } else {
-            return false;
+            alumnoVO.setEstatus(false);
         }
+        /**
+         * ingreso de alergias si existe
+         */
+        if (rbnASi.isSelected()) {
+            List<String> lista = listAlergias.getSelectedValuesList();
+            String[] vector = new String[lista.size()];
+            alumnoVO.setAlergias(vector);
+            vector = lista.toArray(vector);
+            alumnoVO.setAlergias(vector);
+        } else {
+            alumnoVO.setAlergias(null);
+        }
+        String res = coordinador.registrarAlumno(alumnoVO);
+        return res.equals("INGRESADO CON EXITO");
     }
 
     private boolean validacionCampoAlumno() {
+        if (txtPnombre.getText().isEmpty() || txtSnombre.getText().isEmpty() || txtPapellido.getText().isEmpty() || txtSapellido.getText().isEmpty() || txtDireccion.getText().isEmpty()) {
+            return false;
+        }
+        
         if (rbnSi.isSelected()) {
+            if (txtEnfermedad.getText().isEmpty()) {
+                return false;
+            }
+        }
+        
+         if (rbnASi.isSelected()) {
+             List<String> lista = listAlergias.getSelectedValuesList();
+            if (lista.isEmpty()) {
+                return false;
+            }   
+         }
+         
+         return true;
+        /*if (rbnSi.isSelected()) {
             if (!txtEnfermedad.getText().isEmpty()) {
                 if (!txtPnombre.getText().isEmpty() && !txtSnombre.getText().isEmpty() && !txtPapellido.getText().isEmpty() && !txtSapellido.getText().isEmpty() && !txtDireccion.getText().isEmpty()) {
                     return true;
@@ -1997,7 +2049,7 @@ public class frmInscripcion extends javax.swing.JFrame {
             } else {
                 return false;
             }
-        }
+        }*/
     }
 
     private boolean validacionCampoRepresentante() {
