@@ -107,7 +107,7 @@ public class AlumnoDAO {
                     alumnoVO.setPrimer_apellido(result.getString("primer_apellido"));
                     alumnoVO.setSegundo_apellido(result.getString("segundo_apellido"));
                     //conversion de arrays
-                    if (alumnoVO.getAlergias() != null) {
+                    if (result.getArray("alergias") != null) {
                     Array alergiasArray =  result.getArray("alergias");
                     String[] alergiaArrayS = (String[]) alergiasArray.getArray();
                     alumnoVO.setAlergias(alergiaArrayS);
@@ -179,7 +179,6 @@ public class AlumnoDAO {
 
         if (conexion != null) {
             try {
-                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -189,7 +188,12 @@ public class AlumnoDAO {
                 ps.setString(6, alumnoVO.getTipo_sangre());
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
-                ps.setArray(10, alergiasArray);
+                if (alumnoVO.getAlergias() != null) {
+                    Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
+                    ps.setArray(9, alergiasArray);
+                }else{
+                    ps.setArray(9, null);
+                }
                 if (alumnoVO.getFis() != null) {
                     ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
                 } else {
@@ -218,11 +222,10 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
-                Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, alumnoVO.getFechaNacimiento());
                 ps.setString(2, alumnoVO.getPrimer_nombre());
@@ -232,9 +235,14 @@ public class AlumnoDAO {
                 ps.setString(6, alumnoVO.getTipo_sangre());
                 ps.setInt(7, alumnoVO.getEdad());
                 ps.setString(8, alumnoVO.getSexo());
-                ps.setArray(10, alergiasArray);
-                ps.setBoolean(11, alumnoVO.isEstatus());
-                ps.setString(12, alumnoVO.getEnfermedades());
+                if (alumnoVO.getAlergias() != null) {
+                    Array alergiasArray = conexion.createArrayOf("text", alumnoVO.getAlergias());
+                    ps.setArray(9, alergiasArray);
+                }else{
+                    ps.setArray(9, null);
+                }
+                ps.setBoolean(10, alumnoVO.isEstatus());
+                ps.setString(11, alumnoVO.getEnfermedades());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
@@ -271,15 +279,15 @@ public class AlumnoDAO {
         return cedula_representante + "-" +valor;
     }
 
-    public DefaultTableModel consultarAlumnosTabla(String parametro) {
+    public DefaultTableModel consultarAlumnosTabla(String cedula_representante, String nombre) {
         boolean encontrado = false;
         Statement st = null;
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String[] titulos = {"Primer Nombre", "Primer Apellido"};
+        String[] titulos = {"Codigo", "Nombre y Apellido"};
         String[] fila = new String[titulos.length];
-        String sql = "SELECT * FROM usuarios WHERE nombre1 = '" + parametro + "'";
+        String sql = "SELECT * FROM alumno WHERE (id_alumno like '%"+cedula_representante+"%' or primer_nombre like '%"+nombre+"%') and estatus = 'true'";
         DefaultTableModel model = new DefaultTableModel(null, titulos);
 
         try {
@@ -287,15 +295,15 @@ public class AlumnoDAO {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                fila[0] = rs.getString("nombre1");
-                fila[1] = rs.getString("apellido1");
+                fila[0] = rs.getString("id_alumno");
+                fila[1] = rs.getString("primer_nombre") + " " +rs.getString("primer_apellido");
                 model.addRow(fila);
                 encontrado = true;
             }
-            if (encontrado == false) {
-                JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
-                return model = null;
-            }
+//            if (encontrado == false) {
+//                JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
+//                return model = null;
+//            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
             return model = null;

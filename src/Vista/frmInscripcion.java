@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.Coordinador;
 import VO.AlumnoVO;
+import VO.DireccionVO;
 import VO.RepresentanteVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -35,6 +36,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
     FileInputStream fis, fis1, fis2, fis3, fisCopia1, fisCopia2;
     int longitudBytes, longitudBytes1,longitudBytes2,longitudBytes3, longitudBytecopia1, longitudBytecopia2;
+    private boolean ACTUALIZACION;
 
     /**
      * Creates new form Inscripcion
@@ -76,6 +78,37 @@ public class frmInscripcion extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        frmBusqueda = new javax.swing.JFrame();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel58 = new javax.swing.JLabel();
+        txtBusqueda = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBusqueda = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar = new javax.swing.JButton();
+        btnSalir1 = new javax.swing.JButton();
+        btnSeleccion = new javax.swing.JButton();
+        frmBusqueda1 = new javax.swing.JFrame();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        txtBusqueda1 = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblBusqueda1 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar1 = new javax.swing.JButton();
+        btnSalir2 = new javax.swing.JButton();
+        btnSeleccion1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -97,27 +130,39 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtDireccion = new javax.swing.JTextArea();
-        jLabel43 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        cbxTipoSangre = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         rbnSi = new javax.swing.JRadioButton();
         rbnNo = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtEnfermedad = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
-        cbxTipoSangre = new javax.swing.JComboBox<>();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         rbnASi = new javax.swing.JRadioButton();
-        rbnANo = new javax.swing.JRadioButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         listAlergias = new javax.swing.JList<>();
+        rbnANo = new javax.swing.JRadioButton();
         jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        rbnIII = new javax.swing.JRadioButton();
+        rbnMaternal = new javax.swing.JRadioButton();
+        rbnI = new javax.swing.JRadioButton();
+        rbnII = new javax.swing.JRadioButton();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        cbxCasa = new javax.swing.JComboBox<>();
+        txtParroquia = new javax.swing.JTextField();
+        txtNumCasa = new javax.swing.JTextField();
+        txtCalle = new javax.swing.JTextField();
+        txtSector = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         cbxEstatus = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
@@ -162,6 +207,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         btnAgregarImagen1 = new javax.swing.JButton();
         lblfoto1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
         btnBorrarR = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -214,6 +260,214 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnR2 = new javax.swing.JRadioButton();
         btnGuardar = new javax.swing.JButton();
 
+        frmBusqueda.setUndecorated(true);
+        frmBusqueda.setSize(new java.awt.Dimension(470, 320));
+        frmBusqueda.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel12.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel52.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setText("Busqueda");
+        jLabel52.setOpaque(true);
+        jPanel12.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel13.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel13.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel58.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel58.setText("Cedula Representante o Nombre Alumno");
+        jPanel13.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusquedaActionPerformed(evt);
+            }
+        });
+        txtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyTyped(evt);
+            }
+        });
+        jPanel13.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        tblBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseEntered(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblBusqueda);
+
+        jPanel13.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir1.setText("Salir");
+        btnSalir1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir1ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion.setText("Seleccionar");
+        btnSeleccion.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusqueda.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusqueda1.setUndecorated(true);
+        frmBusqueda1.setSize(new java.awt.Dimension(470, 320));
+        frmBusqueda1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel14.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel54.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel54.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel54.setText("Busqueda");
+        jLabel54.setOpaque(true);
+        jPanel14.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel15.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel15.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel59.setText("Cedula Representante");
+        jPanel15.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 30));
+
+        txtBusqueda1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda1ActionPerformed(evt);
+            }
+        });
+        txtBusqueda1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyTyped(evt);
+            }
+        });
+        jPanel15.add(txtBusqueda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 150, 30));
+
+        tblBusqueda1.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        tblBusqueda1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBusqueda1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBusqueda1MouseEntered(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tblBusqueda1);
+
+        jPanel15.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar1.setText("Borrar");
+        btnBorrar1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar1ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnBorrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir2.setText("Salir");
+        btnSalir2.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir2ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion1.setText("Seleccionar");
+        btnSeleccion1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion1ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(btnSeleccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusqueda1.getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(1, 87, 155));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -249,12 +503,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel1.setText("Codigo");
         jPanel7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 20));
 
-        txtPnombre.setText("a");
         txtPnombre.setToolTipText("");
         txtPnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtPnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtPnombreKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPnombreKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPnombreKeyTyped(evt);
@@ -267,7 +523,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel6.setText("Segundo nombre");
         jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
 
-        txtSnombre.setText("a");
         txtSnombre.setToolTipText("");
         txtSnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtSnombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -282,7 +537,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel2.setText("Primer apellido");
         jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
 
-        txtPapellido.setText("a");
         txtPapellido.setToolTipText("");
         txtPapellido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtPapellido.addActionListener(new java.awt.event.ActionListener() {
@@ -302,7 +556,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel29.setText("Segundo apellido");
         jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
 
-        txtSapellido.setText("a");
         txtSapellido.setToolTipText("");
         txtSapellido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtSapellido.addActionListener(new java.awt.event.ActionListener() {
@@ -339,7 +592,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Sexo");
-        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 300, -1));
+        jPanel8.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 300, 20));
 
         rbnFemenino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnFemenino);
@@ -353,7 +606,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnFemeninoActionPerformed(evt);
             }
         });
-        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
+        jPanel8.add(rbnFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, 20));
 
         rbnMasculino.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup1.add(rbnMasculino);
@@ -361,65 +614,59 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnMasculino.setForeground(new java.awt.Color(255, 255, 255));
         rbnMasculino.setText("Masculino");
         rbnMasculino.setOpaque(false);
-        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, 20));
 
         txtFecha.setFieldFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 11));
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
         txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+        txtFecha.addCursorMoveListener(new datechooser.events.CursorMoveListener() {
+            public void onCursorMove(datechooser.events.CursorMoveEvent evt) {
+                txtFechaOnCursorMove(evt);
+            }
+        });
+        txtFecha.addSelectionChangedListener(new datechooser.events.SelectionChangedListener() {
+            public void onSelectionChange(datechooser.events.SelectionChangedEvent evt) {
+                txtFechaOnSelectionChange(evt);
+            }
+        });
+        txtFecha.addCommitListener(new datechooser.events.CommitListener() {
+            public void onCommit(datechooser.events.CommitEvent evt) {
+                txtFechaOnCommit(evt);
+            }
+        });
+        jPanel8.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chica(1).png"))); // NOI18N
         jPanel8.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/chico(1).png"))); // NOI18N
-        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         jLabel44.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setText("Fecha de Nacimiento");
-        jPanel8.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, -1));
+        jLabel44.setText("Grupo Escolar");
+        jPanel8.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, -1));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 370, 100));
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tipo-de-sangre.png"))); // NOI18N
+        jPanel8.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        jPanel10.setBackground(new java.awt.Color(24, 119, 189));
-        jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Tipo de Sangre");
+        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, 20));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Direccion");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 70, 30));
-
-        txtDireccion.setColumns(20);
-        txtDireccion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        txtDireccion.setLineWrap(true);
-        txtDireccion.setRows(5);
-        txtDireccion.setText("a");
-        txtDireccion.setToolTipText("");
-        txtDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDireccionKeyTyped(evt);
-            }
-        });
-        jScrollPane1.setViewportView(txtDireccion);
-
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 220, 60));
-
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/firmar.png"))); // NOI18N
-        jPanel10.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 380, 150));
-
-        jPanel9.setBackground(new java.awt.Color(24, 119, 189));
-        jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        cbxTipoSangre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
+        jPanel8.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 70, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Padece de enfermedades");
-        jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, 20));
+        jPanel8.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 20));
+
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/drogas.png"))); // NOI18N
+        jPanel8.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         rbnSi.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup2.add(rbnSi);
@@ -432,7 +679,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnSiActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        jPanel8.add(rbnSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         rbnNo.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup2.add(rbnNo);
@@ -446,7 +693,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnNoActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+        jPanel8.add(rbnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         txtEnfermedad.setColumns(20);
         txtEnfermedad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
@@ -460,22 +707,12 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(txtEnfermedad);
 
-        jPanel9.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 40));
+        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 290, 40));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Tipo de Sangre");
-        jPanel9.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 20));
-
-        cbxTipoSangre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        cbxTipoSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O-", "O+", "A-", "A+", "B-", "B+", "AB-", "AB+" }));
-        jPanel9.add(cbxTipoSangre, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 10, 70, -1));
-
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tipo-de-sangre.png"))); // NOI18N
-        jPanel9.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/drogas.png"))); // NOI18N
-        jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jLabel48.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setText("Alergias");
+        jPanel8.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 20));
 
         rbnASi.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup4.add(rbnASi);
@@ -488,7 +725,17 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnASiActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnASi, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, 20));
+        jPanel8.add(rbnASi, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
+
+        listAlergias.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Anafilaxis", "Asma", "Dermatitis de Contacto", "Eczema (dermatitis atópica)", "Alergias alimentos", "Fiebre de heno", "Urticaria", "Alergias a medicamentos", "Penicilina", "Analgésicos", "Aspirina", "Ibuprofeno", "Naproxeno sódico", "Gluten" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listAlergias.setEnabled(false);
+        jScrollPane8.setViewportView(listAlergias);
+
+        jPanel8.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 170, 80));
 
         rbnANo.setBackground(new java.awt.Color(69, 90, 100));
         buttonGroup4.add(rbnANo);
@@ -502,29 +749,103 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnANoActionPerformed(evt);
             }
         });
-        jPanel9.add(rbnANo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, 20));
-
-        listAlergias.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Anafilaxis", "Asma", "Dermatitis de Contacto", "Eczema (dermatitis atópica)", "Alergias alimentos", "Fiebre de heno", "Urticaria", "Alergias a medicamentos", "Penicilina", "Analgésicos", "Aspirina", "Ibuprofeno", "Naproxeno sódico", "Gluten" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listAlergias.setEnabled(false);
-        jScrollPane8.setViewportView(listAlergias);
-
-        jPanel9.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 170, 80));
+        jPanel8.add(rbnANo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, 20));
 
         jLabel47.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Pulse la tecla Ctrl para multiple seleccion");
-        jPanel9.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, 20));
+        jPanel8.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, 20));
 
-        jLabel48.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("Alergias");
-        jPanel9.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 20));
+        jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Fecha de Nacimiento");
+        jPanel8.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 170, -1));
 
-        jPanel7.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 370, 230));
+        buttonGroup5.add(rbnIII);
+        rbnIII.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnIII.setForeground(new java.awt.Color(255, 255, 255));
+        rbnIII.setText("III");
+        rbnIII.setEnabled(false);
+        rbnIII.setOpaque(false);
+        jPanel8.add(rbnIII, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 40, -1));
+
+        buttonGroup5.add(rbnMaternal);
+        rbnMaternal.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnMaternal.setForeground(new java.awt.Color(255, 255, 255));
+        rbnMaternal.setSelected(true);
+        rbnMaternal.setText("Maternal");
+        rbnMaternal.setEnabled(false);
+        rbnMaternal.setOpaque(false);
+        rbnMaternal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnMaternalActionPerformed(evt);
+            }
+        });
+        jPanel8.add(rbnMaternal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+
+        buttonGroup5.add(rbnI);
+        rbnI.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnI.setForeground(new java.awt.Color(255, 255, 255));
+        rbnI.setText("I");
+        rbnI.setEnabled(false);
+        rbnI.setOpaque(false);
+        jPanel8.add(rbnI, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+
+        buttonGroup5.add(rbnII);
+        rbnII.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        rbnII.setForeground(new java.awt.Color(255, 255, 255));
+        rbnII.setText("II");
+        rbnII.setEnabled(false);
+        rbnII.setOpaque(false);
+        jPanel8.add(rbnII, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 40, -1));
+
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 370, 330));
+
+        jPanel10.setBackground(new java.awt.Color(24, 119, 189));
+        jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Casa:");
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 50, 20));
+
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/firmar.png"))); // NOI18N
+        jPanel10.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel45.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel45.setText("Direccion");
+        jPanel10.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 70, 20));
+
+        jLabel46.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Calle/Avenida:");
+        jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 100, 20));
+
+        jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setText("Nº Casa:");
+        jPanel10.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 70, 20));
+
+        jLabel50.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Sector:");
+        jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 60, 20));
+
+        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Parroquia:");
+        jPanel10.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 80, 20));
+
+        cbxCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+        jPanel10.add(cbxCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 100, -1));
+        jPanel10.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 100, -1));
+        jPanel10.add(txtNumCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 110, -1));
+        jPanel10.add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 250, -1));
+        jPanel10.add(txtSector, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 110, -1));
+
+        jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 380, 150));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -541,6 +862,7 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         lblCodigo.setToolTipText("");
         lblCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCodigo.setDisabledTextColor(new java.awt.Color(51, 51, 51));
         lblCodigo.setEnabled(false);
         lblCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -720,7 +1042,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel11.setText("Nombre");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        txtNombreR1.setText("a");
         txtNombreR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreR1ActionPerformed(evt);
@@ -738,7 +1059,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel12.setText("Ocupacion");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 60, -1));
 
-        txtOcupacionR1.setText("a");
         txtOcupacionR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtOcupacionR1ActionPerformed(evt);
@@ -779,9 +1099,8 @@ public class frmInscripcion extends javax.swing.JFrame {
                 txtCedulaR1KeyTyped(evt);
             }
         });
-        jPanel1.add(txtCedulaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 100, -1));
+        jPanel1.add(txtCedulaR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 70, -1));
 
-        txtTelefonoR12.setText("1234567890");
         txtTelefonoR12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoR12ActionPerformed(evt);
@@ -794,7 +1113,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel1.add(txtTelefonoR12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 100, -1));
 
-        txtEmpresaR1.setText("a");
         txtEmpresaR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmpresaR1KeyTyped(evt);
@@ -805,7 +1123,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtDireccionR1.setColumns(20);
         txtDireccionR1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         txtDireccionR1.setRows(5);
-        txtDireccionR1.setText("a");
         txtDireccionR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDireccionR1KeyTyped(evt);
@@ -815,7 +1132,6 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, 60));
 
-        txtTelefonoR1.setText("1234567890");
         txtTelefonoR1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR1KeyTyped(evt);
@@ -823,7 +1139,6 @@ public class frmInscripcion extends javax.swing.JFrame {
         });
         jPanel1.add(txtTelefonoR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 100, -1));
 
-        txtApellidoR1.setText("a");
         txtApellidoR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoR1ActionPerformed(evt);
@@ -865,6 +1180,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 110, 120));
+
+        jButton1.setText("...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 20, -1));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 340, 320));
 
@@ -921,7 +1244,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Empresa");
-        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 190, 60, -1));
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 60, -1));
 
         txtEmpresaR2.setEnabled(false);
         txtEmpresaR2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -994,7 +1317,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nombre");
-        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, -1));
+        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 60, -1));
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -1069,7 +1392,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel32.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Empresa");
-        jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         txtEmpresaR3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -1141,7 +1464,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Ocupacion");
-        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 70, -1));
+        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 70, -1));
 
         jLabel39.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
@@ -1237,62 +1560,11 @@ public class frmInscripcion extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         String fecha = txtFecha.getText();
         fecha = fecha.replace('/', '-');
-        //verifico campos alumnos
-        if (validacionCampoAlumno()) {
-            //verifico campos representates
-            if (validacionCampoRepresentante()) {
-                //registro los alumnos
-                if (registrarAlumno(fecha)) {
-                    //registro al primer representante
-                    if (registrarRepresentante()) {
-                        //combruebo check para revisar si registro al otro representante o no
-                        if (chkRepresentante.isSelected()) {
-                            if (registrarRepresentante2()) {
-                                if (registrarRepresentante3()) {
-                                    if (registrarMatricula()) {
-                                        if (registrarRequisitos()) {
-                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
-                                        } else {
-                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
-                                            
-                                        }
-                                    } else {
-                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
-                                    }
-                                    borrarCampos();
-                                } else {
-                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
-                                }                               
-                            } else {
-                                coordinador.getLogica().mensajeError("problemas al registar representante 2");
-                            }
-                        } else {
-                                if (registrarRepresentante3()) {
-                                    if (registrarMatricula()) {
-                                        if (registrarRequisitos()) {
-                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
-                                        } else {
-                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
-                                        }
-                                    } else {
-                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
-                                    }
-                                    borrarCampos();
-                                } else {
-                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
-                                } 
-                        }
-                    } else {
-                        coordinador.getLogica().mensajeError("problemas al registar representante 1");
-                    }
-                } else {
-                    coordinador.getLogica().mensajeError("problemas al registar alumno");
-                }
-            } else {
-                coordinador.getLogica().mensajeAdvertencia("campos representante vacio.");
-            }
+        //verifico si se trata de nueva inscripcion o reinscripcion
+        if (ACTUALIZACION) {
+            reinscripcion(fecha);
         } else {
-           coordinador.getLogica().mensajeAdvertencia("faltan campos en alumnos");
+            nuevoIngreso(fecha);
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -1325,10 +1597,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private void txtSapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSapellidoKeyTyped
         validacionSoloLetras(evt, 15, txtSapellido.getText().length());
     }//GEN-LAST:event_txtSapellidoKeyTyped
-
-    private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
-        validacionLimite(evt, 300, txtDireccion.getText().length());
-    }//GEN-LAST:event_txtDireccionKeyTyped
 
     private void txtEnfermedadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnfermedadKeyTyped
         validacionLimite(evt, 250, txtEnfermedad.getText().length());
@@ -1422,7 +1690,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         if (validacionCampoAlumno()) {
-            jTabbedPane1.setSelectedIndex(1);
+            if (comprobarEdad()) {
+                    jTabbedPane1.setSelectedIndex(1); 
+            }
         }else{
             coordinador.getLogica().mensajeError("Complete los campos faltantes de alumno");
         }
@@ -1462,136 +1732,23 @@ public class frmInscripcion extends javax.swing.JFrame {
             txtCodigo.setText(codigo);
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
-                //datos del alumno
-                txtPnombre.setText(alumnoVO.getPrimer_nombre());
-                txtSnombre.setText(alumnoVO.getSegundo_nombre());
-                txtPapellido.setText(alumnoVO.getPrimer_apellido());
-                txtSapellido.setText(alumnoVO.getSegundo_apellido());
-                //txtDireccion.setText(alumnoVO.getDireccion());
-                lblCodigo.setText(alumnoVO.getId_alumno() + "");
-                if (alumnoVO.getSexo().equals("femenino")) {
-                    rbnFemenino.setSelected(true);
-                } else {
-                    rbnMasculino.setSelected(true);
-                }
-                String fecha = alumnoVO.getFechaNacimiento().replace('-', '/');
-                txtFecha.setText(fecha);
-                cbxTipoSangre.setSelectedItem(alumnoVO.getTipo_sangre());
-                if (alumnoVO.getEnfermedades().equals("NINGUNA")) {
-                    rbnNo.setSelected(true);
-                    txtEnfermedad.setText("");
-                    txtEnfermedad.setEnabled(false);
-                } else {
-                    rbnSi.setSelected(true);
-                    txtEnfermedad.setText(alumnoVO.getEnfermedades());
-                    txtEnfermedad.setEnabled(true);
-                }
-                if (alumnoVO.getFoto() == null) {
-                    ajustar(lblfoto, ICON_NO_PHOTO);
-                } else {
-                    ajustar(lblfoto, alumnoVO.getFoto());
-                }
+                ACTUALIZACION = true;
                 if (alumnoVO.isEstatus()) {
-                    cbxEstatus.setSelectedIndex(0);
+                    llenarCampos(alumnoVO);
                 } else {
-                    cbxEstatus.setSelectedIndex(1);
+                   coordinador.getLogica().mensajeAdvertencia("Este alumno tiene estatus NO disponible,\nPor favor actualice pagos y notas para este alumno"); 
                 }
-                /**
-                 * lleno lista
-                 */
-                if (alumnoVO.getAlergias() == null) {
-                    rbnASi.setSelected(false);
-                    rbnANo.setSelected(true);
-                    listAlergias.clearSelection();
-                    listAlergias.setEnabled(false);
-                } else {
-                    listAlergias.setEnabled(true);
-                    rbnASi.setSelected(true);
-                    rbnANo.setSelected(false);
-                    ListModel<String> model = listAlergias.getModel();
-                    int indices[] = new int [alumnoVO.getAlergias().length];
-                    for (int i = 0; i < alumnoVO.getAlergias().length; i++) {
-                        for (int j = 0; j < model.getSize(); j++) {
-                            if (alumnoVO.getAlergias()[i].equals(model.getElementAt(j))) {
-                                indices[i] = j;
-                            } 
-                        }
-                    }
-                    listAlergias.setSelectedIndices(indices);
-                }
-                //datos del representante 1
-                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 1);
-                if(representanteVO.getCedula()!=null){
-                    txtCedulaR1.setText(representanteVO.getCedula());
-                    txtNombreR1.setText(representanteVO.getPrimer_nombre());
-                    txtApellidoR1.setText(representanteVO.getPrimer_apellido());
-                    txtOcupacionR1.setText(representanteVO.getOcupacion());
-                    txtTelefonoR1.setText(representanteVO.getTelefono1());
-                    txtTelefonoR12.setText(representanteVO.getTelefono2());
-                    txtEmpresaR1.setText(representanteVO.getEmpresa());
-                    txtDireccionR1.setText(representanteVO.getDireccion());
-                    if (representanteVO.getFoto() == null) {
-                        ajustar(lblfoto1, ICON_NO_PHOTO);
-                    } else {
-                        ajustar(lblfoto1, representanteVO.getFoto());
-                    }
-                }
-                //datos del representante 2
-                representanteVO = null;
-                representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 2);
-                if(representanteVO.getCedula()!=null){
-                    activarRepresentante();
-                    chkRepresentante.setSelected(true);
-                    txtCedulaR2.setText(representanteVO.getCedula());
-                    txtNombreR2.setText(representanteVO.getPrimer_nombre());
-                    txtApellidoR2.setText(representanteVO.getPrimer_apellido());
-                    txtOcupacionR2.setText(representanteVO.getOcupacion());
-                    txtTelefonoR2.setText(representanteVO.getTelefono1());
-                    txtTelefonoR22.setText(representanteVO.getTelefono2());
-                    txtEmpresaR2.setText(representanteVO.getEmpresa());
-                    txtDireccionR2.setText(representanteVO.getDireccion());
-                    if (representanteVO.getFoto() == null) {
-                        ajustar(lblfoto2, ICON_NO_PHOTO);
-                    } else {
-                        ajustar(lblfoto2, representanteVO.getFoto());
-                    }
-                }
-                
-                //datos del representante 3
-                representanteVO = null;
-                representanteVO = coordinador.consultarRepresentantePorAlumno(txtCodigo.getText(), 3);
-                if(representanteVO.getCedula()!=null){
-                    txtCedulaR3.setText(representanteVO.getCedula());
-                    txtNombreR3.setText(representanteVO.getPrimer_nombre());
-                    txtApellidoR3.setText(representanteVO.getPrimer_apellido());
-                    txtOcupacionR3.setText(representanteVO.getOcupacion());
-                    txtTelefonoR3.setText(representanteVO.getTelefono1());
-                    txtTelefonoR32.setText(representanteVO.getTelefono2());
-                    txtEmpresaR3.setText(representanteVO.getEmpresa());
-                    txtDireccionR3.setText(representanteVO.getDireccion());
-                    if (representanteVO.getFoto() == null) {
-                        ajustar(lblfoto3, ICON_NO_PHOTO);
-                    } else {
-                        ajustar(lblfoto3, representanteVO.getFoto());
-                    }
-                }
-                
-                //datos de requisitos
-                VO.RequisitosVO requisitosVO = coordinador.consultarRequisitos(txtCodigo.getText());
-                chkCopiaCedula.setSelected(requisitosVO.isCedula_padres());
-                chkFotoCarnet.setSelected(requisitosVO.isFoto_carnet());
-                chkFotoFamiliar.setSelected(requisitosVO.isFoto_familiar());
-                chkFotoPostal.setSelected(requisitosVO.isFoto_postal());
-                chkPartidaNacimiento.setSelected(requisitosVO.isPartida());
-                
-                //datos de observacion
-                txtObservacion.setText(requisitosVO.getObservaciones());
             } else {
-                coordinador.getLogica().mensajeError("Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
-                borrarCampos();
+//                coordinador.getLogica().mensajeError("Codigo: "+txtCodigo.getText()+" no existe en la Base de Datos");
+//                borrarCampos();
+                    frmBusqueda.setLocationRelativeTo(this);
+                    frmBusqueda.setVisible(true);
+                  
             }
         } else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            //coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusqueda.setLocationRelativeTo(this);
+            frmBusqueda.setVisible(true);
         }
 
 
@@ -1791,7 +1948,9 @@ public class frmInscripcion extends javax.swing.JFrame {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         if (jTabbedPane1.getSelectedIndex() == 1) {
             if (validacionCampoAlumno()) {
-                jTabbedPane1.setSelectedIndex(1);
+                if (comprobarEdad()) {
+                    jTabbedPane1.setSelectedIndex(1); 
+                }
             } else {
                 coordinador.getLogica().mensajeError("Complete los campos faltantes de alumno");
                 jTabbedPane1.setSelectedIndex(0);
@@ -1841,6 +2000,185 @@ public class frmInscripcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtOcupacionR1ActionPerformed
 
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
+        
+    }//GEN-LAST:event_txtBusquedaKeyTyped
+
+    private void tblBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseClicked
+/*        borrarCampos();
+        AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+        llenarCampos(alumnoVO);*/
+    }//GEN-LAST:event_tblBusquedaMouseClicked
+
+    private void tblBusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusquedaMouseEntered
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        txtBusqueda.setText("");
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
+        txtBusqueda.setText("");
+//        desactivarCampos();
+        frmBusqueda.dispose();
+    }//GEN-LAST:event_btnSalir1ActionPerformed
+
+    private void btnSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionActionPerformed
+        borrarCampos();
+        if (tblBusqueda.getSelectedRow() != -1) {
+            ACTUALIZACION = true;
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+            llenarCampos(alumnoVO);
+            frmBusqueda.dispose();
+        }else{
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccionActionPerformed
+
+    private void txtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyPressed
+
+    }//GEN-LAST:event_txtBusquedaKeyPressed
+
+    private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
+    tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText(), txtBusqueda.getText()));
+    }//GEN-LAST:event_txtBusquedaKeyReleased
+
+    private void rbnMaternalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnMaternalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnMaternalActionPerformed
+
+    private void txtFechaOnSelectionChange(datechooser.events.SelectionChangedEvent evt) {//GEN-FIRST:event_txtFechaOnSelectionChange
+
+
+    }//GEN-LAST:event_txtFechaOnSelectionChange
+
+    private void txtFechaOnCursorMove(datechooser.events.CursorMoveEvent evt) {//GEN-FIRST:event_txtFechaOnCursorMove
+
+    }//GEN-LAST:event_txtFechaOnCursorMove
+
+    private void txtFechaOnCommit(datechooser.events.CommitEvent evt) {//GEN-FIRST:event_txtFechaOnCommit
+        int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
+        int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
+        int anio = añoActual - añoNacimiento;
+        if (anio < 3) {
+            buttonGroup5.setSelected(rbnMaternal.getModel(), true);
+            rbnMaternal.setEnabled(false);
+            rbnI.setEnabled(false);
+            rbnII.setEnabled(false);
+            rbnIII.setEnabled(false);
+        } 
+        if (anio >= 3) {
+            buttonGroup5.setSelected(rbnMaternal.getModel(), true);
+            rbnMaternal.setEnabled(true);
+            rbnI.setEnabled(true);
+            rbnII.setEnabled(false);
+            rbnIII.setEnabled(false);
+        }
+        if (anio == 4) {
+            buttonGroup5.setSelected(rbnI.getModel(), true);
+            rbnMaternal.setEnabled(false);
+            rbnI.setEnabled(true);
+            rbnII.setEnabled(true);
+            rbnIII.setEnabled(false);
+        }
+        if (anio == 5) {
+            buttonGroup5.setSelected(rbnII.getModel(), true);
+            rbnMaternal.setEnabled(false);
+            rbnI.setEnabled(false);
+            rbnII.setEnabled(true);
+            rbnIII.setEnabled(true);
+        }
+        if (anio == 6) {
+            buttonGroup5.setSelected(rbnIII.getModel(), true);
+            rbnMaternal.setEnabled(false);
+            rbnI.setEnabled(false);
+            rbnII.setEnabled(false);
+            rbnIII.setEnabled(true);
+        }
+        if (anio > 6) {
+            buttonGroup5.setSelected(rbnIII.getModel(), true);
+            rbnMaternal.setEnabled(false);
+            rbnI.setEnabled(false);
+            rbnII.setEnabled(false);
+            rbnIII.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtFechaOnCommit
+
+    private void txtPnombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPnombreKeyReleased
+        txtPnombre.setText(txtPnombre.getText().toUpperCase());
+    }//GEN-LAST:event_txtPnombreKeyReleased
+
+    private void txtBusqueda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1ActionPerformed
+
+    private void txtBusqueda1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1KeyPressed
+
+    private void txtBusqueda1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyReleased
+    tblBusqueda1.setModel(coordinador.consultarRepresentanteTabla(txtBusqueda1.getText()));
+    }//GEN-LAST:event_txtBusqueda1KeyReleased
+
+    private void txtBusqueda1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1KeyTyped
+
+    private void tblBusqueda1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusqueda1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusqueda1MouseClicked
+
+    private void tblBusqueda1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusqueda1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusqueda1MouseEntered
+
+    private void btnBorrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar1ActionPerformed
+    txtBusqueda1.setText("");
+    }//GEN-LAST:event_btnBorrar1ActionPerformed
+
+    private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
+    txtBusqueda.setText("");
+    frmBusqueda1.dispose();
+    }//GEN-LAST:event_btnSalir2ActionPerformed
+
+    private void btnSeleccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion1ActionPerformed
+        borrarRepresentante();
+        borrarRepresentante3();
+        if (tblBusqueda1.getSelectedRow() != -1) {
+            //RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(tblBusqueda1.getValueAt(tblBusqueda1.getSelectedRow(), 0).toString(), 1);
+            RepresentanteVO representanteVO = coordinador.consultarRepresentante(tblBusqueda1.getValueAt(tblBusqueda1.getSelectedRow(), 0).toString(), 1);
+                if(representanteVO.getCedula()!=null){
+                    txtCedulaR1.setText(representanteVO.getCedula());
+                    txtNombreR1.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR1.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR1.setText(representanteVO.getOcupacion());
+                    txtTelefonoR1.setText(representanteVO.getTelefono1());
+                    txtTelefonoR12.setText(representanteVO.getTelefono2());
+                    txtEmpresaR1.setText(representanteVO.getEmpresa());
+                    txtDireccionR1.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto1, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto1, representanteVO.getFoto());
+                    }
+                }
+            lblCodigo.setText(coordinador.llenarCodigoAlumno(txtCedulaR1.getText()));
+            frmBusqueda1.dispose();
+        }else{
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            frmBusqueda1.setLocationRelativeTo(this);
+            frmBusqueda1.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1883,16 +2221,24 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarImagen2;
     private javax.swing.JButton btnAgregarImagen3;
     private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBorrar1;
     private javax.swing.JButton btnBorrarA;
     private javax.swing.JButton btnBorrarR;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSalir1;
+    private javax.swing.JButton btnSalir2;
+    private javax.swing.JButton btnSeleccion;
+    private javax.swing.JButton btnSeleccion1;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.JComboBox<String> cbxCasa;
     private javax.swing.JComboBox<String> cbxEstatus;
     private javax.swing.JComboBox<String> cbxParentescoR1;
     private javax.swing.JComboBox<String> cbxParentescoR2;
@@ -1904,6 +2250,9 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkFotoPostal;
     private javax.swing.JCheckBox chkPartidaNacimiento;
     private javax.swing.JCheckBox chkRepresentante;
+    private javax.swing.JFrame frmBusqueda;
+    private javax.swing.JFrame frmBusqueda1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1943,9 +2292,19 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1953,6 +2312,10 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1960,13 +2323,13 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField lblCodigo;
@@ -1980,20 +2343,28 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbnANo;
     private javax.swing.JRadioButton rbnASi;
     private javax.swing.JRadioButton rbnFemenino;
+    private javax.swing.JRadioButton rbnI;
+    private javax.swing.JRadioButton rbnII;
+    private javax.swing.JRadioButton rbnIII;
     private javax.swing.JRadioButton rbnMasculino;
+    private javax.swing.JRadioButton rbnMaternal;
     private javax.swing.JRadioButton rbnNo;
     private javax.swing.JRadioButton rbnOtro;
     private javax.swing.JRadioButton rbnR1;
     private javax.swing.JRadioButton rbnR2;
     private javax.swing.JRadioButton rbnSi;
+    private javax.swing.JTable tblBusqueda;
+    private javax.swing.JTable tblBusqueda1;
     private javax.swing.JTextField txtApellidoR1;
     private javax.swing.JTextField txtApellidoR2;
     private javax.swing.JTextField txtApellidoR3;
+    private javax.swing.JTextField txtBusqueda;
+    private javax.swing.JTextField txtBusqueda1;
+    private javax.swing.JTextField txtCalle;
     private javax.swing.JTextField txtCedulaR1;
     private javax.swing.JTextField txtCedulaR2;
     private javax.swing.JTextField txtCedulaR3;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextArea txtDireccion;
     private javax.swing.JTextArea txtDireccionR1;
     private javax.swing.JTextArea txtDireccionR2;
     private javax.swing.JTextArea txtDireccionR3;
@@ -2005,13 +2376,16 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreR1;
     private javax.swing.JTextField txtNombreR2;
     private javax.swing.JTextField txtNombreR3;
+    private javax.swing.JTextField txtNumCasa;
     private javax.swing.JTextArea txtObservacion;
     private javax.swing.JTextField txtOcupacionR1;
     private javax.swing.JTextField txtOcupacionR2;
     private javax.swing.JTextField txtOcupacionR3;
     private javax.swing.JTextField txtPapellido;
+    private javax.swing.JTextField txtParroquia;
     private javax.swing.JTextField txtPnombre;
     private javax.swing.JTextField txtSapellido;
+    private javax.swing.JTextField txtSector;
     private javax.swing.JTextField txtSnombre;
     private javax.swing.JTextField txtTelefonoR1;
     private javax.swing.JTextField txtTelefonoR12;
@@ -2073,11 +2447,26 @@ public class frmInscripcion extends javax.swing.JFrame {
             alumnoVO.setAlergias(null);
         }
         String res = coordinador.registrarAlumno(alumnoVO);
+        
+        /**
+         * registro direccion tambien
+         */
+        DireccionVO direccionVO = new DireccionVO();
+        
+        direccionVO.setCalle(txtCalle.getText());
+        direccionVO.setCasa(cbxCasa.getSelectedItem().toString());
+        direccionVO.setId_direccion(lblCodigo.getText());
+        direccionVO.setNumcasa(txtNumCasa.getText());
+        direccionVO.setParroquia(txtParroquia.getText());
+        direccionVO.setSector(txtSector.getText());
+        
+        res = coordinador.registrarDireccion(direccionVO);
         return res.equals("INGRESADO CON EXITO");
     }
 
     private boolean validacionCampoAlumno() {
-        if (txtPnombre.getText().isEmpty() || txtSnombre.getText().isEmpty() || txtPapellido.getText().isEmpty() || txtSapellido.getText().isEmpty() || txtDireccion.getText().isEmpty()) {
+        if (txtPnombre.getText().isEmpty() || txtSnombre.getText().isEmpty() || txtPapellido.getText().isEmpty() || txtSapellido.getText().isEmpty() 
+                || txtNumCasa.getText().isEmpty() || txtCalle.getText().isEmpty() || txtSector.getText().isEmpty() || txtParroquia.getText().isEmpty()) {
             return false;
         }
         
@@ -2115,15 +2504,32 @@ public class frmInscripcion extends javax.swing.JFrame {
     }
 
     private boolean validacionCampoRepresentante() {
-        if (chkRepresentante.isSelected()) {
-            return !txtNombreR1.getText().isEmpty() && !txtApellidoR1.getText().isEmpty() && !txtOcupacionR1.getText().isEmpty() && !txtTelefonoR1.getText().isEmpty() && !txtDireccionR1.getText().isEmpty() && !txtCedulaR1.getText().isEmpty()
-                    && !txtNombreR2.getText().isEmpty() && !txtApellidoR2.getText().isEmpty() && !txtOcupacionR2.getText().isEmpty() && !txtTelefonoR2.getText().isEmpty() && !txtDireccionR2.getText().isEmpty() && !txtCedulaR2.getText().isEmpty()
-                    && !txtNombreR3.getText().isEmpty() && !txtApellidoR3.getText().isEmpty() && !txtOcupacionR3.getText().isEmpty() && !txtTelefonoR3.getText().isEmpty() && !txtDireccionR3.getText().isEmpty() && !txtCedulaR3.getText().isEmpty();
-
-        } else {
-            return !txtNombreR1.getText().isEmpty() && !txtApellidoR1.getText().isEmpty() && !txtOcupacionR1.getText().isEmpty() && !txtTelefonoR1.getText().isEmpty() && !txtDireccionR1.getText().isEmpty() && !txtCedulaR1.getText().isEmpty()
-                    && !txtNombreR3.getText().isEmpty() && !txtApellidoR3.getText().isEmpty() && !txtOcupacionR3.getText().isEmpty() && !txtTelefonoR3.getText().isEmpty() && !txtDireccionR3.getText().isEmpty() && !txtCedulaR3.getText().isEmpty();
+//        if (chkRepresentante.isSelected()) {
+//            return !txtNombreR1.getText().isEmpty() && !txtApellidoR1.getText().isEmpty() && !txtOcupacionR1.getText().isEmpty() && !txtTelefonoR1.getText().isEmpty() && !txtDireccionR1.getText().isEmpty() && !txtCedulaR1.getText().isEmpty()
+//                    && !txtNombreR2.getText().isEmpty() && !txtApellidoR2.getText().isEmpty() && !txtOcupacionR2.getText().isEmpty() && !txtTelefonoR2.getText().isEmpty() && !txtDireccionR2.getText().isEmpty() && !txtCedulaR2.getText().isEmpty()
+//                    && !txtNombreR3.getText().isEmpty() && !txtApellidoR3.getText().isEmpty() && !txtOcupacionR3.getText().isEmpty() && !txtTelefonoR3.getText().isEmpty() && !txtDireccionR3.getText().isEmpty() && !txtCedulaR3.getText().isEmpty();
+//
+//        } else {
+//            return !txtNombreR1.getText().isEmpty() && !txtApellidoR1.getText().isEmpty() && !txtOcupacionR1.getText().isEmpty() && !txtTelefonoR1.getText().isEmpty() && !txtDireccionR1.getText().isEmpty() && !txtCedulaR1.getText().isEmpty()
+//                    && !txtNombreR3.getText().isEmpty() && !txtApellidoR3.getText().isEmpty() && !txtOcupacionR3.getText().isEmpty() && !txtTelefonoR3.getText().isEmpty() && !txtDireccionR3.getText().isEmpty() && !txtCedulaR3.getText().isEmpty();
+//        }
+    if (chkRepresentante.isSelected()) {
+        if (txtNombreR1.getText().isEmpty() || txtApellidoR1.getText().isEmpty() || txtOcupacionR1.getText().isEmpty() || txtTelefonoR1.getText().isEmpty() || txtDireccionR1.getText().isEmpty() || txtCedulaR1.getText().isEmpty()
+                   || txtNombreR2.getText().isEmpty() || txtApellidoR2.getText().isEmpty() || txtOcupacionR2.getText().isEmpty() || txtTelefonoR2.getText().isEmpty() || txtDireccionR2.getText().isEmpty() || txtCedulaR2.getText().isEmpty()
+                   || txtNombreR3.getText().isEmpty() || txtApellidoR3.getText().isEmpty() || txtOcupacionR3.getText().isEmpty() || txtTelefonoR3.getText().isEmpty() || txtDireccionR3.getText().isEmpty() || txtCedulaR3.getText().isEmpty()) {
+            return false;
         }
+    }
+    
+    if (txtNombreR1.getText().isEmpty() || txtApellidoR1.getText().isEmpty() || txtOcupacionR1.getText().isEmpty() || txtTelefonoR1.getText().isEmpty() || txtDireccionR1.getText().isEmpty() || txtCedulaR1.getText().isEmpty()
+        || txtNombreR3.getText().isEmpty() || txtApellidoR3.getText().isEmpty() || txtOcupacionR3.getText().isEmpty() || txtTelefonoR3.getText().isEmpty() || txtDireccionR3.getText().isEmpty() || txtCedulaR3.getText().isEmpty()) {
+        return false;
+    }
+    
+    if (txtCedulaR1.getText().equals(txtCedulaR2.getText())) {
+        return false;
+    }
+    return true;
     }
 
     private boolean registrarRepresentante() {
@@ -2136,7 +2542,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO.setDireccion(txtDireccionR1.getText());
         representanteVO.setTelefono1(txtTelefonoR1.getText());
         representanteVO.setTelefono2(txtTelefonoR12.getText());
-        representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString().toLowerCase());
+        representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString());
         representanteVO.setId_alumno(lblCodigo.getText());
         representanteVO.setCedula(txtCedulaR1.getText());
         representanteVO.setTipo(1);
@@ -2286,6 +2692,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         borrarRepresentante();
         borrarRepresentante3();
         activarRepresentante3();
+        ACTUALIZACION = false;
     }
 
     private void desactivarRepresentante() {
@@ -2329,6 +2736,15 @@ public class frmInscripcion extends javax.swing.JFrame {
     private boolean registrarMatricula() {
         VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
         matriculaVO.setId_alumno(lblCodigo.getText());
+        if (rbnMaternal.isSelected()) {
+              matriculaVO.setSeccion(rbnMaternal.getText()); 
+           }else if (rbnI.isSelected()) {
+              matriculaVO.setSeccion(rbnI.getText()); 
+           }else if (rbnII.isSelected()) {
+              matriculaVO.setSeccion(rbnII.getText()); 
+           }else if (rbnIII.isSelected()) {
+              matriculaVO.setSeccion(rbnIII.getText()); 
+           }
         matriculaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
         matriculaVO.setPeriodo(coordinador.consultarVariables().getPeriodo_actual());
         if (coordinador.registrarMatricula(matriculaVO).equals("INGRESADO CON EXITO")) {
@@ -2364,7 +2780,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtSnombre.setText("");
         txtPapellido.setText("");
         txtSapellido.setText("");
-        txtDireccion.setText("");
+        txtNumCasa.setText("");
+        txtCalle.setText("");
+        txtSector.setText("");
+        txtParroquia.setText("");
+        cbxCasa.setSelectedIndex(0);
         cbxTipoSangre.setSelectedIndex(0);
         rbnSi.setSelected(false);
         rbnNo.setSelected(true);
@@ -2372,6 +2792,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         ajustar(lblfoto, ICON_NO_PHOTO);
         txtEnfermedad.setEnabled(false);
         cbxEstatus.setSelectedIndex(0);
+        buttonGroup5.setSelected(rbnMaternal.getModel(), true);
+        rbnMaternal.setEnabled(false);
+        rbnI.setEnabled(false);
+        rbnII.setEnabled(false);
+        rbnIII.setEnabled(false);
     }
 
     private void borrarRepresentante() {
@@ -2481,5 +2906,467 @@ public class frmInscripcion extends javax.swing.JFrame {
         btnAgregarImagen3.setEnabled(false);
         }
         
+    }
+
+    private void llenarCampos(AlumnoVO alumnoVO) {
+        //datos del alumno
+                txtCodigo.setText(alumnoVO.getId_alumno());
+                txtPnombre.setText(alumnoVO.getPrimer_nombre());
+                txtSnombre.setText(alumnoVO.getSegundo_nombre());
+                txtPapellido.setText(alumnoVO.getPrimer_apellido());
+                txtSapellido.setText(alumnoVO.getSegundo_apellido());
+                lblCodigo.setText(alumnoVO.getId_alumno() + "");
+                if (alumnoVO.getSexo().equals("femenino")) {
+                    rbnFemenino.setSelected(true);
+                } else {
+                    rbnMasculino.setSelected(true);
+                }
+                String fecha = alumnoVO.getFechaNacimiento().replace('-', '/');
+                txtFecha.setText(fecha);
+                cbxTipoSangre.setSelectedItem(alumnoVO.getTipo_sangre());
+                if (alumnoVO.getEnfermedades().equals("NINGUNA")) {
+                    rbnNo.setSelected(true);
+                    txtEnfermedad.setText("");
+                    txtEnfermedad.setEnabled(false);
+                } else {
+                    rbnSi.setSelected(true);
+                    txtEnfermedad.setText(alumnoVO.getEnfermedades());
+                    txtEnfermedad.setEnabled(true);
+                }
+                if (alumnoVO.getFoto() == null) {
+                    ajustar(lblfoto, ICON_NO_PHOTO);
+                } else {
+                    ajustar(lblfoto, alumnoVO.getFoto());
+                }
+                if (alumnoVO.isEstatus()) {
+                    cbxEstatus.setSelectedIndex(0);
+                } else {
+                    cbxEstatus.setSelectedIndex(1);
+                }
+                /**
+                 * lleno lista
+                 */
+                if (alumnoVO.getAlergias() == null) {
+                    rbnASi.setSelected(false);
+                    rbnANo.setSelected(true);
+                    listAlergias.clearSelection();
+                    listAlergias.setEnabled(false);
+                } else {
+                    listAlergias.setEnabled(true);
+                    rbnASi.setSelected(true);
+                    rbnANo.setSelected(false);
+                    ListModel<String> model = listAlergias.getModel();
+                    int indices[] = new int [alumnoVO.getAlergias().length];
+                    for (int i = 0; i < alumnoVO.getAlergias().length; i++) {
+                        for (int j = 0; j < model.getSize(); j++) {
+                            if (alumnoVO.getAlergias()[i].equals(model.getElementAt(j))) {
+                                indices[i] = j;
+                            } 
+                        }
+                    }
+                    listAlergias.setSelectedIndices(indices);
+                }
+                //datos de direccion
+                DireccionVO direccionVO = coordinador.consultarDireccion(alumnoVO.getId_alumno());
+                if (direccionVO.getId_direccion() != null) {
+                    txtCalle.setText(direccionVO.getCalle());
+                    txtNumCasa.setText(direccionVO.getNumcasa());
+                    cbxCasa.setSelectedItem(direccionVO.getCasa());
+                    txtParroquia.setText(direccionVO.getParroquia());
+                    txtSector.setText(direccionVO.getSector());
+                }
+                
+                //datos del representante 1
+                RepresentanteVO representanteVO = coordinador.consultarRepresentantePorAlumno(alumnoVO.getId_alumno(), 1);
+                if(representanteVO.getCedula()!=null){
+                    txtCedulaR1.setText(representanteVO.getCedula());
+                    txtNombreR1.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR1.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR1.setText(representanteVO.getOcupacion());
+                    txtTelefonoR1.setText(representanteVO.getTelefono1());
+                    txtTelefonoR12.setText(representanteVO.getTelefono2());
+                    txtEmpresaR1.setText(representanteVO.getEmpresa());
+                    txtDireccionR1.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto1, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto1, representanteVO.getFoto());
+                    }
+                }
+                //datos del representante 2
+                representanteVO = null;
+                representanteVO = coordinador.consultarRepresentantePorAlumno(alumnoVO.getId_alumno(), 2);
+                if(representanteVO.getCedula()!=null){
+                    activarRepresentante();
+                    chkRepresentante.setSelected(true);
+                    txtCedulaR2.setText(representanteVO.getCedula());
+                    txtNombreR2.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR2.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR2.setText(representanteVO.getOcupacion());
+                    txtTelefonoR2.setText(representanteVO.getTelefono1());
+                    txtTelefonoR22.setText(representanteVO.getTelefono2());
+                    txtEmpresaR2.setText(representanteVO.getEmpresa());
+                    txtDireccionR2.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto2, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto2, representanteVO.getFoto());
+                    }
+                }
+                
+                //datos del representante 3
+                representanteVO = null;
+                representanteVO = coordinador.consultarRepresentantePorAlumno(alumnoVO.getId_alumno(), 3);
+                if(representanteVO.getCedula()!=null){
+                    txtCedulaR3.setText(representanteVO.getCedula());
+                    txtNombreR3.setText(representanteVO.getPrimer_nombre());
+                    txtApellidoR3.setText(representanteVO.getPrimer_apellido());
+                    txtOcupacionR3.setText(representanteVO.getOcupacion());
+                    txtTelefonoR3.setText(representanteVO.getTelefono1());
+                    txtTelefonoR32.setText(representanteVO.getTelefono2());
+                    txtEmpresaR3.setText(representanteVO.getEmpresa());
+                    txtDireccionR3.setText(representanteVO.getDireccion());
+                    if (representanteVO.getFoto() == null) {
+                        ajustar(lblfoto3, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto3, representanteVO.getFoto());
+                    }
+                }
+                
+                //datos de requisitos
+                VO.RequisitosVO requisitosVO = coordinador.consultarRequisitos(alumnoVO.getId_alumno());
+                chkCopiaCedula.setSelected(requisitosVO.isCedula_padres());
+                chkFotoCarnet.setSelected(requisitosVO.isFoto_carnet());
+                chkFotoFamiliar.setSelected(requisitosVO.isFoto_familiar());
+                chkFotoPostal.setSelected(requisitosVO.isFoto_postal());
+                chkPartidaNacimiento.setSelected(requisitosVO.isPartida());
+                
+                //datos de observacion
+                txtObservacion.setText(requisitosVO.getObservaciones());
+    }
+
+    private void nuevoIngreso(String fecha) {
+                //verifico campos alumnos
+        if (validacionCampoAlumno()) {
+            //verifico campos representates
+            if (validacionCampoRepresentante()) {
+                //registro los alumnos
+                if (registrarAlumno(fecha)) {
+                    //registro al primer representante
+                    if (registrarRepresentante()) {
+                        //combruebo check para revisar si registro al otro representante o no
+                        if (chkRepresentante.isSelected()) {
+                            if (registrarRepresentante2()) {
+                                if (registrarRepresentante3()) {
+                                    if (registrarMatricula()) {
+                                        if (registrarRequisitos()) {
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                        } else {
+                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
+                                            
+                                        }
+                                    } else {
+                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
+                                }                               
+                            } else {
+                                coordinador.getLogica().mensajeError("problemas al registar representante 2");
+                            }
+                        } else {
+                                if (registrarRepresentante3()) {
+                                    if (registrarMatricula()) {
+                                        if (registrarRequisitos()) {
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                            jTabbedPane1.setSelectedIndex(0);
+                                        } else {
+                                            coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
+                                        }
+                                    } else {
+                                        coordinador.getLogica().mensajeError("Problemas al incluir en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    coordinador.getLogica().mensajeError("problemas al registar representante 3");
+                                } 
+                        }
+                    } else {
+                        coordinador.getLogica().mensajeError("problemas al registar representante 1");
+                    }
+                } else {
+                    coordinador.getLogica().mensajeError("problemas al registar alumno");
+                }
+            } else {
+                coordinador.getLogica().mensajeAdvertencia("campos representante vacio o cedula duplicada");
+            }
+        } else {
+           coordinador.getLogica().mensajeAdvertencia("faltan campos en alumnos");
+        }
+    }
+
+    private void reinscripcion(String fecha) {
+        //verifico campos alumnos
+        if (validacionCampoAlumno()) {
+            //verifico campos representates
+            if (validacionCampoRepresentante()) {
+                //registro los alumnos
+                if (actualizarAlumno(fecha)) {
+                    //registro al primer representante
+                    if (actualizarRepresentante()) {
+                        //combruebo check para revisar si registro al otro representante o no
+                        if (chkRepresentante.isSelected()) {
+                            if (actualizarRepresentante2()) {
+                                if (actualizarRepresentante3()) {
+                                    if (actualizarMatricula()) {
+                                        if (actualizarRequisitos()) {
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                            jTabbedPane1.setSelectedIndex(0);
+                                        } else {
+                                            coordinador.getLogica().mensajeError("Problemas al actualizar requisitos");
+                                        }
+                                    } else {
+                                        coordinador.getLogica().mensajeError("Problemas al actualizar en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    coordinador.getLogica().mensajeError("problemas al actualizar representante 3");
+                                }                               
+                            } else {
+                                coordinador.getLogica().mensajeError("problemas al actualizar representante 2");
+                            }
+                        } else {
+                                if (actualizarRepresentante3()) {
+                                    if (actualizarMatricula()) {
+                                        if (actualizarRequisitos()) {
+                                            coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                        } else {
+                                            coordinador.getLogica().mensajeError("Problemas al actualizar requisitos");
+                                        }
+                                    } else {
+                                        coordinador.getLogica().mensajeError("Problemas al actualizar en matricula");
+                                    }
+                                    borrarCampos();
+                                } else {
+                                    coordinador.getLogica().mensajeError("problemas al actualizar representante 3");
+                                } 
+                        }
+                    } else {
+                        coordinador.getLogica().mensajeError("problemas al actualizar representante 1");
+                    }
+                } else {
+                    coordinador.getLogica().mensajeError("problemas al actualizar alumno");
+                }
+            } else {
+                coordinador.getLogica().mensajeAdvertencia("campos representante vacio o cedula duplicada");
+            }
+        } else {
+           coordinador.getLogica().mensajeAdvertencia("faltan campos en alumnos");
+        }
+    }
+
+    private boolean actualizarAlumno(String fecha) {
+        VO.AlumnoVO alumnoVO = new VO.AlumnoVO();
+        alumnoVO.setPrimer_nombre(txtPnombre.getText());
+        alumnoVO.setSegundo_nombre(txtSnombre.getText());
+        alumnoVO.setPrimer_apellido(txtPapellido.getText());
+        alumnoVO.setSegundo_apellido(txtSapellido.getText());
+        if (rbnMasculino.isSelected()) {
+            alumnoVO.setSexo("masculino");
+        } else {
+            alumnoVO.setSexo("femenino");
+        }
+        alumnoVO.setFechaNacimiento(fecha);
+        //alumnoVO.setDireccion(txtDireccion.getText());
+        alumnoVO.setTipo_sangre(cbxTipoSangre.getSelectedItem().toString());
+        if (rbnSi.isSelected()) {
+            alumnoVO.setEnfermedades(txtEnfermedad.getText());
+        } else {
+            alumnoVO.setEnfermedades("NINGUNA");
+        }
+        alumnoVO.setId_alumno(lblCodigo.getText());
+        int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
+        int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
+        alumnoVO.setEdad(añoActual - añoNacimiento);
+        if (!lblfoto.getIcon().equals(ICON_NO_PHOTO)) {
+            alumnoVO.setBinarioFoto(longitudBytes);
+            alumnoVO.setFis(fis);
+        }
+        /**
+         * Ingreso estatus
+         */
+        if (cbxEstatus.getSelectedIndex() == 0) {
+            alumnoVO.setEstatus(true);
+        } else {
+            alumnoVO.setEstatus(false);
+        }
+        /**
+         * ingreso de alergias si existe
+         */
+        if (rbnASi.isSelected()) {
+            List<String> lista = listAlergias.getSelectedValuesList();
+            String[] vector = new String[lista.size()];
+            alumnoVO.setAlergias(vector);
+            vector = lista.toArray(vector);
+            alumnoVO.setAlergias(vector);
+        } else {
+            alumnoVO.setAlergias(null);
+        }
+        String res = coordinador.actualizarAlumnoSinFoto(alumnoVO, alumnoVO.getId_alumno());
+        
+        /**
+         * registro direccion tambien
+         */
+        DireccionVO direccionVO = new DireccionVO();
+        
+        direccionVO.setCalle(txtCalle.getText());
+        direccionVO.setCasa(cbxCasa.getSelectedItem().toString());
+        direccionVO.setId_direccion(lblCodigo.getText());
+        direccionVO.setNumcasa(txtNumCasa.getText());
+        direccionVO.setParroquia(txtParroquia.getText());
+        direccionVO.setSector(txtSector.getText());
+        
+        res = coordinador.actualizarDireccion(direccionVO, alumnoVO.getId_alumno());
+        return res.equals("DATOS ACTUALIZADOS");
+    }
+    
+    private boolean actualizarRepresentante() {
+        VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
+
+        representanteVO.setPrimer_nombre(txtNombreR1.getText());
+        representanteVO.setPrimer_apellido(txtApellidoR1.getText());
+        representanteVO.setOcupacion(txtOcupacionR1.getText());
+        representanteVO.setEmpresa(txtEmpresaR1.getText());
+        representanteVO.setDireccion(txtDireccionR1.getText());
+        representanteVO.setTelefono1(txtTelefonoR1.getText());
+        representanteVO.setTelefono2(txtTelefonoR12.getText());
+        representanteVO.setParentesco(cbxParentescoR1.getSelectedItem().toString());
+        representanteVO.setId_alumno(lblCodigo.getText());
+        representanteVO.setCedula(txtCedulaR1.getText());
+        representanteVO.setTipo(1);
+        if (!lblfoto1.getIcon().equals(ICON_NO_PHOTO)) {
+            representanteVO.setBinarioFoto(longitudBytes1);
+            representanteVO.setFis(fis1);
+        }
+
+        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO, lblCodigo.getText(), 1);
+        if (res.equals("DATOS ACTUALIZADOS")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+        private boolean actualizarRepresentante2() {
+        VO.RepresentanteVO representanteVO2 = new VO.RepresentanteVO();
+        representanteVO2.setPrimer_nombre(txtNombreR2.getText());
+        representanteVO2.setPrimer_apellido(txtApellidoR2.getText());
+        representanteVO2.setOcupacion(txtOcupacionR2.getText());
+        representanteVO2.setEmpresa(txtEmpresaR2.getText());
+        representanteVO2.setDireccion(txtDireccionR2.getText());
+        representanteVO2.setTelefono1(txtTelefonoR2.getText());
+        representanteVO2.setTelefono2(txtTelefonoR22.getText());
+        representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
+        representanteVO2.setId_alumno(lblCodigo.getText());
+        representanteVO2.setCedula(txtCedulaR2.getText());
+        representanteVO2.setTipo(2);
+        if (!lblfoto2.getIcon().equals(ICON_NO_PHOTO)) {
+            representanteVO2.setBinarioFoto(longitudBytes2);
+            representanteVO2.setFis(fis2);
+        }
+        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO2, lblCodigo.getText(), 2);
+        if (res.equals("DATOS ACTUALIZADOS")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    private boolean actualizarRepresentante3() {
+        VO.RepresentanteVO representanteVO3 = new VO.RepresentanteVO();
+        representanteVO3.setPrimer_nombre(txtNombreR3.getText());
+        representanteVO3.setPrimer_apellido(txtApellidoR3.getText());
+        representanteVO3.setOcupacion(txtOcupacionR3.getText());
+        representanteVO3.setEmpresa(txtEmpresaR3.getText());
+        representanteVO3.setDireccion(txtDireccionR3.getText());
+        representanteVO3.setTelefono1(txtTelefonoR3.getText());
+        representanteVO3.setTelefono2(txtTelefonoR32.getText());
+        representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
+        representanteVO3.setId_alumno(lblCodigo.getText());
+        representanteVO3.setCedula(txtCedulaR3.getText());
+        representanteVO3.setTipo(3);
+        if(rbnR1.isSelected()){
+            representanteVO3.setBinarioFoto(longitudBytecopia1);
+            representanteVO3.setFis(fisCopia1);
+        }
+        if(rbnR2.isSelected()){
+            representanteVO3.setBinarioFoto(longitudBytecopia2);
+            representanteVO3.setFis(fisCopia2);
+        }
+        if (rbnOtro.isSelected()) {
+            if (!lblfoto3.getIcon().equals(ICON_NO_PHOTO)) {
+                representanteVO3.setBinarioFoto(longitudBytes3);
+                representanteVO3.setFis(fis3);
+            }
+        }
+        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO3, lblCodigo.getText(), 3);
+        if (res.equals("DATOS ACTUALIZADOS")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+       private boolean actualizarMatricula() {
+        VO.MatriculaVO matriculaVO = new VO.MatriculaVO();
+        matriculaVO.setId_alumno(lblCodigo.getText());
+           if (rbnMaternal.isSelected()) {
+              matriculaVO.setSeccion(rbnMaternal.getText()); 
+           }else if (rbnI.isSelected()) {
+              matriculaVO.setSeccion(rbnI.getText()); 
+           }else if (rbnII.isSelected()) {
+              matriculaVO.setSeccion(rbnII.getText()); 
+           }else if (rbnIII.isSelected()) {
+              matriculaVO.setSeccion(rbnIII.getText()); 
+           }
+        matriculaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
+        matriculaVO.setPeriodo(coordinador.consultarVariables().getPeriodo_actual());
+        if (coordinador.actualizarMatricula(matriculaVO, lblCodigo.getText()).equals("DATOS ACTUALIZADOS")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean actualizarRequisitos() {
+        VO.RequisitosVO requisitosVO = new VO.RequisitosVO();
+        requisitosVO.setId_alumno(lblCodigo.getText());
+        requisitosVO.setFoto_carnet(chkFotoCarnet.isSelected());
+        requisitosVO.setFoto_familiar(chkFotoFamiliar.isSelected());
+        requisitosVO.setFoto_postal(chkFotoPostal.isSelected());
+        requisitosVO.setPartida(chkPartidaNacimiento.isSelected());
+        requisitosVO.setCedula_padres(chkCopiaCedula.isSelected());
+        requisitosVO.setObservaciones(txtObservacion.getText());
+        if (coordinador.actualizarRequisitos(requisitosVO).equals("DATOS ACTUALIZADOS")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean comprobarEdad() {
+                int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
+        int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
+        int anio = añoActual - añoNacimiento;
+        if (anio < 3) {
+            coordinador.getLogica().mensajeError("El alumno no cumple la edad minima de 2 años.");
+            return false;
+        } 
+        if (anio > 6) {
+            coordinador.getLogica().mensajeError("El alumno supera la edad maxima, que es 6 años.");
+            return false;
+        }
+        return true;
     }
 }

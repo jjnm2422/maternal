@@ -8,6 +8,7 @@ package Controlador;
 import DAO.AlumnoDAO;
 import DAO.AsistenciaADAO;
 import DAO.Asistencia_dDAO;
+import DAO.DireccionDAO;
 import DAO.EmpleadoDAO;
 import DAO.MatriculaDAO;
 import DAO.NotaDAO;
@@ -75,6 +76,7 @@ public class Coordinador {
     private PagoDAO pagoDAO;
     private RegistroPagoDAO registroPagoDAO;
     private frmMenuReportes frmMenuReportes;
+    private DireccionDAO direccionDAO;
 
     public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
        this.alumnoDAO = alumnoDAO;
@@ -176,6 +178,10 @@ public class Coordinador {
         return getLogica().validacionSoloLetrasEspacio(entrada);
     }
     
+    public String actualizarMatricula(VO.MatriculaVO matriculaVO, String id_alumno){
+        return getMatriculaDAO().actualizarMatricula(matriculaVO, id_alumno);
+    }
+    
     public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         return getMatriculaDAO().registrarMatricula(matriculaVO);
     }
@@ -187,6 +193,14 @@ public class Coordinador {
     public VO.RequisitosVO consultarRequisitos(String id_alumno) {
         return getRequisitosDAO().consultarRequisitos(id_alumno);
     }
+    
+    public DefaultTableModel consultarRepresentanteTabla(String cedula_representante) {
+        return getRepresentanteDAO().consultarRepresentanteTabla(cedula_representante);
+    }
+    
+     public VO.RepresentanteVO consultarRepresentante(String cedula, int tipo) {
+         return getRepresentanteDAO().consultarRepresentante(cedula, tipo);
+     }
     
     public String consultarUsuarioLogin(String usuario, String clave){
         return getUsuarioDAO().consultarUsuarioLogin(usuario, clave);
@@ -245,8 +259,8 @@ public class Coordinador {
         return getLogica().validacionLimiteSoloNumerosYGuion(entrada);
     }
     
-    public DefaultTableModel consultarAlumnosTabla(String parametro){
-        return getAlumnoDAO().consultarAlumnosTabla(parametro);
+    public DefaultTableModel consultarAlumnosTabla(String cedula_representante, String nombre){
+        return getAlumnoDAO().consultarAlumnosTabla(cedula_representante, nombre);
     }
     
     public Date getFecha(){
@@ -539,5 +553,28 @@ public class Coordinador {
     public frmMenuReportes getFrmMenuReportes() {
         return frmMenuReportes;
     }
+
+    public void setDireccionDAO(DireccionDAO direccionDAO) {
+        this.direccionDAO = direccionDAO;
+    }
+
+    public DireccionDAO getDireccionDAO() {
+        return direccionDAO;
+    }
     
+    public String registrarDireccion(VO.DireccionVO direccionVO) {
+        return getDireccionDAO().registrarDireccion(direccionVO);
+    }
+    
+    public VO.DireccionVO consultarDireccion(String id_alumno) {
+        return getDireccionDAO().consultarDireccion(id_alumno);
+    }
+    
+    public DefaultTableModel consultarUsuarioTabla() {
+        return getUsuarioDAO().consultarUsuarioTabla();
+    }
+    
+     public String actualizarDireccion(VO.DireccionVO direccionVO, String id) {
+         return getDireccionDAO().actualizarDireccion(direccionVO, id);
+     }
 }

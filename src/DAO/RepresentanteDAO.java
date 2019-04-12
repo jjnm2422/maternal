@@ -18,6 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author acjj
@@ -73,31 +75,47 @@ public class RepresentanteDAO {
         return respuesta;
     }
 
-    public VO.RepresentanteVO consultarRepresentante(String parametro) {
+    public VO.RepresentanteVO consultarRepresentante(String cedula, int tipo) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
         ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
         VO.RepresentanteVO representanteVO = new VO.RepresentanteVO();
         conexion = conexiondb.getConnection();
         
         if (conexion!=null) {
-            String sql = "SELECT * FROM "+this.tabla+" WHERE cedula = ?";
+            String sql = "SELECT * FROM "+this.tabla+" WHERE cedula = ? and tipo = ?";
         
             try {
                 ps = conexion.prepareStatement(sql);
-                ps.setString(1, parametro);
+                ps.setString(1, cedula);
+                ps.setInt(2, tipo);
                 result = ps.executeQuery();
-                if (result.getRow()!=0) {
                     while (result.next()==true) {
-                    representanteVO.setPrimer_nombre(result.getString("nombre1"));
-                    representanteVO.setPrimer_apellido(result.getString("apellido1"));
+                    representanteVO.setPrimer_nombre(result.getString("primer_nombre"));
+                    representanteVO.setPrimer_apellido(result.getString("primer_apellido"));
+                    representanteVO.setTelefono1(result.getString("telefono1"));
+                    representanteVO.setTelefono2(result.getString("telefono2"));
+                    representanteVO.setDireccion(result.getString("direccion"));
+                    representanteVO.setParentesco(result.getString("parentesco"));
+                    representanteVO.setOcupacion(result.getString("ocupacion"));
+                    representanteVO.setCedula(result.getString("cedula"));
+                    representanteVO.setEmpresa(result.getString("empresa"));
+                    representanteVO.setId_alumno(result.getString("id_alumno"));
+                    representanteVO.setTipo(result.getInt("tipo"));
+                    //codigo para extraer imagen
+                    if (result.getBinaryStream("foto") != null) {
+                        is = result.getBinaryStream("foto");
+                        BufferedImage bi = ImageIO.read(is);
+                        foto = new ImageIcon(bi);
+                        representanteVO.setFoto(foto);
                     }
-                } else {
-                    conexiondb.desconexion();
-                    return null;
-                } 
+                    }
             } catch (SQLException ex) {
+                Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 Logger.getLogger(RepresentanteDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
             conexiondb.desconexion();
@@ -254,5 +272,37 @@ public class RepresentanteDAO {
         } else {
             return "ERROR AL CONECTAR CON BD";
         }
+    }
+        
+    public DefaultTableModel consultarRepresentanteTabla(String cedula_representante) {
+        boolean encontrado = false;
+        Statement st = null;
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String[] titulos = {"Cedula", "Nombre y Apellido"};
+        String[] fila = new String[titulos.length];
+        String sql = "SELECT * FROM "+this.tabla+" WHERE cedula like '%"+cedula_representante+"%' and tipo = 1 GROUP BY id_alumno";
+        DefaultTableModel model = new DefaultTableModel(null, titulos);
+
+        try {
+            st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                fila[0] = rs.getString("cedula");
+                fila[1] = rs.getString("primer_nombre") + " " +rs.getString("primer_apellido");
+                model.addRow(fila);
+                encontrado = true;
+            }
+//            if (encontrado == false) {
+//                JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
+//                return model = null;
+//            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+            return model = null;
+        }
+        return model;
     }
 }

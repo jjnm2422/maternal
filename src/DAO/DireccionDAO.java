@@ -71,7 +71,7 @@ public class DireccionDAO {
         return respuesta;
     }
 
-    public VO.DireccionVO consultarDireccion(String parametro) {
+    public VO.DireccionVO consultarDireccion(String id_alumno) {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         PreparedStatement ps = null;
@@ -82,7 +82,7 @@ public class DireccionDAO {
         conexion = conexiondb.getConnection();
 
         if (conexion != null) {
-            String sql = "SELECT * FROM " + this.tabla + " WHERE id_direccion = '" + parametro + "'";
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_direccion = '" + id_alumno + "'";
             try {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();

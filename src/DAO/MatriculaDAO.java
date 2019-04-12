@@ -150,7 +150,7 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion, periodo) VALUES (?, ?, ?,?)" ;
+        String sql = "INSERT INTO "+this.tabla+" (id_alumno, id_empleado, seccion, periodo) VALUES (?, ?, ?, ?)" ;
         if (conexion!=null) {
            try {
             ps = conexion.prepareCall(sql);
@@ -178,15 +178,17 @@ public String registrarMatricula(VO.MatriculaVO matriculaVO) {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET seccion=? where id_alumno= '"+id_alumno+"'";
+        String sql = "UPDATE "+this.tabla+" SET seccion=?, periodo=?, id_empleado=? where id_alumno= '"+id_alumno+"'";
 
         if (conexion!=null) {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setString(1, matriculaVO.getSeccion());
+                ps.setString(2, matriculaVO.getPeriodo());
+                ps.setString(3, matriculaVO.getId_empleado());
                 int n = ps.executeUpdate();
                 if (n > 0) {
-                    respuesta = "UPDATE";
+                    respuesta = "DATOS ACTUALIZADOS";
                     conexion.close();
                 }
             } catch (SQLException ex) {

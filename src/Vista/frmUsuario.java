@@ -437,7 +437,7 @@ public class frmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void btnInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio1ActionPerformed
-    tblUsuario.setModel(coordinador.getUsuarioDAO().consultarUsuarioTabla());
+    tblUsuario.setModel(coordinador.consultarUsuarioTabla());
     }//GEN-LAST:event_btnInicio1ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

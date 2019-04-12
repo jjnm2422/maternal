@@ -138,11 +138,11 @@ public class Logica{
     
     public boolean validacionSoloLetras(String entrada){
         //solo permito - _ . y letras y numeros
-        return entrada.matches("[qwertyuiopasdfghjklñzxcvbnm]*");
+        return entrada.matches("[qwertyuiopasdfghjklñzxcvbnmZXCVBNMASDFGHJKLÑQWERTYUIOP]*");
     }
     public boolean validacionSoloLetrasEspacio(String entrada){
         //solo permito - _ . y letras y numeros
-        return entrada.matches("[qwertyuiopasdfghjklñzxcvbnm ]*");
+        return entrada.matches("[qwertyuiopasdfghjklñzxcvbnmZXCVBNMASDFGHJKLÑQWERTYUIOP ]*");
     }
     
     public boolean validacionNumeroTelefonico(String entrada){
