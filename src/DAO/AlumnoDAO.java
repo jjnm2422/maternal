@@ -175,7 +175,7 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, direccion=?, alergias=?, foto=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, foto=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
@@ -195,12 +195,12 @@ public class AlumnoDAO {
                     ps.setArray(9, null);
                 }
                 if (alumnoVO.getFis() != null) {
-                    ps.setBinaryStream(11, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
+                    ps.setBinaryStream(10, alumnoVO.getFis(), alumnoVO.getBinarioFoto());
                 } else {
-                    ps.setBinaryStream(11, null, 0);
+                    ps.setBinaryStream(10, null, 0);
                 }
-                ps.setBoolean(12, alumnoVO.isEstatus());
-                ps.setString(13, alumnoVO.getEnfermedades());
+                ps.setBoolean(11, alumnoVO.isEstatus());
+                ps.setString(12, alumnoVO.getEnfermedades());
  
                 int n = ps.executeUpdate();
                 if (n > 0) {
@@ -265,7 +265,7 @@ public class AlumnoDAO {
         int valor = -1;
         conexion = conexiondb.getConnection();
         try {
-            String sql = "SELECT Count(*) as valor FROM public.alumno Where id_alumno like '"+cedula_representante+ "%'";
+            String sql = "SELECT Count(*) as valor FROM public.alumno Where id_alumno like '"+cedula_representante+ "-%'";
             st = conexion.createStatement();
             result = st.executeQuery(sql);
             while (result.next()) {

@@ -45,7 +45,7 @@ public class RepresentanteDAO {
             try {
             ps = conexion.prepareCall(sql);
             ps.setString(1, representanteVO.getPrimer_nombre());
-            ps.setString(2, representanteVO.getPrimer_nombre());
+            ps.setString(2, representanteVO.getPrimer_apellido());
             ps.setString(3, representanteVO.getTelefono1());
             ps.setString(4, representanteVO.getTelefono2());
             ps.setString(5, representanteVO.getDireccion());
@@ -282,7 +282,7 @@ public class RepresentanteDAO {
         conexion = conexiondb.getConnection();
         String[] titulos = {"Cedula", "Nombre y Apellido"};
         String[] fila = new String[titulos.length];
-        String sql = "SELECT * FROM "+this.tabla+" WHERE cedula like '%"+cedula_representante+"%' and tipo = 1 GROUP BY id_alumno";
+        String sql = "SELECT cedula, primer_nombre, primer_apellido FROM "+this.tabla+" WHERE cedula like '%"+cedula_representante+"%' and tipo =1 GROUP BY cedula, primer_nombre, primer_apellido" ;
         DefaultTableModel model = new DefaultTableModel(null, titulos);
 
         try {

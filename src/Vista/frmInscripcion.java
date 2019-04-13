@@ -208,6 +208,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         btnAgregarImagen1 = new javax.swing.JButton();
         lblfoto1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
         btnBorrarR = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -251,13 +252,14 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtNombreR3 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
         cbxParentescoR3 = new javax.swing.JComboBox<>();
         btnAgregarImagen3 = new javax.swing.JButton();
         lblfoto3 = new javax.swing.JLabel();
         rbnOtro = new javax.swing.JRadioButton();
         rbnR1 = new javax.swing.JRadioButton();
         rbnR2 = new javax.swing.JRadioButton();
+        txtParentesco = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
 
         frmBusqueda.setUndecorated(true);
@@ -526,6 +528,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtSnombre.setToolTipText("");
         txtSnombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtSnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSnombreKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSnombreKeyTyped(evt);
             }
@@ -545,6 +550,9 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtPapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPapellidoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPapellidoKeyTyped(evt);
             }
@@ -564,6 +572,12 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtSapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSapellidoKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSapellidoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSapellidoKeyTyped(evt);
             }
@@ -701,6 +715,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtEnfermedad.setRows(5);
         txtEnfermedad.setEnabled(false);
         txtEnfermedad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEnfermedadKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEnfermedadKeyTyped(evt);
             }
@@ -840,9 +857,45 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         cbxCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
         jPanel10.add(cbxCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 100, -1));
+
+        txtParroquia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtParroquiaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParroquiaKeyTyped(evt);
+            }
+        });
         jPanel10.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 100, -1));
+
+        txtNumCasa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumCasaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumCasaKeyTyped(evt);
+            }
+        });
         jPanel10.add(txtNumCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 110, -1));
+
+        txtCalle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCalleKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalleKeyTyped(evt);
+            }
+        });
         jPanel10.add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 250, -1));
+
+        txtSector.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSectorKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSectorKeyTyped(evt);
+            }
+        });
         jPanel10.add(txtSector, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 110, -1));
 
         jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 380, 150));
@@ -1009,6 +1062,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtObservacion.setLineWrap(true);
         txtObservacion.setRows(5);
         txtObservacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtObservacionKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtObservacionKeyTyped(evt);
             }
@@ -1029,7 +1085,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, -1));
 
         cbxParentescoR1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        cbxParentescoR1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana", "Otro" }));
+        cbxParentescoR1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana" }));
         cbxParentescoR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxParentescoR1ActionPerformed(evt);
@@ -1048,6 +1104,9 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtNombreR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreR1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreR1KeyTyped(evt);
             }
@@ -1065,6 +1124,9 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtOcupacionR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtOcupacionR1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtOcupacionR1KeyTyped(evt);
             }
@@ -1107,6 +1169,9 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtTelefonoR12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR12KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR12KeyTyped(evt);
             }
@@ -1114,6 +1179,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel1.add(txtTelefonoR12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 100, -1));
 
         txtEmpresaR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpresaR1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmpresaR1KeyTyped(evt);
             }
@@ -1133,6 +1201,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, 60));
 
         txtTelefonoR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR1KeyTyped(evt);
             }
@@ -1145,6 +1216,9 @@ public class frmInscripcion extends javax.swing.JFrame {
             }
         });
         txtApellidoR1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoR1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellidoR1KeyTyped(evt);
             }
@@ -1187,7 +1261,15 @@ public class frmInscripcion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 20, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 20, 20));
+
+        jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 110, -1));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 340, 320));
 
@@ -1230,6 +1312,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtTelefonoR22.setEnabled(false);
         txtTelefonoR22.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR22KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR22KeyTyped(evt);
             }
@@ -1248,6 +1333,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtEmpresaR2.setEnabled(false);
         txtEmpresaR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpresaR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmpresaR2KeyTyped(evt);
             }
@@ -1266,6 +1354,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtCedulaR2.setEnabled(false);
         txtCedulaR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCedulaR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCedulaR2KeyTyped(evt);
             }
@@ -1274,6 +1365,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtTelefonoR2.setEnabled(false);
         txtTelefonoR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR2KeyTyped(evt);
             }
@@ -1292,6 +1386,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtApellidoR2.setEnabled(false);
         txtApellidoR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellidoR2KeyTyped(evt);
             }
@@ -1300,6 +1397,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtOcupacionR2.setEnabled(false);
         txtOcupacionR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtOcupacionR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtOcupacionR2KeyTyped(evt);
             }
@@ -1308,6 +1408,9 @@ public class frmInscripcion extends javax.swing.JFrame {
 
         txtNombreR2.setEnabled(false);
         txtNombreR2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreR2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreR2KeyTyped(evt);
             }
@@ -1329,7 +1432,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel25.setText("Parentesco");
         jPanel6.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, 70, -1));
 
-        cbxParentescoR2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana", "Otro" }));
+        cbxParentescoR2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana" }));
         cbxParentescoR2.setEnabled(false);
         jPanel6.add(cbxParentescoR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
@@ -1378,6 +1481,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 190, 60));
 
         txtTelefonoR32.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR32KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR32KeyTyped(evt);
             }
@@ -1395,6 +1501,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         txtEmpresaR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmpresaR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtEmpresaR3KeyTyped(evt);
             }
@@ -1412,6 +1521,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtCedulaR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCedulaR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCedulaR3KeyTyped(evt);
             }
@@ -1419,6 +1531,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(txtCedulaR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 90, -1));
 
         txtTelefonoR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTelefonoR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefonoR3KeyTyped(evt);
             }
@@ -1436,6 +1551,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
 
         txtApellidoR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellidoR3KeyTyped(evt);
             }
@@ -1443,6 +1561,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(txtApellidoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 90, -1));
 
         txtOcupacionR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtOcupacionR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtOcupacionR3KeyTyped(evt);
             }
@@ -1450,6 +1571,9 @@ public class frmInscripcion extends javax.swing.JFrame {
         jPanel11.add(txtOcupacionR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 90, -1));
 
         txtNombreR3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreR3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreR3KeyTyped(evt);
             }
@@ -1466,13 +1590,13 @@ public class frmInscripcion extends javax.swing.JFrame {
         jLabel38.setText("Ocupacion");
         jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 70, -1));
 
-        jLabel39.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setText("Parentesco");
-        jPanel11.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
         cbxParentescoR3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         cbxParentescoR3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Madre", "Padre", "Tio", "Tia", "Abuela", "Abuelo", "Hermano", "Hermana", "Otro" }));
+        cbxParentescoR3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxParentescoR3ActionPerformed(evt);
+            }
+        });
         jPanel11.add(cbxParentescoR3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, -1));
 
         btnAgregarImagen3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1483,11 +1607,11 @@ public class frmInscripcion extends javax.swing.JFrame {
                 btnAgregarImagen3ActionPerformed(evt);
             }
         });
-        jPanel11.add(btnAgregarImagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 110, 30));
+        jPanel11.add(btnAgregarImagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 110, 30));
 
         lblfoto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel11.add(lblfoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, 120));
+        jPanel11.add(lblfoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 110, 120));
 
         rbnOtro.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnOtro);
@@ -1500,7 +1624,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnOtroActionPerformed(evt);
             }
         });
-        jPanel11.add(rbnOtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        jPanel11.add(rbnOtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         rbnR1.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnR1);
@@ -1512,7 +1636,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnR1ActionPerformed(evt);
             }
         });
-        jPanel11.add(rbnR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+        jPanel11.add(rbnR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
 
         rbnR2.setBackground(new java.awt.Color(2, 119, 189));
         buttonGroup3.add(rbnR2);
@@ -1524,7 +1648,23 @@ public class frmInscripcion extends javax.swing.JFrame {
                 rbnR2ActionPerformed(evt);
             }
         });
-        jPanel11.add(rbnR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+        jPanel11.add(rbnR2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
+
+        txtParentesco.setEnabled(false);
+        txtParentesco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtParentescoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParentescoKeyTyped(evt);
+            }
+        });
+        jPanel11.add(txtParentesco, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, 20));
+
+        jLabel55.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Parentesco");
+        jPanel11.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel3.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 340, 320));
 
@@ -1985,11 +2125,35 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCodigoKeyTyped
 
     private void txtCedulaR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR1KeyReleased
-        
+    txtCedulaR1.setText(txtCedulaR1.getText().toUpperCase());
     }//GEN-LAST:event_txtCedulaR1KeyReleased
 
     private void txtCedulaR1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCedulaR1FocusLost
-        lblCodigo.setText(coordinador.llenarCodigoAlumno(txtCedulaR1.getText()));
+        if (ACTUALIZACION) {
+                    RepresentanteVO repre = coordinador.consultarRepresentante(txtCedulaR1.getText(), 1);
+        if (repre.getCedula() != null) {
+            ACTUALIZACION = true;
+            txtCedulaR1.setText(repre.getCedula());
+            txtNombreR1.setText(repre.getPrimer_nombre());
+            txtApellidoR1.setText(repre.getPrimer_apellido());
+            txtOcupacionR1.setText(repre.getOcupacion());
+            txtTelefonoR1.setText(repre.getTelefono1());
+            txtTelefonoR12.setText(repre.getTelefono2());
+            txtEmpresaR1.setText(repre.getEmpresa());
+            txtDireccionR1.setText(repre.getDireccion());
+            if (repre.getFoto() == null) {
+                ajustar(lblfoto1, ICON_NO_PHOTO);
+            } else {
+                ajustar(lblfoto1, repre.getFoto());
+            }
+            lblCodigo.setText(repre.getId_alumno());
+        }else{
+            ACTUALIZACION = false;
+            lblCodigo.setText(coordinador.llenarCodigoAlumno(txtCedulaR1.getText()));
+        }
+        } else {
+            lblCodigo.setText(coordinador.llenarCodigoAlumno(txtCedulaR1.getText()));
+        }
     }//GEN-LAST:event_txtCedulaR1FocusLost
 
     private void txtNombreR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreR1ActionPerformed
@@ -2161,6 +2325,16 @@ public class frmInscripcion extends javax.swing.JFrame {
                     txtTelefonoR12.setText(representanteVO.getTelefono2());
                     txtEmpresaR1.setText(representanteVO.getEmpresa());
                     txtDireccionR1.setText(representanteVO.getDireccion());
+                    //desabilito los campos para que no pueda cambiar nada
+                    txtCedulaR1.setEnabled(false);
+                    txtNombreR1.setEnabled(false);
+                    txtApellidoR1.setEnabled(false);
+                    txtOcupacionR1.setEnabled(false);
+                    txtTelefonoR1.setEnabled(false);
+                    txtTelefonoR12.setEnabled(false);
+                    txtEmpresaR1.setEnabled(false);
+                    txtDireccionR1.setEnabled(false);
+                    btnAgregarImagen1.setEnabled(false);
                     if (representanteVO.getFoto() == null) {
                         ajustar(lblfoto1, ICON_NO_PHOTO);
                     } else {
@@ -2178,6 +2352,185 @@ public class frmInscripcion extends javax.swing.JFrame {
             frmBusqueda1.setLocationRelativeTo(this);
             frmBusqueda1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                    txtCedulaR1.setText("");
+                    txtNombreR1.setText("");
+                    txtApellidoR1.setText("");
+                    txtOcupacionR1.setText("");
+                    txtTelefonoR1.setText("");
+                    txtTelefonoR12.setText("");
+                    txtEmpresaR1.setText("");
+                    txtDireccionR1.setText("");
+                    //desabilito los campos para que no pueda cambiar nada
+                    txtCedulaR1.setEnabled(true);
+                    txtNombreR1.setEnabled(true);
+                    txtApellidoR1.setEnabled(true);
+                    txtOcupacionR1.setEnabled(true);
+                    txtTelefonoR1.setEnabled(true);
+                    txtTelefonoR12.setEnabled(true);
+                    txtEmpresaR1.setEnabled(true);
+                    txtDireccionR1.setEnabled(true);
+                    btnAgregarImagen1.setEnabled(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtSnombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSnombreKeyReleased
+    txtSnombre.setText(txtSnombre.getText().toUpperCase());
+    }//GEN-LAST:event_txtSnombreKeyReleased
+
+    private void txtPapellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPapellidoKeyReleased
+    txtPapellido.setText(txtPapellido.getText().toUpperCase());
+    }//GEN-LAST:event_txtPapellidoKeyReleased
+
+    private void txtSapellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSapellidoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSapellidoKeyPressed
+
+    private void txtSapellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSapellidoKeyReleased
+    txtSapellido.setText(txtSapellido.getText().toUpperCase());
+    }//GEN-LAST:event_txtSapellidoKeyReleased
+
+    private void txtNumCasaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasaKeyTyped
+    validacionSoloNumeros(evt, 4, txtNumCasa.getText().length());
+    }//GEN-LAST:event_txtNumCasaKeyTyped
+
+    private void txtNumCasaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasaKeyReleased
+    txtNumCasa.setText(txtNumCasa.getText().toUpperCase());
+    }//GEN-LAST:event_txtNumCasaKeyReleased
+
+    private void txtCalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleKeyTyped
+        validacionLimite(evt, 20, txtCalle.getText().length());
+    }//GEN-LAST:event_txtCalleKeyTyped
+
+    private void txtCalleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleKeyReleased
+    txtCalle.setText(txtCalle.getText().toUpperCase());
+    }//GEN-LAST:event_txtCalleKeyReleased
+
+    private void txtSectorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSectorKeyReleased
+    txtSector.setText(txtSector.getText().toUpperCase());
+    }//GEN-LAST:event_txtSectorKeyReleased
+
+    private void txtSectorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSectorKeyTyped
+        validacionLimite(evt, 15, txtSector.getText().length());
+    }//GEN-LAST:event_txtSectorKeyTyped
+
+    private void txtParroquiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyTyped
+        validacionLimite(evt, 15, txtParroquia.getText().length());
+    }//GEN-LAST:event_txtParroquiaKeyTyped
+
+    private void txtParroquiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyReleased
+    txtParroquia.setText(txtParroquia.getText().toUpperCase());
+    }//GEN-LAST:event_txtParroquiaKeyReleased
+
+    private void txtEnfermedadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnfermedadKeyReleased
+    txtEnfermedad.setText(txtEnfermedad.getText().toUpperCase());
+    }//GEN-LAST:event_txtEnfermedadKeyReleased
+
+    private void txtNombreR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreR1KeyReleased
+     txtNombreR1.setText(txtNombreR1.getText().toUpperCase());
+    }//GEN-LAST:event_txtNombreR1KeyReleased
+
+    private void txtApellidoR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoR1KeyReleased
+    txtApellidoR1.setText(txtApellidoR1.getText().toUpperCase());
+    }//GEN-LAST:event_txtApellidoR1KeyReleased
+
+    private void txtOcupacionR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR1KeyReleased
+    txtOcupacionR1.setText(txtOcupacionR1.getText().toUpperCase());
+    }//GEN-LAST:event_txtOcupacionR1KeyReleased
+
+    private void txtEmpresaR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR1KeyReleased
+    txtEmpresaR1.setText(txtEmpresaR1.getText().toUpperCase());
+
+    }//GEN-LAST:event_txtEmpresaR1KeyReleased
+
+    private void txtTelefonoR1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR1KeyReleased
+    txtTelefonoR1.setText(txtTelefonoR1.getText().toUpperCase());
+
+    }//GEN-LAST:event_txtTelefonoR1KeyReleased
+
+    private void txtTelefonoR12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR12KeyReleased
+    txtTelefonoR12.setText(txtTelefonoR12.getText().toUpperCase());
+    }//GEN-LAST:event_txtTelefonoR12KeyReleased
+
+    private void txtCedulaR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR2KeyReleased
+    txtCedulaR2.setText(txtCedulaR2.getText().toUpperCase());
+    }//GEN-LAST:event_txtCedulaR2KeyReleased
+
+    private void txtCedulaR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaR3KeyReleased
+    txtCedulaR3.setText(txtCedulaR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtCedulaR3KeyReleased
+
+    private void txtNombreR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreR2KeyReleased
+    txtNombreR2.setText(txtNombreR2.getText().toUpperCase());
+    }//GEN-LAST:event_txtNombreR2KeyReleased
+
+    private void txtNombreR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreR3KeyReleased
+    txtNombreR3.setText(txtNombreR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtNombreR3KeyReleased
+
+    private void txtApellidoR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoR2KeyReleased
+    txtApellidoR2.setText(txtApellidoR2.getText().toUpperCase());
+    }//GEN-LAST:event_txtApellidoR2KeyReleased
+
+    private void txtApellidoR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoR3KeyReleased
+    txtApellidoR3.setText(txtApellidoR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtApellidoR3KeyReleased
+
+    private void txtOcupacionR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR2KeyReleased
+    txtOcupacionR2.setText(txtOcupacionR2.getText().toUpperCase());
+    }//GEN-LAST:event_txtOcupacionR2KeyReleased
+
+    private void txtTelefonoR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR2KeyReleased
+        txtTelefonoR2.setText(txtTelefonoR2.getText().toUpperCase());
+    
+    }//GEN-LAST:event_txtTelefonoR2KeyReleased
+
+    private void txtEmpresaR2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR2KeyReleased
+        txtEmpresaR2.setText(txtEmpresaR2.getText().toUpperCase());
+
+    }//GEN-LAST:event_txtEmpresaR2KeyReleased
+
+    private void txtTelefonoR22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR22KeyReleased
+     txtTelefonoR22.setText(txtTelefonoR22.getText().toUpperCase());
+    }//GEN-LAST:event_txtTelefonoR22KeyReleased
+
+    private void txtOcupacionR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOcupacionR3KeyReleased
+    txtOcupacionR3.setText(txtOcupacionR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtOcupacionR3KeyReleased
+
+    private void txtTelefonoR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR3KeyReleased
+    txtTelefonoR3.setText(txtTelefonoR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtTelefonoR3KeyReleased
+
+    private void txtEmpresaR3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpresaR3KeyReleased
+    txtEmpresaR3.setText(txtEmpresaR3.getText().toUpperCase());
+    }//GEN-LAST:event_txtEmpresaR3KeyReleased
+
+    private void txtObservacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtObservacionKeyReleased
+     txtObservacion.setText(txtObservacion.getText().toUpperCase());
+    }//GEN-LAST:event_txtObservacionKeyReleased
+
+    private void txtTelefonoR32KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoR32KeyReleased
+     txtTelefonoR32.setText(txtTelefonoR32.getText().toUpperCase());
+    }//GEN-LAST:event_txtTelefonoR32KeyReleased
+
+    private void txtParentescoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParentescoKeyReleased
+    txtParentesco.setText(txtParentesco.getText().toUpperCase());
+    }//GEN-LAST:event_txtParentescoKeyReleased
+
+    private void txtParentescoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParentescoKeyTyped
+        validacionSoloLetrasEspacio(evt, 15, txtParentesco.getText().length());
+    }//GEN-LAST:event_txtParentescoKeyTyped
+
+    private void cbxParentescoR3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxParentescoR3ActionPerformed
+        if (cbxParentescoR3.getSelectedIndex() == 8) {
+            txtParentesco.setText("");
+            txtParentesco.setEnabled(true);
+        }else{
+            txtParentesco.setText("");
+            txtParentesco.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbxParentescoR3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2253,6 +2606,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JFrame frmBusqueda;
     private javax.swing.JFrame frmBusqueda1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2285,7 +2639,6 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
@@ -2303,6 +2656,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
@@ -2382,6 +2736,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     private javax.swing.JTextField txtOcupacionR2;
     private javax.swing.JTextField txtOcupacionR3;
     private javax.swing.JTextField txtPapellido;
+    private javax.swing.JTextField txtParentesco;
     private javax.swing.JTextField txtParroquia;
     private javax.swing.JTextField txtPnombre;
     private javax.swing.JTextField txtSapellido;
@@ -2529,6 +2884,11 @@ public class frmInscripcion extends javax.swing.JFrame {
     if (txtCedulaR1.getText().equals(txtCedulaR2.getText())) {
         return false;
     }
+    
+    if (cbxParentescoR3.getSelectedIndex() == 8 && txtParentesco.getText().isEmpty()) {
+        return false;
+    }
+    
     return true;
     }
 
@@ -2568,7 +2928,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO2.setDireccion(txtDireccionR2.getText());
         representanteVO2.setTelefono1(txtTelefonoR2.getText());
         representanteVO2.setTelefono2(txtTelefonoR22.getText());
-        representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
+        representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString());
         representanteVO2.setId_alumno(lblCodigo.getText());
         representanteVO2.setCedula(txtCedulaR2.getText());
         representanteVO2.setTipo(2);
@@ -2593,7 +2953,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO3.setDireccion(txtDireccionR3.getText());
         representanteVO3.setTelefono1(txtTelefonoR3.getText());
         representanteVO3.setTelefono2(txtTelefonoR32.getText());
-        representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
+        if (cbxParentescoR3.getSelectedIndex() == 8) {
+            representanteVO3.setParentesco("Otro:"+txtParentesco.getText());
+        }else{
+            representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
+        }
         representanteVO3.setId_alumno(lblCodigo.getText());
         representanteVO3.setCedula(txtCedulaR3.getText());
         representanteVO3.setTipo(3);
@@ -2863,6 +3227,8 @@ public class frmInscripcion extends javax.swing.JFrame {
         txtTelefonoR32.setText("");
         txtEmpresaR3.setText("");
         txtDireccionR3.setText("");
+        txtParentesco.setText("");
+        txtParentesco.setEnabled(false);
         ajustar(lblfoto3, ICON_NO_PHOTO);
         cbxParentescoR3.setSelectedItem(0);
     }
@@ -2986,6 +3352,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     txtTelefonoR1.setText(representanteVO.getTelefono1());
                     txtTelefonoR12.setText(representanteVO.getTelefono2());
                     txtEmpresaR1.setText(representanteVO.getEmpresa());
+                    cbxParentescoR1.setSelectedItem(representanteVO.getParentesco());
                     txtDireccionR1.setText(representanteVO.getDireccion());
                     if (representanteVO.getFoto() == null) {
                         ajustar(lblfoto1, ICON_NO_PHOTO);
@@ -3005,6 +3372,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                     txtOcupacionR2.setText(representanteVO.getOcupacion());
                     txtTelefonoR2.setText(representanteVO.getTelefono1());
                     txtTelefonoR22.setText(representanteVO.getTelefono2());
+                    cbxParentescoR2.setSelectedItem(representanteVO.getParentesco());
                     txtEmpresaR2.setText(representanteVO.getEmpresa());
                     txtDireccionR2.setText(representanteVO.getDireccion());
                     if (representanteVO.getFoto() == null) {
@@ -3026,6 +3394,12 @@ public class frmInscripcion extends javax.swing.JFrame {
                     txtTelefonoR32.setText(representanteVO.getTelefono2());
                     txtEmpresaR3.setText(representanteVO.getEmpresa());
                     txtDireccionR3.setText(representanteVO.getDireccion());
+                    if (representanteVO.getParentesco().substring(0, 5).equals("Otro:")) {
+                        cbxParentescoR3.setSelectedItem("Otro");
+                        txtParentesco.setText(representanteVO.getParentesco().substring(5, representanteVO.getParentesco().length()));
+                    }else{
+                        cbxParentescoR3.setSelectedItem(representanteVO.getParentesco());
+                    }
                     if (representanteVO.getFoto() == null) {
                         ajustar(lblfoto3, ICON_NO_PHOTO);
                     } else {
@@ -3061,6 +3435,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                                     if (registrarMatricula()) {
                                         if (registrarRequisitos()) {
                                             coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                            jTabbedPane1.setSelectedIndex(0);
                                         } else {
                                             coordinador.getLogica().mensajeError("Problemas al registrar requisitos");
                                             
@@ -3141,6 +3516,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                                     if (actualizarMatricula()) {
                                         if (actualizarRequisitos()) {
                                             coordinador.getLogica().mensajeCorrecto("Inscripcion completada");
+                                            jTabbedPane1.setSelectedIndex(0);
                                         } else {
                                             coordinador.getLogica().mensajeError("Problemas al actualizar requisitos");
                                         }
@@ -3213,7 +3589,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         } else {
             alumnoVO.setAlergias(null);
         }
-        String res = coordinador.actualizarAlumnoSinFoto(alumnoVO, alumnoVO.getId_alumno());
+        String res = coordinador.actualizarAlumno(alumnoVO, alumnoVO.getId_alumno());
         
         /**
          * registro direccion tambien
@@ -3250,7 +3626,7 @@ public class frmInscripcion extends javax.swing.JFrame {
             representanteVO.setFis(fis1);
         }
 
-        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO, lblCodigo.getText(), 1);
+        String res = coordinador.actualizarRepresentante(representanteVO, lblCodigo.getText(), 1);
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
@@ -3258,7 +3634,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         }
     }
     
-        private boolean actualizarRepresentante2() {
+    private boolean actualizarRepresentante2() {
         VO.RepresentanteVO representanteVO2 = new VO.RepresentanteVO();
         representanteVO2.setPrimer_nombre(txtNombreR2.getText());
         representanteVO2.setPrimer_apellido(txtApellidoR2.getText());
@@ -3267,7 +3643,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO2.setDireccion(txtDireccionR2.getText());
         representanteVO2.setTelefono1(txtTelefonoR2.getText());
         representanteVO2.setTelefono2(txtTelefonoR22.getText());
-        representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString().toLowerCase());
+        representanteVO2.setParentesco(cbxParentescoR2.getSelectedItem().toString());
         representanteVO2.setId_alumno(lblCodigo.getText());
         representanteVO2.setCedula(txtCedulaR2.getText());
         representanteVO2.setTipo(2);
@@ -3275,12 +3651,25 @@ public class frmInscripcion extends javax.swing.JFrame {
             representanteVO2.setBinarioFoto(longitudBytes2);
             representanteVO2.setFis(fis2);
         }
-        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO2, lblCodigo.getText(), 2);
-        if (res.equals("DATOS ACTUALIZADOS")) {
-            return true;
-        } else {
-            return false;
-        }
+        //consulto a ver si existe
+        RepresentanteVO repre = coordinador.consultarRepresentante(lblCodigo.getText(), 2);
+            if (repre.getCedula() != null) {
+                //si existe actualizo
+                String res = coordinador.actualizarRepresentante(representanteVO2, lblCodigo.getText(), 2);
+                if (res.equals("DATOS ACTUALIZADOS")) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }else{
+                String res = coordinador.registrarRepresentante(representanteVO2);
+                if (res.equals("INGRESADO CON EXITO")) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        
     }
     
     private boolean actualizarRepresentante3() {
@@ -3292,7 +3681,11 @@ public class frmInscripcion extends javax.swing.JFrame {
         representanteVO3.setDireccion(txtDireccionR3.getText());
         representanteVO3.setTelefono1(txtTelefonoR3.getText());
         representanteVO3.setTelefono2(txtTelefonoR32.getText());
-        representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
+            if (cbxParentescoR3.getSelectedIndex() == 8) {
+                representanteVO3.setParentesco("Otro:"+txtParentesco.getText());
+            }else{
+                representanteVO3.setParentesco(cbxParentescoR3.getSelectedItem().toString());
+            }
         representanteVO3.setId_alumno(lblCodigo.getText());
         representanteVO3.setCedula(txtCedulaR3.getText());
         representanteVO3.setTipo(3);
@@ -3310,7 +3703,7 @@ public class frmInscripcion extends javax.swing.JFrame {
                 representanteVO3.setFis(fis3);
             }
         }
-        String res = coordinador.actualizarRepresentanteSinFoto(representanteVO3, lblCodigo.getText(), 3);
+        String res = coordinador.actualizarRepresentante(representanteVO3, lblCodigo.getText(), 3);
         if (res.equals("DATOS ACTUALIZADOS")) {
             return true;
         } else {
