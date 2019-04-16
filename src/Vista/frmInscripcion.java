@@ -3753,7 +3753,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         int anio = añoActual - añoNacimiento;
         if (anio < 3) {
-            coordinador.getLogica().mensajeError("El alumno no cumple la edad minima de 2 años.");
+            coordinador.getLogica().mensajeError("El alumno no cumple la edad minima de 3 años.");
             return false;
         } 
         if (anio > 6) {

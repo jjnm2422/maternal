@@ -806,17 +806,17 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnAtras1ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         if (!txtConsultar.getText().isEmpty()) {
             codigo = txtConsultar.getText().trim();
             borrarCampos();
-             consultarPrecios();
+            consultarPrecios();
             consultarDatosAlumnos(codigo);
         } else {
-             coordinador.getLogica().mensajeError("Ingrese un codigo");
+            coordinador.getLogica().mensajeError("Ingrese un codigo");
             habilitarBotones(false);
             borrarCampos();
         }
@@ -832,7 +832,7 @@ String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actu
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
+        String año = coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9);
         calculosCheck(jCheckBox1, "01-"+año);
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 

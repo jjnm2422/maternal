@@ -206,10 +206,10 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jComboBox63 = new javax.swing.JComboBox<>();
-        jLabel68 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbnAprobado = new javax.swing.JRadioButton();
+        rbnReprobado = new javax.swing.JRadioButton();
+        jLabel137 = new javax.swing.JLabel();
         btnGuardar5 = new javax.swing.JButton();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -1224,31 +1224,32 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox63.setEnabled(false);
         jPanel10.add(jComboBox63, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, 30));
 
-        jLabel68.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel68.setText("¿El alumno Aprobo el lapso academico?");
-        jPanel10.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, 20));
-
         jLabel82.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(255, 255, 255));
         jLabel82.setText("INASISTENCIAS");
         jPanel10.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, 20));
 
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("SI");
-        jRadioButton1.setEnabled(false);
-        jRadioButton1.setOpaque(false);
-        jPanel10.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 60, -1));
+        buttonGroup1.add(rbnAprobado);
+        rbnAprobado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbnAprobado.setForeground(new java.awt.Color(255, 255, 255));
+        rbnAprobado.setText("SI");
+        rbnAprobado.setEnabled(false);
+        rbnAprobado.setOpaque(false);
+        jPanel10.add(rbnAprobado, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, 60, 20));
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("NO");
-        jRadioButton2.setEnabled(false);
-        jRadioButton2.setOpaque(false);
-        jPanel10.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 60, -1));
+        buttonGroup1.add(rbnReprobado);
+        rbnReprobado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        rbnReprobado.setForeground(new java.awt.Color(255, 255, 255));
+        rbnReprobado.setSelected(true);
+        rbnReprobado.setText("NO");
+        rbnReprobado.setEnabled(false);
+        rbnReprobado.setOpaque(false);
+        jPanel10.add(rbnReprobado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 60, 20));
+
+        jLabel137.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel137.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel137.setText("¿El alumno Aprobo el año escolar?");
+        jPanel10.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, 20));
 
         jPanel7.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 680, 470));
 
@@ -2192,12 +2193,19 @@ public class frmNotas extends javax.swing.JFrame {
                 switch (coordinador.getNotaDAO().consultarNota(codigo).getLapso()) {
                     case 0:
                         cbxLapso.setSelectedIndex(0);
+                        rbnAprobado.setEnabled(false);
+                        rbnReprobado.setEnabled(false);
                     break;
                     case 1:
                         cbxLapso.setSelectedIndex(1);
+                        rbnAprobado.setEnabled(false);
+                        rbnReprobado.setEnabled(false);
                     break;
                     case 2:
                           cbxLapso.setSelectedIndex(2);
+                          rbnAprobado.setEnabled(true);
+                          rbnReprobado.setEnabled(true);
+                          buttonGroup1.setSelected(rbnAprobado.getModel(), true);
                     break;
                     case 3:
                           habilitarBotones(false);
@@ -2269,6 +2277,11 @@ public class frmNotas extends javax.swing.JFrame {
            String respuesta = coordinador.getNotaDAO().registrarNota(obtenerDatos());
             if (respuesta.equals("INSERT")) {
                 coordinador.getLogica().mensajeCorrecto("Notas guardada con exito");
+                //compruebo que sea el ultimo lapso y cambio el estatus del alumno comprobando el pago
+                if (cbxLapso.getSelectedIndex()==2) {
+                    //compruebo que este solvente si lo esta cambio a el estatus a true si cambio false
+                    throw new UnsupportedOperationException("Falta cambiar estado");
+                }
             } else {
                 coordinador.getLogica().mensajeError("Error al guardar Notas");
             }
@@ -2631,6 +2644,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -2689,7 +2703,6 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
@@ -2748,8 +2761,6 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -2759,6 +2770,8 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     public javax.swing.JLabel lblUsuarioActvo1;
     private javax.swing.JLabel lblfoto;
     private javax.swing.JLabel lblfoto1;
+    private javax.swing.JRadioButton rbnAprobado;
+    private javax.swing.JRadioButton rbnReprobado;
     private javax.swing.JTextField txtConsultar;
     private javax.swing.JTextField txtConsultar1;
     // End of variables declaration//GEN-END:variables
@@ -2941,6 +2954,9 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private void inicializarBotones() {
         txtConsultar.setText("");
         lblPnombre.setText("");
+        rbnAprobado.setEnabled(true);
+        rbnReprobado.setEnabled(true);
+        buttonGroup1.setSelected(rbnAprobado.getModel(), true);
         ajustar(lblfoto, ICON_NO_PHOTO);
         jComboBox1.setSelectedIndex(0);
         jComboBox2.setSelectedIndex(0);
