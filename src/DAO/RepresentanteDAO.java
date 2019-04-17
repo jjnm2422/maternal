@@ -9,6 +9,7 @@ import Controlador.Coordinador;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,7 +49,9 @@ public class RepresentanteDAO {
             ps.setString(2, representanteVO.getPrimer_apellido());
             ps.setString(3, representanteVO.getTelefono1());
             ps.setString(4, representanteVO.getTelefono2());
-            ps.setString(5, representanteVO.getDireccion());
+            
+            Array direccionArray = conexion.createArrayOf("text",  representanteVO.getDireccion());
+            ps.setArray(5, direccionArray);
             ps.setString(6, representanteVO.getParentesco());
             ps.setString(7, representanteVO.getOcupacion());
             ps.setString(8, representanteVO.getCedula());
@@ -98,7 +101,11 @@ public class RepresentanteDAO {
                     representanteVO.setPrimer_apellido(result.getString("primer_apellido"));
                     representanteVO.setTelefono1(result.getString("telefono1"));
                     representanteVO.setTelefono2(result.getString("telefono2"));
-                    representanteVO.setDireccion(result.getString("direccion"));
+                   
+                    Array direccionArray = result.getArray("direccion");
+                    String[] direccionArrayS = (String[]) direccionArray.getArray();
+                    representanteVO.setDireccion(direccionArrayS);
+                    
                     representanteVO.setParentesco(result.getString("parentesco"));
                     representanteVO.setOcupacion(result.getString("ocupacion"));
                     representanteVO.setCedula(result.getString("cedula"));
@@ -149,7 +156,11 @@ public class RepresentanteDAO {
                     representanteVO.setPrimer_apellido(result.getString("primer_apellido"));
                     representanteVO.setTelefono1(result.getString("telefono1"));
                     representanteVO.setTelefono2(result.getString("telefono2"));
-                    representanteVO.setDireccion(result.getString("direccion"));
+                    
+                    Array direccionArray = result.getArray("direccion");
+                    String[] direccionArrayS = (String[]) direccionArray.getArray();
+                    representanteVO.setDireccion(direccionArrayS);
+                    
                     representanteVO.setParentesco(result.getString("parentesco"));
                     representanteVO.setOcupacion(result.getString("ocupacion"));
                     representanteVO.setCedula(result.getString("cedula"));
@@ -216,7 +227,8 @@ public class RepresentanteDAO {
                 ps.setString(2, representanteVO.getPrimer_apellido());
                 ps.setString(3, representanteVO.getTelefono1());
                 ps.setString(4, representanteVO.getTelefono2());
-                ps.setString(5, representanteVO.getDireccion());
+                Array direccionArray = conexion.createArrayOf("text",  representanteVO.getDireccion());
+                ps.setArray(5, direccionArray);
                 ps.setString(6, representanteVO.getParentesco());
                 ps.setString(7, representanteVO.getOcupacion());
                 ps.setString(8, representanteVO.getCedula());
@@ -255,7 +267,8 @@ public class RepresentanteDAO {
                 ps.setString(2, representanteVO.getPrimer_apellido());
                 ps.setString(3, representanteVO.getTelefono1());
                 ps.setString(4, representanteVO.getTelefono2());
-                ps.setString(5, representanteVO.getDireccion());
+                Array direccionArray = conexion.createArrayOf("text",  representanteVO.getDireccion());
+                ps.setArray(5, direccionArray);
                 ps.setString(6, representanteVO.getParentesco());
                 ps.setString(7, representanteVO.getOcupacion());
                 ps.setString(8, representanteVO.getCedula());

@@ -487,7 +487,7 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
 
     private void btnDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocentesActionPerformed
     coordinador.getFrmDocente().setVisible(true);
-     coordinador.getFrmDocente().jTable1.setModel(coordinador.consultarEmpleadosTodosTabla()); 
+    coordinador.getFrmDocente().jTable1.setModel(coordinador.consultarEmpleadosTodosTabla()); 
     coordinador.getFrmDocente().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
     coordinador.getFrmDocente().setLocationRelativeTo(this);
     }//GEN-LAST:event_btnDocentesActionPerformed

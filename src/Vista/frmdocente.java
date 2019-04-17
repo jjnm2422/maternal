@@ -87,8 +87,6 @@ public class frmdocente extends javax.swing.JFrame {
         lblFechaNacimiento = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtDireccion = new javax.swing.JTextArea();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         txtCedula = new javax.swing.JTextField();
@@ -96,9 +94,20 @@ public class frmdocente extends javax.swing.JFrame {
         txtFecha = new datechooser.beans.DateChooserCombo();
         btnAgregarImagen1 = new javax.swing.JButton();
         lblfoto1 = new javax.swing.JLabel();
+        txtNumCasa = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        cbxCasa = new javax.swing.JComboBox<>();
+        jLabel46 = new javax.swing.JLabel();
+        txtCalle = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        txtSector = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        txtParroquia = new javax.swing.JTextField();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        btnBorrarR = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         lblNombre1 = new javax.swing.JLabel();
@@ -113,15 +122,24 @@ public class frmdocente extends javax.swing.JFrame {
         txtApellido2 = new javax.swing.JTextField();
         txtTelefono2 = new javax.swing.JTextField();
         txtCedula3 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtDireccion2 = new javax.swing.JTextArea();
         txtFecha1 = new datechooser.beans.DateChooserCombo();
+        txtNumCasa1 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        cbxCasa1 = new javax.swing.JComboBox<>();
+        jLabel47 = new javax.swing.JLabel();
+        txtCalle1 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        txtSector1 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        txtParroquia1 = new javax.swing.JTextField();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblCedula2 = new javax.swing.JLabel();
         txtCedula2 = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        btnBorrarR1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -273,19 +291,16 @@ public class frmdocente extends javax.swing.JFrame {
         lblTelefono.setName("lblGrupo"); // NOI18N
         jPanel5.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
 
-        txtDireccion.setColumns(20);
-        txtDireccion.setRows(5);
-        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDireccionKeyTyped(evt);
+        txtNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
             }
         });
-        jScrollPane2.setViewportView(txtDireccion);
-
-        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 310, 100));
-
-        txtNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombreKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombreKeyTyped(evt);
             }
@@ -299,6 +314,9 @@ public class frmdocente extends javax.swing.JFrame {
             }
         });
         txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellidoKeyTyped(evt);
             }
@@ -345,6 +363,74 @@ public class frmdocente extends javax.swing.JFrame {
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel5.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
 
+        txtNumCasa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumCasaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumCasaKeyTyped(evt);
+            }
+        });
+        jPanel5.add(txtNumCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
+
+        jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setText("Nº Casa:");
+        jPanel5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Casa:");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
+
+        cbxCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+        jPanel5.add(cbxCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
+
+        jLabel46.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Calle/Avenida:");
+        jPanel5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
+
+        txtCalle.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCalleKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalleKeyTyped(evt);
+            }
+        });
+        jPanel5.add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
+
+        jLabel50.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setText("Sector:");
+        jPanel5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
+
+        txtSector.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSectorKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSectorKeyTyped(evt);
+            }
+        });
+        jPanel5.add(txtSector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
+
+        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Parroquia:");
+        jPanel5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
+
+        txtParroquia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtParroquiaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParroquiaKeyTyped(evt);
+            }
+        });
+        jPanel5.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
+
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -361,7 +447,7 @@ public class frmdocente extends javax.swing.JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 100, 30));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 110, 30));
 
         btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
@@ -371,7 +457,17 @@ public class frmdocente extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, 30));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 110, 30));
+
+        btnBorrarR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarR.setText("Limpiar");
+        btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarRActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 110, 30));
 
         jTabbedPane1.addTab("Registro", jPanel1);
 
@@ -433,6 +529,9 @@ public class frmdocente extends javax.swing.JFrame {
         txtNombre2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNombre2.setEnabled(false);
         txtNombre2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNombre2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNombre2KeyTyped(evt);
             }
@@ -447,6 +546,9 @@ public class frmdocente extends javax.swing.JFrame {
             }
         });
         txtApellido2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtApellido2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtApellido2KeyTyped(evt);
             }
@@ -476,23 +578,79 @@ public class frmdocente extends javax.swing.JFrame {
         });
         jPanel7.add(txtCedula3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 100, -1));
 
-        txtDireccion2.setColumns(20);
-        txtDireccion2.setRows(5);
-        txtDireccion2.setEnabled(false);
-        txtDireccion2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDireccion2KeyTyped(evt);
-            }
-        });
-        jScrollPane4.setViewportView(txtDireccion2);
-
-        jPanel7.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 310, 100));
-
         txtFecha1.setEnabled(false);
         txtFecha1.setMinDate(new java.util.GregorianCalendar(1950, 0, 1));
         txtFecha1.setCurrentNavigateIndex(0);
         txtFecha1.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
         jPanel7.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
+
+        txtNumCasa1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumCasa1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumCasa1KeyTyped(evt);
+            }
+        });
+        jPanel7.add(txtNumCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
+
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Nº Casa:");
+        jPanel7.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Casa:");
+        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
+
+        cbxCasa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+        jPanel7.add(cbxCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
+
+        jLabel47.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("Calle/Avenida:");
+        jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
+
+        txtCalle1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCalle1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalle1KeyTyped(evt);
+            }
+        });
+        jPanel7.add(txtCalle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
+
+        jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Sector:");
+        jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
+
+        txtSector1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSector1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSector1KeyTyped(evt);
+            }
+        });
+        jPanel7.add(txtSector1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
+
+        jLabel54.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Parroquia:");
+        jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
+
+        txtParroquia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtParroquia1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtParroquia1KeyTyped(evt);
+            }
+        });
+        jPanel7.add(txtParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
 
         jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
@@ -504,7 +662,7 @@ public class frmdocente extends javax.swing.JFrame {
                 btnSalir2ActionPerformed(evt);
             }
         });
-        jPanel6.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 100, 30));
+        jPanel6.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 100, 30));
 
         btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
@@ -516,12 +674,12 @@ public class frmdocente extends javax.swing.JFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, -1, 30));
+        jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, 30));
 
         lblCedula2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCedula2.setForeground(new java.awt.Color(255, 255, 255));
         lblCedula2.setText("Cedula");
-        jPanel6.add(lblCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 30));
+        jPanel6.add(lblCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 30));
 
         txtCedula2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtCedula2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -529,7 +687,7 @@ public class frmdocente extends javax.swing.JFrame {
                 txtCedula2KeyTyped(evt);
             }
         });
-        jPanel6.add(txtCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 100, 30));
+        jPanel6.add(txtCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, 30));
 
         btnBuscar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
@@ -540,7 +698,7 @@ public class frmdocente extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel6.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 100, 30));
+        jPanel6.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 100, 30));
 
         btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
@@ -552,7 +710,17 @@ public class frmdocente extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel6.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, 30));
+        jPanel6.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, 30));
+
+        btnBorrarR1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBorrarR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarR1.setText("Limpiar");
+        btnBorrarR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarR1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnBorrarR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 110, 30));
 
         jTabbedPane1.addTab("Modificacion", null, jPanel6, "");
 
@@ -594,7 +762,7 @@ public class frmdocente extends javax.swing.JFrame {
         lblCedula4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCedula4.setForeground(new java.awt.Color(255, 255, 255));
         lblCedula4.setText("Cedula");
-        jPanel8.add(lblCedula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 30));
+        jPanel8.add(lblCedula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 60, 30));
 
         txtCedula5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtCedula5.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -602,7 +770,7 @@ public class frmdocente extends javax.swing.JFrame {
                 txtCedula5KeyTyped(evt);
             }
         });
-        jPanel8.add(txtCedula5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 100, 30));
+        jPanel8.add(txtCedula5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 30));
 
         btnBuscar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
@@ -613,7 +781,7 @@ public class frmdocente extends javax.swing.JFrame {
                 btnBuscar1ActionPerformed(evt);
             }
         });
-        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 100, 30));
+        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 120, 30));
 
         btnBuscar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
@@ -625,7 +793,7 @@ public class frmdocente extends javax.swing.JFrame {
                 btnBuscar2ActionPerformed(evt);
             }
         });
-        jPanel8.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 130, 30));
+        jPanel8.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
 
         jTabbedPane1.addTab("Listado", null, jPanel8, "");
 
@@ -648,13 +816,14 @@ this.dispose();
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if (validacionCampos()) {
-            EmpleadoVO empleadoVO = new EmpleadoVO();
+        EmpleadoVO empleadoVO = new EmpleadoVO();
         empleadoVO.setPrimer_nombre(txtNombre.getText());
         empleadoVO.setPrimer_apellido(txtApellido.getText());
         empleadoVO.setCedula(txtCedula.getText());
+        empleadoVO.setId_empleado(txtCedula.getText());
         empleadoVO.setFechaNacimiento(txtFecha.getText());
         empleadoVO.setTelefono1(txtTelefono.getText());
-        empleadoVO.setDireccion(txtDireccion.getText());
+        empleadoVO.setDireccion(llenarVector());
         empleadoVO.setFoto((ImageIcon) lblfoto1.getIcon());
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
@@ -754,7 +923,7 @@ Object opciones[] = {"Si", "No"};
             //elimino alumno requisitos
         if (coordinador.eliminarAsistenciaDocente(id_empleado).equals("ELIMINADO")) {
             if (coordinador.eliminarEmpleado(id_empleado).equals("ELIMINADO")) {
-                 coordinador.getLogica().mensajeError("Eliminado con Exito");
+                coordinador.getLogica().mensajeCorrecto("Eliminado con Exito");
                 borrarDatos();
                 habilitarDatos(false);
                  jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
@@ -776,7 +945,12 @@ Object opciones[] = {"Si", "No"};
         txtApellido2.setText(empleadoVO.getPrimer_apellido());
         txtCedula3.setText(empleadoVO.getCedula());
         txtFecha1.setText(empleadoVO.getFechaNacimiento());
-        txtDireccion2.setText(empleadoVO.getDireccion());
+        //establesco direccion
+        txtNumCasa1.setText(empleadoVO.getDireccion()[0]);
+        cbxCasa1.setSelectedItem(empleadoVO.getDireccion()[1]);
+        txtCalle1.setText(empleadoVO.getDireccion()[2]);
+        txtSector1.setText(empleadoVO.getDireccion()[3]);
+        txtParroquia1.setText(empleadoVO.getDireccion()[4]);
         txtTelefono2.setText(empleadoVO.getTelefono1());
         if (empleadoVO.getFoto() == null) {
             ajustar(lblfoto2, ICON_NO_PHOTO);
@@ -803,7 +977,7 @@ Object opciones[] = {"Si", "No"};
         empleadoVO.setCedula(txtCedula2.getText());
         empleadoVO.setFechaNacimiento(txtFecha1.getText());
         empleadoVO.setTelefono1(txtTelefono2.getText());
-        empleadoVO.setDireccion(txtDireccion2.getText());
+        empleadoVO.setDireccion(llenarVector2());
         empleadoVO.setFoto((ImageIcon) lblfoto2.getIcon());
         int añoNacimiento = Integer.parseInt(txtFecha1.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
@@ -817,12 +991,12 @@ Object opciones[] = {"Si", "No"};
             res = coordinador.actualizarEmpleadoSinFoto(empleadoVO, id_empleado);
         }
         if (res.equals("DATOS ACTUALIZADOS")) {
-            System.out.println("true");
+            coordinador.getLogica().mensajeCorrecto("Datos Actualizados");
             borrarDatos();
              jTable1.setModel(coordinador.consultarEmpleadosTodosTabla());
             //return true;
         } else {
-            System.out.println("false");
+            coordinador.getLogica().mensajeError("Error al Actualizar datos del docente");
             //return false;
         }        
         habilitarDatos(false);
@@ -847,10 +1021,6 @@ Object opciones[] = {"Si", "No"};
         validacionSoloNumeros(evt, 8, txtCedula.getText().length());
     }//GEN-LAST:event_txtCedulaKeyTyped
 
-    private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
-            validacionLimite(evt, 300, txtDireccion.getText().length());
-    }//GEN-LAST:event_txtDireccionKeyTyped
-
     private void txtNombre2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre2KeyTyped
     validacionSoloLetras(evt, 15, txtNombre2.getText().length());
     }//GEN-LAST:event_txtNombre2KeyTyped
@@ -874,10 +1044,6 @@ Object opciones[] = {"Si", "No"};
     private void txtCedula3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedula3KeyTyped
     validacionSoloNumeros(evt, 8, txtCedula3.getText().length());
     }//GEN-LAST:event_txtCedula3KeyTyped
-
-    private void txtDireccion2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccion2KeyTyped
-validacionLimite(evt, 300, txtDireccion2.getText().length());
-    }//GEN-LAST:event_txtDireccion2KeyTyped
 
     private void txtCedula2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedula2KeyTyped
     validacionSoloNumeros(evt, 8, txtCedula2.getText().length());
@@ -914,6 +1080,98 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
              jTable1.setModel(coordinador.consultarEmpleadosTodosTabla()); 
              txtCedula5.setText("");
     }//GEN-LAST:event_btnBuscar2ActionPerformed
+
+    private void txtNumCasaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasaKeyReleased
+        txtNumCasa.setText(txtNumCasa.getText().toUpperCase());
+    }//GEN-LAST:event_txtNumCasaKeyReleased
+
+    private void txtNumCasaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasaKeyTyped
+        validacionSoloNumeros(evt, 4, txtNumCasa.getText().length());
+    }//GEN-LAST:event_txtNumCasaKeyTyped
+
+    private void txtCalleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleKeyReleased
+        txtCalle.setText(txtCalle.getText().toUpperCase());
+    }//GEN-LAST:event_txtCalleKeyReleased
+
+    private void txtCalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleKeyTyped
+        validacionLimite(evt, 20, txtCalle.getText().length());
+    }//GEN-LAST:event_txtCalleKeyTyped
+
+    private void txtSectorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSectorKeyReleased
+        txtSector.setText(txtSector.getText().toUpperCase());
+    }//GEN-LAST:event_txtSectorKeyReleased
+
+    private void txtSectorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSectorKeyTyped
+        validacionLimite(evt, 15, txtSector.getText().length());
+    }//GEN-LAST:event_txtSectorKeyTyped
+
+    private void txtParroquiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyReleased
+        txtParroquia.setText(txtParroquia.getText().toUpperCase());
+    }//GEN-LAST:event_txtParroquiaKeyReleased
+
+    private void txtParroquiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyTyped
+        validacionLimite(evt, 15, txtParroquia.getText().length());
+    }//GEN-LAST:event_txtParroquiaKeyTyped
+
+    private void txtNumCasa1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasa1KeyReleased
+        txtNumCasa.setText(txtNumCasa.getText().toUpperCase());
+    }//GEN-LAST:event_txtNumCasa1KeyReleased
+
+    private void txtNumCasa1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasa1KeyTyped
+        validacionSoloNumeros(evt, 4, txtNumCasa.getText().length());
+    }//GEN-LAST:event_txtNumCasa1KeyTyped
+
+    private void txtCalle1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalle1KeyReleased
+        txtCalle1.setText(txtCalle1.getText().toUpperCase());
+    }//GEN-LAST:event_txtCalle1KeyReleased
+
+    private void txtCalle1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalle1KeyTyped
+        validacionLimite(evt, 20, txtCalle.getText().length());
+    }//GEN-LAST:event_txtCalle1KeyTyped
+
+    private void txtSector1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSector1KeyReleased
+        txtSector1.setText(txtSector1.getText().toUpperCase());
+    }//GEN-LAST:event_txtSector1KeyReleased
+
+    private void txtSector1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSector1KeyTyped
+        validacionLimite(evt, 15, txtSector.getText().length());
+    }//GEN-LAST:event_txtSector1KeyTyped
+
+    private void txtParroquia1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquia1KeyReleased
+        txtParroquia1.setText(txtParroquia1.getText().toUpperCase());
+    }//GEN-LAST:event_txtParroquia1KeyReleased
+
+    private void txtParroquia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquia1KeyTyped
+        validacionLimite(evt, 15, txtParroquia.getText().length());
+    }//GEN-LAST:event_txtParroquia1KeyTyped
+
+    private void btnBorrarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarRActionPerformed
+        borrarEmpleado();
+    }//GEN-LAST:event_btnBorrarRActionPerformed
+
+    private void btnBorrarR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarR1ActionPerformed
+       borrarEmpleado2();
+    }//GEN-LAST:event_btnBorrarR1ActionPerformed
+
+    private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
+        txtNombre.setText(txtNombre.getText().toUpperCase());
+    }//GEN-LAST:event_txtNombreKeyReleased
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
+    txtApellido.setText(txtApellido.getText().toUpperCase());
+    }//GEN-LAST:event_txtApellidoKeyReleased
+
+    private void txtNombre2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre2KeyReleased
+    txtNombre2.setText(txtNombre2.getText().toUpperCase());
+    }//GEN-LAST:event_txtNombre2KeyReleased
+
+    private void txtApellido2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido2KeyReleased
+    txtApellido2.setText(txtApellido2.getText().toUpperCase());
+    }//GEN-LAST:event_txtApellido2KeyReleased
 
     /**
      * @param args the command line arguments
@@ -958,6 +1216,8 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JButton btnAgregarImagen1;
     private javax.swing.JButton btnAgregarImagen2;
     private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnBorrarR;
+    private javax.swing.JButton btnBorrarR1;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
@@ -965,15 +1225,27 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir2;
     private javax.swing.JButton btnSalir3;
+    private javax.swing.JComboBox<String> cbxCasa;
+    private javax.swing.JComboBox<String> cbxCasa1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -990,9 +1262,7 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
@@ -1021,16 +1291,22 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
     private javax.swing.JLabel lblfoto2;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtApellido2;
+    private javax.swing.JTextField txtCalle;
+    private javax.swing.JTextField txtCalle1;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCedula2;
     private javax.swing.JTextField txtCedula3;
     private javax.swing.JTextField txtCedula5;
-    private javax.swing.JTextArea txtDireccion;
-    private javax.swing.JTextArea txtDireccion2;
     private datechooser.beans.DateChooserCombo txtFecha;
     private datechooser.beans.DateChooserCombo txtFecha1;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombre2;
+    private javax.swing.JTextField txtNumCasa;
+    private javax.swing.JTextField txtNumCasa1;
+    private javax.swing.JTextField txtParroquia;
+    private javax.swing.JTextField txtParroquia1;
+    private javax.swing.JTextField txtSector;
+    private javax.swing.JTextField txtSector1;
     private javax.swing.JTextField txtTelefono;
     private javax.swing.JTextField txtTelefono2;
     // End of variables declaration//GEN-END:variables
@@ -1094,7 +1370,11 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
         txtApellido2.setEnabled(b);
         //txtCedula3.setEnabled(b);
         txtFecha1.setEnabled(b);
-        txtDireccion2.setEnabled(b);
+        txtNumCasa1.setEnabled(b);
+        txtCalle1.setEnabled(b);
+        txtSector1.setEnabled(b);
+        txtParroquia1.setEnabled(b);
+        cbxCasa1.setEnabled(b);
         txtTelefono2.setEnabled(b);
         btnAgregarImagen2.setEnabled(b);
         btnActualizar.setEnabled(b);
@@ -1107,7 +1387,11 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
         txtCedula3.setText("");
         txtCedula2.setText("");
         txtFecha1.setText("01/01/2000");
-        txtDireccion2.setText("");
+        txtNumCasa1.setText("");
+        txtCalle1.setText("");
+        txtSector1.setText("");
+        txtParroquia1.setText("");
+        cbxCasa1.setSelectedIndex(0);
         txtTelefono2.setText("");
         ajustar(lblfoto2, ICON_NO_PHOTO);
     }
@@ -1119,24 +1403,73 @@ validacionLimite(evt, 300, txtDireccion2.getText().length());
         txtApellido.setText("");
         txtCedula.setText("");
         txtFecha.setText("01/01/2000");
-        txtDireccion.setText("");
+        txtNumCasa.setText("");
+        txtCalle.setText("");
+        txtSector.setText("");
+        txtParroquia.setText("");
+        cbxCasa.setSelectedIndex(0);
         txtTelefono.setText("");
         ajustar(lblfoto1, ICON_NO_PHOTO);
     }
 
     private boolean validacionCampos() {
-    if (!txtNombre.getText().isEmpty() && !txtApellido.getText().isEmpty() && !txtCedula.getText().isEmpty() && !txtTelefono.getText().isEmpty() && !txtDireccion.getText().isEmpty()) {
+        if (txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCedula.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtNumCasa.getText().isEmpty() || txtCalle.getText().isEmpty() || txtSector.getText().isEmpty() || txtParroquia.getText().isEmpty()) {
+            return false;
+            }
         return true;
-    } else {
-        return false;
-    }
     }
     
     private boolean validacionCampos2() {
-    if (!txtNombre2.getText().isEmpty() && !txtApellido2.getText().isEmpty() && !txtCedula2.getText().isEmpty() && !txtTelefono2.getText().isEmpty() && !txtDireccion2.getText().isEmpty()) {
+        if (txtNombre2.getText().isEmpty() || txtApellido2.getText().isEmpty() || txtCedula2.getText().isEmpty() || txtTelefono2.getText().isEmpty() || txtNumCasa1.getText().isEmpty() || txtCalle1.getText().isEmpty() || txtSector1.getText().isEmpty() || txtParroquia1.getText().isEmpty()) {
+            return false;
+        }
         return true;
-    } else {
-        return false;
     }
+
+       private String[] llenarVector() {
+        String direccion[] = new String[5];
+        direccion[0] = txtNumCasa.getText();
+        direccion[1] = cbxCasa.getSelectedItem().toString();
+        direccion[2] = txtCalle.getText();
+        direccion[3] = txtSector.getText();
+        direccion[4] = txtParroquia.getText();
+        return direccion;
+    }
+       
+    private String[] llenarVector2() {
+        String direccion[] = new String[5];
+        direccion[0] = txtNumCasa1.getText();
+        direccion[1] = cbxCasa1.getSelectedItem().toString();
+        direccion[2] = txtCalle1.getText();
+        direccion[3] = txtSector1.getText();
+        direccion[4] = txtParroquia1.getText();
+        return direccion;
+    }
+
+    private void borrarEmpleado() {
+        txtNombre.setText("");
+        txtApellido.setText("");
+        txtFecha.setText("");
+        txtTelefono.setText("");
+        txtNumCasa.setText("");
+        txtCalle.setText("");
+        txtSector.setText("");
+        txtParroquia.setText("");
+        cbxCasa.setSelectedIndex(0);
+        txtCedula.setText("");
+    }
+    
+        private void borrarEmpleado2() {
+        txtNombre2.setText("");
+        txtApellido2.setText("");
+        txtFecha1.setText("");
+        txtTelefono2.setText("");
+        txtNumCasa1.setText("");
+        txtCalle1.setText("");
+        txtSector1.setText("");
+        txtParroquia1.setText("");
+        cbxCasa1.setSelectedIndex(0);
+        txtCedula3.setText("");
+        txtCedula2.setText("");
     }
 }

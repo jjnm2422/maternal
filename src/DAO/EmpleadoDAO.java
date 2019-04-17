@@ -9,6 +9,7 @@ import Controlador.Coordinador;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,7 +50,8 @@ public class EmpleadoDAO {
             ps.setString(2, empleadoVO.getPrimer_apellido());
             ps.setInt(3, empleadoVO.getEdad());
             ps.setString(4, empleadoVO.getTelefono1());
-            ps.setString(5, empleadoVO.getDireccion());
+            Array direccionArray = conexion.createArrayOf("text",  empleadoVO.getDireccion());
+            ps.setArray(5, direccionArray);
             ps.setString(6, empleadoVO.getCedula());
             ps.setString(7, empleadoVO.getFechaNacimiento());
             if (empleadoVO.getFis() != null) {
@@ -98,7 +100,11 @@ public class EmpleadoDAO {
                 empleadoVO.setPrimer_apellido(result.getString("primer_apellido"));
                 empleadoVO.setCedula(result.getString("cedula"));
                 empleadoVO.setFechaNacimiento(result.getString("fecha_nacimiento"));
-                empleadoVO.setDireccion(result.getString("direccion"));
+                
+                Array direccionArray = result.getArray("direccion");
+                String[] direccionArrayS = (String[]) direccionArray.getArray();
+                empleadoVO.setDireccion(direccionArrayS);
+                
                 empleadoVO.setTelefono1(result.getString("telefono1"));
                 empleadoVO.setId_empleado(result.getString("id_empleado"));
                 //codigo para extraer imagen
@@ -162,7 +168,8 @@ public class EmpleadoDAO {
                 ps.setString(2, empleadoVO.getPrimer_apellido());
                 ps.setInt(3, empleadoVO.getEdad());
                 ps.setString(4, empleadoVO.getTelefono1());
-                ps.setString(5, empleadoVO.getDireccion());
+                Array direccionArray = conexion.createArrayOf("text",  empleadoVO.getDireccion());
+                ps.setArray(5, direccionArray);
                 ps.setString(6, empleadoVO.getCedula());
                 ps.setString(7, empleadoVO.getFechaNacimiento());
                 if (empleadoVO.getFis() != null) {
@@ -200,7 +207,8 @@ public class EmpleadoDAO {
                 ps.setString(2, empleadoVO.getPrimer_apellido());
                 ps.setInt(3, empleadoVO.getEdad());
                 ps.setString(4, empleadoVO.getTelefono1());
-                ps.setString(5, empleadoVO.getDireccion());
+                Array direccionArray = conexion.createArrayOf("text",  empleadoVO.getDireccion());
+                ps.setArray(5, direccionArray);
                 ps.setString(6, empleadoVO.getCedula());
                 ps.setString(7, empleadoVO.getFechaNacimiento());
                 int n = ps.executeUpdate();
@@ -224,7 +232,7 @@ public class EmpleadoDAO {
     conexion = conexiondb.getConnection();
     String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
     String[]fila=new String[titulos.length];
-    String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> 1";
+    String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> '1'";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
     
     try {
@@ -252,7 +260,7 @@ public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
     conexion = conexiondb.getConnection();
     String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
     String[]fila=new String[titulos.length];
-    String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> 1 and cedula = '"+cedula+"'";
+    String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> '1' and cedula = '"+cedula+"'";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
     
     try {

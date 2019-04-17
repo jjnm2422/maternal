@@ -25,6 +25,7 @@ public class frmNotas extends javax.swing.JFrame {
     private final ImageIcon ICON_NO_PHOTO = new javax.swing.ImageIcon(getClass().getResource("/Recursos/no_photo2.png"));
     private String codigo;
     private int id, lapso;
+    private int FORM;
 
     /**
      * Creates new form frmNotas
@@ -34,8 +35,8 @@ public class frmNotas extends javax.swing.JFrame {
         ajustar(lblfoto, ICON_NO_PHOTO);
         ajustar(lblfoto1, ICON_NO_PHOTO);
     }
-    
-   public void ajustar(JLabel label, ImageIcon icon) {
+
+    public void ajustar(JLabel label, ImageIcon icon) {
         //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
         Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icono);
@@ -52,6 +53,21 @@ public class frmNotas extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        frmBusqueda = new javax.swing.JFrame();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel138 = new javax.swing.JLabel();
+        txtBusqueda = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBusqueda = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar = new javax.swing.JButton();
+        btnSalir2 = new javax.swing.JButton();
+        btnSeleccion = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -366,6 +382,110 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel135 = new javax.swing.JLabel();
         jComboBox123 = new javax.swing.JComboBox<>();
         jComboBox124 = new javax.swing.JComboBox<>();
+
+        frmBusqueda.setUndecorated(true);
+        frmBusqueda.setSize(new java.awt.Dimension(470, 320));
+        frmBusqueda.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel25.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel68.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel68.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel68.setText("Busqueda");
+        jLabel68.setOpaque(true);
+        jPanel25.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel26.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel26.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel26.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel138.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel138.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel138.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel138.setText("Cedula Representante o Nombre Alumno");
+        jPanel26.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusquedaActionPerformed(evt);
+            }
+        });
+        txtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyTyped(evt);
+            }
+        });
+        jPanel26.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        tblBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseEntered(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblBusqueda);
+
+        jPanel26.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel26.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir2.setText("Salir");
+        btnSalir2.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir2ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion.setText("Seleccionar");
+        btnSeleccion.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionActionPerformed(evt);
+            }
+        });
+        jPanel26.add(btnSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel25.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusqueda.getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -2109,7 +2229,7 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel134.setText("Acepta sugerencias de la maestra  durante las actividades");
         jPanel20.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
-        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 680, 380));
+        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 680, 380));
 
         btnGuardar6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnGuardar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archivo(1).png"))); // NOI18N
@@ -2125,13 +2245,13 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel136.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel136.setForeground(new java.awt.Color(255, 255, 255));
         jLabel136.setText("INASISTENCIAS");
-        jPanel19.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, 20));
+        jPanel19.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, 20));
 
         jLabel135.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel135.setForeground(new java.awt.Color(255, 255, 255));
         jLabel135.setText("DIAS LABORADOS");
         jLabel135.setToolTipText("INASISTENCIAS");
-        jPanel19.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
+        jPanel19.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, -1, -1));
 
         jComboBox123.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox123.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
@@ -2141,12 +2261,12 @@ public class frmNotas extends javax.swing.JFrame {
                 jComboBox123ActionPerformed(evt);
             }
         });
-        jPanel19.add(jComboBox123, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, 30));
+        jPanel19.add(jComboBox123, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, 30));
 
         jComboBox124.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         jComboBox124.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EXCELENTE ", "SATISFACTORIO", "MEDIANAMENTE SATISFACTORIO" }));
         jComboBox124.setEnabled(false);
-        jPanel19.add(jComboBox124, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, 30));
+        jPanel19.add(jComboBox124, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, 30));
 
         jTabbedPane3.addTab("Cuadro de valores", jPanel19);
 
@@ -2160,9 +2280,9 @@ public class frmNotas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-         habilitarBotones(false);
-            inicializarBotones();
-            txtConsultar.setText("");
+        habilitarBotones(false);
+        inicializarBotones();
+        txtConsultar.setText("");
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
@@ -2182,12 +2302,13 @@ public class frmNotas extends javax.swing.JFrame {
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtConsultar.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblPnombre.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido());
+                lblPnombre.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido());
                 if (alumnoVO.getFoto() == null) {
                     ajustar(lblfoto, ICON_NO_PHOTO);
                 } else {
                     ajustar(lblfoto, alumnoVO.getFoto());
                 }
+                txtConsultar.setText(alumnoVO.getId_alumno());
                 habilitarBotones(true);
                 //comprobar lapso
                 switch (coordinador.getNotaDAO().consultarNota(codigo).getLapso()) {
@@ -2195,32 +2316,38 @@ public class frmNotas extends javax.swing.JFrame {
                         cbxLapso.setSelectedIndex(0);
                         rbnAprobado.setEnabled(false);
                         rbnReprobado.setEnabled(false);
-                    break;
+                        break;
                     case 1:
                         cbxLapso.setSelectedIndex(1);
                         rbnAprobado.setEnabled(false);
                         rbnReprobado.setEnabled(false);
-                    break;
+                        break;
                     case 2:
-                          cbxLapso.setSelectedIndex(2);
-                          rbnAprobado.setEnabled(true);
-                          rbnReprobado.setEnabled(true);
-                          buttonGroup1.setSelected(rbnAprobado.getModel(), true);
-                    break;
+                        cbxLapso.setSelectedIndex(2);
+                        rbnAprobado.setEnabled(true);
+                        rbnReprobado.setEnabled(true);
+                        buttonGroup1.setSelected(rbnAprobado.getModel(), true);
+                        break;
                     case 3:
-                          habilitarBotones(false);
-                          coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:"+ alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido()+"\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
-                          inicializarBotones();
-                    break;
+                        habilitarBotones(false);
+                        coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:" + alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido() + "\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
+                        inicializarBotones();
+                        break;
                     default:
                         throw new AssertionError();
                 }
             } else {
-                coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                //coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
                 //borrarCampos();
+                FORM = 1;
+                frmBusqueda.setLocationRelativeTo(this);
+                frmBusqueda.setVisible(true);
             }
         } else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            //coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            FORM = 1;
+            frmBusqueda.setLocationRelativeTo(this);
+            frmBusqueda.setVisible(true);
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
@@ -2233,7 +2360,7 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSiguiente1ActionPerformed
 
     private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
-    jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnSiguiente2ActionPerformed
 
     private void jComboBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox24ActionPerformed
@@ -2257,11 +2384,11 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox27ActionPerformed
 
     private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
-    jTabbedPane1.setSelectedIndex(4);
+        jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_btnSiguiente3ActionPerformed
 
     private void btnSiguiente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente4ActionPerformed
-    jTabbedPane1.setSelectedIndex(5);
+        jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_btnSiguiente4ActionPerformed
 
     private void jComboBox43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox43ActionPerformed
@@ -2273,12 +2400,12 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox62ActionPerformed
 
     private void btnGuardar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar5ActionPerformed
-        if (!txtConsultar.getText().isEmpty() ) {
-           String respuesta = coordinador.getNotaDAO().registrarNota(obtenerDatos());
+        if (!txtConsultar.getText().isEmpty()) {
+            String respuesta = coordinador.getNotaDAO().registrarNota(obtenerDatos());
             if (respuesta.equals("INSERT")) {
                 coordinador.getLogica().mensajeCorrecto("Notas guardada con exito");
                 //compruebo que sea el ultimo lapso y cambio el estatus del alumno comprobando el pago
-                if (cbxLapso.getSelectedIndex()==2) {
+                if (cbxLapso.getSelectedIndex() == 2) {
                     //compruebo que este solvente si lo esta cambio a el estatus a true si cambio false
                     throw new UnsupportedOperationException("Falta cambiar estado");
                 }
@@ -2290,23 +2417,24 @@ public class frmNotas extends javax.swing.JFrame {
             txtConsultar.setText("");
             jTabbedPane1.setSelectedIndex(0);
         } else {
-           coordinador.getLogica().mensajeError("Ingrese un codigo");
+            coordinador.getLogica().mensajeError("Ingrese un codigo");
         }
     }//GEN-LAST:event_btnGuardar5ActionPerformed
 
     private void txtConsultarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConsultarKeyTyped
-validacionSoloNumeros(evt, 8, txtConsultar.getText().length());
+        validacionSoloNumeros(evt, 8, txtConsultar.getText().length());
     }//GEN-LAST:event_txtConsultarKeyTyped
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
-    habilitarBotones1(false);
-              inicializarBotones2();
-              txtConsultar1.setText("");
+        habilitarBotones1(false);
+        inicializarBotones2();
+        txtConsultar1.setText("");
         this.dispose();
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnConsultar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultar1ActionPerformed
-        if (!txtConsultar1.getText().isEmpty() && cbxLapso1.getSelectedIndex()!=0) {
+    if (cbxLapso1.getSelectedIndex() != 0) {
+        if (!txtConsultar1.getText().isEmpty()) {
             codigo = txtConsultar1.getText().trim();
             lapso = cbxLapso1.getSelectedIndex();
             //borrarCampos();
@@ -2314,32 +2442,42 @@ validacionSoloNumeros(evt, 8, txtConsultar.getText().length());
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtConsultar1.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblPnombre1.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getPrimer_apellido());
+                lblPnombre1.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido());
                 if (alumnoVO.getFoto() == null) {
                     ajustar(lblfoto1, ICON_NO_PHOTO);
                 } else {
                     ajustar(lblfoto1, alumnoVO.getFoto());
                 }
+                txtConsultar1.setText(alumnoVO.getId_alumno());
                 //llenar check
                 if (obtenerDatos2(codigo)) {
-                      habilitarBotones1(true);
+                    habilitarBotones1(true);
                 } else {
-                    coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: "+lblPnombre1.getText()+ " para el lapso seleccionado");
+                    coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblPnombre1.getText() + " para el lapso seleccionado");
                     habilitarBotones1(false);
                     inicializarBotones2();
-                } 
+                }
             } else {
-                coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
-                habilitarBotones1(false);
-                inicializarBotones2();
+                //coordinador.getLogica().mensajeError("Codigo: "+txtConsultar.getText()+" no existe en la Base de Datos");
+                FORM = 2;
+                frmBusqueda.setLocationRelativeTo(this);
+                frmBusqueda.setVisible(true);
+                //habilitarBotones1(false);
+                //inicializarBotones2();
             }
         } else {
-             coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo y seleccione un lapso a consultar");
+            //coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo y seleccione un lapso a consultar");
+            FORM = 2;
+            frmBusqueda.setLocationRelativeTo(this);
+            frmBusqueda.setVisible(true);
         }
+    } else {
+       coordinador.getLogica().mensajeAdvertencia("Seleccione un lapso a consultar"); 
+    }
     }//GEN-LAST:event_btnConsultar1ActionPerformed
 
     private void txtConsultar1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConsultar1KeyTyped
-validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
+        validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     }//GEN-LAST:event_txtConsultar1KeyTyped
 
     private void btnSiguiente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente5ActionPerformed
@@ -2399,13 +2537,13 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     }//GEN-LAST:event_jComboBox123ActionPerformed
 
     private void btnGuardar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar6ActionPerformed
-           if (!txtConsultar1.getText().isEmpty() ) {
-            String respuesta = coordinador.getNotaDAO().actualizarNota(obtenerDatos2(),this.id);
-               if (respuesta.equals("UPDATE")) {
-                   coordinador.getLogica().mensajeCorrecto("Nota  Actualizada con exito");
-               } else {
-                   coordinador.getLogica().mensajeError("Error al guardar Nota");
-               }
+        if (!txtConsultar1.getText().isEmpty()) {
+            String respuesta = coordinador.getNotaDAO().actualizarNota(obtenerDatos2(), this.id);
+            if (respuesta.equals("UPDATE")) {
+                coordinador.getLogica().mensajeCorrecto("Nota  Actualizada con exito");
+            } else {
+                coordinador.getLogica().mensajeError("Error al guardar Nota");
+            }
             habilitarBotones1(false);
             inicializarBotones2();
             txtConsultar1.setText("");
@@ -2422,6 +2560,114 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private void jComboBox90ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox90ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox90ActionPerformed
+
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    private void txtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyPressed
+
+    }//GEN-LAST:event_txtBusquedaKeyPressed
+
+    private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
+        tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText(), txtBusqueda.getText()));
+    }//GEN-LAST:event_txtBusquedaKeyReleased
+
+    private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
+
+    }//GEN-LAST:event_txtBusquedaKeyTyped
+
+    private void tblBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseClicked
+        /*        borrarCampos();
+        AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+        llenarCampos(alumnoVO);*/
+    }//GEN-LAST:event_tblBusquedaMouseClicked
+
+    private void tblBusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusquedaMouseEntered
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        txtBusqueda.setText("");
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
+        txtBusqueda.setText("");
+        //        desactivarCampos();
+        frmBusqueda.dispose();
+    }//GEN-LAST:event_btnSalir2ActionPerformed
+
+    private void btnSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionActionPerformed
+        habilitarBotones(false);
+        inicializarBotones();
+        if (tblBusqueda.getSelectedRow() != -1) {
+//            ACTUALIZACION = true;
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+            //llenarCampos(alumnoVO);
+            //FORM indica el formulario que llenare
+            if (FORM == 1) {
+                //datos del alumno
+                lblPnombre.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido());
+                if (alumnoVO.getFoto() == null) {
+                    ajustar(lblfoto, ICON_NO_PHOTO);
+                } else {
+                    ajustar(lblfoto, alumnoVO.getFoto());
+                }
+                txtConsultar.setText(alumnoVO.getId_alumno());
+                switch (coordinador.getNotaDAO().consultarNota(alumnoVO.getId_alumno()).getLapso()) {
+                    case 0:
+                        cbxLapso.setSelectedIndex(0);
+                        rbnAprobado.setEnabled(false);
+                        rbnReprobado.setEnabled(false);
+                        break;
+                    case 1:
+                        cbxLapso.setSelectedIndex(1);
+                        rbnAprobado.setEnabled(false);
+                        rbnReprobado.setEnabled(false);
+                        break;
+                    case 2:
+                        cbxLapso.setSelectedIndex(2);
+                        rbnAprobado.setEnabled(true);
+                        rbnReprobado.setEnabled(true);
+                        buttonGroup1.setSelected(rbnAprobado.getModel(), true);
+                        break;
+                    case 3:
+                        habilitarBotones(false);
+                        coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:" + alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido() + "\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
+                        inicializarBotones();
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                habilitarBotones(true);
+            } else {
+                alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+                //borrarCampos();
+                txtConsultar1.setText(alumnoVO.getId_alumno());
+                if (alumnoVO.getPrimer_nombre() != null) {
+                    //datos del alumno
+                    lblPnombre1.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido());
+                    if (alumnoVO.getFoto() == null) {
+                        ajustar(lblfoto1, ICON_NO_PHOTO);
+                    } else {
+                        ajustar(lblfoto1, alumnoVO.getFoto());
+                    }
+                    txtConsultar1.setText(alumnoVO.getId_alumno());
+                    //llenar check
+                    if (obtenerDatos2(alumnoVO.getId_alumno())) {
+                        habilitarBotones1(true);
+                    } else {
+                        coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblPnombre1.getText() + " para el lapso seleccionado");
+                        habilitarBotones1(false);
+                        inicializarBotones2();
+                    }
+                }
+            }
+            frmBusqueda.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2459,12 +2705,15 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnGuardar5;
     private javax.swing.JButton btnGuardar6;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
+    private javax.swing.JButton btnSalir2;
+    private javax.swing.JButton btnSeleccion;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnSiguiente1;
     private javax.swing.JButton btnSiguiente2;
@@ -2478,6 +2727,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbxLapso;
     private javax.swing.JComboBox<String> cbxLapso1;
+    private javax.swing.JFrame frmBusqueda;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox100;
@@ -2645,6 +2895,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -2703,6 +2954,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
@@ -2754,6 +3006,8 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2761,6 +3015,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -2772,6 +3027,8 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     private javax.swing.JLabel lblfoto1;
     private javax.swing.JRadioButton rbnAprobado;
     private javax.swing.JRadioButton rbnReprobado;
+    private javax.swing.JTable tblBusqueda;
+    private javax.swing.JTextField txtBusqueda;
     private javax.swing.JTextField txtConsultar;
     private javax.swing.JTextField txtConsultar1;
     // End of variables declaration//GEN-END:variables
@@ -2779,8 +3036,8 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;
     }
-    
-     private void validacionSoloNumeros(KeyEvent evt, int maximo, int lim) {
+
+    private void validacionSoloNumeros(KeyEvent evt, int maximo, int lim) {
         if (coordinador.validacionLimiteSoloNumeros(evt.getKeyChar() + "")) {
             if (lim >= maximo) {
                 evt.consume();
@@ -2793,82 +3050,81 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
     }
 
     private VO.NotaVO obtenerDatos() {
-                VO.NotaVO notaVO = new VO.NotaVO();
+        VO.NotaVO notaVO = new VO.NotaVO();
         String formacion_personal_social[] = new String[9];
         String relacion_ambiente[] = new String[10];
         String comunicacion_presentacion[] = new String[14];
         String indicadores_evaluados[] = new String[19];
         String habitos_trabajo[] = new String[10];
-        
-        formacion_personal_social[0] = "1-"+jComboBox1.getSelectedItem().toString();
-        formacion_personal_social[1] = "2-"+jComboBox2.getSelectedItem().toString();
-        formacion_personal_social[2] = "3-"+jComboBox3.getSelectedItem().toString();
-        formacion_personal_social[3] = "4-"+jComboBox4.getSelectedItem().toString();
-        formacion_personal_social[4] = "5-"+jComboBox5.getSelectedItem().toString();
-        formacion_personal_social[5] = "6-"+jComboBox6.getSelectedItem().toString();
-        formacion_personal_social[6] = "7-"+jComboBox7.getSelectedItem().toString();
-        formacion_personal_social[7] = "8-"+jComboBox8.getSelectedItem().toString();
-        formacion_personal_social[8] = "9-"+jComboBox9.getSelectedItem().toString();
-        
-        relacion_ambiente[0] = "1-"+jComboBox10.getSelectedItem().toString();
-        relacion_ambiente[1] = "2-"+jComboBox11.getSelectedItem().toString();
-        relacion_ambiente[2] = "3-"+jComboBox12.getSelectedItem().toString();
-        relacion_ambiente[3] = "4-"+jComboBox13.getSelectedItem().toString();
-        relacion_ambiente[4] = "5-"+jComboBox14.getSelectedItem().toString();
-        relacion_ambiente[5] = "6-"+jComboBox15.getSelectedItem().toString();
-        relacion_ambiente[6] = "7-"+jComboBox16.getSelectedItem().toString();
-        relacion_ambiente[7] = "8-"+jComboBox17.getSelectedItem().toString();
-        relacion_ambiente[8] = "9-"+jComboBox18.getSelectedItem().toString();
-        relacion_ambiente[9] = "10-"+jComboBox19.getSelectedItem().toString();
-        
-        comunicacion_presentacion[0] = "1-"+jComboBox29.getSelectedItem().toString();
-        comunicacion_presentacion[1] = "2-"+jComboBox28.getSelectedItem().toString();
-        comunicacion_presentacion[2] = "3-"+jComboBox27.getSelectedItem().toString();
-        comunicacion_presentacion[3] = "4-"+jComboBox26.getSelectedItem().toString();
-        comunicacion_presentacion[4] = "5-"+jComboBox25.getSelectedItem().toString();
-        comunicacion_presentacion[5] = "6-"+jComboBox24.getSelectedItem().toString();
-        comunicacion_presentacion[6] = "7-"+jComboBox23.getSelectedItem().toString();
-        comunicacion_presentacion[7] = "8-"+jComboBox22.getSelectedItem().toString();
-        comunicacion_presentacion[8] = "9-"+jComboBox21.getSelectedItem().toString();
-        comunicacion_presentacion[9] = "10-"+jComboBox20.getSelectedItem().toString();
-        comunicacion_presentacion[10] = "11-"+jComboBox30.getSelectedItem().toString();
-        comunicacion_presentacion[11] = "12-"+jComboBox31.getSelectedItem().toString();
-        comunicacion_presentacion[12] = "13-"+jComboBox32.getSelectedItem().toString();
-        comunicacion_presentacion[13] = "14-"+jComboBox33.getSelectedItem().toString();
-        
-        indicadores_evaluados[0] = "1-"+jComboBox35.getSelectedItem().toString();
-        indicadores_evaluados[1] = "2-"+jComboBox36.getSelectedItem().toString();
-        indicadores_evaluados[2] = "3-"+jComboBox37.getSelectedItem().toString();
-        indicadores_evaluados[3] = "4-"+jComboBox38.getSelectedItem().toString();
-        indicadores_evaluados[4] = "5-"+jComboBox39.getSelectedItem().toString();
-        indicadores_evaluados[5] = "6-"+jComboBox40.getSelectedItem().toString();
-        indicadores_evaluados[6] = "7-"+jComboBox41.getSelectedItem().toString();
-        indicadores_evaluados[7] = "8-"+jComboBox42.getSelectedItem().toString();
-        indicadores_evaluados[8] = "9-"+jComboBox43.getSelectedItem().toString();
-        indicadores_evaluados[9] = "10-"+jComboBox53.getSelectedItem().toString();
-        indicadores_evaluados[10] = "11-"+jComboBox44.getSelectedItem().toString();
-        indicadores_evaluados[11] = "12-"+jComboBox45.getSelectedItem().toString();
-        indicadores_evaluados[12] = "13-"+jComboBox46.getSelectedItem().toString();
-        indicadores_evaluados[13] = "14-"+jComboBox47.getSelectedItem().toString();
-        indicadores_evaluados[14] = "15-"+jComboBox48.getSelectedItem().toString();
-        indicadores_evaluados[15] = "16-"+jComboBox49.getSelectedItem().toString();
-        indicadores_evaluados[16] = "17-"+jComboBox50.getSelectedItem().toString();
-        indicadores_evaluados[17] = "18-"+jComboBox51.getSelectedItem().toString();
-        indicadores_evaluados[18] = "19-"+jComboBox52.getSelectedItem().toString();
-        
-        habitos_trabajo[0] = "1-"+jComboBox54.getSelectedItem().toString();
-        habitos_trabajo[1] = "2-"+jComboBox55.getSelectedItem().toString();
-        habitos_trabajo[2] = "3-"+jComboBox56.getSelectedItem().toString();
-        habitos_trabajo[3] = "4-"+jComboBox57.getSelectedItem().toString();
-        habitos_trabajo[4] = "5-"+jComboBox58.getSelectedItem().toString();
-        habitos_trabajo[5] = "6-"+jComboBox59.getSelectedItem().toString();
-        habitos_trabajo[6] = "7-"+jComboBox60.getSelectedItem().toString();
-        habitos_trabajo[7] = "8-"+jComboBox61.getSelectedItem().toString();
-        habitos_trabajo[8] = "9-"+jComboBox62.getSelectedItem().toString();
-        habitos_trabajo[9] = "10-"+jComboBox63.getSelectedItem().toString();
-        
-        
-        notaVO.setLapso(cbxLapso.getSelectedIndex()+1);
+
+        formacion_personal_social[0] = "1-" + jComboBox1.getSelectedItem().toString();
+        formacion_personal_social[1] = "2-" + jComboBox2.getSelectedItem().toString();
+        formacion_personal_social[2] = "3-" + jComboBox3.getSelectedItem().toString();
+        formacion_personal_social[3] = "4-" + jComboBox4.getSelectedItem().toString();
+        formacion_personal_social[4] = "5-" + jComboBox5.getSelectedItem().toString();
+        formacion_personal_social[5] = "6-" + jComboBox6.getSelectedItem().toString();
+        formacion_personal_social[6] = "7-" + jComboBox7.getSelectedItem().toString();
+        formacion_personal_social[7] = "8-" + jComboBox8.getSelectedItem().toString();
+        formacion_personal_social[8] = "9-" + jComboBox9.getSelectedItem().toString();
+
+        relacion_ambiente[0] = "1-" + jComboBox10.getSelectedItem().toString();
+        relacion_ambiente[1] = "2-" + jComboBox11.getSelectedItem().toString();
+        relacion_ambiente[2] = "3-" + jComboBox12.getSelectedItem().toString();
+        relacion_ambiente[3] = "4-" + jComboBox13.getSelectedItem().toString();
+        relacion_ambiente[4] = "5-" + jComboBox14.getSelectedItem().toString();
+        relacion_ambiente[5] = "6-" + jComboBox15.getSelectedItem().toString();
+        relacion_ambiente[6] = "7-" + jComboBox16.getSelectedItem().toString();
+        relacion_ambiente[7] = "8-" + jComboBox17.getSelectedItem().toString();
+        relacion_ambiente[8] = "9-" + jComboBox18.getSelectedItem().toString();
+        relacion_ambiente[9] = "10-" + jComboBox19.getSelectedItem().toString();
+
+        comunicacion_presentacion[0] = "1-" + jComboBox29.getSelectedItem().toString();
+        comunicacion_presentacion[1] = "2-" + jComboBox28.getSelectedItem().toString();
+        comunicacion_presentacion[2] = "3-" + jComboBox27.getSelectedItem().toString();
+        comunicacion_presentacion[3] = "4-" + jComboBox26.getSelectedItem().toString();
+        comunicacion_presentacion[4] = "5-" + jComboBox25.getSelectedItem().toString();
+        comunicacion_presentacion[5] = "6-" + jComboBox24.getSelectedItem().toString();
+        comunicacion_presentacion[6] = "7-" + jComboBox23.getSelectedItem().toString();
+        comunicacion_presentacion[7] = "8-" + jComboBox22.getSelectedItem().toString();
+        comunicacion_presentacion[8] = "9-" + jComboBox21.getSelectedItem().toString();
+        comunicacion_presentacion[9] = "10-" + jComboBox20.getSelectedItem().toString();
+        comunicacion_presentacion[10] = "11-" + jComboBox30.getSelectedItem().toString();
+        comunicacion_presentacion[11] = "12-" + jComboBox31.getSelectedItem().toString();
+        comunicacion_presentacion[12] = "13-" + jComboBox32.getSelectedItem().toString();
+        comunicacion_presentacion[13] = "14-" + jComboBox33.getSelectedItem().toString();
+
+        indicadores_evaluados[0] = "1-" + jComboBox35.getSelectedItem().toString();
+        indicadores_evaluados[1] = "2-" + jComboBox36.getSelectedItem().toString();
+        indicadores_evaluados[2] = "3-" + jComboBox37.getSelectedItem().toString();
+        indicadores_evaluados[3] = "4-" + jComboBox38.getSelectedItem().toString();
+        indicadores_evaluados[4] = "5-" + jComboBox39.getSelectedItem().toString();
+        indicadores_evaluados[5] = "6-" + jComboBox40.getSelectedItem().toString();
+        indicadores_evaluados[6] = "7-" + jComboBox41.getSelectedItem().toString();
+        indicadores_evaluados[7] = "8-" + jComboBox42.getSelectedItem().toString();
+        indicadores_evaluados[8] = "9-" + jComboBox43.getSelectedItem().toString();
+        indicadores_evaluados[9] = "10-" + jComboBox53.getSelectedItem().toString();
+        indicadores_evaluados[10] = "11-" + jComboBox44.getSelectedItem().toString();
+        indicadores_evaluados[11] = "12-" + jComboBox45.getSelectedItem().toString();
+        indicadores_evaluados[12] = "13-" + jComboBox46.getSelectedItem().toString();
+        indicadores_evaluados[13] = "14-" + jComboBox47.getSelectedItem().toString();
+        indicadores_evaluados[14] = "15-" + jComboBox48.getSelectedItem().toString();
+        indicadores_evaluados[15] = "16-" + jComboBox49.getSelectedItem().toString();
+        indicadores_evaluados[16] = "17-" + jComboBox50.getSelectedItem().toString();
+        indicadores_evaluados[17] = "18-" + jComboBox51.getSelectedItem().toString();
+        indicadores_evaluados[18] = "19-" + jComboBox52.getSelectedItem().toString();
+
+        habitos_trabajo[0] = "1-" + jComboBox54.getSelectedItem().toString();
+        habitos_trabajo[1] = "2-" + jComboBox55.getSelectedItem().toString();
+        habitos_trabajo[2] = "3-" + jComboBox56.getSelectedItem().toString();
+        habitos_trabajo[3] = "4-" + jComboBox57.getSelectedItem().toString();
+        habitos_trabajo[4] = "5-" + jComboBox58.getSelectedItem().toString();
+        habitos_trabajo[5] = "6-" + jComboBox59.getSelectedItem().toString();
+        habitos_trabajo[6] = "7-" + jComboBox60.getSelectedItem().toString();
+        habitos_trabajo[7] = "8-" + jComboBox61.getSelectedItem().toString();
+        habitos_trabajo[8] = "9-" + jComboBox62.getSelectedItem().toString();
+        habitos_trabajo[9] = "10-" + jComboBox63.getSelectedItem().toString();
+
+        notaVO.setLapso(cbxLapso.getSelectedIndex() + 1);
         notaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
         notaVO.setId_alumno(coordinador.consultarAlumno(txtConsultar.getText()).getId_alumno());
         notaVO.setFecha(coordinador.getFechaFormateada());
@@ -2892,7 +3148,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox7.setEnabled(valor);
         jComboBox8.setEnabled(valor);
         jComboBox9.setEnabled(valor);
-        
+
         jComboBox10.setEnabled(valor);
         jComboBox11.setEnabled(valor);
         jComboBox12.setEnabled(valor);
@@ -2903,7 +3159,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox17.setEnabled(valor);
         jComboBox18.setEnabled(valor);
         jComboBox19.setEnabled(valor);
-        
+
         jComboBox29.setEnabled(valor);
         jComboBox28.setEnabled(valor);
         jComboBox27.setEnabled(valor);
@@ -2918,7 +3174,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox31.setEnabled(valor);
         jComboBox32.setEnabled(valor);
         jComboBox33.setEnabled(valor);
-        
+
         jComboBox35.setEnabled(valor);
         jComboBox36.setEnabled(valor);
         jComboBox37.setEnabled(valor);
@@ -2938,7 +3194,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox50.setEnabled(valor);
         jComboBox51.setEnabled(valor);
         jComboBox52.setEnabled(valor);
-        
+
         jComboBox54.setEnabled(valor);
         jComboBox55.setEnabled(valor);
         jComboBox56.setEnabled(valor);
@@ -2967,7 +3223,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox7.setSelectedIndex(0);
         jComboBox8.setSelectedIndex(0);
         jComboBox9.setSelectedIndex(0);
-        
+
         jComboBox10.setSelectedIndex(0);
         jComboBox11.setSelectedIndex(0);
         jComboBox12.setSelectedIndex(0);
@@ -2978,7 +3234,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox17.setSelectedIndex(0);
         jComboBox18.setSelectedIndex(0);
         jComboBox19.setSelectedIndex(0);
-        
+
         jComboBox29.setSelectedIndex(0);
         jComboBox28.setSelectedIndex(0);
         jComboBox27.setSelectedIndex(0);
@@ -2993,7 +3249,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox31.setSelectedIndex(0);
         jComboBox32.setSelectedIndex(0);
         jComboBox33.setSelectedIndex(0);
-        
+
         jComboBox35.setSelectedIndex(0);
         jComboBox36.setSelectedIndex(0);
         jComboBox37.setSelectedIndex(0);
@@ -3013,7 +3269,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox50.setSelectedIndex(0);
         jComboBox51.setSelectedIndex(0);
         jComboBox52.setSelectedIndex(0);
-        
+
         jComboBox54.setSelectedIndex(0);
         jComboBox55.setSelectedIndex(0);
         jComboBox56.setSelectedIndex(0);
@@ -3025,13 +3281,13 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox62.setSelectedIndex(0);
         jComboBox63.setSelectedIndex(0);
     }
-    
-     private void inicializarBotones2() {
+
+    private void inicializarBotones2() {
         txtConsultar1.setText("");
         lblPnombre1.setText("");
         cbxLapso1.setSelectedIndex(0);
         ajustar(lblfoto1, ICON_NO_PHOTO);
-         jComboBox34.setSelectedIndex(0);
+        jComboBox34.setSelectedIndex(0);
         jComboBox64.setSelectedIndex(0);
         jComboBox65.setSelectedIndex(0);
         jComboBox66.setSelectedIndex(0);
@@ -3040,7 +3296,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox69.setSelectedIndex(0);
         jComboBox70.setSelectedIndex(0);
         jComboBox71.setSelectedIndex(0);
-        
+
         jComboBox72.setSelectedIndex(0);
         jComboBox73.setSelectedIndex(0);
         jComboBox74.setSelectedIndex(0);
@@ -3049,9 +3305,9 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox77.setSelectedIndex(0);
         jComboBox78.setSelectedIndex(0);
         jComboBox79.setSelectedIndex(0);
-         jComboBox80.setSelectedIndex(0);
+        jComboBox80.setSelectedIndex(0);
         jComboBox81.setSelectedIndex(0);
-        
+
         jComboBox91.setSelectedIndex(0);
         jComboBox90.setSelectedIndex(0);
         jComboBox89.setSelectedIndex(0);
@@ -3066,7 +3322,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox93.setSelectedIndex(0);
         jComboBox94.setSelectedIndex(0);
         jComboBox95.setSelectedIndex(0);
-        
+
         jComboBox96.setSelectedIndex(0);
         jComboBox97.setSelectedIndex(0);
         jComboBox98.setSelectedIndex(0);
@@ -3086,7 +3342,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox112.setSelectedIndex(0);
         jComboBox113.setSelectedIndex(0);
         jComboBox114.setSelectedIndex(0);
-        
+
         jComboBox115.setSelectedIndex(0);
         jComboBox116.setSelectedIndex(0);
         jComboBox117.setSelectedIndex(0);
@@ -3096,7 +3352,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox121.setSelectedIndex(0);
         jComboBox122.setSelectedIndex(0);
         jComboBox123.setSelectedIndex(0);
-         jComboBox124.setSelectedIndex(0);
+        jComboBox124.setSelectedIndex(0);
     }
 
     private void habilitarBotones1(boolean valor) {
@@ -3110,7 +3366,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox69.setEnabled(valor);
         jComboBox70.setEnabled(valor);
         jComboBox71.setEnabled(valor);
-        
+
         jComboBox72.setEnabled(valor);
         jComboBox73.setEnabled(valor);
         jComboBox74.setEnabled(valor);
@@ -3119,9 +3375,9 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox77.setEnabled(valor);
         jComboBox78.setEnabled(valor);
         jComboBox79.setEnabled(valor);
-         jComboBox80.setEnabled(valor);
+        jComboBox80.setEnabled(valor);
         jComboBox81.setEnabled(valor);
-        
+
         jComboBox91.setEnabled(valor);
         jComboBox90.setEnabled(valor);
         jComboBox89.setEnabled(valor);
@@ -3136,7 +3392,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox93.setEnabled(valor);
         jComboBox94.setEnabled(valor);
         jComboBox95.setEnabled(valor);
-        
+
         jComboBox96.setEnabled(valor);
         jComboBox97.setEnabled(valor);
         jComboBox98.setEnabled(valor);
@@ -3156,7 +3412,7 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox112.setEnabled(valor);
         jComboBox113.setEnabled(valor);
         jComboBox114.setEnabled(valor);
-        
+
         jComboBox115.setEnabled(valor);
         jComboBox116.setEnabled(valor);
         jComboBox117.setEnabled(valor);
@@ -3166,86 +3422,84 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         jComboBox121.setEnabled(valor);
         jComboBox122.setEnabled(valor);
         jComboBox123.setEnabled(valor);
-         jComboBox124.setEnabled(valor);
+        jComboBox124.setEnabled(valor);
     }
-    
-        
-     private VO.NotaVO obtenerDatos2() {
-          VO.NotaVO notaVO = new VO.NotaVO();
+
+    private VO.NotaVO obtenerDatos2() {
+        VO.NotaVO notaVO = new VO.NotaVO();
         String formacion_personal_social[] = new String[9];
         String relacion_ambiente[] = new String[10];
         String comunicacion_presentacion[] = new String[14];
         String indicadores_evaluados[] = new String[19];
         String habitos_trabajo[] = new String[10];
-        
-        formacion_personal_social[0] = "1-"+jComboBox34.getSelectedItem().toString();
-        formacion_personal_social[1] = "2-"+jComboBox64.getSelectedItem().toString();
-        formacion_personal_social[2] = "3-"+jComboBox65.getSelectedItem().toString();
-        formacion_personal_social[3] = "4-"+jComboBox66.getSelectedItem().toString();
-        formacion_personal_social[4] = "5-"+jComboBox67.getSelectedItem().toString();
-        formacion_personal_social[5] = "6-"+jComboBox68.getSelectedItem().toString();
-        formacion_personal_social[6] = "7-"+jComboBox69.getSelectedItem().toString();
-        formacion_personal_social[7] = "8-"+jComboBox70.getSelectedItem().toString();
-        formacion_personal_social[8] = "9-"+jComboBox71.getSelectedItem().toString();
-        
-        relacion_ambiente[0] = "1-"+jComboBox72.getSelectedItem().toString();
-        relacion_ambiente[1] = "2-"+ jComboBox73.getSelectedItem().toString();
-        relacion_ambiente[2] = "3-"+ jComboBox74.getSelectedItem().toString();
-        relacion_ambiente[3] = "4-"+ jComboBox75.getSelectedItem().toString();
-        relacion_ambiente[4] = "5-"+jComboBox76.getSelectedItem().toString();
-        relacion_ambiente[5] = "6-"+ jComboBox77.getSelectedItem().toString();
-        relacion_ambiente[6] = "7-"+jComboBox78.getSelectedItem().toString();
-        relacion_ambiente[7] = "8-"+  jComboBox79.getSelectedItem().toString();
-        relacion_ambiente[8] = "9-"+  jComboBox80.getSelectedItem().toString();
-        relacion_ambiente[9] = "10-"+jComboBox81.getSelectedItem().toString();
-        
-        comunicacion_presentacion[0] = "1-"+jComboBox91.getSelectedItem().toString();
-        comunicacion_presentacion[1] = "2-"+jComboBox90.getSelectedItem().toString();
-        comunicacion_presentacion[2] = "3-"+jComboBox89.getSelectedItem().toString();
-        comunicacion_presentacion[3] = "4-"+jComboBox88.getSelectedItem().toString();
-        comunicacion_presentacion[4] = "5-"+jComboBox87.getSelectedItem().toString();
-        comunicacion_presentacion[5] = "6-"+jComboBox86.getSelectedItem().toString();
-        comunicacion_presentacion[6] = "7-"+jComboBox85.getSelectedItem().toString();
-        comunicacion_presentacion[7] = "8-"+jComboBox84.getSelectedItem().toString();
-        comunicacion_presentacion[8] = "9-"+jComboBox83.getSelectedItem().toString();
-        comunicacion_presentacion[9] = "10-"+jComboBox82.getSelectedItem().toString();
-        comunicacion_presentacion[10] = "11-"+jComboBox92.getSelectedItem().toString();
-        comunicacion_presentacion[11] = "12-"+jComboBox93.getSelectedItem().toString();
-        comunicacion_presentacion[12] = "13-"+jComboBox94.getSelectedItem().toString();
-        comunicacion_presentacion[13] = "14-"+jComboBox95.getSelectedItem().toString();
-        
-        indicadores_evaluados[0] = "1-"+jComboBox96.getSelectedItem().toString();
-        indicadores_evaluados[1] = "2-"+jComboBox97.getSelectedItem().toString();
-        indicadores_evaluados[2] = "3-"+jComboBox98.getSelectedItem().toString();
-        indicadores_evaluados[3] = "4-"+jComboBox99.getSelectedItem().toString();
-        indicadores_evaluados[4] = "5-"+jComboBox100.getSelectedItem().toString();
-        indicadores_evaluados[5] = "6-"+jComboBox101.getSelectedItem().toString();
-        indicadores_evaluados[6] = "7-"+jComboBox102.getSelectedItem().toString();
-        indicadores_evaluados[7] = "8-"+jComboBox103.getSelectedItem().toString();
-        indicadores_evaluados[8] = "9-"+jComboBox104.getSelectedItem().toString();
-        indicadores_evaluados[9] = "10-"+jComboBox105.getSelectedItem().toString();
-        indicadores_evaluados[10] = "11-"+jComboBox106.getSelectedItem().toString();
-        indicadores_evaluados[11] = "12-"+jComboBox107.getSelectedItem().toString();
-        indicadores_evaluados[12] = "13-"+jComboBox108.getSelectedItem().toString();
-        indicadores_evaluados[13] = "14-"+jComboBox109.getSelectedItem().toString();
-        indicadores_evaluados[14] = "15-"+jComboBox110.getSelectedItem().toString();
-        indicadores_evaluados[15] = "16-"+jComboBox111.getSelectedItem().toString();
-        indicadores_evaluados[16] = "17-"+jComboBox112.getSelectedItem().toString();
-        indicadores_evaluados[17] = "18-"+jComboBox113.getSelectedItem().toString();
-        indicadores_evaluados[18] = "19-"+jComboBox114.getSelectedItem().toString();
-        
-        habitos_trabajo[0] = "1-"+jComboBox115.getSelectedItem().toString();
-        habitos_trabajo[1] = "2-"+jComboBox116.getSelectedItem().toString();
-        habitos_trabajo[2] = "3-"+jComboBox117.getSelectedItem().toString();
-        habitos_trabajo[3] = "4-"+jComboBox118.getSelectedItem().toString();
-        habitos_trabajo[4] = "5-"+jComboBox119.getSelectedItem().toString();
-        habitos_trabajo[5] = "6-"+jComboBox120.getSelectedItem().toString();
-        habitos_trabajo[6] = "7-"+jComboBox121.getSelectedItem().toString();
-        habitos_trabajo[7] = "8-"+jComboBox122.getSelectedItem().toString();
-        habitos_trabajo[8] = "9-"+jComboBox123.getSelectedItem().toString();
-        habitos_trabajo[9] = "10-"+jComboBox124.getSelectedItem().toString();
-        
-        
+
+        formacion_personal_social[0] = "1-" + jComboBox34.getSelectedItem().toString();
+        formacion_personal_social[1] = "2-" + jComboBox64.getSelectedItem().toString();
+        formacion_personal_social[2] = "3-" + jComboBox65.getSelectedItem().toString();
+        formacion_personal_social[3] = "4-" + jComboBox66.getSelectedItem().toString();
+        formacion_personal_social[4] = "5-" + jComboBox67.getSelectedItem().toString();
+        formacion_personal_social[5] = "6-" + jComboBox68.getSelectedItem().toString();
+        formacion_personal_social[6] = "7-" + jComboBox69.getSelectedItem().toString();
+        formacion_personal_social[7] = "8-" + jComboBox70.getSelectedItem().toString();
+        formacion_personal_social[8] = "9-" + jComboBox71.getSelectedItem().toString();
+
+        relacion_ambiente[0] = "1-" + jComboBox72.getSelectedItem().toString();
+        relacion_ambiente[1] = "2-" + jComboBox73.getSelectedItem().toString();
+        relacion_ambiente[2] = "3-" + jComboBox74.getSelectedItem().toString();
+        relacion_ambiente[3] = "4-" + jComboBox75.getSelectedItem().toString();
+        relacion_ambiente[4] = "5-" + jComboBox76.getSelectedItem().toString();
+        relacion_ambiente[5] = "6-" + jComboBox77.getSelectedItem().toString();
+        relacion_ambiente[6] = "7-" + jComboBox78.getSelectedItem().toString();
+        relacion_ambiente[7] = "8-" + jComboBox79.getSelectedItem().toString();
+        relacion_ambiente[8] = "9-" + jComboBox80.getSelectedItem().toString();
+        relacion_ambiente[9] = "10-" + jComboBox81.getSelectedItem().toString();
+
+        comunicacion_presentacion[0] = "1-" + jComboBox91.getSelectedItem().toString();
+        comunicacion_presentacion[1] = "2-" + jComboBox90.getSelectedItem().toString();
+        comunicacion_presentacion[2] = "3-" + jComboBox89.getSelectedItem().toString();
+        comunicacion_presentacion[3] = "4-" + jComboBox88.getSelectedItem().toString();
+        comunicacion_presentacion[4] = "5-" + jComboBox87.getSelectedItem().toString();
+        comunicacion_presentacion[5] = "6-" + jComboBox86.getSelectedItem().toString();
+        comunicacion_presentacion[6] = "7-" + jComboBox85.getSelectedItem().toString();
+        comunicacion_presentacion[7] = "8-" + jComboBox84.getSelectedItem().toString();
+        comunicacion_presentacion[8] = "9-" + jComboBox83.getSelectedItem().toString();
+        comunicacion_presentacion[9] = "10-" + jComboBox82.getSelectedItem().toString();
+        comunicacion_presentacion[10] = "11-" + jComboBox92.getSelectedItem().toString();
+        comunicacion_presentacion[11] = "12-" + jComboBox93.getSelectedItem().toString();
+        comunicacion_presentacion[12] = "13-" + jComboBox94.getSelectedItem().toString();
+        comunicacion_presentacion[13] = "14-" + jComboBox95.getSelectedItem().toString();
+
+        indicadores_evaluados[0] = "1-" + jComboBox96.getSelectedItem().toString();
+        indicadores_evaluados[1] = "2-" + jComboBox97.getSelectedItem().toString();
+        indicadores_evaluados[2] = "3-" + jComboBox98.getSelectedItem().toString();
+        indicadores_evaluados[3] = "4-" + jComboBox99.getSelectedItem().toString();
+        indicadores_evaluados[4] = "5-" + jComboBox100.getSelectedItem().toString();
+        indicadores_evaluados[5] = "6-" + jComboBox101.getSelectedItem().toString();
+        indicadores_evaluados[6] = "7-" + jComboBox102.getSelectedItem().toString();
+        indicadores_evaluados[7] = "8-" + jComboBox103.getSelectedItem().toString();
+        indicadores_evaluados[8] = "9-" + jComboBox104.getSelectedItem().toString();
+        indicadores_evaluados[9] = "10-" + jComboBox105.getSelectedItem().toString();
+        indicadores_evaluados[10] = "11-" + jComboBox106.getSelectedItem().toString();
+        indicadores_evaluados[11] = "12-" + jComboBox107.getSelectedItem().toString();
+        indicadores_evaluados[12] = "13-" + jComboBox108.getSelectedItem().toString();
+        indicadores_evaluados[13] = "14-" + jComboBox109.getSelectedItem().toString();
+        indicadores_evaluados[14] = "15-" + jComboBox110.getSelectedItem().toString();
+        indicadores_evaluados[15] = "16-" + jComboBox111.getSelectedItem().toString();
+        indicadores_evaluados[16] = "17-" + jComboBox112.getSelectedItem().toString();
+        indicadores_evaluados[17] = "18-" + jComboBox113.getSelectedItem().toString();
+        indicadores_evaluados[18] = "19-" + jComboBox114.getSelectedItem().toString();
+
+        habitos_trabajo[0] = "1-" + jComboBox115.getSelectedItem().toString();
+        habitos_trabajo[1] = "2-" + jComboBox116.getSelectedItem().toString();
+        habitos_trabajo[2] = "3-" + jComboBox117.getSelectedItem().toString();
+        habitos_trabajo[3] = "4-" + jComboBox118.getSelectedItem().toString();
+        habitos_trabajo[4] = "5-" + jComboBox119.getSelectedItem().toString();
+        habitos_trabajo[5] = "6-" + jComboBox120.getSelectedItem().toString();
+        habitos_trabajo[6] = "7-" + jComboBox121.getSelectedItem().toString();
+        habitos_trabajo[7] = "8-" + jComboBox122.getSelectedItem().toString();
+        habitos_trabajo[8] = "9-" + jComboBox123.getSelectedItem().toString();
+        habitos_trabajo[9] = "10-" + jComboBox124.getSelectedItem().toString();
+
         notaVO.setLapso(this.lapso);
         notaVO.setId_empleado(coordinador.consultarUsuario(lblUsuarioActvo.getText()).getId_usuario());
         notaVO.setId_alumno(coordinador.consultarAlumno(codigo).getId_alumno());
@@ -3259,80 +3513,79 @@ validacionSoloNumeros(evt, 8, txtConsultar1.getText().length());
         return notaVO;
     }
 
-
     private boolean obtenerDatos2(String codigo) {
-                VO.NotaVO notaVO =  coordinador.getNotaDAO().consultarNotaPorLapso(codigo, cbxLapso1.getSelectedIndex());
-                if (notaVO.getFecha()!=null) {
-                id = notaVO.getId_nota();
-                jComboBox34.setSelectedItem(notaVO.getFormacion_personal_social()[0].substring(2));
-                jComboBox64.setSelectedItem(notaVO.getFormacion_personal_social()[1].substring(2));
-                jComboBox65.setSelectedItem(notaVO.getFormacion_personal_social()[2].substring(2));
-                jComboBox66.setSelectedItem(notaVO.getFormacion_personal_social()[3].substring(2));
-                jComboBox67.setSelectedItem(notaVO.getFormacion_personal_social()[4].substring(2));
-                jComboBox68.setSelectedItem(notaVO.getFormacion_personal_social()[5].substring(2));
-                jComboBox69.setSelectedItem(notaVO.getFormacion_personal_social()[6].substring(2));
-                jComboBox70.setSelectedItem(notaVO.getFormacion_personal_social()[7].substring(2));
-                jComboBox71.setSelectedItem(notaVO.getFormacion_personal_social()[8].substring(2));
-                
-                 jComboBox72.setSelectedItem(notaVO.getRelacion_ambiente()[0].substring(2));
-                jComboBox73.setSelectedItem(notaVO.getRelacion_ambiente()[1].substring(2));
-                jComboBox74.setSelectedItem(notaVO.getRelacion_ambiente()[2].substring(2));
-                jComboBox75.setSelectedItem(notaVO.getRelacion_ambiente()[3].substring(2));
-                jComboBox76.setSelectedItem(notaVO.getRelacion_ambiente()[4].substring(2));
-                jComboBox77.setSelectedItem(notaVO.getRelacion_ambiente()[5].substring(2));
-                jComboBox78.setSelectedItem(notaVO.getRelacion_ambiente()[6].substring(2));
-                jComboBox79.setSelectedItem(notaVO.getRelacion_ambiente()[7].substring(2));
-                 jComboBox80.setSelectedItem(notaVO.getRelacion_ambiente()[8].substring(2));
-                jComboBox81.setSelectedItem(notaVO.getRelacion_ambiente()[9].substring(3));
+        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, cbxLapso1.getSelectedIndex());
+        if (notaVO.getFecha() != null) {
+            id = notaVO.getId_nota();
+            jComboBox34.setSelectedItem(notaVO.getFormacion_personal_social()[0].substring(2));
+            jComboBox64.setSelectedItem(notaVO.getFormacion_personal_social()[1].substring(2));
+            jComboBox65.setSelectedItem(notaVO.getFormacion_personal_social()[2].substring(2));
+            jComboBox66.setSelectedItem(notaVO.getFormacion_personal_social()[3].substring(2));
+            jComboBox67.setSelectedItem(notaVO.getFormacion_personal_social()[4].substring(2));
+            jComboBox68.setSelectedItem(notaVO.getFormacion_personal_social()[5].substring(2));
+            jComboBox69.setSelectedItem(notaVO.getFormacion_personal_social()[6].substring(2));
+            jComboBox70.setSelectedItem(notaVO.getFormacion_personal_social()[7].substring(2));
+            jComboBox71.setSelectedItem(notaVO.getFormacion_personal_social()[8].substring(2));
 
-                jComboBox91.setSelectedItem(notaVO.getComunicacion_presentacion()[0].substring(2));
-                jComboBox90.setSelectedItem(notaVO.getComunicacion_presentacion()[1].substring(2));
-                jComboBox89.setSelectedItem(notaVO.getComunicacion_presentacion()[2].substring(2));
-                jComboBox88.setSelectedItem(notaVO.getComunicacion_presentacion()[3].substring(2));
-                jComboBox87.setSelectedItem(notaVO.getComunicacion_presentacion()[4].substring(2));
-                jComboBox86.setSelectedItem(notaVO.getComunicacion_presentacion()[5].substring(2));
-                jComboBox85.setSelectedItem(notaVO.getComunicacion_presentacion()[6].substring(2));
-                jComboBox84.setSelectedItem(notaVO.getComunicacion_presentacion()[7].substring(2));
-                jComboBox83.setSelectedItem(notaVO.getComunicacion_presentacion()[8].substring(2));
-                jComboBox82.setSelectedItem(notaVO.getComunicacion_presentacion()[9].substring(3));
-                jComboBox92.setSelectedItem(notaVO.getComunicacion_presentacion()[10].substring(3));
-                jComboBox93.setSelectedItem(notaVO.getComunicacion_presentacion()[11].substring(3));
-                jComboBox94.setSelectedItem(notaVO.getComunicacion_presentacion()[12].substring(3));
-                jComboBox95.setSelectedItem(notaVO.getComunicacion_presentacion()[13].substring(3));
+            jComboBox72.setSelectedItem(notaVO.getRelacion_ambiente()[0].substring(2));
+            jComboBox73.setSelectedItem(notaVO.getRelacion_ambiente()[1].substring(2));
+            jComboBox74.setSelectedItem(notaVO.getRelacion_ambiente()[2].substring(2));
+            jComboBox75.setSelectedItem(notaVO.getRelacion_ambiente()[3].substring(2));
+            jComboBox76.setSelectedItem(notaVO.getRelacion_ambiente()[4].substring(2));
+            jComboBox77.setSelectedItem(notaVO.getRelacion_ambiente()[5].substring(2));
+            jComboBox78.setSelectedItem(notaVO.getRelacion_ambiente()[6].substring(2));
+            jComboBox79.setSelectedItem(notaVO.getRelacion_ambiente()[7].substring(2));
+            jComboBox80.setSelectedItem(notaVO.getRelacion_ambiente()[8].substring(2));
+            jComboBox81.setSelectedItem(notaVO.getRelacion_ambiente()[9].substring(3));
 
-                jComboBox96.setSelectedItem(notaVO.getIndicadores_evaluados()[0].substring(2));
-                jComboBox97.setSelectedItem(notaVO.getIndicadores_evaluados()[1].substring(2));
-                jComboBox98.setSelectedItem(notaVO.getIndicadores_evaluados()[2].substring(2));
-                jComboBox99.setSelectedItem(notaVO.getIndicadores_evaluados()[3].substring(2));
-                jComboBox100.setSelectedItem(notaVO.getIndicadores_evaluados()[4].substring(2));
-                jComboBox101.setSelectedItem(notaVO.getIndicadores_evaluados()[5].substring(2));
-                jComboBox102.setSelectedItem(notaVO.getIndicadores_evaluados()[6].substring(2));
-                jComboBox103.setSelectedItem(notaVO.getIndicadores_evaluados()[7].substring(2));
-                jComboBox104.setSelectedItem(notaVO.getIndicadores_evaluados()[8].substring(2));
-                jComboBox105.setSelectedItem(notaVO.getIndicadores_evaluados()[9].substring(3));
-                jComboBox106.setSelectedItem(notaVO.getIndicadores_evaluados()[10].substring(3));
-                jComboBox107.setSelectedItem(notaVO.getIndicadores_evaluados()[11].substring(3));
-                jComboBox108.setSelectedItem(notaVO.getIndicadores_evaluados()[12].substring(3));
-                jComboBox109.setSelectedItem(notaVO.getIndicadores_evaluados()[13].substring(3));
-                jComboBox110.setSelectedItem(notaVO.getIndicadores_evaluados()[14].substring(3));
-                jComboBox111.setSelectedItem(notaVO.getIndicadores_evaluados()[15].substring(3));
-                jComboBox112.setSelectedItem(notaVO.getIndicadores_evaluados()[16].substring(3));
-                jComboBox113.setSelectedItem(notaVO.getIndicadores_evaluados()[17].substring(3));
-                jComboBox114.setSelectedItem(notaVO.getIndicadores_evaluados()[18].substring(3));
+            jComboBox91.setSelectedItem(notaVO.getComunicacion_presentacion()[0].substring(2));
+            jComboBox90.setSelectedItem(notaVO.getComunicacion_presentacion()[1].substring(2));
+            jComboBox89.setSelectedItem(notaVO.getComunicacion_presentacion()[2].substring(2));
+            jComboBox88.setSelectedItem(notaVO.getComunicacion_presentacion()[3].substring(2));
+            jComboBox87.setSelectedItem(notaVO.getComunicacion_presentacion()[4].substring(2));
+            jComboBox86.setSelectedItem(notaVO.getComunicacion_presentacion()[5].substring(2));
+            jComboBox85.setSelectedItem(notaVO.getComunicacion_presentacion()[6].substring(2));
+            jComboBox84.setSelectedItem(notaVO.getComunicacion_presentacion()[7].substring(2));
+            jComboBox83.setSelectedItem(notaVO.getComunicacion_presentacion()[8].substring(2));
+            jComboBox82.setSelectedItem(notaVO.getComunicacion_presentacion()[9].substring(3));
+            jComboBox92.setSelectedItem(notaVO.getComunicacion_presentacion()[10].substring(3));
+            jComboBox93.setSelectedItem(notaVO.getComunicacion_presentacion()[11].substring(3));
+            jComboBox94.setSelectedItem(notaVO.getComunicacion_presentacion()[12].substring(3));
+            jComboBox95.setSelectedItem(notaVO.getComunicacion_presentacion()[13].substring(3));
 
-                jComboBox115.setSelectedItem(notaVO.getHabitos_trabajo()[0].substring(2));
-                jComboBox116.setSelectedItem(notaVO.getHabitos_trabajo()[1].substring(2));
-                jComboBox117.setSelectedItem(notaVO.getHabitos_trabajo()[2].substring(2));
-                jComboBox118.setSelectedItem(notaVO.getHabitos_trabajo()[3].substring(2));
-                jComboBox119.setSelectedItem(notaVO.getHabitos_trabajo()[4].substring(2));
-                jComboBox120.setSelectedItem(notaVO.getHabitos_trabajo()[5].substring(2));
-                jComboBox121.setSelectedItem(notaVO.getHabitos_trabajo()[6].substring(2));
-                jComboBox122.setSelectedItem(notaVO.getHabitos_trabajo()[7].substring(2));
-                jComboBox123.setSelectedItem(notaVO.getHabitos_trabajo()[8].substring(2));
-                 jComboBox124.setSelectedItem(notaVO.getHabitos_trabajo()[9].substring(3));
-                 return true;
+            jComboBox96.setSelectedItem(notaVO.getIndicadores_evaluados()[0].substring(2));
+            jComboBox97.setSelectedItem(notaVO.getIndicadores_evaluados()[1].substring(2));
+            jComboBox98.setSelectedItem(notaVO.getIndicadores_evaluados()[2].substring(2));
+            jComboBox99.setSelectedItem(notaVO.getIndicadores_evaluados()[3].substring(2));
+            jComboBox100.setSelectedItem(notaVO.getIndicadores_evaluados()[4].substring(2));
+            jComboBox101.setSelectedItem(notaVO.getIndicadores_evaluados()[5].substring(2));
+            jComboBox102.setSelectedItem(notaVO.getIndicadores_evaluados()[6].substring(2));
+            jComboBox103.setSelectedItem(notaVO.getIndicadores_evaluados()[7].substring(2));
+            jComboBox104.setSelectedItem(notaVO.getIndicadores_evaluados()[8].substring(2));
+            jComboBox105.setSelectedItem(notaVO.getIndicadores_evaluados()[9].substring(3));
+            jComboBox106.setSelectedItem(notaVO.getIndicadores_evaluados()[10].substring(3));
+            jComboBox107.setSelectedItem(notaVO.getIndicadores_evaluados()[11].substring(3));
+            jComboBox108.setSelectedItem(notaVO.getIndicadores_evaluados()[12].substring(3));
+            jComboBox109.setSelectedItem(notaVO.getIndicadores_evaluados()[13].substring(3));
+            jComboBox110.setSelectedItem(notaVO.getIndicadores_evaluados()[14].substring(3));
+            jComboBox111.setSelectedItem(notaVO.getIndicadores_evaluados()[15].substring(3));
+            jComboBox112.setSelectedItem(notaVO.getIndicadores_evaluados()[16].substring(3));
+            jComboBox113.setSelectedItem(notaVO.getIndicadores_evaluados()[17].substring(3));
+            jComboBox114.setSelectedItem(notaVO.getIndicadores_evaluados()[18].substring(3));
+
+            jComboBox115.setSelectedItem(notaVO.getHabitos_trabajo()[0].substring(2));
+            jComboBox116.setSelectedItem(notaVO.getHabitos_trabajo()[1].substring(2));
+            jComboBox117.setSelectedItem(notaVO.getHabitos_trabajo()[2].substring(2));
+            jComboBox118.setSelectedItem(notaVO.getHabitos_trabajo()[3].substring(2));
+            jComboBox119.setSelectedItem(notaVO.getHabitos_trabajo()[4].substring(2));
+            jComboBox120.setSelectedItem(notaVO.getHabitos_trabajo()[5].substring(2));
+            jComboBox121.setSelectedItem(notaVO.getHabitos_trabajo()[6].substring(2));
+            jComboBox122.setSelectedItem(notaVO.getHabitos_trabajo()[7].substring(2));
+            jComboBox123.setSelectedItem(notaVO.getHabitos_trabajo()[8].substring(2));
+            jComboBox124.setSelectedItem(notaVO.getHabitos_trabajo()[9].substring(3));
+            return true;
         } else {
-                    return false;
+            return false;
         }
     }
 }

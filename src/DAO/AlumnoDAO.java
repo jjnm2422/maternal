@@ -208,6 +208,7 @@ public class AlumnoDAO {
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
                 respuesta = ex.getMessage();
             }
             return respuesta;

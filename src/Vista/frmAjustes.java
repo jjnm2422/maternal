@@ -401,6 +401,7 @@ public class frmAjustes extends javax.swing.JFrame {
         variablesVO.setSeguro(Double.parseDouble(txtSeguro.getText().trim()));
         variablesVO.setUbicacion_reporte(txtRuta.getText());
         variablesVO.setPeriodo_actual(cbxPeriodo.getSelectedItem().toString());
+        variablesVO.setPrecio_inscripcion(Double.parseDouble(txtInscripcion.getText().trim()));
         String respuesta = coordinador.actualizarVariables(variablesVO);
         if (respuesta.equals("UPDATE")) {
             coordinador.getLogica().mensajeCorrecto("Datos guardados con exito");
@@ -447,7 +448,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     }//GEN-LAST:event_txtSeguroKeyTyped
 
     private void txtInscripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInscripcionKeyTyped
-validacionSoloNumeros(evt, 15, txtIva.getText().length());
+    validacionSoloNumeros(evt, 15, txtIva.getText().length());
     }//GEN-LAST:event_txtInscripcionKeyTyped
 
     /**
@@ -509,6 +510,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
         txtMora.setText(String.valueOf(variablesVO.getPrecio_mora()));
         txtDiasmora.setText(String.valueOf(variablesVO.getDias_mora()));
         cbxPeriodo.setSelectedItem(variablesVO.getPeriodo_actual());
+        txtInscripcion.setText(String.valueOf(variablesVO.getPrecio_inscripcion()));
     }
 
     private void activarCampos() {
@@ -519,6 +521,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
        txtMora.setEnabled(true);
        txtSeguro.setEnabled(true);
        txtDiasmora.setEnabled(true);
+       txtInscripcion.setEnabled(true);
        cbxPeriodo.setEnabled(true);
     }
     
@@ -555,6 +558,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
        txtSeguro.setEnabled(false);
        txtDiasmora.setEnabled(false);
        cbxPeriodo.setEnabled(false);
+       txtInscripcion.setEnabled(false);
     }
 
     private boolean verificacionCampos() {

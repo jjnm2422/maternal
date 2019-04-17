@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * @author acjj
  */
 public class RepresentanteVO {
-    private String  primer_nombre, primer_apellido, telefono1, telefono2, direccion, correo, ocupacion, sexo, fecha_nacimiento, cedula, parentesco, empresa, id_alumno;
+    private String  primer_nombre, primer_apellido, telefono1, telefono2, direccion[], correo, ocupacion, sexo, fecha_nacimiento, cedula, parentesco, empresa, id_alumno;
     private int id_representante, edad, binarioFoto, tipo;
     private FileInputStream fis;
     private ImageIcon foto; 
@@ -21,7 +21,7 @@ public class RepresentanteVO {
     public RepresentanteVO() {
     }
 
-    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion, String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, String id_alumno, int binarioFoto, int tipo, FileInputStream fis, ImageIcon foto) {
+    public RepresentanteVO(String primer_nombre, String primer_apellido, String telefono1, String telefono2, String direccion[], String correo, String ocupacion, String sexo, String fecha_nacimiento, String cedula, String parentesco, String empresa, int id_representante, int edad, String id_alumno, int binarioFoto, int tipo, FileInputStream fis, ImageIcon foto) {
         this.primer_nombre = primer_nombre;
         this.primer_apellido = primer_apellido;
         this.telefono1 = telefono1;
@@ -112,11 +112,11 @@ public class RepresentanteVO {
         this.telefono2 = telefono2;
     }
 
-    public String getDireccion() {
+    public String[] getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(String[] direccion) {
         this.direccion = direccion;
     }
 
