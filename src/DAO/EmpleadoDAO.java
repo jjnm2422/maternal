@@ -230,7 +230,7 @@ public class EmpleadoDAO {
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
     conexion = conexiondb.getConnection();
-    String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
+    String[]titulos={"ID","Nombre y Apellido"};
     String[]fila=new String[titulos.length];
     String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> '1'";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
@@ -241,9 +241,7 @@ public class EmpleadoDAO {
    
     while(rs.next()){
         fila[0]=rs.getString("id_empleado");
-        fila[1]=rs.getString("cedula");
-        fila[2]=rs.getString("primer_nombre");
-        fila[3]=rs.getString("primer_apellido");
+        fila[1]=rs.getString("primer_nombre") +" " + rs.getString("primer_apellido");
         model.addRow(fila);
     }
         } catch (SQLException e) {

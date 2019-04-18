@@ -206,7 +206,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 270));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 310));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,7 +224,7 @@ public class frmLogin extends javax.swing.JFrame {
                 coordinador.getFrmMenu().btnInscripcion.setEnabled(true);
                 coordinador.getFrmMenu().btnUsuario.setEnabled(true);
                 coordinador.getFrmMenu().btnNotas.setEnabled(true);
-                coordinador.getFrmMenu().btnSeccion.setEnabled(true);
+                //coordinador.getFrmMenu().btnSeccion.setEnabled(true);
                 coordinador.getFrmMenu().btnAsistencia.setEnabled(true);
                 coordinador.getFrmMenu().btnDocentes.setEnabled(true);
                 coordinador.getFrmMenu().btnReportes.setEnabled(true);
@@ -241,7 +241,7 @@ public class frmLogin extends javax.swing.JFrame {
                  coordinador.getFrmMenu().btnInscripcion.setEnabled(false);
                 coordinador.getFrmMenu().btnUsuario.setEnabled(false);
                 coordinador.getFrmMenu().btnNotas.setEnabled(false);
-                coordinador.getFrmMenu().btnSeccion.setEnabled(false);
+                //coordinador.getFrmMenu().btnSeccion.setEnabled(false);
                 coordinador.getFrmMenu().btnDocentes.setEnabled(false);
                 coordinador.getFrmMenu().btnReportes.setEnabled(false);
                 coordinador.getFrmMenu().btnPagos.setEnabled(false);

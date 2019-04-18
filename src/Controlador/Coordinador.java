@@ -295,8 +295,8 @@ public class Coordinador {
         return representanteDAO;
     }
     
-    public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
-        return getLogica().añadirListaAsistentes(tabla, tabla2, fila);
+    public DefaultTableModel añadirListaAsistentes(JTable tabla_origen, JTable tabla_destino, int fila) {
+        return getLogica().añadirListaAsistentes(tabla_origen, tabla_destino, fila);
     }
     
     public DefaultTableModel añadirListaGrupos(JTable tabla, JTable tabla2, int fila) {

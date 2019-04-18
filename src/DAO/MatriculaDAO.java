@@ -39,7 +39,7 @@ public class MatriculaDAO {
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
     conexion = conexiondb.getConnection();
-    String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+    String[]titulos={"ID","Nombre y Apellido"};
     String[]fila=new String[titulos.length];
     String sql="SELECT * FROM "+this.tabla+" INNER JOIN alumno ON matricula.id_alumno = alumno.id_alumno WHERE seccion = '"+seccion+"'";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
@@ -50,8 +50,7 @@ public class MatriculaDAO {
    
     while(rs.next()){
         fila[0]=rs.getString("id_alumno");
-        fila[1]=rs.getString("primer_nombre");
-        fila[2]=rs.getString("primer_apellido");
+        fila[1]=rs.getString("primer_nombre") + " " + rs.getString("primer_apellido");
         model.addRow(fila);
     }
     conexion.close();
@@ -67,9 +66,9 @@ public class MatriculaDAO {
     Connection conexion= null;
     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
     conexion = conexiondb.getConnection();
-    String[]titulos={"ID","Primer Nombre","Primer Apellido"};
+    String[]titulos={"ID","Nombre y Apellido","Seccion"};
     String[]fila=new String[titulos.length];
-    String sql="SELECT * FROM "+this.tabla+" INNER JOIN alumno ON matricula.id_alumno = alumno.id_alumno where matricula.seccion is null";
+    String sql="SELECT * FROM "+this.tabla+" INNER JOIN alumno ON matricula.id_alumno = alumno.id_alumno";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
     
     try {
@@ -78,8 +77,8 @@ public class MatriculaDAO {
    
     while(rs.next()){
         fila[0]=rs.getString("id_alumno");
-        fila[1]=rs.getString("primer_nombre");
-        fila[2]=rs.getString("primer_apellido");
+        fila[1]=rs.getString("primer_nombre") + " " +rs.getString("primer_apellido");
+        fila[2]= rs.getString("seccion");
         model.addRow(fila);
     }
     conexion.close();

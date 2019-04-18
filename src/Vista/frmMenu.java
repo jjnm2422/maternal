@@ -88,19 +88,18 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
-        btnAjustes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btnDocentes = new javax.swing.JButton();
         btnAsistencia = new javax.swing.JButton();
         btnReportes = new javax.swing.JButton();
-        btnPagos = new javax.swing.JButton();
+        btnAjustes = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnInscripcion = new javax.swing.JButton();
         btnUsuario = new javax.swing.JButton();
         btnNotas = new javax.swing.JButton();
-        btnSeccion = new javax.swing.JButton();
+        btnPagos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(69, 90, 100));
@@ -166,17 +165,6 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        btnAjustes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/apoyo-tecnico.png"))); // NOI18N
-        btnAjustes.setText("ajustes");
-        btnAjustes.setEnabled(false);
-        btnAjustes.setName("btnAjustes"); // NOI18N
-        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAjustesActionPerformed(evt);
-            }
-        });
-
         jLabel1.setBackground(new java.awt.Color(2, 119, 189));
         jLabel1.setOpaque(true);
 
@@ -189,30 +177,25 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAjustes, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAjustes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnCerrarSesion.getAccessibleContext().setAccessibleName("");
-        btnAjustes.getAccessibleContext().setAccessibleName("");
 
         jPanel5.setBackground(new java.awt.Color(2, 119, 189));
 
@@ -246,13 +229,14 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        btnPagos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tarjeta-de-debito(3).png"))); // NOI18N
-        btnPagos.setText("Pagos");
-        btnPagos.setEnabled(false);
-        btnPagos.addActionListener(new java.awt.event.ActionListener() {
+        btnAjustes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/apoyo-tecnico.png"))); // NOI18N
+        btnAjustes.setText("ajustes");
+        btnAjustes.setEnabled(false);
+        btnAjustes.setName("btnAjustes"); // NOI18N
+        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPagosActionPerformed(evt);
+                btnAjustesActionPerformed(evt);
             }
         });
 
@@ -268,7 +252,7 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPagos, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addComponent(btnAjustes, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -279,9 +263,11 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
                     .addComponent(btnDocentes)
                     .addComponent(btnAsistencia)
                     .addComponent(btnReportes)
-                    .addComponent(btnPagos))
+                    .addComponent(btnAjustes))
                 .addContainerGap())
         );
+
+        btnAjustes.getAccessibleContext().setAccessibleName("");
 
         jPanel6.setBackground(new java.awt.Color(2, 119, 189));
 
@@ -315,13 +301,13 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        btnSeccion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSeccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/carpeta.png"))); // NOI18N
-        btnSeccion.setText("Matricula");
-        btnSeccion.setEnabled(false);
-        btnSeccion.addActionListener(new java.awt.event.ActionListener() {
+        btnPagos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/tarjeta-de-debito(3).png"))); // NOI18N
+        btnPagos.setText("Pagos");
+        btnPagos.setEnabled(false);
+        btnPagos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeccionActionPerformed(evt);
+                btnPagosActionPerformed(evt);
             }
         });
 
@@ -337,7 +323,7 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNotas, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSeccion, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addComponent(btnPagos, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -347,7 +333,7 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnNotas)
-                        .addComponent(btnSeccion))
+                        .addComponent(btnPagos))
                     .addComponent(btnInscripcion)
                     .addComponent(btnUsuario))
                 .addContainerGap())
@@ -442,12 +428,6 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
                 throw new AssertionError();
         }
     }//GEN-LAST:event_btnAsistenciaActionPerformed
-
-    private void btnSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccionActionPerformed
-        coordinador.getFrmGrupos().setVisible(true);
-        coordinador.getFrmGrupos().lblUsuarioActvo.setText(lblUsuarioActvo.getText());
-        coordinador.getFrmGrupos().setLocationRelativeTo(this);
-    }//GEN-LAST:event_btnSeccionActionPerformed
 
     private void btnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionActionPerformed
         coordinador.getFrmInscripcion().lblTitulo.setText("INSCRIPCION DE ALUMNOS PERIODO: "+coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual());
@@ -544,7 +524,6 @@ public class frmMenu extends javax.swing.JFrame implements Runnable {
     public javax.swing.JButton btnNotas;
     public javax.swing.JButton btnPagos;
     public javax.swing.JButton btnReportes;
-    public javax.swing.JButton btnSeccion;
     public javax.swing.JButton btnUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

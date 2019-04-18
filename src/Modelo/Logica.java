@@ -29,18 +29,17 @@ public class Logica{
         this.coordinador = coordinador;
     }
 
-    public DefaultTableModel añadirListaAsistentes(JTable tabla, JTable tabla2, int fila) {
+    public DefaultTableModel añadirListaAsistentes(JTable tabla_origen, JTable tabla_destino, int fila) {
         /*inicio verifcacion de la cantidad*/
         String cantidad = "";
         boolean entrada = true;
-        //obtengo el modelo de la tabla 1 para escribir sobre el
-        DefaultTableModel model = (DefaultTableModel) tabla2.getModel();
+        //obtengo el modelo de la tabla para escribir sobre el
+        DefaultTableModel model = (DefaultTableModel) tabla_destino.getModel();
 
         String[] vector = new String[3];
         
-        vector[0] = tabla.getValueAt(fila, 0).toString();
-        vector[1] = tabla.getValueAt(fila, 1).toString();
-        vector[2] = tabla.getValueAt(fila, 2).toString();
+        vector[0] = tabla_origen.getValueAt(fila, 0).toString();
+        vector[1] = tabla_origen.getValueAt(fila, 1).toString();
         model.addRow(vector);
 
         return model;
@@ -86,7 +85,6 @@ public class Logica{
         
         vector[0] = tabla.getValueAt(fila, 0).toString();
         vector[1] = tabla.getValueAt(fila, 1).toString();
-        vector[2] = tabla.getValueAt(fila, 2).toString();
         model.addRow(vector);
 
         return model;
