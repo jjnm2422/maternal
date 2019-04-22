@@ -6,6 +6,8 @@
 package Vista;
 
 import Controlador.Coordinador;
+import VO.AlumnoVO;
+import VO.PagoVO;
 import VO.VariablesVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -29,6 +31,7 @@ public class frmAjustes extends javax.swing.JFrame {
     DefaultTableModel model;
     private String hora;
     private Coordinador coordinador;
+    private double CUOTA_OLD;
 
     public frmAjustes() {
         this.setlook();
@@ -115,6 +118,8 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo21 = new javax.swing.JLabel();
         lblTitulo22 = new javax.swing.JLabel();
         txtInscripcion = new javax.swing.JTextField();
+        lblTitulo23 = new javax.swing.JLabel();
+        cbxMesCobro = new javax.swing.JComboBox<>();
         lblTitulo15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -323,8 +328,8 @@ public class frmAjustes extends javax.swing.JFrame {
         lblTitulo22.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lblTitulo22.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTitulo22.setText("Precio Inscripcion");
-        jPanel1.add(lblTitulo22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 20));
+        lblTitulo22.setText("Mes Inicio de Cobro");
+        jPanel1.add(lblTitulo22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 140, 20));
 
         txtInscripcion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtInscripcion.setEnabled(false);
@@ -334,6 +339,16 @@ public class frmAjustes extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 100, -1));
+
+        lblTitulo23.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        lblTitulo23.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTitulo23.setText("Precio Inscripcion");
+        jPanel1.add(lblTitulo23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 20));
+
+        cbxMesCobro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        cbxMesCobro.setEnabled(false);
+        jPanel1.add(cbxMesCobro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 100, -1));
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 565, 370));
 
@@ -394,7 +409,34 @@ public class frmAjustes extends javax.swing.JFrame {
     if (verificacionCampos()) {
         VO.VariablesVO variablesVO = new VO.VariablesVO();
         variablesVO.setIva(Double.parseDouble(txtIva.getText().trim()));
-        variablesVO.setPrecio_cuota(Double.parseDouble(txtCuota.getText().trim()));
+        consultarCuotaVieja();
+        if (CUOTA_OLD == 0) {
+            variablesVO.setPrecio_cuota(Double.parseDouble(txtCuota.getText().trim()));
+            variablesVO.setCuota_old(Double.parseDouble(txtCuota.getText().trim()));
+            variablesVO.setMes_cambio(0);
+        }else if (CUOTA_OLD == Double.parseDouble(txtCuota.getText().trim())) {
+            //actualizo sin cuotas o dejo mismo precio
+            variablesVO.setCuota_old(coordinador.consultarVariables().getCuota_old());
+            variablesVO.setPrecio_cuota(coordinador.consultarVariables().getPrecio_cuota());
+            variablesVO.setMes_cambio(coordinador.consultarVariables().getMes_cambio());
+        } else if (CUOTA_OLD < Double.parseDouble(txtCuota.getText().trim())) { 
+            //consulto si aumento el precio de cuota
+            //hago cambio de cuota nueva a vieja y obtengo el cambio
+            variablesVO.setCuota_old(coordinador.consultarVariables().getPrecio_cuota());
+            variablesVO.setPrecio_cuota(Double.parseDouble(txtCuota.getText().trim()));
+            variablesVO.setMes_cambio(Integer.parseInt(coordinador.getLogica().getFechaFormateada().substring(3, 5)));
+            //actualizo todo los registros de pago por que hubo un cambio de precio
+            actualizarPagosAlumnos(variablesVO);
+            //cambio el estado a todos los alumnos a no disponible
+            coordinador.actualizarEstatusAlumno(false);
+            System.out.println(coordinador.getPagoDAO().getCuotasPagadas("1234567-1"));
+            System.out.println(coordinador.getPagoDAO().getCuotasPendientes("1234567-1"));
+        }
+        
+            System.out.println(coordinador.getPagoDAO().getCuotasPagadas("1234567-1"));
+            System.out.println(coordinador.getPagoDAO().getCuotasPendientes("1234567-1"));
+            System.out.println(coordinador.getPagoDAO().getPorPagar("1234567-1"));
+        
         variablesVO.setPrecio_mora(Double.parseDouble(txtMora.getText().trim()));
         variablesVO.setDias_mora(Integer.parseInt(txtDiasmora.getText().trim()));
         variablesVO.setLimite_alumno(Integer.parseInt(txtLimite.getText().trim()));
@@ -402,6 +444,7 @@ public class frmAjustes extends javax.swing.JFrame {
         variablesVO.setUbicacion_reporte(txtRuta.getText());
         variablesVO.setPeriodo_actual(cbxPeriodo.getSelectedItem().toString());
         variablesVO.setPrecio_inscripcion(Double.parseDouble(txtInscripcion.getText().trim()));
+        variablesVO.setMes_cobro(cbxMesCobro.getSelectedIndex()+1);
         String respuesta = coordinador.actualizarVariables(variablesVO);
         if (respuesta.equals("UPDATE")) {
             coordinador.getLogica().mensajeCorrecto("Datos guardados con exito");
@@ -411,7 +454,7 @@ public class frmAjustes extends javax.swing.JFrame {
         desactivarCampos();
         llenarCampos();            
     } else {
-        coordinador.getLogica().mensajeAdvertencia("Faltan Campos por llenar");
+        coordinador.getLogica().mensajeAdvertencia("Verifique los campos, si actualizó el precio de la cuota mensual, este debe ser mayor que el anterior.");
     }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -471,6 +514,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     private javax.swing.JButton btnRestaurar;
     private javax.swing.JButton btnRuta;
     private javax.swing.JButton btnSalir2;
+    private javax.swing.JComboBox<String> cbxMesCobro;
     public javax.swing.JComboBox<String> cbxPeriodo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
@@ -483,6 +527,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     private javax.swing.JLabel lblTitulo20;
     private javax.swing.JLabel lblTitulo21;
     private javax.swing.JLabel lblTitulo22;
+    private javax.swing.JLabel lblTitulo23;
     private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTitulo4;
     public javax.swing.JLabel lblUsuarioActvo;
@@ -503,6 +548,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     public void llenarCampos(){
         VariablesVO variablesVO = coordinador.consultarVariables();
         txtCuota.setText(String.valueOf(variablesVO.getPrecio_cuota()));
+        consultarCuotaVieja();
         txtIva.setText(String.valueOf(variablesVO.getIva()));
         txtRuta.setText(String.valueOf(variablesVO.getUbicacion_reporte()));
         txtLimite.setText(String.valueOf(variablesVO.getLimite_alumno()));
@@ -511,10 +557,12 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
         txtDiasmora.setText(String.valueOf(variablesVO.getDias_mora()));
         cbxPeriodo.setSelectedItem(variablesVO.getPeriodo_actual());
         txtInscripcion.setText(String.valueOf(variablesVO.getPrecio_inscripcion()));
+        cbxMesCobro.setSelectedIndex(variablesVO.getMes_cobro()-1);
     }
 
     private void activarCampos() {
        txtCuota.setEnabled(true);
+       cbxMesCobro.setEnabled(true);
        txtIva.setEnabled(true);
        btnRuta.setEnabled(true);
        txtLimite.setEnabled(true);
@@ -550,6 +598,7 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     }
     
     private void desactivarCampos() {
+       cbxMesCobro.setEnabled(false);
        txtCuota.setEnabled(false);
        txtIva.setEnabled(false);
        btnRuta.setEnabled(false);
@@ -562,7 +611,28 @@ validacionSoloNumeros(evt, 15, txtIva.getText().length());
     }
 
     private boolean verificacionCampos() {
-        return !txtCuota.getText().isEmpty() && !txtIva.getText().isEmpty() && !txtLimite.getText().isEmpty()
-                && !txtMora.getText().isEmpty() && !txtDiasmora.getText().isEmpty();
+        if (txtCuota.getText().isEmpty() || txtIva.getText().isEmpty() || txtLimite.getText().isEmpty()
+                || txtMora.getText().isEmpty() || txtDiasmora.getText().isEmpty() || txtSeguro.getText().isEmpty() || txtInscripcion.getText().isEmpty()){
+            return false;
+        }
+        if (CUOTA_OLD > Double.parseDouble(txtCuota.getText().trim())) {
+            return false;
+        }
+        if (Double.parseDouble(txtCuota.getText()) <= 0 || Double.parseDouble(txtIva.getText()) <= 0 || Double.parseDouble(txtLimite.getText()) <= 0
+                || Double.parseDouble(txtMora.getText()) <= 0 || Double.parseDouble(txtDiasmora.getText()) <= 0 || Double.parseDouble(txtSeguro.getText()) <= 0
+                || Double.parseDouble(txtInscripcion.getText()) <= 0){
+            return false;
+        }
+        
+        return true;
+    }
+
+    private void consultarCuotaVieja() {
+        CUOTA_OLD = coordinador.consultarVariables().getPrecio_cuota();
+    }
+
+    private void actualizarPagosAlumnos(VariablesVO variablesVO) {
+        
+        coordinador.getPagoDAO().actualizarPagoAumento(variablesVO.getMes_cambio(), variablesVO.getPrecio_cuota()-variablesVO.getCuota_old());  
     }
 }

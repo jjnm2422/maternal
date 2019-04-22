@@ -58,6 +58,9 @@ public class VariablesDAO {
                     variablesVO.setPrecio_cuota(result.getDouble("precio_cuota"));
                     variablesVO.setPrecio_mora(result.getDouble("precio_mora"));
                     variablesVO.setPrecio_inscripcion(result.getDouble("precio_inscripcion"));
+                    variablesVO.setCuota_old(result.getDouble("cuota_old"));
+                    variablesVO.setMes_cambio(result.getInt("mes_cambio"));
+                    variablesVO.setMes_cobro(result.getInt("mes_cobro"));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(VariablesDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -88,7 +91,7 @@ public class VariablesDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=?, precio_inscripcion=? where id_variable= '0'";
+        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=?, precio_inscripcion=?, cuota_old=?, mes_cambio=?, mes_cobro=? where id_variable= '0'";
 
         if (conexion != null) {
             try {
@@ -102,6 +105,9 @@ public class VariablesDAO {
                 ps.setDouble(7, variablesVO.getDias_mora());
                 ps.setString(8, variablesVO.getPeriodo_actual());
                 ps.setDouble(9, variablesVO.getPrecio_inscripcion());
+                ps.setDouble(10, variablesVO.getCuota_old());
+                ps.setInt(11, variablesVO.getMes_cambio());
+                ps.setInt(12, variablesVO.getMes_cobro());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "UPDATE";

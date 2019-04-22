@@ -11,29 +11,51 @@ package VO;
  */
 public class PagoVO {
     private int id_pago;
-    private double saldo_favor, saldo_pendiente, total_pagado;
-    private String periodo, cuotas[], id_alumno;
-    
+    private double saldo;
+    private Double pago[], pagado;
+    private String id_alumno, periodo;
 
     public PagoVO() {
     }
 
-    public PagoVO(int id_pago, String id_alumno, double saldo_favor, double saldo_pendiente, double total_pagado, String periodo, String[] cuotas) {
+    public PagoVO(int id_pago, double saldo, Double[] pago, String id_alumno, String periodo) {
         this.id_pago = id_pago;
+        this.saldo = saldo;
+        this.pago = pago;
         this.id_alumno = id_alumno;
-        this.saldo_favor = saldo_favor;
-        this.saldo_pendiente = saldo_pendiente;
-        this.total_pagado = total_pagado;
         this.periodo = periodo;
-        this.cuotas = cuotas;
     }
 
     public int getId_pago() {
         return id_pago;
     }
 
+    public Double getPagado() {
+        return pagado;
+    }
+
+    public void setPagado(Double pagado) {
+        this.pagado = pagado;
+    }
+
     public void setId_pago(int id_pago) {
         this.id_pago = id_pago;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public Double[] getPago() {
+        return pago;
+    }
+
+    public void setPago(Double[] pago) {
+        this.pago = pago;
     }
 
     public String getId_alumno() {
@@ -44,30 +66,6 @@ public class PagoVO {
         this.id_alumno = id_alumno;
     }
 
-    public double getSaldo_favor() {
-        return saldo_favor;
-    }
-
-    public void setSaldo_favor(double saldo_favor) {
-        this.saldo_favor = saldo_favor;
-    }
-
-    public double getSaldo_pendiente() {
-        return saldo_pendiente;
-    }
-
-    public void setSaldo_pendiente(double saldo_pendiente) {
-        this.saldo_pendiente = saldo_pendiente;
-    }
-
-    public double getTotal_pagado() {
-        return total_pagado;
-    }
-
-    public void setTotal_pagado(double total_pagado) {
-        this.total_pagado = total_pagado;
-    }
-
     public String getPeriodo() {
         return periodo;
     }
@@ -76,12 +74,8 @@ public class PagoVO {
         this.periodo = periodo;
     }
 
-    public String[] getCuotas() {
-        return cuotas;
+    @Override
+    public String toString() {
+        return "PagoVO{" + "id_pago=" + id_pago + ", saldo=" + saldo + ", pago=" + pago + ", id_alumno=" + id_alumno + ", periodo=" + periodo + '}';
     }
-
-    public void setCuotas(String[] cuotas) {
-        this.cuotas = cuotas;
-    }
-
 }

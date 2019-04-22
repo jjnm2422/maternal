@@ -75,6 +75,8 @@ public class AlumnoDAO {
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
                 }
+                            conexion.close();
+            ps.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 respuesta = ex.getMessage();
@@ -131,6 +133,7 @@ public class AlumnoDAO {
                     }
                     alumnoVO.setEstatus(result.getBoolean("estatus"));
                 }
+                conexion.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
@@ -155,8 +158,10 @@ public class AlumnoDAO {
                 st = conexion.createStatement();
                 int n= st.executeUpdate(sql);
                 if (n>0) {
+                    conexion.close();
                     return "ELIMINADO";
                 }else{
+                    conexion.close();
                     return "NO ELIMINADO";
                 }
             } catch (SQLException ex) {
@@ -217,6 +222,35 @@ public class AlumnoDAO {
         }
     }
     
+    public String actualizarEstatusAlumno(boolean estatus) {
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE " + this.tabla + " SET estatus=? ";
+
+        if (conexion != null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setBoolean(1, estatus);
+ 
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                }
+                conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
+    
     public String actualizarAlumnoSinFoto(VO.AlumnoVO alumnoVO, String id) {
         Statement st = null;
         String respuesta = "";
@@ -248,6 +282,8 @@ public class AlumnoDAO {
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
                 }
+                            conexion.close();
+            st.close();
             } catch (SQLException ex) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 respuesta = ex.getMessage();
@@ -274,6 +310,7 @@ public class AlumnoDAO {
             }
             valor+=1;
             conexion.close();
+            st.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -301,6 +338,9 @@ public class AlumnoDAO {
                 model.addRow(fila);
                 encontrado = true;
             }
+            conexion.close();
+            rs.close();
+            st.close();
 //            if (encontrado == false) {
 //                JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
 //                return model = null;
@@ -309,6 +349,42 @@ public class AlumnoDAO {
             JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
             return model = null;
         }
+        return model;
+    }
+    
+        public DefaultTableModel consultarAlumnosTablaPago(String cedula_representante, String nombre) {
+        boolean encontrado = false;
+        Statement st = null;
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String[] titulos = {"Codigo", "Nombre y Apellido"};
+        String[] fila = new String[titulos.length];
+        String sql = "SELECT * FROM alumno WHERE (id_alumno like '%"+cedula_representante+"%' or primer_nombre like '%"+nombre+"%')";
+        DefaultTableModel model = new DefaultTableModel(null, titulos);
+
+        try {
+            st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                fila[0] = rs.getString("id_alumno");
+                fila[1] = rs.getString("primer_nombre") + " " +rs.getString("primer_apellido");
+                model.addRow(fila);
+                encontrado = true;
+            }
+//            if (encontrado == false) {
+//                JOptionPane.showMessageDialog(null, " La cedula ingresada no esta registrada ", null, JOptionPane.ERROR_MESSAGE);
+//                return model = null;
+//            }
+            conexion.close();
+            rs.close();
+            st.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar ", null, JOptionPane.ERROR_MESSAGE);
+            return model = null;
+        }
+        
         return model;
     }
 

@@ -10,7 +10,7 @@ package VO;
  * @author acjj
  */
 public class RegistroPagoVO {
-    private  String numero_registro, tipo_pago, numero_transaccion, fecha_comprobante, banco_emisor, numero_referencia, fecha_ejecucion, fecha, depositante;
+    private  String numero_registro, tipo_pago, numero_transaccion, fecha_comprobante, banco_emisor, numero_referencia, fecha_ejecucion, fecha, depositante, concepto;
     private int id_registro, id_pago;
     private double  monto;
     
@@ -36,6 +36,14 @@ public class RegistroPagoVO {
         return depositante;
     }
 
+    public String getConcepto() {
+        return concepto;
+    }
+
+    public void setConcepto(String concepto) {
+        this.concepto = concepto;
+    }
+    
     public void setDepositante(String depositante) {
         this.depositante = depositante;
     }

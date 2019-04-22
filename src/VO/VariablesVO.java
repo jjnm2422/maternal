@@ -8,18 +8,19 @@ package VO;
 
 /**
  * 
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author jjnm
  */
 public class VariablesVO {
     
-    private int id_variable, dias_mora, limite_alumno;
+    private int id_variable, dias_mora, limite_alumno, mes_cambio, mes_cobro;
     private String ubicacion_reporte, periodo_actual;
-    private double iva, precio_cuota, precio_mora, seguro, precio_inscripcion;
+    private double iva, precio_cuota, precio_mora, seguro, precio_inscripcion, cuota_old;
 
-    public VariablesVO(int id_variable, int dias_mora, int limite_alumno, String ubicacion_reporte, String periodo_actual, double iva, double precio_cuota, double precio_mora, double seguro, double precio_inscripcion) {
+    public VariablesVO(int id_variable, int dias_mora, int limite_alumno, int mes_cambio, String ubicacion_reporte, String periodo_actual, double iva, double precio_cuota, double precio_mora, double seguro, double precio_inscripcion, double cuota_old) {
         this.id_variable = id_variable;
         this.dias_mora = dias_mora;
         this.limite_alumno = limite_alumno;
+        this.mes_cambio = mes_cambio;
         this.ubicacion_reporte = ubicacion_reporte;
         this.periodo_actual = periodo_actual;
         this.iva = iva;
@@ -27,6 +28,31 @@ public class VariablesVO {
         this.precio_mora = precio_mora;
         this.seguro = seguro;
         this.precio_inscripcion = precio_inscripcion;
+        this.cuota_old = cuota_old;
+    }
+
+    public int getMes_cobro() {
+        return mes_cobro;
+    }
+
+    public void setMes_cobro(int mes_cobro) {
+        this.mes_cobro = mes_cobro;
+    }
+
+    public int getMes_cambio() {
+        return mes_cambio;
+    }
+
+    public void setMes_cambio(int mes_cambio) {
+        this.mes_cambio = mes_cambio;
+    }
+
+    public double getCuota_old() {
+        return cuota_old;
+    }
+
+    public void setCuota_old(double cuota_old) {
+        this.cuota_old = cuota_old;
     }
 
     public double getPrecio_inscripcion() {

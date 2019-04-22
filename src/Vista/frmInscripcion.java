@@ -2395,7 +2395,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusquedaKeyPressed
 
     private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
-    tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText(), txtBusqueda.getText()));
+    tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText().toUpperCase(), txtBusqueda.getText().toUpperCase()));
     }//GEN-LAST:event_txtBusquedaKeyReleased
 
     private void rbnMaternalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnMaternalActionPerformed
@@ -2472,7 +2472,7 @@ public class frmInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusqueda1KeyPressed
 
     private void txtBusqueda1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyReleased
-    tblBusqueda1.setModel(coordinador.consultarRepresentanteTabla(txtBusqueda1.getText()));
+    tblBusqueda1.setModel(coordinador.consultarRepresentanteTabla(txtBusqueda1.getText().toUpperCase()));
     }//GEN-LAST:event_txtBusqueda1KeyReleased
 
     private void txtBusqueda1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyTyped

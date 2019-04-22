@@ -101,10 +101,13 @@ public class Coordinador {
        public VO.MatriculaVO consultarMatriculaPorAlumno(String parametro) {
           return  getMatriculaDAO().consultarMatriculaPorAlumno(parametro);
        }
+       public String actualizarEstatusAlumno(boolean estatus) {
+           return getAlumnoDAO().actualizarEstatusAlumno(estatus);
+       }
        
-          public String actualizarPago(VO.PagoVO pagoVO, int id) {
-              return getPagoDAO().actualizarPago(pagoVO, id);
-          }
+        public String actualizarPago(VO.PagoVO pagoVO, String id) {
+            return getPagoDAO().actualizarPago(pagoVO, id);
+        }
        
        public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
            return getEmpleadoDAO().consultarEmpleadosCedulaTabla(cedula);
@@ -261,6 +264,9 @@ public class Coordinador {
     
     public DefaultTableModel consultarAlumnosTabla(String cedula_representante, String nombre){
         return getAlumnoDAO().consultarAlumnosTabla(cedula_representante, nombre);
+    }
+    public DefaultTableModel consultarAlumnosTablaPago(String cedula_representante, String nombre) {
+        return getAlumnoDAO().consultarAlumnosTablaPago(cedula_representante, nombre);
     }
     
     public Date getFecha(){
@@ -477,6 +483,10 @@ public class Coordinador {
      public VO.VariablesVO consultarVariables() {
          return getVariablesDAO().consultarVariables();
      }
+     
+      public String actualizarPagoAumento(int mes_cambio, double precio_cuota) {
+          return getPagoDAO().actualizarPagoAumento(mes_cambio, precio_cuota);
+      }
 
     public String actualizarAlumnoSinFoto(AlumnoVO alumnoVO, String id) {
         return getAlumnoDAO().actualizarAlumnoSinFoto(alumnoVO, id);

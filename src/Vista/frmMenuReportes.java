@@ -1479,35 +1479,35 @@ public class frmMenuReportes extends javax.swing.JFrame {
          * pagos consulta
          */
         PagoVO consultarPago = coordinador.getPagoDAO().consultarPago(id);
-        if (consultarPago.getCuotas() != null) {
+        if (consultarPago.getPago()!= null) {
 
             //asigno valores desde la bd a datos locales para hacer calculos
 
-            if(Boolean.valueOf(consultarPago.getCuotas()[8])){
-                return "septiembre";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[9])){
-                return "octubre";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[10])){
-                return "noviembre";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[11])){
-                return "diciembre";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[0])){
-                return "enero";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[1])){
-                return "febrero";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[2])){
-                return "marzo";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[3])){
-                return "abril";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[4])){
-                return "mayo";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[5])){
-                return "junio";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[6])){
-                return "julio";
-            }else if(Boolean.valueOf(consultarPago.getCuotas()[7])){
-                return "agosto";
-            }
+//            if(Boolean.valueOf(consultarPago.getPago()[8])){
+//                return "septiembre";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[9])){
+//                return "octubre";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[10])){
+//                return "noviembre";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[11])){
+//                return "diciembre";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[0])){
+//                return "enero";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[1])){
+//                return "febrero";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[2])){
+//                return "marzo";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[3])){
+//                return "abril";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[4])){
+//                return "mayo";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[5])){
+//                return "junio";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[6])){
+//                return "julio";
+//            }else if(Boolean.valueOf(consultarPago.getPago()[7])){
+//                return "agosto";
+//            }
             return "";
         }else{
             coordinador.getLogica().mensajeError("Alumno sin pagos procesados");

@@ -39,7 +39,7 @@ public class RegistroPagoDAO {
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
 
-        String sql = "INSERT INTO "+this.tabla+"(numero_registro, tipo_pago, numero_transaccion, fecha_comprobante, banco_emisor, numero_referencia, fecha_ejecucion, fecha, monto, id_pago, depositante) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO "+this.tabla+"(numero_registro, tipo_pago, numero_transaccion, fecha_comprobante, banco_emisor, numero_referencia, fecha_ejecucion, fecha, monto, id_pago, depositante, concepto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
         if (conexion != null) {
             try {
                 ps = conexion.prepareCall(sql);
@@ -54,6 +54,7 @@ public class RegistroPagoDAO {
                 ps.setDouble(9, registroPagoVO.getMonto());
                 ps.setInt(10, registroPagoVO.getId_pago());
                 ps.setString(11, registroPagoVO.getDepositante());
+                ps.setString(12, registroPagoVO.getDepositante());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
@@ -97,6 +98,7 @@ public class RegistroPagoDAO {
                  registroPagoVO.setMonto(result.getDouble("monto"));
                 registroPagoVO.setId_pago(result.getInt("id_pago"));
                 registroPagoVO.setId_registro(result.getInt("id_registro"));
+                registroPagoVO.setConcepto(result.getString("concepto"));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(RegistroPagoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -141,7 +143,7 @@ public class RegistroPagoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET numero_registro=?, tipo_pago=?, numero_transaccion=?, fecha_comprobante=?, banco_emisor=?, numero_referencia=?, fecha_ejecucion=?, fecha=?, monto=?, id_pago=?, depositante=? where id_registro= " + id  ;
+        String sql = "UPDATE " + this.tabla + " SET numero_registro=?, tipo_pago=?, numero_transaccion=?, fecha_comprobante=?, banco_emisor=?, numero_referencia=?, fecha_ejecucion=?, fecha=?, monto=?, id_pago=?, depositante=?, concepto=? where id_registro= " + id  ;
 
             try {
                  PreparedStatement ps = conexion.prepareStatement(sql);
@@ -156,6 +158,7 @@ public class RegistroPagoDAO {
                 ps.setDouble(9, registroPagoVO.getMonto());
                 ps.setInt(10, registroPagoVO.getId_pago());
                 ps.setString(11, registroPagoVO.getDepositante());
+                ps.setString(12, registroPagoVO.getConcepto());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

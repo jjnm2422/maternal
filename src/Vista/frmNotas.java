@@ -2570,7 +2570,7 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusquedaKeyPressed
 
     private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
-        tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText(), txtBusqueda.getText()));
+        tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText().toUpperCase(), txtBusqueda.getText().toUpperCase()));
     }//GEN-LAST:event_txtBusquedaKeyReleased
 
     private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
