@@ -54,7 +54,7 @@ public class RegistroPagoDAO {
                 ps.setDouble(9, registroPagoVO.getMonto());
                 ps.setInt(10, registroPagoVO.getId_pago());
                 ps.setString(11, registroPagoVO.getDepositante());
-                ps.setString(12, registroPagoVO.getDepositante());
+                ps.setString(12, registroPagoVO.getConcepto());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";

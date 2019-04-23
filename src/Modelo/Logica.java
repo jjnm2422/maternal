@@ -131,7 +131,7 @@ public class Logica{
     
     public boolean validacionSoloNumerosYPunto(String entrada){
         //solo permito - _ . y letras y numeros
-        return entrada.matches("[0123456789.]");
+        return entrada.matches("[0123456789.\\s]");
     }
     
     public boolean validacionSoloLetras(String entrada){
