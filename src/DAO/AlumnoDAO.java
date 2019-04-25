@@ -251,6 +251,36 @@ public class AlumnoDAO {
         }
     }
     
+        public String actualizarEstatusAlumno(String id_alumno, boolean estatus) {
+        Statement st = null;
+        String respuesta = "";
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        conexion = conexiondb.getConnection();
+        String sql = "UPDATE " + this.tabla + " SET estatus=? where id_alumno = ?";
+
+        if (conexion != null) {
+            try {
+                PreparedStatement ps = conexion.prepareStatement(sql);
+                ps.setBoolean(1, estatus);
+                ps.setString(1, id_alumno);
+ 
+                int n = ps.executeUpdate();
+                if (n > 0) {
+                    respuesta = "DATOS ACTUALIZADOS";
+                }
+                conexion.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
+                respuesta = ex.getMessage();
+            }
+            return respuesta;
+        } else {
+            return "ERROR AL CONECTAR CON BD";
+        }
+    }
+    
     public String actualizarAlumnoSinFoto(VO.AlumnoVO alumnoVO, String id) {
         Statement st = null;
         String respuesta = "";

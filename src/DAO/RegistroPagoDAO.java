@@ -110,6 +110,36 @@ public class RegistroPagoDAO {
             return null;
         }
     }
+        
+    public boolean isInscrito(String id_alumno, String motivo) {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        VO.RegistroPagoVO registroPagoVO = new VO.RegistroPagoVO();
+        boolean inscrito = false;
+        conexion = conexiondb.getConnection();
+
+        if (conexion != null) {
+            String sql = "SELECT * FROM registro_pago INNER JOIN pago ON registro_pago.id_pago = pago.id_pago"
+                    + " AND concepto like '%"+motivo+"%' AND pago.id_alumno = '"+id_alumno+"'";
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                while (result.next() == true) {
+                    inscrito = true;
+                    break;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(RegistroPagoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return inscrito;
+        } else {
+            conexiondb.desconexion();
+            return false;
+        }
+    }
     
 
     public String eliminarRegistroPago(String id) {

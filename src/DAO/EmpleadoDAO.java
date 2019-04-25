@@ -137,12 +137,14 @@ public class EmpleadoDAO {
         if (conexion!=null) {
              try {
             st = conexion.createStatement();
-            if (st.execute(sql)) {
-                return "ELIMINADO";
-            } else {
-                return "NO ELIMINADO";
-            }   
+                int n= st.executeUpdate(sql);
+                if (n>0) {
+                    return "ELIMINADO";
+                }else{
+                    return "NO ELIMINADO";
+                }  
         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
             Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return "NO ELIMINADO";
         }  
@@ -259,6 +261,34 @@ public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
     String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
     String[]fila=new String[titulos.length];
     String sql="SELECT * FROM "+this.tabla+ " where id_empleado <> '1' and cedula = '"+cedula+"'";
+    DefaultTableModel model = new DefaultTableModel(null,titulos);
+    
+    try {
+    st=conexion.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   
+    while(rs.next()){
+        fila[0]=rs.getString("id_empleado");
+        fila[1]=rs.getString("cedula");
+        fila[2]=rs.getString("primer_nombre");
+        fila[3]=rs.getString("primer_apellido");
+        model.addRow(fila);
+    }
+        } catch (SQLException e) {
+           JOptionPane.showMessageDialog(null, " Ha ocurrido un error al consultar "+e.getMessage(), null, JOptionPane.ERROR_MESSAGE);
+           return model = null;
+        }
+    return model;
+}
+
+public DefaultTableModel consultarEmpleadosCedulaONombreTabla(String cedula){
+    Statement st = null;
+    Connection conexion= null;
+    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+    conexion = conexiondb.getConnection();
+    String[]titulos={"ID","Cedula","Primer Nombre","Primer Apellido"};
+    String[]fila=new String[titulos.length];
+    String sql="SELECT * FROM "+this.tabla+ " where (id_empleado <> '1' or primer_nombre <> 'admin') and (cedula like '%"+cedula+"%' " +" or primer_nombre like '%"+cedula+"%')";
     DefaultTableModel model = new DefaultTableModel(null,titulos);
     
     try {

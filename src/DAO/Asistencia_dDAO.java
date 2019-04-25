@@ -96,7 +96,7 @@ public class Asistencia_dDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "DELETE FROM "+this.tabla+" WHERE id_empleado= "+id_empleado;
+        String sql = "DELETE FROM "+this.tabla+" WHERE id_empleado= '"+id_empleado+"'";
         if (conexion!=null) {
              try {
             st = conexion.createStatement();

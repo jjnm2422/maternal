@@ -7,6 +7,8 @@ package Vista;
 
 import Controlador.Coordinador;
 import VO.AlumnoVO;
+import VO.NotaVO;
+import VO.PagoVO;
 import VO.RepresentanteVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -102,6 +104,7 @@ public class frmNotas extends javax.swing.JFrame {
         lblfoto = new javax.swing.JLabel();
         cbxLapso = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
+        btnBorrarA = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jComboBox10 = new javax.swing.JComboBox<>();
         jComboBox11 = new javax.swing.JComboBox<>();
@@ -260,6 +263,7 @@ public class frmNotas extends javax.swing.JFrame {
         lblfoto1 = new javax.swing.JLabel();
         cbxLapso1 = new javax.swing.JComboBox<>();
         jLabel81 = new javax.swing.JLabel();
+        btnBorrarA1 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jComboBox72 = new javax.swing.JComboBox<>();
         jComboBox73 = new javax.swing.JComboBox<>();
@@ -614,7 +618,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 100, 30));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 110, 30));
 
         btnConsultar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar16.png"))); // NOI18N
@@ -656,7 +660,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnSiguiente1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 120, 30));
+        jPanel2.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 120, 30));
 
         lblfoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -670,6 +674,16 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Lapso");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 80, 20));
+
+        btnBorrarA.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrarA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarA.setText("Limpiar");
+        btnBorrarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarAActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnBorrarA, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 110, 30));
 
         jTabbedPane1.addTab("Indicadores", jPanel2);
 
@@ -1510,7 +1524,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnSalir1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 530, 100, 30));
+        jPanel4.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 110, 30));
 
         btnConsultar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         btnConsultar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar16.png"))); // NOI18N
@@ -1552,7 +1566,7 @@ public class frmNotas extends javax.swing.JFrame {
                 btnSiguiente5ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnSiguiente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 120, 30));
+        jPanel4.add(btnSiguiente5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, -1, 30));
 
         lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1566,6 +1580,16 @@ public class frmNotas extends javax.swing.JFrame {
         jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel81.setText("Lapso");
         jPanel4.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 120, 20));
+
+        btnBorrarA1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrarA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrarA1.setText("Limpiar");
+        btnBorrarA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarA1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnBorrarA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, 110, 30));
 
         jTabbedPane3.addTab("Indicadores", jPanel4);
 
@@ -2331,6 +2355,10 @@ public class frmNotas extends javax.swing.JFrame {
                     case 3:
                         habilitarBotones(false);
                         coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:" + alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido() + "\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
+                        //compruebo que este solvente si lo esta cambio a el estatus a true si no cambio false
+                        if (verificarSolvencia(codigo)) {
+                            coordinador.actualizarEstatusAlumno(alumnoVO.getId_alumno(),true);
+                        }
                         inicializarBotones();
                         break;
                     default:
@@ -2401,13 +2429,16 @@ public class frmNotas extends javax.swing.JFrame {
 
     private void btnGuardar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar5ActionPerformed
         if (!txtConsultar.getText().isEmpty()) {
-            String respuesta = coordinador.getNotaDAO().registrarNota(obtenerDatos());
+            NotaVO datos = obtenerDatos();
+            String respuesta = coordinador.getNotaDAO().registrarNota(datos);
             if (respuesta.equals("INSERT")) {
                 coordinador.getLogica().mensajeCorrecto("Notas guardada con exito");
                 //compruebo que sea el ultimo lapso y cambio el estatus del alumno comprobando el pago
                 if (cbxLapso.getSelectedIndex() == 2) {
-                    //compruebo que este solvente si lo esta cambio a el estatus a true si cambio false
-                    throw new UnsupportedOperationException("Falta cambiar estado");
+                    //compruebo que este solvente si lo esta cambio a el estatus a true si no cambio false
+                    if (verificarSolvencia(datos.getId_alumno())) {
+                        coordinador.actualizarEstatusAlumno(datos.getId_alumno(),true);
+                    }
                 }
             } else {
                 coordinador.getLogica().mensajeError("Error al guardar Notas");
@@ -2570,7 +2601,7 @@ public class frmNotas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusquedaKeyPressed
 
     private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
-        tblBusqueda.setModel(coordinador.consultarAlumnosTabla(txtBusqueda.getText().toUpperCase(), txtBusqueda.getText().toUpperCase()));
+        tblBusqueda.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda.getText().toUpperCase(), txtBusqueda.getText().toUpperCase()));
     }//GEN-LAST:event_txtBusquedaKeyReleased
 
     private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
@@ -2634,6 +2665,10 @@ public class frmNotas extends javax.swing.JFrame {
                     case 3:
                         habilitarBotones(false);
                         coordinador.getLogica().mensajeAdvertencia("Las notas del alumno:" + alumnoVO.getPrimer_nombre() + " " + alumnoVO.getPrimer_apellido() + "\nFueron establecidas para el periodo actual. Por favor seleccione otro alumno");
+                        //compruebo que este solvente si lo esta cambio a el estatus a true si no cambio false
+                        if (verificarSolvencia(alumnoVO.getId_alumno())) {
+                            coordinador.actualizarEstatusAlumno(alumnoVO.getId_alumno(),true);
+                        }
                         inicializarBotones();
                         break;
                     default:
@@ -2668,6 +2703,16 @@ public class frmNotas extends javax.swing.JFrame {
             coordinador.getLogica().mensajeError("Por favor seleccione un registro");
         }
     }//GEN-LAST:event_btnSeleccionActionPerformed
+
+    private void btnBorrarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarAActionPerformed
+        inicializarBotones();
+        txtConsultar.setText("");
+    }//GEN-LAST:event_btnBorrarAActionPerformed
+
+    private void btnBorrarA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarA1ActionPerformed
+        inicializarBotones2();
+        txtConsultar.setText("");
+    }//GEN-LAST:event_btnBorrarA1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2706,6 +2751,8 @@ public class frmNotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBorrarA;
+    private javax.swing.JButton btnBorrarA1;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnConsultar1;
     private javax.swing.JButton btnGuardar5;
@@ -3423,6 +3470,22 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox122.setEnabled(valor);
         jComboBox123.setEnabled(valor);
         jComboBox124.setEnabled(valor);
+    }
+    
+    private boolean verificarSolvencia(String id_alumno) {
+        PagoVO pagoVO = coordinador.consultarPago(id_alumno);
+        int contadorCuotas = 0;
+        if (pagoVO.getPago() != null) {
+            for (int i = 0; i < pagoVO.getPago().length; i++) {
+                if (pagoVO.getPago()[i] == 0) {
+                    contadorCuotas++;
+                }
+            }
+            if (contadorCuotas == 12) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private VO.NotaVO obtenerDatos2() {

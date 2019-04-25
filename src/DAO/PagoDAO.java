@@ -418,18 +418,25 @@ public class PagoDAO {
 //                    pago[j] += precio_cuota;   
 //                }
                 
-//                if (mes_cambio-1 > mesCobro) {
-                    int j = 0;
-                    // del mes de cambio hasta diciembre
-                    for (j = (mes_cambio-1); j < pago.length; j++) {
+                if (mesCobro > mes_cambio-1) {
+                    for (int j = (mes_cambio-1); j < mesCobro; j++) {
                     pago[j] += precio_cuota;   
                     }
-                    //desde enero hasta el mes de cobro
-                    for (j = 0; j < mesCobro-1; j++) {
-                        pago[j] += precio_cuota; 
+                }else if (mesCobro < mes_cambio-1){
+                    for (int j = (mes_cambio-1); j < pago.length; j++) {
+                    pago[j] += precio_cuota;   
                     }
-//                }
-                
+                    for (int j = 0; j < mesCobro; j++) {
+                    pago[j] += precio_cuota;   
+                    }
+                }else {
+                    for (int j = (mes_cambio-1); j < pago.length; j++) {
+                    pago[j] += precio_cuota;   
+                    }
+                    for (int j = 0; j < mesCobro; j++) {
+                    pago[j] += precio_cuota;   
+                    }
+                }
                 Array arrayPago = conexion.createArrayOf("float8", pago);
                 //actualizo registro
                 String sql = "UPDATE " + this.tabla + " SET saldo=?, periodo=?, pago=? where id_alumno= ?";

@@ -84,7 +84,7 @@ public class NotaDAO {
         conexion = conexiondb.getConnection();
 
         if (conexion != null) {
-            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"'";
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"' ORDER BY LAPSO";
             try {
                 ps = conexion.prepareStatement(sql);
                 result = ps.executeQuery();

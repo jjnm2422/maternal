@@ -97,12 +97,18 @@ public class Coordinador {
     public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
         this.usuarioDAO = usuarioDAO;
     }
+    public boolean isInscrito(String id_alumno, String motivo) {
+        return getRegistroPagoDAO().isInscrito(id_alumno, motivo);
+    }
     
        public VO.MatriculaVO consultarMatriculaPorAlumno(String parametro) {
           return  getMatriculaDAO().consultarMatriculaPorAlumno(parametro);
        }
        public String actualizarEstatusAlumno(boolean estatus) {
            return getAlumnoDAO().actualizarEstatusAlumno(estatus);
+       }
+       public String actualizarEstatusAlumno(String id_alumno, boolean estatus) {
+           return getAlumnoDAO().actualizarEstatusAlumno(id_alumno, estatus);
        }
        
         public String actualizarPago(VO.PagoVO pagoVO, String id) {
@@ -111,6 +117,10 @@ public class Coordinador {
        
        public DefaultTableModel consultarEmpleadosCedulaTabla(String cedula){
            return getEmpleadoDAO().consultarEmpleadosCedulaTabla(cedula);
+       }
+       
+       public DefaultTableModel consultarEmpleadosCedulaONombreTabla(String cedula){
+           return getEmpleadoDAO().consultarEmpleadosCedulaONombreTabla(cedula);
        }
 
     public Logica getLogica() {

@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -94,6 +95,30 @@ public class UsuarioDAO {
             conexiondb.desconexion();
             return null;
         }
+    }
+    
+        public String NumeroAleatorio() {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        Statement st = null;
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        long numero = 0;
+        Random rd = new Random();
+        conexion = conexiondb.getConnection();
+        numero = rd.nextInt(99999) + 1;
+        try {
+            String sql = "select * from "+ this.tabla + " where id_usuario= '" + numero + "'";
+            ps = conexion.prepareStatement(sql);
+            result = ps.executeQuery();
+            while (result.next()) {
+                numero = Long.parseLong(this.NumeroAleatorio());
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        return String.valueOf(numero);
     }
 
     public String consultarUsuarioLogin(String usuario, String clave) {

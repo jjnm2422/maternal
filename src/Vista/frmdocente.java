@@ -920,8 +920,8 @@ this.dispose();
 Object opciones[] = {"Si", "No"};
         int respuesta = JOptionPane.showOptionDialog(this, "¿Desea usted eliminar completamente los datos relacionados a este docente? \n Tenga en cuenta que esto no puede revertirse.", "Atencion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, "No");
         if (respuesta == 0) {
-            //elimino alumno requisitos
-        if (coordinador.eliminarAsistenciaDocente(id_empleado).equals("ELIMINADO")) {
+            //elimino alumno requisito
+            coordinador.eliminarAsistenciaDocente(id_empleado);
             if (coordinador.eliminarEmpleado(id_empleado).equals("ELIMINADO")) {
                 coordinador.getLogica().mensajeCorrecto("Eliminado con Exito");
                 borrarDatos();
@@ -930,9 +930,6 @@ Object opciones[] = {"Si", "No"};
             } else {
                  coordinador.getLogica().mensajeError("Problemas al eliminar docente");
             }
-        } else {
-         coordinador.getLogica().mensajeError("Problemas al eliminar asistencia");
-        }
         }    
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -1457,6 +1454,7 @@ Object opciones[] = {"Si", "No"};
         txtParroquia.setText("");
         cbxCasa.setSelectedIndex(0);
         txtCedula.setText("");
+        ajustar(lblfoto1, ICON_NO_PHOTO);
     }
     
         private void borrarEmpleado2() {
@@ -1471,5 +1469,6 @@ Object opciones[] = {"Si", "No"};
         cbxCasa1.setSelectedIndex(0);
         txtCedula3.setText("");
         txtCedula2.setText("");
+        ajustar(lblfoto2, ICON_NO_PHOTO);
     }
 }

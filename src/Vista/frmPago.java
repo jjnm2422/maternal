@@ -646,6 +646,7 @@ public class frmPago extends javax.swing.JFrame {
         buttonGroup1.add(rbnInscripcion);
         rbnInscripcion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rbnInscripcion.setForeground(new java.awt.Color(255, 255, 255));
+        rbnInscripcion.setSelected(true);
         rbnInscripcion.setText("Inscripcion");
         rbnInscripcion.setEnabled(false);
         rbnInscripcion.setOpaque(false);
@@ -722,8 +723,8 @@ public class frmPago extends javax.swing.JFrame {
         jPanel2.add(lblTotalCancelado, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 90, 20));
 
         btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
-        btnBorrar.setText("Borrar");
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar.setText("Limpiar");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarActionPerformed(evt);
@@ -761,17 +762,27 @@ public class frmPago extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        if (rbnCuotas.isSelected()) {
-            if (validaciones()) {
-                pagar(obtenerDatos(), 3);
-            }
-        }else if (rbnInscripcion.isSelected()) {
-            if (validacionesInscripcion()) {
-                pagar(obtenerDatos(), 1);
-            }
-        }else if (rbnSeguro.isSelected()) {
-            if (validacionesSeguro()) {
-                pagar(obtenerDatos(), 2);
+        if (txtMonto.getText().isEmpty()) {
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un valor en el monto");
+        } else {
+            if (txtConcepto.getText().isEmpty()) {
+            coordinador.getLogica().mensajeAdvertencia("Pulse el boton ubicado al lado del monto, para calcular el pago.");
+            } else {
+                if (rbnCuotas.isSelected()) {
+                    if (validaciones()) {
+                        pagar(obtenerDatos(), 3);
+                    }
+                } else if (rbnInscripcion.isSelected()) {
+                    if (validacionesInscripcion()) {
+                        calculoCuotas();
+                        pagar(obtenerDatos(), 1);
+                    }
+                } else if (rbnSeguro.isSelected()) {
+                    if (validacionesSeguro()) {
+                        calculoCuotas();
+                        pagar(obtenerDatos(), 2);
+                    }
+                }
             }
         }
     }//GEN-LAST:event_btnGuardar1ActionPerformed
@@ -874,24 +885,7 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMontoActionPerformed
 
     private void rbnCuotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnCuotasActionPerformed
-        lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
-        lblFecha.setText(coordinador.getFechaFormateada());
-        txtNombre.setText("");
-        txtNombre.setEnabled(true);
-        txtMonto.setEnabled(true);
-        txtMonto.setText("0");
-        cbxPago.setSelectedIndex(0);
-        cbxPago.setEnabled(true);
-        txtTransaccion.setEnabled(true);
-        txtTransaccion.setText("");
-        txtFechaComprobante.setEnabled(true);
-        cbxBanco.setSelectedIndex(0);
-        cbxBanco.setEnabled(true);
-        txtReferencia.setEnabled(true);
-        txtReferencia.setText("");
-        txtFechaEjecucion.setEnabled(true);
-        lblPorPagar.setText("0");
-        txtConcepto.setText("");
+accionesCuotas();
     }//GEN-LAST:event_rbnCuotasActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
@@ -958,51 +952,11 @@ public class frmPago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionActionPerformed
 
     private void rbnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnInscripcionActionPerformed
-        lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
-        lblFecha.setText(coordinador.getFechaFormateada());
-        txtNombre.setText("");
-        txtNombre.setEnabled(true);
-        txtMonto.setEnabled(true);
-        txtMonto.setText("0");
-        cbxPago.setSelectedIndex(0);
-        cbxPago.setEnabled(true);
-        txtTransaccion.setEnabled(false);
-        txtTransaccion.setText("");
-        txtFechaComprobante.setEnabled(false);
-        cbxBanco.setSelectedIndex(0);
-        cbxBanco.setEnabled(false);
-        txtReferencia.setEnabled(false);
-        txtReferencia.setText("");
-        txtFechaEjecucion.setEnabled(false);
-        lblCuotasAPagar.setText("0");
-        lblCuotasAPendientes.setText("0");
-        lblSaldoFavor.setText("0");
-        lblPorPagar.setText(""+coordinador.consultarVariables().getPrecio_inscripcion());
-        txtConcepto.setText("PAGO INSCRIPCION");
+accionesInscripcion();
     }//GEN-LAST:event_rbnInscripcionActionPerformed
 
     private void rbnSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnSeguroActionPerformed
-        lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
-        lblFecha.setText(coordinador.getFechaFormateada());
-        txtNombre.setText("");
-        txtNombre.setEnabled(true);
-        txtMonto.setEnabled(true);
-        txtMonto.setText("0");
-        cbxPago.setSelectedIndex(0);
-        cbxPago.setEnabled(true);
-        txtTransaccion.setEnabled(false);
-        txtTransaccion.setText("");
-        txtFechaComprobante.setEnabled(false);
-        cbxBanco.setSelectedIndex(0);
-        cbxBanco.setEnabled(false);
-        txtReferencia.setEnabled(false);
-        txtReferencia.setText("");
-        txtFechaEjecucion.setEnabled(false);
-        lblCuotasAPagar.setText("0");
-        lblCuotasAPendientes.setText("0");
-        lblSaldoFavor.setText("0");
-        lblPorPagar.setText(""+coordinador.consultarVariables().getSeguro());
-        txtConcepto.setText("PAGO SEGURO MEDICO");
+         accionesSeguro();
     }//GEN-LAST:event_rbnSeguroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1285,16 +1239,16 @@ public class frmPago extends javax.swing.JFrame {
                 if (saldo >= pagoVo.getPago()[i] + mora) {
                     //compruebo si esta vacio para no insertar salto de linea
                     if (txtConcepto.getText().isEmpty()) {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + (i + 1) + " Valor: " + (pagoVo.getPago()[i]));
+                        txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(i + 1) + " Valor: " + (pagoVo.getPago()[i]));
                     } else {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + (i + 1) + " Valor: " + (pagoVo.getPago()[i]));
+                        txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(i + 1) + " Valor: " + (pagoVo.getPago()[i]));
                     }
                     if (mora != 0) {
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + (i + 1) + " Valor: " + mora);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(i + 1) + " Valor: " + mora);
                         } else {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + (i + 1) + " Valor: " + mora);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(i + 1) + " Valor: " + mora);
                         }
                     }
 
@@ -1309,9 +1263,9 @@ public class frmPago extends javax.swing.JFrame {
                     saldo = 0;
                     //compruebo si esta vacio para no insertar salto de linea
                     if (txtConcepto.getText().isEmpty()) {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + (i + 1) + " Valor: " + abono);
+                        txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(i + 1) + " Valor: " + abono);
                     } else {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + (i + 1) + " Valor: " + abono);
+                        txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + obtenerMes(i + 1) + " Valor: " + abono);
                     }
 //                    txtConcepto.setText(txtConcepto.getText()+ "" +"\nAbono al mes " + (i+1) + ".");
 //                    txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas: " + cuotasPagadas);
@@ -1340,16 +1294,16 @@ public class frmPago extends javax.swing.JFrame {
                     if (saldo >= pagoVo.getPago()[j] + mora) {
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + (j + 1) + " Valor: " + (pagoVo.getPago()[j]));
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(j + 1) + " Valor: " + (pagoVo.getPago()[j]));
                         } else {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + (j + 1) + " Valor: " + (pagoVo.getPago()[j]));
+                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(j + 1) + " Valor: " + (pagoVo.getPago()[j]));
                         }
                         //compruebo si esta vacio para no insertar salto de linea
                         if (mora != 0) {
                             if (txtConcepto.getText().isEmpty()) {
-                                txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + (j + 1) + " Valor: " + mora);
+                                txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(j + 1) + " Valor: " + mora);
                             } else {
-                                txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + (j + 1) + " Valor: " + mora);
+                                txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(j + 1) + " Valor: " + mora);
                             }
                         }
                         
@@ -1366,9 +1320,9 @@ public class frmPago extends javax.swing.JFrame {
 //                            txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas = " + cuotasPagadas);
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + (j + 1) + " Valor: " + abono);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(j + 1) + " Valor: " + abono);
                         } else {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + (j + 1) + " Valor: " + abono);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + obtenerMes(j + 1) + " Valor: " + abono);
                         }
 
                     }
@@ -1454,8 +1408,6 @@ public class frmPago extends javax.swing.JFrame {
     private String obtenerFecha(String dia, String mes) {
         int mesCobroI = coordinador.getVariablesDAO().consultarVariables().getMes_cobro();
         int diaCobroI = coordinador.getVariablesDAO().consultarVariables().getDias_mora();
-        String mesCobro = String.valueOf(mesCobroI);
-        String diaCobro = String.valueOf(diaCobroI);
         int diaI = Integer.parseInt(dia);
         int mesI = Integer.parseInt(mes);
         String periodo = coordinador.consultarVariables().getPeriodo_actual();
@@ -1479,82 +1431,15 @@ public class frmPago extends javax.swing.JFrame {
         }
     }
 
-//    private void pagar(RegistroPagoVO registroPagoVO) {
-//        /**
-//         * pagos consulta
-//         */
-//        PagoVO consultarPago = coordinador.getPagoDAO().consultarPago(codigo);
-//        VO.PagoVO pagoVO = new VO.PagoVO();
-//        if (consultarPago.getCuotas() != null) {
-//            String arrayCuotas[] = new String[12];
-//            arrayCuotas[0] = String.valueOf(jCheckBox1.isSelected());
-//            arrayCuotas[1] = String.valueOf(jCheckBox2.isSelected());
-//            arrayCuotas[2] = String.valueOf(jCheckBox3.isSelected());
-//            arrayCuotas[3] = String.valueOf(jCheckBox4.isSelected());
-//            arrayCuotas[4] = String.valueOf(jCheckBox5.isSelected());
-//            arrayCuotas[5] = String.valueOf(jCheckBox6.isSelected());
-//            arrayCuotas[6] = String.valueOf(jCheckBox7.isSelected());
-//            arrayCuotas[7] = String.valueOf(jCheckBox8.isSelected());
-//            arrayCuotas[8] = String.valueOf(jCheckBox9.isSelected());
-//            arrayCuotas[9] = String.valueOf(jCheckBox10.isSelected());
-//            arrayCuotas[10] = String.valueOf(jCheckBox11.isSelected());
-//            arrayCuotas[11] = String.valueOf(jCheckBox12.isSelected());
-//            pagoVO.setCuotas(arrayCuotas);
-//            pagoVO.setId_alumno(codigo);
-//            pagoVO.setPeriodo(coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual());
-//            pagoVO.setSaldo_favor(Double.valueOf(lblSaldoFavor.getText()));
-//            pagoVO.setSaldo_pendiente(Double.valueOf(lblSaldoPendiente.getText()));
-//            pagoVO.setTotal_pagado(Double.valueOf(lblTotalCancelado.getText()));
-//
-//            String actualizarPago = coordinador.actualizarPago(pagoVO, Integer.parseInt(codigo));
-//            if (actualizarPago.equals("DATOS ACTUALIZADOS")) {
-//                registrarComprobante(registroPagoVO);
-//            } else {
-//                 coordinador.getLogica().mensajeError("Problemas al Actualizar pago");
-//            }
+//    private void registrarComprobante(RegistroPagoVO registroPagoVO) {
+//        String registrarRegistroPago = coordinador.registrarRegistroPago(registroPagoVO);
+//        if (registrarRegistroPago.equals("INGRESADO CON EXITO")) {
+//            coordinador.getLogica().mensajeCorrecto("Pago registrado con exito");
+//            borrarCampos();
 //        } else {
-//            //no hubo resultado ingreso un nuevo registro para el alumno
-//            String arrayCuotas[] = new String[12];
-//            arrayCuotas[0] = String.valueOf(jCheckBox1.isSelected());
-//            arrayCuotas[1] = String.valueOf(jCheckBox2.isSelected());
-//            arrayCuotas[2] = String.valueOf(jCheckBox3.isSelected());
-//            arrayCuotas[3] = String.valueOf(jCheckBox4.isSelected());
-//            arrayCuotas[4] = String.valueOf(jCheckBox5.isSelected());
-//            arrayCuotas[5] = String.valueOf(jCheckBox6.isSelected());
-//            arrayCuotas[6] = String.valueOf(jCheckBox7.isSelected());
-//            arrayCuotas[7] = String.valueOf(jCheckBox8.isSelected());
-//            arrayCuotas[8] = String.valueOf(jCheckBox9.isSelected());
-//            arrayCuotas[9] = String.valueOf(jCheckBox10.isSelected());
-//            arrayCuotas[10] = String.valueOf(jCheckBox11.isSelected());
-//            arrayCuotas[11] = String.valueOf(jCheckBox12.isSelected());
-//            pagoVO.setCuotas(arrayCuotas);
-//            pagoVO.setId_alumno(codigo);
-//            pagoVO.setPeriodo(coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual());
-//            pagoVO.setSaldo_favor(Double.valueOf(lblSaldoFavor.getText()));
-//            pagoVO.setSaldo_pendiente(Double.valueOf(lblSaldoPendiente.getText()));
-//            pagoVO.setTotal_pagado(Double.valueOf(lblTotalCancelado.getText()));
-//
-//            String registrarPago = coordinador.getPagoDAO().registrarPago(pagoVO);
-//            System.out.println(registrarPago);
-//            if (registrarPago.equals("INGRESADO CON EXITO")) {
-//                registrarComprobante(registroPagoVO);
-//            } else {
-//                coordinador.getLogica().mensajeAdvertencia("Problemas al registrar pago 1");
-//            }
+//            coordinador.getLogica().mensajeError("Problemas al registrar pago 2");
 //        }
-//        /**
-//         *
-//         */
 //    }
-    private void registrarComprobante(RegistroPagoVO registroPagoVO) {
-        String registrarRegistroPago = coordinador.registrarRegistroPago(registroPagoVO);
-        if (registrarRegistroPago.equals("INGRESADO CON EXITO")) {
-            coordinador.getLogica().mensajeCorrecto("Pago registrado con exito");
-            borrarCampos();
-        } else {
-            coordinador.getLogica().mensajeError("Problemas al registrar pago 2");
-        }
-    }
 
     private RegistroPagoVO obtenerDatos() {
         VO.RegistroPagoVO registroPagoVO = new VO.RegistroPagoVO();
@@ -1711,15 +1596,32 @@ public class frmPago extends javax.swing.JFrame {
 
             //consulto pago si existe
             consultarPago(id_alumno);
-
-            //si no hay cuotas pendientes verifico si hay saldo pendiente
-            if (verificarSolvencia(id_alumno)) {
-                coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
-                habilitarBotones(false);
-                borrarCampos();
+            
+            //compruebo si pago inscripcion y seguro
+            if (coordinador.isInscrito(id_alumno, "INSCRIPCION")) {
+                if (coordinador.isInscrito(id_alumno, "SEGURO")) {
+                    //activo cuotas
+                    accionesCuotas();
+                       //si no hay cuotas pendientes verifico si hay saldo pendiente
+                        if (verificarSolvencia(id_alumno)) {
+                            coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                            //consulto las notas para saber si tiene las notas completas y cambiar estatus
+                            if (coordinador.getNotaDAO().consultarNota(codigo).getLapso() == 3) {
+                                coordinador.actualizarEstatusAlumno(id_alumno,true);
+                            }
+                            habilitarBotones(false);
+                            borrarCampos();
+                        }
+                } else {
+                    //no se a inscrito solo habilito seguro
+                    accionesSeguro();
+                }
             } else {
-                habilitarBotones(true);
+                //no se a inscrito solo habilito inscripcion
+                accionesInscripcion();
             }
+
+
         } else {
             frmBusqueda.setLocationRelativeTo(this);
             frmBusqueda.setVisible(true);
@@ -1882,6 +1784,16 @@ public class frmPago extends javax.swing.JFrame {
                     res = coordinador.getRegistroPagoDAO().registrarRegistroPago(obtenerDatos);
                     if (res.equals("INGRESADO CON EXITO")) {
                         coordinador.getLogica().mensajeCorrecto("Pago Registrado con Exito");
+                        //si no hay cuotas pendientes verifico si hay saldo pendiente
+                        if (verificarSolvencia(pvo.getId_alumno())) {
+                            coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                            //consulto las notas para saber si tiene las notas completas y cambiar estatus
+                            if (coordinador.getNotaDAO().consultarNota(codigo).getLapso() == 3) {
+                                coordinador.actualizarEstatusAlumno(pvo.getId_alumno(),true);
+                            }
+//                            habilitarBotones(false);
+//                            borrarCampos();
+                        }
                         borrarCampos();
                     } else {
                         coordinador.getLogica().mensajeError("Error al ingresar registro de pago");
@@ -1910,6 +1822,115 @@ public class frmPago extends javax.swing.JFrame {
             break;
             default:
                 throw new AssertionError();
+        }
+    }
+
+    private void accionesSeguro() {
+        rbnSeguro.setSelected(true);
+        rbnInscripcion.setEnabled(false);
+        rbnCuotas.setEnabled(false);
+               lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
+        lblFecha.setText(coordinador.getFechaFormateada());
+        txtNombre.setText("");
+        txtNombre.setEnabled(true);
+        txtMonto.setEnabled(true);
+        txtMonto.setText("0");
+        cbxPago.setSelectedIndex(0);
+        cbxPago.setEnabled(true);
+        txtTransaccion.setEnabled(false);
+        txtTransaccion.setText("");
+        txtFechaComprobante.setEnabled(false);
+        cbxBanco.setSelectedIndex(0);
+        cbxBanco.setEnabled(false);
+        txtReferencia.setEnabled(false);
+        txtReferencia.setText("");
+        txtFechaEjecucion.setEnabled(false);
+        lblCuotasAPagar.setText("0");
+        lblCuotasAPendientes.setText("0");
+        lblSaldoFavor.setText("0");
+        lblPorPagar.setText(""+coordinador.consultarVariables().getSeguro());
+        txtConcepto.setText("PAGO SEGURO MEDICO");
+    }
+
+    private void accionesInscripcion() {
+        lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
+        rbnInscripcion.setSelected(true);
+        rbnSeguro.setEnabled(false);
+        rbnCuotas.setEnabled(false);
+        lblFecha.setText(coordinador.getFechaFormateada());
+        txtNombre.setText("");
+        txtNombre.setEnabled(true);
+        txtMonto.setEnabled(true);
+        txtMonto.setText("0");
+        cbxPago.setSelectedIndex(0);
+        cbxPago.setEnabled(true);
+        txtTransaccion.setEnabled(false);
+        txtTransaccion.setText("");
+        txtFechaComprobante.setEnabled(false);
+        cbxBanco.setSelectedIndex(0);
+        cbxBanco.setEnabled(false);
+        txtReferencia.setEnabled(false);
+        txtReferencia.setText("");
+        txtFechaEjecucion.setEnabled(false);
+        lblCuotasAPagar.setText("0");
+        lblCuotasAPendientes.setText("0");
+        lblSaldoFavor.setText("0");
+        lblPorPagar.setText(""+coordinador.consultarVariables().getPrecio_inscripcion());
+       txtConcepto.setText("PAGO INSCRIPCION");
+    }
+
+    private void accionesCuotas() {
+        rbnCuotas.setSelected(true);
+        rbnSeguro.setEnabled(false);
+        rbnInscripcion.setEnabled(false);
+        lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
+        lblFecha.setText(coordinador.getFechaFormateada());
+        txtNombre.setText("");
+        txtNombre.setEnabled(true);
+        txtMonto.setEnabled(true);
+        txtMonto.setText("0");
+        cbxPago.setSelectedIndex(0);
+        cbxPago.setEnabled(true);
+        txtTransaccion.setEnabled(false);
+        txtTransaccion.setText("");
+        txtFechaComprobante.setEnabled(false);
+        cbxBanco.setSelectedIndex(0);
+        cbxBanco.setEnabled(false);
+        txtReferencia.setEnabled(false);
+        txtReferencia.setText("");
+        txtFechaEjecucion.setEnabled(false);
+//        lblPorPagar.setText("0");
+        txtConcepto.setText("");
+    }
+
+    private String obtenerMes(int i) {
+        switch (i) {
+            case 1:
+            return "Enero";
+            case 2:
+            return "Febrero";
+            case 3:
+            return "Marzo";
+            case 4:
+            return "Abril";
+            case 5:
+            return "Mayo";
+            case 6:
+            return "Junio";
+            case 7:
+            return "Julio";
+            case 8:
+            return "Agosto";
+            case 9:
+            return "Septiembre";
+            case 10:
+            return "Octubre";
+            case 11:
+            return "Noviembre";
+            case 12:
+            return "Diciembre";
+            default:
+                return  i+"";
         }
     }
 

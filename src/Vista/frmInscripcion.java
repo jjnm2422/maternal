@@ -654,6 +654,7 @@ public class frmInscripcion extends javax.swing.JFrame {
         rbnMasculino.setOpaque(false);
         jPanel8.add(rbnMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, 20));
 
+        txtFecha.setFormat(2);
         txtFecha.setFieldFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 11));
         txtFecha.setMinDate(new java.util.GregorianCalendar(2000, 0, 1));
         txtFecha.setCurrentNavigateIndex(0);
