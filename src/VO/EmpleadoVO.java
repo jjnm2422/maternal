@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  * @author acjj
  */
 public class EmpleadoVO {
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion[], sexo, fechaNacimiento, id_empleado;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion[], sexo, fechaNacimiento, id_empleado, grupo;
     private int edad, binarioFoto;
     private FileInputStream fis;
     private ImageIcon foto; 
@@ -40,6 +40,16 @@ public class EmpleadoVO {
         this.fis = fis;
         this.foto = foto;
     }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+    
+    
 
     public int getBinarioFoto() {
         return binarioFoto;

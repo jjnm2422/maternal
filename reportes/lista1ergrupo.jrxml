@@ -10,7 +10,7 @@
 FROM
      "alumno" alumno]]>
 	</queryString>
-	<field name="alumno_id_alumno" class="java.lang.Integer"/>
+	<field name="alumno_id_alumno" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

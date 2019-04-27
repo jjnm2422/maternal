@@ -10,7 +10,7 @@
 FROM
      "alumno" alumno]]>
 	</queryString>
-	<field name="alumno_id_alumno" class="java.lang.Integer"/>
+	<field name="alumno_id_alumno" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -21,28 +21,28 @@ FROM
 				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="205" y="0" width="251" height="18" uuid="bf9a8cd9-2a82-4382-9f68-f15d64212981"/>
+				<reportElement x="183" y="0" width="251" height="18" uuid="bf9a8cd9-2a82-4382-9f68-f15d64212981"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Centro de Educación Inicial "Humboldt"]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="251" y="20" width="146" height="14" uuid="f2ed0792-1f06-4732-9b52-341bb1870893"/>
+				<reportElement x="238" y="20" width="146" height="14" uuid="f2ed0792-1f06-4732-9b52-341bb1870893"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Año Escolar 2018/2019]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="213" y="34" width="220" height="27" uuid="3ed38a71-9d15-40db-b80c-094d48911da4"/>
+				<reportElement x="209" y="34" width="220" height="27" uuid="3ed38a71-9d15-40db-b80c-094d48911da4"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[LISTA DE UTILES ESCOLARES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="286" y="59" width="100" height="20" uuid="55093337-add9-41f8-8e6c-e68924c540ae"/>
+				<reportElement x="271" y="59" width="100" height="20" uuid="55093337-add9-41f8-8e6c-e68924c540ae"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
@@ -53,7 +53,7 @@ FROM
 	<pageHeader>
 		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement x="44" y="3" width="54" height="17" uuid="8f7eccc6-80c8-4260-b08e-d43d728941f6"/>
+				<reportElement x="66" y="3" width="54" height="17" uuid="8f7eccc6-80c8-4260-b08e-d43d728941f6"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Arial" size="11" isBold="true"/>
 				</textElement>
@@ -64,14 +64,14 @@ FROM
 	<columnHeader>
 		<band height="91" splitType="Stretch">
 			<staticText>
-				<reportElement x="44" y="21" width="285" height="14" uuid="dba687d7-0261-488e-a06f-e57aa0852a5b"/>
+				<reportElement x="59" y="21" width="285" height="14" uuid="dba687d7-0261-488e-a06f-e57aa0852a5b"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[APRENDER es  Fácil 1 y 2 prescolar Manantial]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="44" y="37" width="161" height="15" uuid="498ff02f-e6bf-4598-8f09-2599c8f5905d"/>
+				<reportElement x="59" y="37" width="161" height="15" uuid="498ff02f-e6bf-4598-8f09-2599c8f5905d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -80,7 +80,7 @@ FROM
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="505" splitType="Stretch">
+		<band height="477" splitType="Stretch">
 			<staticText>
 				<reportElement x="47" y="18" width="222" height="13" uuid="6985da0b-4c6e-4653-8d6d-2673d014f7ae"/>
 				<textElement verticalAlignment="Middle">
@@ -455,7 +455,7 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="20" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>

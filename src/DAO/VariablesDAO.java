@@ -91,7 +91,7 @@ public class VariablesDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=?, precio_inscripcion=?, cuota_old=?, mes_cambio=?, mes_cobro=? where id_variable= '0'";
+        String sql = "UPDATE " + this.tabla + " SET id_variable=?, iva=?, ubicacion_reporte=?, limite_alumno=?, precio_mora=?, precio_cuota=?, dias_mora=?, periodo_actual=?, precio_inscripcion=?, cuota_old=?, mes_cambio=?, mes_cobro=?, seguro=? where id_variable= '0'";
 
         if (conexion != null) {
             try {
@@ -108,6 +108,7 @@ public class VariablesDAO {
                 ps.setDouble(10, variablesVO.getCuota_old());
                 ps.setInt(11, variablesVO.getMes_cambio());
                 ps.setInt(12, variablesVO.getMes_cobro());
+                ps.setDouble(13, variablesVO.getSeguro());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "UPDATE";

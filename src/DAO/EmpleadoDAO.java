@@ -41,8 +41,8 @@ public class EmpleadoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto, id_empleado) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto, id_empleado, grupo) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -60,6 +60,7 @@ public class EmpleadoDAO {
                 ps.setBinaryStream(8, null, 0);
             }
             ps.setString(9, empleadoVO.getId_empleado());
+            ps.setString(10, empleadoVO.getGrupo());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INSERT";
@@ -107,6 +108,7 @@ public class EmpleadoDAO {
                 
                 empleadoVO.setTelefono1(result.getString("telefono1"));
                 empleadoVO.setId_empleado(result.getString("id_empleado"));
+                empleadoVO.setGrupo(result.getString("grupo"));
                 //codigo para extraer imagen
                 if (result.getBinaryStream("foto") != null) {
                     is = result.getBinaryStream("foto");
@@ -160,7 +162,7 @@ public class EmpleadoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=? where id_empleado= '"+id_empleado+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=?, grupo=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -179,6 +181,7 @@ public class EmpleadoDAO {
                 } else {
                     ps.setBinaryStream(8, null, 0);
                 }
+                ps.setString(9, empleadoVO.getGrupo());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
@@ -199,7 +202,7 @@ public class EmpleadoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=? where id_empleado= '"+id_empleado+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, grupo=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -213,6 +216,7 @@ public class EmpleadoDAO {
                 ps.setArray(5, direccionArray);
                 ps.setString(6, empleadoVO.getCedula());
                 ps.setString(7, empleadoVO.getFechaNacimiento());
+                ps.setString(8, empleadoVO.getGrupo());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

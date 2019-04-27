@@ -12,9 +12,13 @@ import VO.RegistroPagoVO;
 import VO.VariablesVO;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -37,10 +41,14 @@ public class frmPago extends javax.swing.JFrame {
     private int id_pago;
     private double saldo_favorBD;
     private PagoVO pvo = new PagoVO();
+    //con la siguiente linea cambio a que los puntos sean decimales y no las comas que viene por defecto
+    DecimalFormatSymbols simbolos = DecimalFormatSymbols.getInstance(Locale.ENGLISH);
+    private DecimalFormat formatoDecimal = new DecimalFormat("#######.##", simbolos);
 
     /**
      * Creates new form frmPago
      */
+    
     public frmPago() {
         initComponents();
     }
@@ -1167,9 +1175,9 @@ accionesInscripcion();
         lblCuota.setText("" + variablesVO.getPrecio_cuota());
         lblMora.setText("" + variablesVO.getPrecio_mora());
         lblDiaCobro.setText("" + variablesVO.getDias_mora());
-        lblIva.setText("" + variablesVO.getIva());
+        lblIva.setText("" + formatoDecimal.format(variablesVO.getIva()));
         double valorMatricula = variablesVO.getPrecio_cuota() * 12;
-        lblMatricula.setText(valorMatricula + "");
+        lblMatricula.setText(formatoDecimal.format(valorMatricula) + "");
 
         //asigno valores de fecha y registro
         lblRegistro.setText(String.valueOf(coordinador.getRegistroPagoDAO().NumeroAleatorio()));
@@ -1198,8 +1206,8 @@ accionesInscripcion();
         //traigo el total pago de la bd
         lblTotalCancelado.setText((pagoVo.getPagado() + totalPagado) + "");
         lblSaldoFavor.setText((pagoVo.getSaldo()) + "");
-        lblPorPagar.setText((coordinador.getPagoDAO().getPorPagar(id_alumno) - pagoVo.getSaldo()) + "");
-        lblTotalCancelado.setText(pagoVo.getPagado() + "");
+        lblPorPagar.setText(formatoDecimal.format(coordinador.getPagoDAO().getPorPagar(id_alumno) - pagoVo.getSaldo()) + "");
+        lblTotalCancelado.setText(formatoDecimal.format(pagoVo.getPagado()) + "");
         int cuotasPagadas = 0;
         double abono = 0;
         int i = 0;
@@ -1239,16 +1247,16 @@ accionesInscripcion();
                 if (saldo >= pagoVo.getPago()[i] + mora) {
                     //compruebo si esta vacio para no insertar salto de linea
                     if (txtConcepto.getText().isEmpty()) {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(i + 1) + " Valor: " + (pagoVo.getPago()[i]));
+                        txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(i + 1) + " Valor: " + (formatoDecimal.format(pagoVo.getPago()[i])));
                     } else {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(i + 1) + " Valor: " + (pagoVo.getPago()[i]));
+                        txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(i + 1) + " Valor: " + (formatoDecimal.format(pagoVo.getPago()[i])));
                     }
                     if (mora != 0) {
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(i + 1) + " Valor: " + mora);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(i + 1) + " Valor: " + formatoDecimal.format(mora));
                         } else {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(i + 1) + " Valor: " + mora);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(i + 1) + " Valor: " + formatoDecimal.format(mora));
                         }
                     }
 
@@ -1258,14 +1266,14 @@ accionesInscripcion();
 //                    txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas: " + cuotasPagadas);
                 } else {
                     //resto saldo al mes siquiente
-                    pagoVo.getPago()[i] -= saldo;
+                    pagoVo.getPago()[i] -= (double) Math.round(saldo);
                     abono = saldo;
                     saldo = 0;
                     //compruebo si esta vacio para no insertar salto de linea
                     if (txtConcepto.getText().isEmpty()) {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(i + 1) + " Valor: " + abono);
+                        txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(i + 1) + " Valor: " + formatoDecimal.format(abono));
                     } else {
-                        txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + obtenerMes(i + 1) + " Valor: " + abono);
+                        txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + obtenerMes(i + 1) + " Valor: " + formatoDecimal.format(abono));
                     }
 //                    txtConcepto.setText(txtConcepto.getText()+ "" +"\nAbono al mes " + (i+1) + ".");
 //                    txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas: " + cuotasPagadas);
@@ -1294,16 +1302,16 @@ accionesInscripcion();
                     if (saldo >= pagoVo.getPago()[j] + mora) {
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(j + 1) + " Valor: " + (pagoVo.getPago()[j]));
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Pago mes " + obtenerMes(j + 1) + " Valor: " + (formatoDecimal.format(pagoVo.getPago()[j])));
                         } else {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(j + 1) + " Valor: " + (pagoVo.getPago()[j]));
+                            txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mes " + obtenerMes(j + 1) + " Valor: " + (formatoDecimal.format(pagoVo.getPago()[j])));
                         }
                         //compruebo si esta vacio para no insertar salto de linea
                         if (mora != 0) {
                             if (txtConcepto.getText().isEmpty()) {
-                                txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(j + 1) + " Valor: " + mora);
+                                txtConcepto.setText(txtConcepto.getText() + "" + "Pago mora mes " + obtenerMes(j + 1) + " Valor: " + formatoDecimal.format(mora));
                             } else {
-                                txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(j + 1) + " Valor: " + mora);
+                                txtConcepto.setText(txtConcepto.getText() + "" + "\nPago mora mes " + obtenerMes(j + 1) + " Valor: " + formatoDecimal.format(mora));
                             }
                         }
                         
@@ -1313,14 +1321,14 @@ accionesInscripcion();
 //                             txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas = " + cuotasPagadas);
                     } else {
                         //resto saldo al mes siquiente
-                        pagoVo.getPago()[j] -= saldo;
+                        pagoVo.getPago()[j] -= (double) Math.round(saldo);
                         abono = saldo;
                         saldo = 0;
 //                            txtConcepto.setText(txtConcepto.getText()+ "" +"\nAbono al mes " + (j+1) + ".");
 //                            txtConcepto.setText(txtConcepto.getText()+ "" +"\nCuotas Pagadas = " + cuotasPagadas);
                         //compruebo si esta vacio para no insertar salto de linea
                         if (txtConcepto.getText().isEmpty()) {
-                            txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(j + 1) + " Valor: " + abono);
+                            txtConcepto.setText(txtConcepto.getText() + "" + "Abono en mes: " + obtenerMes(j + 1) + " Valor: " + formatoDecimal.format(abono));
                         } else {
                             txtConcepto.setText(txtConcepto.getText() + "" + "\nAbono en mes: " + obtenerMes(j + 1) + " Valor: " + abono);
                         }
@@ -1343,18 +1351,18 @@ accionesInscripcion();
                 lblSaldoFavor.setText(saldo + "");
                 //compruebo si esta vacio para no insertar salto de linea
                 if (txtConcepto.getText().isEmpty()) {
-                    txtConcepto.setText(txtConcepto.getText() + "" + "Saldo a Favor = " + saldo);
+                    txtConcepto.setText(txtConcepto.getText() + "" + "Saldo a Favor = " + formatoDecimal.format(saldo));
                 } else {
-                    txtConcepto.setText(txtConcepto.getText() + "\n" + "Saldo a Favor = " + saldo);
+                    txtConcepto.setText(txtConcepto.getText() + "\n" + "Saldo a Favor = " + formatoDecimal.format(saldo));
                 }
             }
 
             pvo.setId_alumno(id_alumno);
             pvo.setId_pago(pagoVo.getId_pago());
             pvo.setPago(pagoVo.getPago());
-            pvo.setPagado(Double.parseDouble(lblTotalCancelado.getText()) + Double.parseDouble(lblTotal.getText()));
+            pvo.setPagado((double) Math.round(Double.parseDouble(lblTotalCancelado.getText()) + Double.parseDouble(lblTotal.getText())));
             pvo.setPeriodo(pagoVo.getPeriodo());
-            pvo.setSaldo(Double.parseDouble(lblSaldoFavor.getText()));
+            pvo.setSaldo((double) Math.round(Double.parseDouble(lblSaldoFavor.getText())));
             pvo.setId_pago(pagoVo.getId_pago());
             id_pago = pagoVo.getId_pago();
 //            System.out.println(pvo);

@@ -402,7 +402,7 @@ public class frmAjustes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRutaActionPerformed
 
     private void txtIvaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIvaKeyTyped
-    validacionSoloNumeros(evt, 8, txtIva.getText().length());
+    validacionSoloNumerosYPunto(evt, 8, txtIva.getText().length());
     }//GEN-LAST:event_txtIvaKeyTyped
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
@@ -429,13 +429,7 @@ public class frmAjustes extends javax.swing.JFrame {
             actualizarPagosAlumnos(variablesVO);
             //cambio el estado a todos los alumnos a no disponible
             coordinador.actualizarEstatusAlumno(false);
-            System.out.println(coordinador.getPagoDAO().getCuotasPagadas("1234567-1"));
-            System.out.println(coordinador.getPagoDAO().getCuotasPendientes("1234567-1"));
         }
-        
-            System.out.println(coordinador.getPagoDAO().getCuotasPagadas("1234567-1"));
-            System.out.println(coordinador.getPagoDAO().getCuotasPendientes("1234567-1"));
-            System.out.println(coordinador.getPagoDAO().getPorPagar("1234567-1"));
         
         variablesVO.setPrecio_mora(Double.parseDouble(txtMora.getText().trim()));
         variablesVO.setDias_mora(Integer.parseInt(txtDiasmora.getText().trim()));
@@ -487,11 +481,11 @@ public class frmAjustes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRestaurarActionPerformed
 
     private void txtSeguroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSeguroKeyTyped
-validacionSoloNumeros(evt, 15, txtIva.getText().length());
+validacionSoloNumerosYPunto(evt, 15, txtIva.getText().length());
     }//GEN-LAST:event_txtSeguroKeyTyped
 
     private void txtInscripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInscripcionKeyTyped
-    validacionSoloNumeros(evt, 15, txtIva.getText().length());
+    validacionSoloNumerosYPunto(evt, 15, txtIva.getText().length());
     }//GEN-LAST:event_txtInscripcionKeyTyped
 
     /**

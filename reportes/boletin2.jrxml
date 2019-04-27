@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BOLETIN INFROMATIVO2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="43fa6068-7348-4114-98df-dbdee7aeb545">
-	<property name="ireport.zoom" value="1.5"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BOLETIN INFROMATIVO2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="277" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="43fa6068-7348-4114-98df-dbdee7aeb545">
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="595"/>
-	<parameter name="id" class="java.lang.Integer"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
 	<parameter name="ruta" class="java.lang.String"/>
 	<parameter name="lapso" class="java.lang.String"/>
 	<parameter name="parameter1" class="java.lang.String"/>
@@ -63,19 +63,125 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 	<field name="alumno_segundo_nombre" class="java.lang.String"/>
 	<field name="alumno_primer_apellido" class="java.lang.String"/>
 	<field name="alumno_segundo_apellido" class="java.lang.String"/>
-	<field name="matricula_id_alumno" class="java.lang.Integer"/>
+	<field name="matricula_id_alumno" class="java.lang.String"/>
 	<field name="matricula_seccion" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="90" splitType="Stretch">
+		<band height="650" splitType="Stretch">
 			<staticText>
-				<reportElement x="179" y="3" width="280" height="18" uuid="758e4e17-b9ef-4d22-8630-19532a7906ee"/>
-				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="14" isBold="true"/>
+				<reportElement x="190" y="28" width="177" height="33" uuid="9368c0f6-1d64-436b-9e55-81a3b13c0c95"/>
+				<textElement verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
 				</textElement>
-				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL]]></text>
+				<text><![CDATA["HUMBOLDT"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="0" width="295" height="28" uuid="3ce044cd-1b8a-4500-9070-cf5e891195ab"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro de Educación Inicial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="61" width="525" height="30" uuid="bb7723c7-1a98-4739-9350-92d9dc685ecf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscrito en el Ministerio del Poder Popular Para la]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="144" width="370" height="28" uuid="9b49379b-ff3e-4a08-8c16-a55f0b75d0bc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telf.: 0286-7191795 - 0414-8682748]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="117" width="484" height="28" uuid="b33de474-99d6-4607-878a-bd89ff642e65"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bajo el Nro.: PD.12000701 -  RIF: J-30506388-5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="90" width="119" height="28" uuid="26394452-4284-4fe7-b7d9-a0c7309fd995"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Educación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="338" width="155" height="52" uuid="6f726bde-dd5d-47c6-8142-e6d39fa83ae5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Gisha" size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boleta]]></text>
+			</staticText>
+			<image scaleImage="RetainShape">
+				<reportElement x="198" y="186" width="146" height="152" uuid="9471d764-befd-4d39-b00b-8e8d3dadc33d"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="26" y="446" width="68" height="24" uuid="260c252e-a717-4e46-b756-de0bd2fe9379"/>
+				<textElement verticalAlignment="Middle">
+					<font size="19" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Grupo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="532" width="186" height="24" uuid="4d986e79-f3b1-4614-b5d3-91be1ffb3bac"/>
+				<textElement verticalAlignment="Middle">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Nombre del Docente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="490" width="240" height="24" uuid="e62c2acf-37e7-4e12-ba75-5ba063bde07a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Nombre del Representante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="446" width="59" height="24" uuid="6f4c6b88-b777-424b-995a-6c337434d732"/>
+				<textElement verticalAlignment="Middle">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Edad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="402" width="186" height="26" uuid="25a7e43d-a527-4d55-bb88-fc81a3d90794"/>
+				<textElement verticalAlignment="Middle">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Nombre del alumno:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="602" width="129" height="29" uuid="4d60447b-bdfa-4756-a58c-ba9f922da260"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año Escolar:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="91" width="554" height="21" uuid="883e0c18-e1d7-4128-a827-a75a707f96c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[CUADROS DE VALORES Y OTROS RASGOS DE PERSOANILDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="46" width="253" height="12" uuid="9e47a4e9-b301-4819-8f51-db0568561cec"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscrito en el Ministerio del Poder Popular Para la Educación]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="247" y="24" width="107" height="17" uuid="1447b9ea-aa96-4b1e-9ba8-d4edf73d493d"/>
@@ -84,6 +190,17 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				</textElement>
 				<text><![CDATA["HUMBOLDT"]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="179" y="3" width="280" height="18" uuid="758e4e17-b9ef-4d22-8630-19532a7906ee"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="37" y="1" width="69" height="89" uuid="fee1055c-9dbd-4e2f-ad56-df78c037e53a"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement x="211" y="57" width="212" height="13" uuid="17a0051e-13e2-4663-be38-bd13bdb0a20f"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
@@ -97,28 +214,6 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 					<font fontName="Times New Roman" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Telef.: 0286-7191795 / 0414-8682748]]></text>
-			</staticText>
-			<image onErrorType="Blank">
-				<reportElement x="37" y="1" width="69" height="89" uuid="fee1055c-9dbd-4e2f-ad56-df78c037e53a"/>
-				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement x="180" y="46" width="253" height="12" uuid="9e47a4e9-b301-4819-8f51-db0568561cec"/>
-				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Inscrito en el Ministerio del Poder Popular Para la Educación]]></text>
-			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="21" splitType="Stretch">
-			<staticText>
-				<reportElement x="1" y="0" width="554" height="21" uuid="883e0c18-e1d7-4128-a827-a75a707f96c3"/>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Arial Black" size="12"/>
-				</textElement>
-				<text><![CDATA[CUADROS DE VALORES Y OTROS RASGOS DE PEROSANILDAD]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
@@ -134,7 +229,7 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				</textElement>
 				<text><![CDATA[AÑO ESCOLAR: ]]></text>
 			</staticText>
-			<textField pattern="MMMMM dd, yyyy">
+			<textField pattern="dd MMMMM yyyy">
 				<reportElement x="430" y="1" width="112" height="15" uuid="a72ad6e0-4567-47a5-92b1-2e249a25abc7"/>
 				<textElement>
 					<font fontName="Arial" size="10"/>
@@ -186,7 +281,7 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="479" splitType="Stretch">
+		<band height="480" splitType="Stretch">
 			<rectangle>
 				<reportElement x="25" y="331" width="517" height="144" uuid="51ea3498-a985-496c-ac0d-30102eea9315"/>
 			</rectangle>
@@ -585,53 +680,52 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch">
-			<line>
-				<reportElement x="3" y="36" width="98" height="1" uuid="cb8818c0-0a37-4265-92d0-17349e4a145b"/>
-			</line>
-			<staticText>
-				<reportElement x="1" y="37" width="100" height="17" uuid="302611d9-e5f9-443d-86c8-bcb8052e523e"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[FIRMA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="101" y="37" width="100" height="17" uuid="ffe0b63f-a88b-472f-abf9-5a1eaeccb2ce"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[SELLO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="392" y="37" width="100" height="17" uuid="81829839-60fe-4b79-8377-6fca29082f4c"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[FIRMA]]></text>
-			</staticText>
-			<line>
-				<reportElement x="394" y="36" width="98" height="1" uuid="ccee0ab2-3c64-48db-babb-0f340d38aad1"/>
-			</line>
-			<staticText>
-				<reportElement x="492" y="37" width="63" height="17" uuid="d4f3ce20-9873-4884-8477-a93b7c90da6a"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[SELLO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="298" y="36" width="100" height="17" uuid="485c0c0d-e740-4f1f-815b-d491eec4d557"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[SELLO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="198" y="36" width="100" height="17" uuid="e45dc953-1603-4dc1-bc71-fb0e3af2bd3e"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[FIRMA]]></text>
-			</staticText>
-		</band>
-	</pageFooter>
-	<summary>
 		<band height="42" splitType="Stretch">
 			<line>
-				<reportElement x="202" y="-18" width="98" height="1" uuid="9a8efd36-b373-4b01-a8ab-5b0f988f005f"/>
+				<reportElement x="3" y="24" width="98" height="1" uuid="cb8818c0-0a37-4265-92d0-17349e4a145b"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="25" width="100" height="17" uuid="302611d9-e5f9-443d-86c8-bcb8052e523e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="25" width="100" height="17" uuid="ffe0b63f-a88b-472f-abf9-5a1eaeccb2ce"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SELLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="25" width="100" height="17" uuid="81829839-60fe-4b79-8377-6fca29082f4c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="394" y="24" width="98" height="1" uuid="ccee0ab2-3c64-48db-babb-0f340d38aad1"/>
+			</line>
+			<staticText>
+				<reportElement x="492" y="25" width="63" height="17" uuid="d4f3ce20-9873-4884-8477-a93b7c90da6a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SELLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="24" width="100" height="17" uuid="485c0c0d-e740-4f1f-815b-d491eec4d557"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SELLO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="24" width="100" height="17" uuid="e45dc953-1603-4dc1-bc71-fb0e3af2bd3e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="200" y="24" width="98" height="1" uuid="9a8efd36-b373-4b01-a8ab-5b0f988f005f"/>
 			</line>
 		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="14" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>

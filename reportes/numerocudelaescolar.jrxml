@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Numero cedulal escolar" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98ec938d-e56a-4ed8-b6c9-e2ec00fa6b97">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
-	<parameter name="id" class="java.lang.Integer"/>
+	<property name="ireport.y" value="192"/>
+	<parameter name="id" class="java.lang.String"/>
 	<parameter name="lugar" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
@@ -34,7 +34,7 @@ WHERE
 	<field name="alumno_segundo_nombre" class="java.lang.String"/>
 	<field name="alumno_primer_apellido" class="java.lang.String"/>
 	<field name="alumno_segundo_apellido" class="java.lang.String"/>
-	<field name="matricula_id_alumno" class="java.lang.Integer"/>
+	<field name="matricula_id_alumno" class="java.lang.String"/>
 	<field name="matricula_seccion" class="java.lang.String"/>
 	<field name="alumno_fecha_nacimiento" class="java.lang.String"/>
 	<background>
@@ -48,28 +48,28 @@ WHERE
 			<staticText>
 				<reportElement x="152" y="3" width="278" height="15" uuid="3f048c78-eec2-4bf6-859e-afa2bf82f44e"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="11"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL "HUMBOLDT"]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="162" y="18" width="268" height="15" uuid="3bb891e0-6abe-4f69-bc42-a7f2a31752b1"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="11"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[INSCRITO EN EL MINISTERIO DEL PODER POPULAR]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="187" y="33" width="243" height="16" uuid="ebd82adc-eb0a-430d-841d-3310e6318564"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="11"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[POPULAR PARA LA EDUCACIÓN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="175" y="49" width="255" height="14" uuid="6012ddfd-f83f-49e6-8533-0c10049df262"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="11"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[RIF: J-30506388-5  TLF: 0414-8682748]]></text>
 			</staticText>
@@ -78,44 +78,44 @@ WHERE
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="159" y="25" width="77" height="20" uuid="d75d1624-989a-4c1c-8be2-5b6f17c237b4"/>
+				<reportElement x="110" y="26" width="77" height="20" uuid="d75d1624-989a-4c1c-8be2-5b6f17c237b4"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="11"/>
 				</textElement>
 				<text><![CDATA[Puerto Ordaz,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="272" y="25" width="23" height="20" uuid="689c859d-ffda-4306-b57a-29bc1fd82b57"/>
+				<reportElement x="274" y="26" width="23" height="20" uuid="689c859d-ffda-4306-b57a-29bc1fd82b57"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="11"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="340" y="25" width="28" height="20" uuid="f518900c-e540-4839-abe9-28f85bc21496"/>
+				<reportElement x="374" y="26" width="28" height="20" uuid="f518900c-e540-4839-abe9-28f85bc21496"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="11"/>
 				</textElement>
 				<text><![CDATA[del]]></text>
 			</staticText>
 			<textField pattern="yyyy">
-				<reportElement x="368" y="25" width="43" height="20" uuid="a57ca93d-6b6f-4115-9f2d-2138542a9a5b"/>
+				<reportElement x="403" y="26" width="43" height="20" uuid="a57ca93d-6b6f-4115-9f2d-2138542a9a5b"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd">
-				<reportElement x="232" y="24" width="36" height="21" uuid="56995b91-23bd-417c-9d76-0a3bbb2a3ce1"/>
+				<reportElement x="187" y="26" width="87" height="21" uuid="56995b91-23bd-417c-9d76-0a3bbb2a3ce1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="MMMMM">
-				<reportElement x="296" y="25" width="44" height="20" uuid="dd64f41f-7a41-4031-9644-16c66646b117"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" isBold="true"/>
+				<reportElement x="296" y="26" width="78" height="20" uuid="dd64f41f-7a41-4031-9644-16c66646b117"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -126,84 +126,84 @@ WHERE
 			<staticText>
 				<reportElement x="60" y="42" width="428" height="15" uuid="b3d4d866-b836-4525-aa66-b178303e1b38"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[La   Dirección  del   CENTRO DE EDUCACIÓN INICIAL "HUMBOLDT",]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="60" y="61" width="172" height="17" uuid="e9f0b952-75ab-432e-9b20-42ce6dc65bfa"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Hace constar que el Alumno:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="60" y="82" width="68" height="14" uuid="f1217a94-b986-413e-8a05-ec5435a1f052"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[nacido en:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="288" y="82" width="58" height="14" uuid="7cae4ebf-6ba8-41d3-a598-7ed3e6bf9fe0"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[en fecha:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="60" y="100" width="217" height="14" uuid="a9cedbde-7da9-45e3-bab1-4fbfcab58855"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[asigna el Número de Cédula Escolar:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="368" y="100" width="100" height="15" uuid="82b863fd-605b-4ef6-9726-60af7dfb1628"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Este número]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="59" y="119" width="404" height="16" uuid="85e93090-d873-4c44-990d-b8f51c9e9706"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[lo consevará el Alumno para cualquier Documento Probatorio de Estudio]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="59" y="140" width="261" height="15" uuid="10382e3b-6232-4025-974d-98bd65de522a"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[hasta que tenga su Cédula de Identidad.]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="236" y="61" width="252" height="17" uuid="38f89e69-c04c-4ca0-a526-5ea13105115a"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{alumno_primer_nombre}+" "+$F{alumno_segundo_nombre}+" "+$F{alumno_primer_apellido}+" "+$F{alumno_segundo_apellido}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="277" y="100" width="80" height="14" uuid="73397382-8a28-4979-8372-b18fd961124f"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{matricula_id_alumno}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="128" y="82" width="149" height="14" uuid="ef5845a6-edc7-46ee-9d37-b4f44535ebd2"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{lugar}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="357" y="82" width="100" height="14" uuid="24422fd2-fad0-4f1d-a261-7d3d8e4c3136"/>
 				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{alumno_fecha_nacimiento}]]></textFieldExpression>
 			</textField>
@@ -223,14 +223,14 @@ WHERE
 			<staticText>
 				<reportElement x="70" y="31" width="100" height="15" uuid="ccfa38bf-7ebc-47ae-8618-d4338acdfdf3"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[DIRECTOR (A)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="71" y="58" width="142" height="20" uuid="2039091a-129b-4609-867c-9b6bfcb73771"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Apellidos y Nombres:]]></text>
 			</staticText>
@@ -240,7 +240,7 @@ WHERE
 			<staticText>
 				<reportElement x="70" y="88" width="162" height="20" uuid="f42b6d8b-b385-4c33-b6bc-0da5aed12e55"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[MARYMEL ESPINOZA]]></text>
 			</staticText>
@@ -250,7 +250,7 @@ WHERE
 			<staticText>
 				<reportElement x="70" y="117" width="100" height="20" uuid="c2fc3b09-a4bb-4509-aeb3-da2ff30e8216"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Número de C.I.:]]></text>
 			</staticText>
@@ -260,7 +260,7 @@ WHERE
 			<staticText>
 				<reportElement x="71" y="146" width="100" height="20" uuid="8e2b10b0-4b85-496c-995d-01ec7e823350"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[6.880.085]]></text>
 			</staticText>
@@ -270,7 +270,7 @@ WHERE
 			<staticText>
 				<reportElement x="72" y="175" width="100" height="20" uuid="e83cefe1-2615-4c0c-b204-d9c27549a659"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Firma:]]></text>
 			</staticText>

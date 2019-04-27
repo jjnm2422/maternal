@@ -11,7 +11,10 @@ import VO.NotaVO;
 import VO.PagoVO;
 import VO.RepresentanteVO;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +23,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,18 +52,20 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private String hora;
     private String minutos;
     private String segundos;
-    private long i=0;
-    private int id;
+    private long i = 0;
+    private String id;
+        DecimalFormatSymbols simbolos = DecimalFormatSymbols.getInstance(Locale.ENGLISH);
+    private DecimalFormat formatoDecimal = new DecimalFormat("#######.##", simbolos);
 
     /**
      * Creates new form frmMenu
      */
     public frmMenuReportes() {
         this.setlook();
-         initComponents();
+        initComponents();
         setLocationRelativeTo(null);
     }
-    
+
     public void setlook() {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -67,7 +73,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     public void ajustar(JLabel label, ImageIcon icon) {
         //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
         Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
@@ -152,6 +158,114 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         cbxLapso1 = new javax.swing.JComboBox<>();
+        frmBusquedaInscripcion = new javax.swing.JFrame();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel58 = new javax.swing.JLabel();
+        txtBusqueda = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblBusqueda = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar = new javax.swing.JButton();
+        btnSalir1 = new javax.swing.JButton();
+        btnSeleccion = new javax.swing.JButton();
+        frmBusquedaPago = new javax.swing.JFrame();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        txtBusqueda1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblBusqueda1 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar1 = new javax.swing.JButton();
+        btnSalir2 = new javax.swing.JButton();
+        btnSeleccion1 = new javax.swing.JButton();
+        frmBusquedaCedula = new javax.swing.JFrame();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel54 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        txtBusqueda2 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblBusqueda2 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar2 = new javax.swing.JButton();
+        btnSalir3 = new javax.swing.JButton();
+        btnSeleccion2 = new javax.swing.JButton();
+        frmBusquedaEstudio = new javax.swing.JFrame();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel55 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel61 = new javax.swing.JLabel();
+        txtBusqueda3 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblBusqueda3 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar3 = new javax.swing.JButton();
+        btnSalir4 = new javax.swing.JButton();
+        btnSeleccion3 = new javax.swing.JButton();
+        frmBusquedaBoletin1 = new javax.swing.JFrame();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        txtBusqueda4 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblBusqueda4 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar4 = new javax.swing.JButton();
+        btnSalir5 = new javax.swing.JButton();
+        btnSeleccion4 = new javax.swing.JButton();
+        frmBusquedaBoletin2 = new javax.swing.JFrame();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel63 = new javax.swing.JLabel();
+        txtBusqueda5 = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblBusqueda5 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar5 = new javax.swing.JButton();
+        btnSalir6 = new javax.swing.JButton();
+        btnSeleccion5 = new javax.swing.JButton();
+        frmDatosAsistenciaA = new javax.swing.JFrame();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        cbxGrupo = new javax.swing.JComboBox<>();
+        txtFecha = new datechooser.beans.DateChooserCombo();
+        frmDatosAsistenciaD = new javax.swing.JFrame();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        cbxGrupo1 = new javax.swing.JComboBox<>();
+        txtFecha1 = new datechooser.beans.DateChooserCombo();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -166,6 +280,9 @@ public class frmMenuReportes extends javax.swing.JFrame {
         btnReportes = new javax.swing.JButton();
         btnDocentes = new javax.swing.JButton();
         btnReportes1 = new javax.swing.JButton();
+        btnSeccion1 = new javax.swing.JButton();
+        btnSeccion2 = new javax.swing.JButton();
+        btnSeccion3 = new javax.swing.JButton();
 
         frmDatosConstanciaInscripcion.setMinimumSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaInscripcion.setResizable(false);
@@ -211,7 +328,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigoKeyTyped(evt);
             }
         });
-        jPanel7.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 30));
+        jPanel7.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 120, 30));
 
         jLabel30.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,7 +344,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        jPanel7.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, -1));
+        jPanel7.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, -1));
 
         lblNombres.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres.setForeground(new java.awt.Color(255, 255, 255));
@@ -285,7 +402,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigo1KeyTyped(evt);
             }
         });
-        jPanel8.add(txtCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 30));
+        jPanel8.add(txtCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 110, 30));
 
         jLabel31.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
@@ -301,7 +418,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscar1ActionPerformed(evt);
             }
         });
-        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, -1));
+        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 30, -1));
 
         lblNombres1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres1.setForeground(new java.awt.Color(255, 255, 255));
@@ -369,7 +486,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigo2KeyTyped(evt);
             }
         });
-        jPanel9.add(txtCodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 30));
+        jPanel9.add(txtCodigo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 120, 30));
 
         jLabel32.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
@@ -385,7 +502,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscar2ActionPerformed(evt);
             }
         });
-        jPanel9.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, -1));
+        jPanel9.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, -1));
 
         lblNombres2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres2.setForeground(new java.awt.Color(255, 255, 255));
@@ -461,7 +578,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigo3KeyTyped(evt);
             }
         });
-        jPanel10.add(txtCodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 30));
+        jPanel10.add(txtCodigo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 120, 30));
 
         jLabel33.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
@@ -477,7 +594,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscar3ActionPerformed(evt);
             }
         });
-        jPanel10.add(btnBuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, -1));
+        jPanel10.add(btnBuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, -1));
 
         lblNombres3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres3.setForeground(new java.awt.Color(255, 255, 255));
@@ -491,9 +608,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosConstanciaEstudio.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
 
-        frmDatosBoletin.setMaximumSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin.setMinimumSize(new java.awt.Dimension(290, 225));
-        frmDatosBoletin.setPreferredSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin.setResizable(false);
         frmDatosBoletin.setSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -537,7 +652,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigo4KeyTyped(evt);
             }
         });
-        jPanel11.add(txtCodigo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 20));
+        jPanel11.add(txtCodigo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, 20));
 
         jLabel34.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
@@ -553,7 +668,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscar4ActionPerformed(evt);
             }
         });
-        jPanel11.add(btnBuscar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, 20));
+        jPanel11.add(btnBuscar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, 20));
 
         lblNombres4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres4.setForeground(new java.awt.Color(255, 255, 255));
@@ -580,9 +695,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosBoletin.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 240));
 
-        frmDatosBoletin2.setMaximumSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin2.setMinimumSize(new java.awt.Dimension(290, 225));
-        frmDatosBoletin2.setPreferredSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin2.setResizable(false);
         frmDatosBoletin2.setSize(new java.awt.Dimension(290, 225));
         frmDatosBoletin2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -626,7 +739,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 txtCodigo5KeyTyped(evt);
             }
         });
-        jPanel12.add(txtCodigo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 70, 20));
+        jPanel12.add(txtCodigo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 130, 20));
 
         jLabel35.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -642,7 +755,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnBuscar5ActionPerformed(evt);
             }
         });
-        jPanel12.add(btnBuscar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 30, 20));
+        jPanel12.add(btnBuscar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, 20));
 
         lblNombres5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres5.setForeground(new java.awt.Color(255, 255, 255));
@@ -669,6 +782,682 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosBoletin2.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 240));
 
+        frmBusquedaInscripcion.setUndecorated(true);
+        frmBusquedaInscripcion.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaInscripcion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel13.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel52.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.setText("Busqueda");
+        jLabel52.setOpaque(true);
+        jPanel13.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel14.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel14.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel58.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel58.setText("Cedula Representante o Nombre Alumno");
+        jPanel14.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusquedaActionPerformed(evt);
+            }
+        });
+        txtBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusquedaKeyTyped(evt);
+            }
+        });
+        jPanel14.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        tblBusqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBusquedaMouseEntered(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblBusqueda);
+
+        jPanel14.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir1.setText("Salir");
+        btnSalir1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir1ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnSalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion.setText("Seleccionar");
+        btnSeleccion.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionActionPerformed(evt);
+            }
+        });
+        jPanel14.add(btnSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaInscripcion.getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusquedaPago.setUndecorated(true);
+        frmBusquedaPago.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaPago.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel15.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel53.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel53.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setText("Busqueda");
+        jLabel53.setOpaque(true);
+        jPanel15.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel16.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel16.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel59.setText("Cedula Representante o Nombre Alumno");
+        jPanel16.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda1ActionPerformed(evt);
+            }
+        });
+        txtBusqueda1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusqueda1KeyTyped(evt);
+            }
+        });
+        jPanel16.add(txtBusqueda1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda1.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        tblBusqueda1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBusqueda1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblBusqueda1MouseEntered(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblBusqueda1);
+
+        jPanel16.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar1.setText("Borrar");
+        btnBorrar1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar1ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnBorrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir2.setText("Salir");
+        btnSalir2.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir2ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion1.setText("Seleccionar");
+        btnSeleccion1.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion1ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnSeleccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaPago.getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusquedaCedula.setUndecorated(true);
+        frmBusquedaCedula.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaCedula.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel17.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel54.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel54.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel54.setText("Busqueda");
+        jLabel54.setOpaque(true);
+        jPanel17.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel18.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel18.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel60.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel60.setText("Cedula Representante o Nombre Alumno");
+        jPanel18.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda2ActionPerformed(evt);
+            }
+        });
+        txtBusqueda2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusqueda2KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusqueda2KeyTyped(evt);
+            }
+        });
+        jPanel18.add(txtBusqueda2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda2.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane3.setViewportView(tblBusqueda2);
+
+        jPanel18.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar2.setText("Borrar");
+        btnBorrar2.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar2ActionPerformed(evt);
+            }
+        });
+        jPanel18.add(btnBorrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir3.setText("Salir");
+        btnSalir3.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir3ActionPerformed(evt);
+            }
+        });
+        jPanel18.add(btnSalir3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion2.setText("Seleccionar");
+        btnSeleccion2.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion2ActionPerformed(evt);
+            }
+        });
+        jPanel18.add(btnSeleccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaCedula.getContentPane().add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusquedaEstudio.setUndecorated(true);
+        frmBusquedaEstudio.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaEstudio.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel19.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel55.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel55.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setText("Busqueda");
+        jLabel55.setOpaque(true);
+        jPanel19.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel20.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel20.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel61.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel61.setText("Cedula Representante o Nombre Alumno");
+        jPanel20.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda3ActionPerformed(evt);
+            }
+        });
+        txtBusqueda3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda3KeyReleased(evt);
+            }
+        });
+        jPanel20.add(txtBusqueda3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda3.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane4.setViewportView(tblBusqueda3);
+
+        jPanel20.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar3.setText("Borrar");
+        btnBorrar3.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar3ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnBorrar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir4.setText("Salir");
+        btnSalir4.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir4ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnSalir4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion3.setText("Seleccionar");
+        btnSeleccion3.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion3ActionPerformed(evt);
+            }
+        });
+        jPanel20.add(btnSeleccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel19.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaEstudio.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusquedaBoletin1.setUndecorated(true);
+        frmBusquedaBoletin1.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaBoletin1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel21.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel56.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel56.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setText("Busqueda");
+        jLabel56.setOpaque(true);
+        jPanel21.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel22.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel22.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel22.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel62.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel62.setText("Cedula Representante o Nombre Alumno");
+        jPanel22.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda4ActionPerformed(evt);
+            }
+        });
+        txtBusqueda4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda4KeyReleased(evt);
+            }
+        });
+        jPanel22.add(txtBusqueda4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda4.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane5.setViewportView(tblBusqueda4);
+
+        jPanel22.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar4.setText("Borrar");
+        btnBorrar4.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar4ActionPerformed(evt);
+            }
+        });
+        jPanel22.add(btnBorrar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir5.setText("Salir");
+        btnSalir5.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir5ActionPerformed(evt);
+            }
+        });
+        jPanel22.add(btnSalir5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion4.setText("Seleccionar");
+        btnSeleccion4.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion4ActionPerformed(evt);
+            }
+        });
+        jPanel22.add(btnSeleccion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel21.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaBoletin1.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmBusquedaBoletin2.setUndecorated(true);
+        frmBusquedaBoletin2.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaBoletin2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel23.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel57.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel57.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setText("Busqueda");
+        jLabel57.setOpaque(true);
+        jPanel23.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel24.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel24.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel24.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel63.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel63.setText("Cedula Representante o Nombre Alumno");
+        jPanel24.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda5ActionPerformed(evt);
+            }
+        });
+        txtBusqueda5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda5KeyReleased(evt);
+            }
+        });
+        jPanel24.add(txtBusqueda5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda5.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane6.setViewportView(tblBusqueda5);
+
+        jPanel24.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar5.setText("Borrar");
+        btnBorrar5.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar5ActionPerformed(evt);
+            }
+        });
+        jPanel24.add(btnBorrar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir6.setText("Salir");
+        btnSalir6.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir6ActionPerformed(evt);
+            }
+        });
+        jPanel24.add(btnSalir6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion5.setText("Seleccionar");
+        btnSeleccion5.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion5ActionPerformed(evt);
+            }
+        });
+        jPanel24.add(btnSeleccion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel23.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaBoletin2.getContentPane().add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmDatosAsistenciaA.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosAsistenciaA.setResizable(false);
+        frmDatosAsistenciaA.setSize(new java.awt.Dimension(290, 225));
+        frmDatosAsistenciaA.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel25.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel25.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel25.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel25.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Datos para Reporte");
+        jPanel25.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 30));
+
+        jButton24.setText("Aceptar");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+        jPanel25.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 80, -1));
+
+        jButton25.setText("Cancelar");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+        jPanel25.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 80, -1));
+
+        jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Grupo:");
+        jLabel36.setName("lbl"); // NOI18N
+        jPanel25.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, 30));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Fecha de Asistencia");
+        jPanel25.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+
+        cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+        jPanel25.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, 30));
+
+        txtFecha.setFormat(2);
+        jPanel25.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
+
+        frmDatosAsistenciaA.getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
+
+        frmDatosAsistenciaD.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosAsistenciaD.setResizable(false);
+        frmDatosAsistenciaD.setSize(new java.awt.Dimension(290, 225));
+        frmDatosAsistenciaD.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel26.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel26.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel26.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel26.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel21.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Datos para Reporte");
+        jPanel26.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 30));
+
+        jButton26.setText("Aceptar");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 80, -1));
+
+        jButton27.setText("Cancelar");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 80, -1));
+
+        jLabel37.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("Grupo:");
+        jLabel37.setName("lbl"); // NOI18N
+        jPanel26.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, 30));
+
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Fecha de Asistencia");
+        jPanel26.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+
+        cbxGrupo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+        jPanel26.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, 30));
+        jPanel26.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
+
+        frmDatosAsistenciaD.getContentPane().add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -677,6 +1466,8 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(69, 90, 100));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 51, 153), new java.awt.Color(0, 51, 153)));
+        jPanel2.setMinimumSize(new java.awt.Dimension(700, 370));
+        jPanel2.setPreferredSize(new java.awt.Dimension(700, 370));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -694,7 +1485,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 bntAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 130, 30));
+        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 130, 30));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
@@ -784,6 +1575,33 @@ public class frmMenuReportes extends javax.swing.JFrame {
         });
         jPanel2.add(btnReportes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 160, 30));
 
+        btnSeccion1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSeccion1.setText("Indicadores");
+        btnSeccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeccion1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, 70));
+
+        btnSeccion2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSeccion2.setText("Asistencia Docentes");
+        btnSeccion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeccion2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 160, 70));
+
+        btnSeccion3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnSeccion3.setText("Asistencia Alumno");
+        btnSeccion3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeccion3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSeccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 160, 70));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
@@ -792,17 +1610,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsistenciaActionPerformed
- this.frmDatosConstanciaPago.setLocationRelativeTo(null);
- this.frmDatosConstanciaPago.setSize(290, 200);
- this.frmDatosConstanciaPago.setVisible(true);   
+        this.frmDatosConstanciaPago.setLocationRelativeTo(null);
+        this.frmDatosConstanciaPago.setSize(290, 200);
+        this.frmDatosConstanciaPago.setVisible(true);
     }//GEN-LAST:event_btnAsistenciaActionPerformed
 
     private void btnSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccionActionPerformed
-    try {
-        Connection conexion= null;
-        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-        conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte()+ "\\lista3grupo.jrxml";
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista3grupo.jrxml";
             Map<String, Object> p2 = new HashMap<>();
             p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
             JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
@@ -811,29 +1629,29 @@ public class frmMenuReportes extends javax.swing.JFrame {
             visor.setVisible(true);
         } catch (JRException ex) {
             coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-    } 
+        }
     }//GEN-LAST:event_btnSeccionActionPerformed
 
     private void btnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionActionPerformed
- this.frmDatosConstanciaInscripcion.setLocationRelativeTo(null);
- this.frmDatosConstanciaInscripcion.setSize(290, 200);
- this.frmDatosConstanciaInscripcion.setVisible(true); 
+        this.frmDatosConstanciaInscripcion.setLocationRelativeTo(null);
+        this.frmDatosConstanciaInscripcion.setSize(290, 200);
+        this.frmDatosConstanciaInscripcion.setVisible(true);
     }//GEN-LAST:event_btnInscripcionActionPerformed
 
     private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
-     this.frmDatosBoletin.setLocationRelativeTo(null);
- this.frmDatosBoletin.setSize(290, 200);
- this.frmDatosBoletin.setVisible(true); 
-        
-        
+        this.frmDatosBoletin.setLocationRelativeTo(null);
+        this.frmDatosBoletin.setSize(290, 200);
+        this.frmDatosBoletin.setVisible(true);
+
+
     }//GEN-LAST:event_btnReportesActionPerformed
 
     private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
-    try {
-        Connection conexion= null;
-        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-        conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte()+ "\\lista1ergrupo.jrxml";
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista1ergrupo.jrxml";
             Map<String, Object> p2 = new HashMap<>();
             p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
             JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
@@ -842,31 +1660,31 @@ public class frmMenuReportes extends javax.swing.JFrame {
             visor.setVisible(true);
         } catch (JRException ex) {
             coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-    }   
+        }
     }//GEN-LAST:event_btnUsuarioActionPerformed
 
     private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
- this.frmDatosConstanciaEstudio.setLocationRelativeTo(null);
- this.frmDatosConstanciaEstudio.setSize(290, 200);
- this.frmDatosConstanciaEstudio.setVisible(true); 
+        this.frmDatosConstanciaEstudio.setLocationRelativeTo(null);
+        this.frmDatosConstanciaEstudio.setSize(290, 200);
+        this.frmDatosConstanciaEstudio.setVisible(true);
     }//GEN-LAST:event_btnPagosActionPerformed
 
     private void bntAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtrasActionPerformed
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_bntAtrasActionPerformed
 
     private void btnDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocentesActionPerformed
- this.frmDatosNumeroCedula.setLocationRelativeTo(null);
- this.frmDatosNumeroCedula.setSize(290, 200);
- this.frmDatosNumeroCedula.setVisible(true); 
+        this.frmDatosNumeroCedula.setLocationRelativeTo(null);
+        this.frmDatosNumeroCedula.setSize(290, 200);
+        this.frmDatosNumeroCedula.setVisible(true);
     }//GEN-LAST:event_btnDocentesActionPerformed
 
     private void btnNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotasActionPerformed
-    try {
-        Connection conexion= null;
-        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-        conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte()+ "\\lista2dogrupo.jrxml";
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista2dogrupo.jrxml";
             Map<String, Object> p2 = new HashMap<>();
             p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
             JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
@@ -875,7 +1693,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
             visor.setVisible(true);
         } catch (JRException ex) {
             coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-    } 
+        }
     }//GEN-LAST:event_btnNotasActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -885,14 +1703,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
                 conexion = conexiondb.getConnection();
                 String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\Constancia de Inscripcion.jrxml";
-                double valorMatricula = 0 ;
-                valorMatricula = (coordinador.getVariablesDAO().consultarVariables().getPrecio_cuota() + (coordinador.getVariablesDAO().consultarVariables().getPrecio_cuota() * coordinador.getVariablesDAO().consultarVariables().getIva()/ 100)) * 12;
+                double valorMatricula = coordinador.consultarVariables().getPrecio_inscripcion();
+                valorMatricula = Double.parseDouble(formatoDecimal.format(valorMatricula));
                 
                 Map<String, Object> p2 = new HashMap<>();
                 p2.put("id", id);
                 p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-                p2.put("matricula", valorMatricula);;
-                p2.put("total", (valorMatricula+coordinador.getVariablesDAO().consultarVariables().getSeguro()));
+                p2.put("matricula", valorMatricula);
+                p2.put("total", (valorMatricula + coordinador.getVariablesDAO().consultarVariables().getSeguro() + coordinador.consultarVariables().getPrecio_cuota()*12));
                 p2.put("anio_anterior", coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(0, 4));
                 p2.put("anio_siguiente", coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual().substring(5, 9));
                 JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
@@ -905,16 +1723,16 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
                 this.dispose();
             }
-           
-        }else{
-               coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-                        lblNombres.setText("");
-                txtCodigo.setText("");
-        this.frmDatosConstanciaInscripcion.setVisible(false); 
+        lblNombres.setText("");
+        txtCodigo.setText("");
+        this.frmDatosConstanciaInscripcion.setVisible(false);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
@@ -922,23 +1740,27 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void txtCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyTyped
-
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo.getText().length());
     }//GEN-LAST:event_txtCodigoKeyTyped
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         if (!txtCodigo.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo.getText());
+            id = txtCodigo.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblNombres.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getSegundo_nombre()+" "+alumnoVO.getPrimer_apellido()+" "+alumnoVO.getSegundo_apellido());
-              } else{
-                     coordinador.getLogica().mensajeError("Codigo no existe");
+                lblNombres.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaInscripcion.setLocationRelativeTo(this);
+                frmBusquedaInscripcion.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaInscripcion.setLocationRelativeTo(this);
+            frmBusquedaInscripcion.setVisible(true);
         }
-       
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -964,17 +1786,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
                 this.dispose();
             }
-           
-        }else{
-               coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-                        lblNombres1.setText("");
-                txtCodigo1.setText("");
-                lblMes.setText("");
-        this.frmDatosConstanciaPago.setVisible(false);        
+        lblNombres1.setText("");
+        txtCodigo1.setText("");
+        lblMes.setText("");
+        this.frmDatosConstanciaPago.setVisible(false);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void txtCodigo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo1ActionPerformed
@@ -982,62 +1804,66 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo1ActionPerformed
 
     private void txtCodigo1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo1KeyTyped
-        // TODO add your handling code here:
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo1.getText().length());
     }//GEN-LAST:event_txtCodigo1KeyTyped
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         if (!txtCodigo1.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo1.getText());
+            id = txtCodigo1.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo1.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblNombres1.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getSegundo_nombre()+" "+alumnoVO.getPrimer_apellido()+" "+alumnoVO.getSegundo_apellido());
+                lblNombres1.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
                 String consultarPago = consultarPago(String.valueOf(id));
                 lblMes.setText(consultarPago);
-            } else{
-                     coordinador.getLogica().mensajeError("Codigo no existe");
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaPago.setLocationRelativeTo(this);
+                frmBusquedaPago.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaPago.setLocationRelativeTo(this);
+            frmBusquedaPago.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         if (!lblNombres2.getText().equals("")) {
             if (!txtNacimiento.getText().equals("")) {
-            try {
-                Connection conexion = null;
-                Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-                conexion = conexiondb.getConnection();
-                String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\numerocudelaescolar.jrxml";
+                try {
+                    Connection conexion = null;
+                    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                    conexion = conexiondb.getConnection();
+                    String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\numerocudelaescolar.jrxml";
 
-                Map<String, Object> p2 = new HashMap<>();
-                p2.put("id", id);
-                p2.put("lugar", txtNacimiento.getText());
-                JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-                JasperViewer visor = new JasperViewer(mostrarReporte, false);
-                visor.setVisible(true);
-                lblNombres2.setText("");
-                txtCodigo2.setText("");
-                txtNacimiento.setText("");
-            } catch (JRException ex) {
-                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-                this.dispose();
+                    Map<String, Object> p2 = new HashMap<>();
+                    p2.put("id", id);
+                    p2.put("lugar", txtNacimiento.getText());
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                    JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                    visor.setVisible(true);
+                    lblNombres2.setText("");
+                    txtCodigo2.setText("");
+                    txtNacimiento.setText("");
+                } catch (JRException ex) {
+                    coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                    this.dispose();
+                }
+            } else {
+                coordinador.getLogica().mensajeError("Por favor ingrese el lugar de nacimiento");
             }
-           }else{
-               coordinador.getLogica().mensajeError("Por favor ingrese el lugar de nacimiento");
-        }
-        }else{
-               coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-                        lblNombres2.setText("");
-                txtCodigo2.setText("");
-                txtNacimiento.setText("");
-        this.frmDatosNumeroCedula.setVisible(false);     
+        lblNombres2.setText("");
+        txtCodigo2.setText("");
+        txtNacimiento.setText("");
+        this.frmDatosNumeroCedula.setVisible(false);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void txtCodigo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo2ActionPerformed
@@ -1045,21 +1871,25 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo2ActionPerformed
 
     private void txtCodigo2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo2KeyTyped
-        // TODO add your handling code here:
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo2.getText().length());
     }//GEN-LAST:event_txtCodigo2KeyTyped
 
     private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
         if (!txtCodigo2.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo2.getText());
+            id = txtCodigo2.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo2.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblNombres2.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getSegundo_nombre()+" "+alumnoVO.getPrimer_apellido()+" "+alumnoVO.getSegundo_apellido());
-              } else{
-                     coordinador.getLogica().mensajeError("Codigo no existe");
+                lblNombres2.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaCedula.setLocationRelativeTo(this);
+                frmBusquedaCedula.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaCedula.setLocationRelativeTo(this);
+            frmBusquedaCedula.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar2ActionPerformed
 
@@ -1078,7 +1908,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
                 conexion = conexiondb.getConnection();
                 String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\constancia.jrxml";
-          
+
                 Map<String, Object> p2 = new HashMap<>();
                 p2.put("id", id);
                 p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
@@ -1092,16 +1922,16 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
                 this.dispose();
             }
-           
-        }else{
-               coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
         }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-                        lblNombres3.setText("");
-                txtCodigo3.setText("");
-        this.frmDatosConstanciaEstudio.setVisible(false); 
+        lblNombres3.setText("");
+        txtCodigo3.setText("");
+        this.frmDatosConstanciaEstudio.setVisible(false);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void txtCodigo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo3ActionPerformed
@@ -1109,95 +1939,99 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo3ActionPerformed
 
     private void txtCodigo3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo3KeyTyped
-        // TODO add your handling code here:
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo3.getText().length());
     }//GEN-LAST:event_txtCodigo3KeyTyped
 
     private void btnBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar3ActionPerformed
         if (!txtCodigo3.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo3.getText());
+            id = txtCodigo3.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo3.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
-                lblNombres3.setText(alumnoVO.getPrimer_nombre()+" "+alumnoVO.getSegundo_nombre()+" "+alumnoVO.getPrimer_apellido()+" "+alumnoVO.getSegundo_apellido());
-              } else{
-                     coordinador.getLogica().mensajeError("Codigo no existe");
+                lblNombres3.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaEstudio.setLocationRelativeTo(this);
+                frmBusquedaEstudio.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaEstudio.setLocationRelativeTo(this);
+            frmBusquedaEstudio.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar3ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-                if (lblNombres4.getText().isEmpty()) {
-                    coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
-                }else{   
-//llenar parametros a enviar
-        if (!obtenerDatos2(String.valueOf(id))) {
-            coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres4.getText() + " para el lapso seleccionado");
+        if (lblNombres4.getText().isEmpty()) {
+            coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
         } else {
-            try {
-                Connection conexion = null;
-                Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-                conexion = conexiondb.getConnection();
-                String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin1.jrxml";
-                //obtengo valores a pasar
-                NotaVO notaVO = obtenerDatos(String.valueOf(id));
-                Map<String, Object> p2 = new HashMap<>();
-                p2.put("id", id);
-                p2.put("lapso", cbxLapso.getSelectedItem().toString());
-                p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-                p2.put("parameter1", notaVO.getFormacion_personal_social()[0].substring(2,  notaVO.getFormacion_personal_social()[0].length()));
-                p2.put("parameter2", notaVO.getFormacion_personal_social()[1].substring(2,  notaVO.getFormacion_personal_social()[1].length()));
-                p2.put("parameter3", notaVO.getFormacion_personal_social()[2].substring(2,  notaVO.getFormacion_personal_social()[2].length()));
-                p2.put("parameter4", notaVO.getFormacion_personal_social()[3].substring(2,  notaVO.getFormacion_personal_social()[3].length()));
-                p2.put("parameter5", notaVO.getFormacion_personal_social()[4].substring(2,  notaVO.getFormacion_personal_social()[4].length()));
-                p2.put("parameter6", notaVO.getFormacion_personal_social()[5].substring(2,  notaVO.getFormacion_personal_social()[5].length()));
-                p2.put("parameter7", notaVO.getFormacion_personal_social()[6].substring(2,  notaVO.getFormacion_personal_social()[6].length()));
-                p2.put("parameter8", notaVO.getFormacion_personal_social()[7].substring(2,  notaVO.getFormacion_personal_social()[7].length()));
-                p2.put("parameter9", notaVO.getFormacion_personal_social()[8].substring(2,  notaVO.getFormacion_personal_social()[8].length()));
-                //
-                p2.put("parameter10", notaVO.getRelacion_ambiente()[0].substring(2,  notaVO.getRelacion_ambiente()[0].length()));
-                p2.put("parameter11", notaVO.getRelacion_ambiente()[1].substring(2,  notaVO.getRelacion_ambiente()[1].length()));
-                p2.put("parameter12", notaVO.getRelacion_ambiente()[2].substring(2,  notaVO.getRelacion_ambiente()[2].length()));
-                p2.put("parameter13", notaVO.getRelacion_ambiente()[3].substring(2,  notaVO.getRelacion_ambiente()[3].length()));
-                p2.put("parameter14", notaVO.getRelacion_ambiente()[4].substring(2,  notaVO.getRelacion_ambiente()[4].length()));
-                p2.put("parameter15", notaVO.getRelacion_ambiente()[5].substring(2,  notaVO.getRelacion_ambiente()[5].length()));
-                p2.put("parameter16", notaVO.getRelacion_ambiente()[6].substring(2,  notaVO.getRelacion_ambiente()[6].length()));
-                p2.put("parameter17", notaVO.getRelacion_ambiente()[7].substring(2,  notaVO.getRelacion_ambiente()[7].length()));
-                p2.put("parameter18", notaVO.getRelacion_ambiente()[8].substring(2,  notaVO.getRelacion_ambiente()[8].length()));
-                p2.put("parameter19", notaVO.getRelacion_ambiente()[9].substring(3,  notaVO.getRelacion_ambiente()[9].length()));
-                //
-                p2.put("parameter20", notaVO.getComunicacion_presentacion()[0].substring(2,  notaVO.getComunicacion_presentacion()[0].length()));
-                p2.put("parameter21", notaVO.getComunicacion_presentacion()[1].substring(2,  notaVO.getComunicacion_presentacion()[1].length()));
-                p2.put("parameter22", notaVO.getComunicacion_presentacion()[2].substring(2,  notaVO.getComunicacion_presentacion()[2].length()));
-                p2.put("parameter23", notaVO.getComunicacion_presentacion()[3].substring(2,  notaVO.getComunicacion_presentacion()[3].length()));
-                p2.put("parameter24", notaVO.getComunicacion_presentacion()[4].substring(2,  notaVO.getComunicacion_presentacion()[4].length()));
-                p2.put("parameter25", notaVO.getComunicacion_presentacion()[5].substring(2,  notaVO.getComunicacion_presentacion()[5].length()));
-                p2.put("parameter26", notaVO.getComunicacion_presentacion()[6].substring(2,  notaVO.getComunicacion_presentacion()[6].length()));
-                p2.put("parameter27", notaVO.getComunicacion_presentacion()[7].substring(2,  notaVO.getComunicacion_presentacion()[7].length()));
-                p2.put("parameter28", notaVO.getComunicacion_presentacion()[8].substring(2,  notaVO.getComunicacion_presentacion()[8].length()));
-                p2.put("parameter29", notaVO.getComunicacion_presentacion()[9].substring(3,  notaVO.getComunicacion_presentacion()[9].length()));
-                p2.put("parameter30", notaVO.getComunicacion_presentacion()[10].substring(3, notaVO.getComunicacion_presentacion()[10].length()));
-                p2.put("parameter31", notaVO.getComunicacion_presentacion()[11].substring(3,  notaVO.getComunicacion_presentacion()[11].length()));
-                p2.put("parameter32", notaVO.getComunicacion_presentacion()[12].substring(3,  notaVO.getComunicacion_presentacion()[12].length()));
-                p2.put("parameter33", notaVO.getComunicacion_presentacion()[13].substring(3,  notaVO.getComunicacion_presentacion()[13].length()));
-                
-                JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-                JasperViewer visor = new JasperViewer(mostrarReporte, false);
-                visor.setVisible(true);
-            } catch (JRException ex) {
-                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+//llenar parametros a enviar
+            if (!obtenerDatos2(String.valueOf(id))) {
+                coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres4.getText() + " para el lapso seleccionado");
+            } else {
+                try {
+                    Connection conexion = null;
+                    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                    conexion = conexiondb.getConnection();
+                    String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin1.jrxml";
+                    //obtengo valores a pasar
+                    NotaVO notaVO = obtenerDatos(String.valueOf(id));
+                    Map<String, Object> p2 = new HashMap<>();
+                    p2.put("id", id);
+                    p2.put("lapso", cbxLapso.getSelectedItem().toString());
+                    p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                    p2.put("parameter1", notaVO.getFormacion_personal_social()[0].substring(2, notaVO.getFormacion_personal_social()[0].length()));
+                    p2.put("parameter2", notaVO.getFormacion_personal_social()[1].substring(2, notaVO.getFormacion_personal_social()[1].length()));
+                    p2.put("parameter3", notaVO.getFormacion_personal_social()[2].substring(2, notaVO.getFormacion_personal_social()[2].length()));
+                    p2.put("parameter4", notaVO.getFormacion_personal_social()[3].substring(2, notaVO.getFormacion_personal_social()[3].length()));
+                    p2.put("parameter5", notaVO.getFormacion_personal_social()[4].substring(2, notaVO.getFormacion_personal_social()[4].length()));
+                    p2.put("parameter6", notaVO.getFormacion_personal_social()[5].substring(2, notaVO.getFormacion_personal_social()[5].length()));
+                    p2.put("parameter7", notaVO.getFormacion_personal_social()[6].substring(2, notaVO.getFormacion_personal_social()[6].length()));
+                    p2.put("parameter8", notaVO.getFormacion_personal_social()[7].substring(2, notaVO.getFormacion_personal_social()[7].length()));
+                    p2.put("parameter9", notaVO.getFormacion_personal_social()[8].substring(2, notaVO.getFormacion_personal_social()[8].length()));
+                    //
+                    p2.put("parameter10", notaVO.getRelacion_ambiente()[0].substring(2, notaVO.getRelacion_ambiente()[0].length()));
+                    p2.put("parameter11", notaVO.getRelacion_ambiente()[1].substring(2, notaVO.getRelacion_ambiente()[1].length()));
+                    p2.put("parameter12", notaVO.getRelacion_ambiente()[2].substring(2, notaVO.getRelacion_ambiente()[2].length()));
+                    p2.put("parameter13", notaVO.getRelacion_ambiente()[3].substring(2, notaVO.getRelacion_ambiente()[3].length()));
+                    p2.put("parameter14", notaVO.getRelacion_ambiente()[4].substring(2, notaVO.getRelacion_ambiente()[4].length()));
+                    p2.put("parameter15", notaVO.getRelacion_ambiente()[5].substring(2, notaVO.getRelacion_ambiente()[5].length()));
+                    p2.put("parameter16", notaVO.getRelacion_ambiente()[6].substring(2, notaVO.getRelacion_ambiente()[6].length()));
+                    p2.put("parameter17", notaVO.getRelacion_ambiente()[7].substring(2, notaVO.getRelacion_ambiente()[7].length()));
+                    p2.put("parameter18", notaVO.getRelacion_ambiente()[8].substring(2, notaVO.getRelacion_ambiente()[8].length()));
+                    p2.put("parameter19", notaVO.getRelacion_ambiente()[9].substring(3, notaVO.getRelacion_ambiente()[9].length()));
+                    //
+                    p2.put("parameter20", notaVO.getComunicacion_presentacion()[0].substring(2, notaVO.getComunicacion_presentacion()[0].length()));
+                    p2.put("parameter21", notaVO.getComunicacion_presentacion()[1].substring(2, notaVO.getComunicacion_presentacion()[1].length()));
+                    p2.put("parameter22", notaVO.getComunicacion_presentacion()[2].substring(2, notaVO.getComunicacion_presentacion()[2].length()));
+                    p2.put("parameter23", notaVO.getComunicacion_presentacion()[3].substring(2, notaVO.getComunicacion_presentacion()[3].length()));
+                    p2.put("parameter24", notaVO.getComunicacion_presentacion()[4].substring(2, notaVO.getComunicacion_presentacion()[4].length()));
+                    p2.put("parameter25", notaVO.getComunicacion_presentacion()[5].substring(2, notaVO.getComunicacion_presentacion()[5].length()));
+                    p2.put("parameter26", notaVO.getComunicacion_presentacion()[6].substring(2, notaVO.getComunicacion_presentacion()[6].length()));
+                    p2.put("parameter27", notaVO.getComunicacion_presentacion()[7].substring(2, notaVO.getComunicacion_presentacion()[7].length()));
+                    p2.put("parameter28", notaVO.getComunicacion_presentacion()[8].substring(2, notaVO.getComunicacion_presentacion()[8].length()));
+                    p2.put("parameter29", notaVO.getComunicacion_presentacion()[9].substring(3, notaVO.getComunicacion_presentacion()[9].length()));
+                    p2.put("parameter30", notaVO.getComunicacion_presentacion()[10].substring(3, notaVO.getComunicacion_presentacion()[10].length()));
+                    p2.put("parameter31", notaVO.getComunicacion_presentacion()[11].substring(3, notaVO.getComunicacion_presentacion()[11].length()));
+                    p2.put("parameter32", notaVO.getComunicacion_presentacion()[12].substring(3, notaVO.getComunicacion_presentacion()[12].length()));
+                    p2.put("parameter33", notaVO.getComunicacion_presentacion()[13].substring(3, notaVO.getComunicacion_presentacion()[13].length()));
+
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                    JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                    visor.setVisible(true);
+                } catch (JRException ex) {
+                    coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                }
             }
         }
- }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-                        lblNombres4.setText("");
-                txtCodigo4.setText("");
-                cbxLapso.setSelectedIndex(0);
-        this.frmDatosBoletin.setVisible(false); 
+        lblNombres4.setText("");
+        txtCodigo4.setText("");
+        cbxLapso.setSelectedIndex(0);
+        this.frmDatosBoletin.setVisible(false);
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void txtCodigo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo4ActionPerformed
@@ -1205,12 +2039,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo4ActionPerformed
 
     private void txtCodigo4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo4KeyTyped
-        // TODO add your handling code here:
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo4.getText().length());
     }//GEN-LAST:event_txtCodigo4KeyTyped
 
     private void btnBuscar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar4ActionPerformed
         if (!txtCodigo4.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo4.getText());
+            id = txtCodigo4.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo4.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
@@ -1221,16 +2055,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
                     coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres4.getText() + " para el lapso seleccionado");
                     lblNombres4.setText("");
                     txtCodigo4.setText("");
-                                    cbxLapso.setSelectedIndex(0);
+                    cbxLapso.setSelectedIndex(0);
                 }
             } else {
-                     coordinador.getLogica().mensajeError("Codigo no existe");
-                                         lblNombres4.setText("");
-                    txtCodigo4.setText("");
-                                    cbxLapso.setSelectedIndex(0);
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaBoletin1.setLocationRelativeTo(this);
+                frmBusquedaBoletin1.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaBoletin1.setLocationRelativeTo(this);
+            frmBusquedaBoletin1.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar4ActionPerformed
 
@@ -1239,70 +2074,70 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxLapsoActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-               if (lblNombres5.getText().isEmpty()) {
-                    coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
-                }else{   
-//llenar parametros a enviar
-        if (!obtenerDatos2(String.valueOf(id))) {
-            coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
+        if (lblNombres5.getText().isEmpty()) {
+            coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
         } else {
-            try {
-                Connection conexion = null;
-                Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-                conexion = conexiondb.getConnection();
-                String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin2.jrxml";
-                //obtengo valores a pasar
-                NotaVO notaVO = obtenerDatos(String.valueOf(id));
-                Map<String, Object> p2 = new HashMap<>();
-                p2.put("id", id);
-                p2.put("lapso", cbxLapso1.getSelectedItem().toString());
-                p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-                p2.put("parameter1", notaVO.getIndicadores_evaluados()[0].substring(2,  notaVO.getIndicadores_evaluados()[0].length()));
-                p2.put("parameter2", notaVO.getIndicadores_evaluados()[1].substring(2,  notaVO.getIndicadores_evaluados()[1].length()));
-                p2.put("parameter3", notaVO.getIndicadores_evaluados()[2].substring(2,  notaVO.getIndicadores_evaluados()[2].length()));
-                p2.put("parameter4", notaVO.getIndicadores_evaluados()[3].substring(2,  notaVO.getIndicadores_evaluados()[3].length()));
-                p2.put("parameter5", notaVO.getIndicadores_evaluados()[4].substring(2,  notaVO.getIndicadores_evaluados()[4].length()));
-                p2.put("parameter6", notaVO.getIndicadores_evaluados()[5].substring(2,  notaVO.getIndicadores_evaluados()[5].length()));
-                p2.put("parameter7", notaVO.getIndicadores_evaluados()[6].substring(2,  notaVO.getIndicadores_evaluados()[6].length()));
-                p2.put("parameter8", notaVO.getIndicadores_evaluados()[7].substring(2,  notaVO.getIndicadores_evaluados()[7].length()));
-                p2.put("parameter9", notaVO.getIndicadores_evaluados()[8].substring(2,  notaVO.getIndicadores_evaluados()[8].length()));
-                p2.put("parameter10", notaVO.getIndicadores_evaluados()[9].substring(3,  notaVO.getIndicadores_evaluados()[9].length()));
-                //
-                p2.put("parameter11", notaVO.getIndicadores_evaluados()[10].substring(3,  notaVO.getIndicadores_evaluados()[10].length()));
-                p2.put("parameter12", notaVO.getIndicadores_evaluados()[11].substring(3,  notaVO.getIndicadores_evaluados()[11].length()));
-                p2.put("parameter13", notaVO.getIndicadores_evaluados()[12].substring(3,  notaVO.getIndicadores_evaluados()[12].length()));
-                p2.put("parameter14", notaVO.getIndicadores_evaluados()[13].substring(3,  notaVO.getIndicadores_evaluados()[13].length()));
-                p2.put("parameter15", notaVO.getIndicadores_evaluados()[14].substring(3,  notaVO.getIndicadores_evaluados()[14].length()));
-                p2.put("parameter16", notaVO.getIndicadores_evaluados()[15].substring(3,  notaVO.getIndicadores_evaluados()[15].length()));
-                p2.put("parameter17", notaVO.getIndicadores_evaluados()[16].substring(3,  notaVO.getIndicadores_evaluados()[16].length()));
-                p2.put("parameter18", notaVO.getIndicadores_evaluados()[17].substring(3,  notaVO.getIndicadores_evaluados()[17].length()));
-                p2.put("parameter19", notaVO.getIndicadores_evaluados()[18].substring(3,  notaVO.getIndicadores_evaluados()[18].length()));
-                //
-                p2.put("parameter20", notaVO.getHabitos_trabajo()[0].substring(2,  notaVO.getHabitos_trabajo()[0].length()));
-                p2.put("parameter21", notaVO.getHabitos_trabajo()[1].substring(2,  notaVO.getHabitos_trabajo()[1].length()));
-                p2.put("parameter22", notaVO.getHabitos_trabajo()[2].substring(2,  notaVO.getHabitos_trabajo()[2].length()));
-                p2.put("parameter23", notaVO.getHabitos_trabajo()[3].substring(2,  notaVO.getHabitos_trabajo()[3].length()));
-                p2.put("parameter24", notaVO.getHabitos_trabajo()[4].substring(2,  notaVO.getHabitos_trabajo()[4].length()));
-                p2.put("parameter25", notaVO.getHabitos_trabajo()[5].substring(2,  notaVO.getHabitos_trabajo()[5].length()));
-                p2.put("parameter26", notaVO.getHabitos_trabajo()[6].substring(2,  notaVO.getHabitos_trabajo()[6].length()));
-                p2.put("parameter27", notaVO.getHabitos_trabajo()[7].substring(2,  notaVO.getHabitos_trabajo()[7].length()));
-                
-                JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-                JasperViewer visor = new JasperViewer(mostrarReporte, false);
-                visor.setVisible(true);
-            } catch (JRException ex) {
-                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+//llenar parametros a enviar
+            if (!obtenerDatos2(String.valueOf(id))) {
+                coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
+            } else {
+                try {
+                    Connection conexion = null;
+                    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                    conexion = conexiondb.getConnection();
+                    String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin2.jrxml";
+                    //obtengo valores a pasar
+                    NotaVO notaVO = obtenerDatos(String.valueOf(id));
+                    Map<String, Object> p2 = new HashMap<>();
+                    p2.put("id", id);
+                    p2.put("lapso", cbxLapso1.getSelectedItem().toString());
+                    p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                    p2.put("parameter1", notaVO.getIndicadores_evaluados()[0].substring(2, notaVO.getIndicadores_evaluados()[0].length()));
+                    p2.put("parameter2", notaVO.getIndicadores_evaluados()[1].substring(2, notaVO.getIndicadores_evaluados()[1].length()));
+                    p2.put("parameter3", notaVO.getIndicadores_evaluados()[2].substring(2, notaVO.getIndicadores_evaluados()[2].length()));
+                    p2.put("parameter4", notaVO.getIndicadores_evaluados()[3].substring(2, notaVO.getIndicadores_evaluados()[3].length()));
+                    p2.put("parameter5", notaVO.getIndicadores_evaluados()[4].substring(2, notaVO.getIndicadores_evaluados()[4].length()));
+                    p2.put("parameter6", notaVO.getIndicadores_evaluados()[5].substring(2, notaVO.getIndicadores_evaluados()[5].length()));
+                    p2.put("parameter7", notaVO.getIndicadores_evaluados()[6].substring(2, notaVO.getIndicadores_evaluados()[6].length()));
+                    p2.put("parameter8", notaVO.getIndicadores_evaluados()[7].substring(2, notaVO.getIndicadores_evaluados()[7].length()));
+                    p2.put("parameter9", notaVO.getIndicadores_evaluados()[8].substring(2, notaVO.getIndicadores_evaluados()[8].length()));
+                    p2.put("parameter10", notaVO.getIndicadores_evaluados()[9].substring(3, notaVO.getIndicadores_evaluados()[9].length()));
+                    //
+                    p2.put("parameter11", notaVO.getIndicadores_evaluados()[10].substring(3, notaVO.getIndicadores_evaluados()[10].length()));
+                    p2.put("parameter12", notaVO.getIndicadores_evaluados()[11].substring(3, notaVO.getIndicadores_evaluados()[11].length()));
+                    p2.put("parameter13", notaVO.getIndicadores_evaluados()[12].substring(3, notaVO.getIndicadores_evaluados()[12].length()));
+                    p2.put("parameter14", notaVO.getIndicadores_evaluados()[13].substring(3, notaVO.getIndicadores_evaluados()[13].length()));
+                    p2.put("parameter15", notaVO.getIndicadores_evaluados()[14].substring(3, notaVO.getIndicadores_evaluados()[14].length()));
+                    p2.put("parameter16", notaVO.getIndicadores_evaluados()[15].substring(3, notaVO.getIndicadores_evaluados()[15].length()));
+                    p2.put("parameter17", notaVO.getIndicadores_evaluados()[16].substring(3, notaVO.getIndicadores_evaluados()[16].length()));
+                    p2.put("parameter18", notaVO.getIndicadores_evaluados()[17].substring(3, notaVO.getIndicadores_evaluados()[17].length()));
+                    p2.put("parameter19", notaVO.getIndicadores_evaluados()[18].substring(3, notaVO.getIndicadores_evaluados()[18].length()));
+                    //
+                    p2.put("parameter20", notaVO.getHabitos_trabajo()[0].substring(2, notaVO.getHabitos_trabajo()[0].length()));
+                    p2.put("parameter21", notaVO.getHabitos_trabajo()[1].substring(2, notaVO.getHabitos_trabajo()[1].length()));
+                    p2.put("parameter22", notaVO.getHabitos_trabajo()[2].substring(2, notaVO.getHabitos_trabajo()[2].length()));
+                    p2.put("parameter23", notaVO.getHabitos_trabajo()[3].substring(2, notaVO.getHabitos_trabajo()[3].length()));
+                    p2.put("parameter24", notaVO.getHabitos_trabajo()[4].substring(2, notaVO.getHabitos_trabajo()[4].length()));
+                    p2.put("parameter25", notaVO.getHabitos_trabajo()[5].substring(2, notaVO.getHabitos_trabajo()[5].length()));
+                    p2.put("parameter26", notaVO.getHabitos_trabajo()[6].substring(2, notaVO.getHabitos_trabajo()[6].length()));
+                    p2.put("parameter27", notaVO.getHabitos_trabajo()[7].substring(2, notaVO.getHabitos_trabajo()[7].length()));
+
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                    JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                    visor.setVisible(true);
+                } catch (JRException ex) {
+                    coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                }
             }
         }
- }
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-                        lblNombres5.setText("");
-                txtCodigo5.setText("");
-                cbxLapso1.setSelectedIndex(0);
-        this.frmDatosBoletin2.setVisible(false); 
+        lblNombres5.setText("");
+        txtCodigo5.setText("");
+        cbxLapso1.setSelectedIndex(0);
+        this.frmDatosBoletin2.setVisible(false);
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void txtCodigo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo5ActionPerformed
@@ -1310,12 +2145,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigo5ActionPerformed
 
     private void txtCodigo5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo5KeyTyped
-        // TODO add your handling code here:
+        validacionSoloNumerosYGuion(evt, 12, txtCodigo5.getText().length());
     }//GEN-LAST:event_txtCodigo5KeyTyped
 
     private void btnBuscar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar5ActionPerformed
         if (!txtCodigo5.getText().isEmpty()) {
-            id = Integer.parseInt(txtCodigo5.getText());
+            id = txtCodigo5.getText();
             AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo5.getText().trim());
             if (alumnoVO.getPrimer_nombre() != null) {
                 //datos del alumno
@@ -1326,16 +2161,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
                     coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
                     lblNombres5.setText("");
                     txtCodigo5.setText("");
-                                    cbxLapso1.setSelectedIndex(0);
+                    cbxLapso1.setSelectedIndex(0);
                 }
             } else {
-                     coordinador.getLogica().mensajeError("Codigo no existe");
-                                         lblNombres5.setText("");
-                    txtCodigo5.setText("");
-                                    cbxLapso1.setSelectedIndex(0);
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaBoletin2.setLocationRelativeTo(this);
+                frmBusquedaBoletin2.setVisible(true);
             }
-        }else {
-            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaBoletin2.setLocationRelativeTo(this);
+            frmBusquedaBoletin2.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar5ActionPerformed
 
@@ -1344,12 +2180,322 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxLapso1ActionPerformed
 
     private void btnReportes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportes1ActionPerformed
-     this.frmDatosBoletin2.setLocationRelativeTo(null);
- this.frmDatosBoletin2.setSize(290, 200);
- this.frmDatosBoletin2.setVisible(true); 
+        this.frmDatosBoletin2.setLocationRelativeTo(null);
+        this.frmDatosBoletin2.setSize(290, 200);
+        this.frmDatosBoletin2.setVisible(true);
     }//GEN-LAST:event_btnReportes1ActionPerformed
 
-  /**
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    private void txtBusquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyPressed
+
+    }//GEN-LAST:event_txtBusquedaKeyPressed
+
+    private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
+        tblBusqueda.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda.getText().toUpperCase(), txtBusqueda.getText().toUpperCase()));
+    }//GEN-LAST:event_txtBusquedaKeyReleased
+
+    private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
+
+    }//GEN-LAST:event_txtBusquedaKeyTyped
+
+    private void tblBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseClicked
+        /*        borrarCampos();
+        AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+        llenarCampos(alumnoVO);*/
+    }//GEN-LAST:event_tblBusquedaMouseClicked
+
+    private void tblBusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusquedaMouseEntered
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        txtBusqueda.setText("");
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
+        txtBusqueda.setText("");
+        //        desactivarCampos();
+        frmBusquedaInscripcion.dispose();
+    }//GEN-LAST:event_btnSalir1ActionPerformed
+
+    private void btnSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionActionPerformed
+        if (tblBusqueda.getSelectedRow() != -1) {
+            id = tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda.getValueAt(tblBusqueda.getSelectedRow(), 0).toString());
+            txtCodigo.setText(alumnoVO.getId_alumno());
+            lblNombres.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaInscripcion.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccionActionPerformed
+
+    private void txtBusqueda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1ActionPerformed
+
+    private void txtBusqueda1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1KeyPressed
+
+    private void txtBusqueda1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyReleased
+        tblBusqueda1.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda1.getText().toUpperCase(), txtBusqueda1.getText().toUpperCase()));
+    }//GEN-LAST:event_txtBusqueda1KeyReleased
+
+    private void txtBusqueda1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda1KeyTyped
+
+    private void tblBusqueda1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusqueda1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusqueda1MouseClicked
+
+    private void tblBusqueda1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusqueda1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBusqueda1MouseEntered
+
+    private void btnBorrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar1ActionPerformed
+        txtBusqueda1.setText("");
+    }//GEN-LAST:event_btnBorrar1ActionPerformed
+
+    private void btnSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir2ActionPerformed
+        txtBusqueda1.setText("");
+        //        desactivarCampos();
+        frmBusquedaPago.dispose();
+    }//GEN-LAST:event_btnSalir2ActionPerformed
+
+    private void btnSeleccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion1ActionPerformed
+        if (tblBusqueda1.getSelectedRow() != -1) {
+            id = tblBusqueda1.getValueAt(tblBusqueda1.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda1.getValueAt(tblBusqueda1.getSelectedRow(), 0).toString());
+            txtCodigo1.setText(alumnoVO.getId_alumno());
+            lblNombres1.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            String consultarPago = consultarPago(String.valueOf(id));
+            lblMes.setText(consultarPago);
+            frmBusquedaPago.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion1ActionPerformed
+
+    private void txtBusqueda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda2ActionPerformed
+
+    private void txtBusqueda2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda2KeyPressed
+
+    private void txtBusqueda2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda2KeyReleased
+    tblBusqueda2.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda2.getText().toUpperCase(), txtBusqueda2.getText().toUpperCase()));
+    
+    }//GEN-LAST:event_txtBusqueda2KeyReleased
+
+    private void txtBusqueda2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda2KeyTyped
+
+    private void btnBorrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar2ActionPerformed
+    txtBusqueda2.setText("");
+    }//GEN-LAST:event_btnBorrar2ActionPerformed
+
+    private void btnSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir3ActionPerformed
+        txtBusqueda2.setText("");
+        //        desactivarCampos();
+        frmBusquedaCedula.dispose();
+    }//GEN-LAST:event_btnSalir3ActionPerformed
+
+    private void btnSeleccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion2ActionPerformed
+       if (tblBusqueda2.getSelectedRow() != -1) {
+            id = tblBusqueda2.getValueAt(tblBusqueda2.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda2.getValueAt(tblBusqueda2.getSelectedRow(), 0).toString());
+            txtCodigo2.setText(alumnoVO.getId_alumno());
+            lblNombres2.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaCedula.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion2ActionPerformed
+
+    private void txtBusqueda3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda3ActionPerformed
+
+    private void txtBusqueda3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda3KeyReleased
+    tblBusqueda3.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda3.getText().toUpperCase(), txtBusqueda3.getText().toUpperCase()));
+    
+    }//GEN-LAST:event_txtBusqueda3KeyReleased
+
+    private void btnBorrar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar3ActionPerformed
+    txtBusqueda3.setText("");
+    }//GEN-LAST:event_btnBorrar3ActionPerformed
+
+    private void btnSalir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir4ActionPerformed
+            txtBusqueda3.setText("");
+        //        desactivarCampos();
+        frmBusquedaEstudio.dispose();
+    }//GEN-LAST:event_btnSalir4ActionPerformed
+
+    private void btnSeleccion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion3ActionPerformed
+       if (tblBusqueda3.getSelectedRow() != -1) {
+            id = tblBusqueda3.getValueAt(tblBusqueda3.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda3.getValueAt(tblBusqueda3.getSelectedRow(), 0).toString());
+            txtCodigo3.setText(alumnoVO.getId_alumno());
+            lblNombres3.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaEstudio.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion3ActionPerformed
+
+    private void txtBusqueda4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda4ActionPerformed
+
+    private void txtBusqueda4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda4KeyReleased
+    tblBusqueda4.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda4.getText().toUpperCase(), txtBusqueda4.getText().toUpperCase()));
+    
+    }//GEN-LAST:event_txtBusqueda4KeyReleased
+
+    private void btnBorrar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar4ActionPerformed
+        // TODO add your handling code here:
+        txtBusqueda4.setText("");
+    }//GEN-LAST:event_btnBorrar4ActionPerformed
+
+    private void btnSalir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir5ActionPerformed
+                    txtBusqueda4.setText("");
+        //        desactivarCampos();
+        frmBusquedaBoletin1.dispose();
+    }//GEN-LAST:event_btnSalir5ActionPerformed
+
+    private void btnSeleccion4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion4ActionPerformed
+           if (tblBusqueda4.getSelectedRow() != -1) {
+            id = tblBusqueda4.getValueAt(tblBusqueda4.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda4.getValueAt(tblBusqueda4.getSelectedRow(), 0).toString());
+            txtCodigo4.setText(alumnoVO.getId_alumno());
+            lblNombres4.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaBoletin1.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion4ActionPerformed
+
+    private void txtBusqueda5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda5ActionPerformed
+
+    private void txtBusqueda5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda5KeyReleased
+    tblBusqueda5.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda5.getText().toUpperCase(), txtBusqueda5.getText().toUpperCase()));
+    }//GEN-LAST:event_txtBusqueda5KeyReleased
+
+    private void btnBorrar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar5ActionPerformed
+        // TODO add your handling code here:
+        txtBusqueda5.setText("");
+    }//GEN-LAST:event_btnBorrar5ActionPerformed
+
+    private void btnSalir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir6ActionPerformed
+        txtBusqueda5.setText("");
+        //        desactivarCampos();
+        frmBusquedaBoletin2.dispose();
+    }//GEN-LAST:event_btnSalir6ActionPerformed
+
+    private void btnSeleccion5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion5ActionPerformed
+           if (tblBusqueda5.getSelectedRow() != -1) {
+            id = tblBusqueda5.getValueAt(tblBusqueda5.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda5.getValueAt(tblBusqueda5.getSelectedRow(), 0).toString());
+            txtCodigo5.setText(alumnoVO.getId_alumno());
+            lblNombres5.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaBoletin2.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion5ActionPerformed
+
+    private void btnSeccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion1ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\indicadores.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }
+    }//GEN-LAST:event_btnSeccion1ActionPerformed
+
+    private void btnSeccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion2ActionPerformed
+        this.frmDatosAsistenciaD.setLocationRelativeTo(null);
+        this.frmDatosAsistenciaD.setSize(330, 140);
+        this.frmDatosAsistenciaD.setVisible(true);
+    }//GEN-LAST:event_btnSeccion2ActionPerformed
+
+    private void btnSeccion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion3ActionPerformed
+        this.frmDatosAsistenciaA.setLocationRelativeTo(null);
+        this.frmDatosAsistenciaA.setSize(330, 140);
+        this.frmDatosAsistenciaA.setVisible(true);
+    }//GEN-LAST:event_btnSeccion3ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias alumnos.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo.getSelectedItem().toString());
+            
+            String fecha = txtFecha.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    frmDatosAsistenciaA.dispose();
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencia de docentes.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo1.getSelectedItem().toString());
+            
+            String fecha = txtFecha1.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    frmDatosAsistenciaD.dispose();
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -1388,6 +2534,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bntAtras;
     public javax.swing.JButton btnAsistencia;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBorrar1;
+    private javax.swing.JButton btnBorrar2;
+    private javax.swing.JButton btnBorrar3;
+    private javax.swing.JButton btnBorrar4;
+    private javax.swing.JButton btnBorrar5;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
@@ -1400,10 +2552,35 @@ public class frmMenuReportes extends javax.swing.JFrame {
     public javax.swing.JButton btnPagos;
     public javax.swing.JButton btnReportes;
     public javax.swing.JButton btnReportes1;
+    private javax.swing.JButton btnSalir1;
+    private javax.swing.JButton btnSalir2;
+    private javax.swing.JButton btnSalir3;
+    private javax.swing.JButton btnSalir4;
+    private javax.swing.JButton btnSalir5;
+    private javax.swing.JButton btnSalir6;
     public javax.swing.JButton btnSeccion;
+    public javax.swing.JButton btnSeccion1;
+    public javax.swing.JButton btnSeccion2;
+    public javax.swing.JButton btnSeccion3;
+    private javax.swing.JButton btnSeleccion;
+    private javax.swing.JButton btnSeleccion1;
+    private javax.swing.JButton btnSeleccion2;
+    private javax.swing.JButton btnSeleccion3;
+    private javax.swing.JButton btnSeleccion4;
+    private javax.swing.JButton btnSeleccion5;
     public javax.swing.JButton btnUsuario;
+    private javax.swing.JComboBox<String> cbxGrupo;
+    private javax.swing.JComboBox<String> cbxGrupo1;
     private javax.swing.JComboBox<String> cbxLapso;
     private javax.swing.JComboBox<String> cbxLapso1;
+    private javax.swing.JFrame frmBusquedaBoletin1;
+    private javax.swing.JFrame frmBusquedaBoletin2;
+    private javax.swing.JFrame frmBusquedaCedula;
+    private javax.swing.JFrame frmBusquedaEstudio;
+    private javax.swing.JFrame frmBusquedaInscripcion;
+    private javax.swing.JFrame frmBusquedaPago;
+    private javax.swing.JFrame frmDatosAsistenciaA;
+    private javax.swing.JFrame frmDatosAsistenciaD;
     private javax.swing.JFrame frmDatosBoletin;
     private javax.swing.JFrame frmDatosBoletin2;
     private javax.swing.JFrame frmDatosConstanciaEstudio;
@@ -1422,6 +2599,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1431,7 +2612,11 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1439,9 +2624,23 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1449,10 +2648,30 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel lblMes;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblNombres1;
@@ -1461,55 +2680,88 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombres4;
     private javax.swing.JLabel lblNombres5;
     public javax.swing.JLabel lblUsuarioActvo;
+    private javax.swing.JTable tblBusqueda;
+    private javax.swing.JTable tblBusqueda1;
+    private javax.swing.JTable tblBusqueda2;
+    private javax.swing.JTable tblBusqueda3;
+    private javax.swing.JTable tblBusqueda4;
+    private javax.swing.JTable tblBusqueda5;
+    private javax.swing.JTextField txtBusqueda;
+    private javax.swing.JTextField txtBusqueda1;
+    private javax.swing.JTextField txtBusqueda2;
+    private javax.swing.JTextField txtBusqueda3;
+    private javax.swing.JTextField txtBusqueda4;
+    private javax.swing.JTextField txtBusqueda5;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigo1;
     private javax.swing.JTextField txtCodigo2;
     private javax.swing.JTextField txtCodigo3;
     private javax.swing.JTextField txtCodigo4;
     private javax.swing.JTextField txtCodigo5;
+    private datechooser.beans.DateChooserCombo txtFecha;
+    private datechooser.beans.DateChooserCombo txtFecha1;
     private javax.swing.JTextField txtNacimiento;
     // End of variables declaration//GEN-END:variables
 
     public void setCoordinador(Coordinador coordinador) {
-       this.coordinador = coordinador;
+        this.coordinador = coordinador;
     }
-    
-        private String consultarPago(String id) {
+
+    private String consultarPago(String id) {
         /**
          * pagos consulta
          */
         PagoVO consultarPago = coordinador.getPagoDAO().consultarPago(id);
-        if (consultarPago.getPago()!= null) {
+        Double[] vector = consultarPago.getPago();
+        int mesCobro = coordinador.consultarVariables().getMes_cobro() - 1;
+        int mes = 0;
+        if (consultarPago.getPago() != null) {
 
-            //asigno valores desde la bd a datos locales para hacer calculos
+            for (int j = mesCobro; j < vector.length; j++) {
+                if (vector[j] == 0) {
+                    mes = j + 1;
+                }
+            }
+            for (int j = 0; j < mesCobro; j++) {
+                if (vector[j] == 0) {
+                    mes = j + 1;
+                }
+            }
 
-//            if(Boolean.valueOf(consultarPago.getPago()[8])){
-//                return "septiembre";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[9])){
-//                return "octubre";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[10])){
-//                return "noviembre";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[11])){
-//                return "diciembre";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[0])){
-//                return "enero";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[1])){
-//                return "febrero";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[2])){
-//                return "marzo";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[3])){
-//                return "abril";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[4])){
-//                return "mayo";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[5])){
-//                return "junio";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[6])){
-//                return "julio";
-//            }else if(Boolean.valueOf(consultarPago.getPago()[7])){
-//                return "agosto";
-//            }
-            return "";
-        }else{
+            if (mes == 0) {
+                mes = coordinador.consultarVariables().getMes_cobro();
+            }
+
+            switch (mes) {
+                case 1:
+                    return "Enero";
+                case 2:
+                    return "Febrero";
+                case 3:
+                    return "Marzo";
+                case 4:
+                    return "Abril";
+                case 5:
+                    return "Mayo";
+                case 6:
+                    return "Junio";
+                case 7:
+                    return "Julio";
+                case 8:
+                    return "Agosto";
+                case 9:
+                    return "Septiembre";
+                case 10:
+                    return "Octubre";
+                case 11:
+                    return "Noviembre";
+                case 12:
+                    return "Diciembre";
+                default:
+                    return i + "";
+            }
+
+        } else {
             coordinador.getLogica().mensajeError("Alumno sin pagos procesados");
             lblNombres1.setText("");
             txtCodigo1.setText("");
@@ -1521,18 +2773,18 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }
 
     private boolean obtenerDatos2(String codigo) {
-                VO.NotaVO notaVO =  coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex()+1));
-                if (notaVO.getFecha()!=null) {
-                 return true;
+        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex() + 1));
+        if (notaVO.getFecha() != null) {
+            return true;
         } else {
-                 return false;
+            return false;
         }
     }
-    
-     private VO.NotaVO obtenerDatos(String codigo) {
-                VO.NotaVO notaVO =  coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex()+1));
-                
-              /*  notaVO.getFormacion_personal_social()[0].substring(3,  notaVO.getFormacion_personal_social()[0].length());
+
+    private VO.NotaVO obtenerDatos(String codigo) {
+        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex() + 1));
+
+        /*  notaVO.getFormacion_personal_social()[0].substring(3,  notaVO.getFormacion_personal_social()[0].length());
                jComboBox64.setSelectedItem(notaVO.getFormacion_personal_social()[1].substring(2));
                 jComboBox65.setSelectedItem(notaVO.getFormacion_personal_social()[2].substring(2));
                 jComboBox66.setSelectedItem(notaVO.getFormacion_personal_social()[3].substring(2));
@@ -1598,6 +2850,18 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jComboBox122.setSelectedItem(notaVO.getHabitos_trabajo()[7].substring(2));
                 jComboBox123.setSelectedItem(notaVO.getHabitos_trabajo()[8].substring(2));
                  jComboBox124.setSelectedItem(notaVO.getHabitos_trabajo()[9].substring(3));*/
-                 return notaVO;
+        return notaVO;
+    }
+
+    private void validacionSoloNumerosYGuion(KeyEvent evt, int maximo, int lim) {
+        if (coordinador.validacionLimiteSoloNumerosYGuion(evt.getKeyChar() + "")) {
+            if (lim >= maximo) {
+                evt.consume();
+                getToolkit().beep();
+            }
+        } else {
+            evt.consume();
+            getToolkit().beep();
+        }
     }
 }

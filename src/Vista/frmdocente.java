@@ -104,6 +104,8 @@ public class frmdocente extends javax.swing.JFrame {
         txtSector = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
         txtParroquia = new javax.swing.JTextField();
+        lblNombre2 = new javax.swing.JLabel();
+        cbxGrupo1 = new javax.swing.JComboBox<>();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -133,6 +135,8 @@ public class frmdocente extends javax.swing.JFrame {
         txtSector1 = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         txtParroquia1 = new javax.swing.JTextField();
+        lblNombre3 = new javax.swing.JLabel();
+        cbxGrupo2 = new javax.swing.JComboBox<>();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblCedula2 = new javax.swing.JLabel();
@@ -261,8 +265,9 @@ public class frmdocente extends javax.swing.JFrame {
 
         lblNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre.setText("Nombre");
-        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setText("Asignar a Grupo");
+        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 120, 20));
 
         lblDireccion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
@@ -430,6 +435,14 @@ public class frmdocente extends javax.swing.JFrame {
             }
         });
         jPanel5.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
+
+        lblNombre2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre2.setText("Nombre");
+        jPanel5.add(lblNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+
+        cbxGrupo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+        jPanel5.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 120, -1));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
@@ -652,6 +665,15 @@ public class frmdocente extends javax.swing.JFrame {
         });
         jPanel7.add(txtParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
 
+        lblNombre3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombre3.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre3.setText("Asignar a Grupo");
+        jPanel7.add(lblNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 120, 20));
+
+        cbxGrupo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+        jPanel7.add(cbxGrupo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 120, -1));
+
         jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
         btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
@@ -824,6 +846,7 @@ this.dispose();
         empleadoVO.setFechaNacimiento(txtFecha.getText());
         empleadoVO.setTelefono1(txtTelefono.getText());
         empleadoVO.setDireccion(llenarVector());
+        empleadoVO.setGrupo(cbxGrupo1.getSelectedItem().toString());
         empleadoVO.setFoto((ImageIcon) lblfoto1.getIcon());
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
@@ -976,6 +999,7 @@ Object opciones[] = {"Si", "No"};
         empleadoVO.setTelefono1(txtTelefono2.getText());
         empleadoVO.setDireccion(llenarVector2());
         empleadoVO.setFoto((ImageIcon) lblfoto2.getIcon());
+        empleadoVO.setGrupo(cbxGrupo2.getSelectedItem().toString());
         int añoNacimiento = Integer.parseInt(txtFecha1.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         empleadoVO.setEdad(añoActual - añoNacimiento);
@@ -1224,6 +1248,8 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JButton btnSalir3;
     private javax.swing.JComboBox<String> cbxCasa;
     private javax.swing.JComboBox<String> cbxCasa1;
+    private javax.swing.JComboBox<String> cbxGrupo1;
+    private javax.swing.JComboBox<String> cbxGrupo2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1281,6 +1307,8 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JLabel lblFechaNacimiento1;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombre1;
+    private javax.swing.JLabel lblNombre2;
+    private javax.swing.JLabel lblNombre3;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTelefono1;
     public javax.swing.JLabel lblUsuarioActvo;
@@ -1453,6 +1481,7 @@ Object opciones[] = {"Si", "No"};
         txtSector.setText("");
         txtParroquia.setText("");
         cbxCasa.setSelectedIndex(0);
+        cbxGrupo1.setSelectedIndex(0);
         txtCedula.setText("");
         ajustar(lblfoto1, ICON_NO_PHOTO);
     }
@@ -1466,6 +1495,7 @@ Object opciones[] = {"Si", "No"};
         txtCalle1.setText("");
         txtSector1.setText("");
         txtParroquia1.setText("");
+        cbxGrupo2.setSelectedIndex(0);
         cbxCasa1.setSelectedIndex(0);
         txtCedula3.setText("");
         txtCedula2.setText("");

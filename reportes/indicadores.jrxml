@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="indicadores" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="35dfc30c-876e-40dd-b71b-5e2879d6aa62">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="414"/>
+	<parameter name="ruta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="559" splitType="Stretch">
+			<image>
+				<reportElement x="54" y="14" width="91" height="101" uuid="9df47df3-a7d8-4524-a191-d2c3b4271c67"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="173" y="25" width="349" height="20" uuid="2654916c-5eb3-4e88-9c3d-ef015be27970"/>
+				<textElement>
+					<font fontName="Monotype Corsiva" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Areas de aprendizaje Observadas establecidas en el ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="53" width="382" height="20" uuid="48cbab54-9dc6-4ce6-8d8d-5ad40ab4bc86"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monotype Corsiva" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Currículo de Educación Inicial del Ministerio del Poder]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="80" width="192" height="20" uuid="f0926685-5316-4baf-a163-202432884a20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monotype Corsiva" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Popular para la Educación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="126" width="172" height="19" uuid="d1e72334-ba71-4220-a02a-36240f5625a2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Áreas de Aprendizajes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="126" width="204" height="20" uuid="f99d975a-9f0e-4959-ab14-7d0cfca3d19f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Componentes/Indicadores]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="14" y="305" width="275" height="149" uuid="b5de3238-af36-4faf-a5ed-cef0875453ef"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="35" y="312" width="230" height="14" uuid="a65ca250-7053-4d58-a875-718164f11120"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relación entre los componentes del Ambiente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="330" width="251" height="34" uuid="1d3be0a0-1bfd-4903-8fb5-1cc725977bbf"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[se considera el ambiente como un todo, lo que posibilita que la niña y el niño vivencia expereiencias de aprendizaje con el medio físico, social y natural que lo y la rodea.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="366" width="251" height="88" uuid="ad656a54-59c7-42f5-922f-e21dca4df9af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Supone el descubrimiento de nuevos e interensantes universo para observar y explotar, a través de acciones que conduzcan a la niña y el niño al conocimiento y establecimiento de la relaciones espaciales y temporales entre los objetos. Para generar procesos que lleven a la noción de número, así como el respeto y las actitudes de cuidado, preservación y conservación del entorno natural.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="289" y="305" width="277" height="149" uuid="ced9a686-eed7-4a59-a2a6-335c4cfa5f12"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="303" y="314" width="100" height="14" uuid="6cc06a45-ecd8-4f52-9e2c-99a2f51d4e40"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Imita modelos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="332" width="100" height="14" uuid="41a9827a-9ac5-4171-a863-04f8d3ece440"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Cubos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="349" width="100" height="14" uuid="ce3bd5c4-7e95-4787-9efa-a4a98dfab4d2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Figuras geométricas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="366" width="100" height="16" uuid="4a173ab7-4716-4e43-8dd2-14900a3d729e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Cuentos - Lectura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="385" width="100" height="17" uuid="24d83a3e-d0aa-4c52-aef7-7db3f0536eb3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Partes del Cuerpo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="405" width="100" height="14" uuid="8de07912-e399-4bfb-aab4-b0dc3fcb3c6b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Seriación y cálculo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="422" width="235" height="29" uuid="e5549e40-3115-4273-ba10-f17f2e01563f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Proceso matemáticos (espacio y formas geométricas)]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="14" y="454" width="552" height="105" uuid="c6abc0a7-b384-4de9-988f-96326bec1e7b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="465" width="100" height="17" uuid="a26789ba-787f-4061-a21e-42cdde6b0a15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Caminar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="489" width="100" height="14" uuid="f2b19944-cc1d-43d7-a079-baca1ecd8730"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Subir y trepar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="510" width="145" height="16" uuid="1ca055d4-ab2d-4e2a-b066-70813314c35d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Subir y  Bajar escaleras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="534" width="100" height="17" uuid="da485840-f47e-428c-8fdb-9ee9627bd955"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Equilibrio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="465" width="100" height="14" uuid="fdc58418-8366-42bc-96c9-dd3cc0f166e2"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Agarrar y Encajar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="489" width="100" height="14" uuid="dc1e0e2a-dc86-4b60-9d49-5a9a78fccb18"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Rasgar y Lenguaje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="511" width="55" height="15" uuid="a87d7362-f404-4f3b-85f1-8ef43e351a7b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Dibujo ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="537" width="100" height="14" uuid="ced6df9e-e576-4158-895e-f36a9e373672"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Expresión Plástica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="465" width="75" height="14" uuid="a226e563-66d4-460f-beca-4b068563961f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Sonidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="489" width="138" height="14" uuid="e52a77a8-d85e-4bc1-8520-1efabfec1b6f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Comprensión de ordenes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="511" width="100" height="15" uuid="225d5051-b97d-4a4a-977e-7aa1a8e87930"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Señala gestos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="537" width="78" height="14" uuid="1d71ad82-ea6a-4ca0-a400-7e118d74aece"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Expresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="489" width="100" height="14" uuid="04d1c90c-d25c-44f5-9b9d-049360a73b18"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Nombre, canciones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="456" y="518" width="100" height="30" uuid="985129ed-4095-4647-9d1e-dfa454473bfe"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Sentado, Parado y Agarracho]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="14" y="155" width="275" height="146" uuid="4d4aba2b-c237-4cb4-b0fb-1b34bb748768"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="25" y="198" width="251" height="87" uuid="9dda4d14-371f-4088-a498-84b5e63082dd"/>
+				<box leftPadding="1">
+					<pen lineStyle="Dashed"/>
+					<topPen lineStyle="Dashed"/>
+					<leftPen lineStyle="Dashed"/>
+					<bottomPen lineStyle="Dashed"/>
+					<rightPen lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[En ella se articula la formación del ser social, la comprensión, el lenguaje oral y escrito, la expresión corporal, plástica y musical; así como otras formas de representación que periten manisfestar sentimientos y emociones, con el propósito de convertirlos en una fuente de disfrute y placer; al mimso tiempo que propicia el aprender a comunicarse con contexto múltiples y establecer relaciones sociales progresivamente complejas.]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="289" y="155" width="277" height="146" uuid="56f6cef5-9726-4124-b81d-fd6d56bbf5b6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="301" y="159" width="123" height="139" uuid="393b4d72-670b-40f3-8aff-52c6cffafd03"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="435" y="159" width="123" height="139" uuid="4e636415-c3ad-44d7-9a72-26564cdb65f6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="313" y="163" width="79" height="20" uuid="eacfa881-e717-4e2a-a851-b9bb31559a29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Interacción con extraños]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="180" width="79" height="16" uuid="fc183abc-f756-4b0d-9a59-d095b4ddffe6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Autonomía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="198" width="62" height="14" uuid="c3793ca1-a16f-4fbb-99a1-155f04843377"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Emociones]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="164" width="48" height="13" uuid="0154de35-5a01-4749-9395-6520b35c7424"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Música]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="178" width="80" height="16" uuid="bb2c9000-3269-4f6e-a9ec-8f26392fb0fb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Interacción Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="196" width="100" height="16" uuid="bc0c9602-f630-4acb-8774-60155d1e75ca"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Interacción con amigos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="171" width="222" height="16" uuid="ffb76947-6514-46ec-ad84-59a7cfb01f91"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Formación personal, Social y Comunicación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="214" width="62" height="12" uuid="451da569-2eec-4778-aeeb-b7386382f697"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Sonrisa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="228" width="62" height="13" uuid="9f0f8ca6-1dca-467a-b42e-fc7f22024812"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Alimentación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="243" width="81" height="11" uuid="ee8253a7-c2ca-49fc-88e9-41f638f1fbc1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Control de esfínteres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="255" width="82" height="13" uuid="3387c058-88c0-47b2-8ac1-29944c93ac86"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Vestirse y desvestirse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="270" width="62" height="10" uuid="6d03f522-b762-42e7-bdcc-48ccc25ee48e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Aseo Personal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="283" width="60" height="11" uuid="164b71a2-7438-4ed1-99ac-285141eb405a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Juego]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="214" width="67" height="12" uuid="5e66aacb-d5d8-4dea-903f-52f910d42227"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Modales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="228" width="67" height="13" uuid="3ca5e0da-76c6-4200-9a75-31fc1b9265e0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Comunidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="243" width="80" height="16" uuid="9200a4fb-a45b-4135-8025-b159e858bc34"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[* Identidad y género]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="259" width="80" height="23" uuid="ef0a99ef-b84b-4bbb-ba36-c461e854d1fc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Expresión de sentimientos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="281" width="83" height="17" uuid="a8024bdc-d224-4960-8976-164cfe3c2295"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Seguridad Personal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
