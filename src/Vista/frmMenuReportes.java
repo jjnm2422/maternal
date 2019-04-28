@@ -156,8 +156,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
         btnBuscar5 = new javax.swing.JButton();
         lblNombres5 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        cbxLapso1 = new javax.swing.JComboBox<>();
         frmBusquedaInscripcion = new javax.swing.JFrame();
         jPanel13 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
@@ -718,7 +716,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jButton22ActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 163, 80, 20));
+        jPanel12.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 80, 20));
 
         jButton23.setText("Cancelar");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -726,7 +724,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jButton23ActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 163, 80, 20));
+        jPanel12.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, 20));
 
         txtCodigo5.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo5.addActionListener(new java.awt.event.ActionListener() {
@@ -760,25 +758,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
         lblNombres5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblNombres5.setForeground(new java.awt.Color(255, 255, 255));
         lblNombres5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel12.add(lblNombres5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 270, 20));
+        jPanel12.add(lblNombres5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 270, 20));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Nombres y apellidos");
-        jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
-
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Lapso");
-        jPanel12.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, 20));
-
-        cbxLapso1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ERO", "2DO", "3RO" }));
-        cbxLapso1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxLapso1ActionPerformed(evt);
-            }
-        });
-        jPanel12.add(cbxLapso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 70, -1));
+        jPanel12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 20));
 
         frmDatosBoletin2.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 240));
 
@@ -1485,14 +1470,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 bntAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 130, 30));
+        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 130, 30));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 170, 30));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 160, 30));
 
         btnNotas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnNotas.setText("Lista de Utiles Grupo 2");
@@ -1501,7 +1486,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnNotasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 160, 70));
+        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 160, 70));
 
         btnPagos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnPagos.setText("Constancia de Estudio");
@@ -1510,7 +1495,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnPagosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 160, 70));
+        jPanel2.add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 160, 70));
 
         btnUsuario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnUsuario.setText("Lista de Utiles Grupo 1");
@@ -1519,7 +1504,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 160, 70));
+        jPanel2.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 160, 70));
 
         btnAsistencia.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnAsistencia.setText("Solvencia de Pago");
@@ -1528,7 +1513,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnAsistenciaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 160, 70));
+        jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 160, 70));
 
         btnSeccion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSeccion.setText("Lista de Utiles Grupo 3");
@@ -1537,7 +1522,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnSeccionActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 160, 70));
+        jPanel2.add(btnSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 160, 70));
 
         btnInscripcion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnInscripcion.setText("Constancia de Inscripcion");
@@ -1546,7 +1531,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnInscripcionActionPerformed(evt);
             }
         });
-        jPanel2.add(btnInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 180, 70));
+        jPanel2.add(btnInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, 70));
 
         btnReportes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnReportes.setText("Boletin Informativo");
@@ -1555,7 +1540,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnReportesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 160, 30));
+        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 160, 30));
 
         btnDocentes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDocentes.setText("Numero Cedula Escolar");
@@ -1564,7 +1549,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnDocentesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 180, 70));
+        jPanel2.add(btnDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 180, 70));
 
         btnReportes1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnReportes1.setText("Boletin Informativo 2");
@@ -1573,7 +1558,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnReportes1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnReportes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 160, 30));
+        jPanel2.add(btnReportes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, 30));
 
         btnSeccion1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSeccion1.setText("Indicadores");
@@ -1582,7 +1567,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnSeccion1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, 70));
+        jPanel2.add(btnSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 180, 70));
 
         btnSeccion2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSeccion2.setText("Asistencia Docentes");
@@ -1591,7 +1576,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnSeccion2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 160, 70));
+        jPanel2.add(btnSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 160, 70));
 
         btnSeccion3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSeccion3.setText("Asistencia Alumno");
@@ -1600,9 +1585,9 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 btnSeccion3ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSeccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 160, 70));
+        jPanel2.add(btnSeccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, 70));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 390));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
 
@@ -1966,7 +1951,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
             coordinador.getLogica().mensajeError("Por Favor consulte primero a un alumno");
         } else {
 //llenar parametros a enviar
-            if (!obtenerDatos2(String.valueOf(id))) {
+            if (!obtenerDatosLapso2(String.valueOf(id))) {
                 coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres4.getText() + " para el lapso seleccionado");
             } else {
                 try {
@@ -1975,7 +1960,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                     conexion = conexiondb.getConnection();
                     String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin1.jrxml";
                     //obtengo valores a pasar
-                    NotaVO notaVO = obtenerDatos(String.valueOf(id));
+                    NotaVO notaVO = obtenerDatosLapso(String.valueOf(id));
                     Map<String, Object> p2 = new HashMap<>();
                     p2.put("id", id);
                     p2.put("lapso", cbxLapso.getSelectedItem().toString());
@@ -2079,7 +2064,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         } else {
 //llenar parametros a enviar
             if (!obtenerDatos2(String.valueOf(id))) {
-                coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
+                coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + ".");
             } else {
                 try {
                     Connection conexion = null;
@@ -2087,40 +2072,106 @@ public class frmMenuReportes extends javax.swing.JFrame {
                     conexion = conexiondb.getConnection();
                     String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\boletin2.jrxml";
                     //obtengo valores a pasar
-                    NotaVO notaVO = obtenerDatos(String.valueOf(id));
+                    NotaVO[] notaVO = obtenerDatos(String.valueOf(id));
                     Map<String, Object> p2 = new HashMap<>();
                     p2.put("id", id);
-                    p2.put("lapso", cbxLapso1.getSelectedItem().toString());
+//                    p2.put("lapso", cbxLapso1.getSelectedItem().toString());
                     p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-                    p2.put("parameter1", notaVO.getIndicadores_evaluados()[0].substring(2, notaVO.getIndicadores_evaluados()[0].length()));
-                    p2.put("parameter2", notaVO.getIndicadores_evaluados()[1].substring(2, notaVO.getIndicadores_evaluados()[1].length()));
-                    p2.put("parameter3", notaVO.getIndicadores_evaluados()[2].substring(2, notaVO.getIndicadores_evaluados()[2].length()));
-                    p2.put("parameter4", notaVO.getIndicadores_evaluados()[3].substring(2, notaVO.getIndicadores_evaluados()[3].length()));
-                    p2.put("parameter5", notaVO.getIndicadores_evaluados()[4].substring(2, notaVO.getIndicadores_evaluados()[4].length()));
-                    p2.put("parameter6", notaVO.getIndicadores_evaluados()[5].substring(2, notaVO.getIndicadores_evaluados()[5].length()));
-                    p2.put("parameter7", notaVO.getIndicadores_evaluados()[6].substring(2, notaVO.getIndicadores_evaluados()[6].length()));
-                    p2.put("parameter8", notaVO.getIndicadores_evaluados()[7].substring(2, notaVO.getIndicadores_evaluados()[7].length()));
-                    p2.put("parameter9", notaVO.getIndicadores_evaluados()[8].substring(2, notaVO.getIndicadores_evaluados()[8].length()));
-                    p2.put("parameter10", notaVO.getIndicadores_evaluados()[9].substring(3, notaVO.getIndicadores_evaluados()[9].length()));
+                    p2.put("tipo", 1);
+                    
+                    p2.put("parameter1", getEscala(notaVO[0].getIndicadores_evaluados()[0].substring(2, notaVO[0].getIndicadores_evaluados()[0].length())));
+                    p2.put("parameter2", getEscala(notaVO[0].getIndicadores_evaluados()[1].substring(2, notaVO[0].getIndicadores_evaluados()[1].length())));
+                    p2.put("parameter3", getEscala(notaVO[0].getIndicadores_evaluados()[2].substring(2, notaVO[0].getIndicadores_evaluados()[2].length())));
+                    p2.put("parameter4", getEscala(notaVO[0].getIndicadores_evaluados()[3].substring(2, notaVO[0].getIndicadores_evaluados()[3].length())));
+                    p2.put("parameter5", getEscala(notaVO[0].getIndicadores_evaluados()[4].substring(2, notaVO[0].getIndicadores_evaluados()[4].length())));
+                    p2.put("parameter6", getEscala(notaVO[0].getIndicadores_evaluados()[5].substring(2, notaVO[0].getIndicadores_evaluados()[5].length())));
+                    p2.put("parameter7", getEscala(notaVO[0].getIndicadores_evaluados()[6].substring(2, notaVO[0].getIndicadores_evaluados()[6].length())));
+                    p2.put("parameter8", getEscala(notaVO[0].getIndicadores_evaluados()[7].substring(2, notaVO[0].getIndicadores_evaluados()[7].length())));
+                    p2.put("parameter9", getEscala(notaVO[0].getIndicadores_evaluados()[8].substring(2, notaVO[0].getIndicadores_evaluados()[8].length())));
+                    p2.put("parameter10", getEscala(notaVO[0].getIndicadores_evaluados()[9].substring(3, notaVO[0].getIndicadores_evaluados()[9].length())));
                     //
-                    p2.put("parameter11", notaVO.getIndicadores_evaluados()[10].substring(3, notaVO.getIndicadores_evaluados()[10].length()));
-                    p2.put("parameter12", notaVO.getIndicadores_evaluados()[11].substring(3, notaVO.getIndicadores_evaluados()[11].length()));
-                    p2.put("parameter13", notaVO.getIndicadores_evaluados()[12].substring(3, notaVO.getIndicadores_evaluados()[12].length()));
-                    p2.put("parameter14", notaVO.getIndicadores_evaluados()[13].substring(3, notaVO.getIndicadores_evaluados()[13].length()));
-                    p2.put("parameter15", notaVO.getIndicadores_evaluados()[14].substring(3, notaVO.getIndicadores_evaluados()[14].length()));
-                    p2.put("parameter16", notaVO.getIndicadores_evaluados()[15].substring(3, notaVO.getIndicadores_evaluados()[15].length()));
-                    p2.put("parameter17", notaVO.getIndicadores_evaluados()[16].substring(3, notaVO.getIndicadores_evaluados()[16].length()));
-                    p2.put("parameter18", notaVO.getIndicadores_evaluados()[17].substring(3, notaVO.getIndicadores_evaluados()[17].length()));
-                    p2.put("parameter19", notaVO.getIndicadores_evaluados()[18].substring(3, notaVO.getIndicadores_evaluados()[18].length()));
+                    p2.put("parameter11", getEscala(notaVO[0].getIndicadores_evaluados()[10].substring(3, notaVO[0].getIndicadores_evaluados()[10].length())));
+                    p2.put("parameter12", getEscala(notaVO[0].getIndicadores_evaluados()[11].substring(3, notaVO[0].getIndicadores_evaluados()[11].length())));
+                    p2.put("parameter13", getEscala(notaVO[0].getIndicadores_evaluados()[12].substring(3, notaVO[0].getIndicadores_evaluados()[12].length())));
+                    p2.put("parameter14", getEscala(notaVO[0].getIndicadores_evaluados()[13].substring(3, notaVO[0].getIndicadores_evaluados()[13].length())));
+                    p2.put("parameter15", getEscala(notaVO[0].getIndicadores_evaluados()[14].substring(3, notaVO[0].getIndicadores_evaluados()[14].length())));
+                    p2.put("parameter16", getEscala(notaVO[0].getIndicadores_evaluados()[15].substring(3, notaVO[0].getIndicadores_evaluados()[15].length())));
+                    p2.put("parameter17", getEscala(notaVO[0].getIndicadores_evaluados()[16].substring(3, notaVO[0].getIndicadores_evaluados()[16].length())));
+                    p2.put("parameter18", getEscala(notaVO[0].getIndicadores_evaluados()[17].substring(3, notaVO[0].getIndicadores_evaluados()[17].length())));
+                    p2.put("parameter19", getEscala(notaVO[0].getIndicadores_evaluados()[18].substring(3, notaVO[0].getIndicadores_evaluados()[18].length())));
                     //
-                    p2.put("parameter20", notaVO.getHabitos_trabajo()[0].substring(2, notaVO.getHabitos_trabajo()[0].length()));
-                    p2.put("parameter21", notaVO.getHabitos_trabajo()[1].substring(2, notaVO.getHabitos_trabajo()[1].length()));
-                    p2.put("parameter22", notaVO.getHabitos_trabajo()[2].substring(2, notaVO.getHabitos_trabajo()[2].length()));
-                    p2.put("parameter23", notaVO.getHabitos_trabajo()[3].substring(2, notaVO.getHabitos_trabajo()[3].length()));
-                    p2.put("parameter24", notaVO.getHabitos_trabajo()[4].substring(2, notaVO.getHabitos_trabajo()[4].length()));
-                    p2.put("parameter25", notaVO.getHabitos_trabajo()[5].substring(2, notaVO.getHabitos_trabajo()[5].length()));
-                    p2.put("parameter26", notaVO.getHabitos_trabajo()[6].substring(2, notaVO.getHabitos_trabajo()[6].length()));
-                    p2.put("parameter27", notaVO.getHabitos_trabajo()[7].substring(2, notaVO.getHabitos_trabajo()[7].length()));
+                    p2.put("parameter20", getEscala(notaVO[0].getHabitos_trabajo()[0].substring(2, notaVO[0].getHabitos_trabajo()[0].length())));
+                    p2.put("parameter21", getEscala(notaVO[0].getHabitos_trabajo()[1].substring(2, notaVO[0].getHabitos_trabajo()[1].length())));
+                    p2.put("parameter22", getEscala(notaVO[0].getHabitos_trabajo()[2].substring(2, notaVO[0].getHabitos_trabajo()[2].length())));
+                    p2.put("parameter23", getEscala(notaVO[0].getHabitos_trabajo()[3].substring(2, notaVO[0].getHabitos_trabajo()[3].length())));
+                    p2.put("parameter24", getEscala(notaVO[0].getHabitos_trabajo()[4].substring(2, notaVO[0].getHabitos_trabajo()[4].length())));
+                    p2.put("parameter25", getEscala(notaVO[0].getHabitos_trabajo()[5].substring(2, notaVO[0].getHabitos_trabajo()[5].length())));
+                    p2.put("parameter26", getEscala(notaVO[0].getHabitos_trabajo()[6].substring(2, notaVO[0].getHabitos_trabajo()[6].length())));
+                    p2.put("parameter27", getEscala(notaVO[0].getHabitos_trabajo()[7].substring(2, notaVO[0].getHabitos_trabajo()[7].length())));
+                    
+                    if (notaVO[1] != null) {
+                    p2.put("parameter1_1", getEscala(notaVO[1].getIndicadores_evaluados()[0].substring(2, notaVO[1].getIndicadores_evaluados()[0].length())));
+                    p2.put("parameter2_1", getEscala(notaVO[1].getIndicadores_evaluados()[1].substring(2, notaVO[1].getIndicadores_evaluados()[1].length())));
+                    p2.put("parameter3_1", getEscala(notaVO[1].getIndicadores_evaluados()[2].substring(2, notaVO[1].getIndicadores_evaluados()[2].length())));
+                    p2.put("parameter4_1", getEscala(notaVO[1].getIndicadores_evaluados()[3].substring(2, notaVO[1].getIndicadores_evaluados()[3].length())));
+                    p2.put("parameter5_1", getEscala(notaVO[1].getIndicadores_evaluados()[4].substring(2, notaVO[1].getIndicadores_evaluados()[4].length())));
+                    p2.put("parameter6_1", getEscala(notaVO[1].getIndicadores_evaluados()[5].substring(2, notaVO[1].getIndicadores_evaluados()[5].length())));
+                    p2.put("parameter7_1", getEscala(notaVO[1].getIndicadores_evaluados()[6].substring(2, notaVO[1].getIndicadores_evaluados()[6].length())));
+                    p2.put("parameter8_1", getEscala(notaVO[1].getIndicadores_evaluados()[7].substring(2, notaVO[1].getIndicadores_evaluados()[7].length())));
+                    p2.put("parameter9_1", getEscala(notaVO[1].getIndicadores_evaluados()[8].substring(2, notaVO[1].getIndicadores_evaluados()[8].length())));
+                    p2.put("parameter10_1", getEscala(notaVO[1].getIndicadores_evaluados()[9].substring(3, notaVO[1].getIndicadores_evaluados()[9].length())));
+                    //
+                    p2.put("parameter11_1", getEscala(notaVO[1].getIndicadores_evaluados()[10].substring(3, notaVO[1].getIndicadores_evaluados()[10].length())));
+                    p2.put("parameter12_1", getEscala(notaVO[1].getIndicadores_evaluados()[11].substring(3, notaVO[1].getIndicadores_evaluados()[11].length())));
+                    p2.put("parameter13_1", getEscala(notaVO[1].getIndicadores_evaluados()[12].substring(3, notaVO[1].getIndicadores_evaluados()[12].length())));
+                    p2.put("parameter14_1", getEscala(notaVO[1].getIndicadores_evaluados()[13].substring(3, notaVO[1].getIndicadores_evaluados()[13].length())));
+                    p2.put("parameter15_1", getEscala(notaVO[1].getIndicadores_evaluados()[14].substring(3, notaVO[1].getIndicadores_evaluados()[14].length())));
+                    p2.put("parameter16_1", getEscala(notaVO[1].getIndicadores_evaluados()[15].substring(3, notaVO[1].getIndicadores_evaluados()[15].length())));
+                    p2.put("parameter17_1", getEscala(notaVO[1].getIndicadores_evaluados()[16].substring(3, notaVO[1].getIndicadores_evaluados()[16].length())));
+                    p2.put("parameter18_1", getEscala(notaVO[1].getIndicadores_evaluados()[17].substring(3, notaVO[1].getIndicadores_evaluados()[17].length())));
+                    p2.put("parameter19_1", getEscala(notaVO[1].getIndicadores_evaluados()[18].substring(3, notaVO[1].getIndicadores_evaluados()[18].length())));
+                    //
+                    p2.put("parameter20_1", getEscala(notaVO[1].getHabitos_trabajo()[0].substring(2, notaVO[1].getHabitos_trabajo()[0].length())));
+                    p2.put("parameter21_1", getEscala(notaVO[1].getHabitos_trabajo()[1].substring(2, notaVO[1].getHabitos_trabajo()[1].length())));
+                    p2.put("parameter22_1", getEscala(notaVO[1].getHabitos_trabajo()[2].substring(2, notaVO[1].getHabitos_trabajo()[2].length())));
+                    p2.put("parameter23_1", getEscala(notaVO[1].getHabitos_trabajo()[3].substring(2, notaVO[1].getHabitos_trabajo()[3].length())));
+                    p2.put("parameter24_1", getEscala(notaVO[1].getHabitos_trabajo()[4].substring(2, notaVO[1].getHabitos_trabajo()[4].length())));
+                    p2.put("parameter25_1", getEscala(notaVO[1].getHabitos_trabajo()[5].substring(2, notaVO[1].getHabitos_trabajo()[5].length())));
+                    p2.put("parameter26_1", getEscala(notaVO[1].getHabitos_trabajo()[6].substring(2, notaVO[1].getHabitos_trabajo()[6].length())));
+                    p2.put("parameter27_1", getEscala(notaVO[1].getHabitos_trabajo()[7].substring(2, notaVO[1].getHabitos_trabajo()[7].length())));
+                    }
+                    
+                    if (notaVO[2] != null) {
+                    p2.put("parameter1_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[0].substring(2, notaVO[2].getIndicadores_evaluados()[0].length())));
+                    p2.put("parameter2_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[1].substring(2, notaVO[2].getIndicadores_evaluados()[1].length())));
+                    p2.put("parameter3_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[2].substring(2, notaVO[2].getIndicadores_evaluados()[2].length())));
+                    p2.put("parameter4_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[3].substring(2, notaVO[2].getIndicadores_evaluados()[3].length())));
+                    p2.put("parameter5_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[4].substring(2, notaVO[2].getIndicadores_evaluados()[4].length())));
+                    p2.put("parameter6_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[5].substring(2, notaVO[2].getIndicadores_evaluados()[5].length())));
+                    p2.put("parameter7_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[6].substring(2, notaVO[2].getIndicadores_evaluados()[6].length())));
+                    p2.put("parameter8_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[7].substring(2, notaVO[2].getIndicadores_evaluados()[7].length())));
+                    p2.put("parameter9_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[8].substring(2, notaVO[2].getIndicadores_evaluados()[8].length())));
+                    p2.put("parameter10_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[9].substring(3, notaVO[2].getIndicadores_evaluados()[9].length())));
+                    //
+                    p2.put("parameter11_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[10].substring(3, notaVO[2].getIndicadores_evaluados()[10].length())));
+                    p2.put("parameter12_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[11].substring(3, notaVO[2].getIndicadores_evaluados()[11].length())));
+                    p2.put("parameter13_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[12].substring(3, notaVO[2].getIndicadores_evaluados()[12].length())));
+                    p2.put("parameter14_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[13].substring(3, notaVO[2].getIndicadores_evaluados()[13].length())));
+                    p2.put("parameter15_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[14].substring(3, notaVO[2].getIndicadores_evaluados()[14].length())));
+                    p2.put("parameter16_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[15].substring(3, notaVO[2].getIndicadores_evaluados()[15].length())));
+                    p2.put("parameter17_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[16].substring(3, notaVO[2].getIndicadores_evaluados()[16].length())));
+                    p2.put("parameter18_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[17].substring(3, notaVO[2].getIndicadores_evaluados()[17].length())));
+                    p2.put("parameter19_1_1", getEscala(notaVO[2].getIndicadores_evaluados()[18].substring(3, notaVO[2].getIndicadores_evaluados()[18].length())));
+                    //
+                    p2.put("parameter20_1_1", getEscala(notaVO[2].getHabitos_trabajo()[0].substring(2, notaVO[2].getHabitos_trabajo()[0].length())));
+                    p2.put("parameter21_1_1", getEscala(notaVO[2].getHabitos_trabajo()[1].substring(2, notaVO[2].getHabitos_trabajo()[1].length())));
+                    p2.put("parameter22_1_1", getEscala(notaVO[2].getHabitos_trabajo()[2].substring(2, notaVO[2].getHabitos_trabajo()[2].length())));
+                    p2.put("parameter23_1_1", getEscala(notaVO[2].getHabitos_trabajo()[3].substring(2, notaVO[2].getHabitos_trabajo()[3].length())));
+                    p2.put("parameter24_1_1", getEscala(notaVO[2].getHabitos_trabajo()[4].substring(2, notaVO[2].getHabitos_trabajo()[4].length())));
+                    p2.put("parameter25_1_1", getEscala(notaVO[2].getHabitos_trabajo()[5].substring(2, notaVO[2].getHabitos_trabajo()[5].length())));
+                    p2.put("parameter26_1_1", getEscala(notaVO[2].getHabitos_trabajo()[6].substring(2, notaVO[2].getHabitos_trabajo()[6].length())));
+                    p2.put("parameter27_1_1", getEscala(notaVO[2].getHabitos_trabajo()[7].substring(2, notaVO[2].getHabitos_trabajo()[7].length())));
+                    }
 
                     JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
                     JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
@@ -2136,7 +2187,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         lblNombres5.setText("");
         txtCodigo5.setText("");
-        cbxLapso1.setSelectedIndex(0);
+//        cbxLapso1.setSelectedIndex(0);
         this.frmDatosBoletin2.setVisible(false);
     }//GEN-LAST:event_jButton23ActionPerformed
 
@@ -2161,7 +2212,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                     coordinador.getLogica().mensajeError("No existen notas registradas para el alumno: " + lblNombres5.getText() + " para el lapso seleccionado");
                     lblNombres5.setText("");
                     txtCodigo5.setText("");
-                    cbxLapso1.setSelectedIndex(0);
+//                    cbxLapso1.setSelectedIndex(0);
                 }
             } else {
 //                     coordinador.getLogica().mensajeError("Codigo no existe");
@@ -2174,10 +2225,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
             frmBusquedaBoletin2.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar5ActionPerformed
-
-    private void cbxLapso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLapso1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxLapso1ActionPerformed
 
     private void btnReportes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportes1ActionPerformed
         this.frmDatosBoletin2.setLocationRelativeTo(null);
@@ -2572,7 +2619,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxGrupo;
     private javax.swing.JComboBox<String> cbxGrupo1;
     private javax.swing.JComboBox<String> cbxLapso;
-    private javax.swing.JComboBox<String> cbxLapso1;
     private javax.swing.JFrame frmBusquedaBoletin1;
     private javax.swing.JFrame frmBusquedaBoletin2;
     private javax.swing.JFrame frmBusquedaCedula;
@@ -2611,7 +2657,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -2773,84 +2818,31 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }
 
     private boolean obtenerDatos2(String codigo) {
-        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex() + 1));
-        if (notaVO.getFecha() != null) {
+        VO.NotaVO[] notaVO = coordinador.getNotaDAO().consultarNotaTodas(codigo);
+        if (notaVO[0].getFecha() != null) {
             return true;
         } else {
             return false;
         }
     }
 
-    private VO.NotaVO obtenerDatos(String codigo) {
-        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex() + 1));
-
-        /*  notaVO.getFormacion_personal_social()[0].substring(3,  notaVO.getFormacion_personal_social()[0].length());
-               jComboBox64.setSelectedItem(notaVO.getFormacion_personal_social()[1].substring(2));
-                jComboBox65.setSelectedItem(notaVO.getFormacion_personal_social()[2].substring(2));
-                jComboBox66.setSelectedItem(notaVO.getFormacion_personal_social()[3].substring(2));
-                jComboBox67.setSelectedItem(notaVO.getFormacion_personal_social()[4].substring(2));
-                jComboBox68.setSelectedItem(notaVO.getFormacion_personal_social()[5].substring(2));
-                jComboBox69.setSelectedItem(notaVO.getFormacion_personal_social()[6].substring(2));
-                jComboBox70.setSelectedItem(notaVO.getFormacion_personal_social()[7].substring(2));
-                jComboBox71.setSelectedItem(notaVO.getFormacion_personal_social()[8].substring(2));
-                
-                 jComboBox72.setSelectedItem(notaVO.getRelacion_ambiente()[0].substring(2));
-                jComboBox73.setSelectedItem(notaVO.getRelacion_ambiente()[1].substring(2));
-                jComboBox74.setSelectedItem(notaVO.getRelacion_ambiente()[2].substring(2));
-                jComboBox75.setSelectedItem(notaVO.getRelacion_ambiente()[3].substring(2));
-                jComboBox76.setSelectedItem(notaVO.getRelacion_ambiente()[4].substring(2));
-                jComboBox77.setSelectedItem(notaVO.getRelacion_ambiente()[5].substring(2));
-                jComboBox78.setSelectedItem(notaVO.getRelacion_ambiente()[6].substring(2));
-                jComboBox79.setSelectedItem(notaVO.getRelacion_ambiente()[7].substring(2));
-                 jComboBox80.setSelectedItem(notaVO.getRelacion_ambiente()[8].substring(2));
-                jComboBox81.setSelectedItem(notaVO.getRelacion_ambiente()[9].substring(3));
-
-                jComboBox91.setSelectedItem(notaVO.getComunicacion_presentacion()[0].substring(2));
-                jComboBox90.setSelectedItem(notaVO.getComunicacion_presentacion()[1].substring(2));
-                jComboBox89.setSelectedItem(notaVO.getComunicacion_presentacion()[2].substring(2));
-                jComboBox88.setSelectedItem(notaVO.getComunicacion_presentacion()[3].substring(2));
-                jComboBox87.setSelectedItem(notaVO.getComunicacion_presentacion()[4].substring(2));
-                jComboBox86.setSelectedItem(notaVO.getComunicacion_presentacion()[5].substring(2));
-                jComboBox85.setSelectedItem(notaVO.getComunicacion_presentacion()[6].substring(2));
-                jComboBox84.setSelectedItem(notaVO.getComunicacion_presentacion()[7].substring(2));
-                jComboBox83.setSelectedItem(notaVO.getComunicacion_presentacion()[8].substring(2));
-                jComboBox82.setSelectedItem(notaVO.getComunicacion_presentacion()[9].substring(3));
-                jComboBox92.setSelectedItem(notaVO.getComunicacion_presentacion()[10].substring(3));
-                jComboBox93.setSelectedItem(notaVO.getComunicacion_presentacion()[11].substring(3));
-                jComboBox94.setSelectedItem(notaVO.getComunicacion_presentacion()[12].substring(3));
-                jComboBox95.setSelectedItem(notaVO.getComunicacion_presentacion()[13].substring(3));
-
-                jComboBox96.setSelectedItem(notaVO.getHabitos_trabajo()[0].substring(2));
-                jComboBox97.setSelectedItem(notaVO.getIndicadores_evaluados()[1].substring(2));
-                jComboBox98.setSelectedItem(notaVO.getIndicadores_evaluados()[2].substring(2));
-                jComboBox99.setSelectedItem(notaVO.getIndicadores_evaluados()[3].substring(2));
-                jComboBox100.setSelectedItem(notaVO.getIndicadores_evaluados()[4].substring(2));
-                jComboBox101.setSelectedItem(notaVO.getIndicadores_evaluados()[5].substring(2));
-                jComboBox102.setSelectedItem(notaVO.getIndicadores_evaluados()[6].substring(2));
-                jComboBox103.setSelectedItem(notaVO.getIndicadores_evaluados()[7].substring(2));
-                jComboBox104.setSelectedItem(notaVO.getIndicadores_evaluados()[8].substring(2));
-                jComboBox105.setSelectedItem(notaVO.getIndicadores_evaluados()[9].substring(3));
-                jComboBox106.setSelectedItem(notaVO.getIndicadores_evaluados()[10].substring(3));
-                jComboBox107.setSelectedItem(notaVO.getIndicadores_evaluados()[11].substring(3));
-                jComboBox108.setSelectedItem(notaVO.getIndicadores_evaluados()[12].substring(3));
-                jComboBox109.setSelectedItem(notaVO.getIndicadores_evaluados()[13].substring(3));
-                jComboBox110.setSelectedItem(notaVO.getIndicadores_evaluados()[14].substring(3));
-                jComboBox111.setSelectedItem(notaVO.getIndicadores_evaluados()[15].substring(3));
-                jComboBox112.setSelectedItem(notaVO.getIndicadores_evaluados()[16].substring(3));
-                jComboBox113.setSelectedItem(notaVO.getIndicadores_evaluados()[17].substring(3));
-                jComboBox114.setSelectedItem(notaVO.getIndicadores_evaluados()[18].substring(3));
-
-                jComboBox115.setSelectedItem(notaVO.getHabitos_trabajo()[0].substring(2));
-                jComboBox116.setSelectedItem(notaVO.getHabitos_trabajo()[1].substring(2));
-                jComboBox117.setSelectedItem(notaVO.getHabitos_trabajo()[2].substring(2));
-                jComboBox118.setSelectedItem(notaVO.getHabitos_trabajo()[3].substring(2));
-                jComboBox119.setSelectedItem(notaVO.getHabitos_trabajo()[4].substring(2));
-                jComboBox120.setSelectedItem(notaVO.getHabitos_trabajo()[5].substring(2));
-                jComboBox121.setSelectedItem(notaVO.getHabitos_trabajo()[6].substring(2));
-                jComboBox122.setSelectedItem(notaVO.getHabitos_trabajo()[7].substring(2));
-                jComboBox123.setSelectedItem(notaVO.getHabitos_trabajo()[8].substring(2));
-                 jComboBox124.setSelectedItem(notaVO.getHabitos_trabajo()[9].substring(3));*/
+    private VO.NotaVO[] obtenerDatos(String codigo) {
+        VO.NotaVO[] notaVO = coordinador.getNotaDAO().consultarNotaTodas(codigo);
         return notaVO;
+    }
+    
+    private VO.NotaVO obtenerDatosLapso(String codigo) {
+        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex()+1));
+        return notaVO;
+    }
+    
+    private boolean obtenerDatosLapso2(String codigo) {
+        VO.NotaVO notaVO = coordinador.getNotaDAO().consultarNotaPorLapso(codigo, (cbxLapso.getSelectedIndex()+1));
+        if (notaVO.getFecha() != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void validacionSoloNumerosYGuion(KeyEvent evt, int maximo, int lim) {
@@ -2863,5 +2855,21 @@ public class frmMenuReportes extends javax.swing.JFrame {
             evt.consume();
             getToolkit().beep();
         }
+    }
+
+    private String getEscala(String substring) {
+        String res = "";
+        switch (substring) {
+            case "EXCELENTE ":
+                res = "E";
+                break;
+            case "SATISFACTORIO":
+                res = "S";
+                break;
+            case "MEDIANAMENTE SATISFACTORIO":
+                res = "MS";
+                break;
+        }
+        return res;
     }
 }

@@ -3252,13 +3252,15 @@ public class frmNotas extends javax.swing.JFrame {
         jComboBox61.setEnabled(valor);
         jComboBox62.setEnabled(valor);
         jComboBox63.setEnabled(valor);
+//        rbnAprobado.setEnabled(valor);
+//        rbnReprobado.setEnabled(valor);
     }
 
     private void inicializarBotones() {
         txtConsultar.setText("");
         lblPnombre.setText("");
-        rbnAprobado.setEnabled(true);
-        rbnReprobado.setEnabled(true);
+//        rbnAprobado.setEnabled(false);
+//        rbnReprobado.setEnabled(false);
         buttonGroup1.setSelected(rbnAprobado.getModel(), true);
         ajustar(lblfoto, ICON_NO_PHOTO);
         jComboBox1.setSelectedIndex(0);

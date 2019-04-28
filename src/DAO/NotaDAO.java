@@ -6,6 +6,7 @@
 package DAO;
 
 import Controlador.Coordinador;
+import VO.NotaVO;
 import java.io.InputStream;
 import java.sql.Array;
 import java.sql.Connection;
@@ -135,7 +136,7 @@ public class NotaDAO {
         conexion = conexiondb.getConnection();
 
         if (conexion != null) {
-            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"' "
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"' order by lapso"
                     + " and lapso= "+lapso;
             try {
                 ps = conexion.prepareStatement(sql);
@@ -164,6 +165,60 @@ public class NotaDAO {
                     notaVO.setComunicacion_presentacion(notaArray3S);
                     notaVO.setIndicadores_evaluados(notaArray4S);
                     notaVO.setHabitos_trabajo(notaArray5S);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return notaVO;
+        } else {
+            conexiondb.desconexion();
+            return null;
+        }
+    }
+        
+    public VO.NotaVO[] consultarNotaTodas(String id_alumno) {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
+        VO.NotaVO[] notaVO = new NotaVO[3];
+        int i = 0;
+        conexion = conexiondb.getConnection();
+
+        if (conexion != null) {
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '"+coordinador.consultarVariables().getPeriodo_actual()+"' order by lapso";
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                while (result.next()) {
+                    notaVO[i] = new NotaVO();
+                    notaVO[i].setId_alumno(result.getString("id_alumno"));
+                    notaVO[i].setId_empleado(result.getString("id_empleado")); 
+                    notaVO[i].setId_nota(result.getInt("id_nota")); 
+                    notaVO[i].setPeriodo(result.getString("periodo"));
+                    notaVO[i].setFecha(result.getString("fecha"));
+                    notaVO[i].setLapso(result.getInt("lapso"));
+                    //conversion de arrays
+                    Array notaArray =  result.getArray("formacion_personal_social");
+                    Array notaArray2 =  result.getArray("relacion_ambiente");
+                    Array notaArray3 =  result.getArray("comunicacion_presentacion");
+                    Array notaArray4 =  result.getArray("indicadores_evaluados");
+                    Array notaArray5 =  result.getArray("habitos_trabajo");
+                    String[] notaArrayS = (String[]) notaArray.getArray();
+                    String[] notaArray2S = (String[]) notaArray2.getArray();
+                    String[] notaArray3S = (String[]) notaArray3.getArray();
+                    String[] notaArray4S = (String[]) notaArray4.getArray();
+                    String[] notaArray5S = (String[]) notaArray5.getArray();
+                    
+                    notaVO[i].setFormacion_personal_social(notaArrayS);
+                    notaVO[i].setRelacion_ambiente(notaArray2S);
+                    notaVO[i].setComunicacion_presentacion(notaArray3S);
+                    notaVO[i].setIndicadores_evaluados(notaArray4S);
+                    notaVO[i].setHabitos_trabajo(notaArray5S);
+                    i++;
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
