@@ -41,8 +41,8 @@ public class EmpleadoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto, id_empleado, grupo) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO "+this.tabla+" (primer_nombre, primer_apellido, edad, telefono1, direccion, cedula, fecha_nacimiento, foto, id_empleado, grupo, fecha_ingreso) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if (conexion!=null) {
             try {
             ps = conexion.prepareCall(sql);
@@ -61,6 +61,7 @@ public class EmpleadoDAO {
             }
             ps.setString(9, empleadoVO.getId_empleado());
             ps.setString(10, empleadoVO.getGrupo());
+            ps.setString(11, empleadoVO.getFecha_ingreso());
             int n = ps.executeUpdate();
             if (n > 0) {
                 respuesta = "INSERT";
@@ -101,6 +102,7 @@ public class EmpleadoDAO {
                 empleadoVO.setPrimer_apellido(result.getString("primer_apellido"));
                 empleadoVO.setCedula(result.getString("cedula"));
                 empleadoVO.setFechaNacimiento(result.getString("fecha_nacimiento"));
+                empleadoVO.setFecha_ingreso(result.getString("fecha_ingreso"));
                 
                 Array direccionArray = result.getArray("direccion");
                 String[] direccionArrayS = (String[]) direccionArray.getArray();
@@ -162,7 +164,7 @@ public class EmpleadoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=?, grupo=? where id_empleado= '"+id_empleado+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, foto=?, grupo=?, fecha_ingreso=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -176,6 +178,7 @@ public class EmpleadoDAO {
                 ps.setArray(5, direccionArray);
                 ps.setString(6, empleadoVO.getCedula());
                 ps.setString(7, empleadoVO.getFechaNacimiento());
+                ps.setString(8, empleadoVO.getFecha_ingreso());
                 if (empleadoVO.getFis() != null) {
                        ps.setBinaryStream(8, empleadoVO.getFis(), empleadoVO.getBinarioFoto());
                 } else {
@@ -202,7 +205,7 @@ public class EmpleadoDAO {
         Connection conexion= null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, grupo=? where id_empleado= '"+id_empleado+"'";
+        String sql = "UPDATE "+this.tabla+" SET primer_nombre=?, primer_apellido=?, edad=?, telefono1=?, direccion=?, cedula=?, fecha_nacimiento=?, grupo=?, fecha_ingreso=? where id_empleado= '"+id_empleado+"'";
 
         if (conexion!=null) {
             try {
@@ -217,6 +220,7 @@ public class EmpleadoDAO {
                 ps.setString(6, empleadoVO.getCedula());
                 ps.setString(7, empleadoVO.getFechaNacimiento());
                 ps.setString(8, empleadoVO.getGrupo());
+                ps.setString(9, empleadoVO.getFecha_ingreso());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

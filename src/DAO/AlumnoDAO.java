@@ -263,7 +263,7 @@ public class AlumnoDAO {
             try {
                 PreparedStatement ps = conexion.prepareStatement(sql);
                 ps.setBoolean(1, estatus);
-                ps.setString(1, id_alumno);
+                ps.setString(2, id_alumno);
  
                 int n = ps.executeUpdate();
                 if (n > 0) {

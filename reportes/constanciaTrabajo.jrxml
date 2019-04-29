@@ -2,40 +2,34 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="constancia" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eabed6bd-cfc7-46f0-a187-66e1a38ddb37">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.y" value="224"/>
 	<parameter name="ruta" class="java.lang.String"/>
 	<parameter name="id" class="java.lang.String"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="anio" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
-     variables."iva" AS variables_iva,
-     variables."precio_mora" AS variables_precio_mora,
-     variables."precio_cuota" AS variables_precio_cuota,
-     variables."periodo_actual" AS variables_periodo_actual,
-     variables."seguro" AS variables_seguro,
-     alumno."primer_nombre" AS alumno_primer_nombre,
-     alumno."segundo_nombre" AS alumno_segundo_nombre,
-     alumno."primer_apellido" AS alumno_primer_apellido,
-     alumno."segundo_apellido" AS alumno_segundo_apellido,
-     matricula."id_alumno" AS matricula_id_alumno,
-     matricula."seccion" AS matricula_seccion
+*
 FROM
-     "variables" variables,
-     "alumno" alumno,
-     "matricula" matricula
+     "empleado" empleado
 WHERE
-matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
+"empleado".id_empleado = $P{id}]]>
 	</queryString>
-	<field name="variables_iva" class="java.lang.Double"/>
-	<field name="variables_precio_mora" class="java.lang.Double"/>
-	<field name="variables_precio_cuota" class="java.lang.Double"/>
-	<field name="variables_periodo_actual" class="java.lang.String"/>
-	<field name="variables_seguro" class="java.lang.Double"/>
-	<field name="alumno_primer_nombre" class="java.lang.String"/>
-	<field name="alumno_segundo_nombre" class="java.lang.String"/>
-	<field name="alumno_primer_apellido" class="java.lang.String"/>
-	<field name="alumno_segundo_apellido" class="java.lang.String"/>
-	<field name="matricula_id_alumno" class="java.lang.String"/>
-	<field name="matricula_seccion" class="java.lang.String"/>
+	<field name="primer_nombre" class="java.lang.String"/>
+	<field name="segundo_nombre" class="java.lang.String"/>
+	<field name="primer_apellido" class="java.lang.String"/>
+	<field name="segundo_apellido" class="java.lang.String"/>
+	<field name="edad" class="java.lang.Integer"/>
+	<field name="telefono1" class="java.lang.String"/>
+	<field name="telefono2" class="java.lang.String"/>
+	<field name="correo" class="java.lang.String"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="fecha_nacimiento" class="java.lang.String"/>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="id_empleado" class="java.lang.String"/>
+	<field name="direccion" class="java.sql.Array"/>
+	<field name="grupo" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -86,7 +80,7 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				<textElement>
 					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[CONSTANCIA DE ESTUDIO]]></text>
+				<text><![CDATA[CONSTANCIA DE TRABAJO]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -97,38 +91,38 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<text><![CDATA[QUIEN SUSCRIBE, MARYMEL ESPINOZA SALOM, DIRECTORA DEL CENTRO DE EDUCACION INICIAL "HUMBOLDT; CERTIFICA POR MEDIO DE LA PRESENTE QUE EL (LA) ALUMNO(A):]]></text>
+				<text><![CDATA[QUIEN SUSCRIBE, MARYMEL ESPINOZA SALOM, DIRECTORA DEL CENTRO DE EDUCACION INICIAL "HUMBOLDT; CERTIFICA POR MEDIO DE LA PRESENTE QUE EL SR (A):]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="51" y="140" width="438" height="43" uuid="c9f9de57-f4b0-4d9e-a6ab-216c802b9c76"/>
+				<reportElement x="51" y="128" width="438" height="52" uuid="c9f9de57-f4b0-4d9e-a6ab-216c802b9c76"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
-				<text><![CDATA[ESTA INSCRITO(A) PARA CURSAR EN EL __________________ DE EDUCACION INICIAL EN UNA JORNADA DE:          6:45 A 11:30         EN EL AÑO ESCOLAR]]></text>
+				<text><![CDATA[LABORA ACTUALMENTE CON NOSOTROS, Y LO HA HECHO DESDE ______________ DEL AÑO ____________, DESEMPEÑANDOSE SIEMPRE CON RESPETO Y RESPONSABILIDAD.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="51" y="184" width="440" height="39" uuid="5f8459f4-01bf-405d-a001-d2435337b631"/>
+				<reportElement x="51" y="206" width="440" height="39" uuid="5f8459f4-01bf-405d-a001-d2435337b631"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[CONSTANCIA QUE SE EXPIDE A SOLICITUD DE PARTE INTERSADA EN PUERTO ORDAZ, A LOS ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="51" y="212" width="100" height="20" uuid="2451d720-cf43-4583-93b1-bad7a8f86621"/>
+				<reportElement x="51" y="234" width="100" height="20" uuid="2451d720-cf43-4583-93b1-bad7a8f86621"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[AÑO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="261" y="198" width="117" height="20" uuid="20f7b56b-9d3b-46bf-b181-e00c567b8da4"/>
+				<reportElement x="261" y="220" width="117" height="20" uuid="20f7b56b-9d3b-46bf-b181-e00c567b8da4"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[DIAS DEL MES DE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="469" y="198" width="33" height="20" uuid="6f5e2d17-dfea-4300-9ad5-2c5b941b7e87"/>
+				<reportElement x="469" y="220" width="33" height="20" uuid="6f5e2d17-dfea-4300-9ad5-2c5b941b7e87"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
@@ -139,54 +133,59 @@ matricula."id_alumno" = alumno."id_alumno" and alumno."id_alumno" = $P{id}]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true" isStrikeThrough="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{alumno_primer_nombre}+" "+$F{alumno_segundo_nombre}+" "+$F{alumno_primer_apellido}+" "+$F{alumno_segundo_apellido}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="287" y="131" width="100" height="20" uuid="b08e857b-d4c9-4d02-843d-4ad4d1ec54f9"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{matricula_seccion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{primer_nombre}+" "+$F{primer_apellido}]]></textFieldExpression>
 			</textField>
 			<textField pattern="yyyy">
-				<reportElement x="91" y="212" width="85" height="19" uuid="db0bfc42-48cf-4858-be3f-d1ca98eaa700"/>
+				<reportElement x="91" y="234" width="85" height="19" uuid="db0bfc42-48cf-4858-be3f-d1ca98eaa700"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd">
-				<reportElement x="189" y="198" width="72" height="21" uuid="680e86c9-c6bc-4ae2-9e50-f5dc9bbd4eaf"/>
+				<reportElement x="189" y="220" width="72" height="21" uuid="680e86c9-c6bc-4ae2-9e50-f5dc9bbd4eaf"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="MMMMM">
-				<reportElement x="378" y="197" width="74" height="21" uuid="a3a312e5-46e9-4f7f-bfa5-d94537fb193e"/>
+				<reportElement x="378" y="219" width="74" height="21" uuid="a3a312e5-46e9-4f7f-bfa5-d94537fb193e"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="142" width="81" height="13" uuid="84ab46c7-a7f7-42e4-b5b2-88b49b4f6fda"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="142" width="72" height="13" uuid="26a4503d-4da5-4a4c-84ce-7064f2be8563"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{anio}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
 		<band height="126" splitType="Stretch">
 			<staticText>
-				<reportElement x="118" y="11" width="326" height="20" uuid="acddf8cd-ac4e-49fb-8337-6b5e231153da"/>
+				<reportElement x="118" y="16" width="326" height="20" uuid="acddf8cd-ac4e-49fb-8337-6b5e231153da"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[POR CENTRO DE EDUCACIÓN INICIAL "HUMBOLDT"]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="200" y="66" width="155" height="21" uuid="6732be2e-ccf8-4a8f-be6b-c2a72454daa7"/>
+				<reportElement x="200" y="71" width="155" height="21" uuid="6732be2e-ccf8-4a8f-be6b-c2a72454daa7"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[MARYMEL ESPINOZA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="225" y="82" width="100" height="20" uuid="f15a4b03-2c33-4d63-864f-b9e294d830d1"/>
+				<reportElement x="225" y="87" width="100" height="20" uuid="f15a4b03-2c33-4d63-864f-b9e294d830d1"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>

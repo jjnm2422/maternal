@@ -14,7 +14,8 @@ import javax.swing.ImageIcon;
  * @author acjj
  */
 public class EmpleadoVO {
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion[], sexo, fechaNacimiento, id_empleado, grupo;
+    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, cedula, telefono1, telefono2, correo, direccion[], sexo, fechaNacimiento, id_empleado, grupo, fecha_ingreso
+            ;
     private int edad, binarioFoto;
     private FileInputStream fis;
     private ImageIcon foto; 
@@ -40,6 +41,16 @@ public class EmpleadoVO {
         this.fis = fis;
         this.foto = foto;
     }
+
+    public String getFecha_ingreso() {
+        return fecha_ingreso;
+    }
+
+    public void setFecha_ingreso(String fecha_ingreso) {
+        this.fecha_ingreso = fecha_ingreso;
+    }
+    
+    
 
     public String getGrupo() {
         return grupo;

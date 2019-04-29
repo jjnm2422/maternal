@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.Coordinador;
 import VO.AlumnoVO;
+import VO.EmpleadoVO;
 import VO.NotaVO;
 import VO.PagoVO;
 import VO.RepresentanteVO;
@@ -264,6 +265,16 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         cbxGrupo1 = new javax.swing.JComboBox<>();
         txtFecha1 = new datechooser.beans.DateChooserCombo();
+        frmDatosConstanciaTrabajo = new javax.swing.JFrame();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        txtCodigo6 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        btnBuscar6 = new javax.swing.JButton();
+        lblNombres6 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -281,6 +292,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         btnSeccion1 = new javax.swing.JButton();
         btnSeccion2 = new javax.swing.JButton();
         btnSeccion3 = new javax.swing.JButton();
+        bntAtras1 = new javax.swing.JButton();
 
         frmDatosConstanciaInscripcion.setMinimumSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaInscripcion.setResizable(false);
@@ -1443,6 +1455,80 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosAsistenciaD.getContentPane().add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
 
+        frmDatosConstanciaTrabajo.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosConstanciaTrabajo.setResizable(false);
+        frmDatosConstanciaTrabajo.setSize(new java.awt.Dimension(290, 225));
+        frmDatosConstanciaTrabajo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel27.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel27.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel27.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel27.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Datos para Reporte:");
+        jPanel27.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        jButton28.setText("Aceptar");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+        jPanel27.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, -1));
+
+        jButton29.setText("Cancelar");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+        jPanel27.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 80, -1));
+
+        txtCodigo6.setName("txtCodigoAlumno"); // NOI18N
+        txtCodigo6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigo6ActionPerformed(evt);
+            }
+        });
+        txtCodigo6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigo6KeyTyped(evt);
+            }
+        });
+        jPanel27.add(txtCodigo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 120, 30));
+
+        jLabel38.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("Cedula Docente");
+        jLabel38.setName("lbl"); // NOI18N
+        jPanel27.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 120, 30));
+
+        btnBuscar6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnBuscar6.setName("btnBuscar"); // NOI18N
+        btnBuscar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar6ActionPerformed(evt);
+            }
+        });
+        jPanel27.add(btnBuscar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, 30));
+
+        lblNombres6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombres6.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombres6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel27.add(lblNombres6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 270, 30));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Nombres y apellidos");
+        jPanel27.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
+
+        frmDatosConstanciaTrabajo.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1459,7 +1545,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Reportes");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 340, 110));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 340, 100));
 
         bntAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         bntAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -1470,14 +1556,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 bntAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 130, 30));
+        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 160, 30));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 160, 30));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 160, 30));
 
         btnNotas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnNotas.setText("Lista de Utiles Grupo 2");
@@ -1586,6 +1672,16 @@ public class frmMenuReportes extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnSeccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, 70));
+
+        bntAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        bntAtras1.setText("Constancia Trabajo");
+        bntAtras1.setName("bntAtras"); // NOI18N
+        bntAtras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntAtras1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bntAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 160, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 390));
 
@@ -2542,6 +2638,73 @@ public class frmMenuReportes extends javax.swing.JFrame {
     frmDatosAsistenciaD.dispose();
     }//GEN-LAST:event_jButton27ActionPerformed
 
+    private void bntAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtras1ActionPerformed
+        this.frmDatosConstanciaTrabajo.setLocationRelativeTo(null);
+        this.frmDatosConstanciaTrabajo.setSize(290, 200);
+        this.frmDatosConstanciaTrabajo.setVisible(true);
+    }//GEN-LAST:event_bntAtras1ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        if (!lblNombres6.getText().equals("")) {
+            try {
+                Connection conexion = null;
+                Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                conexion = conexiondb.getConnection();
+                String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\constanciaTrabajo.jrxml";
+                EmpleadoVO datos = coordinador.consultarEmpleado(id);
+                String mes = datos.getFecha_ingreso().substring(3, 5);
+                String anio = datos.getFecha_ingreso().substring(6);
+                mes = obtenerMes(Integer.parseInt(mes));
+                Map<String, Object> p2 = new HashMap<>();
+                p2.put("id", id);
+                p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                p2.put("mes", mes);
+                p2.put("anio", anio);
+                JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                visor.setVisible(true);
+                lblNombres3.setText("");
+                txtCodigo3.setText("");
+            } catch (JRException ex) {
+                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                this.dispose();
+            }
+
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un docente");
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        lblNombres6.setText("");
+        txtCodigo6.setText("");
+        this.frmDatosConstanciaTrabajo.setVisible(false);
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void txtCodigo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo6ActionPerformed
+
+    private void txtCodigo6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo6KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo6KeyTyped
+
+    private void btnBuscar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar6ActionPerformed
+        if (!txtCodigo6.getText().isEmpty()) {
+            id = txtCodigo6.getText();
+            EmpleadoVO empleadoVO = coordinador.consultarEmpleado(txtCodigo6.getText().trim());
+            if (empleadoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                lblNombres6.setText(empleadoVO.getPrimer_nombre() + " " + empleadoVO.getPrimer_apellido());
+            } else {
+                coordinador.getLogica().mensajeError("Cedula no existe");
+            }
+        } else {
+            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+        }
+    }//GEN-LAST:event_btnBuscar6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2580,6 +2743,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bntAtras;
+    public javax.swing.JButton bntAtras1;
     public javax.swing.JButton btnAsistencia;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnBorrar1;
@@ -2593,6 +2757,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar3;
     private javax.swing.JButton btnBuscar4;
     private javax.swing.JButton btnBuscar5;
+    private javax.swing.JButton btnBuscar6;
     public javax.swing.JButton btnDocentes;
     public javax.swing.JButton btnInscripcion;
     public javax.swing.JButton btnNotas;
@@ -2632,6 +2797,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JFrame frmDatosConstanciaEstudio;
     private javax.swing.JFrame frmDatosConstanciaInscripcion;
     private javax.swing.JFrame frmDatosConstanciaPago;
+    private javax.swing.JFrame frmDatosConstanciaTrabajo;
     private javax.swing.JFrame frmDatosNumeroCedula;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
@@ -2649,6 +2815,8 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2657,11 +2825,13 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -2671,6 +2841,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel52;
@@ -2708,6 +2879,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -2724,6 +2896,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombres3;
     private javax.swing.JLabel lblNombres4;
     private javax.swing.JLabel lblNombres5;
+    private javax.swing.JLabel lblNombres6;
     public javax.swing.JLabel lblUsuarioActvo;
     private javax.swing.JTable tblBusqueda;
     private javax.swing.JTable tblBusqueda1;
@@ -2743,6 +2916,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigo3;
     private javax.swing.JTextField txtCodigo4;
     private javax.swing.JTextField txtCodigo5;
+    private javax.swing.JTextField txtCodigo6;
     private datechooser.beans.DateChooserCombo txtFecha;
     private datechooser.beans.DateChooserCombo txtFecha1;
     private javax.swing.JTextField txtNacimiento;
@@ -2871,5 +3045,36 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 break;
         }
         return res;
+    }
+    
+        private String obtenerMes(int i) {
+        switch (i) {
+            case 1:
+            return "Enero";
+            case 2:
+            return "Febrero";
+            case 3:
+            return "Marzo";
+            case 4:
+            return "Abril";
+            case 5:
+            return "Mayo";
+            case 6:
+            return "Junio";
+            case 7:
+            return "Julio";
+            case 8:
+            return "Agosto";
+            case 9:
+            return "Septiembre";
+            case 10:
+            return "Octubre";
+            case 11:
+            return "Noviembre";
+            case 12:
+            return "Diciembre";
+            default:
+                return  i+"";
+        }
     }
 }

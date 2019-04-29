@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Calendar;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,6 +34,7 @@ public class frmdocente extends javax.swing.JFrame {
     FileInputStream fis;
     int longitudBytes;
     private String id_empleado;
+    private static Calendar c1 = Calendar.getInstance();
 
     /**
      * Creates new form frmdocente
@@ -106,6 +108,8 @@ public class frmdocente extends javax.swing.JFrame {
         txtParroquia = new javax.swing.JTextField();
         lblNombre2 = new javax.swing.JLabel();
         cbxGrupo1 = new javax.swing.JComboBox<>();
+        lblFechaNacimiento2 = new javax.swing.JLabel();
+        txtFecha2 = new datechooser.beans.DateChooserCombo();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -137,6 +141,8 @@ public class frmdocente extends javax.swing.JFrame {
         txtParroquia1 = new javax.swing.JTextField();
         lblNombre3 = new javax.swing.JLabel();
         cbxGrupo2 = new javax.swing.JComboBox<>();
+        lblFechaNacimiento3 = new javax.swing.JLabel();
+        txtFecha3 = new datechooser.beans.DateChooserCombo();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblCedula2 = new javax.swing.JLabel();
@@ -267,7 +273,7 @@ public class frmdocente extends javax.swing.JFrame {
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("Asignar a Grupo");
-        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 120, 20));
+        jPanel5.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 130, 20));
 
         lblDireccion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,8 +288,8 @@ public class frmdocente extends javax.swing.JFrame {
 
         lblFechaNacimiento.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
-        lblFechaNacimiento.setText("Fecha de nacimiento");
-        jPanel5.add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
+        lblFechaNacimiento.setText("Fecha de ingreso");
+        jPanel5.add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 20));
 
         lblCedula.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         lblCedula.setForeground(new java.awt.Color(255, 255, 255));
@@ -349,479 +355,525 @@ public class frmdocente extends javax.swing.JFrame {
         });
         jPanel5.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
 
-        txtFecha.setMinDate(new java.util.GregorianCalendar(1950, 0, 1));
-        txtFecha.setCurrentNavigateIndex(0);
-        txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel5.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
-
-        btnAgregarImagen1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnAgregarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
-        btnAgregarImagen1.setText("Cargar Foto");
-        btnAgregarImagen1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarImagen1ActionPerformed(evt);
-            }
-        });
-        jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 30));
-
-        lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel5.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
-
-        txtNumCasa.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNumCasaKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNumCasaKeyTyped(evt);
-            }
-        });
-        jPanel5.add(txtNumCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
-
-        jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("Nº Casa:");
-        jPanel5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
-
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Casa:");
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
-
-        cbxCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
-        jPanel5.add(cbxCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
-
-        jLabel46.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("Calle/Avenida:");
-        jPanel5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
-
-        txtCalle.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCalleKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCalleKeyTyped(evt);
-            }
-        });
-        jPanel5.add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
-
-        jLabel50.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setText("Sector:");
-        jPanel5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
-
-        txtSector.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSectorKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtSectorKeyTyped(evt);
-            }
-        });
-        jPanel5.add(txtSector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
-
-        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel51.setText("Parroquia:");
-        jPanel5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
-
-        txtParroquia.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtParroquiaKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtParroquiaKeyTyped(evt);
-            }
-        });
-        jPanel5.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
-
-        lblNombre2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre2.setText("Nombre");
-        jPanel5.add(lblNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
-
-        cbxGrupo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
-        jPanel5.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 120, -1));
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
-
-        lblUsuarioActvo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuarioActvo.setText("usuario activo");
-        lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 120, 20));
-
-        btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
-        btnAtras.setText("Salir");
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 110, 30));
-
-        btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 110, 30));
-
-        btnBorrarR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
-        btnBorrarR.setText("Limpiar");
-        btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarRActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 110, 30));
-
-        jTabbedPane1.addTab("Registro", jPanel1);
-
-        jPanel6.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel7.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos docente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel7.setForeground(new java.awt.Color(0, 0, 102));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblNombre1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre1.setText("Nombre");
-        jPanel7.add(lblNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
-
-        lblDireccion1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblDireccion1.setForeground(new java.awt.Color(255, 255, 255));
-        lblDireccion1.setText("Direccion");
-        lblDireccion1.setName("lblPrimerNombre"); // NOI18N
-        jPanel7.add(lblDireccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
-
-        lblApellido1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblApellido1.setForeground(new java.awt.Color(255, 255, 255));
-        lblApellido1.setText("Apellido");
-        jPanel7.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
-
-        lblFechaNacimiento1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblFechaNacimiento1.setForeground(new java.awt.Color(255, 255, 255));
-        lblFechaNacimiento1.setText("Fecha de nacimiento");
-        jPanel7.add(lblFechaNacimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
-
-        lblCedula1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCedula1.setForeground(new java.awt.Color(255, 255, 255));
-        lblCedula1.setText("Cedula");
-        jPanel7.add(lblCedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
-
-        lblTelefono1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblTelefono1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTelefono1.setText("Telefono");
-        lblTelefono1.setName("lblGrupo"); // NOI18N
-        jPanel7.add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
-
-        btnAgregarImagen2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnAgregarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
-        btnAgregarImagen2.setText("Cargar Foto");
-        btnAgregarImagen2.setEnabled(false);
-        btnAgregarImagen2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarImagen2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(btnAgregarImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 30));
-
-        lblfoto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblfoto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel7.add(lblfoto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
-
-        txtNombre2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtNombre2.setEnabled(false);
-        txtNombre2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNombre2KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNombre2KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, -1));
-
-        txtApellido2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtApellido2.setEnabled(false);
-        txtApellido2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellido2ActionPerformed(evt);
-            }
-        });
-        txtApellido2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtApellido2KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtApellido2KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
-
-        txtTelefono2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtTelefono2.setEnabled(false);
-        txtTelefono2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefono2ActionPerformed(evt);
-            }
-        });
-        txtTelefono2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTelefono2KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
-
-        txtCedula3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCedula3.setEnabled(false);
-        txtCedula3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCedula3KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtCedula3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 100, -1));
-
-        txtFecha1.setEnabled(false);
-        txtFecha1.setMinDate(new java.util.GregorianCalendar(1950, 0, 1));
-        txtFecha1.setCurrentNavigateIndex(0);
-        txtFecha1.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-        jPanel7.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
-
-        txtNumCasa1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNumCasa1KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNumCasa1KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtNumCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
-
-        jLabel52.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel52.setText("Nº Casa:");
-        jPanel7.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
-
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Casa:");
-        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
-
-        cbxCasa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
-        jPanel7.add(cbxCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
-
-        jLabel47.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("Calle/Avenida:");
-        jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
-
-        txtCalle1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCalle1KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCalle1KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtCalle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
-
-        jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("Sector:");
-        jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
-
-        txtSector1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSector1KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtSector1KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtSector1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
-
-        jLabel54.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel54.setText("Parroquia:");
-        jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
-
-        txtParroquia1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtParroquia1KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtParroquia1KeyTyped(evt);
-            }
-        });
-        jPanel7.add(txtParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
-
-        lblNombre3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblNombre3.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNombre3.setText("Asignar a Grupo");
-        jPanel7.add(lblNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 120, 20));
-
-        cbxGrupo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
-        jPanel7.add(cbxGrupo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 120, -1));
-
-        jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
-
-        btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
-        btnSalir2.setText("Salir");
-        btnSalir2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalir2ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 100, 30));
-
-        btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
-        btnEliminar.setText("Eliminar");
-        btnEliminar.setToolTipText("");
-        btnEliminar.setEnabled(false);
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, 30));
-
-        lblCedula2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCedula2.setForeground(new java.awt.Color(255, 255, 255));
-        lblCedula2.setText("Cedula");
-        jPanel6.add(lblCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 30));
-
-        txtCedula2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCedula2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCedula2KeyTyped(evt);
-            }
-        });
-        jPanel6.add(txtCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, 30));
-
-        btnBuscar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
-        btnBuscar.setText("Buscar");
-        btnBuscar.setName("btnBuscar"); // NOI18N
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 100, 30));
-
-        btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
-        btnActualizar.setText("Actualizar");
-        btnActualizar.setToolTipText("");
-        btnActualizar.setEnabled(false);
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, 30));
-
-        btnBorrarR1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnBorrarR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
-        btnBorrarR1.setText("Limpiar");
-        btnBorrarR1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarR1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnBorrarR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 110, 30));
-
-        jTabbedPane1.addTab("Modificacion", null, jPanel6, "");
-
-        jPanel8.setBackground(new java.awt.Color(69, 90, 100));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel9.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel9.setForeground(new java.awt.Color(0, 0, 102));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable1);
-
-        jPanel9.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 570, 250));
-
-        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 590, 270));
-
-        btnSalir3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
-        btnSalir3.setText("Salir");
-        btnSalir3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalir3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(btnSalir3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 30));
-
-        lblCedula4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblCedula4.setForeground(new java.awt.Color(255, 255, 255));
-        lblCedula4.setText("Cedula");
-        jPanel8.add(lblCedula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 60, 30));
-
-        txtCedula5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCedula5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCedula5KeyTyped(evt);
-            }
-        });
-        jPanel8.add(txtCedula5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 30));
-
-        btnBuscar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
-        btnBuscar1.setText("Buscar");
-        btnBuscar1.setName("btnBuscar"); // NOI18N
-        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar1ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 120, 30));
-
-        btnBuscar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
-        btnBuscar2.setText("Restaurar");
-        btnBuscar2.setToolTipText("");
-        btnBuscar2.setName("btnBuscar"); // NOI18N
-        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscar2ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
-
-        jTabbedPane1.addTab("Listado", null, jPanel8, "");
-
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 420));
-
-        pack();
+        txtFecha.setFormat(2);
+        try {
+            txtFecha.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2000, 0, 1),
+                new java.util.GregorianCalendar(2000, 0, 1))));
+    } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+        e1.printStackTrace();
+    }
+    txtFecha.setMaxDate(new java.util.GregorianCalendar(2000, 11, 31));
+    txtFecha.setCurrentNavigateIndex(0);
+    txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+    jPanel5.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 170, -1));
+
+    btnAgregarImagen1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnAgregarImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+    btnAgregarImagen1.setText("Cargar Foto");
+    btnAgregarImagen1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAgregarImagen1ActionPerformed(evt);
+        }
+    });
+    jPanel5.add(btnAgregarImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 30));
+
+    lblfoto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    lblfoto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+    jPanel5.add(lblfoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
+
+    txtNumCasa.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtNumCasaKeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNumCasaKeyTyped(evt);
+        }
+    });
+    jPanel5.add(txtNumCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
+
+    jLabel49.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel49.setText("Nº Casa:");
+    jPanel5.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
+
+    jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel10.setText("Casa:");
+    jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
+
+    cbxCasa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+    jPanel5.add(cbxCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
+
+    jLabel46.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel46.setText("Calle/Avenida:");
+    jPanel5.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
+
+    txtCalle.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtCalleKeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCalleKeyTyped(evt);
+        }
+    });
+    jPanel5.add(txtCalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
+
+    jLabel50.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel50.setText("Sector:");
+    jPanel5.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
+
+    txtSector.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtSectorKeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtSectorKeyTyped(evt);
+        }
+    });
+    jPanel5.add(txtSector, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
+
+    jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel51.setText("Parroquia:");
+    jPanel5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
+
+    txtParroquia.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtParroquiaKeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtParroquiaKeyTyped(evt);
+        }
+    });
+    jPanel5.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
+
+    lblNombre2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
+    lblNombre2.setText("Nombre");
+    jPanel5.add(lblNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+
+    cbxGrupo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+    jPanel5.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 120, -1));
+
+    lblFechaNacimiento2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblFechaNacimiento2.setForeground(new java.awt.Color(255, 255, 255));
+    lblFechaNacimiento2.setText("Fecha de nacimiento");
+    jPanel5.add(lblFechaNacimiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
+
+    try {
+        txtFecha2.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2019, 0, 1),
+            new java.util.GregorianCalendar(2019, 0, 1))));
+} catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+    e1.printStackTrace();
+    }
+    txtFecha2.setMaxDate(c1);
+    txtFecha2.setCurrentNavigateIndex(0);
+    txtFecha2.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+    jPanel5.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 20));
+
+    jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
+
+    lblUsuarioActvo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+    lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
+    lblUsuarioActvo.setText("usuario activo");
+    lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
+    jPanel1.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 120, 20));
+
+    btnAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+    btnAtras.setText("Salir");
+    btnAtras.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAtrasActionPerformed(evt);
+        }
+    });
+    jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 110, 30));
+
+    btnGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_guardar24.png"))); // NOI18N
+    btnGuardar.setText("Guardar");
+    btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnGuardarActionPerformed(evt);
+        }
+    });
+    jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 110, 30));
+
+    btnBorrarR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+    btnBorrarR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+    btnBorrarR.setText("Limpiar");
+    btnBorrarR.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBorrarRActionPerformed(evt);
+        }
+    });
+    jPanel1.add(btnBorrarR, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 110, 30));
+
+    jTabbedPane1.addTab("Registro", jPanel1);
+
+    jPanel6.setBackground(new java.awt.Color(69, 90, 100));
+    jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jPanel7.setBackground(new java.awt.Color(2, 119, 189));
+    jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos docente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+    jPanel7.setForeground(new java.awt.Color(0, 0, 102));
+    jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    lblNombre1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblNombre1.setForeground(new java.awt.Color(255, 255, 255));
+    lblNombre1.setText("Nombre");
+    jPanel7.add(lblNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 20));
+
+    lblDireccion1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblDireccion1.setForeground(new java.awt.Color(255, 255, 255));
+    lblDireccion1.setText("Direccion");
+    lblDireccion1.setName("lblPrimerNombre"); // NOI18N
+    jPanel7.add(lblDireccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+
+    lblApellido1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblApellido1.setForeground(new java.awt.Color(255, 255, 255));
+    lblApellido1.setText("Apellido");
+    jPanel7.add(lblApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 20));
+
+    lblFechaNacimiento1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblFechaNacimiento1.setForeground(new java.awt.Color(255, 255, 255));
+    lblFechaNacimiento1.setText("Fecha de nacimiento");
+    jPanel7.add(lblFechaNacimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, 20));
+
+    lblCedula1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblCedula1.setForeground(new java.awt.Color(255, 255, 255));
+    lblCedula1.setText("Cedula");
+    jPanel7.add(lblCedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
+
+    lblTelefono1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblTelefono1.setForeground(new java.awt.Color(255, 255, 255));
+    lblTelefono1.setText("Telefono");
+    lblTelefono1.setName("lblGrupo"); // NOI18N
+    jPanel7.add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
+
+    btnAgregarImagen2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnAgregarImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_subir24.png"))); // NOI18N
+    btnAgregarImagen2.setText("Cargar Foto");
+    btnAgregarImagen2.setEnabled(false);
+    btnAgregarImagen2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAgregarImagen2ActionPerformed(evt);
+        }
+    });
+    jPanel7.add(btnAgregarImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 30));
+
+    lblfoto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    lblfoto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+    jPanel7.add(lblfoto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 110, 120));
+
+    txtNombre2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtNombre2.setEnabled(false);
+    txtNombre2.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtNombre2KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNombre2KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, -1));
+
+    txtApellido2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtApellido2.setEnabled(false);
+    txtApellido2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtApellido2ActionPerformed(evt);
+        }
+    });
+    txtApellido2.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtApellido2KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtApellido2KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtApellido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 120, -1));
+
+    txtTelefono2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtTelefono2.setEnabled(false);
+    txtTelefono2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtTelefono2ActionPerformed(evt);
+        }
+    });
+    txtTelefono2.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtTelefono2KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
+
+    txtCedula3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtCedula3.setEnabled(false);
+    txtCedula3.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCedula3KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtCedula3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 100, -1));
+
+    try {
+        txtFecha1.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2000, 0, 1),
+            new java.util.GregorianCalendar(2000, 0, 1))));
+} catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+    e1.printStackTrace();
+    }
+    txtFecha1.setEnabled(false);
+    txtFecha1.setMaxDate(new java.util.GregorianCalendar(2000, 11, 31));
+    txtFecha1.setCurrentNavigateIndex(0);
+    txtFecha1.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+    jPanel7.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 170, -1));
+
+    txtNumCasa1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtNumCasa1KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtNumCasa1KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtNumCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, -1));
+
+    jLabel52.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel52.setText("Nº Casa:");
+    jPanel7.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 20));
+
+    jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel11.setText("Casa:");
+    jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
+
+    cbxCasa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+    jPanel7.add(cbxCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
+
+    jLabel47.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel47.setText("Calle/Avenida:");
+    jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 100, 20));
+
+    txtCalle1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtCalle1KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCalle1KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtCalle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 250, -1));
+
+    jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel53.setText("Sector:");
+    jPanel7.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 60, 20));
+
+    txtSector1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtSector1KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtSector1KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtSector1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 110, -1));
+
+    jLabel54.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel54.setText("Parroquia:");
+    jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
+
+    txtParroquia1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            txtParroquia1KeyReleased(evt);
+        }
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtParroquia1KeyTyped(evt);
+        }
+    });
+    jPanel7.add(txtParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
+
+    lblNombre3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblNombre3.setForeground(new java.awt.Color(255, 255, 255));
+    lblNombre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    lblNombre3.setText("Asignar a Grupo");
+    jPanel7.add(lblNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 120, 20));
+
+    cbxGrupo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+    jPanel7.add(cbxGrupo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 120, -1));
+
+    lblFechaNacimiento3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblFechaNacimiento3.setForeground(new java.awt.Color(255, 255, 255));
+    lblFechaNacimiento3.setText("Fecha de ingreso");
+    jPanel7.add(lblFechaNacimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 20));
+
+    try {
+        txtFecha3.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2019, 0, 1),
+            new java.util.GregorianCalendar(2019, 0, 1))));
+} catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
+    e1.printStackTrace();
+    }
+    txtFecha3.setEnabled(false);
+    txtFecha3.setMaxDate(c1);
+    txtFecha3.setCurrentNavigateIndex(0);
+    txtFecha3.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+    jPanel7.add(txtFecha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 20));
+
+    jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
+
+    btnSalir2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnSalir2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+    btnSalir2.setText("Salir");
+    btnSalir2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnSalir2ActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnSalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 100, 30));
+
+    btnEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_delete24.png"))); // NOI18N
+    btnEliminar.setText("Eliminar");
+    btnEliminar.setToolTipText("");
+    btnEliminar.setEnabled(false);
+    btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnEliminarActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, 30));
+
+    lblCedula2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblCedula2.setForeground(new java.awt.Color(255, 255, 255));
+    lblCedula2.setText("Cedula");
+    jPanel6.add(lblCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 30));
+
+    txtCedula2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtCedula2.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCedula2KeyTyped(evt);
+        }
+    });
+    jPanel6.add(txtCedula2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 100, 30));
+
+    btnBuscar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+    btnBuscar.setText("Buscar");
+    btnBuscar.setName("btnBuscar"); // NOI18N
+    btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 100, 30));
+
+    btnActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
+    btnActualizar.setText("Actualizar");
+    btnActualizar.setToolTipText("");
+    btnActualizar.setEnabled(false);
+    btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnActualizarActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, 30));
+
+    btnBorrarR1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+    btnBorrarR1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+    btnBorrarR1.setText("Limpiar");
+    btnBorrarR1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBorrarR1ActionPerformed(evt);
+        }
+    });
+    jPanel6.add(btnBorrarR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 110, 30));
+
+    jTabbedPane1.addTab("Modificacion", null, jPanel6, "");
+
+    jPanel8.setBackground(new java.awt.Color(69, 90, 100));
+    jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jPanel9.setBackground(new java.awt.Color(2, 119, 189));
+    jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+    jPanel9.setForeground(new java.awt.Color(0, 0, 102));
+    jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+        },
+        new String [] {
+            "Title 1", "Title 2", "Title 3", "Title 4"
+        }
+    ));
+    jScrollPane3.setViewportView(jTable1);
+
+    jPanel9.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 570, 250));
+
+    jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 590, 270));
+
+    btnSalir3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnSalir3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+    btnSalir3.setText("Salir");
+    btnSalir3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnSalir3ActionPerformed(evt);
+        }
+    });
+    jPanel8.add(btnSalir3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 100, 30));
+
+    lblCedula4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+    lblCedula4.setForeground(new java.awt.Color(255, 255, 255));
+    lblCedula4.setText("Cedula");
+    jPanel8.add(lblCedula4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 60, 30));
+
+    txtCedula5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+    txtCedula5.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            txtCedula5KeyTyped(evt);
+        }
+    });
+    jPanel8.add(txtCedula5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 30));
+
+    btnBuscar1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+    btnBuscar1.setText("Buscar");
+    btnBuscar1.setName("btnBuscar"); // NOI18N
+    btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscar1ActionPerformed(evt);
+        }
+    });
+    jPanel8.add(btnBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 120, 30));
+
+    btnBuscar2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+    btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_update24.png"))); // NOI18N
+    btnBuscar2.setText("Restaurar");
+    btnBuscar2.setToolTipText("");
+    btnBuscar2.setName("btnBuscar"); // NOI18N
+    btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscar2ActionPerformed(evt);
+        }
+    });
+    jPanel8.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 30));
+
+    jTabbedPane1.addTab("Listado", null, jPanel8, "");
+
+    getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 420));
+
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -848,6 +900,7 @@ this.dispose();
         empleadoVO.setDireccion(llenarVector());
         empleadoVO.setGrupo(cbxGrupo1.getSelectedItem().toString());
         empleadoVO.setFoto((ImageIcon) lblfoto1.getIcon());
+        empleadoVO.setFecha_ingreso(txtFecha2.getText());
         int añoNacimiento = Integer.parseInt(txtFecha.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         empleadoVO.setEdad(añoActual - añoNacimiento);
@@ -965,6 +1018,7 @@ Object opciones[] = {"Si", "No"};
         txtApellido2.setText(empleadoVO.getPrimer_apellido());
         txtCedula3.setText(empleadoVO.getCedula());
         txtFecha1.setText(empleadoVO.getFechaNacimiento());
+        txtFecha3.setText(empleadoVO.getFecha_ingreso());
         //establesco direccion
         txtNumCasa1.setText(empleadoVO.getDireccion()[0]);
         cbxCasa1.setSelectedItem(empleadoVO.getDireccion()[1]);
@@ -1000,6 +1054,7 @@ Object opciones[] = {"Si", "No"};
         empleadoVO.setDireccion(llenarVector2());
         empleadoVO.setFoto((ImageIcon) lblfoto2.getIcon());
         empleadoVO.setGrupo(cbxGrupo2.getSelectedItem().toString());
+        empleadoVO.setFecha_ingreso(txtFecha3.getText());
         int añoNacimiento = Integer.parseInt(txtFecha1.getText().substring(6, 10));
         int añoActual = Integer.parseInt(coordinador.getFechaFormateada().substring(6, 10));
         empleadoVO.setEdad(añoActual - añoNacimiento);
@@ -1305,6 +1360,8 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JLabel lblDireccion1;
     private javax.swing.JLabel lblFechaNacimiento;
     private javax.swing.JLabel lblFechaNacimiento1;
+    private javax.swing.JLabel lblFechaNacimiento2;
+    private javax.swing.JLabel lblFechaNacimiento3;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblNombre2;
@@ -1324,6 +1381,8 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JTextField txtCedula5;
     private datechooser.beans.DateChooserCombo txtFecha;
     private datechooser.beans.DateChooserCombo txtFecha1;
+    private datechooser.beans.DateChooserCombo txtFecha2;
+    private datechooser.beans.DateChooserCombo txtFecha3;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombre2;
     private javax.swing.JTextField txtNumCasa;
@@ -1395,6 +1454,7 @@ Object opciones[] = {"Si", "No"};
         txtApellido2.setEnabled(b);
         //txtCedula3.setEnabled(b);
         txtFecha1.setEnabled(b);
+        txtFecha3.setEnabled(b);
         txtNumCasa1.setEnabled(b);
         txtCalle1.setEnabled(b);
         txtSector1.setEnabled(b);
@@ -1412,6 +1472,7 @@ Object opciones[] = {"Si", "No"};
         txtCedula3.setText("");
         txtCedula2.setText("");
         txtFecha1.setText("01/01/2000");
+        txtFecha3.setText("01/01/2000");
         txtNumCasa1.setText("");
         txtCalle1.setText("");
         txtSector1.setText("");
@@ -1428,6 +1489,7 @@ Object opciones[] = {"Si", "No"};
         txtApellido.setText("");
         txtCedula.setText("");
         txtFecha.setText("01/01/2000");
+        txtFecha2.setText("01/01/2000");
         txtNumCasa.setText("");
         txtCalle.setText("");
         txtSector.setText("");
