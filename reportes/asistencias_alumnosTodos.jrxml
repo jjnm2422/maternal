@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="asistencias_alumnos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24fef955-fe8c-488c-88aa-e5a43083c28c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ruta" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="grupo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select asistencia_a.fecha, matricula.seccion, asistencia_a.asistencia, alumno.primer_nombre, alumno.primer_apellido from alumno
+inner join asistencia_a on alumno.id_alumno = asistencia_a.id_alumno
+inner join matricula on alumno.id_alumno = matricula.id_alumno
+where asistencia_a.fecha = $P{fecha} and matricula.seccion = $P{grupo}]]>
+	</queryString>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="seccion" class="java.lang.String"/>
+	<field name="asistencia" class="java.lang.Boolean"/>
+	<field name="primer_nombre" class="java.lang.String"/>
+	<field name="primer_apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<image>
+				<reportElement x="52" y="30" width="118" height="74" uuid="39fbed61-d87c-4bd8-8f64-6c930706065e"/>
+				<imageExpression><![CDATA[$P{ruta}+"\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="201" y="30" width="201" height="20" uuid="b6de5581-1f15-480d-a502-aeb9f2e60b5a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro de Educación Inicial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="48" width="120" height="20" uuid="1bcdf900-672f-4dcd-8fcc-4b9c352049fa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA["HUMBOLDT"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="68" width="285" height="15" uuid="64addb9c-ccab-4f5b-be1a-970eda165830"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inscrito en el Ministerio del Poder Popular para la Educación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="83" width="214" height="12" uuid="c16beeba-f524-4e9e-b481-2e0f888495dd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bajo el Nro.: PD.12000701 RIF- J-330506388-5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="95" width="166" height="13" uuid="dcb34103-0f48-4b1e-9ed9-bbbb60a6a297"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telf.: 0286-7191795 - 04148682748]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="201" y="19" width="193" height="20" uuid="7432c3c2-08d4-4018-a69e-44259fba79fd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ASISTENCIA DE ALUMNOS"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="348" y="45" width="67" height="18" uuid="9a073764-c4a9-44aa-b824-0aaddbb328c8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRUPO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="11" width="60" height="20" uuid="3a9a900f-d1f1-4aaf-9989-575330a5a09e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="11" width="100" height="20" uuid="fa504960-1906-451c-abf4-275058b8a212"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="44" width="100" height="20" uuid="ad2cc6fd-2b3a-4c8d-bc8d-8dca73bfc6e3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="63" width="157" height="18" uuid="81fb2f5a-99a2-4f1d-a9b5-423e1d87f69b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE Y APELLIDO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="3" width="243" height="20" uuid="8dacdb99-75d1-4a9b-9ce3-3d39ec3d1d6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_nombre}+ " " + $F{primer_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="4" width="107" height="20" uuid="badd3f6b-d09b-4ab6-9da0-67b54b705a4a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[( $F{asistencia} ? "ASISTIO" : "NO ASISTIO" )]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="28" width="572" height="2" uuid="1a02b017-40c1-42c4-a796-1b67f44cf3ef"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

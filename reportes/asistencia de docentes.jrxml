@@ -10,8 +10,10 @@
 	<parameter name="fecha" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="asistencia" class="java.lang.Boolean"/>
 	<queryString>
-		<![CDATA[select * from asistencia_d, empleado where empleado.id_empleado = asistencia_d.id_empleado and asistencia_d.fecha = $P{fecha} and empleado.grupo = $P{grupo}]]>
+		<![CDATA[select * from asistencia_d, empleado where empleado.id_empleado = asistencia_d.id_empleado and asistencia_d.fecha = $P{fecha} and empleado.grupo = $P{grupo} AND asistencia = $P{asistencia}]]>
 	</queryString>
 	<field name="id_asistencia_d" class="java.lang.Integer"/>
 	<field name="asistencia" class="java.lang.Boolean"/>
@@ -32,6 +34,7 @@
 	<field name="foto" class="java.lang.Object"/>
 	<field name="direccion" class="java.sql.Array"/>
 	<field name="grupo" class="java.lang.String"/>
+	<field name="fecha_ingreso" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -80,13 +83,13 @@
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch">
-			<staticText>
-				<reportElement x="208" y="15" width="203" height="20" uuid="da034b7d-0d94-4e4c-b6d8-1ce417eed9eb"/>
-				<textElement verticalAlignment="Middle">
+			<textField>
+				<reportElement x="198" y="15" width="193" height="20" uuid="96d87d13-66e2-4273-970c-b82cb93e5395"/>
+				<textElement>
 					<font fontName="Times New Roman" size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ASISTENCIA DE DOCENTES]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["DOCENTES"+" "+$P{tipo}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>

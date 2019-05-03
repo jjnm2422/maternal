@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  */
 public class AlumnoVO {
     
-    private String primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias[], sexo, fechaNacimiento, enfermedades, id_alumno;
+    private String primer_nombre, lugar_nacimiento, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, alergias[], sexo, fechaNacimiento, enfermedades, id_alumno;
     private int edad, id_nota, id_pago, binarioFoto;
     private FileInputStream fis;
     private boolean estatus;
@@ -43,6 +43,14 @@ public class AlumnoVO {
         this.foto = foto;
     }
 
+    public String getLugar_nacimiento() {
+        return lugar_nacimiento;
+    }
+
+    public void setLugar_nacimiento(String lugar_nacimiento) {
+        this.lugar_nacimiento = lugar_nacimiento;
+    }
+    
     public String[] getAlergias() {
         return alergias;
     }

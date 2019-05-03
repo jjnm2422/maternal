@@ -138,6 +138,14 @@ public class Coordinador {
      public String registrarUsuario(VO.UsuarioVO usuarioVO) {
          return getUsuarioDAO().registrarUsuario(usuarioVO);
      }
+     
+     public String periodoAnterior(){
+         return getVariablesDAO().periodoAnterior();
+     }
+     
+      public double consultarPagoSaldoAnterior(String id_alumno) {
+          return getPagoDAO().consultarPagoSaldoAnterior(id_alumno);
+      }
     
      public VO.EmpleadoVO consultarEmpleado(String usuario) {
          return getEmpleadoDAO().consultarEmpleado(usuario);

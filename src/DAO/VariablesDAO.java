@@ -6,6 +6,7 @@
 package DAO;
 
 import Controlador.Coordinador;
+import VO.VariablesVO;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,6 +84,12 @@ public class VariablesDAO {
             año_proximo++;
         }
         combobox.setSelectedIndex(0);
+    }
+    
+    public String periodoAnterior(){
+        int año_actual = Integer.parseInt(this.consultarVariables().getPeriodo_actual().substring(0, 4));
+        int año_proximo = Integer.parseInt(this.consultarVariables().getPeriodo_actual().substring(5, 9));
+        return (año_actual-1) +"-"+(año_proximo-1);
     }
 
     public String actualizarVariables(VO.VariablesVO variablesVO) {

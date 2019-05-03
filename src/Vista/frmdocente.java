@@ -105,11 +105,11 @@ public class frmdocente extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         txtSector = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
-        txtParroquia = new javax.swing.JTextField();
         lblNombre2 = new javax.swing.JLabel();
         cbxGrupo1 = new javax.swing.JComboBox<>();
         lblFechaNacimiento2 = new javax.swing.JLabel();
         txtFecha2 = new datechooser.beans.DateChooserCombo();
+        cbxParroquia = new javax.swing.JComboBox<>();
         lblUsuarioActvo = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -138,11 +138,11 @@ public class frmdocente extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         txtSector1 = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
-        txtParroquia1 = new javax.swing.JTextField();
         lblNombre3 = new javax.swing.JLabel();
         cbxGrupo2 = new javax.swing.JComboBox<>();
         lblFechaNacimiento3 = new javax.swing.JLabel();
         txtFecha3 = new datechooser.beans.DateChooserCombo();
+        cbxParroquia1 = new javax.swing.JComboBox<>();
         btnSalir2 = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblCedula2 = new javax.swing.JLabel();
@@ -439,16 +439,6 @@ public class frmdocente extends javax.swing.JFrame {
     jLabel51.setText("Parroquia:");
     jPanel5.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
 
-    txtParroquia.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyReleased(java.awt.event.KeyEvent evt) {
-            txtParroquiaKeyReleased(evt);
-        }
-        public void keyTyped(java.awt.event.KeyEvent evt) {
-            txtParroquiaKeyTyped(evt);
-        }
-    });
-    jPanel5.add(txtParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
-
     lblNombre2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
     lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
     lblNombre2.setText("Nombre");
@@ -472,6 +462,9 @@ public class frmdocente extends javax.swing.JFrame {
     txtFecha2.setCurrentNavigateIndex(0);
     txtFecha2.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
     jPanel5.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 20));
+
+    cbxParroquia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachamay", "Chirica", "Dalla Costa", "Once de Abril", "Simon Bolivar", "Unare", "Universidad", "Vista al Sol", "Yocoima", "Pozo Verde" }));
+    jPanel5.add(cbxParroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
 
     jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
@@ -653,6 +646,7 @@ public class frmdocente extends javax.swing.JFrame {
     jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 50, 20));
 
     cbxCasa1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Propia", "Alquilada" }));
+    cbxCasa1.setEnabled(false);
     jPanel7.add(cbxCasa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, -1));
 
     jLabel47.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -690,16 +684,6 @@ public class frmdocente extends javax.swing.JFrame {
     jLabel54.setText("Parroquia:");
     jPanel7.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 20));
 
-    txtParroquia1.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyReleased(java.awt.event.KeyEvent evt) {
-            txtParroquia1KeyReleased(evt);
-        }
-        public void keyTyped(java.awt.event.KeyEvent evt) {
-            txtParroquia1KeyTyped(evt);
-        }
-    });
-    jPanel7.add(txtParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
-
     lblNombre3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
     lblNombre3.setForeground(new java.awt.Color(255, 255, 255));
     lblNombre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -707,6 +691,7 @@ public class frmdocente extends javax.swing.JFrame {
     jPanel7.add(lblNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 120, 20));
 
     cbxGrupo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
+    cbxGrupo2.setEnabled(false);
     jPanel7.add(cbxGrupo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 120, -1));
 
     lblFechaNacimiento3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -725,6 +710,10 @@ public class frmdocente extends javax.swing.JFrame {
     txtFecha3.setCurrentNavigateIndex(0);
     txtFecha3.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
     jPanel7.add(txtFecha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 20));
+
+    cbxParroquia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachamay", "Chirica", "Dalla Costa", "Once de Abril", "Simon Bolivar", "Unare", "Universidad", "Vista al Sol", "Yocoima", "Pozo Verde" }));
+    cbxParroquia1.setEnabled(false);
+    jPanel7.add(cbxParroquia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 100, -1));
 
     jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 570, 270));
 
@@ -1024,7 +1013,7 @@ Object opciones[] = {"Si", "No"};
         cbxCasa1.setSelectedItem(empleadoVO.getDireccion()[1]);
         txtCalle1.setText(empleadoVO.getDireccion()[2]);
         txtSector1.setText(empleadoVO.getDireccion()[3]);
-        txtParroquia1.setText(empleadoVO.getDireccion()[4]);
+        cbxParroquia1.setSelectedItem(empleadoVO.getDireccion()[4]);
         txtTelefono2.setText(empleadoVO.getTelefono1());
         if (empleadoVO.getFoto() == null) {
             ajustar(lblfoto2, ICON_NO_PHOTO);
@@ -1181,14 +1170,6 @@ Object opciones[] = {"Si", "No"};
         validacionLimite(evt, 15, txtSector.getText().length());
     }//GEN-LAST:event_txtSectorKeyTyped
 
-    private void txtParroquiaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyReleased
-        txtParroquia.setText(txtParroquia.getText().toUpperCase());
-    }//GEN-LAST:event_txtParroquiaKeyReleased
-
-    private void txtParroquiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquiaKeyTyped
-        validacionLimite(evt, 15, txtParroquia.getText().length());
-    }//GEN-LAST:event_txtParroquiaKeyTyped
-
     private void txtNumCasa1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumCasa1KeyReleased
         txtNumCasa.setText(txtNumCasa.getText().toUpperCase());
     }//GEN-LAST:event_txtNumCasa1KeyReleased
@@ -1212,14 +1193,6 @@ Object opciones[] = {"Si", "No"};
     private void txtSector1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSector1KeyTyped
         validacionLimite(evt, 15, txtSector.getText().length());
     }//GEN-LAST:event_txtSector1KeyTyped
-
-    private void txtParroquia1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquia1KeyReleased
-        txtParroquia1.setText(txtParroquia1.getText().toUpperCase());
-    }//GEN-LAST:event_txtParroquia1KeyReleased
-
-    private void txtParroquia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtParroquia1KeyTyped
-        validacionLimite(evt, 15, txtParroquia.getText().length());
-    }//GEN-LAST:event_txtParroquia1KeyTyped
 
     private void btnBorrarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarRActionPerformed
         borrarEmpleado();
@@ -1305,6 +1278,8 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JComboBox<String> cbxCasa1;
     private javax.swing.JComboBox<String> cbxGrupo1;
     private javax.swing.JComboBox<String> cbxGrupo2;
+    private javax.swing.JComboBox<String> cbxParroquia;
+    private javax.swing.JComboBox<String> cbxParroquia1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1387,8 +1362,6 @@ Object opciones[] = {"Si", "No"};
     private javax.swing.JTextField txtNombre2;
     private javax.swing.JTextField txtNumCasa;
     private javax.swing.JTextField txtNumCasa1;
-    private javax.swing.JTextField txtParroquia;
-    private javax.swing.JTextField txtParroquia1;
     private javax.swing.JTextField txtSector;
     private javax.swing.JTextField txtSector1;
     private javax.swing.JTextField txtTelefono;
@@ -1458,7 +1431,7 @@ Object opciones[] = {"Si", "No"};
         txtNumCasa1.setEnabled(b);
         txtCalle1.setEnabled(b);
         txtSector1.setEnabled(b);
-        txtParroquia1.setEnabled(b);
+        cbxParroquia1.setEnabled(b);
         cbxCasa1.setEnabled(b);
         txtTelefono2.setEnabled(b);
         btnAgregarImagen2.setEnabled(b);
@@ -1476,7 +1449,7 @@ Object opciones[] = {"Si", "No"};
         txtNumCasa1.setText("");
         txtCalle1.setText("");
         txtSector1.setText("");
-        txtParroquia1.setText("");
+        cbxParroquia1.setSelectedItem(0);
         cbxCasa1.setSelectedIndex(0);
         txtTelefono2.setText("");
         ajustar(lblfoto2, ICON_NO_PHOTO);
@@ -1493,21 +1466,21 @@ Object opciones[] = {"Si", "No"};
         txtNumCasa.setText("");
         txtCalle.setText("");
         txtSector.setText("");
-        txtParroquia.setText("");
+        cbxParroquia.setSelectedItem(0);
         cbxCasa.setSelectedIndex(0);
         txtTelefono.setText("");
         ajustar(lblfoto1, ICON_NO_PHOTO);
     }
 
     private boolean validacionCampos() {
-        if (txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCedula.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtNumCasa.getText().isEmpty() || txtCalle.getText().isEmpty() || txtSector.getText().isEmpty() || txtParroquia.getText().isEmpty()) {
+        if (txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCedula.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtNumCasa.getText().isEmpty() || txtCalle.getText().isEmpty() || txtSector.getText().isEmpty()) {
             return false;
             }
         return true;
     }
     
     private boolean validacionCampos2() {
-        if (txtNombre2.getText().isEmpty() || txtApellido2.getText().isEmpty() || txtCedula2.getText().isEmpty() || txtTelefono2.getText().isEmpty() || txtNumCasa1.getText().isEmpty() || txtCalle1.getText().isEmpty() || txtSector1.getText().isEmpty() || txtParroquia1.getText().isEmpty()) {
+        if (txtNombre2.getText().isEmpty() || txtApellido2.getText().isEmpty() || txtCedula2.getText().isEmpty() || txtTelefono2.getText().isEmpty() || txtNumCasa1.getText().isEmpty() || txtCalle1.getText().isEmpty() || txtSector1.getText().isEmpty() ) {
             return false;
         }
         return true;
@@ -1519,7 +1492,7 @@ Object opciones[] = {"Si", "No"};
         direccion[1] = cbxCasa.getSelectedItem().toString();
         direccion[2] = txtCalle.getText();
         direccion[3] = txtSector.getText();
-        direccion[4] = txtParroquia.getText();
+        direccion[4] = cbxParroquia.getSelectedItem().toString();
         return direccion;
     }
        
@@ -1529,7 +1502,7 @@ Object opciones[] = {"Si", "No"};
         direccion[1] = cbxCasa1.getSelectedItem().toString();
         direccion[2] = txtCalle1.getText();
         direccion[3] = txtSector1.getText();
-        direccion[4] = txtParroquia1.getText();
+        direccion[4] = cbxParroquia1.getSelectedItem().toString();
         return direccion;
     }
 
@@ -1541,7 +1514,7 @@ Object opciones[] = {"Si", "No"};
         txtNumCasa.setText("");
         txtCalle.setText("");
         txtSector.setText("");
-        txtParroquia.setText("");
+        cbxParroquia.setSelectedItem(0);
         cbxCasa.setSelectedIndex(0);
         cbxGrupo1.setSelectedIndex(0);
         txtCedula.setText("");
@@ -1556,7 +1529,7 @@ Object opciones[] = {"Si", "No"};
         txtNumCasa1.setText("");
         txtCalle1.setText("");
         txtSector1.setText("");
-        txtParroquia1.setText("");
+        cbxParroquia1.setSelectedIndex(0);
         cbxGrupo2.setSelectedIndex(0);
         cbxCasa1.setSelectedIndex(0);
         txtCedula3.setText("");

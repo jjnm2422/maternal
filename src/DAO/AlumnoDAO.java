@@ -44,7 +44,7 @@ public class AlumnoDAO {
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
-        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, alergias, foto, estatus, enfermedades, id_alumno)"
+        String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, alergias, foto, estatus, enfermedades, id_alumno, lugar_nacimiento)"
                 + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion != null) {
             try {             
@@ -71,6 +71,7 @@ public class AlumnoDAO {
                 ps.setBoolean(11, alumnoVO.isEstatus());
                 ps.setString(12, alumnoVO.getEnfermedades());
                 ps.setString(13, alumnoVO.getId_alumno());
+                ps.setString(14, alumnoVO.getLugar_nacimiento());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "INGRESADO CON EXITO";
@@ -124,6 +125,7 @@ public class AlumnoDAO {
                     alumnoVO.setSexo(result.getString("sexo"));
                     alumnoVO.setId_alumno(result.getString("id_alumno"));
                     alumnoVO.setEnfermedades(result.getString("enfermedades"));
+                    alumnoVO.setLugar_nacimiento(result.getString("lugar_nacimiento"));
                     //codigo para extraer imagen
                     if (result.getBinaryStream("foto") != null) {
                         is = result.getBinaryStream("foto");
@@ -180,7 +182,7 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, foto=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, foto=?, estatus=?, enfermedades=?, lugar_nacimiento=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
@@ -206,7 +208,7 @@ public class AlumnoDAO {
                 }
                 ps.setBoolean(11, alumnoVO.isEstatus());
                 ps.setString(12, alumnoVO.getEnfermedades());
- 
+                ps.setString(13, alumnoVO.getLugar_nacimiento());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";
@@ -287,7 +289,7 @@ public class AlumnoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, estatus=?, enfermedades=? where id_alumno= '" + id + "'";
+        String sql = "UPDATE " + this.tabla + " SET fecha_nacimiento=?, primer_nombre=?, segundo_nombre=?, primer_apellido=?, segundo_apellido=?, tipo_sangre=?, edad=?, sexo=?, alergias=?, estatus=?, enfermedades=?, lugar_nacimiento=? where id_alumno= '" + id + "'";
 
         if (conexion != null) {
             try {
@@ -308,6 +310,7 @@ public class AlumnoDAO {
                 }
                 ps.setBoolean(10, alumnoVO.isEstatus());
                 ps.setString(11, alumnoVO.getEnfermedades());
+                ps.setString(12, alumnoVO.getLugar_nacimiento());
                 int n = ps.executeUpdate();
                 if (n > 0) {
                     respuesta = "DATOS ACTUALIZADOS";

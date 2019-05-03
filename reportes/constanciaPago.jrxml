@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solvencia de Pago" language="groovy" pageWidth="340" pageHeight="566" columnWidth="300" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d7653a0-2a02-417b-ac34-9b3ed1591181">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="ruta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT primer_nombre, primer_apellido, registro_pago.fecha, depositante, concepto, numero_transaccion, fecha_comprobante, saldo
+FROM alumno
+inner join matricula on alumno.id_alumno = matricula.id_alumno
+inner join pago on alumno.id_alumno = pago.id_alumno
+inner join registro_pago on registro_pago.id_pago = pago.id_pago
+where alumno.id_alumno = '1234-1']]>
+	</queryString>
+	<field name="primer_nombre" class="java.lang.String"/>
+	<field name="primer_apellido" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="depositante" class="java.lang.String"/>
+	<field name="concepto" class="java.lang.String"/>
+	<field name="numero_transaccion" class="java.lang.String"/>
+	<field name="fecha_comprobante" class="java.lang.String"/>
+	<field name="saldo" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="1" width="277" height="13" uuid="0b8cb11a-6560-430f-b427-320807b51166"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE EDUCACIÓN INICIAL "HUMBOLDT"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="15" width="245" height="15" uuid="f34286fa-9181-4da1-a7a7-4c7b4ca22745"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[INSCRITO EN EL MINISTERIO DEL PODER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="31" width="187" height="15" uuid="89fd5c62-1f4c-43d6-a653-1a6ef4a1a9c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[POPULAR PARA LA EDUCACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="47" width="154" height="16" uuid="b7ef21b6-5599-4473-bd96-191c74d05c13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[CÓDIGO DEA:  PD-12000701]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="64" width="226" height="16" uuid="c2d5d3df-9c0d-4fee-8069-4812e87a4359"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[RIF: J-30506388-5     TLF:  0414-8682748]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="300" height="30" uuid="e1cba1d8-eefa-4bf1-88b9-4ae68d0af686"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE PAGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="48" width="297" height="33" uuid="9c666f32-220f-4578-915f-bfeb6a868845"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Pagos Realizados al Centro de Educación Inicial "HUMBOLDT", para el alumno:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="81" width="297" height="20" uuid="a9227662-66c4-4951-8e1e-0b5e75422784"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_nombre}+" "+$F{primer_apellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="38" height="20" uuid="31b506be-613f-479c-a17f-7f07b12ee1eb"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="39" y="8" width="100" height="20" uuid="b46fb01d-d9de-4f4d-9e2a-5082d1efc2f2"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="28" width="60" height="20" uuid="e1a562c9-2dff-4cc8-9d69-e9581b4ebce9"/>
+				<text><![CDATA[Depositante:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="28" width="100" height="20" uuid="b1fd5780-c260-473f-95dd-dcd5a2e0103e"/>
+				<textFieldExpression><![CDATA[$F{depositante}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="48" width="100" height="17" uuid="261281c2-4483-42e3-83ba-79cd17ab3a0f"/>
+				<text><![CDATA[Concepto]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="65" width="300" height="16" isPrintWhenDetailOverflows="true" uuid="2153915f-3281-4081-a358-78d60de6be21"/>
+				<textFieldExpression><![CDATA[$F{concepto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="0" width="297" height="1" uuid="56daca72-a93f-4486-b744-0170481c027a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="169" y="0" width="131" height="20" uuid="af2e065c-cb34-40c9-bd4d-cdb473f48309"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="80" height="20" uuid="25d99f3e-0826-4241-b016-88c8085a9be4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="80" y="0" width="40" height="20" uuid="442b77c6-f571-466e-896b-e70359f9d41c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="106" y="29" width="93" height="20" uuid="5509f40d-51ff-4894-a00c-fe01d5cfe76c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Impact" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA["HUMBOLDT"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="14" width="196" height="15" uuid="4d42b8cc-70e7-421a-8fdd-d265f7322d56"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[POR: Centro de Educación Inicial]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

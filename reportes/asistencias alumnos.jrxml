@@ -10,14 +10,19 @@
 	<parameter name="grupo" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\NAVARRO\\Documents\\NetBeansProjects\\maternal\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="asistencia" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select * from asistencia_a, alumno, matricula where alumno.id_alumno = asistencia_a.id_alumno and asistencia_a.fecha = $P{fecha} and matricula.seccion = $P{grupo}]]>
+		<![CDATA[select * from alumno
+inner join asistencia_a on alumno.id_alumno = asistencia_a.id_alumno
+inner join matricula on alumno.id_alumno = matricula.id_alumno
+where asistencia_a.fecha = $P{fecha} and matricula.seccion = $P{grupo} AND asistencia = $P{asistencia}]]>
 	</queryString>
-	<field name="id_asistencia" class="java.lang.Integer"/>
-	<field name="asistencia" class="java.lang.Boolean"/>
-	<field name="fecha" class="java.lang.String"/>
-	<field name="id_alumno" class="java.lang.String"/>
-	<field name="id_usuario" class="java.lang.String"/>
 	<field name="primer_nombre" class="java.lang.String"/>
 	<field name="segundo_nombre" class="java.lang.String"/>
 	<field name="primer_apellido" class="java.lang.String"/>
@@ -32,6 +37,12 @@
 	<field name="estatus" class="java.lang.Boolean"/>
 	<field name="enfermedades" class="java.lang.String"/>
 	<field name="alergias" class="java.sql.Array"/>
+	<field name="id_alumno" class="java.lang.String"/>
+	<field name="lugar_nacimiento" class="java.lang.String"/>
+	<field name="id_asistencia" class="java.lang.Integer"/>
+	<field name="asistencia" class="java.lang.Boolean"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="id_usuario" class="java.lang.String"/>
 	<field name="id_matricula" class="java.lang.Integer"/>
 	<field name="seccion" class="java.lang.String"/>
 	<field name="periodo" class="java.lang.String"/>
@@ -84,19 +95,19 @@
 	</title>
 	<pageHeader>
 		<band height="39" splitType="Stretch">
-			<staticText>
-				<reportElement x="209" y="18" width="193" height="20" uuid="bc0deb57-7e47-4622-8f48-7cdfb29693f8"/>
-				<textElement verticalAlignment="Middle">
+			<textField>
+				<reportElement x="201" y="19" width="193" height="20" uuid="7432c3c2-08d4-4018-a69e-44259fba79fd"/>
+				<textElement>
 					<font fontName="Times New Roman" size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ASISTENCIAS DE ALUMNOS]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA["ALUMNOS"+" "+$P{tipo}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="64" splitType="Stretch">
 			<staticText>
-				<reportElement x="52" y="46" width="157" height="18" uuid="935b2a53-9053-4eb3-9017-4e0fc0d88171"/>
+				<reportElement x="0" y="46" width="157" height="18" uuid="935b2a53-9053-4eb3-9017-4e0fc0d88171"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
@@ -133,7 +144,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="23" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="24" y="0" width="243" height="20" uuid="b5fd8d8e-9122-446a-94f1-0b8c483faabb"/>
 				<textElement verticalAlignment="Middle">

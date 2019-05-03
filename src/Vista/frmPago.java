@@ -1362,7 +1362,7 @@ accionesInscripcion();
             pvo.setPago(pagoVo.getPago());
             pvo.setPagado((double) Math.round(Double.parseDouble(lblTotalCancelado.getText()) + Double.parseDouble(lblTotal.getText())));
             pvo.setPeriodo(pagoVo.getPeriodo());
-            pvo.setSaldo((double) Math.round(Double.parseDouble(lblSaldoFavor.getText())));
+            pvo.setSaldo((double) Math.round(Double.parseDouble(formatoDecimal.format(saldo))));
             pvo.setId_pago(pagoVo.getId_pago());
             id_pago = pagoVo.getId_pago();
 //            System.out.println(pvo);
@@ -1575,9 +1575,11 @@ accionesInscripcion();
             consultarPago.setPagado(0D);
             consultarPago.setPago(pago);
             consultarPago.setPeriodo(variablesVO.getPeriodo_actual());
-            consultarPago.setSaldo(0D);
+            consultarPago.setSaldo(coordinador.consultarPagoSaldoAnterior(id_alumno));
             //inserto en bd nuevo registro
             System.out.println(coordinador.getPagoDAO().registrarPago(consultarPago));
+            //cambio estatus a false
+            coordinador.actualizarEstatusAlumno(id_alumno,false);
             habilitarBotones(true);
         }
         //lblTotal.setText("0");
@@ -1612,7 +1614,12 @@ accionesInscripcion();
                     accionesCuotas();
                        //si no hay cuotas pendientes verifico si hay saldo pendiente
                         if (verificarSolvencia(id_alumno)) {
-                            coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                        PagoVO consultarPago = coordinador.consultarPago(id_alumno);
+                            if (consultarPago.getSaldo() > 0) {
+                                coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.\nCon un saldo a favor de :" +consultarPago.getSaldo());
+                            }else{
+                               coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                            }
                             //consulto las notas para saber si tiene las notas completas y cambiar estatus
                             if (coordinador.getNotaDAO().consultarNota(codigo).getLapso() == 3) {
                                 coordinador.actualizarEstatusAlumno(id_alumno,true);
@@ -1764,25 +1771,6 @@ accionesInscripcion();
         return true;
     }
 
-    private void verificarAjuste() {
-        double ajuste = Double.parseDouble(lblMatricula.getText()) - Double.parseDouble(lblTotalCancelado.getText());
-//            saldo_pendienteBD = ajuste;
-        if (ajuste > 0) {
-            if (Double.parseDouble(lblSaldoFavor.getText()) == 0) {
-                lblSaldoFavor.setText(ajuste + "");
-                lblTotal.setText(ajuste + "");
-            } else {
-                lblSaldoFavor.setText("" + (ajuste + Double.parseDouble(lblSaldoFavor.getText())));
-                lblTotal.setText("" + (ajuste + Double.parseDouble(lblSaldoFavor.getText())));
-            }
-        } else {
-            if (Double.parseDouble(lblSaldoFavor.getText()) <= 0) {
-                coordinador.getLogica().mensajeCorrecto("El Alumno: " + txtPnombre.getText() + " se encuentra solvente en el periodo " + coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual() + " \nCon Saldo a Favor de: " + saldo_favorBD);
-                borrarCampos();
-            }
-        }
-    }
-
     private void pagar(RegistroPagoVO obtenerDatos, int tipo) {
         String res = "";
         switch (tipo) {
@@ -1794,7 +1782,12 @@ accionesInscripcion();
                         coordinador.getLogica().mensajeCorrecto("Pago Registrado con Exito");
                         //si no hay cuotas pendientes verifico si hay saldo pendiente
                         if (verificarSolvencia(pvo.getId_alumno())) {
-                            coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                            PagoVO consultarPago = coordinador.consultarPago(pvo.getId_alumno());
+                            if (consultarPago.getSaldo() > 0) {
+                                coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.\nCon un saldo a favor de :" +consultarPago.getSaldo());
+                            }else{
+                               coordinador.getLogica().mensajeAdvertencia("El alumno " + txtPnombre.getText() + " se encuentra solvente.");
+                            }
                             //consulto las notas para saber si tiene las notas completas y cambiar estatus
                             if (coordinador.getNotaDAO().consultarNota(codigo).getLapso() == 3) {
                                 coordinador.actualizarEstatusAlumno(pvo.getId_alumno(),true);

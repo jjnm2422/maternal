@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="asistencias alumnosAsistentes_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b55d2a3d-1e55-407d-96b0-cfa2fca71d7b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fecha" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="grupo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from alumno
+inner join asistencia_a on alumno.id_alumno = asistencia_a.id_alumno
+inner join matricula on alumno.id_alumno = matricula.id_alumno
+where asistencia_a.fecha = $P{fecha} and matricula.seccion = $P{grupo} AND asistencia = false]]>
+	</queryString>
+	<field name="primer_nombre" class="java.lang.String"/>
+	<field name="segundo_nombre" class="java.lang.String"/>
+	<field name="primer_apellido" class="java.lang.String"/>
+	<field name="segundo_apellido" class="java.lang.String"/>
+	<field name="edad" class="java.lang.Integer"/>
+	<field name="tipo_sangre" class="java.lang.String"/>
+	<field name="id_nota" class="java.lang.Integer"/>
+	<field name="id_pago" class="java.lang.Integer"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="fecha_nacimiento" class="java.lang.String"/>
+	<field name="foto" class="java.lang.Object"/>
+	<field name="estatus" class="java.lang.Boolean"/>
+	<field name="enfermedades" class="java.lang.String"/>
+	<field name="alergias" class="java.sql.Array"/>
+	<field name="id_alumno" class="java.lang.String"/>
+	<field name="lugar_nacimiento" class="java.lang.String"/>
+	<field name="id_asistencia" class="java.lang.Integer"/>
+	<field name="asistencia" class="java.lang.Boolean"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="id_usuario" class="java.lang.String"/>
+	<field name="id_matricula" class="java.lang.Integer"/>
+	<field name="seccion" class="java.lang.String"/>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="id_empleado" class="java.lang.String"/>
+	<group name="primer_nombre">
+		<groupExpression><![CDATA[$F{primer_nombre}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="157" height="18" uuid="10409a79-c57b-4577-870a-e759f9f1f685"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INASISTENTES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="27" width="157" height="18" uuid="bca3e5a5-98f0-4055-b2b6-2f175ed2bb25"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE Y APELLIDO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="1" width="243" height="20" uuid="c749f858-08cc-4546-8b78-a1a3c3c769af"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{primer_nombre}+ " " + $F{primer_apellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

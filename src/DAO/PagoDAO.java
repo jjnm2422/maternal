@@ -111,6 +111,35 @@ public class PagoDAO {
         }
     }
     
+    public double consultarPagoSaldoAnterior(String id_alumno) {
+        Connection conexion = null;
+        Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        ImageIcon foto;
+        InputStream is;
+        double saldo = 0D;
+        conexion = conexiondb.getConnection();
+
+        if (conexion != null) {
+            String sql = "SELECT * FROM " + this.tabla + " WHERE id_alumno = '" + id_alumno + "' and periodo= '" + coordinador.periodoAnterior() + "'";
+            try {
+                ps = conexion.prepareStatement(sql);
+                result = ps.executeQuery();
+                while (result.next() == true) {
+                    saldo = result.getDouble("saldo");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(PagoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conexiondb.desconexion();
+            return saldo;
+        } else {
+            conexiondb.desconexion();
+            return saldo;
+        }
+    }
+    
         public int getCuotasPendientes(String id_alumno) {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
@@ -303,7 +332,7 @@ public class PagoDAO {
         Connection conexion = null;
         Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
         conexion = conexiondb.getConnection();
-        String sql = "UPDATE " + this.tabla + " SET saldo=?, periodo=?, pago=?, pagado=? where id_alumno= '"+ id_alumno+"'";
+        String sql = "UPDATE " + this.tabla + " SET saldo=?, periodo=?, pago=?, pagado=? where id_alumno= '"+ id_alumno+"' and periodo = '"+coordinador.consultarVariables().getPeriodo_actual()+"'";
 
         try {
             PreparedStatement ps = conexion.prepareStatement(sql);

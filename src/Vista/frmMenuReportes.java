@@ -65,6 +65,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
         this.setlook();
         initComponents();
         setLocationRelativeTo(null);
+        ajustar(lblLogo, iconLogo);
+    }
+    
+    public void ajustar(JLabel label, ImageIcon icon) {
+        //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
+        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
     }
 
     public void setlook() {
@@ -73,13 +81,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void ajustar(JLabel label, ImageIcon icon) {
-        //esta funcion ajusta un icono(parametro) al tamaño del label (parametro)
-        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
-        label.setIcon(icono);
-        this.repaint();
     }
 
     /**
@@ -122,9 +123,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         btnBuscar2 = new javax.swing.JButton();
         lblNombres2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNacimiento = new javax.swing.JTextField();
         frmDatosConstanciaEstudio = new javax.swing.JFrame();
         jPanel10 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -256,6 +255,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         cbxGrupo = new javax.swing.JComboBox<>();
         txtFecha = new datechooser.beans.DateChooserCombo();
+        jLabel39 = new javax.swing.JLabel();
+        rbnInasistentes = new javax.swing.JRadioButton();
+        rbnTodos = new javax.swing.JRadioButton();
+        rbnAsistentes = new javax.swing.JRadioButton();
         frmDatosAsistenciaD = new javax.swing.JFrame();
         jPanel26 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -265,6 +268,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         cbxGrupo1 = new javax.swing.JComboBox<>();
         txtFecha1 = new datechooser.beans.DateChooserCombo();
+        rbnTodos1 = new javax.swing.JRadioButton();
+        rbnAsistentes1 = new javax.swing.JRadioButton();
+        rbnInasistentes1 = new javax.swing.JRadioButton();
+        jLabel40 = new javax.swing.JLabel();
         frmDatosConstanciaTrabajo = new javax.swing.JFrame();
         jPanel27 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -275,24 +282,88 @@ public class frmMenuReportes extends javax.swing.JFrame {
         btnBuscar6 = new javax.swing.JButton();
         lblNombres6 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        frmDatosFaltantes = new javax.swing.JFrame();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        txtCodigo7 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        btnBuscar7 = new javax.swing.JButton();
+        lblNombres7 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        frmBusquedaFaltante = new javax.swing.JFrame();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel65 = new javax.swing.JLabel();
+        txtBusqueda6 = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblBusqueda6 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar6 = new javax.swing.JButton();
+        btnSalir7 = new javax.swing.JButton();
+        btnSeleccion6 = new javax.swing.JButton();
+        frmDatosPago = new javax.swing.JFrame();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        txtCodigo8 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        btnBuscar8 = new javax.swing.JButton();
+        lblNombres8 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        frmBusquedaPago2 = new javax.swing.JFrame();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel66 = new javax.swing.JLabel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
+        txtBusqueda7 = new javax.swing.JTextField();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblBusqueda7 = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false; //Disallow the editing of any cell
+            }
+        };
+        btnBorrar7 = new javax.swing.JButton();
+        btnSalir8 = new javax.swing.JButton();
+        btnSeleccion7 = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        jMenuItem15 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         bntAtras = new javax.swing.JButton();
         lblUsuarioActvo = new javax.swing.JLabel();
-        btnNotas = new javax.swing.JButton();
-        btnPagos = new javax.swing.JButton();
-        btnUsuario = new javax.swing.JButton();
-        btnAsistencia = new javax.swing.JButton();
-        btnSeccion = new javax.swing.JButton();
-        btnInscripcion = new javax.swing.JButton();
-        btnReportes = new javax.swing.JButton();
-        btnDocentes = new javax.swing.JButton();
-        btnReportes1 = new javax.swing.JButton();
-        btnSeccion1 = new javax.swing.JButton();
-        btnSeccion2 = new javax.swing.JButton();
-        btnSeccion3 = new javax.swing.JButton();
-        bntAtras1 = new javax.swing.JButton();
+        lblLogo = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
 
         frmDatosConstanciaInscripcion.setMinimumSize(new java.awt.Dimension(290, 225));
         frmDatosConstanciaInscripcion.setResizable(false);
@@ -475,7 +546,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 80, -1));
+        jPanel9.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 80, -1));
 
         jButton17.setText("Cancelar");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -483,7 +554,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 jButton17ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 80, -1));
+        jPanel9.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, -1));
 
         txtCodigo2.setName("txtCodigoAlumno"); // NOI18N
         txtCodigo2.addActionListener(new java.awt.event.ActionListener() {
@@ -519,28 +590,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
         lblNombres2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel9.add(lblNombres2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 200, 30));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Lugar de Nacimiento:");
-        jPanel9.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 150, 30));
-
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Alumno:");
         jPanel9.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 70, 30));
-
-        txtNacimiento.setName("txtCodigoAlumno"); // NOI18N
-        txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNacimientoActionPerformed(evt);
-            }
-        });
-        txtNacimiento.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNacimientoKeyTyped(evt);
-            }
-        });
-        jPanel9.add(txtNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 120, 30));
 
         frmDatosNumeroCedula.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
 
@@ -1368,7 +1421,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Datos para Reporte");
-        jPanel25.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 30));
+        jPanel25.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 270, 30));
 
         jButton24.setText("Aceptar");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -1388,20 +1441,56 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("Grupo:");
+        jLabel36.setText("Tipo:");
         jLabel36.setName("lbl"); // NOI18N
-        jPanel25.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, 30));
+        jPanel25.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 20));
 
         jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Fecha de Asistencia");
-        jPanel25.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+        jPanel25.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
 
         cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
-        jPanel25.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, 30));
+        jPanel25.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 110, 20));
 
         txtFecha.setFormat(2);
-        jPanel25.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
+        txtFecha.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+        jPanel25.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+
+        jLabel39.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("Grupo:");
+        jLabel39.setName("lbl"); // NOI18N
+        jPanel25.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 110, 20));
+
+        buttonGroup2.add(rbnInasistentes);
+        rbnInasistentes.setForeground(new java.awt.Color(255, 255, 255));
+        rbnInasistentes.setText("INASISTENTES");
+        rbnInasistentes.setOpaque(false);
+        rbnInasistentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnInasistentesActionPerformed(evt);
+            }
+        });
+        jPanel25.add(rbnInasistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
+
+        buttonGroup2.add(rbnTodos);
+        rbnTodos.setForeground(new java.awt.Color(255, 255, 255));
+        rbnTodos.setSelected(true);
+        rbnTodos.setText("TODOS");
+        rbnTodos.setOpaque(false);
+        jPanel25.add(rbnTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        buttonGroup2.add(rbnAsistentes);
+        rbnAsistentes.setForeground(new java.awt.Color(255, 255, 255));
+        rbnAsistentes.setText("ASISTENTES");
+        rbnAsistentes.setOpaque(false);
+        rbnAsistentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnAsistentesActionPerformed(evt);
+            }
+        });
+        jPanel25.add(rbnAsistentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
         frmDatosAsistenciaA.getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
 
@@ -1420,7 +1509,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Datos para Reporte");
-        jPanel26.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 30));
+        jPanel26.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 270, 30));
 
         jButton26.setText("Aceptar");
         jButton26.addActionListener(new java.awt.event.ActionListener() {
@@ -1442,7 +1531,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Grupo:");
         jLabel37.setName("lbl"); // NOI18N
-        jPanel26.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 110, 30));
+        jPanel26.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 110, 20));
 
         jLabel22.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -1450,8 +1539,43 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jPanel26.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
 
         cbxGrupo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maternal", "I", "II", "III" }));
-        jPanel26.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 110, 30));
+        jPanel26.add(cbxGrupo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 110, 20));
         jPanel26.add(txtFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, 30));
+
+        buttonGroup1.add(rbnTodos1);
+        rbnTodos1.setForeground(new java.awt.Color(255, 255, 255));
+        rbnTodos1.setSelected(true);
+        rbnTodos1.setText("TODOS");
+        rbnTodos1.setOpaque(false);
+        jPanel26.add(rbnTodos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        buttonGroup1.add(rbnAsistentes1);
+        rbnAsistentes1.setForeground(new java.awt.Color(255, 255, 255));
+        rbnAsistentes1.setText("ASISTENTES");
+        rbnAsistentes1.setOpaque(false);
+        rbnAsistentes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnAsistentes1ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(rbnAsistentes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        buttonGroup1.add(rbnInasistentes1);
+        rbnInasistentes1.setForeground(new java.awt.Color(255, 255, 255));
+        rbnInasistentes1.setText("INASISTENTES");
+        rbnInasistentes1.setOpaque(false);
+        rbnInasistentes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnInasistentes1ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(rbnInasistentes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("Tipo:");
+        jLabel40.setName("lbl"); // NOI18N
+        jPanel26.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 20));
 
         frmDatosAsistenciaD.getContentPane().add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
 
@@ -1529,6 +1653,348 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         frmDatosConstanciaTrabajo.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
 
+        frmDatosFaltantes.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosFaltantes.setResizable(false);
+        frmDatosFaltantes.setSize(new java.awt.Dimension(290, 225));
+        frmDatosFaltantes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel28.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel28.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel28.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel28.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Datos para Reporte:");
+        jPanel28.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        jButton30.setText("Aceptar");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 80, -1));
+
+        jButton31.setText("Cancelar");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, -1));
+
+        txtCodigo7.setName("txtCodigoAlumno"); // NOI18N
+        txtCodigo7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigo7ActionPerformed(evt);
+            }
+        });
+        txtCodigo7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigo7KeyTyped(evt);
+            }
+        });
+        jPanel28.add(txtCodigo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 120, 30));
+
+        jLabel41.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("Codigo alumno");
+        jLabel41.setName("lbl"); // NOI18N
+        jPanel28.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 30));
+
+        btnBuscar7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnBuscar7.setName("btnBuscar"); // NOI18N
+        btnBuscar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar7ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(btnBuscar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, -1));
+
+        lblNombres7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombres7.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombres7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel28.add(lblNombres7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 200, 30));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Alumno:");
+        jPanel28.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 70, 30));
+
+        frmDatosFaltantes.getContentPane().add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
+
+        frmBusquedaFaltante.setUndecorated(true);
+        frmBusquedaFaltante.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaFaltante.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel29.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel64.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel64.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setText("Busqueda");
+        jLabel64.setOpaque(true);
+        jPanel29.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel30.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel30.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel30.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel65.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel65.setText("Cedula Representante o Nombre Alumno");
+        jPanel30.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda6ActionPerformed(evt);
+            }
+        });
+        txtBusqueda6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusqueda6KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusqueda6KeyTyped(evt);
+            }
+        });
+        jPanel30.add(txtBusqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda6.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane7.setViewportView(tblBusqueda6);
+
+        jPanel30.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar6.setText("Borrar");
+        btnBorrar6.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar6ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(btnBorrar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir7.setText("Salir");
+        btnSalir7.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir7ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(btnSalir7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion6.setText("Seleccionar");
+        btnSeleccion6.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion6ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(btnSeleccion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel29.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaFaltante.getContentPane().add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        frmDatosPago.setMinimumSize(new java.awt.Dimension(290, 225));
+        frmDatosPago.setResizable(false);
+        frmDatosPago.setSize(new java.awt.Dimension(290, 225));
+        frmDatosPago.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel31.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel31.setMaximumSize(new java.awt.Dimension(290, 120));
+        jPanel31.setMinimumSize(new java.awt.Dimension(290, 120));
+        jPanel31.setPreferredSize(new java.awt.Dimension(290, 120));
+        jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("Datos para Reporte:");
+        jPanel31.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        jButton32.setText("Aceptar");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+        jPanel31.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 80, -1));
+
+        jButton33.setText("Cancelar");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+        jPanel31.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 80, -1));
+
+        txtCodigo8.setName("txtCodigoAlumno"); // NOI18N
+        txtCodigo8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigo8ActionPerformed(evt);
+            }
+        });
+        txtCodigo8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigo8KeyTyped(evt);
+            }
+        });
+        jPanel31.add(txtCodigo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 120, 30));
+
+        jLabel42.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("Codigo alumno");
+        jLabel42.setName("lbl"); // NOI18N
+        jPanel31.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, 30));
+
+        btnBuscar8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBuscar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_buscar24.png"))); // NOI18N
+        btnBuscar8.setName("btnBuscar"); // NOI18N
+        btnBuscar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar8ActionPerformed(evt);
+            }
+        });
+        jPanel31.add(btnBuscar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 30, -1));
+
+        lblNombres8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblNombres8.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombres8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel31.add(lblNombres8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 200, 30));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("Alumno:");
+        jPanel31.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 70, 30));
+
+        frmDatosPago.getContentPane().add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 200));
+
+        frmBusquedaPago2.setUndecorated(true);
+        frmBusquedaPago2.setSize(new java.awt.Dimension(470, 320));
+        frmBusquedaPago2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel32.setBackground(new java.awt.Color(69, 90, 100));
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel66.setBackground(new java.awt.Color(2, 119, 189));
+        jLabel66.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel66.setText("Busqueda");
+        jLabel66.setOpaque(true);
+        jPanel32.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 37));
+
+        jPanel33.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel33.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51), new java.awt.Color(0, 102, 51), new java.awt.Color(0, 153, 51)));
+        jPanel33.setFont(new java.awt.Font("Verdana", 3, 12)); // NOI18N
+        jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel67.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel67.setText("Cedula Representante o Nombre Alumno");
+        jPanel33.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 30));
+
+        txtBusqueda7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtBusqueda7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusqueda7ActionPerformed(evt);
+            }
+        });
+        txtBusqueda7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBusqueda7KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtBusqueda7KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBusqueda7KeyTyped(evt);
+            }
+        });
+        jPanel33.add(txtBusqueda7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, 30));
+
+        tblBusqueda7.setBackground(new java.awt.Color(153, 204, 255));
+        tblBusqueda7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblBusqueda7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre y Apellido"
+            }
+        ));
+        jScrollPane8.setViewportView(tblBusqueda7);
+
+        jPanel33.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 430, 150));
+
+        btnBorrar7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnBorrar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cleaner(1).png"))); // NOI18N
+        btnBorrar7.setText("Borrar");
+        btnBorrar7.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnBorrar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrar7ActionPerformed(evt);
+            }
+        });
+        jPanel33.add(btnBorrar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 130, 30));
+
+        btnSalir8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSalir8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
+        btnSalir8.setText("Salir");
+        btnSalir8.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSalir8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalir8ActionPerformed(evt);
+            }
+        });
+        jPanel33.add(btnSalir8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 30));
+
+        btnSeleccion7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnSeleccion7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_next24.png"))); // NOI18N
+        btnSeleccion7.setText("Seleccionar");
+        btnSeleccion7.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnSeleccion7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccion7ActionPerformed(evt);
+            }
+        });
+        jPanel33.add(btnSeleccion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 130, 30));
+
+        jPanel32.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 450, 250));
+
+        frmBusquedaPago2.getContentPane().add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 320));
+
+        jMenuItem15.setText("jMenuItem15");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1544,8 +2010,8 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Reportes");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 340, 100));
+        jLabel2.setText("Bienvenido al Menu de Reportes");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 700, 100));
 
         bntAtras.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         bntAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icon_exit24.png"))); // NOI18N
@@ -1556,226 +2022,183 @@ public class frmMenuReportes extends javax.swing.JFrame {
                 bntAtrasActionPerformed(evt);
             }
         });
-        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 160, 30));
+        jPanel2.add(bntAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 160, 30));
 
         lblUsuarioActvo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUsuarioActvo.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuarioActvo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUsuarioActvo.setText("usuario activo");
         lblUsuarioActvo.setName("lblUsuarioActivo"); // NOI18N
-        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 160, 30));
+        jPanel2.add(lblUsuarioActvo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 160, 30));
 
-        btnNotas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnNotas.setText("Lista de Utiles Grupo 2");
-        btnNotas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNotasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnNotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 160, 70));
-
-        btnPagos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnPagos.setText("Constancia de Estudio");
-        btnPagos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPagosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 160, 70));
-
-        btnUsuario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnUsuario.setText("Lista de Utiles Grupo 1");
-        btnUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuarioActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 160, 70));
-
-        btnAsistencia.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnAsistencia.setText("Solvencia de Pago");
-        btnAsistencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAsistenciaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 160, 70));
-
-        btnSeccion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSeccion.setText("Lista de Utiles Grupo 3");
-        btnSeccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeccionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 160, 70));
-
-        btnInscripcion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnInscripcion.setText("Constancia de Inscripcion");
-        btnInscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInscripcionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnInscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, 70));
-
-        btnReportes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnReportes.setText("Boletin Informativo");
-        btnReportes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReportesActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 160, 30));
-
-        btnDocentes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnDocentes.setText("Numero Cedula Escolar");
-        btnDocentes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDocentesActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnDocentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 180, 70));
-
-        btnReportes1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnReportes1.setText("Boletin Informativo 2");
-        btnReportes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReportes1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnReportes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, 30));
-
-        btnSeccion1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSeccion1.setText("Indicadores");
-        btnSeccion1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeccion1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSeccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 180, 70));
-
-        btnSeccion2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSeccion2.setText("Asistencia Docentes");
-        btnSeccion2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeccion2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSeccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 160, 70));
-
-        btnSeccion3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSeccion3.setText("Asistencia Alumno");
-        btnSeccion3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeccion3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSeccion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, 70));
-
-        bntAtras1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        bntAtras1.setText("Constancia Trabajo");
-        bntAtras1.setName("bntAtras"); // NOI18N
-        bntAtras1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntAtras1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(bntAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 160, 30));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.png"))); // NOI18N
+        lblLogo.setName("lblLogo"); // NOI18N
+        jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 180, 210));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 390));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 370));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 390));
+
+        jMenu1.setText("Constancias");
+
+        jMenuItem1.setText("Inscripcion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Estudio");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Trabajo");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Boletines");
+
+        jMenuItem4.setText("Informativo");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Informativo 2");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Listas");
+
+        jMenuItem6.setText("Utiles Grupo 1");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem6);
+
+        jMenuItem7.setText("Utiles Grupo 2");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem7);
+
+        jMenuItem8.setText("Utiles Grupo 3");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Asistencias");
+
+        jMenuItem9.setText("Alumnos");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem9);
+
+        jMenuItem10.setText("Docentes");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem10);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Pagos");
+
+        jMenuItem11.setText("Solvencia");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem11);
+
+        jMenuItem14.setText("Constancia");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem14);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Otros");
+
+        jMenuItem13.setText("Indicadores");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem13);
+
+        jMenuItem12.setText("Numero Cedula Escolar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem12);
+
+        jMenuItem16.setText("Documentos Pendientes");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem16);
+
+        jMenuItem17.setText("Alumnos Inscritos");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem17);
+
+        jMenuBar1.add(jMenu6);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsistenciaActionPerformed
-        this.frmDatosConstanciaPago.setLocationRelativeTo(null);
-        this.frmDatosConstanciaPago.setSize(290, 200);
-        this.frmDatosConstanciaPago.setVisible(true);
-    }//GEN-LAST:event_btnAsistenciaActionPerformed
-
-    private void btnSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccionActionPerformed
-        try {
-            Connection conexion = null;
-            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-            conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista3grupo.jrxml";
-            Map<String, Object> p2 = new HashMap<>();
-            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-            JasperViewer visor = new JasperViewer(mostrarReporte, false);
-            visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-        }
-    }//GEN-LAST:event_btnSeccionActionPerformed
-
-    private void btnInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionActionPerformed
-        this.frmDatosConstanciaInscripcion.setLocationRelativeTo(null);
-        this.frmDatosConstanciaInscripcion.setSize(290, 200);
-        this.frmDatosConstanciaInscripcion.setVisible(true);
-    }//GEN-LAST:event_btnInscripcionActionPerformed
-
-    private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
-        this.frmDatosBoletin.setLocationRelativeTo(null);
-        this.frmDatosBoletin.setSize(290, 200);
-        this.frmDatosBoletin.setVisible(true);
-
-
-    }//GEN-LAST:event_btnReportesActionPerformed
-
-    private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
-        try {
-            Connection conexion = null;
-            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-            conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista1ergrupo.jrxml";
-            Map<String, Object> p2 = new HashMap<>();
-            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-            JasperViewer visor = new JasperViewer(mostrarReporte, false);
-            visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-        }
-    }//GEN-LAST:event_btnUsuarioActionPerformed
-
-    private void btnPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagosActionPerformed
-        this.frmDatosConstanciaEstudio.setLocationRelativeTo(null);
-        this.frmDatosConstanciaEstudio.setSize(290, 200);
-        this.frmDatosConstanciaEstudio.setVisible(true);
-    }//GEN-LAST:event_btnPagosActionPerformed
-
     private void bntAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtrasActionPerformed
         this.dispose();
     }//GEN-LAST:event_bntAtrasActionPerformed
-
-    private void btnDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocentesActionPerformed
-        this.frmDatosNumeroCedula.setLocationRelativeTo(null);
-        this.frmDatosNumeroCedula.setSize(290, 200);
-        this.frmDatosNumeroCedula.setVisible(true);
-    }//GEN-LAST:event_btnDocentesActionPerformed
-
-    private void btnNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotasActionPerformed
-        try {
-            Connection conexion = null;
-            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-            conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista2dogrupo.jrxml";
-            Map<String, Object> p2 = new HashMap<>();
-            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
-            JasperViewer visor = new JasperViewer(mostrarReporte, false);
-            visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-        }
-    }//GEN-LAST:event_btnNotasActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         if (!lblNombres.getText().equals("")) {
@@ -1911,30 +2334,25 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         if (!lblNombres2.getText().equals("")) {
-            if (!txtNacimiento.getText().equals("")) {
                 try {
                     Connection conexion = null;
                     Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
                     conexion = conexiondb.getConnection();
                     String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\numerocudelaescolar.jrxml";
-
+                    
                     Map<String, Object> p2 = new HashMap<>();
                     p2.put("id", id);
-                    p2.put("lugar", txtNacimiento.getText());
+                    p2.put("lugar", coordinador.consultarAlumno(id).getLugar_nacimiento());
                     JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
                     JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
                     JasperViewer visor = new JasperViewer(mostrarReporte, false);
                     visor.setVisible(true);
                     lblNombres2.setText("");
                     txtCodigo2.setText("");
-                    txtNacimiento.setText("");
                 } catch (JRException ex) {
                     coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
                     this.dispose();
                 }
-            } else {
-                coordinador.getLogica().mensajeError("Por favor ingrese el lugar de nacimiento");
-            }
         } else {
             coordinador.getLogica().mensajeError("Por favor consulte un alumno");
         }
@@ -1943,7 +2361,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         lblNombres2.setText("");
         txtCodigo2.setText("");
-        txtNacimiento.setText("");
+//        txtNacimiento.setText("");
         this.frmDatosNumeroCedula.setVisible(false);
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -1973,14 +2391,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
             frmBusquedaCedula.setVisible(true);
         }
     }//GEN-LAST:event_btnBuscar2ActionPerformed
-
-    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNacimientoActionPerformed
-
-    private void txtNacimientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNacimientoKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNacimientoKeyTyped
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         if (!lblNombres3.getText().equals("")) {
@@ -2322,12 +2732,6 @@ public class frmMenuReportes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscar5ActionPerformed
 
-    private void btnReportes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportes1ActionPerformed
-        this.frmDatosBoletin2.setLocationRelativeTo(null);
-        this.frmDatosBoletin2.setSize(290, 200);
-        this.frmDatosBoletin2.setVisible(true);
-    }//GEN-LAST:event_btnReportes1ActionPerformed
-
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaActionPerformed
@@ -2477,7 +2881,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBorrar3ActionPerformed
 
     private void btnSalir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir4ActionPerformed
-            txtBusqueda3.setText("");
+        txtBusqueda3.setText("");
         //        desactivarCampos();
         frmBusquedaEstudio.dispose();
     }//GEN-LAST:event_btnSalir4ActionPerformed
@@ -2557,45 +2961,17 @@ public class frmMenuReportes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSeleccion5ActionPerformed
 
-    private void btnSeccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion1ActionPerformed
-        try {
-            Connection conexion = null;
-            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
-            conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\indicadores.jrxml";
-            Map<String, Object> p2 = new HashMap<>();
-            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2);
-            JasperViewer visor = new JasperViewer(mostrarReporte, false);
-            visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
-        }
-    }//GEN-LAST:event_btnSeccion1ActionPerformed
-
-    private void btnSeccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion2ActionPerformed
-        this.frmDatosAsistenciaD.setLocationRelativeTo(null);
-        this.frmDatosAsistenciaD.setSize(330, 140);
-        this.frmDatosAsistenciaD.setVisible(true);
-    }//GEN-LAST:event_btnSeccion2ActionPerformed
-
-    private void btnSeccion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeccion3ActionPerformed
-        this.frmDatosAsistenciaA.setLocationRelativeTo(null);
-        this.frmDatosAsistenciaA.setSize(330, 140);
-        this.frmDatosAsistenciaA.setVisible(true);
-    }//GEN-LAST:event_btnSeccion3ActionPerformed
-
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        try {
+        if (rbnTodos.isSelected()) {
+              try {
             Connection conexion = null;
             Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
             conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias alumnos.jrxml";
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias_alumnosTodos.jrxml";
             Map<String, Object> p2 = new HashMap<>();
             p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+//            p2.put("SUBREPORT_DIR", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
             p2.put("grupo", cbxGrupo.getSelectedItem().toString());
-            
             String fecha = txtFecha.getText();
             fecha = fecha.replace('/', '-');
             p2.put("fecha", fecha);
@@ -2603,8 +2979,53 @@ public class frmMenuReportes extends javax.swing.JFrame {
             JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
             JasperViewer visor = new JasperViewer(mostrarReporte, false);
             visor.setVisible(true);
-        } catch (JRException ex) {
-            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+            } catch (JRException ex) {
+                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+            }           
+        }else if (rbnAsistentes.isSelected()) {
+             try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias alumnos.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("SUBREPORT_DIR", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo.getSelectedItem().toString());
+            p2.put("tipo", rbnAsistentes.getText());
+            p2.put("asistencia", true);
+            String fecha = txtFecha.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+            } catch (JRException ex) {
+                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+            }
+        }else{
+            try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias alumnos.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("SUBREPORT_DIR", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo.getSelectedItem().toString());
+            p2.put("tipo", rbnInasistentes.getText());
+            p2.put("asistencia", false);
+            String fecha = txtFecha.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+            } catch (JRException ex) {
+                coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+            }
         }
     }//GEN-LAST:event_jButton24ActionPerformed
 
@@ -2613,11 +3034,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        if (rbnTodos1.isSelected()) {
         try {
             Connection conexion = null;
             Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
             conexion = conexiondb.getConnection();
-            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencia de docentes.jrxml";
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencias_docentesTodos.jrxml";
             Map<String, Object> p2 = new HashMap<>();
             p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
             p2.put("grupo", cbxGrupo1.getSelectedItem().toString());
@@ -2631,18 +3053,55 @@ public class frmMenuReportes extends javax.swing.JFrame {
             visor.setVisible(true);
         } catch (JRException ex) {
             coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }          
+        }else if (rbnAsistentes1.isSelected()) {
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencia de docentes.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo1.getSelectedItem().toString());
+            p2.put("tipo", rbnAsistentes1.getText());
+            p2.put("asistencia", true);
+            String fecha = txtFecha1.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }
+        }else{
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\asistencia de docentes.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("grupo", cbxGrupo1.getSelectedItem().toString());
+            p2.put("tipo", rbnInasistentes1.getText());
+            p2.put("asistencia", false);
+            String fecha = txtFecha1.getText();
+            fecha = fecha.replace('/', '-');
+            p2.put("fecha", fecha);
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
     frmDatosAsistenciaD.dispose();
     }//GEN-LAST:event_jButton27ActionPerformed
-
-    private void bntAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtras1ActionPerformed
-        this.frmDatosConstanciaTrabajo.setLocationRelativeTo(null);
-        this.frmDatosConstanciaTrabajo.setSize(290, 200);
-        this.frmDatosConstanciaTrabajo.setVisible(true);
-    }//GEN-LAST:event_bntAtras1ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         if (!lblNombres6.getText().equals("")) {
@@ -2705,6 +3164,360 @@ public class frmMenuReportes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscar6ActionPerformed
 
+    private void rbnInasistentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnInasistentesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnInasistentesActionPerformed
+
+    private void rbnAsistentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnAsistentesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnAsistentesActionPerformed
+
+    private void rbnAsistentes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnAsistentes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnAsistentes1ActionPerformed
+
+    private void rbnInasistentes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnInasistentes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnInasistentes1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        this.frmDatosConstanciaInscripcion.setLocationRelativeTo(null);
+        this.frmDatosConstanciaInscripcion.setSize(290, 200);
+        this.frmDatosConstanciaInscripcion.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.frmDatosConstanciaEstudio.setLocationRelativeTo(null);
+        this.frmDatosConstanciaEstudio.setSize(290, 200);
+        this.frmDatosConstanciaEstudio.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+         this.frmDatosConstanciaTrabajo.setLocationRelativeTo(null);
+        this.frmDatosConstanciaTrabajo.setSize(290, 200);
+        this.frmDatosConstanciaTrabajo.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        this.frmDatosBoletin.setLocationRelativeTo(null);
+        this.frmDatosBoletin.setSize(290, 200);
+        this.frmDatosBoletin.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        this.frmDatosBoletin2.setLocationRelativeTo(null);
+        this.frmDatosBoletin2.setSize(290, 200);
+        this.frmDatosBoletin2.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista3grupo.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista1ergrupo.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+       try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\lista2dogrupo.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        this.frmDatosAsistenciaA.setLocationRelativeTo(null);
+        this.frmDatosAsistenciaA.setSize(330, 140);
+        this.frmDatosAsistenciaA.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        this.frmDatosAsistenciaD.setLocationRelativeTo(null);
+        this.frmDatosAsistenciaD.setSize(330, 140);
+        this.frmDatosAsistenciaD.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        this.frmDatosConstanciaPago.setLocationRelativeTo(null);
+        this.frmDatosConstanciaPago.setSize(290, 200);
+        this.frmDatosConstanciaPago.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        this.frmDatosNumeroCedula.setLocationRelativeTo(null);
+        this.frmDatosNumeroCedula.setSize(290, 200);
+        this.frmDatosNumeroCedula.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\indicadores.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        }       // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        if (!lblNombres7.getText().equals("")) {
+                try {
+                    Connection conexion = null;
+                    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                    conexion = conexiondb.getConnection();
+                    String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\documentosFaltantes.jrxml";
+                    
+                    Map<String, Object> p2 = new HashMap<>();
+                    p2.put("id", id);
+                    p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                    JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                    visor.setVisible(true);
+                    lblNombres7.setText("");
+                    txtCodigo7.setText("");
+                } catch (JRException ex) {
+                    coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                    this.dispose();
+                }
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        frmDatosFaltantes.dispose();
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void txtCodigo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo7ActionPerformed
+
+    private void txtCodigo7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo7KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo7KeyTyped
+
+    private void btnBuscar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar7ActionPerformed
+        if (!txtCodigo7.getText().isEmpty()) {
+            id = txtCodigo7.getText();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo7.getText().trim());
+            if (alumnoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                lblNombres7.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaFaltante.setLocationRelativeTo(this);
+                frmBusquedaFaltante.setVisible(true);
+            }
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaFaltante.setLocationRelativeTo(this);
+            frmBusquedaFaltante.setVisible(true);
+        }
+    }//GEN-LAST:event_btnBuscar7ActionPerformed
+
+    private void txtBusqueda6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda6ActionPerformed
+
+    private void txtBusqueda6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda6KeyPressed
+
+    private void txtBusqueda6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda6KeyReleased
+tblBusqueda6.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda6.getText().toUpperCase(), txtBusqueda6.getText().toUpperCase()));        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda6KeyReleased
+
+    private void txtBusqueda6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda6KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda6KeyTyped
+
+    private void btnBorrar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar6ActionPerformed
+    txtBusqueda6.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBorrar6ActionPerformed
+
+    private void btnSalir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir7ActionPerformed
+this.frmBusquedaFaltante.dispose();
+    }//GEN-LAST:event_btnSalir7ActionPerformed
+
+    private void btnSeleccion6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion6ActionPerformed
+       if (tblBusqueda6.getSelectedRow() != -1) {
+            id = tblBusqueda6.getValueAt(tblBusqueda6.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda6.getValueAt(tblBusqueda6.getSelectedRow(), 0).toString());
+            txtCodigo7.setText(alumnoVO.getId_alumno());
+            lblNombres7.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaFaltante.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }
+    }//GEN-LAST:event_btnSeleccion6ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        this.frmDatosFaltantes.setLocationRelativeTo(null);
+        this.frmDatosFaltantes.setSize(290, 200);
+        this.frmDatosFaltantes.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\inscritos.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            p2.put("periodo", coordinador.getVariablesDAO().consultarVariables().getPeriodo_actual());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        } 
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        this.frmDatosPago.setLocationRelativeTo(null);
+        this.frmDatosPago.setSize(290, 200);
+        this.frmDatosPago.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        if (!lblNombres8.getText().equals("")) {
+                try {
+                    Connection conexion = null;
+                    Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+                    conexion = conexiondb.getConnection();
+                    String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\constanciaPago.jrxml";
+                    
+                    Map<String, Object> p2 = new HashMap<>();
+                    p2.put("id", id);
+                    p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+                    JasperViewer visor = new JasperViewer(mostrarReporte, false);
+                    visor.setVisible(true);
+                    lblNombres8.setText("");
+                    txtCodigo8.setText("");
+                } catch (JRException ex) {
+                    coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+                    this.dispose();
+                }
+        } else {
+            coordinador.getLogica().mensajeError("Por favor consulte un alumno");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+frmDatosPago.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void txtCodigo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo8ActionPerformed
+
+    private void txtCodigo8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigo8KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigo8KeyTyped
+
+    private void btnBuscar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar8ActionPerformed
+if (!txtCodigo8.getText().isEmpty()) {
+            id = txtCodigo8.getText();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(txtCodigo8.getText().trim());
+            if (alumnoVO.getPrimer_nombre() != null) {
+                //datos del alumno
+                lblNombres7.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            } else {
+//                     coordinador.getLogica().mensajeError("Codigo no existe");
+                frmBusquedaPago2.setLocationRelativeTo(this);
+                frmBusquedaPago2.setVisible(true);
+            }
+        } else {
+//            coordinador.getLogica().mensajeAdvertencia("Ingrese un codigo");
+            frmBusquedaPago2.setLocationRelativeTo(this);
+            frmBusquedaPago2.setVisible(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscar8ActionPerformed
+
+    private void txtBusqueda7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusqueda7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda7ActionPerformed
+
+    private void txtBusqueda7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda7KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda7KeyPressed
+
+    private void txtBusqueda7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda7KeyReleased
+tblBusqueda7.setModel(coordinador.consultarAlumnosTablaPago(txtBusqueda7.getText().toUpperCase(), txtBusqueda7.getText().toUpperCase()));        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda7KeyReleased
+
+    private void txtBusqueda7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusqueda7KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusqueda7KeyTyped
+
+    private void btnBorrar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrar7ActionPerformed
+txtBusqueda7.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBorrar7ActionPerformed
+
+    private void btnSalir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir8ActionPerformed
+this.frmBusquedaPago2.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalir8ActionPerformed
+
+    private void btnSeleccion7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccion7ActionPerformed
+ if (tblBusqueda7.getSelectedRow() != -1) {
+            id = tblBusqueda7.getValueAt(tblBusqueda7.getSelectedRow(), 0).toString();
+            AlumnoVO alumnoVO = coordinador.consultarAlumno(tblBusqueda7.getValueAt(tblBusqueda7.getSelectedRow(), 0).toString());
+            txtCodigo8.setText(alumnoVO.getId_alumno());
+            lblNombres8.setText(alumnoVO.getPrimer_nombre() + " " + alumnoVO.getSegundo_nombre() + " " + alumnoVO.getPrimer_apellido() + " " + alumnoVO.getSegundo_apellido());
+            frmBusquedaPago2.dispose();
+        } else {
+            coordinador.getLogica().mensajeError("Por favor seleccione un registro");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSeleccion7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2743,14 +3556,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bntAtras;
-    public javax.swing.JButton bntAtras1;
-    public javax.swing.JButton btnAsistencia;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnBorrar1;
     private javax.swing.JButton btnBorrar2;
     private javax.swing.JButton btnBorrar3;
     private javax.swing.JButton btnBorrar4;
     private javax.swing.JButton btnBorrar5;
+    private javax.swing.JButton btnBorrar6;
+    private javax.swing.JButton btnBorrar7;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
@@ -2758,29 +3571,26 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar4;
     private javax.swing.JButton btnBuscar5;
     private javax.swing.JButton btnBuscar6;
-    public javax.swing.JButton btnDocentes;
-    public javax.swing.JButton btnInscripcion;
-    public javax.swing.JButton btnNotas;
-    public javax.swing.JButton btnPagos;
-    public javax.swing.JButton btnReportes;
-    public javax.swing.JButton btnReportes1;
+    private javax.swing.JButton btnBuscar7;
+    private javax.swing.JButton btnBuscar8;
     private javax.swing.JButton btnSalir1;
     private javax.swing.JButton btnSalir2;
     private javax.swing.JButton btnSalir3;
     private javax.swing.JButton btnSalir4;
     private javax.swing.JButton btnSalir5;
     private javax.swing.JButton btnSalir6;
-    public javax.swing.JButton btnSeccion;
-    public javax.swing.JButton btnSeccion1;
-    public javax.swing.JButton btnSeccion2;
-    public javax.swing.JButton btnSeccion3;
+    private javax.swing.JButton btnSalir7;
+    private javax.swing.JButton btnSalir8;
     private javax.swing.JButton btnSeleccion;
     private javax.swing.JButton btnSeleccion1;
     private javax.swing.JButton btnSeleccion2;
     private javax.swing.JButton btnSeleccion3;
     private javax.swing.JButton btnSeleccion4;
     private javax.swing.JButton btnSeleccion5;
-    public javax.swing.JButton btnUsuario;
+    private javax.swing.JButton btnSeleccion6;
+    private javax.swing.JButton btnSeleccion7;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbxGrupo;
     private javax.swing.JComboBox<String> cbxGrupo1;
     private javax.swing.JComboBox<String> cbxLapso;
@@ -2788,8 +3598,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JFrame frmBusquedaBoletin2;
     private javax.swing.JFrame frmBusquedaCedula;
     private javax.swing.JFrame frmBusquedaEstudio;
+    private javax.swing.JFrame frmBusquedaFaltante;
     private javax.swing.JFrame frmBusquedaInscripcion;
     private javax.swing.JFrame frmBusquedaPago;
+    private javax.swing.JFrame frmBusquedaPago2;
     private javax.swing.JFrame frmDatosAsistenciaA;
     private javax.swing.JFrame frmDatosAsistenciaD;
     private javax.swing.JFrame frmDatosBoletin;
@@ -2798,7 +3610,9 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JFrame frmDatosConstanciaInscripcion;
     private javax.swing.JFrame frmDatosConstanciaPago;
     private javax.swing.JFrame frmDatosConstanciaTrabajo;
+    private javax.swing.JFrame frmDatosFaltantes;
     private javax.swing.JFrame frmDatosNumeroCedula;
+    private javax.swing.JFrame frmDatosPago;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -2817,6 +3631,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2832,6 +3650,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -2842,7 +3664,11 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
@@ -2852,14 +3678,41 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2880,6 +3733,12 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -2889,6 +3748,9 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMes;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblNombres1;
@@ -2897,19 +3759,31 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombres4;
     private javax.swing.JLabel lblNombres5;
     private javax.swing.JLabel lblNombres6;
+    private javax.swing.JLabel lblNombres7;
+    private javax.swing.JLabel lblNombres8;
     public javax.swing.JLabel lblUsuarioActvo;
+    private javax.swing.JRadioButton rbnAsistentes;
+    private javax.swing.JRadioButton rbnAsistentes1;
+    private javax.swing.JRadioButton rbnInasistentes;
+    private javax.swing.JRadioButton rbnInasistentes1;
+    private javax.swing.JRadioButton rbnTodos;
+    private javax.swing.JRadioButton rbnTodos1;
     private javax.swing.JTable tblBusqueda;
     private javax.swing.JTable tblBusqueda1;
     private javax.swing.JTable tblBusqueda2;
     private javax.swing.JTable tblBusqueda3;
     private javax.swing.JTable tblBusqueda4;
     private javax.swing.JTable tblBusqueda5;
+    private javax.swing.JTable tblBusqueda6;
+    private javax.swing.JTable tblBusqueda7;
     private javax.swing.JTextField txtBusqueda;
     private javax.swing.JTextField txtBusqueda1;
     private javax.swing.JTextField txtBusqueda2;
     private javax.swing.JTextField txtBusqueda3;
     private javax.swing.JTextField txtBusqueda4;
     private javax.swing.JTextField txtBusqueda5;
+    private javax.swing.JTextField txtBusqueda6;
+    private javax.swing.JTextField txtBusqueda7;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigo1;
     private javax.swing.JTextField txtCodigo2;
@@ -2917,9 +3791,10 @@ public class frmMenuReportes extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigo4;
     private javax.swing.JTextField txtCodigo5;
     private javax.swing.JTextField txtCodigo6;
+    private javax.swing.JTextField txtCodigo7;
+    private javax.swing.JTextField txtCodigo8;
     private datechooser.beans.DateChooserCombo txtFecha;
     private datechooser.beans.DateChooserCombo txtFecha1;
-    private javax.swing.JTextField txtNacimiento;
     // End of variables declaration//GEN-END:variables
 
     public void setCoordinador(Coordinador coordinador) {
