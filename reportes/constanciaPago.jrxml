@@ -11,7 +11,7 @@ FROM alumno
 inner join matricula on alumno.id_alumno = matricula.id_alumno
 inner join pago on alumno.id_alumno = pago.id_alumno
 inner join registro_pago on registro_pago.id_pago = pago.id_pago
-where alumno.id_alumno = '1234-1']]>
+where alumno.id_alumno = $P{id}]]>
 	</queryString>
 	<field name="primer_nombre" class="java.lang.String"/>
 	<field name="primer_apellido" class="java.lang.String"/>
