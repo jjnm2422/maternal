@@ -350,6 +350,7 @@ public class frmMenuReportes extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -2089,6 +2090,14 @@ public class frmMenuReportes extends javax.swing.JFrame {
 
         jMenu3.setText("Listas");
 
+        jMenuItem18.setText("Utiles Maternal");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem18);
+
         jMenuItem6.setText("Utiles Grupo 1");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3518,6 +3527,23 @@ this.frmBusquedaPago2.dispose();        // TODO add your handling code here:
         }        // TODO add your handling code here:
     }//GEN-LAST:event_btnSeleccion7ActionPerformed
 
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+         try {
+            Connection conexion = null;
+            Conexion.ConexionBd conexiondb = new Conexion.ConexionBd();
+            conexion = conexiondb.getConnection();
+            String dir = coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte() + "\\ListaMaternal.jrxml";
+            Map<String, Object> p2 = new HashMap<>();
+            p2.put("ruta", coordinador.getVariablesDAO().consultarVariables().getUbicacion_reporte());
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, p2, conexion);
+            JasperViewer visor = new JasperViewer(mostrarReporte, false);
+            visor.setVisible(true);
+        } catch (JRException ex) {
+            coordinador.getLogica().mensajeError("OCURRIO UN ERROR AL CARGAR EL REPORTE.\n" + ex);
+        } 
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3705,6 +3731,7 @@ this.frmBusquedaPago2.dispose();        // TODO add your handling code here:
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

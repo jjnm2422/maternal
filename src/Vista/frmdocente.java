@@ -1022,7 +1022,7 @@ Object opciones[] = {"Si", "No"};
         } 
         id_empleado = empleadoVO.getId_empleado();
         } else {
-             coordinador.getLogica().mensajeError("Cedula: "+txtCedula2.getText()+" no existe en la Base de Datos");
+            coordinador.getLogica().mensajeError("Cedula: "+txtCedula2.getText()+" no existe en la Base de Datos");
             borrarDatos();
             habilitarDatos(false);
         }
@@ -1426,6 +1426,7 @@ Object opciones[] = {"Si", "No"};
         txtNombre2.setEnabled(b);
         txtApellido2.setEnabled(b);
         //txtCedula3.setEnabled(b);
+        cbxGrupo2.setEnabled(b);
         txtFecha1.setEnabled(b);
         txtFecha3.setEnabled(b);
         txtNumCasa1.setEnabled(b);

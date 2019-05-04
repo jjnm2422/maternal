@@ -45,7 +45,7 @@ public class AlumnoDAO {
         conexion = conexiondb.getConnection();
         PreparedStatement ps = null;
         String sql = "insert into " + this.tabla + "(fecha_nacimiento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_sangre, edad, sexo, alergias, foto, estatus, enfermedades, id_alumno, lugar_nacimiento)"
-                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         if (conexion != null) {
             try {             
                 ps = conexion.prepareCall(sql);
